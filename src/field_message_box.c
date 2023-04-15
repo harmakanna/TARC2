@@ -49,7 +49,7 @@ static void Task_DrawFieldMessage(u8 taskId)
             else {
                 DrawDialogueFrame(0, TRUE);
             } 
-           task->tState++;
+            task->tState++;
            break;
         case 2:
             if (RunTextPrintersAndIsPrinter0Active() != TRUE)
@@ -132,7 +132,6 @@ bool8 ShowFieldMessageFromBuffer(void)
 
 extern void FillDialogFramePlate();
 extern int GetDialogFramePlateWidth();
-
 static void ExpandStringAndStartDrawFieldMessage(const u8 *str, bool32 allowSkippingDelayWithButtonPress)
 {
     if (gSpeakerName != NULL && !FlagGet(FLAG_SUPPRESS_SPEAKER_NAME)) {
@@ -143,8 +142,7 @@ static void ExpandStringAndStartDrawFieldMessage(const u8 *str, bool32 allowSkip
             gNamePlateBuffer[1] = EXT_CTRL_CODE_CLEAR_TO;
             gNamePlateBuffer[2] = strLen;
             StringExpandPlaceholders(&gNamePlateBuffer[3], gSpeakerName);
-        } 
-        else {
+        } else {
             StringExpandPlaceholders(&gNamePlateBuffer[0], gSpeakerName);
         }
         FillDialogFramePlate();
