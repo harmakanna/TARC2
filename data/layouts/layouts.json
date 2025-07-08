@@ -4410,6 +4410,26 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_TOWN",
+      "name": "PresentTown_Layout",
+      "width": 55,
+      "height": 38,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/PresentTown/border.bin",
+      "blockdata_filepath": "data/layouts/PresentTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_PAST_TOWN",
+      "name": "PastTown_Layout",
+      "width": 35,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SmallTownWithLab",
+      "border_filepath": "data/layouts/PastTown/border.bin",
+      "blockdata_filepath": "data/layouts/PastTown/map.bin"
     }
   ]
 }
