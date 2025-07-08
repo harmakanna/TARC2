@@ -331,6 +331,12 @@ extern const u8 gText_EmptyString3[];
 extern const u8 gText_RecordBattleToPass[];
 extern const u8 gText_BattleRecordedOnPass[];
 extern const u8 gText_BattleTourney[];
+extern const u8 gText_OpponentLWillUse[];
+extern const u8 gTest_OpponentLWillUseOnTarget[];
+extern const u8 gTest_OpponentLWillSwitch[];
+extern const u8 gText_OpponentRWillUse[];
+extern const u8 gTest_OpponentRWillUseOnTarget[];
+extern const u8 gTest_OpponentRWillSwitch[];
 
 extern const u16 gMissStringIds[];
 extern const u16 gStatUpStringIds[];
