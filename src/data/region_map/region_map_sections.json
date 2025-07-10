@@ -1,6 +1,38 @@
 {
   "map_sections": [
     {
+      "id": "MAPSEC_PORTO_BELLA_CITY",
+      "name": "PORTO BELLA CITY",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_PORTO_BELLA_TOWN",
+      "name": "PORTO BELLA TOWN",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_SHRINE_OF_PEACE",
+      "name": "SHRINE OF PEACE",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_SHRINE_OF_PROSPERITY",
+      "name": "SHRINE OF PROSPERITY",
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
       "id": "MAPSEC_LITTLEROOT_TOWN",
       "name": "LITTLEROOT TOWN",
       "x": 4,
@@ -490,7 +522,7 @@
     },
     {
       "id": "MAPSEC_ABANDONED_SHIP",
-      "name": "PAST TOWN",
+      "name": "ABANDONED SHIP",
       "x": 6,
       "y": 14,
       "width": 1,

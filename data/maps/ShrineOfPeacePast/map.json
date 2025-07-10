@@ -1,0 +1,45 @@
+{
+  "id": "MAP_SHRINE_OF_PEACE_PAST",
+  "name": "ShrineOfPeacePast",
+  "layout": "LAYOUT_SHRINE_OF_PEACE_PAST",
+  "music": "MUS_SEALED_CHAMBER",
+  "region_map_section": "MAPSEC_SHRINE_OF_PEACE",
+  "requires_flash": false,
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "warp_id": "TOWN_FROM_PEACE_L",
+      "x": 13,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_TOWN",
+      "dest_warp_id": "PEACE_FROM_CITY_ML"
+    },
+    {
+      "warp_id": "TOWN_FROM_PEACE_M",
+      "x": 14,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_TOWN",
+      "dest_warp_id": "PEACE_FROM_CITY_ML"
+    },
+    {
+      "warp_id": "TOWN_FROM_PEACE_R",
+      "x": 15,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_TOWN",
+      "dest_warp_id": "PEACE_FROM_CITY_MR"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

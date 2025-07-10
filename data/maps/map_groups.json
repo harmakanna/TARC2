@@ -38,10 +38,15 @@
     "gMapGroup_IndoorRoute124"
   ],
   "gMapGroup_LookerPresent": [
-    "PresentTown"
+    "PresentTown",
+    "ShrineOfPeacePresent",
+    "ShrineOfProsperityPresent",
+    "CutsceneForest"
   ],
   "gMapGroup_LookerPast": [
-    "PastTown"
+    "PastTown",
+    "ShrineOfPeacePast",
+    "ShrineOfProsperityPast"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",

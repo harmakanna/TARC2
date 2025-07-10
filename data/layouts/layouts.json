@@ -4430,6 +4430,56 @@
       "secondary_tileset": "gTileset_SmallTownWithLab",
       "border_filepath": "data/layouts/PastTown/border.bin",
       "blockdata_filepath": "data/layouts/PastTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_SHRINE_OF_PEACE_PRESENT",
+      "name": "ShrineOfPeacePresent_Layout",
+      "width": 28,
+      "height": 27,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_LugiaShrine",
+      "border_filepath": "data/layouts/ShrineOfPeacePresent/border.bin",
+      "blockdata_filepath": "data/layouts/ShrineOfPeacePresent/map.bin"
+    },
+    {
+      "id": "LAYOUT_SHRINE_OF_PEACE_PAST",
+      "name": "ShrineOfPeacePast_Layout",
+      "width": 28,
+      "height": 27,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_LugiaShrine",
+      "border_filepath": "data/layouts/ShrineOfPeacePast/border.bin",
+      "blockdata_filepath": "data/layouts/ShrineOfPeacePast/map.bin"
+    },
+    {
+      "id": "LAYOUT_SHRINE_OF_PROSPERITY_PRESENT",
+      "name": "ShrineOfProsperityPresent_Layout",
+      "width": 28,
+      "height": 27,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_LugiaShrine",
+      "border_filepath": "data/layouts/ShrineOfProsperityPresent/border.bin",
+      "blockdata_filepath": "data/layouts/ShrineOfProsperityPresent/map.bin"
+    },
+    {
+      "id": "LAYOUT_SHRINE_OF_PROSPERITY_PAST",
+      "name": "ShrineOfProsperityPast_Layout",
+      "width": 28,
+      "height": 27,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_LugiaShrine",
+      "border_filepath": "data/layouts/ShrineOfProsperityPast/border.bin",
+      "blockdata_filepath": "data/layouts/ShrineOfProsperityPast/map.bin"
+    },
+    {
+      "id": "LAYOUT_CUTSCENE_FOREST",
+      "name": "CutsceneForest_Layout",
+      "width": 21,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_LugiaShrine",
+      "border_filepath": "data/layouts/CutsceneForest/border.bin",
+      "blockdata_filepath": "data/layouts/CutsceneForest/map.bin"
     }
   ]
 }

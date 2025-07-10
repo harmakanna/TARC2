@@ -1161,3 +1161,13 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/PresentTown/scripts.inc"
 
 	.include "data/maps/PastTown/scripts.inc"
+
+	.include "data/maps/ShrineOfPeacePresent/scripts.inc"
+
+	.include "data/maps/ShrineOfPeacePast/scripts.inc"
+
+	.include "data/maps/ShrineOfProsperityPresent/scripts.inc"
+
+	.include "data/maps/ShrineOfProsperityPast/scripts.inc"
+
+	.include "data/maps/CutsceneForest/scripts.inc"

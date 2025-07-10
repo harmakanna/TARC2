@@ -3,18 +3,83 @@
   "name": "PresentTown",
   "layout": "LAYOUT_PRESENT_TOWN",
   "music": "MUS_AQUA_MAGMA_HIDEOUT",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_PORTO_BELLA_CITY",
   "requires_flash": false,
   "weather": "WEATHER_RAIN_THUNDERSTORM",
   "map_type": "MAP_TYPE_CITY",
   "allow_cycling": false,
   "allow_escaping": false,
-  "allow_running": false,
+  "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "warp_id": "PEACE_FROM_CITY_ML",
+      "x": 13,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_SHRINE_OF_PEACE_PRESENT",
+      "dest_warp_id": "CITY_FROM_PEACE_M"
+    },
+    {
+      "warp_id": "PEACE_FROM_CITY_MR",
+      "x": 14,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_SHRINE_OF_PEACE_PRESENT",
+      "dest_warp_id": "CITY_FROM_PEACE_M"
+    },
+    {
+      "warp_id": "PEACE_FROM_CITY_R",
+      "x": 15,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_SHRINE_OF_PEACE_PRESENT",
+      "dest_warp_id": "CITY_FROM_PEACE_R"
+    },
+    {
+      "warp_id": "PEACE_FROM_CITY_L",
+      "x": 12,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_SHRINE_OF_PEACE_PRESENT",
+      "dest_warp_id": "CITY_FROM_PEACE_L"
+    },
+    {
+      "warp_id": "PROSPERITY_FROM_CITY_L",
+      "x": 58,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_SHRINE_OF_PROSPERITY_PRESENT",
+      "dest_warp_id": "CITY_FROM_PROSPERITY_L"
+    },
+    {
+      "warp_id": "PROSPERITY_FROM_CITY_ML",
+      "x": 59,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_SHRINE_OF_PROSPERITY_PRESENT",
+      "dest_warp_id": "CITY_FROM_PROSPERITY_M"
+    },
+    {
+      "warp_id": "PROSPERITY_FROM_CITY_MR",
+      "x": 60,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_SHRINE_OF_PROSPERITY_PRESENT",
+      "dest_warp_id": "CITY_FROM_PROSPERITY_M"
+    },
+    {
+      "warp_id": "PROSPERITY_FROM_CITY_R",
+      "x": 61,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_SHRINE_OF_PROSPERITY_PRESENT",
+      "dest_warp_id": "CITY_FROM_PROSPERITY_R"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }
