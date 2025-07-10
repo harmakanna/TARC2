@@ -841,3 +841,26 @@ const struct Tileset gTileset_SmallTownWithLab =
     .metatileAttributes = gMetatileAttributes_SmallTownWithLab,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_lozinterior =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_lozinterior,
+    .palettes = gTilesetPalettes_lozinterior,
+    .metatiles = gMetatiles_lozinterior,
+    .metatileAttributes = gMetatileAttributes_lozinterior,
+    .callback = NULL,
+};
+
+
+const struct Tileset gTileset_LugiaShrine =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_LugiaShrine,
+    .palettes = gTilesetPalettes_LugiaShrine,
+    .metatiles = gMetatiles_LugiaShrine,
+    .metatileAttributes = gMetatileAttributes_LugiaShrine,
+    .callback = NULL,
+};

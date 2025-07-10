@@ -1653,3 +1653,41 @@ const u16 gTilesetPalettes_SmallTownWithLab[][16] =
 };
 
 const u32 gTilesetTiles_SmallTownWithLab[] = INCBIN_U32("data/tilesets/secondary/small_town_with_lab/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_lozinterior[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/lozinterior/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lozinterior/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lozinterior/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lozinterior/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lozinterior/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lozinterior/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lozinterior/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lozinterior/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lozinterior/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lozinterior/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lozinterior/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lozinterior/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lozinterior/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_lozinterior[] = INCBIN_U32("data/tilesets/secondary/lozinterior/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_LugiaShrine[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/lugia_shrine/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lugia_shrine/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lugia_shrine/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lugia_shrine/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lugia_shrine/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lugia_shrine/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lugia_shrine/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lugia_shrine/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lugia_shrine/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lugia_shrine/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lugia_shrine/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lugia_shrine/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lugia_shrine/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_LugiaShrine[] = INCBIN_U32("data/tilesets/secondary/lugia_shrine/tiles.4bpp.lz");

@@ -1,5 +1,7 @@
 {
   "group_order": [
+    "gMapGroup_LookerPresent",
+    "gMapGroup_LookerPast",
     "gMapGroup_TownsAndRoutes",
     "gMapGroup_IndoorLittleroot",
     "gMapGroup_IndoorOldale",
@@ -33,8 +35,13 @@
     "gMapGroup_IndoorRoute113",
     "gMapGroup_IndoorRoute123",
     "gMapGroup_IndoorRoute119",
-    "gMapGroup_IndoorRoute124",
-    "gMapGroup_Looker"
+    "gMapGroup_IndoorRoute124"
+  ],
+  "gMapGroup_LookerPresent": [
+    "PresentTown"
+  ],
+  "gMapGroup_LookerPast": [
+    "PastTown"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -621,9 +628,5 @@
   ],
   "gMapGroup_IndoorRoute124": [
     "Route124_DivingTreasureHuntersHouse"
-  ],
-  "gMapGroup_Looker": [
-    "PresentTown",
-    "PastTown"
   ]
 }
