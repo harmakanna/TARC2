@@ -2,7 +2,7 @@
   "id": "MAP_SHRINE_OF_PROSPERITY_PRESENT",
   "name": "ShrineOfProsperityPresent",
   "layout": "LAYOUT_SHRINE_OF_PROSPERITY_PRESENT",
-  "music": "MUS_SEALED_CHAMBER",
+  "music": "MUS_DP_ETERNA_FOREST",
   "region_map_section": "MAPSEC_SHRINE_OF_PROSPERITY",
   "requires_flash": false,
   "weather": "WEATHER_RAIN_THUNDERSTORM",

@@ -50,6 +50,8 @@
     "ShrineOfPeacePast",
     "ShrineOfProsperityPast"
   ],
+  "gMapGroup_IndoorLookerPresent": [],
+  "gMapGroup_IndoorLookerPast": [],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
     "SlateportCity",

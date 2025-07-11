@@ -2,7 +2,7 @@
   "id": "MAP_PAST_TOWN",
   "name": "PastTown",
   "layout": "LAYOUT_PAST_TOWN",
-  "music": "MUS_VERDANTURF",
+  "music": "MUS_DP_ETERNA_NIGHT",
   "region_map_section": "MAPSEC_PORTO_BELLA_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY_CLOUDS",

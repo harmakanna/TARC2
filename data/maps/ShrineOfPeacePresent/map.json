@@ -2,7 +2,7 @@
   "id": "MAP_SHRINE_OF_PEACE_PRESENT",
   "name": "ShrineOfPeacePresent",
   "layout": "LAYOUT_SHRINE_OF_PEACE_PRESENT",
-  "music": "MUS_SEALED_CHAMBER",
+  "music": "MUS_DP_ETERNA_FOREST",
   "region_map_section": "MAPSEC_SHRINE_OF_PEACE",
   "requires_flash": false,
   "weather": "WEATHER_RAIN_THUNDERSTORM",
