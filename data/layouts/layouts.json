@@ -4414,8 +4414,8 @@
     {
       "id": "LAYOUT_PRESENT_TOWN",
       "name": "PresentTown_Layout",
-      "width": 70,
-      "height": 45,
+      "width": 72,
+      "height": 50,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/PresentTown/border.bin",
