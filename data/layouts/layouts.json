@@ -4424,8 +4424,8 @@
     {
       "id": "LAYOUT_PAST_TOWN",
       "name": "PastTown_Layout",
-      "width": 45,
-      "height": 33,
+      "width": 57,
+      "height": 42,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_SmallTownWithLab",
       "border_filepath": "data/layouts/PastTown/border.bin",
