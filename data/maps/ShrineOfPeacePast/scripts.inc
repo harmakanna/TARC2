@@ -21,3 +21,4 @@ ShrineOfPeacePast_Text_CelebiWarp:
 	.string "expectantly…\p"
 	.string "Warp to the present?$"
 	
+	
