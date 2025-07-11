@@ -2,6 +2,8 @@
   "group_order": [
     "gMapGroup_LookerPresent",
     "gMapGroup_LookerPast",
+    "gMapGroup_IndoorLookerPresent",
+    "gMapGroup_IndoorLookerPast",
     "gMapGroup_TownsAndRoutes",
     "gMapGroup_IndoorLittleroot",
     "gMapGroup_IndoorOldale",
