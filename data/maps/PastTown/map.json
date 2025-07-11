@@ -5,7 +5,7 @@
   "music": "MUS_DP_ETERNA_NIGHT",
   "region_map_section": "MAPSEC_PORTO_BELLA_TOWN",
   "requires_flash": false,
-  "weather": "WEATHER_SUNNY_CLOUDS",
+  "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_TOWN",
   "allow_cycling": false,
   "allow_escaping": false,
