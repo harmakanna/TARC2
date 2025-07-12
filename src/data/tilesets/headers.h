@@ -864,3 +864,14 @@ const struct Tileset gTileset_LugiaShrine =
     .metatileAttributes = gMetatileAttributes_LugiaShrine,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_PokeCenterAlt =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_PokeCenterAlt,
+    .palettes = gTilesetPalettes_PokeCenterAlt,
+    .metatiles = gMetatiles_PokeCenterAlt,
+    .metatileAttributes = gMetatileAttributes_PokeCenterAlt,
+    .callback = NULL,
+};

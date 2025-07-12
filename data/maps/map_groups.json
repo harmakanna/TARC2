@@ -50,7 +50,14 @@
     "ShrineOfPeacePast",
     "ShrineOfProsperityPast"
   ],
-  "gMapGroup_IndoorLookerPresent": [],
+  "gMapGroup_IndoorLookerPresent": [
+    "PresentSchool",
+    "Present_Concerned_Family_House",
+    "Present_Concerned_Family_House_2F",
+    "Present_AquaCorpHQ",
+    "Present_PokemonCenter",
+    "Present_House1"
+  ],
   "gMapGroup_IndoorLookerPast": [],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",

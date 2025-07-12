@@ -1,0 +1,45 @@
+{
+  "id": "MAP_PRESENT_CONCERNED_FAMILY_HOUSE",
+  "name": "Present_Concerned_Family_House",
+  "layout": "LAYOUT_PRESENT_CONCERNED_FAMILY_HOUSE",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_NONE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "warp_id": "Family_House_Exit_1",
+      "x": 6,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_TOWN",
+      "dest_warp_id": "Family_House_Entrance"
+    },
+    {
+      "warp_id": "Family_House_Exit_2",
+      "x": 7,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_TOWN",
+      "dest_warp_id": "Family_House_Entrance"
+    },
+    {
+      "warp_id": "Family_House_Stairs_1F",
+      "x": 3,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_CONCERNED_FAMILY_HOUSE_2F",
+      "dest_warp_id": "Family_House_Stairs_2F"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

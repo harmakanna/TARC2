@@ -78,6 +78,46 @@
       "elevation": 0,
       "dest_map": "MAP_SHRINE_OF_PROSPERITY_PRESENT",
       "dest_warp_id": "CITY_FROM_PROSPERITY_R"
+    },
+    {
+      "warp_id": "CITY_SCHOOL_ENTRANCE",
+      "x": 24,
+      "y": 34,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_SCHOOL",
+      "dest_warp_id": "CITY_SCHOOL_EXIT_1"
+    },
+    {
+      "warp_id": "Family_House_Entrance",
+      "x": 21,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_CONCERNED_FAMILY_HOUSE",
+      "dest_warp_id": "Family_House_Exit_1"
+    },
+    {
+      "warp_id": "AQUA_CORP_ENTRANCE",
+      "x": 15,
+      "y": 34,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_AQUA_CORP_HQ",
+      "dest_warp_id": "AQUA_CORP_EXIT_1"
+    },
+    {
+      "warp_id": "POKEMON_CENTER_ENTRANCE",
+      "x": 53,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_POKEMON_CENTER",
+      "dest_warp_id": "POKEMON_CENTER_EXIT"
+    },
+    {
+      "warp_id": "PRESENT_HOUSE1_ENTRANCE",
+      "x": 26,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_HOUSE1",
+      "dest_warp_id": "PRESENT_HOUSE1_EXIT_1"
     }
   ],
   "coord_events": [],

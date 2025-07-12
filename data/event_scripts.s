@@ -1171,3 +1171,15 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ShrineOfProsperityPast/scripts.inc"
 
 	.include "data/maps/CutsceneForest/scripts.inc"
+
+	.include "data/maps/PresentSchool/scripts.inc"
+
+	.include "data/maps/Present_Concerned_Family_House/scripts.inc"
+
+	.include "data/maps/Present_Concerned_Family_House_2F/scripts.inc"
+
+	.include "data/maps/Present_AquaCorpHQ/scripts.inc"
+
+	.include "data/maps/Present_PokemonCenter/scripts.inc"
+
+	.include "data/maps/Present_House1/scripts.inc"

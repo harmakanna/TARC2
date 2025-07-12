@@ -217,3 +217,6 @@ const u16 gMetatileAttributes_lozinterior[] = INCBIN_U16("data/tilesets/secondar
 
 const u16 gMetatiles_LugiaShrine[] = INCBIN_U16("data/tilesets/secondary/lugia_shrine/metatiles.bin");
 const u16 gMetatileAttributes_LugiaShrine[] = INCBIN_U16("data/tilesets/secondary/lugia_shrine/metatile_attributes.bin");
+
+const u16 gMetatiles_PokeCenterAlt[] = INCBIN_U16("data/tilesets/secondary/poke_center_alt/metatiles.bin");
+const u16 gMetatileAttributes_PokeCenterAlt[] = INCBIN_U16("data/tilesets/secondary/poke_center_alt/metatile_attributes.bin");

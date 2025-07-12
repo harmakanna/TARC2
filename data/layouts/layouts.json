@@ -4480,6 +4480,66 @@
       "secondary_tileset": "gTileset_LugiaShrine",
       "border_filepath": "data/layouts/CutsceneForest/border.bin",
       "blockdata_filepath": "data/layouts/CutsceneForest/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_SCHOOL",
+      "name": "PresentSchool_Layout",
+      "width": 16,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonSchool",
+      "border_filepath": "data/layouts/PresentSchool/border.bin",
+      "blockdata_filepath": "data/layouts/PresentSchool/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_CONCERNED_FAMILY_HOUSE",
+      "name": "Present_Concerned_Family_House_Layout",
+      "width": 14,
+      "height": 7,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Present_Concerned_Family_House/border.bin",
+      "blockdata_filepath": "data/layouts/Present_Concerned_Family_House/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_CONCERNED_FAMILY_HOUSE_2F",
+      "name": "Present_Concerned_Family_House_2F_Layout",
+      "width": 14,
+      "height": 7,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Present_Concerned_Family_House_2F/border.bin",
+      "blockdata_filepath": "data/layouts/Present_Concerned_Family_House_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_AQUA_CORP_HQ",
+      "name": "Present_AquaCorpHQ_Layout",
+      "width": 14,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/Present_AquaCorpHQ/border.bin",
+      "blockdata_filepath": "data/layouts/Present_AquaCorpHQ/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_POKEMON_CENTER",
+      "name": "Present_PokemonCenter_Layout",
+      "width": 15,
+      "height": 13,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokeCenterAlt",
+      "border_filepath": "data/layouts/Present_PokemonCenter/border.bin",
+      "blockdata_filepath": "data/layouts/Present_PokemonCenter/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_HOUSE1",
+      "name": "Present_House1_Layout",
+      "width": 17,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Present_House1/border.bin",
+      "blockdata_filepath": "data/layouts/Present_House1/map.bin"
     }
   ]
 }
