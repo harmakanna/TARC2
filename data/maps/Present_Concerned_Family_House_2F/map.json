@@ -20,7 +20,7 @@
       "x": 3,
       "y": 1,
       "elevation": 0,
-      "dest_map": "Present_Concerned_Family_House_1F",
+      "dest_map": "MAP_PRESENT_CONCERNED_FAMILY_HOUSE",
       "dest_warp_id": "Family_House_Stairs_1F"
     }
   ],

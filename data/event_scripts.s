@@ -1172,7 +1172,7 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/CutsceneForest/scripts.inc"
 
-	.include "data/maps/PresentSchool/scripts.inc"
+	.include "data/maps/Present_School/scripts.inc"
 
 	.include "data/maps/Present_Concerned_Family_House/scripts.inc"
 
@@ -1183,3 +1183,19 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Present_PokemonCenter/scripts.inc"
 
 	.include "data/maps/Present_House1/scripts.inc"
+
+	.include "data/maps/Present_Complex/scripts.inc"
+
+	.include "data/maps/Present_Complex_2F/scripts.inc"
+
+	.include "data/maps/Present_Flat1_2F/scripts.inc"
+
+	.include "data/maps/Present_Flat1_1F/scripts.inc"
+
+	.include "data/maps/Present_Flat2_1F/scripts.inc"
+
+	.include "data/maps/Present_Flat2_2F/scripts.inc"
+
+	.include "data/maps/Present_House2/scripts.inc"
+
+	.include "data/maps/Present_Celebi_Society/scripts.inc"

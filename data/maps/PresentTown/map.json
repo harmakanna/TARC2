@@ -118,6 +118,54 @@
       "elevation": 0,
       "dest_map": "MAP_PRESENT_HOUSE1",
       "dest_warp_id": "PRESENT_HOUSE1_EXIT_1"
+    },
+    {
+      "warp_id": "COMPLEX_ENTRANCE_1",
+      "x": 55,
+      "y": 33,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_COMPLEX",
+      "dest_warp_id": "COMPLEX_EXIT_1_1"
+    },
+    {
+      "warp_id": "COMPLEX_ENTRANCE_2",
+      "x": 59,
+      "y": 33,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_COMPLEX",
+      "dest_warp_id": "COMPLEX_EXIT_2_1"
+    },
+    {
+      "warp_id": "FLAT1_ENTRANCE",
+      "x": 18,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_FLAT1_1F",
+      "dest_warp_id": "FLAT1_1F_EXIT_1"
+    },
+    {
+      "warp_id": "FLAT2_ENTRANCE",
+      "x": 22,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_FLAT2_1F",
+      "dest_warp_id": "FLAT2_1F_EXIT_1"
+    },
+    {
+      "warp_id": "Present_House2_Entrance",
+      "x": 60,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_HOUSE2",
+      "dest_warp_id": "Present_House2_Exit_1"
+    },
+    {
+      "warp_id": "Present_CelebiSociety_Entrance",
+      "x": 33,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_CELEBI_SOCIETY",
+      "dest_warp_id": "Present_CelebiSociety_Exit_1"
     }
   ],
   "coord_events": [],

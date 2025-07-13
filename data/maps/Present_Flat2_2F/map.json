@@ -1,0 +1,29 @@
+{
+  "id": "MAP_PRESENT_FLAT2_2F",
+  "name": "Present_Flat2_2F",
+  "layout": "LAYOUT_PRESENT_FLAT2_2F",
+  "music": "MUS_DP_SUNYSHORE_DAY",
+  "region_map_section": "MAPSEC_PORTO_BELLA_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "warp_id": "FLAT2_2F_STAIR",
+      "x": 1,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_FLAT2_1F",
+      "dest_warp_id": "FLAT2_1F_STAIR"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}
