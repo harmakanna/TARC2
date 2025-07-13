@@ -4620,6 +4620,36 @@
       "secondary_tileset": "gTileset_PrettyPetalFlowerShop",
       "border_filepath": "data/layouts/Present_Celebi_Society/border.bin",
       "blockdata_filepath": "data/layouts/Present_Celebi_Society/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_CITY_HALL_1F",
+      "name": "Present_CityHall_1F_Layout",
+      "width": 18,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/Present_CityHall_1F/border.bin",
+      "blockdata_filepath": "data/layouts/Present_CityHall_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_CITY_HALL_2F_RANGER",
+      "name": "Present_CityHall_2F_Ranger_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/Present_CityHall_2F_Ranger/border.bin",
+      "blockdata_filepath": "data/layouts/Present_CityHall_2F_Ranger/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_CITY_HALL_2F_OFFICE",
+      "name": "Present_CityHall_2F_Office_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/Present_CityHall_2F_Office/border.bin",
+      "blockdata_filepath": "data/layouts/Present_CityHall_2F_Office/map.bin"
     }
   ]
 }

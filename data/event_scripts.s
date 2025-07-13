@@ -1199,3 +1199,9 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Present_House2/scripts.inc"
 
 	.include "data/maps/Present_Celebi_Society/scripts.inc"
+
+	.include "data/maps/Present_CityHall_1F/scripts.inc"
+
+	.include "data/maps/Present_CityHall_2F_Ranger/scripts.inc"
+
+	.include "data/maps/Present_CityHall_2F_Office/scripts.inc"

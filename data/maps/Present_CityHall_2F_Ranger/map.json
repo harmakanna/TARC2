@@ -1,0 +1,29 @@
+{
+  "id": "MAP_PRESENT_CITY_HALL_2F_RANGER",
+  "name": "Present_CityHall_2F_Ranger",
+  "layout": "LAYOUT_PRESENT_CITY_HALL_2F_RANGER",
+  "music": "MUS_DP_SUNYSHORE_DAY",
+  "region_map_section": "MAPSEC_PORTO_BELLA_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "warp_id": "Present_CityHall_Ranger_Stair",
+      "x": 2,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_CITY_HALL_1F",
+      "dest_warp_id": "Present_CityHall_Lobby_Stair1"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

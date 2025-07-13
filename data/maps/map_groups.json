@@ -64,7 +64,10 @@
     "Present_Flat2_1F",
     "Present_Flat2_2F",
     "Present_House2",
-    "Present_Celebi_Society"
+    "Present_Celebi_Society",
+    "Present_CityHall_1F",
+    "Present_CityHall_2F_Ranger",
+    "Present_CityHall_2F_Office"
   ],
   "gMapGroup_IndoorLookerPast": [],
   "gMapGroup_TownsAndRoutes": [
