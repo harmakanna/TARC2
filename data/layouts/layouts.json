@@ -4650,6 +4650,56 @@
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/Present_CityHall_2F_Office/border.bin",
       "blockdata_filepath": "data/layouts/Present_CityHall_2F_Office/map.bin"
+    },
+    {
+      "id": "LAYOUT_PAST_HOUSE1",
+      "name": "Past_House1_Layout",
+      "width": 12,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_lozinterior",
+      "border_filepath": "data/layouts/Past_House1/border.bin",
+      "blockdata_filepath": "data/layouts/Past_House1/map.bin"
+    },
+    {
+      "id": "LAYOUT_PAST_HOUSE2",
+      "name": "Past_House2_Layout",
+      "width": 15,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_lozinterior",
+      "border_filepath": "data/layouts/Past_House2/border.bin",
+      "blockdata_filepath": "data/layouts/Past_House2/map.bin"
+    },
+    {
+      "id": "LAYOUT_PAST_HOUSE3",
+      "name": "Past_House3_Layout",
+      "width": 10,
+      "height": 6,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_lozinterior",
+      "border_filepath": "data/layouts/Past_House3/border.bin",
+      "blockdata_filepath": "data/layouts/Past_House3/map.bin"
+    },
+    {
+      "id": "LAYOUT_PAST_CELEBI_SOCIETY",
+      "name": "Past_CelebiSociety_Layout",
+      "width": 20,
+      "height": 12,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_lozinterior",
+      "border_filepath": "data/layouts/Past_CelebiSociety/border.bin",
+      "blockdata_filepath": "data/layouts/Past_CelebiSociety/map.bin"
+    },
+    {
+      "id": "LAYOUT_PAST_TOWN_HALL",
+      "name": "Past_TownHall_Layout",
+      "width": 20,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_lozinterior",
+      "border_filepath": "data/layouts/Past_TownHall/border.bin",
+      "blockdata_filepath": "data/layouts/Past_TownHall/map.bin"
     }
   ]
 }

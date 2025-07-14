@@ -134,7 +134,7 @@ static const u16 sDoorNullPalette49[16] = {};
 static const u8 sDoorAnimTiles_PortoBellaChimneyLeft[] = INCBIN_U8("graphics/door_anims/porto_bella_chimney_left.4bpp");
 static const u8 sDoorAnimTiles_PortoBellaChimneyRight[] = INCBIN_U8("graphics/door_anims/porto_bella_chimney_right.4bpp");
 static const u8 sDoorAnimTiles_PortoBellaWood[] = INCBIN_U8("graphics/door_anims/porto_bella_wood.4bpp");
-static const u8 sDoorAnimTiles_PortoBellaGlass[] = INCBIN_U8("graphics/door_anims/porto_bella_wood.4bpp");
+static const u8 sDoorAnimTiles_PortoBellaGlass[] = INCBIN_U8("graphics/door_anims/porto_bella_glass.4bpp");
 
 static const struct DoorAnimFrame sDoorOpenAnimFrames[] =
 {

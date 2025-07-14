@@ -69,7 +69,13 @@
     "Present_CityHall_2F_Ranger",
     "Present_CityHall_2F_Office"
   ],
-  "gMapGroup_IndoorLookerPast": [],
+  "gMapGroup_IndoorLookerPast": [
+    "Past_House1",
+    "Past_House2",
+    "Past_House3",
+    "Past_CelebiSociety",
+    "Past_TownHall"
+  ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
     "SlateportCity",

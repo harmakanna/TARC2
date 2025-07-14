@@ -105,6 +105,54 @@
       "elevation": 0,
       "dest_map": "MAP_SHRINE_OF_PROSPERITY_PAST",
       "dest_warp_id": "TOWN_FROM_PROSPERITY_R"
+    },
+    {
+      "warp_id": "Past_House1_Entrance",
+      "x": 18,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_PAST_HOUSE1",
+      "dest_warp_id": "Past_House1_Exit_1"
+    },
+    {
+      "warp_id": "Past_House2_Entrance",
+      "x": 13,
+      "y": 29,
+      "elevation": 0,
+      "dest_map": "MAP_PAST_HOUSE2",
+      "dest_warp_id": "Past_House2_Exit_1"
+    },
+    {
+      "warp_id": "Past_House3_Entrance",
+      "x": 43,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_PAST_HOUSE3",
+      "dest_warp_id": "Past_House3_Exit_1"
+    },
+    {
+      "warp_id": "Past_CelebiSociety_Entrance1",
+      "x": 22,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_PAST_CELEBI_SOCIETY",
+      "dest_warp_id": "Past_CelebiSociety_Exit1_1"
+    },
+    {
+      "warp_id": "Past_CelebiSociety_Entrance2",
+      "x": 28,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_PAST_CELEBI_SOCIETY",
+      "dest_warp_id": "Past_CelebiSociety_Exit2_1"
+    },
+    {
+      "warp_id": "Past_TownHall_Entrance",
+      "x": 35,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_PAST_TOWN_HALL",
+      "dest_warp_id": "Past_TownHall_Exit_1"
     }
   ],
   "coord_events": [],

@@ -1205,3 +1205,13 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Present_CityHall_2F_Ranger/scripts.inc"
 
 	.include "data/maps/Present_CityHall_2F_Office/scripts.inc"
+
+	.include "data/maps/Past_House1/scripts.inc"
+
+	.include "data/maps/Past_House2/scripts.inc"
+
+	.include "data/maps/Past_House3/scripts.inc"
+
+	.include "data/maps/Past_CelebiSociety/scripts.inc"
+
+	.include "data/maps/Past_TownHall/scripts.inc"
