@@ -4296,23 +4296,6 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
     X(MUS_ENCOUNTER_CHAMPION) \
     X(MUS_CREDITS) \
     X(MUS_END) \
-    X(MUS_B_FRONTIER) \
-    X(MUS_B_ARENA) \
-    X(MUS_OBTAIN_B_POINTS) \
-    X(MUS_REGISTER_MATCH_CALL) \
-    X(MUS_B_PYRAMID) \
-    X(MUS_B_PYRAMID_TOP) \
-    X(MUS_B_PALACE) \
-    X(MUS_RAYQUAZA_APPEARS) \
-    X(MUS_B_TOWER) \
-    X(MUS_OBTAIN_SYMBOL) \
-    X(MUS_B_DOME) \
-    X(MUS_B_PIKE) \
-    X(MUS_B_FACTORY) \
-    X(MUS_VS_RAYQUAZA) \
-    X(MUS_VS_FRONTIER_BRAIN) \
-    X(MUS_VS_MEW) \
-    X(MUS_B_DOME_LOBBY) \
     X(MUS_VS_WILD) \
     X(MUS_VS_AQUA_MAGMA) \
     X(MUS_VS_TRAINER) \
@@ -4398,57 +4381,29 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
     X(MUS_RG_TRAINER_TOWER) \
     X(MUS_RG_SLOW_PALLET) \
     X(MUS_RG_TEACHY_TV_MENU) \
-    X(PH_TRAP_BLEND) \
-    X(PH_TRAP_HELD) \
-    X(PH_TRAP_SOLO) \
-    X(PH_FACE_BLEND) \
-    X(PH_FACE_HELD) \
-    X(PH_FACE_SOLO) \
-    X(PH_CLOTH_BLEND) \
-    X(PH_CLOTH_HELD) \
-    X(PH_CLOTH_SOLO) \
-    X(PH_DRESS_BLEND) \
-    X(PH_DRESS_HELD) \
-    X(PH_DRESS_SOLO) \
-    X(PH_FLEECE_BLEND) \
-    X(PH_FLEECE_HELD) \
-    X(PH_FLEECE_SOLO) \
-    X(PH_KIT_BLEND) \
-    X(PH_KIT_HELD) \
-    X(PH_KIT_SOLO) \
-    X(PH_PRICE_BLEND) \
-    X(PH_PRICE_HELD) \
-    X(PH_PRICE_SOLO) \
-    X(PH_LOT_BLEND) \
-    X(PH_LOT_HELD) \
-    X(PH_LOT_SOLO) \
-    X(PH_GOAT_BLEND) \
-    X(PH_GOAT_HELD) \
-    X(PH_GOAT_SOLO) \
-    X(PH_THOUGHT_BLEND) \
-    X(PH_THOUGHT_HELD) \
-    X(PH_THOUGHT_SOLO) \
-    X(PH_CHOICE_BLEND) \
-    X(PH_CHOICE_HELD) \
-    X(PH_CHOICE_SOLO) \
-    X(PH_MOUTH_BLEND) \
-    X(PH_MOUTH_HELD) \
-    X(PH_MOUTH_SOLO) \
-    X(PH_FOOT_BLEND) \
-    X(PH_FOOT_HELD) \
-    X(PH_FOOT_SOLO) \
-    X(PH_GOOSE_BLEND) \
-    X(PH_GOOSE_HELD) \
-    X(PH_GOOSE_SOLO) \
-    X(PH_STRUT_BLEND) \
-    X(PH_STRUT_HELD) \
-    X(PH_STRUT_SOLO) \
-    X(PH_CURE_BLEND) \
-    X(PH_CURE_HELD) \
-    X(PH_CURE_SOLO) \
-    X(PH_NURSE_BLEND) \
-    X(PH_NURSE_HELD) \
-    X(PH_NURSE_SOLO) \
+    X(MUS_ABNORMAL_WEATHER) \
+    X(MUS_B_FRONTIER) \
+    X(MUS_B_ARENA) \
+    X(MUS_OBTAIN_B_POINTS) \
+    X(MUS_REGISTER_MATCH_CALL) \
+    X(MUS_B_PYRAMID) \
+    X(MUS_B_PYRAMID_TOP) \
+    X(MUS_B_PALACE) \
+    X(MUS_RAYQUAZA_APPEARS) \
+    X(MUS_B_TOWER) \
+    X(MUS_OBTAIN_SYMBOL) \
+    X(MUS_B_DOME) \
+    X(MUS_B_PIKE) \
+    X(MUS_B_FACTORY) \
+    X(MUS_VS_RAYQUAZA) \
+    X(MUS_VS_FRONTIER_BRAIN) \
+    X(MUS_VS_MEW) \
+    X(MUS_B_DOME_LOBBY) \
+    X(MUS_DP_SUNYSHORE_DAY) \
+    X(MUS_DP_ETERNA_NIGHT) \
+    X(MUS_DP_ETERNA_FOREST) \
+    X(MUS_PL_LOOKER) \
+    X(MUS_BW_VS_LEGENDARY) \
 
 #define SOUND_LIST_SE \
     X(SE_USE_ITEM) \
@@ -4713,13 +4668,65 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
     X(SE_RG_DEOXYS_MOVE) \
     X(SE_RG_POKE_JUMP_SUCCESS) \
     X(SE_RG_POKE_JUMP_FAILURE) \
-    X(SE_PHONE_CALL) \
-    X(SE_PHONE_CLICK) \
+    X(SE_POKENAV_CALL) \
+    X(SE_POKENAV_HANG_UP) \
     X(SE_ARENA_TIMEUP1) \
     X(SE_ARENA_TIMEUP2) \
     X(SE_PIKE_CURTAIN_CLOSE) \
     X(SE_PIKE_CURTAIN_OPEN) \
     X(SE_SUDOWOODO_SHAKE) \
+    X(SE_DUMMY_1) \
+    X(PH_TRAP_BLEND) \
+    X(PH_TRAP_HELD) \
+    X(PH_TRAP_SOLO) \
+    X(PH_FACE_BLEND) \
+    X(PH_FACE_HELD) \
+    X(PH_FACE_SOLO) \
+    X(PH_CLOTH_BLEND) \
+    X(PH_CLOTH_HELD) \
+    X(PH_CLOTH_SOLO) \
+    X(PH_DRESS_BLEND) \
+    X(PH_DRESS_HELD) \
+    X(PH_DRESS_SOLO) \
+    X(PH_FLEECE_BLEND) \
+    X(PH_FLEECE_HELD) \
+    X(PH_FLEECE_SOLO) \
+    X(PH_KIT_BLEND) \
+    X(PH_KIT_HELD) \
+    X(PH_KIT_SOLO) \
+    X(PH_PRICE_BLEND) \
+    X(PH_PRICE_HELD) \
+    X(PH_PRICE_SOLO) \
+    X(PH_LOT_BLEND) \
+    X(PH_LOT_HELD) \
+    X(PH_LOT_SOLO) \
+    X(PH_GOAT_BLEND) \
+    X(PH_GOAT_HELD) \
+    X(PH_GOAT_SOLO) \
+    X(PH_THOUGHT_BLEND) \
+    X(PH_THOUGHT_HELD) \
+    X(PH_THOUGHT_SOLO) \
+    X(PH_CHOICE_BLEND) \
+    X(PH_CHOICE_HELD) \
+    X(PH_CHOICE_SOLO) \
+    X(PH_MOUTH_BLEND) \
+    X(PH_MOUTH_HELD) \
+    X(PH_MOUTH_SOLO) \
+    X(PH_FOOT_BLEND) \
+    X(PH_FOOT_HELD) \
+    X(PH_FOOT_SOLO) \
+    X(PH_GOOSE_BLEND) \
+    X(PH_GOOSE_HELD) \
+    X(PH_GOOSE_SOLO) \
+    X(PH_STRUT_BLEND) \
+    X(PH_STRUT_HELD) \
+    X(PH_STRUT_SOLO) \
+    X(PH_CURE_BLEND) \
+    X(PH_CURE_HELD) \
+    X(PH_CURE_SOLO) \
+    X(PH_NURSE_BLEND) \
+    X(PH_NURSE_HELD) \
+    X(PH_NURSE_SOLO) \
 
 // Create BGM list
 #define X(songId) static const u8 sBGMName_##songId[] = _(#songId);

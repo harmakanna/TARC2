@@ -1,0 +1,37 @@
+{
+  "id": "MAP_PAST_HOUSE1",
+  "name": "Past_House1",
+  "layout": "LAYOUT_PAST_HOUSE1",
+  "music": "MUS_DP_ETERNA_NIGHT",
+  "region_map_section": "MAPSEC_PORTO_BELLA_TOWN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "warp_id": "Past_House1_Exit_1",
+      "x": 8,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_PAST_TOWN",
+      "dest_warp_id": "Past_House1_Entrance"
+    },
+    {
+      "warp_id": "Past_House1_Exit_2",
+      "x": 9,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_PAST_TOWN",
+      "dest_warp_id": "Past_House1_Entrance"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

@@ -1,0 +1,203 @@
+{
+  "id": "MAP_PRESENT_TOWN",
+  "name": "PresentTown",
+  "layout": "LAYOUT_PRESENT_TOWN",
+  "music": "MUS_DP_SUNYSHORE_DAY",
+  "region_map_section": "MAPSEC_PORTO_BELLA_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_CITY",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_ADMIN_M",
+      "x": 15,
+      "y": 35,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "warp_id": "PEACE_FROM_CITY_ML",
+      "x": 15,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_SHRINE_OF_PEACE_PRESENT",
+      "dest_warp_id": "CITY_FROM_PEACE_M"
+    },
+    {
+      "warp_id": "PEACE_FROM_CITY_MR",
+      "x": 16,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_SHRINE_OF_PEACE_PRESENT",
+      "dest_warp_id": "CITY_FROM_PEACE_M"
+    },
+    {
+      "warp_id": "PEACE_FROM_CITY_R",
+      "x": 17,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_SHRINE_OF_PEACE_PRESENT",
+      "dest_warp_id": "CITY_FROM_PEACE_R"
+    },
+    {
+      "warp_id": "PEACE_FROM_CITY_L",
+      "x": 14,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_SHRINE_OF_PEACE_PRESENT",
+      "dest_warp_id": "CITY_FROM_PEACE_L"
+    },
+    {
+      "warp_id": "PROSPERITY_FROM_CITY_L",
+      "x": 60,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_SHRINE_OF_PROSPERITY_PRESENT",
+      "dest_warp_id": "CITY_FROM_PROSPERITY_L"
+    },
+    {
+      "warp_id": "PROSPERITY_FROM_CITY_ML",
+      "x": 61,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_SHRINE_OF_PROSPERITY_PRESENT",
+      "dest_warp_id": "CITY_FROM_PROSPERITY_M"
+    },
+    {
+      "warp_id": "PROSPERITY_FROM_CITY_MR",
+      "x": 62,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_SHRINE_OF_PROSPERITY_PRESENT",
+      "dest_warp_id": "CITY_FROM_PROSPERITY_M"
+    },
+    {
+      "warp_id": "PROSPERITY_FROM_CITY_R",
+      "x": 63,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_SHRINE_OF_PROSPERITY_PRESENT",
+      "dest_warp_id": "CITY_FROM_PROSPERITY_R"
+    },
+    {
+      "warp_id": "CITY_SCHOOL_ENTRANCE",
+      "x": 24,
+      "y": 34,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_SCHOOL",
+      "dest_warp_id": "CITY_SCHOOL_EXIT_1"
+    },
+    {
+      "warp_id": "Family_House_Entrance",
+      "x": 21,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_CONCERNED_FAMILY_HOUSE",
+      "dest_warp_id": "Family_House_Exit_1"
+    },
+    {
+      "warp_id": "AQUA_CORP_ENTRANCE",
+      "x": 15,
+      "y": 34,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_AQUA_CORP_HQ",
+      "dest_warp_id": "AQUA_CORP_EXIT_1"
+    },
+    {
+      "warp_id": "POKEMON_CENTER_ENTRANCE",
+      "x": 53,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_POKEMON_CENTER",
+      "dest_warp_id": "POKEMON_CENTER_EXIT"
+    },
+    {
+      "warp_id": "PRESENT_HOUSE1_ENTRANCE",
+      "x": 26,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_HOUSE1",
+      "dest_warp_id": "PRESENT_HOUSE1_EXIT_1"
+    },
+    {
+      "warp_id": "COMPLEX_ENTRANCE_1",
+      "x": 55,
+      "y": 33,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_COMPLEX",
+      "dest_warp_id": "COMPLEX_EXIT_1_1"
+    },
+    {
+      "warp_id": "COMPLEX_ENTRANCE_2",
+      "x": 59,
+      "y": 33,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_COMPLEX",
+      "dest_warp_id": "COMPLEX_EXIT_2_1"
+    },
+    {
+      "warp_id": "FLAT1_ENTRANCE",
+      "x": 18,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_FLAT1_1F",
+      "dest_warp_id": "FLAT1_1F_EXIT_1"
+    },
+    {
+      "warp_id": "FLAT2_ENTRANCE",
+      "x": 22,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_FLAT2_1F",
+      "dest_warp_id": "FLAT2_1F_EXIT_1"
+    },
+    {
+      "warp_id": "Present_House2_Entrance",
+      "x": 60,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_HOUSE2",
+      "dest_warp_id": "Present_House2_Exit_1"
+    },
+    {
+      "warp_id": "Present_CelebiSociety_Entrance",
+      "x": 33,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_CELEBI_SOCIETY",
+      "dest_warp_id": "Present_CelebiSociety_Exit_1"
+    },
+    {
+      "warp_id": "Present_City_Hall_Entrance_1",
+      "x": 42,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_CITY_HALL_1F",
+      "dest_warp_id": "Present_City_Hall_Exit_1"
+    },
+    {
+      "warp_id": "Present_City_Hall_Entrance_2",
+      "x": 43,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_CITY_HALL_1F",
+      "dest_warp_id": "Present_City_Hall_Exit_2"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

@@ -1,0 +1,45 @@
+{
+  "id": "MAP_PRESENT_COMPLEX_2F",
+  "name": "Present_Complex_2F",
+  "layout": "LAYOUT_PRESENT_COMPLEX_2F",
+  "music": "MUS_DP_SUNYSHORE_DAY",
+  "region_map_section": "MAPSEC_PORTO_BELLA_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "warp_id": "COMPLEX_1F_1",
+      "x": 2,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_COMPLEX",
+      "dest_warp_id": "COMPLEX_2F_1"
+    },
+    {
+      "warp_id": "COMPLEX_1F_2",
+      "x": 39,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_COMPLEX",
+      "dest_warp_id": "COMPLEX_2F_2"
+    },
+    {
+      "warp_id": "COMPLEX_1F_3",
+      "x": 19,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_COMPLEX",
+      "dest_warp_id": "COMPLEX_2F_3"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

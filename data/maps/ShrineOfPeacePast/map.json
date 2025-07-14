@@ -1,0 +1,59 @@
+{
+  "id": "MAP_SHRINE_OF_PEACE_PAST",
+  "name": "ShrineOfPeacePast",
+  "layout": "LAYOUT_SHRINE_OF_PEACE_PAST",
+  "music": "MUS_DP_ETERNA_FOREST",
+  "region_map_section": "MAPSEC_SHRINE_OF_PEACE",
+  "requires_flash": false,
+  "weather": "WEATHER_SHADE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CELEBI)",
+      "x": 14,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ShrineOfPeacePast_Script_Celebi",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "warp_id": "TOWN_FROM_PEACE_L",
+      "x": 13,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_PAST_TOWN",
+      "dest_warp_id": "PEACE_FROM_TOWN_ML"
+    },
+    {
+      "warp_id": "TOWN_FROM_PEACE_M",
+      "x": 14,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_PAST_TOWN",
+      "dest_warp_id": "PEACE_FROM_TOWN_ML"
+    },
+    {
+      "warp_id": "TOWN_FROM_PEACE_R",
+      "x": 15,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_PAST_TOWN",
+      "dest_warp_id": "PEACE_FROM_TOWN_MR"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

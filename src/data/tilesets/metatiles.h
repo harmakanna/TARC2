@@ -207,3 +207,16 @@ const u16 gMetatileAttributes_MysteryEventsHouse[] = INCBIN_U16("data/tilesets/s
 
 const u16 gMetatiles_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/union_room/metatiles.bin");
 const u16 gMetatileAttributes_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/union_room/metatile_attributes.bin");
+
+const u16 gMetatiles_SmallTownWithLab[] = INCBIN_U16("data/tilesets/secondary/small_town_with_lab/metatiles.bin");
+const u16 gMetatileAttributes_SmallTownWithLab[] = INCBIN_U16("data/tilesets/secondary/small_town_with_lab/metatile_attributes.bin");
+
+const u16 gMetatiles_lozinterior[] = INCBIN_U16("data/tilesets/secondary/lozinterior/metatiles.bin");
+const u16 gMetatileAttributes_lozinterior[] = INCBIN_U16("data/tilesets/secondary/lozinterior/metatile_attributes.bin");
+
+
+const u16 gMetatiles_LugiaShrine[] = INCBIN_U16("data/tilesets/secondary/lugia_shrine/metatiles.bin");
+const u16 gMetatileAttributes_LugiaShrine[] = INCBIN_U16("data/tilesets/secondary/lugia_shrine/metatile_attributes.bin");
+
+const u16 gMetatiles_PokeCenterAlt[] = INCBIN_U16("data/tilesets/secondary/poke_center_alt/metatiles.bin");
+const u16 gMetatileAttributes_PokeCenterAlt[] = INCBIN_U16("data/tilesets/secondary/poke_center_alt/metatile_attributes.bin");

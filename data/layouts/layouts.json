@@ -4410,6 +4410,296 @@
       "secondary_tileset": "gTileset_MysteryEventsHouse",
       "border_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/border.bin",
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_TOWN",
+      "name": "PresentTown_Layout",
+      "width": 72,
+      "height": 50,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/PresentTown/border.bin",
+      "blockdata_filepath": "data/layouts/PresentTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_PAST_TOWN",
+      "name": "PastTown_Layout",
+      "width": 57,
+      "height": 42,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SmallTownWithLab",
+      "border_filepath": "data/layouts/PastTown/border.bin",
+      "blockdata_filepath": "data/layouts/PastTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_SHRINE_OF_PEACE_PRESENT",
+      "name": "ShrineOfPeacePresent_Layout",
+      "width": 28,
+      "height": 27,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_LugiaShrine",
+      "border_filepath": "data/layouts/ShrineOfPeacePresent/border.bin",
+      "blockdata_filepath": "data/layouts/ShrineOfPeacePresent/map.bin"
+    },
+    {
+      "id": "LAYOUT_SHRINE_OF_PEACE_PAST",
+      "name": "ShrineOfPeacePast_Layout",
+      "width": 28,
+      "height": 27,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_LugiaShrine",
+      "border_filepath": "data/layouts/ShrineOfPeacePast/border.bin",
+      "blockdata_filepath": "data/layouts/ShrineOfPeacePast/map.bin"
+    },
+    {
+      "id": "LAYOUT_SHRINE_OF_PROSPERITY_PRESENT",
+      "name": "ShrineOfProsperityPresent_Layout",
+      "width": 28,
+      "height": 27,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_LugiaShrine",
+      "border_filepath": "data/layouts/ShrineOfProsperityPresent/border.bin",
+      "blockdata_filepath": "data/layouts/ShrineOfProsperityPresent/map.bin"
+    },
+    {
+      "id": "LAYOUT_SHRINE_OF_PROSPERITY_PAST",
+      "name": "ShrineOfProsperityPast_Layout",
+      "width": 28,
+      "height": 27,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_LugiaShrine",
+      "border_filepath": "data/layouts/ShrineOfProsperityPast/border.bin",
+      "blockdata_filepath": "data/layouts/ShrineOfProsperityPast/map.bin"
+    },
+    {
+      "id": "LAYOUT_CUTSCENE_FOREST",
+      "name": "CutsceneForest_Layout",
+      "width": 21,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_LugiaShrine",
+      "border_filepath": "data/layouts/CutsceneForest/border.bin",
+      "blockdata_filepath": "data/layouts/CutsceneForest/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_SCHOOL",
+      "name": "Present_School_Layout",
+      "width": 16,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonSchool",
+      "border_filepath": "data/layouts/Present_School/border.bin",
+      "blockdata_filepath": "data/layouts/Present_School/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_CONCERNED_FAMILY_HOUSE",
+      "name": "Present_Concerned_Family_House_Layout",
+      "width": 14,
+      "height": 7,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Present_Concerned_Family_House/border.bin",
+      "blockdata_filepath": "data/layouts/Present_Concerned_Family_House/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_CONCERNED_FAMILY_HOUSE_2F",
+      "name": "Present_Concerned_Family_House_2F_Layout",
+      "width": 14,
+      "height": 7,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Present_Concerned_Family_House_2F/border.bin",
+      "blockdata_filepath": "data/layouts/Present_Concerned_Family_House_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_AQUA_CORP_HQ",
+      "name": "Present_AquaCorpHQ_Layout",
+      "width": 14,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/Present_AquaCorpHQ/border.bin",
+      "blockdata_filepath": "data/layouts/Present_AquaCorpHQ/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_POKEMON_CENTER",
+      "name": "Present_PokemonCenter_Layout",
+      "width": 15,
+      "height": 13,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokeCenterAlt",
+      "border_filepath": "data/layouts/Present_PokemonCenter/border.bin",
+      "blockdata_filepath": "data/layouts/Present_PokemonCenter/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_HOUSE1",
+      "name": "Present_House1_Layout",
+      "width": 17,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Present_House1/border.bin",
+      "blockdata_filepath": "data/layouts/Present_House1/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_COMPLEX",
+      "name": "Present_Complex_Layout",
+      "width": 42,
+      "height": 13,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Present_Complex/border.bin",
+      "blockdata_filepath": "data/layouts/Present_Complex/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_COMPLEX_2F",
+      "name": "Present_Complex_2F_Layout",
+      "width": 42,
+      "height": 13,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Present_Complex_2F/border.bin",
+      "blockdata_filepath": "data/layouts/Present_Complex_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_FLAT1_2F",
+      "name": "Present_Flat1_2F_Layout",
+      "width": 10,
+      "height": 7,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Present_Flat1_2F/border.bin",
+      "blockdata_filepath": "data/layouts/Present_Flat1_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_FLAT1_1F",
+      "name": "Present_Flat1_1F_Layout",
+      "width": 10,
+      "height": 7,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Present_Flat1_1F/border.bin",
+      "blockdata_filepath": "data/layouts/Present_Flat1_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_FLAT2_1F",
+      "name": "Present_Flat2_1F_Layout",
+      "width": 10,
+      "height": 7,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Present_Flat2_1F/border.bin",
+      "blockdata_filepath": "data/layouts/Present_Flat2_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_FLAT2_2F",
+      "name": "Present_Flat2_2F_Layout",
+      "width": 10,
+      "height": 7,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Present_Flat2_2F/border.bin",
+      "blockdata_filepath": "data/layouts/Present_Flat2_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_HOUSE2",
+      "name": "Present_House2_Layout",
+      "width": 12,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Present_House2/border.bin",
+      "blockdata_filepath": "data/layouts/Present_House2/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_CELEBI_SOCIETY",
+      "name": "Present_Celebi_Society_Layout",
+      "width": 15,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PrettyPetalFlowerShop",
+      "border_filepath": "data/layouts/Present_Celebi_Society/border.bin",
+      "blockdata_filepath": "data/layouts/Present_Celebi_Society/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_CITY_HALL_1F",
+      "name": "Present_CityHall_1F_Layout",
+      "width": 18,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/Present_CityHall_1F/border.bin",
+      "blockdata_filepath": "data/layouts/Present_CityHall_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_CITY_HALL_2F_RANGER",
+      "name": "Present_CityHall_2F_Ranger_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/Present_CityHall_2F_Ranger/border.bin",
+      "blockdata_filepath": "data/layouts/Present_CityHall_2F_Ranger/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_CITY_HALL_2F_OFFICE",
+      "name": "Present_CityHall_2F_Office_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/Present_CityHall_2F_Office/border.bin",
+      "blockdata_filepath": "data/layouts/Present_CityHall_2F_Office/map.bin"
+    },
+    {
+      "id": "LAYOUT_PAST_HOUSE1",
+      "name": "Past_House1_Layout",
+      "width": 12,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_lozinterior",
+      "border_filepath": "data/layouts/Past_House1/border.bin",
+      "blockdata_filepath": "data/layouts/Past_House1/map.bin"
+    },
+    {
+      "id": "LAYOUT_PAST_HOUSE2",
+      "name": "Past_House2_Layout",
+      "width": 15,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_lozinterior",
+      "border_filepath": "data/layouts/Past_House2/border.bin",
+      "blockdata_filepath": "data/layouts/Past_House2/map.bin"
+    },
+    {
+      "id": "LAYOUT_PAST_HOUSE3",
+      "name": "Past_House3_Layout",
+      "width": 10,
+      "height": 6,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_lozinterior",
+      "border_filepath": "data/layouts/Past_House3/border.bin",
+      "blockdata_filepath": "data/layouts/Past_House3/map.bin"
+    },
+    {
+      "id": "LAYOUT_PAST_CELEBI_SOCIETY",
+      "name": "Past_CelebiSociety_Layout",
+      "width": 20,
+      "height": 12,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_lozinterior",
+      "border_filepath": "data/layouts/Past_CelebiSociety/border.bin",
+      "blockdata_filepath": "data/layouts/Past_CelebiSociety/map.bin"
+    },
+    {
+      "id": "LAYOUT_PAST_TOWN_HALL",
+      "name": "Past_TownHall_Layout",
+      "width": 20,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_lozinterior",
+      "border_filepath": "data/layouts/Past_TownHall/border.bin",
+      "blockdata_filepath": "data/layouts/Past_TownHall/map.bin"
     }
   ]
 }

@@ -1,0 +1,45 @@
+{
+  "id": "MAP_SHRINE_OF_PROSPERITY_PRESENT",
+  "name": "ShrineOfProsperityPresent",
+  "layout": "LAYOUT_SHRINE_OF_PROSPERITY_PRESENT",
+  "music": "MUS_DP_ETERNA_FOREST",
+  "region_map_section": "MAPSEC_SHRINE_OF_PROSPERITY",
+  "requires_flash": false,
+  "weather": "WEATHER_RAIN_THUNDERSTORM",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "warp_id": "CITY_FROM_PROSPERITY_L",
+      "x": 11,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_TOWN",
+      "dest_warp_id": "PROSPERITY_FROM_CITY_ML"
+    },
+    {
+      "warp_id": "CITY_FROM_PROSPERITY_M",
+      "x": 12,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_TOWN",
+      "dest_warp_id": "PROSPERITY_FROM_CITY_MR"
+    },
+    {
+      "warp_id": "CITY_FROM_PROSPERITY_R",
+      "x": 13,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_TOWN",
+      "dest_warp_id": "PROSPERITY_FROM_CITY_MR"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

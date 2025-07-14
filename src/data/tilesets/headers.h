@@ -830,3 +830,48 @@ const struct Tileset gTileset_UnionRoom =
     .metatileAttributes = gMetatileAttributes_UnionRoom,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_SmallTownWithLab =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_SmallTownWithLab,
+    .palettes = gTilesetPalettes_SmallTownWithLab,
+    .metatiles = gMetatiles_SmallTownWithLab,
+    .metatileAttributes = gMetatileAttributes_SmallTownWithLab,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_lozinterior =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_lozinterior,
+    .palettes = gTilesetPalettes_lozinterior,
+    .metatiles = gMetatiles_lozinterior,
+    .metatileAttributes = gMetatileAttributes_lozinterior,
+    .callback = NULL,
+};
+
+
+const struct Tileset gTileset_LugiaShrine =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_LugiaShrine,
+    .palettes = gTilesetPalettes_LugiaShrine,
+    .metatiles = gMetatiles_LugiaShrine,
+    .metatileAttributes = gMetatileAttributes_LugiaShrine,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_PokeCenterAlt =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_PokeCenterAlt,
+    .palettes = gTilesetPalettes_PokeCenterAlt,
+    .metatiles = gMetatiles_PokeCenterAlt,
+    .metatileAttributes = gMetatileAttributes_PokeCenterAlt,
+    .callback = NULL,
+};

@@ -1157,3 +1157,61 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
 	.include "data/scripts/dexnav.inc"
+
+	.include "data/maps/PresentTown/scripts.inc"
+
+	.include "data/maps/PastTown/scripts.inc"
+
+	.include "data/maps/ShrineOfPeacePresent/scripts.inc"
+
+	.include "data/maps/ShrineOfPeacePast/scripts.inc"
+
+	.include "data/maps/ShrineOfProsperityPresent/scripts.inc"
+
+	.include "data/maps/ShrineOfProsperityPast/scripts.inc"
+
+	.include "data/maps/CutsceneForest/scripts.inc"
+
+	.include "data/maps/Present_School/scripts.inc"
+
+	.include "data/maps/Present_Concerned_Family_House/scripts.inc"
+
+	.include "data/maps/Present_Concerned_Family_House_2F/scripts.inc"
+
+	.include "data/maps/Present_AquaCorpHQ/scripts.inc"
+
+	.include "data/maps/Present_PokemonCenter/scripts.inc"
+
+	.include "data/maps/Present_House1/scripts.inc"
+
+	.include "data/maps/Present_Complex/scripts.inc"
+
+	.include "data/maps/Present_Complex_2F/scripts.inc"
+
+	.include "data/maps/Present_Flat1_2F/scripts.inc"
+
+	.include "data/maps/Present_Flat1_1F/scripts.inc"
+
+	.include "data/maps/Present_Flat2_1F/scripts.inc"
+
+	.include "data/maps/Present_Flat2_2F/scripts.inc"
+
+	.include "data/maps/Present_House2/scripts.inc"
+
+	.include "data/maps/Present_Celebi_Society/scripts.inc"
+
+	.include "data/maps/Present_CityHall_1F/scripts.inc"
+
+	.include "data/maps/Present_CityHall_2F_Ranger/scripts.inc"
+
+	.include "data/maps/Present_CityHall_2F_Office/scripts.inc"
+
+	.include "data/maps/Past_House1/scripts.inc"
+
+	.include "data/maps/Past_House2/scripts.inc"
+
+	.include "data/maps/Past_House3/scripts.inc"
+
+	.include "data/maps/Past_CelebiSociety/scripts.inc"
+
+	.include "data/maps/Past_TownHall/scripts.inc"

@@ -780,11 +780,15 @@
 #define METATILE_Underwater_RockWall     0x21E
 
 // Other
-#define METATILE_RSMossdeepGym_RedArrow_Down   0x205
-#define METATILE_RSMossdeepGym_RedArrow_Left   0x20C
-#define METATILE_RSMossdeepGym_RedArrow_Right  0x204
-#define METATILE_RSMossdeepGym_RedArrow_Up     0x20D
-#define METATILE_RSMossdeepGym_Switch_Down     0x239
-#define METATILE_RSMossdeepGym_Switch_Up       0x238
+#define METATILE_PortoBellaTown_Door_ChimneyLeft   0x310
+#define METATILE_PortoBellaTown_Door_ChimneyRight  0x211
+#define METATILE_PortoBellaTown_Door_Glass         0x311
+#define METATILE_PortoBellaTown_Door_Wood          0x269
+#define METATILE_RSMossdeepGym_RedArrow_Down       0x205
+#define METATILE_RSMossdeepGym_RedArrow_Left       0x20C
+#define METATILE_RSMossdeepGym_RedArrow_Right      0x204
+#define METATILE_RSMossdeepGym_RedArrow_Up         0x20D
+#define METATILE_RSMossdeepGym_Switch_Down         0x239
+#define METATILE_RSMossdeepGym_Switch_Up           0x238
 
 #endif // GUARD_METATILE_LABELS_H
