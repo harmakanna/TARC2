@@ -425,12 +425,56 @@ static void HandleInputChooseAction(u32 battler)
     }
     else if (JOY_NEW(L_BUTTON))
     {
-        
+        if(IsBattlerAlive(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT)))
+        {
+            PlaySE(SE_SELECT);
+            CreateMovePreviewText(B_POSITION_OPPONENT_RIGHT);
+        }
     }
     else if (JOY_NEW(R_BUTTON))
     {
-        
+        if(IsBattlerAlive(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT)))
+        {
+            PlaySE(SE_SELECT);
+            CreateMovePreviewText(B_POSITION_OPPONENT_LEFT);
+        }
     }
+}
+
+void CreateMovePreviewText(u8 battlerPosition)
+{       
+        StringCopy(gStringVar1, GetSpeciesName(GetMonData(GetBattlerMon(GetBattlerAtPosition(battlerPosition)), MON_DATA_SPECIES, NULL)));
+        StringAppend(gStringVar1, COMPOUND_STRING(" will use:\n"));
+        u32 move = gBattleMons[battlerPosition].moves[gBattleStruct->chosenMovePositions[battlerPosition]];
+        StringAppend(gStringVar1, GetMoveName(move));
+        u32 moveTarget = GetBattlerMoveTargetType(battlerPosition, move);
+        if (moveTarget == MOVE_TARGET_SELECTED)
+        {
+            if (gAiBattleData->chosenTarget[battlerPosition] == B_POSITION_OPPONENT_LEFT)
+                StringAppend(gStringVar1, COMPOUND_STRING(" -{UP_ARROW}"));
+            else if (gAiBattleData->chosenTarget[battlerPosition] == B_POSITION_OPPONENT_RIGHT)
+                StringAppend(gStringVar1, COMPOUND_STRING(" {UP_ARROW}-"));
+            else if (gAiBattleData->chosenTarget[battlerPosition] == B_POSITION_PLAYER_LEFT)
+                StringAppend(gStringVar1, COMPOUND_STRING(" {DOWN_ARROW}-"));
+            else if (gAiBattleData->chosenTarget[battlerPosition] == B_POSITION_PLAYER_RIGHT)
+                StringAppend(gStringVar1, COMPOUND_STRING(" {DOWN_ARROW}-"));
+        }
+        else if (moveTarget == MOVE_TARGET_BOTH)
+        {
+            StringAppend(gStringVar1, COMPOUND_STRING(" {DOWN_ARROW}{DOWN_ARROW}"));
+        }
+        else if (moveTarget == MOVE_TARGET_FOES_AND_ALLY)
+        {
+            if (battlerPosition == B_POSITION_OPPONENT_LEFT)
+                StringAppend(gStringVar1, COMPOUND_STRING(" {V_D_ARROW}{DOWN_ARROW}"));
+            else if(battlerPosition == B_POSITION_OPPONENT_RIGHT)
+                StringAppend(gStringVar1, COMPOUND_STRING(" {DOWN_ARROW}{V_D_ARROW}"));
+        }
+        else if (moveTarget == MOVE_TARGET_ALL_BATTLERS)
+        {
+            StringAppend(gStringVar1, COMPOUND_STRING(" {V_D_ARROW}{V_D_ARROW}"));
+        }
+        BattlePutTextOnWindow(gStringVar1, B_WIN_ACTION_PROMPT);
 }
 
 void HandleInputChooseTarget(u32 battler)
@@ -2111,40 +2155,6 @@ static void PlayerHandleChooseAction(u32 battler)
     {
         BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_ACTION_PROMPT);
     }
-}
-
-static void UpdateWindowText(u32 battler)
-{
-    u8 opponent1Position;
-    u8 opponent2Position;
-
-    u32 move = gBattleMons[opponent1Position].moves[gBattleStruct->chosenMovePositions[opponent1Position]];
-    StringAppend(gStringVar1, GetMoveName(move));
-    u32 moveTarget = GetBattlerMoveTargetType(opponent1Position, move);
-    if (moveTarget == MOVE_TARGET_SELECTED)
-    {
-        if (gAiBattleData->chosenTarget[opponent1Position] == B_POSITION_OPPONENT_LEFT)
-            StringAppend(gStringVar1, COMPOUND_STRING(" -{UP_ARROW}"));
-        else if (gAiBattleData->chosenTarget[B_POSITION_PLAYER_RIGHT] == B_POSITION_OPPONENT_RIGHT)
-            StringAppend(gStringVar1, COMPOUND_STRING(" {UP_ARROW}-"));
-        else if (gAiBattleData->chosenTarget[B_POSITION_PLAYER_RIGHT] == B_POSITION_PLAYER_LEFT)
-            StringAppend(gStringVar1, COMPOUND_STRING(" {DOWN_ARROW}-"));
-        else if (gAiBattleData->chosenTarget[B_POSITION_PLAYER_RIGHT] == B_POSITION_PLAYER_RIGHT)
-            StringAppend(gStringVar1, COMPOUND_STRING(" {DOWN_ARROW}-"));
-    }
-    else if (moveTarget == MOVE_TARGET_BOTH)
-    {
-        StringAppend(gStringVar1, COMPOUND_STRING(" {UP_ARROW}{UP_ARROW}"));
-    }
-    else if (moveTarget == MOVE_TARGET_FOES_AND_ALLY)
-    {
-        StringAppend(gStringVar1, COMPOUND_STRING(" {V_D_ARROW}{UP_ARROW}"));
-    }
-    else if (moveTarget == MOVE_TARGET_ALL_BATTLERS)
-    {
-        StringAppend(gStringVar1, COMPOUND_STRING(" {V_D_ARROW}{V_D_ARROW}"));
-    }
-    BattleStringExpandPlaceholdersToDisplayedString(gText_WhatWillPkmnDo);
 }
 
 static void PlayerHandleYesNoBox(u32 battler)
