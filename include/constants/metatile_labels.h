@@ -779,6 +779,14 @@
 #define METATILE_Underwater_FloorShadow  0x228
 #define METATILE_Underwater_RockWall     0x21E
 
+//gTileset_small_town_with_lab
+
+#define METATILE_PortoBellaTown_Door_ChimneyLeft 0x310
+#define METATILE_PortoBellaTown_Door_ChimneyRight 0x211
+#define METATILE_PortoBellaTown_Door_Wood 0x269
+#define METATILE_PortoBellaTown_Door_Glass 0x311
+
+
 // Other
 #define METATILE_RSMossdeepGym_RedArrow_Down   0x205
 #define METATILE_RSMossdeepGym_RedArrow_Left   0x20C
