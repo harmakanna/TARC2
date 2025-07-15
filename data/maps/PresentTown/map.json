@@ -15,17 +15,46 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_AQUA_ADMIN_M",
-      "x": 15,
-      "y": 35,
+      "local_id": "LOCALID_ANABEL",
+      "graphics_id": "OBJ_EVENT_GFX_ANABEL",
+      "x": 49,
+      "y": 40,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_HIDE_ANABEL_PRESENTTOWN"
+    },
+    {
+      "local_id": "LOCALID_MATT",
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_ADMIN_M",
+      "x": 15,
+      "y": 35,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PresentTown_EventScript_Matt",
+      "flag": "FLAG_HIDE_MATT_OUTSIDE"
+    },
+    {
+      "local_id": "LOCALID_PRESENTTOWN_GRUNT",
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
+      "x": 16,
+      "y": 35,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PresentTown_EventScript_AquaMemberF",
+      "flag": "FLAG_HIDE_AQUA_GRUNT_OUTSIDE"
     }
   ],
   "warp_events": [
@@ -198,6 +227,25 @@
       "dest_warp_id": "Present_City_Hall_Exit_2"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 28,
+      "elevation": 0,
+      "var": "VAR_PORTO_BELLA_CITY_STATE",
+      "var_value": "1",
+      "script": "PresentTown_EventScript_StartStorm"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_PORTO_BELLA_CITY_STATE",
+      "var_value": "1",
+      "script": "PresentTown_EventScript_StartStorm"
+    }
+  ],
   "bg_events": []
 }

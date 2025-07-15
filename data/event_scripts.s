@@ -757,6 +757,10 @@ Common_EventScript_SetAbnormalWeather::
 	setweather WEATHER_ABNORMAL
 	return
 
+Common_EventScript_SetStormWeather::
+	setweather WEATHER_RAIN_THUNDERSTORM
+	return
+
 Common_EventScript_PlayGymBadgeFanfare::
 	playfanfare MUS_OBTAIN_BADGE
 	waitfanfare
