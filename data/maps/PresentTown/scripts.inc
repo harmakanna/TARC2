@@ -10,8 +10,14 @@ PresentTown_OnLoad:
 
 PresentTown_OnTransition:
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetStormWeather
+	call_if_set FLAG_TALKED_TO_MATT_OUTSIDE, PresentTown_EventScript_AquaMemberFPositioning
 	end
 
+PresentTown_EventScript_AquaMemberFPositioning::
+	setobjectxyperm LOCALID_PRESENTTOWN_GRUNT, 15, 35
+	setobjectmovementtype LOCALID_PRESENTTOWN_GRUNT, MOVEMENT_TYPE_FACE_UP
+	return
+	
 PresentTown_EventScript_StartStorm1::
 	lockall
 	clearflag FLAG_HIDE_PORTO_BELLA_WILD_MONS
