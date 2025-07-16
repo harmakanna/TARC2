@@ -170,18 +170,10 @@
     {
       "warp_id": "Present_City_Hall_Entrance_1",
       "x": 42,
-      "y": 24,
+      "y": 25,
       "elevation": 0,
       "dest_map": "MAP_PRESENT_CITY_HALL_1F",
       "dest_warp_id": "Present_City_Hall_Exit_1"
-    },
-    {
-      "warp_id": "Present_City_Hall_Entrance_2",
-      "x": 43,
-      "y": 24,
-      "elevation": 0,
-      "dest_map": "MAP_PRESENT_CITY_HALL_1F",
-      "dest_warp_id": "Present_City_Hall_Exit_2"
     }
   ],
   "coord_events": [],

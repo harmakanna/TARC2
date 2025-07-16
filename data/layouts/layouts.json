@@ -4417,7 +4417,7 @@
       "width": 72,
       "height": 50,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Rustboro",
+      "secondary_tileset": "gTileset_PresentTown",
       "border_filepath": "data/layouts/PresentTown/border.bin",
       "blockdata_filepath": "data/layouts/PresentTown/map.bin"
     },

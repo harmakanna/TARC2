@@ -37,7 +37,7 @@
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_PRESENT_TOWN",
-      "dest_warp_id": "Present_City_Hall_Entrance_2"
+      "dest_warp_id": "Present_City_Hall_Entrance_1"
     },
     {
       "warp_id": "Present_CityHall_Lobby_Stair1",
