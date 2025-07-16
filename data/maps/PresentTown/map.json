@@ -15,12 +15,12 @@
   "connections": null,
   "object_events": [
     {
-      "local_id": "LOCALID_ANABEL",
+      "local_id": "LOCALID_PRESENTTOWN_ANABEL",
       "graphics_id": "OBJ_EVENT_GFX_ANABEL",
-      "x": 49,
-      "y": 40,
+      "x": 44,
+      "y": 25,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -29,7 +29,7 @@
       "flag": "FLAG_HIDE_ANABEL_PRESENTTOWN"
     },
     {
-      "local_id": "LOCALID_MATT",
+      "local_id": "LOCALID_PRESENTTOWN_MATT",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_ADMIN_M",
       "x": 15,
       "y": 35,
@@ -55,6 +55,48 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PresentTown_EventScript_AquaMemberF",
       "flag": "FLAG_HIDE_AQUA_GRUNT_OUTSIDE"
+    },
+    {
+      "local_id": "LOCALID_PRESENTTOWN_WILDMON1",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ABSOL)",
+      "x": 0,
+      "y": 0,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_PORTO_BELLA_WILD_MONS"
+    },
+    {
+      "local_id": "LOCALID_PRESENTTOWN_WILDMON2",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ELECTRIKE)",
+      "x": 0,
+      "y": 0,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_PORTO_BELLA_WILD_MONS"
+    },
+    {
+      "local_id": "LOCALID_PRESENTTOWN_WILDMON3",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ELECTRIKE)",
+      "x": 0,
+      "y": 0,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_PORTO_BELLA_WILD_MONS"
     }
   ],
   "warp_events": [
@@ -230,21 +272,21 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 32,
+      "x": 28,
       "y": 28,
       "elevation": 0,
       "var": "VAR_PORTO_BELLA_CITY_STATE",
       "var_value": "1",
-      "script": "PresentTown_EventScript_StartStorm"
+      "script": "PresentTown_EventScript_StartStorm2"
     },
     {
       "type": "trigger",
-      "x": 32,
+      "x": 28,
       "y": 27,
       "elevation": 0,
       "var": "VAR_PORTO_BELLA_CITY_STATE",
       "var_value": "1",
-      "script": "PresentTown_EventScript_StartStorm"
+      "script": "PresentTown_EventScript_StartStorm1"
     }
   ],
   "bg_events": []

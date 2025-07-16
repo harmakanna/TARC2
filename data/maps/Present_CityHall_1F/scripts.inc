@@ -1,2 +1,19 @@
 Present_CityHall_1F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Present_CityHall_1F_EventScript_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Present_CityHall_1F_EventScript_OnFrame
 	.byte 0
+
+Present_CityHall_1F_EventScript_OnTransition::
+	setobjectxyperm LOCALID_CITYHALL_1F_ANABEL, 9, 8
+	setobjectmovementtype LOCALID_CITYHALL_1F_ANABEL, MOVEMENT_TYPE_FACE_UP
+	end
+
+Present_CityHall_1F_EventScript_OnFrame::
+	call_if_eq VAR_CUTSCENE_STATE, 1, Present_CityHall_1F_EventScript_PostStormDiscussion
+	end
+
+Present_CityHall_1F_EventScript_PostStormDiscussion::
+	lockall
+	setvar VAR_CUTSCENE_STATE, 0
+	releaseall
+	end

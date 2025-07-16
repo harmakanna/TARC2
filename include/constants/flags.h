@@ -43,17 +43,17 @@
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
-#define FLAG_TALKED_TO_MATT_OUTSIDE    0x20
-#define FLAG_MET_CELEBI                0x21 // Unused Flag
-#define FLAG_HIDE_OUTSIDE_NPCS         0x22 // Unused Flag
-#define FLAG_HIDE_INSIDE_OUTSIDE_NPCS  0x23 // Unused Flag
-#define FLAG_HIDE_RANGERS              0x24 // Unused Flag
-#define FLAG_HIDE_MATT_OUTSIDE         0x25 // Unused Flag
-#define FLAG_HIDE_AQUA_GRUNT_OUTSIDE   0x26 // Unused Flag
-#define FLAG_HIDE_ANABEL_PRESENTTOWN   0x27 // Unused Flag
-#define FLAG_HIDE_ANABEL_CITYHALL      0x28 // Unused Flag
-#define FLAG_HIDE_ANABEL_PASTTOWN      0x29 // Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
+#define FLAG_TALKED_TO_MATT_OUTSIDE        0x20
+#define FLAG_MET_CELEBI                    0x21 // Unused Flag
+#define FLAG_HIDE_OUTSIDE_NPCS             0x22 // Unused Flag
+#define FLAG_HIDE_INSIDE_OUTSIDE_NPCS      0x23 // Unused Flag
+#define FLAG_HIDE_RANGERS                  0x24 // Unused Flag
+#define FLAG_HIDE_MATT_OUTSIDE             0x25 // Unused Flag
+#define FLAG_HIDE_AQUA_GRUNT_OUTSIDE       0x26 // Unused Flag
+#define FLAG_HIDE_ANABEL_PRESENTTOWN       0x27 // Unused Flag
+#define FLAG_HIDE_ANABEL_CITYHALL          0x28 // Unused Flag
+#define FLAG_HIDE_ANABEL_PASTTOWN          0x29 // Unused Flag
+#define FLAG_HIDE_PORTO_BELLA_WILD_MONS    0x2A // Unused Flag
 #define FLAG_UNUSED_0x02B    0x2B // Unused Flag
 #define FLAG_UNUSED_0x02C    0x2C // Unused Flag
 #define FLAG_UNUSED_0x02D    0x2D // Unused Flag

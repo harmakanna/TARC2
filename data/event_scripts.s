@@ -758,7 +758,7 @@ Common_EventScript_SetAbnormalWeather::
 	return
 
 Common_EventScript_SetStormWeather::
-	setweather WEATHER_RAIN_THUNDERSTORM
+	setweather WEATHER_DOWNPOUR
 	return
 
 Common_EventScript_PlayGymBadgeFanfare::
