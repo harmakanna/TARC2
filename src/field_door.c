@@ -135,6 +135,8 @@ static const u8 sDoorAnimTiles_PortoBellaChimneyLeft[] = INCBIN_U8("graphics/doo
 static const u8 sDoorAnimTiles_PortoBellaChimneyRight[] = INCBIN_U8("graphics/door_anims/porto_bella_chimney_right.4bpp");
 static const u8 sDoorAnimTiles_PortoBellaWood[] = INCBIN_U8("graphics/door_anims/porto_bella_wood.4bpp");
 static const u8 sDoorAnimTiles_PortoBellaGlass[] = INCBIN_U8("graphics/door_anims/porto_bella_glass.4bpp");
+static const u8 sDoorAnimTiles_PortoBellaCity[] = INCBIN_U8("graphics/door_anims/porto_bella_city.4bpp");
+static const u8 sDoorAnimTiles_PortoBellaCitySlide[] = INCBIN_U8("graphics/door_anims/porto_bella_city_slide.4bpp");
 
 static const struct DoorAnimFrame sDoorOpenAnimFrames[] =
 {
@@ -227,6 +229,8 @@ static const u8 sDoorAnimPalettes_PortoBellaChimneyLeft[] = {7, 7, 7, 7, 6, 6, 6
 static const u8 sDoorAnimPalettes_PortoBellaChimneyRight[] = {7, 7, 7, 7, 6, 6, 6, 6};
 static const u8 sDoorAnimPalettes_PortoBellaWood[] = {6, 6, 6, 6, 6, 6, 6, 6};
 static const u8 sDoorAnimPalettes_PortoBellaGlass[] = {6, 6, 6, 6, 6, 6, 6, 6};
+static const u8 sDoorAnimPalettes_PortoBellaCity[] = {9, 9, 9, 9, 9, 9, 9, 9};
+static const u8 sDoorAnimPalettes_PortoBellaCitySlide[] = {9, 9, 9, 9, 9, 9, 9, 9};
 
 static const struct DoorGraphics sDoorAnimGraphicsTable[] =
 {
@@ -289,6 +293,8 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
     {METATILE_PortoBellaTown_Door_ChimneyRight,             DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_PortoBellaChimneyRight, sDoorAnimPalettes_PortoBellaChimneyRight},
     {METATILE_PortoBellaTown_Door_Wood,                     DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_PortoBellaWood, sDoorAnimPalettes_PortoBellaWood},
     {METATILE_PortoBellaTown_Door_Glass,                    DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_PortoBellaGlass, sDoorAnimPalettes_PortoBellaGlass},
+    {METATILE_PresentTown_Porto_Bella_City_Door,            DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_PortoBellaCity, sDoorAnimPalettes_PortoBellaCity},
+    {METATILE_PortoBellaCity_Door_Slide,                    DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_PortoBellaCitySlide, sDoorAnimPalettes_PortoBellaCitySlide},
 };
 
 // NOTE: The tiles of a door's animation must be copied to VRAM because they are not already part of any given tileset.
