@@ -62,7 +62,7 @@ PresentTown_EventScript_StartStorm::
 	msgbox PresentTown_Text_AnabelDidYouGetTheChance, MSGBOX_DEFAULT
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	msgbox PresentTown_Text_LookerObstinate, MSGBOX_DEFAULT
-	applymovement LOCALID_PRESENTTOWN_ANABEL, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PRESENTTOWN_ANABEL, Common_Movement_WalkInPlaceFasterLeft
 	msgbox PresentTown_Text_AnabelUnderstood, MSGBOX_DEFAULT
 	closemessage
 	playse SE_PIN
