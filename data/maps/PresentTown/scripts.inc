@@ -4,9 +4,29 @@ PresentTown_MapScripts::
 	.byte 0
 
 PresentTown_OnLoad:
+	call_if_unset FLAG_LOOKER_STARTERS, PresentTown_EventScript_GiveLookerStarters
+	call_if_set FLAG_LOCK_CITY_DOORS, PresentTown_EventScript_LockCityDoors
+	end
+
+@ debug script so Looker isn't flooded with Growlithe and Toxicroak 
+PresentTown_EventScript_GiveLookerStarters::
 	givemon SPECIES_GROWLITHE, 48
 	givemon SPECIES_TOXICROAK, 48
-	end
+	return 
+
+PresentTown_EventScript_LockCityDoors::
+	setmetatile 26, 12, METATILE_PresentTown_Locked_Door, TRUE
+	setmetatile 32, 12, METATILE_PresentTown_Locked_Door, TRUE
+	setmetatile 21, 16, METATILE_PresentTown_Locked_Door, TRUE
+	setmetatile 18, 26, METATILE_PresentTown_Locked_Door, TRUE
+	setmetatile 22, 26, METATILE_PresentTown_Locked_Door, TRUE
+	setmetatile 60, 26, METATILE_PresentTown_Locked_Door, TRUE
+	setmetatile 55, 33, METATILE_PresentTown_Locked_Door, TRUE
+	setmetatile 59, 33, METATILE_PresentTown_Locked_Door, TRUE
+	setmetatile 15, 34, METATILE_PresentTown_Locked_Door, TRUE
+	setmetatile 23, 34, METATILE_PresentTown_Locked_Door, TRUE
+	setmetatile 55, 18, METATILE_PresentTown_Locked_Gym_Door, TRUE
+	return
 
 PresentTown_OnTransition:
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetStormWeather
@@ -37,7 +57,13 @@ PresentTown_EventScript_StartStorm2::
 	end
 
 PresentTown_EventScript_StartStorm::
-	msgbox PresentTown_Text_AnabelTeamAquaResults, MSGBOX_DEFAULT
+	msgbox PresentTown_Text_AnabelLookerGreet, MSGBOX_DEFAULT
+	applymovement LOCALID_PRESENTTOWN_ANABEL, Common_Movement_WalkInPlaceFasterLeft
+	msgbox PresentTown_Text_AnabelDidYouGetTheChance, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	msgbox PresentTown_Text_LookerObstinate, MSGBOX_DEFAULT
+	applymovement LOCALID_PRESENTTOWN_ANABEL, Common_Movement_WalkInPlaceFasterRight
+	msgbox PresentTown_Text_AnabelUnderstood, MSGBOX_DEFAULT
 	closemessage
 	playse SE_PIN
 	applymovement LOCALID_PRESENTTOWN_ANABEL, PresentTown_Movement_AnabelLookAtStorm2
@@ -99,7 +125,9 @@ PresentTown_EventScript_StartStorm::
 	hideobjectat LOCALID_PRESENTTOWN_ANABEL, MAP_PRESENT_TOWN
 	hideobjectat LOCALID_PLAYER, 0
 	setflag FLAG_SYS_WEATHER_CTRL
+	setflag FLAG_LOCK_CITY_DOORS
 	setflag FLAG_HIDE_OUTSIDE_NPCS
+	setflag FLAG_HIDE_AQUA_GRUNT_OUTSIDE
 	setflag FLAG_HIDE_ANABEL_PRESENTTOWN
 	clearflag FLAG_HIDE_INSIDE_OUTSIDE_NPCS
 	clearflag FLAG_HIDE_RANGERS
@@ -223,12 +251,11 @@ PresentTown_Movement_AnabelWalkToPlayerBridge:
 	step_end
 
 PresentTown_Movement_LookerWalkAcrossBridge1:
-	walk_right
-	walk_right
-	walk_right
-	walk_right
 	walk_down
-	face_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	step_end
 
 PresentTown_Movement_LookerWalkAcrossBridge2:
@@ -253,6 +280,7 @@ PresentTown_Movement_AnabelLookAtStorm2:
 	delay_16
 	delay_16
 	walk_up
+	delay_16
 	step_end
 
 PresentTown_Movement_LookAtWildPokemon:
@@ -286,13 +314,10 @@ PresentTown_EventScript_Matt::
 	applymovement LOCALID_PRESENTTOWN_MATT, Common_Movement_Delay48
 	waitmovement 0
 	msgbox PresentTown_Text_MattWhoAreYou, MSGBOX_DEFAULT
-	closemessage
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	msgbox PresentTown_Text_LookerMyNameIs, MSGBOX_DEFAULT
-	closemessage
 	applymovement LOCALID_PRESENTTOWN_MATT, Common_Movement_WalkInPlaceFasterDown
 	msgbox PresentTown_Text_MattSeriously, MSGBOX_DEFAULT
-	closemessage
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	msgbox PresentTown_Text_LookerIWillNotJustScram, MSGBOX_DEFAULT
 	applymovement LOCALID_PRESENTTOWN_MATT, Common_Movement_WalkInPlaceFasterDown
@@ -302,11 +327,11 @@ PresentTown_EventScript_Matt::
 	applymovement LOCALID_PLAYER, PresentTown_Movement_LookerPushedByMatt
 	applymovement LOCALID_PRESENTTOWN_MATT, PresentTown_Movement_MattPushLooker
 	waitmovement 0
+	msgbox PresentTown_Text_LookerOuch, MSGBOX_DEFAULT
+	closemessage
 	playse SE_DOOR
 	opendoor 15, 34
 	waitdooranim
-	msgbox PresentTown_Text_LookerOuch, MSGBOX_DEFAULT
-	closemessage
 	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
 	applymovement LOCALID_PRESENTTOWN_MATT, PresentTown_Movement_MattEnterAquaCorp
 	waitmovement 0
@@ -378,16 +403,22 @@ PresentTown_EventScript_AquaMemberNowHesMad::
 PresentTown_Text_LookerOuch:
 	.string "Looker: Ouch!$"
 
-PresentTown_Text_AnabelTeamAquaResults:
+PresentTown_Text_AnabelLookerGreet:
 	.string "Anabel: Mr. Looker.\p"
-	.string "Looker: Ms. Anabel.\p"
+	.string "Looker: Ms. Anabel.$"
+
+PresentTown_Text_AnabelDidYouGetTheChance:
 	.string "Anabel: Did you get the chance\n"
 	.string "to speak with the new leader\l"
-	.string "of Team Aqua?\p"
+	.string "of Team Aqua?$"
+
+PresentTown_Text_LookerObstinate:
 	.string "Looker: Yes, Matt was rather\n"
 	.string "obstinate…\p"
 	.string "But I did not pick up on anything\n"
-	.string "peculiar from their new operation.\p"
+	.string "peculiar from their new operation.$"
+
+PresentTown_Text_AnabelUnderstood:
 	.string "Anabel: Understood.\p"
 	.string "I spoke with the mayor, and he has\n"
 	.string "a vacant office in City Hall we can\l"

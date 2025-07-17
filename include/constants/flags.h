@@ -55,8 +55,8 @@
 #define FLAG_HIDE_ANABEL_PASTTOWN          0x29 // Unused Flag
 #define FLAG_HIDE_PORTO_BELLA_WILD_MONS    0x2A // Unused Flag
 #define FLAG_HIDE_CITYHALL_1F_MAYOR        0x2B // Unused Flag
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
+#define FLAG_LOCK_CITY_DOORS               0x2C // Unused Flag
+#define FLAG_LOOKER_STARTERS               0x2D // Unused Flag
 #define FLAG_UNUSED_0x02E    0x2E // Unused Flag
 #define FLAG_UNUSED_0x02F    0x2F // Unused Flag
 #define FLAG_UNUSED_0x030    0x30 // Unused Flag
