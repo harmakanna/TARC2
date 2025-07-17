@@ -18,7 +18,7 @@
     {
       "warp_id": "POKEMON_CENTER_EXIT",
       "x": 7,
-      "y": 12,
+      "y": 11,
       "elevation": 0,
       "dest_map": "MAP_PRESENT_TOWN",
       "dest_warp_id": "POKEMON_CENTER_ENTRANCE"
