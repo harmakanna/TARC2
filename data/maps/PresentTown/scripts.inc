@@ -67,7 +67,6 @@ PresentTown_EventScript_StartStorm::
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0
 	msgbox PresentTown_Text_AnabelWhatTheHeck, MSGBOX_DEFAULT
-	closemessage
 	msgbox PresentTown_Text_LookerThereWasOneThing, MSGBOX_DEFAULT
 	closemessage
 	setobjectxyperm LOCALID_PRESENTTOWN_WILDMON1, 20, 27
@@ -84,15 +83,17 @@ PresentTown_EventScript_StartStorm::
 	applymovement LOCALID_CAMERA, PresentTown_Movement_CameraPanToWildPokemon
 	applymovement LOCALID_PRESENTTOWN_WILDMON1, PresentTown_Movement_WildMon12
 	applymovement LOCALID_PRESENTTOWN_WILDMON2, PresentTown_Movement_WildMon12
-	applymovement LOCALID_PRESENTTOWN_WILDMON3, PresentTown_Movement_WildMon12
+	applymovement LOCALID_PRESENTTOWN_WILDMON3, PresentTown_Movement_WildMon3
+	applymovement LOCALID_CAMERA, Common_Movement_Delay32
 	waitmovement 0
 	msgbox PresentTown_Text_AnabelLookOut, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_CAMERA, PresentTown_Movement_CameraPanToLookerRunning
-	waitmovement 0
-	special RemoveCameraObject
 	applymovement LOCALID_PRESENTTOWN_ANABEL, PresentTown_Movement_AnabelRunIntoCityHall
 	applymovement LOCALID_PLAYER, PresentTown_Movement_LookerRunIntoCityHall
+	applymovement LOCALID_PRESENTTOWN_WILDMON1, PresentTown_Movement_WildMon1Chase
+	applymovement LOCALID_PRESENTTOWN_WILDMON2, PresentTown_Movement_WildMon2Chase
+	applymovement LOCALID_PRESENTTOWN_WILDMON3, PresentTown_Movement_WildMon3Chase
+	applymovement LOCALID_CAMERA, Common_Movement_Delay48
 	waitmovement 0
 	playse SE_EXIT
 	hideobjectat LOCALID_PRESENTTOWN_ANABEL, MAP_PRESENT_TOWN
@@ -102,6 +103,8 @@ PresentTown_EventScript_StartStorm::
 	setflag FLAG_HIDE_ANABEL_PRESENTTOWN
 	clearflag FLAG_HIDE_INSIDE_OUTSIDE_NPCS
 	clearflag FLAG_HIDE_RANGERS
+	clearflag FLAG_HIDE_CITYHALL_1F_MAYOR
+	clearflag FLAG_HIDE_ANABEL_CITYHALL
 	setvar VAR_PORTO_BELLA_CITY_STATE, 2
 	setvar VAR_CUTSCENE_STATE, 1
 	warpsilent MAP_PRESENT_CITY_HALL_1F, 8, 8
@@ -167,6 +170,49 @@ PresentTown_Movement_WildMon3:
 	walk_right
 	walk_down
 	face_right
+	step_end
+
+PresentTown_Movement_WildMon1Chase:
+	delay_8
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	step_end
+
+PresentTown_Movement_WildMon2Chase:
+	delay_16
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	step_end
+
+PresentTown_Movement_WildMon3Chase:
+	delay_8
+	walk_fast_up
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
 	step_end
 
 PresentTown_Movement_AnabelWalkToPlayerBridge:
@@ -239,11 +285,29 @@ PresentTown_EventScript_Matt::
 	waitmovement 0
 	applymovement LOCALID_PRESENTTOWN_MATT, Common_Movement_Delay48
 	waitmovement 0
-	msgbox PresentTown_Text_MattTalkingToLooker, MSGBOX_DEFAULT
+	msgbox PresentTown_Text_MattWhoAreYou, MSGBOX_DEFAULT
 	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	msgbox PresentTown_Text_LookerMyNameIs, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PRESENTTOWN_MATT, Common_Movement_WalkInPlaceFasterDown
+	msgbox PresentTown_Text_MattSeriously, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	msgbox PresentTown_Text_LookerIWillNotJustScram, MSGBOX_DEFAULT
+	applymovement LOCALID_PRESENTTOWN_MATT, Common_Movement_WalkInPlaceFasterDown
+	msgbox PresentTown_Text_MattScrewOff, MSGBOX_DEFAULT
+	closemessage
+	playse SE_EFFECTIVE
+	applymovement LOCALID_PLAYER, PresentTown_Movement_LookerPushedByMatt
+	applymovement LOCALID_PRESENTTOWN_MATT, PresentTown_Movement_MattPushLooker
+	waitmovement 0
 	playse SE_DOOR
 	opendoor 15, 34
 	waitdooranim
+	msgbox PresentTown_Text_LookerOuch, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
 	applymovement LOCALID_PRESENTTOWN_MATT, PresentTown_Movement_MattEnterAquaCorp
 	waitmovement 0
 	setflag FLAG_HIDE_MATT_OUTSIDE
@@ -266,12 +330,25 @@ PresentTown_EventScript_Matt::
 	releaseall
 	end
 
+PresentTown_Movement_MattPushLooker:
+	lock_facing_direction
+	walk_faster_down
+	walk_fast_up
+	unlock_facing_direction
+	step_end
+
+PresentTown_Movement_LookerPushedByMatt:
+	lock_facing_direction
+	delay_8
+	walk_faster_down
+	step_end
+
 PresentTown_Movement_MattEnterAquaCorp:
 	walk_fast_up
 	step_end
 
 PresentTown_Movement_GruntFollowsMatt:
-	walk_left
+	walk_fast_left
 	face_up
 	delay_16
 	delay_16
@@ -297,6 +374,9 @@ PresentTown_EventScript_AquaMemberNowHesMad::
 	waitmovement 0
 	releaseall
 	end
+
+PresentTown_Text_LookerOuch:
+	.string "Looker: Ouch!$"
 
 PresentTown_Text_AnabelTeamAquaResults:
 	.string "Anabel: Mr. Looker.\p"
@@ -350,8 +430,31 @@ PresentTown_Text_MattTalkingToGrunt:
 	.string "off without a hitch!\p"
 	.string "With these results, we can…$"
 
-PresentTown_Text_MattTalkingToLooker:
+PresentTown_Text_MattWhoAreYou:
 	.string "Huh? Who are you?$"
+
+PresentTown_Text_LookerMyNameIs:
+	.string "Looker: My name…\n"
+	.string "is Looker.\p"
+	.string "I am with the International Police,\n"
+	.string "here to ensure nothing shady is going\l"
+	.string "with Team Aqua's new operation…$"
+
+PresentTown_Text_MattSeriously:
+	.string "Matt: Ugh, seriously?\p"
+	.string "We've told every officer whose\n"
+	.string "hounded us the past three months,\l"
+	.string "we're REFORMED. Got it?\p"
+	.string "Now scram!$"
+
+PresentTown_Text_LookerIWillNotJustScram:
+	.string "Looker: I will not scram!\n"
+	.string "I am on official business!\p"
+	.string "If you would like, we can schedule\n"
+	.string "an audit of the facility…$"
+
+PresentTown_Text_MattScrewOff:
+	.string "Matt: Oh, screw off!$"
 
 PresentTown_Text_AquaMemberFWait:
 	.string "Grunt: Wait!$"
