@@ -875,3 +875,14 @@ const struct Tileset gTileset_PokeCenterAlt =
     .metatileAttributes = gMetatileAttributes_PokeCenterAlt,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_PresentTown =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_PresentTown,
+    .palettes = gTilesetPalettes_PresentTown,
+    .metatiles = gMetatiles_PresentTown,
+    .metatileAttributes = gMetatileAttributes_PresentTown,
+    .callback = NULL,
+};
