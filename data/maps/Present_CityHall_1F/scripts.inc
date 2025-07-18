@@ -5,10 +5,15 @@ Present_CityHall_1F_MapScripts::
 
 Present_CityHall_1F_EventScript_OnTransition:
 	call_if_eq VAR_CUTSCENE_STATE, 1, Present_CityHall_1F_EventScript_PlaceNPCsForCutscene
+	call_if_eq VAR_CUTSCENE_STATE, 2, Present_CityHall_1F_EventScript_PlaceNPCsInside
 	end
 
+Present_CityHall_1F_EventScript_PlaceNPCsInside::
+	setobjectxyperm LOCALID_CITYHALL_1F_CONCERNED_DAD, 8, 7
+	setobjectxyperm LOCALID_CITYHALL_1F_MAYOR, 7, 5
+	return
+
 Present_CityHall_1F_EventScript_PlaceNPCsForCutscene::
-	removeobject LOCALID_CITYHALL_1F_CONCERNED_DAD
 	setobjectxyperm LOCALID_CITYHALL_1F_ANABEL, 9, 8
 	setobjectmovementtype LOCALID_CITYHALL_1F_ANABEL, MOVEMENT_TYPE_FACE_UP
 	setobjectxyperm LOCALID_CITYHALL_1F_MAYOR, 7, 5
@@ -21,15 +26,17 @@ Present_CityHall_1F_EventScript_OnFrame:
 Present_CityHall_1F_EventScript_PostStormDiscussion::
 	lockall
 	applymovement LOCALID_CITYHALL_1F_MAYOR, Present_CityHall_1F_Movement_MayorPacing1
+	playse SE_BIKE_HOP
 	msgbox Present_CityHall_1F_Text_MayorOhDear, MSGBOX_DEFAULT
+	closemessage
 	applymovement LOCALID_CITYHALL_1F_MAYOR, Common_Movement_Delay32
 	waitmovement 0
-	closemessage
 	applymovement LOCALID_CITYHALL_1F_MAYOR, Present_CityHall_1F_Movement_MayorPacing2
+	playse SE_BIKE_HOP
 	msgbox Present_CityHall_1F_Text_MayorOhDearOhDear, MSGBOX_DEFAULT
+	closemessage
 	applymovement LOCALID_CITYHALL_1F_MAYOR, Common_Movement_Delay32
 	waitmovement 0
-	closemessage
 	playse SE_PIN
 	applymovement LOCALID_CITYHALL_1F_MAYOR, Present_CityHall_1F_Movement_MayorStartled
 	waitmovement 0
@@ -63,8 +70,10 @@ Present_CityHall_1F_EventScript_PostStormDiscussion::
 	applymovement LOCALID_CITYHALL_1F_ANABEL, Common_Movement_FaceLeft
 	msgbox Present_CityHall_1F_Text_LookerHmm, MSGBOX_DEFAULT
 	closemessage
+	clearflag FLAG_HIDE_CITYHALL_1F_CONCERNED_DAD
+	playse SE_DOOR
+	waitse
 	addobject LOCALID_CITYHALL_1F_CONCERNED_DAD
-	playse SE_SLIDING_DOOR
 	applymovement LOCALID_PLAYER, Common_Movement_Delay16
 	msgbox Present_CityHall_1F_Text_DadHelpMe, MSGBOX_DEFAULT
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
@@ -101,14 +110,12 @@ Present_CityHall_1F_EventScript_PostStormDiscussion::
 
 Present_CityHall_1F_Movement_MayorPacing1:
 	jump_in_place_right
-	jump_in_place_right
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right
 	step_end
 
 Present_CityHall_1F_Movement_MayorPacing2:
-	jump_in_place_left
 	jump_in_place_left
 	walk_fast_left
 	walk_fast_left
@@ -229,8 +236,8 @@ Present_CityHall_1F_Text_DadMyDaughter:
 	.string "and forgetting to respect nature…\p"
 	.string "… … …\n"
 	.string "… … …\p"
-	.string "You look like a police officer, could you\n"
-	.string "please go out and find her?\p"
+	.string "You look like a police officer, could\n"
+	.string "you please go out and find her?\p"
 	.string "I'm begging you!$"
 
 Present_CityHall_1F_Text_LookerSlowDown:
@@ -246,8 +253,8 @@ Present_CityHall_1F_Text_AnabelItsOkay:
 
 Present_CityHall_1F_Text_DadThankYouLong:
 	.string "Man: Oh, thank you!\p"
-	.string "Here, I brought repels to make my way\n"
-	.string "through the city with how dangerous it is!\p"
+	.string "Here, I brought repels to make my\n"
+	.string "way through the city.\p"
 	.string "Spray some of this on!$"
 
 Present_CityHall_1F_Text_LookerUsedTheRepel:

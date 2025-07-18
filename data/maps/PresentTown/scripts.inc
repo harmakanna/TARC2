@@ -93,6 +93,7 @@ PresentTown_EventScript_StartStorm::
 	waitmovement 0
 	msgbox PresentTown_Text_LookerISeeIt, MSGBOX_DEFAULT
 	closemessage
+	playse SE_THUNDERSTORM
 	call Common_EventScript_SetStormWeather
 	doweather
 	applymovement LOCALID_PRESENTTOWN_ANABEL, Common_Movement_Delay48
@@ -142,7 +143,6 @@ PresentTown_EventScript_StartStorm::
 	clearflag FLAG_HIDE_INSIDE_OUTSIDE_NPCS
 	clearflag FLAG_HIDE_RANGERS
 	clearflag FLAG_HIDE_CITYHALL_1F_MAYOR
-	clearflag FLAG_HIDE_CITYHALL_1F_CONCERNED_DAD
 	clearflag FLAG_HIDE_ANABEL_CITYHALL
 	setvar VAR_PORTO_BELLA_CITY_STATE, 2
 	setvar VAR_CUTSCENE_STATE, 1
@@ -325,6 +325,7 @@ PresentTown_EventScript_Matt::
 	waitmovement 0
 	applymovement LOCALID_PRESENTTOWN_MATT, Common_Movement_Delay48
 	waitmovement 0
+	goto_if_eq VAR_FACING, DIR_EAST, PresentTown_EventScript_MattFromTheSide
 	msgbox PresentTown_Text_MattWhoAreYou, MSGBOX_DEFAULT
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	msgbox PresentTown_Text_LookerMyNameIs, MSGBOX_DEFAULT
@@ -345,6 +346,34 @@ PresentTown_EventScript_Matt::
 	opendoor 15, 34
 	waitdooranim
 	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
+	goto PresentTown_EventScript_FinishMattCutscene
+	end
+
+PresentTown_EventScript_MattFromTheSide::
+	msgbox PresentTown_Text_MattWhoAreYou, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	msgbox PresentTown_Text_LookerMyNameIs, MSGBOX_DEFAULT
+	applymovement LOCALID_PRESENTTOWN_MATT, Common_Movement_WalkInPlaceFasterLeft
+	msgbox PresentTown_Text_MattSeriously, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	msgbox PresentTown_Text_LookerIWillNotJustScram, MSGBOX_DEFAULT
+	applymovement LOCALID_PRESENTTOWN_MATT, Common_Movement_WalkInPlaceFasterLeft
+	msgbox PresentTown_Text_MattScrewOff, MSGBOX_DEFAULT
+	closemessage
+	playse SE_EFFECTIVE
+	applymovement LOCALID_PLAYER, PresentTown_Movement_LookerPushedByMattSide
+	applymovement LOCALID_PRESENTTOWN_MATT, PresentTown_Movement_MattPushLookerSide
+	waitmovement 0
+	msgbox PresentTown_Text_LookerOuch, MSGBOX_DEFAULT
+	closemessage
+	playse SE_DOOR
+	opendoor 15, 34
+	waitdooranim
+	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
+	goto PresentTown_EventScript_FinishMattCutscene
+	end
+
+PresentTown_EventScript_FinishMattCutscene::
 	applymovement LOCALID_PRESENTTOWN_MATT, PresentTown_Movement_MattEnterAquaCorp
 	waitmovement 0
 	setflag FLAG_HIDE_MATT_OUTSIDE
@@ -374,10 +403,23 @@ PresentTown_Movement_MattPushLooker:
 	unlock_facing_direction
 	step_end
 
+PresentTown_Movement_MattPushLookerSide:
+	lock_facing_direction
+	walk_faster_left
+	walk_fast_right
+	unlock_facing_direction
+	step_end
+
 PresentTown_Movement_LookerPushedByMatt:
 	lock_facing_direction
 	delay_8
 	walk_faster_down
+	step_end
+
+PresentTown_Movement_LookerPushedByMattSide:
+	lock_facing_direction
+	delay_8
+	walk_faster_left
 	step_end
 
 PresentTown_Movement_MattEnterAquaCorp:
