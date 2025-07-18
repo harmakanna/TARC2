@@ -43,24 +43,24 @@
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
-#define FLAG_TALKED_TO_MATT_OUTSIDE        0x20
-#define FLAG_MET_CELEBI                    0x21 // Unused Flag
-#define FLAG_HIDE_OUTSIDE_NPCS             0x22 // Unused Flag
-#define FLAG_HIDE_INSIDE_OUTSIDE_NPCS      0x23 // Unused Flag
-#define FLAG_HIDE_RANGERS                  0x24 // Unused Flag
-#define FLAG_HIDE_MATT_OUTSIDE             0x25 // Unused Flag
-#define FLAG_HIDE_AQUA_GRUNT_OUTSIDE       0x26 // Unused Flag
-#define FLAG_HIDE_ANABEL_PRESENTTOWN       0x27 // Unused Flag
-#define FLAG_HIDE_ANABEL_CITYHALL          0x28 // Unused Flag
-#define FLAG_HIDE_ANABEL_PASTTOWN          0x29 // Unused Flag
-#define FLAG_HIDE_PORTO_BELLA_WILD_MONS    0x2A // Unused Flag
-#define FLAG_HIDE_CITYHALL_1F_MAYOR        0x2B // Unused Flag
-#define FLAG_LOCK_CITY_DOORS               0x2C // Unused Flag
-#define FLAG_LOOKER_STARTERS               0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
+#define FLAG_TALKED_TO_MATT_OUTSIDE            0x20
+#define FLAG_MET_CELEBI                        0x21 // Unused Flag
+#define FLAG_HIDE_OUTSIDE_NPCS                 0x22 // Unused Flag
+#define FLAG_HIDE_INSIDE_OUTSIDE_NPCS          0x23 // Unused Flag
+#define FLAG_HIDE_RANGERS                      0x24 // Unused Flag
+#define FLAG_HIDE_MATT_OUTSIDE                 0x25 // Unused Flag
+#define FLAG_HIDE_AQUA_GRUNT_OUTSIDE           0x26 // Unused Flag
+#define FLAG_HIDE_ANABEL_PRESENTTOWN           0x27 // Unused Flag
+#define FLAG_HIDE_ANABEL_CITYHALL              0x28 // Unused Flag
+#define FLAG_HIDE_ANABEL_PASTTOWN              0x29 // Unused Flag
+#define FLAG_HIDE_PORTO_BELLA_WILD_MONS        0x2A // Unused Flag
+#define FLAG_HIDE_CITYHALL_1F_MAYOR            0x2B // Unused Flag
+#define FLAG_LOCK_CITY_DOORS                   0x2C // Unused Flag
+#define FLAG_LOOKER_STARTERS                   0x2D // Unused Flag
+#define FLAG_HIDE_CITYHALL_1F_CONCERNED_DAD    0x2E // Unused Flag
+#define FLAG_ACCEPTED_SCARED_DADS_REQUEST      0x2F // Unused Flag
+#define FLAG_STEPPED_OUT_OF_CITY_HALL          0x30 // Unused Flag
+#define FLAG_TURN_OFF_ENCOUNTERS               0x31 // Unused Flag
 #define FLAG_UNUSED_0x032    0x32 // Unused Flag
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag

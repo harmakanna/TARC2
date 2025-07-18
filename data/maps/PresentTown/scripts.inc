@@ -4,9 +4,14 @@ PresentTown_MapScripts::
 	.byte 0
 
 PresentTown_OnLoad:
+	call_if_eq VAR_CUTSCENE_STATE, 2, PresentTown_EventScript_ChangeAnabelFollowerText
 	call_if_unset FLAG_LOOKER_STARTERS, PresentTown_EventScript_GiveLookerStarters
 	call_if_set FLAG_LOCK_CITY_DOORS, PresentTown_EventScript_LockCityDoors
 	end
+
+PresentTown_EventScript_ChangeAnabelFollowerText::
+	setflag FLAG_STEPPED_OUT_OF_CITY_HALL
+	return
 
 @ debug script so Looker isn't flooded with Growlithe and Toxicroak 
 PresentTown_EventScript_GiveLookerStarters::
@@ -31,11 +36,16 @@ PresentTown_EventScript_LockCityDoors::
 PresentTown_OnTransition:
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetStormWeather
 	call_if_set FLAG_TALKED_TO_MATT_OUTSIDE, PresentTown_EventScript_AquaMemberFPositioning
+	call_if_eq VAR_PORTO_BELLA_CITY_STATE, 1, PresentTown_EventScript_PrepareAnabelForCutscene
 	end
 
 PresentTown_EventScript_AquaMemberFPositioning::
 	setobjectxyperm LOCALID_PRESENTTOWN_GRUNT, 15, 35
 	setobjectmovementtype LOCALID_PRESENTTOWN_GRUNT, MOVEMENT_TYPE_FACE_UP
+	return
+	
+PresentTown_EventScript_PrepareAnabelForCutscene::
+	setobjectxyperm LOCALID_PRESENTTOWN_ANABEL, 37, 28
 	return
 	
 PresentTown_EventScript_StartStorm1::
@@ -132,9 +142,11 @@ PresentTown_EventScript_StartStorm::
 	clearflag FLAG_HIDE_INSIDE_OUTSIDE_NPCS
 	clearflag FLAG_HIDE_RANGERS
 	clearflag FLAG_HIDE_CITYHALL_1F_MAYOR
+	clearflag FLAG_HIDE_CITYHALL_1F_CONCERNED_DAD
 	clearflag FLAG_HIDE_ANABEL_CITYHALL
 	setvar VAR_PORTO_BELLA_CITY_STATE, 2
 	setvar VAR_CUTSCENE_STATE, 1
+	fwdtime 13, 30
 	warpsilent MAP_PRESENT_CITY_HALL_1F, 8, 8
 	waitstate
 	releaseall
@@ -399,6 +411,14 @@ PresentTown_EventScript_AquaMemberNowHesMad::
 	waitmovement 0
 	releaseall
 	end
+
+PresentTown_EventScript_Poochyena::
+	playmoncry SPECIES_POOCHYENA, CRY_MODE_NORMAL
+	msgbox PresentTown_Text_Poochyena, MSGBOX_NPC
+	end
+
+PresentTown_Text_Poochyena:
+	.string "Grr!$"
 
 PresentTown_Text_LookerOuch:
 	.string "Looker: Ouch!$"
