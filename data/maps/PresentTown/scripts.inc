@@ -147,7 +147,7 @@ PresentTown_EventScript_StartStorm::
 	setvar VAR_PORTO_BELLA_CITY_STATE, 2
 	setvar VAR_CUTSCENE_STATE, 1
 	fwdtime 13, 30
-	warpsilent MAP_PRESENT_CITY_HALL_1F, 8, 8
+	warp MAP_PRESENT_CITY_HALL_1F, 8, 8
 	waitstate
 	releaseall
 	end
@@ -515,6 +515,17 @@ PresentTown_EventScript_CatchPeaceRangerAttentionTalked::
 	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Common_Movement_WalkInPlaceFasterUp
 	msgbox PresentTown_Text_AnabelTheresNoTimeToLose, MSGBOX_DEFAULT
 	closemessage
+	special SpawnCameraObject
+	applymovement LOCALID_PRESENT_PEACE_RANGER, PresentTown_Movement_RunIntoForest
+	applymovement LOCALID_PLAYER, PresentTown_Movement_RunIntoForestLong
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, PresentTown_Movement_RunIntoForestLong
+	removeobject LOCALID_PRESENT_PEACE_RANGER
+	removeobject LOCALID_PLAYER
+	removeobject OBJ_EVENT_ID_NPC_FOLLOWER
+	destroyfollowernpc
+	fadescreen FADE_TO_BLACK
+	warpdoor MAP_CUTSCENE_FOREST, 10, 17
+	setvar VAR_CUTSCENE_STATE, 3
 	releaseall
 	end
 
@@ -568,6 +579,12 @@ PresentTown_EventScript_PeaceRangerCutscene::
 	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Common_Movement_WalkInPlaceFasterLeft
 	msgbox PresentTown_Text_AnabelTheresNoTimeToLose, MSGBOX_DEFAULT
 	closemessage
+	special SpawnCameraObject
+	applymovement LOCALID_PRESENT_PEACE_RANGER, PresentTown_Movement_RunIntoForest
+	applymovement LOCALID_PLAYER, PresentTown_Movement_RunIntoForest
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, PresentTown_Movement_RunIntoForest
+	fadescreen FADE_TO_BLACK
+	warp MAP_CUTSCENE_FOREST, 10, 17
 	releaseall
 	end
 
@@ -586,6 +603,19 @@ PresentTown_EventScript_RangerTalkEast::
 PresentTown_EventScript_RangerTalkSouth::
 	applymovement LOCALID_PRESENT_PEACE_RANGER, Common_Movement_WalkInPlaceFasterDown
 	return
+
+PresentTown_Movement_RunIntoForest:
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	step_end
+
+PresentTown_Movement_RunIntoForestLong:
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	step_end
 
 PresentTown_Movement_PeaceRangerEmoteTurn:
 	emote_exclamation_mark
