@@ -522,10 +522,11 @@ PresentTown_EventScript_CatchPeaceRangerAttentionTalked::
 	removeobject LOCALID_PRESENT_PEACE_RANGER
 	removeobject LOCALID_PLAYER
 	removeobject OBJ_EVENT_ID_NPC_FOLLOWER
-	destroyfollowernpc
 	fadescreen FADE_TO_BLACK
-	warpdoor MAP_CUTSCENE_FOREST, 10, 17
+	destroyfollowernpc
 	setvar VAR_CUTSCENE_STATE, 3
+	setflag FLAG_SYS_PREVENT_MAP_FADE
+	warp MAP_CUTSCENE_FOREST, 10, 17
 	releaseall
 	end
 
