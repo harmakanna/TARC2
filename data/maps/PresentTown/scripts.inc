@@ -454,13 +454,208 @@ PresentTown_EventScript_AquaMemberNowHesMad::
 	releaseall
 	end
 
-PresentTown_EventScript_Poochyena::
-	playmoncry SPECIES_POOCHYENA, CRY_MODE_NORMAL
-	msgbox PresentTown_Text_Poochyena, MSGBOX_NPC
+PresentTown_EventScript_NoBusinessInTheForest::
+	lockall
+	msgbox PresentTown_Text_LookerNoBusinessInTheForest, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
+	waitmovement 0
+	releaseall
+	end 
+
+PresentTown_EventScript_NoBusinessInTheForest2::
+	lockall
+	msgbox PresentTown_Text_LookerNoBusinessInTheForest2, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
+	waitmovement 0
+	releaseall
+	end 
+
+PresentTown_EventScript_CatchProsperityRangerAttention::
+	lockall
+	applymovement LOCALID_PRESENT_PROSPERITY_RANGER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Common_Movement_FaceRight
+	msgbox PresentTown_Text_ProsperityRangerHey, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	msgbox PresentTown_Text_LookerSorry, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Common_Movement_WalkUp
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Common_Movement_FaceDown
+	releaseall
 	end
 
-PresentTown_Text_Poochyena:
-	.string "Grr!$"
+PresentTown_EventScript_ProsperityRanger::
+	msgbox PresentTown_Text_ProsperityOhNoIWasSupposedTo, MSGBOX_NPC
+	end
+
+PresentTown_EventScript_PeaceRanger::
+	lockall
+	goto_if_eq VAR_CUTSCENE_STATE, 2, PresentTown_EventScript_CatchPeaceRangerAttentionTalked
+	releaseall
+	end
+
+PresentTown_EventScript_CatchPeaceRangerAttentionTalked::
+	applymovement LOCALID_PRESENT_PEACE_RANGER, Common_Movement_WalkInPlaceFasterDown
+	turnobject OBJ_EVENT_ID_NPC_FOLLOWER, DIR_NORTH
+	msgbox PresentTown_Text_PeaceRangerAlert, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	msgbox PresentTown_Text_LookerImHereToHelpFind, MSGBOX_DEFAULT
+	applymovement LOCALID_PRESENT_PEACE_RANGER, Common_Movement_WalkInPlaceFasterDown
+	msgbox PresentTown_Text_PeaceRangerWeCouldAlwaysUseMoreHands, MSGBOX_DEFAULT
+	applymovement LOCALID_PRESENT_PEACE_RANGER, Common_Movement_FaceUp
+	msgbox PresentTown_Text_PeaceRangerUpThatWay, MSGBOX_DEFAULT
+	applymovement LOCALID_PRESENT_PEACE_RANGER, Common_Movement_FaceDown
+	msgbox PresentTown_Text_PeaceRangerAsAResult, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	msgbox PresentTown_Text_LookerUnderstood, MSGBOX_DEFAULT
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Common_Movement_WalkInPlaceFasterUp
+	msgbox PresentTown_Text_AnabelTheresNoTimeToLose, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+PresentTown_EventScript_CatchPeaceRangerAttention1::
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Common_Movement_FaceLeft
+	playse SE_PIN
+	applymovement LOCALID_PRESENT_PEACE_RANGER, PresentTown_Movement_PeaceRangerEmoteTurn
+	waitmovement 0
+	delay 56
+	applymovement LOCALID_PRESENT_PEACE_RANGER, Common_Movement_WalkInPlaceFasterRight
+	goto PresentTown_EventScript_PeaceRangerCutscene
+	end
+
+PresentTown_EventScript_CatchPeaceRangerAttention2::
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Common_Movement_FaceLeft
+	playse SE_PIN
+	applymovement LOCALID_PRESENT_PEACE_RANGER, PresentTown_Movement_PeaceRangerEmoteTurn
+	waitmovement 0
+	delay 56
+	applymovement LOCALID_PRESENT_PEACE_RANGER, Common_Movement_WalkRight
+	waitmovement 0
+	goto PresentTown_EventScript_PeaceRangerCutscene
+	end
+
+PresentTown_EventScript_CatchPeaceRangerAttention3::
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Common_Movement_FaceLeft
+	playse SE_PIN
+	applymovement LOCALID_PRESENT_PEACE_RANGER, PresentTown_Movement_PeaceRangerEmoteTurn
+	waitmovement 0
+	delay 56
+	applymovement LOCALID_PRESENT_PEACE_RANGER, Common_Movement_WalkRight2
+	waitmovement 0
+	goto PresentTown_EventScript_PeaceRangerCutscene
+	end
+
+PresentTown_EventScript_PeaceRangerCutscene::
+	msgbox PresentTown_Text_PeaceRangerAlert, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	msgbox PresentTown_Text_LookerImHereToHelpFind, MSGBOX_DEFAULT
+	applymovement LOCALID_PRESENT_PEACE_RANGER, Common_Movement_WalkInPlaceFasterRight
+	msgbox PresentTown_Text_PeaceRangerWeCouldAlwaysUseMoreHands, MSGBOX_DEFAULT
+	applymovement LOCALID_PRESENT_PEACE_RANGER, Common_Movement_FaceUp
+	msgbox PresentTown_Text_PeaceRangerUpThatWay, MSGBOX_DEFAULT
+	applymovement LOCALID_PRESENT_PEACE_RANGER, Common_Movement_FaceRight
+	msgbox PresentTown_Text_PeaceRangerAsAResult, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	msgbox PresentTown_Text_LookerUnderstood, MSGBOX_DEFAULT
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Common_Movement_WalkInPlaceFasterLeft
+	msgbox PresentTown_Text_AnabelTheresNoTimeToLose, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+PresentTown_EventScript_LookerTalkNorth::
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	return
+
+PresentTown_EventScript_LookerTalkWest::
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	return
+
+PresentTown_EventScript_RangerTalkEast::
+	applymovement LOCALID_PRESENT_PEACE_RANGER, Common_Movement_WalkInPlaceFasterRight
+	return
+
+PresentTown_EventScript_RangerTalkSouth::
+	applymovement LOCALID_PRESENT_PEACE_RANGER, Common_Movement_WalkInPlaceFasterDown
+	return
+
+PresentTown_Movement_PeaceRangerEmoteTurn:
+	emote_exclamation_mark
+	face_right
+	step_end
+
+PresentTown_Text_PeaceRangerAlert:
+	.string "Ranger: This way is off-limits!\n"
+	.string "We're currently conducting a search-\l"
+	.string "and-rescue mission for a lost child!$"
+
+PresentTown_Text_LookerImHereToHelpFind:
+	.string "Looker: I'm Looker with the police.\n"
+	.string "I'm here to help find her.$"
+
+PresentTown_Text_PeaceRangerWeCouldAlwaysUseMoreHands:
+	.string "Ranger: Oh, so you're the person City\n"
+	.string "Hall just called me to look out for.\p"
+	.string "Fantastic! We've been short on staff,\n"
+	.string "the help is really appreciated.$"
+
+PresentTown_Text_PeaceRangerUpThatWay:
+	.string "Up that way is the Shrine of Peace.\p"
+	.string "It's been abandoned for a while, so\n"
+	.string "there's no set path we can explore that\l"
+	.string " the lost child might've gone down.$"
+
+PresentTown_Text_PeaceRangerAsAResult:
+	.string "As a result, we'll need to split up\n"
+	.string "halfway through the forest to try to\l"
+	.string "find her on one of the public trails.\p"
+	.string "Does that sound like a plan?$"
+
+PresentTown_Text_LookerUnderstood:
+	.string "Looker: Understood.$"
+
+PresentTown_Text_AnabelTheresNoTimeToLose:
+	.string "Anabel: Let's get searching then.\n"
+	.string "There's no time to lose!$"
+
+PresentTown_Sign_AquaCorpHQ::
+	msgbox PresentTown_Text_AquaCorpSign, MSGBOX_SIGN
+	end
+
+PresentTown_Text_ProsperityOhNoIWasSupposedTo:
+	.string "Oh no!\p"
+	.string "I was supposed to be stationed here\n"
+	.string "earlier, but I overslept my shift!\p"
+	.string "Now I have to make up my hours\n"
+	.string "standing in this crummy rain…$"
+
+PresentTown_Text_LookerNoBusinessInTheForest:
+	.string "I have no business in the forest!\n"
+	.string "I need to find Team Aqua!$"
+
+PresentTown_Text_LookerNoBusinessInTheForest2:
+	.string "I have no business in the forest!\n"
+	.string "I need to find Anabel!$"
+
+PresentTown_Text_ProsperityRangerHey:
+	.string "Ranger: Hey, this way is off-limits!\p"
+	.string "It's dangerous to go out there with\n"
+	.string "the wild Pokémon acting so hostile!$"
+
+PresentTown_Text_LookerSorry:
+	.string "Looker: Sorry!$"
+
+PresentTown_Text_AquaCorpSign:
+	.string "AquaCorp\n"
+	.string "Headquarters$"
 
 PresentTown_Text_LookerOuch:
 	.string "Looker: Ouch!$"
@@ -497,14 +692,13 @@ PresentTown_Text_AnabelTakeACloserLook:
 	.string "Anabel: Come take a closer look.$"
 
 PresentTown_Text_LookerISeeIt:
-	.string "Looker: That's odd…\n"
-	.string "Are those storm clouds?\p"
-	.string "Hurricane season doesn't start for\n"
-	.string "another two months…$"
+	.string "Looker: That's odd…\p"
+	.string "Are those…\p"
+	.string "Storm clouds?$"
 
 PresentTown_Text_AnabelWhatTheHeck:
-	.string "Anabel: What the heck!? It was a\n"
-	.string "perfect day just moments ago!\p"
+	.string "Anabel: What the heck!? Hurricane\n"
+	.string "season isn't for another two months!\p"
 	.string "Looker, are you positive Team Aqua's\n"
 	.string "new operation is above board?$"
 

@@ -60,7 +60,7 @@
 #define FLAG_HIDE_CITYHALL_1F_CONCERNED_DAD    0x2E // Unused Flag
 #define FLAG_ACCEPTED_SCARED_DADS_REQUEST      0x2F // Unused Flag
 #define FLAG_STEPPED_OUT_OF_CITY_HALL          0x30 // Unused Flag
-#define FLAG_TURN_OFF_ENCOUNTERS               0x31 // Unused Flag
+#define FLAG_UNUSED_0x031               0x31 // Unused Flag
 #define FLAG_UNUSED_0x032    0x32 // Unused Flag
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag
@@ -1350,7 +1350,7 @@
 #define FLAG_SYS_POKEMON_GET                         (SYSTEM_FLAGS + 0x0) // FLAG_0x860
 #define FLAG_SYS_POKEDEX_GET                         (SYSTEM_FLAGS + 0x1)
 #define FLAG_SYS_POKENAV_GET                         (SYSTEM_FLAGS + 0x2)
-#define FLAG_SYS_MOVE_PREVIEW                        (SYSTEM_FLAGS + 0x3) // Unused Flag
+#define FLAG_SYS_MOVE_PREVIEW                        (SYSTEM_FLAGS + 0x3)
 #define FLAG_SYS_GAME_CLEAR                          (SYSTEM_FLAGS + 0x4)
 #define FLAG_SYS_CHAT_USED                           (SYSTEM_FLAGS + 0x5)
 #define FLAG_UNLOCKED_TRENDY_SAYINGS                 (SYSTEM_FLAGS + 0x6)
@@ -1387,9 +1387,9 @@
 #define FLAG_IS_CHAMPION                            (SYSTEM_FLAGS + 0x1F) // Seems to be related to linking.
 #define FLAG_NURSE_UNION_ROOM_REMINDER              (SYSTEM_FLAGS + 0x20)
 
-#define FLAG_UNUSED_0x881                           (SYSTEM_FLAGS + 0x21) // Unused Flag
-#define FLAG_UNUSED_0x882                           (SYSTEM_FLAGS + 0x22) // Unused Flag
-#define FLAG_UNUSED_0x883                           (SYSTEM_FLAGS + 0x23) // Unused Flag
+#define FLAG_SYS_PREVENT_MAP_FADE                   (SYSTEM_FLAGS + 0x21) // Unused Flag
+#define FLAG_SYS_NO_WHITEOUT                        (SYSTEM_FLAGS + 0x22) // Unused Flag
+#define FLAG_SYS_DISABLE_ENCOUNTERS                 (SYSTEM_FLAGS + 0x23) // Unused Flag
 #define FLAG_UNUSED_0x884                           (SYSTEM_FLAGS + 0x24) // Unused Flag
 #define FLAG_UNUSED_0x885                           (SYSTEM_FLAGS + 0x25) // Unused Flag
 #define FLAG_UNUSED_0x886                           (SYSTEM_FLAGS + 0x26) // Unused Flag

@@ -29,20 +29,18 @@ Present_CityHall_1F_EventScript_PostStormDiscussion::
 	playse SE_BIKE_HOP
 	msgbox Present_CityHall_1F_Text_MayorOhDear, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_CITYHALL_1F_MAYOR, Common_Movement_Delay32
-	waitmovement 0
+	delay 40
 	applymovement LOCALID_CITYHALL_1F_MAYOR, Present_CityHall_1F_Movement_MayorPacing2
 	playse SE_BIKE_HOP
 	msgbox Present_CityHall_1F_Text_MayorOhDearOhDear, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_CITYHALL_1F_MAYOR, Common_Movement_Delay32
-	waitmovement 0
+	delay 40
 	playse SE_PIN
 	applymovement LOCALID_CITYHALL_1F_MAYOR, Present_CityHall_1F_Movement_MayorStartled
 	waitmovement 0
+	delay 32
 	msgbox Present_CityHall_1F_Text_MayorOhHeavens, MSGBOX_DEFAULT
-	applymovement LOCALID_CITYHALL_1F_MAYOR, Common_Movement_Delay32
-	waitmovement 0
+	delay 10
 	closemessage
 	applymovement LOCALID_CITYHALL_1F_MAYOR, Present_CityHall_1F_Movement_MayorWalkToLooker
 	applymovement LOCALID_CITYHALL_1F_ANABEL, Common_Movement_WalkUp2
@@ -72,9 +70,9 @@ Present_CityHall_1F_EventScript_PostStormDiscussion::
 	closemessage
 	clearflag FLAG_HIDE_CITYHALL_1F_CONCERNED_DAD
 	playse SE_DOOR
-	waitse
+    delay 10
 	addobject LOCALID_CITYHALL_1F_CONCERNED_DAD
-	applymovement LOCALID_PLAYER, Common_Movement_Delay16
+	delay 40
 	msgbox Present_CityHall_1F_Text_DadHelpMe, MSGBOX_DEFAULT
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
 	applymovement LOCALID_CITYHALL_1F_ANABEL, Common_Movement_FaceDown
@@ -92,18 +90,19 @@ Present_CityHall_1F_EventScript_PostStormDiscussion::
 	closemessage
 	playse SE_REPEL
 	waitse
+	delay 10
 	msgbox Present_CityHall_1F_Text_LookerUsedTheRepel, MSGBOX_DEFAULT
+	delay 48
 	closemessage
-	applymovement LOCALID_PLAYER, Common_Movement_Delay32
-	waitmovement 0
-	applymovement LOCALID_CITYHALL_1F_CONCERNED_DAD, Common_Movement_WalkInPlaceFasterDown
+	delay 16
+	applymovement LOCALID_CITYHALL_1F_CONCERNED_DAD, Common_Movement_WalkInPlaceFasterUp
 	msgbox Present_CityHall_1F_Text_DadWeLiveNear, MSGBOX_DEFAULT
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	applymovement LOCALID_CITYHALL_1F_ANABEL, Common_Movement_WalkInPlaceFasterLeft
 	msgbox Present_CityHall_1F_Text_AnabelLostChild
 	closemessage
 	setvar VAR_CUTSCENE_STATE, 2
-	setflag FLAG_TURN_OFF_ENCOUNTERS
+	setflag FLAG_SYS_DISABLE_ENCOUNTERS
 	setfollowernpc LOCALID_CITYHALL_1F_ANABEL, FNPC_NONE, Present_CityHall_1F_EventScript_AnabelFollower
 	releaseall
 	end
@@ -181,8 +180,8 @@ Present_CityHall_1F_Text_MayorIAmTheMayor:
 	.string "Mayor: Oh heavens, my apologies!\p"
 	.string "I am Mayor Morrigan!\p"
 	.string "I hoped to greet you at the port, but\n"
-	.string "I was bogged down by\l"
-	.string "endless paperwork!$"
+	.string "I was bogged down by endless\l"
+	.string "paperwork!$"
 
 Present_CityHall_1F_Text_AnabelWhatWasThat:
 	.string "Anabel: As we all are.\p"
@@ -224,10 +223,12 @@ Present_CityHall_1F_Text_DadHelpMe:
 	.string "Help! Somebody help!$"
 
 Present_CityHall_1F_Text_LookerWhatsTheMatter:
-	.string "Looker: Sir, what seems to be the matter?$"
+	.string "Looker: Sir, what seems to be the\n"
+	.string "matter?$"
 
 Present_CityHall_1F_Text_DadMyDaughter:
-	.string "Man: My daughter!\p"
+	.string "Man: My daughter!\n"
+	.string "Estella!\p"
 	.string "When the storm started, she slipped out\n"
 	.string "of the house and ran to the woods!\p"
 	.string "I swear, her old looney grandmother's\n"

@@ -108,7 +108,6 @@ Common_Movement_WalkUp::
 	walk_up
 	step_end
 
-@ Unused
 Common_Movement_WalkUp2::
 	walk_up
 	walk_up
@@ -138,6 +137,11 @@ Common_Movement_WalkDown::
 Common_Movement_WalkRight::
     walk_right
     step_end
+
+Common_Movement_WalkRight2::
+	walk_right
+	walk_right
+	step_end
 
 Common_Movement_WalkLeft::
     walk_left
