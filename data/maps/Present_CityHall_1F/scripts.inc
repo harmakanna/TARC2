@@ -26,12 +26,12 @@ Present_CityHall_1F_EventScript_OnFrame:
 Present_CityHall_1F_EventScript_PostStormDiscussion::
 	lockall
 	applymovement LOCALID_CITYHALL_1F_MAYOR, Present_CityHall_1F_Movement_MayorPacing1
-	playse SE_BIKE_HOP
+	playse SE_LEDGE
 	msgbox Present_CityHall_1F_Text_MayorOhDear, MSGBOX_DEFAULT
 	closemessage
 	delay 40
 	applymovement LOCALID_CITYHALL_1F_MAYOR, Present_CityHall_1F_Movement_MayorPacing2
-	playse SE_BIKE_HOP
+	playse SE_LEDGE
 	msgbox Present_CityHall_1F_Text_MayorOhDearOhDear, MSGBOX_DEFAULT
 	closemessage
 	delay 40
@@ -69,13 +69,19 @@ Present_CityHall_1F_EventScript_PostStormDiscussion::
 	msgbox Present_CityHall_1F_Text_LookerHmm, MSGBOX_DEFAULT
 	closemessage
 	clearflag FLAG_HIDE_CITYHALL_1F_CONCERNED_DAD
+	delay 50
 	playse SE_DOOR
-    delay 10
 	addobject LOCALID_CITYHALL_1F_CONCERNED_DAD
 	delay 40
 	msgbox Present_CityHall_1F_Text_DadHelpMe, MSGBOX_DEFAULT
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
 	applymovement LOCALID_CITYHALL_1F_ANABEL, Common_Movement_FaceDown
+	applymovement LOCALID_CITYHALL_1F_CONCERNED_DAD, Present_CityHall_1F_Movement_FranticDad
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_CITYHALL_1F_CONCERNED_DAD, Common_Movement_ExclamationMark
+	waitmovement 0
+	delay 48
 	applymovement LOCALID_CITYHALL_1F_CONCERNED_DAD, Common_Movement_WalkUp
 	waitmovement 0
 	msgbox Present_CityHall_1F_Text_LookerWhatsTheMatter, MSGBOX_DEFAULT
@@ -131,6 +137,16 @@ Present_CityHall_1F_Movement_MayorWalkToLooker:
 	face_down
 	step_end
 
+Present_CityHall_1F_Movement_FranticDad:
+	face_right
+	delay_8
+	face_left
+	delay_16
+	face_right
+	delay_8
+	face_up
+	step_end
+
 Present_CityHall_1F_EventScript_ConcernedDad::
 	msgbox Present_CityHall_1F_Text_DadThankYou, MSGBOX_NPC
 	end
@@ -177,10 +193,10 @@ Present_CityHall_1F_Text_LookerYoureTheMayor:
 	.string "the mayor of Porto Bella?$"
 
 Present_CityHall_1F_Text_MayorIAmTheMayor:
-	.string "Mayor: Oh heavens, my apologies!\p"
+	.string "Oh heavens, my apologies!\p"
 	.string "I am Mayor Morrigan!\p"
-	.string "I hoped to greet you at the port, but\n"
-	.string "I was bogged down by endless\l"
+	.string "Mayor: I hoped to greet you at the port,\n"
+	.string "but I was bogged down by endless\l"
 	.string "paperwork!$"
 
 Present_CityHall_1F_Text_AnabelWhatWasThat:
@@ -243,12 +259,10 @@ Present_CityHall_1F_Text_DadMyDaughter:
 
 Present_CityHall_1F_Text_LookerSlowDown:
 	.string "Looker: Slow down.\p"
-	.string "Take deep breaths.\p"
 	.string "We can find your daughter for you.$"
 
 Present_CityHall_1F_Text_AnabelItsOkay:
-	.string "Anabel: It'll all be okay.\n"
-	.string "Don't worry!\p"
+	.string "Anabel: Don't worry!\p"
 	.string "When Looker's on the hunt, there isn't\n"
 	.string "anyone who can shake his tail!$"
 
@@ -259,7 +273,7 @@ Present_CityHall_1F_Text_DadThankYouLong:
 	.string "Spray some of this on!$"
 
 Present_CityHall_1F_Text_LookerUsedTheRepel:
-	.string "Looker used the repel.$"
+	.string "Looker used the repels.$"
 
 Present_CityHall_1F_Text_DadWeLiveNear:
 	.string "Man: We live near the western forest.\n"

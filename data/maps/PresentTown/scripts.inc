@@ -506,8 +506,10 @@ PresentTown_EventScript_CatchPeaceRangerAttentionTalked::
 	msgbox PresentTown_Text_LookerImHereToHelpFind, MSGBOX_DEFAULT
 	applymovement LOCALID_PRESENT_PEACE_RANGER, Common_Movement_WalkInPlaceFasterDown
 	msgbox PresentTown_Text_PeaceRangerWeCouldAlwaysUseMoreHands, MSGBOX_DEFAULT
+	playse SE_SELECT
 	applymovement LOCALID_PRESENT_PEACE_RANGER, Common_Movement_FaceUp
 	msgbox PresentTown_Text_PeaceRangerUpThatWay, MSGBOX_DEFAULT
+	playse SE_SELECT
 	applymovement LOCALID_PRESENT_PEACE_RANGER, Common_Movement_FaceDown
 	msgbox PresentTown_Text_PeaceRangerAsAResult, MSGBOX_DEFAULT
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
@@ -571,8 +573,10 @@ PresentTown_EventScript_PeaceRangerCutscene::
 	msgbox PresentTown_Text_LookerImHereToHelpFind, MSGBOX_DEFAULT
 	applymovement LOCALID_PRESENT_PEACE_RANGER, Common_Movement_WalkInPlaceFasterRight
 	msgbox PresentTown_Text_PeaceRangerWeCouldAlwaysUseMoreHands, MSGBOX_DEFAULT
+	playse SE_SELECT
 	applymovement LOCALID_PRESENT_PEACE_RANGER, Common_Movement_FaceUp
 	msgbox PresentTown_Text_PeaceRangerUpThatWay, MSGBOX_DEFAULT
+	playse SE_SELECT
 	applymovement LOCALID_PRESENT_PEACE_RANGER, Common_Movement_FaceRight
 	msgbox PresentTown_Text_PeaceRangerAsAResult, MSGBOX_DEFAULT
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
@@ -585,6 +589,12 @@ PresentTown_EventScript_PeaceRangerCutscene::
 	applymovement LOCALID_PLAYER, PresentTown_Movement_RunIntoForest
 	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, PresentTown_Movement_RunIntoForest
 	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_PRESENT_PEACE_RANGER
+	removeobject LOCALID_PLAYER
+	removeobject OBJ_EVENT_ID_NPC_FOLLOWER
+	destroyfollowernpc
+	setvar VAR_CUTSCENE_STATE, 3
+	setflag FLAG_SYS_PREVENT_MAP_FADE
 	warp MAP_CUTSCENE_FOREST, 10, 17
 	releaseall
 	end
