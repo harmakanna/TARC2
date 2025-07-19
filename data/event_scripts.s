@@ -1215,3 +1215,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Past_CelebiSociety/scripts.inc"
 
 	.include "data/maps/Past_TownHall/scripts.inc"
+
+	.include "data/maps/PresentGym/scripts.inc"
