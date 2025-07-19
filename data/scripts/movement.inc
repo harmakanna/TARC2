@@ -95,6 +95,26 @@ Common_Movement_WalkUp4:
 	walk_up
 	step_end
 
+Common_Movement_FaceUpExclamationMark:
+	face_up
+	emote_exclamation_mark
+	step_end
+
+Common_Movement_FaceDownExclamationMark:
+	face_down
+	emote_exclamation_mark
+	step_end
+
+Common_Movement_FaceLeftExclamationMark:
+	face_left
+	emote_exclamation_mark
+	step_end
+
+Common_Movement_FaceRightExclamationMark:
+	face_right
+	emote_exclamation_mark
+	step_end
+
 Common_Movement_Delay16:
 	delay_16
 	step_end

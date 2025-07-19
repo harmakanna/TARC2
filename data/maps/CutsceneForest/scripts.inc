@@ -17,6 +17,7 @@ CutsceneForest_EventScript_SearchForEstella::
 	setvar VAR_0x8004, 10  @ x
 	setvar VAR_0x8005, 9  @ y
 	special TeleportCamera
+	delay 80
 	clearflag FLAG_SYS_PREVENT_MAP_FADE
 	fadescreen FADE_FROM_BLACK
 	delay 10
@@ -26,15 +27,20 @@ CutsceneForest_EventScript_SearchForEstella::
 	waitmovement 0
 	delay 10
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_FOREST_ANABEL, CutsceneForest_Movement_LookAround1
+	applymovement LOCALID_FOREST_RANGER, CutsceneForest_Movement_LookAround2
 	msgbox CutsceneForest_Text_LookerEstella, MSGBOX_DEFAULT
 	delay 20
 	closemessage
 	delay 10
 	applymovement LOCALID_FOREST_ANABEL, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PLAYER, CutsceneForest_Movement_LookAround3
+	applymovement LOCALID_FOREST_RANGER, CutsceneForest_Movement_LookAround4
 	msgbox CutsceneForest_Text_AnabelEstella, MSGBOX_DEFAULT
 	delay 20
 	closemessage
 	delay 40
+	playse SE_SELECT
 	applymovement LOCALID_FOREST_ANABEL, Common_Movement_WalkInPlaceFasterRight
 	msgbox CutsceneForest_Text_AnabelDrat, MSGBOX_DEFAULT
 	applymovement LOCALID_FOREST_RANGER, Common_Movement_WalkInPlaceFasterLeft
@@ -42,6 +48,7 @@ CutsceneForest_EventScript_SearchForEstella::
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
 	applymovement LOCALID_FOREST_RANGER, Common_Movement_FaceRight
 	applymovement LOCALID_FOREST_ANABEL, Common_Movement_FaceLeft
+	playse SE_SELECT
 	msgbox CutsceneForest_Text_RangerMeetBackAtCityHall, MSGBOX_DEFAULT
 	applymovement LOCALID_FOREST_ANABEL, Common_Movement_WalkInPlaceFasterLeft
 	msgbox CutsceneForest_Text_AnabelGotIt, MSGBOX_DEFAULT
@@ -60,15 +67,57 @@ CutsceneForest_EventScript_SearchForEstella::
 	delay 200
 	applymovement LOCALID_FOREST_CELEBI, CutsceneForest_Movement_CelebiFloatInOutOfShot
 	waitmovement 0
+	setobjectmovementtype LOCALID_FOREST_CELEBI, MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_UP
 	playmoncry SPECIES_CELEBI, CRY_MODE_NORMAL
 	msgbox CutsceneForest_Text_Celebi, MSGBOX_DEFAULT
 	closemessage
 	delay 10
 	applymovement LOCALID_FOREST_CELEBI, CutsceneForest_Movement_CelebiFloatInOutOfShot
 	fadescreen FADE_TO_BLACK
+	playse SE_EXIT
+	waitse
+	delay 20
+	msgbox CutsceneForest_Text_RepelsEffect, MSGBOX_DEFAULT
+	delay 20
 	special ReturnCameraToPlayer
-	warp MAP_SHRINE_OF_PEACE_PRESENT, 14, 21
+	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
+	warpsilent MAP_SHRINE_OF_PEACE_PRESENT, 14, 28
 	end
+
+CutsceneForest_Movement_LookAround1:
+	face_up
+	delay_16
+	face_down
+	delay_16
+	delay_16
+	face_right
+	step_end
+
+CutsceneForest_Movement_LookAround2:
+	face_left
+	delay_16
+	face_right
+	delay_16
+	delay_8
+	face_up
+	step_end
+
+CutsceneForest_Movement_LookAround3:
+	face_left
+	delay_16
+	face_down
+	delay_16
+	delay_8
+	face_up
+	step_end
+
+CutsceneForest_Movement_LookAround4:
+	face_down
+	delay_16
+	delay_16
+	delay_8
+	face_left
+	step_end
 
 CutsceneForest_Movement_CelebiFloatInOutOfShot:
 	walk_up
@@ -92,10 +141,10 @@ CutsceneForest_Movement_PlayerRunOutOfShot:
 	
 CutsceneForest_Movement_RangerRunOutOfShot:
 	walk_fast_up
-	walk_fast_right
+	walk_fast_left
 	walk_fast_up
 	walk_fast_up
-	walk_fast_right
+	walk_fast_left
 	walk_fast_up
 	walk_fast_up
 	walk_fast_up
@@ -169,6 +218,10 @@ CutsceneForest_Movement_AnabelRunIntoShot:
 	delay_16
 	face_left
 	step_end
+
+
+CutsceneForest_Text_RepelsEffect:
+	.string "Repels' effect wore off…$"
 
 CutsceneForest_Text_Celebi:
 	.string "Biii…$"

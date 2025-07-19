@@ -4435,7 +4435,7 @@
       "id": "LAYOUT_SHRINE_OF_PEACE_PRESENT",
       "name": "ShrineOfPeacePresent_Layout",
       "width": 28,
-      "height": 27,
+      "height": 34,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_LugiaShrine",
       "border_filepath": "data/layouts/ShrineOfPeacePresent/border.bin",

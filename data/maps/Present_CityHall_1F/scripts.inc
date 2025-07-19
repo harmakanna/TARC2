@@ -74,12 +74,21 @@ Present_CityHall_1F_EventScript_PostStormDiscussion::
 	addobject LOCALID_CITYHALL_1F_CONCERNED_DAD
 	delay 40
 	msgbox Present_CityHall_1F_Text_DadHelpMe, MSGBOX_DEFAULT
+	delay 32
+	closemessage
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
 	applymovement LOCALID_CITYHALL_1F_ANABEL, Common_Movement_FaceDown
-	applymovement LOCALID_CITYHALL_1F_CONCERNED_DAD, Present_CityHall_1F_Movement_FranticDad
+	applymovement LOCALID_CITYHALL_1F_CONCERNED_DAD, Common_Movement_FaceLeft
 	waitmovement 0
+	delay 30
+	applymovement LOCALID_CITYHALL_1F_CONCERNED_DAD, Common_Movement_FaceRight
+	waitmovement 0
+	delay 30
+	applymovement LOCALID_CITYHALL_1F_CONCERNED_DAD, Common_Movement_FaceLeft
+	waitmovement 0
+	delay 50
 	playse SE_PIN
-	applymovement LOCALID_CITYHALL_1F_CONCERNED_DAD, Common_Movement_ExclamationMark
+	applymovement LOCALID_CITYHALL_1F_CONCERNED_DAD, Common_Movement_FaceUpExclamationMark
 	waitmovement 0
 	delay 48
 	applymovement LOCALID_CITYHALL_1F_CONCERNED_DAD, Common_Movement_WalkUp
@@ -99,8 +108,6 @@ Present_CityHall_1F_EventScript_PostStormDiscussion::
 	delay 10
 	msgbox Present_CityHall_1F_Text_LookerUsedTheRepel, MSGBOX_DEFAULT
 	delay 48
-	closemessage
-	delay 16
 	applymovement LOCALID_CITYHALL_1F_CONCERNED_DAD, Common_Movement_WalkInPlaceFasterUp
 	msgbox Present_CityHall_1F_Text_DadWeLiveNear, MSGBOX_DEFAULT
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight

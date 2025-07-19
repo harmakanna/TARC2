@@ -60,8 +60,8 @@
 #define FLAG_HIDE_CITYHALL_1F_CONCERNED_DAD    0x2E // Unused Flag
 #define FLAG_ACCEPTED_SCARED_DADS_REQUEST      0x2F // Unused Flag
 #define FLAG_STEPPED_OUT_OF_CITY_HALL          0x30 // Unused Flag
-#define FLAG_UNUSED_0x031               0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
+#define FLAG_HIDE_SHRINE_OF_PEACE_PRESENT_WILD_MONS 0x31 // Unused Flag
+#define FLAG_HIDE_SHRINE_PEACE_PRESENT_ANABEL    0x32 // Unused Flag
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag
 #define FLAG_UNUSED_0x035    0x35 // Unused Flag
@@ -1391,7 +1391,7 @@
 #define FLAG_SYS_NO_WHITEOUT                        (SYSTEM_FLAGS + 0x22) // Unused Flag
 #define FLAG_SYS_DISABLE_ENCOUNTERS                 (SYSTEM_FLAGS + 0x23) // Unused Flag
 #define FLAG_UNUSED_0x884                           (SYSTEM_FLAGS + 0x24) // Unused Flag
-#define FLAG_UNUSED_0x885                           (SYSTEM_FLAGS + 0x25) // Unused Flag
+#define FLAG_SYS_NO_MUSIC_ON_TRANSITION             (SYSTEM_FLAGS + 0x25) // Unused Flag
 #define FLAG_UNUSED_0x886                           (SYSTEM_FLAGS + 0x26) // Unused Flag
 #define FLAG_UNUSED_0x887                           (SYSTEM_FLAGS + 0x27) // Unused Flag
 

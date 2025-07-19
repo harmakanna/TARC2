@@ -67,7 +67,10 @@ PresentTown_EventScript_StartStorm2::
 	end
 
 PresentTown_EventScript_StartStorm::
-	msgbox PresentTown_Text_AnabelLookerGreet, MSGBOX_DEFAULT
+	applymovement LOCALID_PRESENTTOWN_ANABEL, Common_Movement_WalkInPlaceFasterLeft
+	msgbox PresentTown_Text_AnabelGreet, MSGBOX_DEFAULT
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	msgbox PresentTown_Text_LookerGreet, MSGBOX_DEFAULT
 	applymovement LOCALID_PRESENTTOWN_ANABEL, Common_Movement_WalkInPlaceFasterLeft
 	msgbox PresentTown_Text_AnabelDidYouGetTheChance, MSGBOX_DEFAULT
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
@@ -89,17 +92,14 @@ PresentTown_EventScript_StartStorm::
 	applymovement LOCALID_PRESENTTOWN_ANABEL, Common_Movement_FaceUp
 	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
 	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_Delay32
-	waitmovement 0
+	delay 60
 	msgbox PresentTown_Text_LookerISeeIt, MSGBOX_DEFAULT
 	closemessage
 	playse SE_THUNDERSTORM
+	waitse
 	call Common_EventScript_SetStormWeather
 	doweather
-	applymovement LOCALID_PRESENTTOWN_ANABEL, Common_Movement_Delay48
-	waitmovement 0
-	applymovement LOCALID_PRESENTTOWN_ANABEL, Common_Movement_Delay48
-	waitmovement 0
+	delay 100
 	applymovement LOCALID_PRESENTTOWN_ANABEL, Common_Movement_FaceLeft
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0
@@ -701,8 +701,10 @@ PresentTown_Text_AquaCorpSign:
 PresentTown_Text_LookerOuch:
 	.string "Looker: Ouch!$"
 
-PresentTown_Text_AnabelLookerGreet:
-	.string "Anabel: Mr. Looker.\p"
+PresentTown_Text_AnabelGreet:
+	.string "Anabel: Mr. Looker.$"
+
+PresentTown_Text_LookerGreet:
 	.string "Looker: Ms. Anabel.$"
 
 PresentTown_Text_AnabelDidYouGetTheChance:
