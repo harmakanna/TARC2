@@ -62,7 +62,7 @@
 #define FLAG_STEPPED_OUT_OF_CITY_HALL          0x30 // Unused Flag
 #define FLAG_HIDE_SHRINE_OF_PEACE_PRESENT_WILD_MONS 0x31 // Unused Flag
 #define FLAG_HIDE_SHRINE_PEACE_PRESENT_ANABEL    0x32 // Unused Flag
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
+#define FLAG_HIDE_SHRINE_PEACE_CELEBI    0x33 // Unused Flag
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag
 #define FLAG_UNUSED_0x035    0x35 // Unused Flag
 #define FLAG_UNUSED_0x036    0x36 // Unused Flag

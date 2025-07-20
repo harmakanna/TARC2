@@ -133,6 +133,20 @@ Common_Movement_WalkUp2::
 	walk_up
 	step_end
 
+Common_Movement_WalkDown2::
+	walk_down
+	walk_down
+	step_end
+
+Common_Movement_WalkFastUp::
+	walk_fast_up
+	step_end
+
+Common_Movement_WalkFastUp2::
+	walk_fast_up
+	walk_fast_up
+	step_end
+
 @ Follower NPC
 Common_Movement_WalkUpSlow::
     walk_slow_up

@@ -80,7 +80,7 @@ PresentTown_EventScript_StartStorm::
 	closemessage
 	playse SE_PIN
 	applymovement LOCALID_PRESENTTOWN_ANABEL, PresentTown_Movement_AnabelLookAtStorm2
-	waitmovement 0
+	delay 48
 	msgbox PresentTown_Text_AnabelThatsStrange, MSGBOX_DEFAULT
 	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
