@@ -74,14 +74,12 @@ CutsceneForest_EventScript_SearchForEstella::
 	delay 10
 	applymovement LOCALID_FOREST_CELEBI, CutsceneForest_Movement_CelebiFloatInOutOfShot
 	fadescreen FADE_TO_BLACK
-	playse SE_EXIT
-	waitse
 	delay 20
 	msgbox CutsceneForest_Text_RepelsEffect, MSGBOX_DEFAULT
 	delay 20
 	special ReturnCameraToPlayer
 	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
-	warpsilent MAP_SHRINE_OF_PEACE_PRESENT, 14, 28
+	warp MAP_SHRINE_OF_PEACE_PRESENT, 14, 28
 	end
 
 CutsceneForest_Movement_LookAround1:

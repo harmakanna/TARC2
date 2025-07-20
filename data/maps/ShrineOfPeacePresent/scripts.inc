@@ -275,6 +275,3 @@ ShrineOfPeacePresent_Text_AnabelShoutsLooker:
 
 ShrineOfPeacePresent_Text_LookerAnabel:
 	.string "Looker: Anabel…$"	
-
-ShrineOfPeacePresent_Text_RepelsEffect:
-	.string "Repels' effect wore off…$"
