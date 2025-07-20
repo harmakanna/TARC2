@@ -48,7 +48,8 @@
   "gMapGroup_LookerPast": [
     "PastTown",
     "ShrineOfPeacePast",
-    "ShrineOfProsperityPast"
+    "ShrineOfProsperityPast",
+    "CutsceneForestPast"
   ],
   "gMapGroup_IndoorLookerPresent": [
     "Present_School",

@@ -1,5 +1,80 @@
 ShrineOfPeacePast_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, ShrineOfPeacePast_OnTransition
+    map_script MAP_SCRIPT_ON_FRAME_TABLE, ShrineOfPeacePast_OnFrame
 	.byte 0
+
+ShrineOfPeacePast_OnTransition:
+	call_if_eq VAR_CUTSCENE_STATE, 3, ShrineOfPeacePast_EventScript_ShrineFirstWarpSetup
+	end
+
+ShrineOfPeacePast_EventScript_ShrineFirstWarpSetup::
+	setflag FLAG_SYS_PREVENT_MAP_FADE
+	return
+
+ShrineOfPeacePast_OnFrame:
+    map_script_2 VAR_CUTSCENE_STATE, 3, ShrineOfPeacePast_EventScript_FirstWarp
+    .2byte 0
+
+ShrineOfPeacePast_EventScript_FirstWarp::
+	lockall
+	delay 100
+	msgbox ShrineOfPeacePast_Text_Dots, MSGBOX_DEFAULT
+	closemessage
+	delay 100
+	msgbox ShrineOfPeacePast_Text_Dots, MSGBOX_DEFAULT
+	closemessage
+	delay 100
+	msgbox ShrineOfPeacePast_Text_LookerUrgh, MSGBOX_DEFAULT
+	closemessage
+	delay 80
+	clearflag FLAG_SYS_PREVENT_MAP_FADE
+	fadescreen FADE_FROM_BLACK
+	delay 60
+	applymovement LOCALID_PLAYER, ShrineOfPeacePast_Movement_LookerLooksAround
+	waitmovement 0
+	msgbox ShrineOfPeacePast_Text_LookerWhatHappened, MSGBOX_DEFAULT
+	closemessage
+	delay 60
+	playse SE_PIN
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	delay 48
+	msgbox ShrineOfPeacePast_Text_LookerAnabel, MSGBOX_DEFAULT
+	closemessage
+	clearflag FLAG_SYS_B_DASH
+	setvar VAR_CUTSCENE_STATE, 4
+	releaseall
+	end
+
+ ShrineOfPeacePast_Movement_LookerLooksAround:
+	face_right
+	delay_16
+	delay_16
+	face_left
+	delay_16
+	delay_16
+	face_up
+	delay_16
+	delay_16
+	delay_16
+	step_end
+
+ShrineOfPeacePast_EventScript_WarpToForestL::
+	lockall
+	warp MAP_CUTSCENE_FOREST_PAST, 9, 6
+	releaseall
+	end
+
+ShrineOfPeacePast_EventScript_WarpToForestM::
+	lockall
+	warp MAP_CUTSCENE_FOREST_PAST, 10, 6
+	releaseall
+	end
+
+ShrineOfPeacePast_EventScript_WarpToForestR::
+	lockall
+	warp MAP_CUTSCENE_FOREST_PAST, 11, 6
+	releaseall
+	end
 
 ShrineOfPeacePast_Script_Celebi::
 	lockall
@@ -21,3 +96,23 @@ ShrineOfPeacePast_Text_CelebiWarp:
 	.string "expectantly…\p"
 	.string "Warp to the present?$"
 	
+ShrineOfPeacePast_Text_LookerWhatHappened:
+	.string "What happened…?\p"
+	.string "Everything hurts…\p"
+	.string "It seems like the storm…\p"
+	.string "is over?\p"
+	.string "Was I dreaming?$"
+
+ShrineOfPeacePast_Text_LookerAnabel:
+	.string "Anabel!\p"
+	.string "I need to find Anabel!\p"
+	.string "Did she escape into the forest…?$"
+
+ShrineOfPeacePast_Text_LookerUrgh:
+	.string "… … …\n"
+	.string "… … …\p"
+	.string "Urgh… … …$"
+	
+ShrineOfPeacePast_Text_Dots:
+	.string "… … …\n"
+	.string "… … …$"

@@ -4700,6 +4700,16 @@
       "secondary_tileset": "gTileset_lozinterior",
       "border_filepath": "data/layouts/Past_TownHall/border.bin",
       "blockdata_filepath": "data/layouts/Past_TownHall/map.bin"
+    },
+    {
+      "id": "LAYOUT_CUTSCENE_FOREST_PAST",
+      "name": "CutsceneForestPast_Layout",
+      "width": 21,
+      "height": 28,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_LugiaShrine",
+      "border_filepath": "data/layouts/CutsceneForestPast/border.bin",
+      "blockdata_filepath": "data/layouts/CutsceneForestPast/map.bin"
     }
   ]
 }

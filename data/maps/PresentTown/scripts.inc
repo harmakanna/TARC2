@@ -519,12 +519,12 @@ PresentTown_EventScript_CatchPeaceRangerAttentionTalked::
 	closemessage
 	special SpawnCameraObject
 	applymovement LOCALID_PRESENT_PEACE_RANGER, PresentTown_Movement_RunIntoForest
-	applymovement LOCALID_PLAYER, PresentTown_Movement_RunIntoForestLong
-	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, PresentTown_Movement_RunIntoForestLong
+	applymovement LOCALID_PLAYER, PresentTown_Movement_RunIntoForest
+	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, PresentTown_Movement_RunIntoForest
+	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_PRESENT_PEACE_RANGER
 	removeobject LOCALID_PLAYER
 	removeobject OBJ_EVENT_ID_NPC_FOLLOWER
-	fadescreen FADE_TO_BLACK
 	destroyfollowernpc
 	setvar VAR_CUTSCENE_STATE, 3
 	setflag FLAG_SYS_PREVENT_MAP_FADE
