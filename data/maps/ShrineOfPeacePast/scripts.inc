@@ -36,7 +36,7 @@ ShrineOfPeacePast_EventScript_FirstWarp::
 	closemessage
 	delay 60
 	playse SE_PIN
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDownExclamationMark
 	delay 48
 	msgbox ShrineOfPeacePast_Text_LookerAnabel, MSGBOX_DEFAULT
 	closemessage
@@ -49,10 +49,14 @@ ShrineOfPeacePast_EventScript_FirstWarp::
 	face_right
 	delay_16
 	delay_16
+	delay_16
 	face_left
 	delay_16
 	delay_16
+	delay_16
 	face_up
+	delay_16
+	delay_16
 	delay_16
 	delay_16
 	delay_16
@@ -60,20 +64,23 @@ ShrineOfPeacePast_EventScript_FirstWarp::
 
 ShrineOfPeacePast_EventScript_WarpToForestL::
 	lockall
+	msgbox ShrineOfPeacePast_Text_LookerISeeFootsteps, MSGBOX_DEFAULT
+	closemessage
 	warp MAP_CUTSCENE_FOREST_PAST, 9, 6
-	releaseall
 	end
 
 ShrineOfPeacePast_EventScript_WarpToForestM::
 	lockall
+	msgbox ShrineOfPeacePast_Text_LookerISeeFootsteps, MSGBOX_DEFAULT
+	closemessage
 	warp MAP_CUTSCENE_FOREST_PAST, 10, 6
-	releaseall
 	end
 
 ShrineOfPeacePast_EventScript_WarpToForestR::
 	lockall
+	msgbox ShrineOfPeacePast_Text_LookerISeeFootsteps, MSGBOX_DEFAULT
+	closemessage
 	warp MAP_CUTSCENE_FOREST_PAST, 11, 6
-	releaseall
 	end
 
 ShrineOfPeacePast_Script_Celebi::
@@ -100,13 +107,17 @@ ShrineOfPeacePast_Text_LookerWhatHappened:
 	.string "What happened…?\p"
 	.string "Everything hurts…\p"
 	.string "It seems like the storm…\p"
-	.string "is over?\p"
+	.string "Is over?\p"
 	.string "Was I dreaming?$"
 
 ShrineOfPeacePast_Text_LookerAnabel:
 	.string "Anabel!\p"
 	.string "I need to find Anabel!\p"
 	.string "Did she escape into the forest…?$"
+
+ShrineOfPeacePast_Text_LookerISeeFootsteps:
+	.string "I think these look like her\n"
+	.string "footsteps…?$"
 
 ShrineOfPeacePast_Text_LookerUrgh:
 	.string "… … …\n"

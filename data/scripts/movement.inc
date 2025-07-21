@@ -95,22 +95,22 @@ Common_Movement_WalkUp4:
 	walk_up
 	step_end
 
-Common_Movement_FaceUpExclamationMark:
+Common_Movement_FaceUpExclamationMark::
 	face_up
 	emote_exclamation_mark
 	step_end
 
-Common_Movement_FaceDownExclamationMark:
+Common_Movement_FaceDownExclamationMark::
 	face_down
 	emote_exclamation_mark
 	step_end
 
-Common_Movement_FaceLeftExclamationMark:
+Common_Movement_FaceLeftExclamationMark::
 	face_left
 	emote_exclamation_mark
 	step_end
 
-Common_Movement_FaceRightExclamationMark:
+Common_Movement_FaceRightExclamationMark::
 	face_right
 	emote_exclamation_mark
 	step_end
@@ -147,6 +147,10 @@ Common_Movement_WalkFastUp2::
 	walk_fast_up
 	step_end
 
+Common_Movement_SetVisible::
+	set_visible
+	step_end
+	
 @ Follower NPC
 Common_Movement_WalkUpSlow::
     walk_slow_up

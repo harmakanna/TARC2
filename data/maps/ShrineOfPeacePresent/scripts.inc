@@ -100,16 +100,14 @@ ShrineOfPeacePresent_EventScript_CelebiEncounter::
 	closemessage
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRightExclamationMark
 	playse SE_PIN
-	waitse
-	playse SE_WARP_IN
 	applymovement LOCALID_SHRINE_PEACE_PRESENT_ANABEL, ShrineOfPeacePresent_Movement_TeleportAway
 	waitmovement 0
+	playse SE_WARP_IN
 	removeobject LOCALID_SHRINE_PEACE_PRESENT_ANABEL
 	playmoncry SPECIES_MANECTRIC, CRY_MODE_NORMAL
 	applymovement LOCALID_SHRINE_PEACE_PRESENT_MON4, ShrineOfPeacePresent_Movement_Mon4Attack
 	setflag FLAG_HIDE_SHRINE_PEACE_PRESENT_ANABEL
-	delay 60
-	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	delay 100
 	msgbox ShrineOfPeacePresent_Text_LookerAnabel, MSGBOX_DEFAULT
 	closemessage
 	delay 60
@@ -147,6 +145,7 @@ ShrineOfPeacePresent_EventScript_CelebiEncounter::
 	playmoncry SPECIES_MANECTRIC, CRY_MODE_NORMAL
 	delay 10
 	fadescreen FADE_TO_BLACK
+	applymovement LOCALID_PLAYER, ShrineOfPeacePresent_Movement_TeleportAway
 	delay 30
 	setflag FLAG_HIDE_SHRINE_OF_PEACE_PRESENT_WILD_MONS
 	setflag FLAG_HIDE_SHRINE_PEACE_CELEBI
@@ -213,7 +212,6 @@ ShrineOfPeacePresent_Movement_Mon2:
 	walk_down
 	walk_down
 	walk_down
-	face_right
 	step_end
 
 ShrineOfPeacePresent_Movement_Mon3:
@@ -221,7 +219,6 @@ ShrineOfPeacePresent_Movement_Mon3:
 	walk_down
 	walk_down
 	walk_down
-	face_left
 	step_end
 
 ShrineOfPeacePresent_Movement_Mon4:
@@ -359,8 +356,7 @@ ShrineOfPeacePresent_Text_LookerLookUpAhead:
 	.string "Looker: Anabel, look up ahead!$"
 
 ShrineOfPeacePresent_Text_AnabelItsTooDangerous:
-	.string "Anabel: Shoot, I think our repels\n"
-	.string "wore off and we didn't even notice!\p"
+	.string "Anabel: It's an ambush!\p"
 	.string "Looker, it's too dangerous! We can't\n"
 	.string "save Estella if we're in danger\l"
 	.string "ourselves!\p"
@@ -384,4 +380,5 @@ ShrineOfPeacePresent_Text_AnabelShoutsLooker:
 	.string "Anabel: Looker, help!$"
 
 ShrineOfPeacePresent_Text_LookerAnabel:
-	.string "Looker: Anabel…$"	
+	.string "Looker: What?\p"
+	.string "Anabel…?$"	

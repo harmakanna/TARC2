@@ -74,7 +74,7 @@ CutsceneForest_EventScript_SearchForEstella::
 	delay 10
 	applymovement LOCALID_FOREST_CELEBI, CutsceneForest_Movement_CelebiFloatInOutOfShot
 	fadescreen FADE_TO_BLACK
-	delay 20
+	delay 60
 	msgbox CutsceneForest_Text_RepelsEffect, MSGBOX_DEFAULT
 	delay 20
 	special ReturnCameraToPlayer

@@ -652,7 +652,7 @@ PresentTown_Text_PeaceRangerUpThatWay:
 	.string "Up that way is the Shrine of Peace.\p"
 	.string "It's been abandoned for a while, so\n"
 	.string "there's no set path we can explore that\l"
-	.string " the lost child might've gone down.$"
+	.string "the lost child might've gone down.$"
 
 PresentTown_Text_PeaceRangerAsAResult:
 	.string "As a result, we'll need to split up\n"
