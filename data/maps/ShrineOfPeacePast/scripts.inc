@@ -67,6 +67,7 @@ ShrineOfPeacePast_EventScript_WarpToForestL::
 	msgbox ShrineOfPeacePast_Text_LookerISeeFootsteps, MSGBOX_DEFAULT
 	closemessage
 	warp MAP_CUTSCENE_FOREST_PAST, 9, 6
+	delay 48
 	end
 
 ShrineOfPeacePast_EventScript_WarpToForestM::
@@ -74,6 +75,7 @@ ShrineOfPeacePast_EventScript_WarpToForestM::
 	msgbox ShrineOfPeacePast_Text_LookerISeeFootsteps, MSGBOX_DEFAULT
 	closemessage
 	warp MAP_CUTSCENE_FOREST_PAST, 10, 6
+	delay 48
 	end
 
 ShrineOfPeacePast_EventScript_WarpToForestR::
@@ -81,6 +83,7 @@ ShrineOfPeacePast_EventScript_WarpToForestR::
 	msgbox ShrineOfPeacePast_Text_LookerISeeFootsteps, MSGBOX_DEFAULT
 	closemessage
 	warp MAP_CUTSCENE_FOREST_PAST, 11, 6
+	delay 48
 	end
 
 ShrineOfPeacePast_Script_Celebi::
