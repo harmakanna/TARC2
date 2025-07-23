@@ -29,7 +29,7 @@
       "flag": "FLAG_HIDE_PAST_TOWN_HALL_ANABEL"
     },
     {
-      "local_id": "LOCALID_TOWNHALL_NURSE",
+      "local_id": "LOCALID_TOWNHALL_CAMILLA",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
       "x": 12,
       "y": 4,
@@ -39,7 +39,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Past_TownHall_EventScript_Camilla",
       "flag": "0"
     },
     {
@@ -53,7 +53,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Past_TownHall_EventScript_Happiny",
       "flag": "0"
     },
     {
@@ -67,7 +67,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Past_TownHall_EventScript_Estella",
       "flag": "FLAG_HIDE_PAST_TOWN_HALL_LOST_GIRL"
     }
   ],
