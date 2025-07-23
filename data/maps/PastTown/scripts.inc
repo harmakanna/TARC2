@@ -1,7 +1,17 @@
 PastTown_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, PastTown_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, PastTown_OnFrame
 	.byte 0
 
+PastTown_OnTransition:
+	call_if_eq VAR_CUTSCENE_STATE, 7, PastTown_EventScript_LassPlacement
+	end
+
+PastTown_EventScript_LassPlacement::
+	setobjectxyperm LOCALID_PASTTOWN_LASS, 46, 10
+	setobjectmovementtype LOCALID_PASTTOWN_LASS, MOVEMENT_TYPE_FACE_DOWN
+	return
+	
 PastTown_OnFrame:
 	map_script_2 VAR_CUTSCENE_STATE, 5, PastTown_EventScript_LookerEnters
 	.2byte 0
