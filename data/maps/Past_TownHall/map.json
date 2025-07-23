@@ -57,7 +57,7 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_TOWNHALL_LOST_GIRL",
+      "local_id": "LOCALID_TOWNHALL_ESTELLA",
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
       "x": 1,
       "y": 4,
@@ -68,7 +68,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Past_TownHall_EventScript_Estella",
-      "flag": "FLAG_HIDE_PAST_TOWN_HALL_LOST_GIRL"
+      "flag": "FLAG_HIDE_PAST_TOWN_HALL_ESTELLA"
     }
   ],
   "warp_events": [

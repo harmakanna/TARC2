@@ -10,8 +10,8 @@ Past_TownHall_OnTransition:
 
 Past_TownHall_EventScript_LookerWakesUpSetup::
 	setflag FLAG_SYS_PREVENT_MAP_FADE
-	setobjectxyperm LOCALID_TOWNHALL_LOST_GIRL 1, 4
-	setobjectmovementtype LOCALID_TOWNHALL_LOST_GIRL, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm LOCALID_TOWNHALL_ESTELLA 1, 4
+	setobjectmovementtype LOCALID_TOWNHALL_ESTELLA, MOVEMENT_TYPE_FACE_UP
 	setobjectxyperm LOCALID_TOWNHALL_ANABEL 2, 4
 	setobjectmovementtype LOCALID_TOWNHALL_ANABEL, MOVEMENT_TYPE_FACE_UP
 	setobjectxyperm LOCALID_TOWNHALL_CAMILLA, 3, 3
@@ -25,17 +25,21 @@ Past_TownHall_EventScript_PreMythSetup::
 	setobjectmovementtype LOCALID_TOWNHALL_CAMILLA, MOVEMENT_TYPE_FACE_LEFT
 	setobjectxyperm LOCALID_TOWNHALL_HAPPINY, 16, 4
 	setobjectmovementtype LOCALID_TOWNHALL_HAPPINY, MOVEMENT_TYPE_FACE_LEFT
-	setobjectxyperm LOCALID_TOWNHALL_LOST_GIRL, 15, 6
-	setobjectmovementtype LOCALID_TOWNHALL_LOST_GIRL, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm LOCALID_TOWNHALL_ESTELLA, 15, 6
+	setobjectmovementtype LOCALID_TOWNHALL_ESTELLA, MOVEMENT_TYPE_FACE_UP
 	return
 
 Past_TownHall_OnFrame:
-	goto_if_eq VAR_CUTSCENE_STATE, 6, Past_TownHall_EventScript_LookerWakesUp
-	end
+	map_script_2 VAR_CUTSCENE_STATE, 6, Past_TownHall_EventScript_LookerWakesUp
+	.2byte 0
 
 Past_TownHall_EventScript_LookerWakesUp::
 	lockall
 	delay 100
+	msgbox Past_TownHall_Text_Dots, MSGBOX_DEFAULT
+	delay 48
+	closemessage
+	delay 150
 	msgbox Past_TownHall_Text_LookerUgh, MSGBOX_DEFAULT
 	delay 48
 	closemessage
@@ -62,15 +66,16 @@ Past_TownHall_EventScript_LookerWakesUp::
 	msgbox Past_TownHall_Text_CamillaYouAreNotTheFirst, MSGBOX_DEFAULT
 	applymovement LOCALID_TOWNHALL_ANABEL, Common_Movement_WalkInPlaceFasterUp
 	msgbox Past_TownHall_Text_AnabelThisIsCamilla, MSGBOX_DEFAULT
-	applymovement LOCALID_TOWNHALL_LOST_GIRL, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_TOWNHALL_ESTELLA, Common_Movement_WalkInPlaceFasterUp
 	msgbox Past_TownHall_Text_LostGirl, MSGBOX_DEFAULT
 	applymovement LOCALID_TOWNHALL_CAMILLA, Common_Movement_WalkInPlaceFasterDown
 	msgbox Past_TownHall_Text_CamillaProsperity, MSGBOX_DEFAULT
-	applymovement LOCALID_TOWNHALL_LOST_GIRL, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_TOWNHALL_ESTELLA, Common_Movement_WalkInPlaceFasterUp
 	msgbox Past_TownHall_Text_LostGirl2, MSGBOX_DEFAULT
 	applymovement LOCALID_TOWNHALL_ANABEL, Common_Movement_WalkInPlaceFasterUp
 	msgbox Past_TownHall_Text_AnabelCamillaToldMe, MSGBOX_DEFAULT
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_TOWNHALL_CAMILLA, Common_Movement_FaceLeft
 	msgbox Past_TownHall_Text_LookerSure, MSGBOX_DEFAULT
 	closemessage
 	fadescreen FADE_TO_BLACK
@@ -78,15 +83,22 @@ Past_TownHall_EventScript_LookerWakesUp::
 	msgbox Past_TownHall_Text_Dots, MSGBOX_DEFAULT
 	delay 40
 	closemessage
-	setflag FLAG_HIDE_PAST_TOWN_HALL_ANABEL
 	removeobject LOCALID_TOWNHALL_ANABEL
+	removeobject LOCALID_TOWNHALL_CAMILLA
+	removeobject LOCALID_TOWNHALL_HAPPINY
+	removeobject LOCALID_TOWNHALL_ESTELLA
+	clearflag FLAG_HIDE_PAST_TOWN_HALL_ESTELLA
 	setobjectxyperm LOCALID_TOWNHALL_CAMILLA, 16, 5
 	setobjectmovementtype LOCALID_TOWNHALL_CAMILLA, MOVEMENT_TYPE_FACE_LEFT
 	setobjectxyperm LOCALID_TOWNHALL_HAPPINY, 16, 4
 	setobjectmovementtype LOCALID_TOWNHALL_HAPPINY, MOVEMENT_TYPE_FACE_LEFT
-	setobjectxyperm LOCALID_TOWNHALL_LOST_GIRL, 15, 6
-	setobjectmovementtype LOCALID_TOWNHALL_LOST_GIRL, MOVEMENT_TYPE_FACE_UP
-	delay 100
+	setobjectxyperm LOCALID_TOWNHALL_ESTELLA, 15, 6
+	setobjectmovementtype LOCALID_TOWNHALL_ESTELLA, MOVEMENT_TYPE_FACE_UP
+	delay 50
+	addobject LOCALID_TOWNHALL_ESTELLA
+	addobject LOCALID_TOWNHALL_CAMILLA
+	addobject LOCALID_TOWNHALL_HAPPINY
+	delay 50
 	fadescreen FADE_FROM_BLACK
 	delay 60
 	msgbox Past_TownHall_Text_LookerWakingUpAgain, MSGBOX_DEFAULT
@@ -99,10 +111,11 @@ Past_TownHall_EventScript_LookerWakesUp::
 	end
 
 Past_TownHall_EventScript_Camilla::
-	lockall
+	lock
+	faceplayer
 	msgbox Past_TownHall_Text_CamillaIWillLookAfterHer, MSGBOX_DEFAULT
 	closemessage
-	releaseall
+	release
 	end
 
 Past_TownHall_EventScript_Estella::
@@ -197,7 +210,7 @@ Past_TownHall_Text_LostGirl2:
 Past_TownHall_Text_AnabelCamillaToldMe:
 	.string "Anabel: Camilla told me she came\n"
 	.string "a week ago today.\p"
-	.string "Kinda crazy right?\n"
+	.string "Kinda crazy, right?\n"
 	.string "There's more though.\p"
 	.string "Once you're feeling all rested up,\n"
 	.string "Come see me at the east forest\l"
