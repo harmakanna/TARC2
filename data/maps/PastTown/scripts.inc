@@ -169,7 +169,7 @@ PastTown_Text_LookerThatWasStrange:
 	
 PastTown_Text_LassNobodyCanBeatMe:
 	.string "Ha! There is not a soul in this\n"
-	.string "town who can stand up to my might!$"
+	.string "town who can stand up to me!$"
 
 PastTown_Text_LassYouCheated:
 	.string "I may not know how, but you\n"
