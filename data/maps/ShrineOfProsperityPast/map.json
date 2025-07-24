@@ -69,6 +69,34 @@
       "dest_warp_id": "PROSPERITY_FROM_TOWN_MR"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "8",
+      "script": "ShrineOfProsperityPast_EventScript_StartLandorusMyth"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "8",
+      "script": "ShrineOfProsperityPast_EventScript_StartLandorusMyth"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "8",
+      "script": "ShrineOfProsperityPast_EventScript_StartLandorusMyth"
+    }
+  ],
   "bg_events": []
 }
