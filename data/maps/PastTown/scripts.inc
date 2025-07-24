@@ -93,7 +93,6 @@ PastTown_EventScript_BeatLass::
 	msgbox PastTown_Text_LookerThatWasStrange, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_CUTSCENE_STATE, 8
-	clearflag FLAG_SYS_FROM_TRIGGER
 	release
 	end
 
