@@ -4710,6 +4710,16 @@
       "secondary_tileset": "gTileset_LugiaShrine",
       "border_filepath": "data/layouts/CutsceneForestPast/border.bin",
       "blockdata_filepath": "data/layouts/CutsceneForestPast/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_GYM",
+      "name": "PresentGym_Layout",
+      "width": 19,
+      "height": 44,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/PresentGym/border.bin",
+      "blockdata_filepath": "data/layouts/PresentGym/map.bin"
     }
   ]
 }
