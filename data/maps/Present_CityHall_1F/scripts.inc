@@ -197,7 +197,7 @@ Present_CityHall_1F_Text_MayorAreYouAlright:
 Present_CityHall_1F_Text_LookerYoureTheMayor:
 	.string "Looker: We made it out okay.\p"
 	.string "If I understand correctly, you must be\n"
-	.string "the mayor of Porto Bella?$"
+	.string "the mayor of Porta Bella?$"
 
 Present_CityHall_1F_Text_MayorIAmTheMayor:
 	.string "Oh heavens, my apologies!\p"

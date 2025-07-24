@@ -2,7 +2,7 @@
   "map_sections": [
     {
       "id": "MAPSEC_PORTO_BELLA_CITY",
-      "name": "PORTO BELLA CITY",
+      "name": "PORTA BELLA CITY",
       "x": 0,
       "y": 0,
       "width": 1,
@@ -10,7 +10,7 @@
     },
     {
       "id": "MAPSEC_PORTO_BELLA_TOWN",
-      "name": "PORTOBELLA TOWN",
+      "name": "PORTABELLA TOWN",
       "x": 0,
       "y": 0,
       "width": 1,

@@ -3,9 +3,11 @@ PresentTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, PresentTown_OnTransition
 	.byte 0
 
+@ Comment out FLAG_SYS_MAIN_GAME_START_SCRIPT_DEBUG line to test intro
 PresentTown_OnLoad:
 	call_if_eq VAR_CUTSCENE_STATE, 2, PresentTown_EventScript_ChangeAnabelFollowerText
 	call_if_unset FLAG_LOOKER_STARTERS, PresentTown_EventScript_GiveLookerStarters
+	call_if_unset FLAG_SYS_MAIN_GAME_START_SCRIPT_DEBUG, PresentTown_EventScript_DebugMainGameStart
 	call_if_set FLAG_LOCK_CITY_DOORS, PresentTown_EventScript_LockCityDoors
 	end
 
@@ -18,6 +20,32 @@ PresentTown_EventScript_GiveLookerStarters::
 	givemon SPECIES_GROWLITHE, 48
 	givemon SPECIES_TOXICROAK, 48
 	return 
+
+PresentTown_EventScript_DebugMainGameStart::
+	setvar VAR_CUTSCENE_STATE, 10
+	setvar VAR_PORTO_BELLA_CITY_STATE, 3
+	setflag FLAG_SYS_MAIN_GAME_START_SCRIPT_DEBUG
+	setflag FLAG_SYS_MAIN_GAME_START
+	setflag FLAG_SYS_WEATHER_CTRL
+	setflag FLAG_TALKED_TO_MATT_OUTSIDE
+	setflag FLAG_MET_CELEBI
+	setflag FLAG_HIDE_OUTSIDE_NPCS
+	clearflag FLAG_HIDE_INSIDE_OUTSIDE_NPCS
+	clearflag FLAG_HIDE_RANGERS
+	setflag FLAG_HIDE_MATT_OUTSIDE
+	setflag FLAG_HIDE_AQUA_GRUNT_OUTSIDE
+	setflag FLAG_HIDE_ANABEL_PRESENTTOWN
+	setflag FLAG_HIDE_ANABEL_CITYHALL
+	clearflag FLAG_HIDE_CITYHALL_1F_MAYOR
+	setflag FLAG_ACCEPTED_SCARED_DADS_REQUEST
+	setflag FLAG_STEPPED_OUT_OF_CITY_HALL
+	setflag FLAG_HIDE_SHRINE_PEACE_PRESENT_ANABEL
+	setflag FLAG_HIDE_PAST_TOWN_HALL_ANABEL
+	setflag FLAG_HIDE_PAST_TOWN_HALL_ESTELLA
+	setflag FLAG_FOUGHT_LASS
+	setflag FLAG_HIDE_SHRINE_PROSPERITY_PAST_ANABEL
+	clearflag FLAG_HIDE_SHRINE_PEACE_CELEBI
+	return
 
 PresentTown_EventScript_LockCityDoors::
 	setmetatile 26, 12, METATILE_PresentTown_Locked_Door, TRUE

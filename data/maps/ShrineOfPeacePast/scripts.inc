@@ -86,19 +86,32 @@ ShrineOfPeacePast_EventScript_WarpToForestR::
 	delay 48
 	end
 
-ShrineOfPeacePast_Script_Celebi::
+ShrineOfPeacePast_EventScript_Celebi::
 	lockall
 	faceplayer
+	goto_if_unset FLAG_WARPED_WITH_CELEBI, ShrineOfPeacePast_EventScript_CelebiFirstWarp
 	msgbox ShrineOfPeacePast_Text_CelebiWarp, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, ShrineOfPeacePast_Script_CelebiWarp
+	goto_if_eq VAR_RESULT, YES, ShrineOfPeacePast_EventScript_CelebiWarp
 	releaseall
 	end
 
-ShrineOfPeacePast_Script_CelebiWarp::
+ShrineOfPeacePast_EventScript_CelebiFirstWarp::
+	msgbox ShrineOfPeacePast_Text_CelebiFirstWarp, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, ShrineOfPeacePast_EventScript_CelebiWarp
+	releaseall
+	end
+
+ShrineOfPeacePast_EventScript_CelebiWarp::
+	setflag FLAG_WARPED_WITH_CELEBI
 	warpteleport MAP_SHRINE_OF_PEACE_PRESENT, 14, 9
 	waitstate
 	releaseall
 	end
+
+ShrineOfPeacePast_Text_CelebiFirstWarp:
+	.string "Celebi is looking at you\n"
+	.string "expectantly…\p"
+	.string "Reach out your hand?$"
 
 ShrineOfPeacePast_Text_CelebiWarp:
 	.string "Biii?\p"

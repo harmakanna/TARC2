@@ -59,11 +59,11 @@ PastTown_EventScript_LassWalkRight::
 
 PastTown_EventScript_LassFight::
 	setflag FLAG_SYS_NO_WHITEOUT
-	call_if_unset FLAG_FOUGHT_LASS, PastTown_EventScript_LassOyGeezer
 	call_if_set FLAG_FOUGHT_LASS, PastTown_EventScript_LassAnotherRound
+	call_if_unset FLAG_FOUGHT_LASS, PastTown_EventScript_LassOyGeezer
 	trainerbattle_no_intro TRAINER_MARIE, PastTown_Text_LassLoss
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT B_OUTCOME_WON, PastTown_EventScript_BeatLass
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_BeatLass
 	special HealPlayerParty
 	msgbox PastTown_Text_LassNobodyCanBeatMe, MSGBOX_DEFAULT
 	closemessage

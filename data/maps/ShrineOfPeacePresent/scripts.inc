@@ -14,7 +14,16 @@ ShrineOfPeacePresent_EventScript_CelebiEncounterSetup::
 
 ShrineOfPeacePresent_OnFrame:
     map_script_2 VAR_CUTSCENE_STATE, 3, ShrineOfPeacePresent_EventScript_CelebiEncounter
+	map_script_2 VAR_CUTSCENE_STATE, 9, ShrineOfPeacePresent_EventScript_MainGameStart
     .2byte 0
+
+ShrineOfPeacePresent_EventScript_MainGameStart::
+	lockall
+	msgbox ShrineOfPeacePresent_Text_MainGameStart, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_CUTSCENE_STATE, 10
+	releaseall
+	end
 
 ShrineOfPeacePresent_EventScript_CelebiEncounter::
 	lockall
@@ -324,19 +333,22 @@ ShrineOfPeacePresent_Movement_PanCameraToLooker:
 	walk_down
 	step_end
 
-ShrineOfPeacePresent_Script_Celebi::
+ShrineOfPeacePresent_EventScript_Celebi::
 	lockall
 	faceplayer
 	msgbox ShrineOfPeacePresent_Text_CelebiWarp, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, ShrineOfPeacePresent_Script_CelebiWarp
+	goto_if_eq VAR_RESULT, YES, ShrineOfPeacePresent_EventScript_CelebiWarp
 	releaseall
 	end
 
-ShrineOfPeacePresent_Script_CelebiWarp::
+ShrineOfPeacePresent_EventScript_CelebiWarp::
 	warpteleport MAP_SHRINE_OF_PEACE_PAST, 14, 9
 	waitstate
 	releaseall
 	end
+
+ShrineOfPeacePresent_Text_MainGameStart:
+	.string "… … …$"
 
 ShrineOfPeacePresent_Text_CelebiWarp:
 	.string "Biii?\p"

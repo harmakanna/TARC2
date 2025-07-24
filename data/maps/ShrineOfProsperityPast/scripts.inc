@@ -22,6 +22,7 @@ ShrineOfProsperityPast_EventScript_StartLandorusMyth::
 	delay 60
 	applymovement LOCALID_CAMERA, ShrineOfProsperityPresent_Movement_PanCameraDown
 	waitmovement 0
+	special RemoveCameraObject
 	delay 40
 	getplayerxy VAR_TEMP_1, VAR_TEMP_2
 	goto_if_eq VAR_TEMP_1, 11, ShrineOfProsperityPast_EventScript_StartLandorusMythL
@@ -53,7 +54,10 @@ ShrineOfProsperityPast_EventScript_LandorusMyth::
 	delay 40
 	removeobject LOCALID_SHRINE_PROSPERITY_PAST_ANABEL
 	clearflag FLAG_HIDE_SHRINE_PEACE_CELEBI
+	clearflag FLAG_HIDE_RANGERS
+	clearflag FLAG_LOCK_CITY_DOORS
 	setflag FLAG_HIDE_PAST_TOWN_HALL_ESTELLA
+	setflag FLAG_SYS_B_DASH
 	setflag FLAG_SYS_MAIN_GAME_START
 	setvar VAR_CUTSCENE_STATE, 9
 	setvar VAR_PORTO_BELLA_CITY_STATE, 3
@@ -73,7 +77,7 @@ ShrineOfProsperityPresent_Movement_PanCameraDown:
 	walk_down
 	walk_down
 	step_end
-	
+
 ShrineOfProsperityPast_Movement_WalkToOratorL:
 	walk_up
 	walk_up
