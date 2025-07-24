@@ -65,7 +65,7 @@
 #define FLAG_HIDE_SHRINE_PEACE_CELEBI          0x33 // Unused Flag
 #define FLAG_HIDE_PAST_TOWN_HALL_ANABEL        0x34 // Unused Flag
 #define FLAG_HIDE_PAST_TOWN_HALL_ESTELLA       0x35 // Unused Flag
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
+#define FLAG_FOUGHT_LASS                       0x36 // Unused Flag
 #define FLAG_UNUSED_0x037    0x37 // Unused Flag
 #define FLAG_UNUSED_0x038    0x38 // Unused Flag
 #define FLAG_UNUSED_0x039    0x39 // Unused Flag
@@ -1390,10 +1390,10 @@
 #define FLAG_SYS_PREVENT_MAP_FADE                   (SYSTEM_FLAGS + 0x21) // Unused Flag
 #define FLAG_SYS_NO_WHITEOUT                        (SYSTEM_FLAGS + 0x22) // Unused Flag
 #define FLAG_SYS_DISABLE_ENCOUNTERS                 (SYSTEM_FLAGS + 0x23) // Unused Flag
-#define FLAG_UNUSED_0x884                           (SYSTEM_FLAGS + 0x24) // Unused Flag
+#define FLAG_SYS_MAIN_GAME_START                    (SYSTEM_FLAGS + 0x24) // Unused Flag
 #define FLAG_SYS_NO_MUSIC_ON_TRANSITION             (SYSTEM_FLAGS + 0x25) // Unused Flag
 #define FLAG_SYS_SPAWN_INVISIBLE                    (SYSTEM_FLAGS + 0x26) // Unused Flag
-#define FLAG_UNUSED_0x887                           (SYSTEM_FLAGS + 0x27) // Unused Flag
+#define FLAG_SYS_FROM_TRIGGER                       (SYSTEM_FLAGS + 0x27) // Unused Flag
 
 #define FLAG_SYS_USE_FLASH                          (SYSTEM_FLAGS + 0x28)
 #define FLAG_SYS_USE_STRENGTH                       (SYSTEM_FLAGS + 0x29)

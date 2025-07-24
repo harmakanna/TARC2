@@ -259,6 +259,33 @@
       "var": "VAR_CUTSCENE_STATE",
       "var_value": "6",
       "script": "PastTown_EventScript_LookerPassOut"
+    },
+    {
+      "type": "trigger",
+      "x": 45,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "7",
+      "script": "PastTown_EventScript_LassTurnLeft"
+    },
+    {
+      "type": "trigger",
+      "x": 47,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "7",
+      "script": "PastTown_EventScript_LassTurnRight"
+    },
+    {
+      "type": "trigger",
+      "x": 48,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "7",
+      "script": "PastTown_EventScript_LassWalkRight"
     }
   ],
   "bg_events": []
