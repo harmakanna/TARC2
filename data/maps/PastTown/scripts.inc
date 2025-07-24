@@ -216,5 +216,5 @@ PastTown_Text_LookerYowch:
 	.string "YOWCH!!!$"
 
 PastTown_Text_LassLoss:
-	.string "What the heck!?\n"
+	.string "Preposterous!\n"
 	.string "It was like you knew my every move!$"
