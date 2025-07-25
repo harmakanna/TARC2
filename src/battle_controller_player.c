@@ -61,6 +61,7 @@ static void PlayerHandleMoveAnimation(u32 battler);
 static void PlayerHandlePrintString(u32 battler);
 static void PlayerHandlePrintSelectionString(u32 battler);
 static void PlayerHandleChooseAction(u32 battler);
+static void CreateSpeedTiersWindow(void);
 static void PlayerHandleYesNoBox(u32 battler);
 static void PlayerHandleChooseItem(u32 battler);
 static void PlayerHandleChoosePokemon(u32 battler);
@@ -426,18 +427,32 @@ static void HandleInputChooseAction(u32 battler)
     }
     else if (JOY_NEW(L_BUTTON))
     {
-        if(IsBattlerAlive(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT)))
+        if(IsBattlerAlive(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT)) && (gBattleStruct->movePreviewDisplayed == 0 || gBattleStruct->movePreviewDisplayed == 2))
         {
             PlaySE(SE_SELECT);
             CreateMovePreviewText(B_POSITION_OPPONENT_RIGHT);
+            gBattleStruct->movePreviewDisplayed = 1;
+        }
+        else if (gBattleStruct->movePreviewDisplayed == 1)
+        {
+            PlaySE(SE_SELECT);
+            CreateSpeedTiersWindow();
+            gBattleStruct->movePreviewDisplayed = 0;
         }
     }
     else if (JOY_NEW(R_BUTTON))
     {
-        if(IsBattlerAlive(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT)))
+        if(IsBattlerAlive(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT)) && (gBattleStruct->movePreviewDisplayed == 0 || gBattleStruct->movePreviewDisplayed == 1))
         {
             PlaySE(SE_SELECT);
             CreateMovePreviewText(B_POSITION_OPPONENT_LEFT);
+            gBattleStruct->movePreviewDisplayed = 2;
+        }
+        else if (gBattleStruct->movePreviewDisplayed == 2)
+        {
+            PlaySE(SE_SELECT);
+            CreateSpeedTiersWindow();
+            gBattleStruct->movePreviewDisplayed = 0;
         }
     }
 }
@@ -2166,8 +2181,41 @@ static void PlayerHandleChooseAction(u32 battler)
     }
     else
     {
-        BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_ACTION_PROMPT);
+        gBattleStruct->movePreviewDisplayed = 0;
+        CreateSpeedTiersWindow();
+        //BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_ACTION_PROMPT);
     }
+}
+
+static void CreateSpeedTiersWindow(void)
+{
+        StringCopy(gStringVar1, COMPOUND_STRING("Speeds: "));
+        if (IsBattlerAlive(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT)))
+        {
+            ConvertUIntToDecimalStringN(gStringVar2, GetBattlerTotalSpeedStat(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT)), STR_CONV_MODE_LEFT_ALIGN, 3);
+            StringAppend(gStringVar1, gStringVar2);
+            StringAppend(gStringVar1, COMPOUND_STRING(" {UP_ARROW}"));
+        }
+        if (IsBattlerAlive(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT)))
+        {
+            ConvertUIntToDecimalStringN(gStringVar2, GetBattlerTotalSpeedStat(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT)), STR_CONV_MODE_LEFT_ALIGN, 3);
+            StringAppend(gStringVar1, COMPOUND_STRING(" {UP_ARROW} "));
+            StringAppend(gStringVar1, gStringVar2);
+        }
+        StringAppend(gStringVar1, COMPOUND_STRING("\n        "));
+        if (IsBattlerAlive(GetBattlerAtPosition(B_POSITION_PLAYER_LEFT)))
+        {
+            ConvertUIntToDecimalStringN(gStringVar2, GetBattlerTotalSpeedStat(GetBattlerAtPosition(B_POSITION_PLAYER_LEFT)), STR_CONV_MODE_LEFT_ALIGN, 3);
+            StringAppend(gStringVar1, gStringVar2);
+            StringAppend(gStringVar1, COMPOUND_STRING(" {DOWN_ARROW}"));
+        }
+        if (IsBattlerAlive(GetBattlerAtPosition(B_POSITION_PLAYER_RIGHT)))
+        {
+            ConvertUIntToDecimalStringN(gStringVar2, GetBattlerTotalSpeedStat(GetBattlerAtPosition(B_POSITION_PLAYER_RIGHT)), STR_CONV_MODE_LEFT_ALIGN, 3);
+            StringAppend(gStringVar1, COMPOUND_STRING(" {DOWN_ARROW} "));
+            StringAppend(gStringVar1, gStringVar2);
+        }
+        BattlePutTextOnWindow(gStringVar1, B_WIN_ACTION_PROMPT);
 }
 
 static void PlayerHandleYesNoBox(u32 battler)
