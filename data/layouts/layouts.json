@@ -4455,7 +4455,7 @@
       "id": "LAYOUT_SHRINE_OF_PROSPERITY_PRESENT",
       "name": "ShrineOfProsperityPresent_Layout",
       "width": 28,
-      "height": 27,
+      "height": 28,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_LugiaShrine",
       "border_filepath": "data/layouts/ShrineOfProsperityPresent/border.bin",

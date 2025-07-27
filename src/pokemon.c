@@ -5821,7 +5821,7 @@ bool32 IsSpeciesInHoennDex(u16 species)
 
 u16 GetBattleBGM(void)
 {
-    if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
+    if (gBattleTypeFlags & (BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_LEGENDARY_DOUBLE))
     {
         switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
         {
@@ -5837,6 +5837,9 @@ u16 GetBattleBGM(void)
         case SPECIES_REGIELEKI:
         case SPECIES_REGIDRAGO:
             return MUS_VS_REGI;
+        case SPECIES_THUNDURUS:
+        case SPECIES_TORNADUS:
+            return MUS_BW_VS_LEGENDARY;
         default:
             return MUS_RG_VS_LEGEND;
         }

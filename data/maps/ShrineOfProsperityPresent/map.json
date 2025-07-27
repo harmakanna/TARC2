@@ -5,7 +5,7 @@
   "music": "MUS_DP_ETERNA_FOREST",
   "region_map_section": "MAPSEC_SHRINE_OF_PROSPERITY",
   "requires_flash": false,
-  "weather": "WEATHER_RAIN_THUNDERSTORM",
+  "weather": "WEATHER_SHADE",
   "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": false,
   "allow_escaping": false,
@@ -13,7 +13,36 @@
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
-  "object_events": [],
+  "object_events": [
+    {
+      "local_id": "LOCALID_SHRINE_TORNADUS",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TORNADUS)",
+      "x": 12,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ShrineOfProsperityPresent_EventScript_StartGenieFight",
+      "flag": "FLAG_HIDE_SHRINE_TORNADUS"
+    },
+    {
+      "local_id": "LOCALID_SHRINE_THUNDURUS",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(THUNDURUS)",
+      "x": 12,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_SHRINE_THUNDURUS"
+    }
+  ],
   "warp_events": [
     {
       "warp_id": "CITY_FROM_PROSPERITY_L",
@@ -40,6 +69,34 @@
       "dest_warp_id": "PROSPERITY_FROM_CITY_MR"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_QUEUE_GENIE_FIGHT",
+      "var_value": "1",
+      "script": "ShrineOfProsperityPresent_EventScript_GeniePan"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_QUEUE_GENIE_FIGHT",
+      "var_value": "1",
+      "script": "ShrineOfProsperityPresent_EventScript_GeniePan"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_QUEUE_GENIE_FIGHT",
+      "var_value": "1",
+      "script": "ShrineOfProsperityPresent_EventScript_GeniePan"
+    }
+  ],
   "bg_events": []
 }

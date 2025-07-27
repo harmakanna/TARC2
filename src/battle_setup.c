@@ -503,8 +503,33 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_HO_OH:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
         break;
+    case SPECIES_THUNDURUS:
+    case SPECIES_TORNADUS:
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_BW_VS_LEGENDARY);
+        break;
     case SPECIES_MEW:
         CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_MEW);
+        break;
+    }
+
+    IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
+    IncrementGameStat(GAME_STAT_WILD_BATTLES);
+    IncrementDailyWildBattles();
+    TryUpdateGymLeaderRematchFromWild();
+}
+
+void BattleSetup_StartLegendaryBattleDouble(void)
+{
+    LockPlayerFieldControls();
+    gMain.savedCallback = CB2_EndScriptedWildBattle;
+    gBattleTypeFlags = BATTLE_TYPE_LEGENDARY_DOUBLE | BATTLE_TYPE_DOUBLE;
+
+    switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
+    {
+    default:
+    case SPECIES_THUNDURUS:
+    case SPECIES_TORNADUS:
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_BW_VS_LEGENDARY);
         break;
     }
 

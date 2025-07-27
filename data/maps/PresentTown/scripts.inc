@@ -127,7 +127,7 @@ PresentTown_EventScript_StartStorm::
 	waitse
 	call Common_EventScript_SetStormWeather
 	doweather
-	delay 100
+	delay 120
 	applymovement LOCALID_PRESENTTOWN_ANABEL, Common_Movement_FaceLeft
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
 	waitmovement 0

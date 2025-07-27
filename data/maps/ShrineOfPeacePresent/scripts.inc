@@ -4,6 +4,7 @@ ShrineOfPeacePresent_MapScripts::
 	.byte 0
 
 ShrineOfPeacePresent_OnTransition:
+	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetStormWeather
 	call_if_eq VAR_CUTSCENE_STATE, 3, ShrineOfPeacePresent_EventScript_CelebiEncounterSetup
 	end
 

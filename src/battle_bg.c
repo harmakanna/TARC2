@@ -758,7 +758,7 @@ void DrawMainBattleBackground(void)
         LZDecompressVram(gBattleEnvironmentTilemap_Building, (void *)(BG_SCREEN_ADDR(26)));
         LoadPalette(gBattleEnvironmentPalette_Frontier, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
     }
-    else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
+    else if (gBattleTypeFlags & (BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_LEGENDARY_DOUBLE))
     {
         switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
         {
@@ -1163,7 +1163,7 @@ void DrawBattleEntryBackground(void)
             CopyBgTilemapBufferToVram(2);
         }
     }
-    else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
+    else if (gBattleTypeFlags & (BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_LEGENDARY_DOUBLE))
     {
         switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
         {
@@ -1238,7 +1238,7 @@ bool8 LoadChosenBattleElement(u8 caseId)
         {
             LZDecompressVram(gBattleEnvironmentTiles_Building, (void *)(BG_CHAR_ADDR(2)));
         }
-        else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
+        else if (gBattleTypeFlags & (BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_LEGENDARY_DOUBLE))
         {
             switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
             {
@@ -1305,7 +1305,7 @@ bool8 LoadChosenBattleElement(u8 caseId)
         {
             LZDecompressVram(gBattleEnvironmentTilemap_Building, (void *)(BG_SCREEN_ADDR(26)));
         }
-        else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
+        else if (gBattleTypeFlags & (BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_LEGENDARY_DOUBLE))
         {
             if (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL) == SPECIES_GROUDON)
                 LZDecompressVram(gBattleEnvironmentTilemap_Cave, (void*)(BG_SCREEN_ADDR(26)));
@@ -1367,7 +1367,7 @@ bool8 LoadChosenBattleElement(u8 caseId)
         {
             LoadPalette(gBattleEnvironmentPalette_Frontier, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
         }
-        else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
+        else if (gBattleTypeFlags & (BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_LEGENDARY_DOUBLE))
         {
             if (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL) == SPECIES_GROUDON)
                 LoadPalette(gBattleEnvironmentPalette_Groudon, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);

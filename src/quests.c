@@ -562,6 +562,20 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 
 };
 
+static const struct SubQuest sSubQuestsInvestigateProsperity[QUEST_INVESTIGATE_PROSPERITY_SUB_COUNT] =
+{
+	sub_quest(
+	      30,
+	      gText_SubQuestInvestigateProsperity_Name1,
+	      gText_SubQuestInvestigateProsperity_Desc1,
+	      gText_SubQuestInvestigateProsperity_Map1,
+	      OBJ_EVENT_GFX_SPECIES(TORNADUS),
+	      OBJECT,
+	      sText_Found
+	),
+	
+};
+
 ////////////////////////END SUBQUEST CUSTOMIZATION/////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -572,27 +586,27 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 #define side_quest(n, d, dd, m, s, st, sq, ns) {.name = n, .desc = d, .donedesc = dd, .map = m, .sprite = s, .spritetype = st, .subquests = sq, .numSubquests = ns}
 static const struct SideQuest sSideQuests[QUEST_COUNT] =
 {
-	side_quest(
+	side_quest(//Find Estella
 	      gText_SideQuestName_1,
 	      gText_SideQuestDesc_1,
 	      gText_SideQuestDoneDesc_1,
 	      gText_SideQuestMap1,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_LITTLE_GIRL,
 	      OBJECT,
 	      NULL,
 	      0
 	),
-	side_quest(
+	side_quest(//Investigate Shrine of Prosperity
 	      gText_SideQuestName_2,
 	      gText_SideQuestDesc_2,
 	      gText_SideQuestDoneDesc_2,
 	      gText_SideQuestMap2,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_PICNICKER,
 	      OBJECT,
-	      sSubQuests1,
-	      QUEST_1_SUB_COUNT
+	      sSubQuestsInvestigateProsperity,
+	      QUEST_INVESTIGATE_PROSPERITY_SUB_COUNT
 	),
-	side_quest(
+	side_quest( //Defeat Matt
 	      gText_SideQuestName_3,
 	      gText_SideQuestDesc_3,
 	      gText_SideQuestDoneDesc_3,
@@ -602,12 +616,12 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      sSubQuests2,
 	      QUEST_2_SUB_COUNT
 	),
-	side_quest(
+	side_quest( //Defeat Gym Leader
 	      gText_SideQuestName_4,
 	      gText_SideQuestDesc_4,
 	      gText_SideQuestDoneDesc_4,
 	      gText_SideQuestMap4,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_MAN_2,
 	      OBJECT,
 	      NULL,
 	      0

@@ -16,10 +16,10 @@
 
 // quest number defines
 #define QUEST_NONE  0xFFFF
-#define QUEST_1          0
-#define QUEST_2          1
-#define QUEST_3          2
-#define QUEST_4          3
+#define QUEST_SAVE_ESTELLA          0
+#define QUEST_INVESTIGATE_PROSPERITY          1
+#define QUEST_INTERROGATE_MATT          2
+#define QUEST_DEFEAT_PHOEBE          3
 #define QUEST_5          4
 #define QUEST_6          5
 #define QUEST_7          6
@@ -78,10 +78,12 @@
 #define SUB_QUEST_28        27
 #define SUB_QUEST_29        28
 #define SUB_QUEST_30        29
+#define SUB_QUEST_DEFEAT_GENIES 30
 
 #define QUEST_1_SUB_COUNT 10
 #define QUEST_2_SUB_COUNT 20
-#define SUB_QUEST_COUNT (QUEST_1_SUB_COUNT + QUEST_2_SUB_COUNT)
+#define QUEST_INVESTIGATE_PROSPERITY_SUB_COUNT 1
+#define SUB_QUEST_COUNT (QUEST_INVESTIGATE_PROSPERITY_SUB_COUNT + QUEST_1_SUB_COUNT + QUEST_2_SUB_COUNT)
 
 #define QUEST_ARRAY_COUNT (SUB_QUEST_COUNT > QUEST_COUNT ? SUB_QUEST_COUNT : QUEST_COUNT)
 #endif // GUARD_CONSTANTS_QUESTS_H
