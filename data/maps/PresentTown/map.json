@@ -287,6 +287,14 @@
       "elevation": 0,
       "dest_map": "MAP_PRESENT_CITY_HALL_1F",
       "dest_warp_id": "Present_City_Hall_Exit_1"
+    },
+    {
+      "warp_id": "PresentTown_Gym",
+      "x": 55,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_GYM",
+      "dest_warp_id": "Present_Gym_Middle"
     }
   ],
   "coord_events": [
