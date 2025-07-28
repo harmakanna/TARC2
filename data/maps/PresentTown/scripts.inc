@@ -24,6 +24,7 @@ PresentTown_EventScript_GiveLookerStarters::
 PresentTown_EventScript_DebugMainGameStart::
 	setvar VAR_CUTSCENE_STATE, 10
 	setvar VAR_PORTO_BELLA_CITY_STATE, 3
+	setvar VAR_QUEUE_GENIE_FIGHT, 1
 	setflag FLAG_SYS_MAIN_GAME_START_SCRIPT_DEBUG
 	setflag FLAG_SYS_MAIN_GAME_START
 	setflag FLAG_SYS_WEATHER_CTRL
@@ -500,6 +501,7 @@ PresentTown_EventScript_NoBusinessInTheForest2::
 	releaseall
 	end 
 
+@ Intro
 PresentTown_EventScript_CatchProsperityRangerAttention::
 	lockall
 	applymovement LOCALID_PRESENT_PROSPERITY_RANGER, Common_Movement_WalkInPlaceFasterLeft
@@ -516,8 +518,38 @@ PresentTown_EventScript_CatchProsperityRangerAttention::
 	releaseall
 	end
 
+@ Main game, blocking from going to see Tornadus
+PresentTown_EventScript_CatchProsperityRangerAttention2::
+	lockall
+	applymovement LOCALID_PRESENT_PROSPERITY_RANGER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	msgbox PresentTown_Text_ProsperityRangerNoPassing, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
+	waitmovement 0
+	releaseall
+	end
+
 PresentTown_EventScript_ProsperityRanger::
-	msgbox PresentTown_Text_ProsperityOhNoIWasSupposedTo, MSGBOX_NPC
+	lockall
+	faceplayer
+	goto_if_eq VAR_CUTSCENE_STATE, 2, PresentTown_EventScript_ProsperityRangerOhNo
+	goto_if_eq VAR_QUEUE_GENIE_FIGHT, 1, PresentTown_EventScript_ProsperityRangerNoPassing
+	msgbox PresentTown_Text_ProsperityRangerYouCanPass, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+PresentTown_EventScript_ProsperityRangerNoPassing::
+	msgbox PresentTown_Text_ProsperityRangerNoPassing, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+PresentTown_EventScript_ProsperityRangerOhNo::
+	msgbox PresentTown_Text_ProsperityOhNoIWasSupposedTo, MSGBOX_DEFAULT
+	closemessage
+	releaseall
 	end
 
 PresentTown_EventScript_PeaceRanger::
@@ -660,6 +692,16 @@ PresentTown_Movement_PeaceRangerEmoteTurn:
 	emote_exclamation_mark
 	face_right
 	step_end
+
+PresentTown_Text_ProsperityRangerYouCanPass:
+	.string "Hello! I got the call from HQ. You're\n"
+	.string "free to go to the shrine as needed!$"
+	
+PresentTown_Text_ProsperityRangerNoPassing:
+	.string "The Shrine of Prosperity is currently\n"
+	.string "off-limits to all but city personnel!\p"
+	.string "There is a dangerous amount of energy\n"
+	.string "coming from that part of the forest!$"
 
 PresentTown_Text_PeaceRangerAlert:
 	.string "Ranger: This way is off-limits!\n"

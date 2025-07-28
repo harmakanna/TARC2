@@ -61,6 +61,7 @@ ShrineOfProsperityPast_EventScript_LandorusMyth::
 	setflag FLAG_SYS_MAIN_GAME_START
 	setvar VAR_CUTSCENE_STATE, 9
 	setvar VAR_PORTO_BELLA_CITY_STATE, 3
+	setvar VAR_QUEUE_GENIE_FIGHT, 1
 	releaseall
 	end
 

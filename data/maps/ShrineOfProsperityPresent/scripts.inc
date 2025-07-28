@@ -4,7 +4,7 @@ ShrineOfProsperityPresent_MapScripts::
 
 ShrineOfProsperityPresent_EventScript_OnTransition:
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetStormWeather
-	call_if_eq VAR_QUEUE_GENIE_FIGHT, 2, ShrineOfProsperityPresent_EventScript_SetTornadusFaceDown
+	call_if_eq VAR_QUEUE_GENIE_FIGHT, 3, ShrineOfProsperityPresent_EventScript_SetTornadusFaceDown
 	end
 
 ShrineOfProsperityPresent_EventScript_SetTornadusFaceDown::
@@ -13,16 +13,16 @@ ShrineOfProsperityPresent_EventScript_SetTornadusFaceDown::
 
 ShrineOfProsperityPresent_EventScript_StartGenieFight::
 	lockall
+	faceplayer
 	clearflag FLAG_HIDE_SHRINE_THUNDURUS
-	delay 60
 	playmoncry SPECIES_TORNADUS, CRY_MODE_NORMAL
 	waitmoncry
+	setobjectxyperm LOCALID_SHRINE_THUNDURUS, 12, 16
 	addobject LOCALID_SHRINE_THUNDURUS
 	delay 40
-	switch VAR_FACING
-	call_if_eq DIR_NORTH, ShrineOfProsperityPresent_EventScript_ThundurusRushN
-	call_if_eq DIR_EAST, ShrineOfProsperityPresent_EventScript_ThundurusRushE
-	call_if_eq DIR_WEST, ShrineOfProsperityPresent_EventScript_ThundurusRushW
+	call_if_eq VAR_FACING, DIR_NORTH, ShrineOfProsperityPresent_EventScript_ThundurusRushN
+	call_if_eq VAR_FACING, DIR_EAST, ShrineOfProsperityPresent_EventScript_ThundurusRushE
+	call_if_eq VAR_FACING, DIR_WEST, ShrineOfProsperityPresent_EventScript_ThundurusRushW
 	playmoncry SPECIES_THUNDURUS, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
@@ -32,49 +32,55 @@ ShrineOfProsperityPresent_EventScript_StartGenieFight::
 	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq B_OUTCOME_WON, ShrineOfProsperityPresent_EventScript_DefeatedGenies
-	setflag FLAG_DEFEATED_SHRINE_GENIES
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, ShrineOfProsperityPresent_EventScript_DefeatedGenies
+	setflag FLAG_HIDE_SHRINE_THUNDURUS
 	releaseall
 	end
 
 ShrineOfProsperityPresent_EventScript_ThundurusRushN::
 	applymovement LOCALID_SHRINE_THUNDURUS, ShrineOfProsperityPresent_Movement_ThundurusRushN
-	delay 48
+	setobjectmovementtype LOCALID_SHRINE_THUNDURUS, MOVEMENT_TYPE_WALK_IN_PLACE_UP
 	return
 
 ShrineOfProsperityPresent_EventScript_ThundurusRushE::
 	applymovement LOCALID_SHRINE_THUNDURUS, ShrineOfProsperityPresent_Movement_ThundurusRushE
-	delay 48
+	setobjectmovementtype LOCALID_SHRINE_THUNDURUS, MOVEMENT_TYPE_WALK_IN_PLACE_UP
 	return
 
 ShrineOfProsperityPresent_EventScript_ThundurusRushW::
 	applymovement LOCALID_SHRINE_THUNDURUS, ShrineOfProsperityPresent_Movement_ThundurusRushW
-	delay 48
+	setobjectmovementtype LOCALID_SHRINE_THUNDURUS, MOVEMENT_TYPE_WALK_IN_PLACE_UP
 	return
 
 ShrineOfProsperityPresent_EventScript_DefeatedGenies::
  	delay 40
 	msgbox ShrineOfProsperityPresent_Text_TornadusThundurusDefeat, MSGBOX_DEFAULT
 	closemessage
-	switch VAR_FACING
-	call_if_eq DIR_NORTH, ShrineOfProsperityPresent_EventScript_GeniesEscapeN
-	call_if_eq DIR_EAST, ShrineOfProsperityPresent_EventScript_GeniesEscapeE
-	call_if_eq DIR_WEST, ShrineOfProsperityPresent_EventScript_GeniesEscapeW
+	call_if_eq VAR_FACING, DIR_NORTH, ShrineOfProsperityPresent_EventScript_GeniesEscapeN
+	call_if_eq VAR_FACING, DIR_EAST, ShrineOfProsperityPresent_EventScript_GeniesEscapeE
+	call_if_eq VAR_FACING, DIR_WEST, ShrineOfProsperityPresent_EventScript_GeniesEscapeW
 	removeobject LOCALID_SHRINE_TORNADUS
 	removeobject LOCALID_SHRINE_THUNDURUS
-	setflag FLAG_DEFEATED_SHRINE_GENIES
 	delay 40
 	msgbox ShrineOfProsperityPresent_Text_LookerReportBack, MSGBOX_DEFAULT
 	closemessage
 	clearflag FLAG_SYS_WEATHER_CTRL
 	setweather WEATHER_SHADE
 	doweather
-	delay 120
-	clearflag FLAG_HIDE_OUTSIDE_NPCS
+	delay 60
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
+	delay 60
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	delay 100
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	msgbox ShrineOfProsperityPresent_Text_LookerTheWeather, MSGBOX_DEFAULT
+	closemessage
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_INVESTIGATE_PROSPERITY, SUB_QUEST_DEFEAT_GENIES
 	questmenu QUEST_MENU_SET_REWARD QUEST_INVESTIGATE_PROSPERITY
+	clearflag FLAG_HIDE_OUTSIDE_NPCS
+	setflag FLAG_DEFEATED_SHRINE_GENIES
 	setflag FLAG_HIDE_INSIDE_OUTSIDE_NPCS
-	setvar VAR_QUEUE_GENIE_FIGHT, 3
+	setvar VAR_QUEUE_GENIE_FIGHT, 4
 	releaseall
 	end
 
@@ -110,76 +116,82 @@ ShrineOfProsperityPresent_Movement_LookerWatchGeniesShort:
 	step_end
 
 ShrineOfProsperityPresent_Movement_ThundurusEscapeN:
-	walk_fast_left
-	walk_fast_left
-	walk_fast_down
-	walk_fast_down
-	walk_fast_right
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
+	walk_faster_left
+	walk_faster_left
+	walk_faster_down
+	walk_faster_down
+	walk_faster_right
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
 	step_end
 
 ShrineOfProsperityPresent_Movement_TornadusEscapeN:
-	walk_fast_right
-	walk_fast_down
-	walk_fast_down
-	walk_fast_right
-	walk_fast_down
-	walk_fast_down
-	walk_fast_left
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
+	walk_faster_right
+	walk_faster_down
+	walk_faster_down
+	walk_faster_right
+	walk_faster_down
+	walk_faster_down
+	walk_faster_left
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
 	step_end
 
 ShrineOfProsperityPresent_Movement_ThundurusEscapeE:
-	walk_fast_left
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_right
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
+	walk_faster_left
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_right
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
 	step_end
 
 ShrineOfProsperityPresent_Movement_TornadusEscapeE:
-	walk_fast_down
-	walk_fast_down
-	walk_fast_right
-	walk_fast_right
-	walk_fast_down
-	walk_fast_down
-	walk_fast_left
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_right
+	walk_faster_right
+	walk_faster_down
+	walk_faster_down
+	walk_faster_left
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
 	step_end
 
 
 ShrineOfProsperityPresent_Movement_ThundurusEscapeW:
-	walk_fast_right
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_left
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
+	walk_faster_right
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_left
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
 	step_end
 
 ShrineOfProsperityPresent_Movement_TornadusEscapeW:
-	walk_fast_down
-	walk_fast_down
-	walk_fast_left
-	walk_fast_left
-	walk_fast_down
-	walk_fast_down
-	walk_fast_right
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_left
+	walk_faster_left
+	walk_faster_down
+	walk_faster_down
+	walk_faster_right
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
 	step_end
 
 
@@ -198,7 +210,7 @@ ShrineOfProsperityPresent_EventScript_GeniePan::
 	closemessage
 	delay 40
 	special RemoveCameraObject
-	setvar VAR_QUEUE_GENIE_FIGHT, 2
+	setvar VAR_QUEUE_GENIE_FIGHT, 3
 	releaseall
 	end
 	
@@ -242,6 +254,7 @@ ShrineOfProsperityPresent_Movement_ThundurusRushN:
 	walk_faster_up
 	walk_faster_up
 	walk_faster_up
+	walk_faster_up
 	walk_faster_right
 	walk_faster_right
 	walk_faster_up
@@ -252,6 +265,7 @@ ShrineOfProsperityPresent_Movement_ThundurusRushN:
 	step_end
 
 ShrineOfProsperityPresent_Movement_ThundurusRushE:
+	walk_faster_up
 	walk_faster_up
 	walk_faster_up
 	walk_faster_up
@@ -270,6 +284,7 @@ ShrineOfProsperityPresent_Movement_ThundurusRushW:
 	walk_faster_up
 	walk_faster_up
 	walk_faster_up
+	walk_faster_up
 	walk_faster_right
 	walk_faster_right
 	walk_faster_up
@@ -280,12 +295,12 @@ ShrineOfProsperityPresent_Movement_ThundurusRushW:
 	step_end
 
 ShrineOfProsperityPresent_Movement_PanCameraUpL:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
 	walk_right
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
 	step_end
 
 ShrineOfProsperityPresent_Movement_PanCameraUpM:
@@ -297,12 +312,12 @@ ShrineOfProsperityPresent_Movement_PanCameraUpM:
 	step_end
 
 ShrineOfProsperityPresent_Movement_PanCameraUpR:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
 	walk_left
-	walk_up
-	walk_up
-	walk_up
-	walk_up
-	walk_up
 	step_end
 
 ShrineOfProsperityPresent_Movement_PanCameraDownL:
@@ -351,3 +366,7 @@ ShrineOfProsperityPresent_Text_LookerReportBack:
 	.string "… … …\p"
 	.string "… … …\n"
 	.string "… … …$"
+
+ShrineOfProsperityPresent_Text_LookerTheWeather:
+	.string "The weather…\n"
+	.string "It's clearing up!$"

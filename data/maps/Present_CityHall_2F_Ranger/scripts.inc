@@ -13,7 +13,7 @@ Present_CityHall_2F_Ranger_EventScript_HeadRanger::
 	releaseall
 	end
 
-Present_CityHall_2F_Ranger_EventScript_HeadRangerInitiateQuest:
+Present_CityHall_2F_Ranger_EventScript_HeadRangerInitiateQuest::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	msgbox Present_CityHall_2F_Ranger_Text_LookerHello, MSGBOX_DEFAULT
 	applymovement LOCALID_CITYHALL_RANGER, Common_Movement_WalkInPlaceFasterLeft
@@ -26,11 +26,11 @@ Present_CityHall_2F_Ranger_EventScript_HeadRangerInitiateQuest:
 	applymovement LOCALID_CITYHALL_RANGER, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	questmenu QUEST_MENU_SET_ACTIVE, QUEST_INVESTIGATE_PROSPERITY
-	setvar VAR_QUEUE_GENIE_FIGHT, 1
+	setvar VAR_QUEUE_GENIE_FIGHT, 2
 	releaseall
 	end
 	
-Present_CityHall_2F_Ranger_EventScript_HeadRangerActiveQuest:
+Present_CityHall_2F_Ranger_EventScript_HeadRangerActiveQuest::
 	msgbox Present_CityHall_2F_Ranger_Text_HeadRangerActive, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_CITYHALL_RANGER, Common_Movement_FaceOriginalDirection
@@ -38,7 +38,7 @@ Present_CityHall_2F_Ranger_EventScript_HeadRangerActiveQuest:
 	releaseall
 	end
 	
-Present_CityHall_2F_Ranger_EventScript_HeadRangerRewardQuest:
+Present_CityHall_2F_Ranger_EventScript_HeadRangerRewardQuest::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	msgbox Present_CityHall_2F_Ranger_Text_LookerImBack, MSGBOX_DEFAULT
 	applymovement LOCALID_CITYHALL_RANGER, Common_Movement_WalkInPlaceFasterLeft
@@ -55,9 +55,9 @@ Present_CityHall_2F_Ranger_EventScript_HeadRangerRewardQuest:
 	releaseall
 	end
 	
-Present_CityHall_2F_Ranger_EventScript_HeadRangerCompletedQuest:
+Present_CityHall_2F_Ranger_EventScript_HeadRangerCompletedQuest::
 	checkitem ITEM_SAFARI_BALL
-	goto_if_eq VAR_RESULT, TRUE, Present_CityHall_2F_Ranger_EventScript_HeadRangerGiveMoreSafariBalls
+	goto_if_eq VAR_RESULT, FALSE, Present_CityHall_2F_Ranger_EventScript_HeadRangerGiveMoreSafariBalls
 	msgbox Present_CityHall_2F_Ranger_Text_HeadRangerComplete, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_CITYHALL_RANGER, Common_Movement_FaceOriginalDirection
@@ -65,7 +65,7 @@ Present_CityHall_2F_Ranger_EventScript_HeadRangerCompletedQuest:
 	releaseall
 	end
 
-Present_CityHall_2F_Ranger_EventScript_HeadRangerGiveMoreSafariBalls:
+Present_CityHall_2F_Ranger_EventScript_HeadRangerGiveMoreSafariBalls::
 	msgbox Present_CityHall_2F_Ranger_Text_HeadRangerGiveMoreSafariBalls
 	giveitem ITEM_SAFARI_BALL, 500
 	closemessage
@@ -153,13 +153,13 @@ Present_CityHall_2F_Ranger_Text_HeadRangerReward:
 	.string "We have nobody on guard in the mornings\n"
 	.string "thanks to bad staffing issues…\p"
 	.string "I suppose someone might have snuck in\n"
-	.string "during those unattended hours and tried\l"
-	.string "to catch it?\p"
+	.string "during those unattended hours and\l"
+	.string "tried to catch it?\p"
 	.string "Adults know not to over-catch wild\n"
 	.string "Pokémon, but children can often run\l"
 	.string "rampant on the ecosystem if unchecked.\p"
-	.string "But to think there would be one strong\n"
-	.string "enough to capture a legend…\p"
+	.string "But to think there would be one\n"
+	.string "strong enough to capture a legend…\p"
 	.string "… … …\n"
 	.string "… … …\p"
 	.string "… … …\n"

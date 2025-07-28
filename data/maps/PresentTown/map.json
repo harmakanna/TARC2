@@ -340,7 +340,7 @@
       "x": 62,
       "y": 8,
       "elevation": 0,
-      "var": "VAR_PORTO_BELLA_CITY_STATE",
+      "var": "VAR_CUTSCENE_STATE",
       "var_value": "2",
       "script": "PresentTown_EventScript_CatchProsperityRangerAttention"
     },
@@ -349,7 +349,7 @@
       "x": 61,
       "y": 8,
       "elevation": 0,
-      "var": "VAR_PORTO_BELLA_CITY_STATE",
+      "var": "VAR_CUTSCENE_STATE",
       "var_value": "2",
       "script": "PresentTown_EventScript_CatchProsperityRangerAttention"
     },
@@ -358,7 +358,7 @@
       "x": 60,
       "y": 8,
       "elevation": 0,
-      "var": "VAR_PORTO_BELLA_CITY_STATE",
+      "var": "VAR_CUTSCENE_STATE",
       "var_value": "2",
       "script": "PresentTown_EventScript_CatchProsperityRangerAttention"
     },
@@ -469,6 +469,33 @@
       "var": "VAR_PORTO_BELLA_CITY_STATE",
       "var_value": "1",
       "script": "PresentTown_EventScript_NoBusinessInTheForest2"
+    },
+    {
+      "type": "trigger",
+      "x": 62,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_QUEUE_GENIE_FIGHT",
+      "var_value": "1",
+      "script": "PresentTown_EventScript_CatchProsperityRangerAttention2"
+    },
+    {
+      "type": "trigger",
+      "x": 61,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_QUEUE_GENIE_FIGHT",
+      "var_value": "1",
+      "script": "PresentTown_EventScript_CatchProsperityRangerAttention2"
+    },
+    {
+      "type": "trigger",
+      "x": 60,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_QUEUE_GENIE_FIGHT",
+      "var_value": "1",
+      "script": "PresentTown_EventScript_CatchProsperityRangerAttention2"
     }
   ],
   "bg_events": [
