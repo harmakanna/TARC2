@@ -1223,4 +1223,4 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/CutsceneForestPast/scripts.inc"
 	
-	.include "data/maps/PresentGym/scripts.inc"
+	.include "data/maps/Present_Gym/scripts.inc"

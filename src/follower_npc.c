@@ -782,8 +782,8 @@ u32 DetermineFollowerNPCState(struct ObjectEvent *follower, u32 state, u32 direc
             return MOVEMENT_INVALID;
 
         // Handle ice tile (some walking animation).
-        if (MetatileBehavior_IsIce(follower->currentMetatileBehavior) || MetatileBehavior_IsTrickHouseSlipperyFloor(follower->currentMetatileBehavior))
-            follower->disableAnim = TRUE;
+        //if (MetatileBehavior_IsIce(follower->currentMetatileBehavior) || MetatileBehavior_IsTrickHouseSlipperyFloor(follower->currentMetatileBehavior))
+        //    follower->disableAnim = TRUE;
 
         // Handle surfing.
         if (GetFollowerNPCData(FNPC_DATA_CURRENT_SPRITE) == FOLLOWER_NPC_SPRITE_INDEX_SURF && GetFollowerNPCSprite() == GetFollowerNPCData(FNPC_DATA_GFX_ID))
@@ -792,8 +792,8 @@ u32 DetermineFollowerNPCState(struct ObjectEvent *follower, u32 state, u32 direc
         RETURN_STATE(MOVEMENT_ACTION_WALK_FAST_DOWN, direction);
 
     case MOVEMENT_ACTION_WALK_FASTER_DOWN ... MOVEMENT_ACTION_WALK_FASTER_RIGHT:
-        if (MetatileBehavior_IsIce(follower->currentMetatileBehavior) || MetatileBehavior_IsTrickHouseSlipperyFloor(follower->currentMetatileBehavior))
-            follower->disableAnim = TRUE;
+        //if (MetatileBehavior_IsIce(follower->currentMetatileBehavior) || MetatileBehavior_IsTrickHouseSlipperyFloor(follower->currentMetatileBehavior))
+        //    follower->disableAnim = TRUE;
 
         RETURN_STATE(MOVEMENT_ACTION_WALK_FASTER_DOWN, direction);
 

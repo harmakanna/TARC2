@@ -4713,13 +4713,13 @@
     },
     {
       "id": "LAYOUT_PRESENT_GYM",
-      "name": "PresentGym_Layout",
+      "name": "Present_Gym_Layout",
       "width": 19,
-      "height": 44,
+      "height": 34,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_EliteFour",
-      "border_filepath": "data/layouts/PresentGym/border.bin",
-      "blockdata_filepath": "data/layouts/PresentGym/map.bin"
+      "secondary_tileset": "gTileset_CableClub",
+      "border_filepath": "data/layouts/Present_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/Present_Gym/map.bin"
     }
   ]
 }
