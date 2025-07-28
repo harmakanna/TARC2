@@ -4,3 +4,10 @@ Present_Gym_MapScripts::
 
 Present_Gym_OnTransition:
 	end
+
+Present_Gym_EventScript_GymStatue::
+	msgbox Present_Gym_Text_GymStatue, MSGBOX_SIGN
+	end
+
+Present_Gym_Text_GymStatue:
+	.string "Porta Bella City Pokémon Gym$"

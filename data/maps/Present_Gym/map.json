@@ -149,11 +149,11 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 7,
-      "y": 28,
+      "x": 11,
+      "y": 29,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "DewfordTown_Gym_EventScript_LeftGymStatue"
+      "script": "Present_Gym_EventScript_GymStatue"
     },
     {
       "type": "sign",
@@ -161,23 +161,23 @@
       "y": 28,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "DewfordTown_Gym_EventScript_RightGymStatue"
+      "script": "Present_Gym_EventScript_GymStatue"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 28,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Present_Gym_EventScript_GymStatue"
     },
     {
       "type": "sign",
       "x": 7,
       "y": 29,
-      "elevation": 0,
+      "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "DewfordTown_Gym_EventScript_LeftGymStatue"
-    },
-    {
-      "type": "sign",
-      "x": 11,
-      "y": 29,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "DewfordTown_Gym_EventScript_RightGymStatue"
+      "script": "Present_Gym_EventScript_GymStatue"
     }
   ]
 }
