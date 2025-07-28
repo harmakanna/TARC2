@@ -3,5 +3,4 @@ Present_Gym_MapScripts::
 	.byte 0
 
 Present_Gym_OnTransition:
-	@call Present_Gym_EventScript_SetFlashLevel
 	end
