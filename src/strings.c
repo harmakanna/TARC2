@@ -1308,11 +1308,11 @@ const u8 gText_QuestComplete[] =_("complete");
 const u8 gText_QuestActive[] =_("active");
 
 //names
-const u8 gText_SideQuestName_1[] = _("Save Estella");
-const u8 gText_SideQuestName_2[] = _("Shrine Investigation");
-const u8 gText_SideQuestName_3[] = _("Interrogate Matt");
-const u8 gText_SideQuestName_4[] = _("Defeat the Gym");
-const u8 gText_SideQuestName_5[] = _("Side Quest 5");
+const u8 gText_SideQuestName_1[] = _("Save Estella"); // Find Estella
+const u8 gText_SideQuestName_2[] = _("Shrine Investigation"); // Defeat Genies
+const u8 gText_SideQuestName_3[] = _("Interrogate Matt"); // Defeat Matt
+const u8 gText_SideQuestName_4[] = _("Defeat the Gym"); // Defeat Gym
+const u8 gText_SideQuestName_5[] = _("Side Quest 5"); // Which gym challenger did it?
 const u8 gText_SideQuestName_6[] = _("Side Quest 6");
 const u8 gText_SideQuestName_7[] = _("Side Quest 7");
 const u8 gText_SideQuestName_8[] = _("Side Quest 8");
@@ -1340,11 +1340,11 @@ const u8 gText_SideQuestName_29[] = _("Side Quest 29");
 const u8 gText_SideQuestName_30[] = _("Side Quest 30");
 
 //descriptions
-const u8 gText_SideQuestDesc_1[] = _("Find the concerned man's daughter,\nEstella, in the forest!");
-const u8 gText_SideQuestDesc_2[] = _("Investigate the abnormality at the\nShrine of Prosperity!");
-const u8 gText_SideQuestDesc_3[] = _("Enter AquaCorp HQ, defeat Team Aqua,\nand interrogate the admin!");
-const u8 gText_SideQuestDesc_4[] = _("Claim victory over Porta Bella City's\n gym leader!");
-const u8 gText_SideQuestDesc_5[] = _("Description 5");
+const u8 gText_SideQuestDesc_1[] = _("Find the concerned man's daughter,\nEstella, in the forest!"); // Find Estella
+const u8 gText_SideQuestDesc_2[] = _("Investigate the abnormality at the\nShrine of Prosperity!"); // Defeat Genies
+const u8 gText_SideQuestDesc_3[] = _("Enter AquaCorp HQ, defeat Team Aqua,\nand interrogate the admin!"); // Defeat Matt
+const u8 gText_SideQuestDesc_4[] = _("Claim victory over Porta Bella City's\n gym leader!"); // Defeat Gym
+const u8 gText_SideQuestDesc_5[] = _("Description 5"); // Which gym challenger did it?
 const u8 gText_SideQuestDesc_6[] = _("Description 6");
 const u8 gText_SideQuestDesc_7[] = _("Description 7");
 const u8 gText_SideQuestDesc_8[] = _("Description 8");
@@ -1372,11 +1372,11 @@ const u8 gText_SideQuestDesc_29[] = _("Description 29");
 const u8 gText_SideQuestDesc_30[] = _("Description 30");
 
 //completed quest description
-const u8 gText_SideQuestDoneDesc_1[] = _("Estella's back home safe with her\nfamily!");
-const u8 gText_SideQuestDoneDesc_2[] = _("Tornadus and Thundurus have been\nquelled… For now…");
-const u8 gText_SideQuestDoneDesc_3[] = _("Turns out Team Aqua HAS turned\na new leaf!");
-const u8 gText_SideQuestDoneDesc_4[] = _("Phoebe couldn't be happier with\nyour battle!");
-const u8 gText_SideQuestDoneDesc_5[] = _("Completed Quest 5");
+const u8 gText_SideQuestDoneDesc_1[] = _("Estella's back home safe with her\nfamily!"); // Find Estella
+const u8 gText_SideQuestDoneDesc_2[] = _("Tornadus and Thundurus have been\nquelled… For now…"); // Defeat Genies
+const u8 gText_SideQuestDoneDesc_3[] = _("Turns out Team Aqua HAS turned\na new leaf!"); // Defeat Matt
+const u8 gText_SideQuestDoneDesc_4[] = _("Phoebe couldn't be happier with\nyour battle!"); // Defeat Gym
+const u8 gText_SideQuestDoneDesc_5[] = _("Completed Quest 5"); // Which gym challenger did it?
 const u8 gText_SideQuestDoneDesc_6[] = _("Completed Quest 6");
 const u8 gText_SideQuestDoneDesc_7[] = _("Completed Quest 7");
 const u8 gText_SideQuestDoneDesc_8[] = _("Completed Quest 8");
@@ -1404,11 +1404,11 @@ const u8 gText_SideQuestDoneDesc_29[] = _("Completed Quest 29");
 const u8 gText_SideQuestDoneDesc_30[] = _("Completed Quest 30");
 
 //map
-const u8 gText_SideQuestMap1[] = _("Present");
-const u8 gText_SideQuestMap2[] = _("Present: City Hall");
-const u8 gText_SideQuestMap3[] = _("Present: AquaCorp HQ");
-const u8 gText_SideQuestMap4[] = _("Present: Gym");
-const u8 gText_SideQuestMap5[] = _("Map 5");
+const u8 gText_SideQuestMap1[] = _("Present"); // Find Estella
+const u8 gText_SideQuestMap2[] = _("Present: City Hall"); // Defeat Genies
+const u8 gText_SideQuestMap3[] = _("Present: AquaCorp HQ"); // Defeat Matt
+const u8 gText_SideQuestMap4[] = _("Present: Gym"); // Defeat Gym
+const u8 gText_SideQuestMap5[] = _("Present"); // Which gym challenger did it?
 const u8 gText_SideQuestMap6[] = _("Map 6");
 const u8 gText_SideQuestMap7[] = _("Map 7");
 const u8 gText_SideQuestMap8[] = _("Map 8");
@@ -1437,69 +1437,7 @@ const u8 gText_SideQuestMap30[] = _("Map 30");
 
 //subquests
 const u8 gText_SubQuestInvestigateProsperity_Name1[] = _("Defeat the genies.");
-const u8 gText_SubQuest1_Name1[] = _("Part 1");
-const u8 gText_SubQuest1_Name2[] = _("Part 2");
-const u8 gText_SubQuest1_Name3[] = _("Part 3");
-const u8 gText_SubQuest1_Name4[] = _("Part 4");
-const u8 gText_SubQuest1_Name5[] = _("Part 5");
-const u8 gText_SubQuest1_Name6[] = _("Part 6");
-const u8 gText_SubQuest1_Name7[] = _("Part 7");
-const u8 gText_SubQuest1_Name8[] = _("Part 8");
-const u8 gText_SubQuest1_Name9[] = _("Part 9");
-const u8 gText_SubQuest1_Name10[] = _("Part 10");
-
-const u8 gText_SubQuest2_Name1[] = _("Part 1");
-const u8 gText_SubQuest2_Name2[] = _("Part 2");
-const u8 gText_SubQuest2_Name3[] = _("Part 3");
-const u8 gText_SubQuest2_Name4[] = _("Part 4");
-const u8 gText_SubQuest2_Name5[] = _("Part 5");
-const u8 gText_SubQuest2_Name6[] = _("Part 6");
-const u8 gText_SubQuest2_Name7[] = _("Part 7");
-const u8 gText_SubQuest2_Name8[] = _("Part 8");
-const u8 gText_SubQuest2_Name9[] = _("Part 9");
-const u8 gText_SubQuest2_Name10[] = _("Part 10");
-const u8 gText_SubQuest2_Name11[] = _("Part 11");
-const u8 gText_SubQuest2_Name12[] = _("Part 12");
-const u8 gText_SubQuest2_Name13[] = _("Part 13");
-const u8 gText_SubQuest2_Name14[] = _("Part 14");
-const u8 gText_SubQuest2_Name15[] = _("Part 15");
-const u8 gText_SubQuest2_Name16[] = _("Part 16");
-const u8 gText_SubQuest2_Name17[] = _("Part 17");
-const u8 gText_SubQuest2_Name18[] = _("Part 18");
-const u8 gText_SubQuest2_Name19[] = _("Part 19");
-const u8 gText_SubQuest2_Name20[] = _("Part 20");
 
 const u8 gText_SubQuestInvestigateProsperity_Desc1[] = _("Defeat Tornadus and Thundurus at\nthe Shrine of Prosperity!");
-const u8 gText_SubQuest1_Desc1[] = _("Description Sub 1");
-const u8 gText_SubQuest1_Desc2[] = _("Description Sub 2");
-const u8 gText_SubQuest1_Desc3[] = _("Description Sub 3");
-const u8 gText_SubQuest1_Desc4[] = _("Description Sub 4");
-const u8 gText_SubQuest1_Desc5[] = _("Description Sub 5");
-const u8 gText_SubQuest1_Desc6[] = _("Description Sub 6");
-const u8 gText_SubQuest1_Desc7[] = _("Description Sub 7");
-const u8 gText_SubQuest1_Desc8[] = _("Description Sub 8");
-const u8 gText_SubQuest1_Desc9[] = _("Description Sub 9");
-const u8 gText_SubQuest1_Desc10[] = _("Description Sub 10");
-
-const u8 gText_SubQuest2_Desc1[] = _("Description Sub 1");
-const u8 gText_SubQuest2_Desc2[] = _("Description Sub 2");
-const u8 gText_SubQuest2_Desc3[] = _("Description Sub 3");
-const u8 gText_SubQuest2_Desc4[] = _("Description Sub 4");
-const u8 gText_SubQuest2_Desc5[] = _("Description Sub 5");
-const u8 gText_SubQuest2_Desc6[] = _("Description Sub 6");
-const u8 gText_SubQuest2_Desc7[] = _("Description Sub 7");
-const u8 gText_SubQuest2_Desc8[] = _("Description Sub 8");
-const u8 gText_SubQuest2_Desc9[] = _("Description Sub 9");
-const u8 gText_SubQuest2_Desc10[] = _("Description Sub 10");
-const u8 gText_SubQuest2_Desc11[] = _("Description Sub 11");
-const u8 gText_SubQuest2_Desc12[] = _("Description Sub 12");
-const u8 gText_SubQuest2_Desc13[] = _("Description Sub 13");
-const u8 gText_SubQuest2_Desc14[] = _("Description Sub 14");
-const u8 gText_SubQuest2_Desc15[] = _("Description Sub 15");
-const u8 gText_SubQuest2_Desc16[] = _("Description Sub 16");
-const u8 gText_SubQuest2_Desc17[] = _("Description Sub 17");
-const u8 gText_SubQuest2_Desc18[] = _("Description Sub 18");
-const u8 gText_SubQuest2_Desc19[] = _("Description Sub 19");
-const u8 gText_SubQuest2_Desc20[] = _("Description Sub 20");
 
 const u8 gText_SubQuestInvestigateProsperity_Map1[] = _("Present: Shrine of Prosperity");

@@ -54,7 +54,6 @@ ShrineOfProsperityPast_EventScript_LandorusMyth::
 	delay 40
 	removeobject LOCALID_SHRINE_PROSPERITY_PAST_ANABEL
 	clearflag FLAG_HIDE_SHRINE_PEACE_CELEBI
-	clearflag FLAG_HIDE_RANGERS
 	clearflag FLAG_LOCK_CITY_DOORS
 	setflag FLAG_HIDE_PAST_TOWN_HALL_ESTELLA
 	setflag FLAG_SYS_B_DASH
@@ -62,6 +61,7 @@ ShrineOfProsperityPast_EventScript_LandorusMyth::
 	setvar VAR_CUTSCENE_STATE, 9
 	setvar VAR_PORTO_BELLA_CITY_STATE, 3
 	setvar VAR_QUEUE_GENIE_FIGHT, 1
+	setvar VAR_PRESENT_GYM_STATE, 1
 	releaseall
 	end
 

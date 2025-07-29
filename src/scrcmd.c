@@ -58,6 +58,7 @@
 #include "list_menu.h"
 #include "malloc.h"
 #include "constants/event_objects.h"
+#include "constants/event_object_movement.h"
 #include "constants/map_types.h"
 #include "quests.h"
 
@@ -81,6 +82,30 @@ extern const u8 *gStdScripts_End[];
 
 static void CloseBrailleWindow(void);
 static void DynamicMultichoiceSortList(struct ListMenuItem *items, u32 count);
+
+static const u8 sSpeakNorthMovementScript[] =
+{
+    MOVEMENT_ACTION_WALK_IN_PLACE_FASTER_UP,
+    MOVEMENT_ACTION_STEP_END
+};
+
+static const u8 sSpeakEastMovementScript[] =
+{
+    MOVEMENT_ACTION_WALK_IN_PLACE_FASTER_RIGHT,
+    MOVEMENT_ACTION_STEP_END
+};
+
+static const u8 sSpeakWestMovementScript[] =
+{
+    MOVEMENT_ACTION_WALK_IN_PLACE_FASTER_LEFT,
+    MOVEMENT_ACTION_STEP_END
+};
+
+static const u8 sSpeakSouthMovementScript[] =
+{
+    MOVEMENT_ACTION_WALK_IN_PLACE_FASTER_DOWN,
+    MOVEMENT_ACTION_STEP_END
+};
 
 // This is defined in here so the optimizer can't see its value when compiling
 // script.c.
@@ -1675,6 +1700,55 @@ bool8 ScrCmd_release(struct ScriptContext *ctx)
     return FALSE;
 }
 
+bool8 ScrCmd_setspeaker(struct ScriptContext *ctx)
+{
+    const u8 *name = (const u8 *)ScriptReadWord(ctx);
+    SetSpeakerName(name);
+    return FALSE;
+}
+
+bool8 ScrCmd_speak(struct ScriptContext *ctx)
+{
+    u16 localId = VarGet(ScriptReadHalfword(ctx));
+    u32 direction = VarGet(ScriptReadWord(ctx));
+    const u8 *name = (const u8 *)ScriptReadWord(ctx);
+    const u8 *msg = (const u8 *)ScriptReadWord(ctx);
+    //struct ObjectEvent *objEvent;
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    //gObjectEvents[GetObjectEventIdByLocalId(localId)].directionOverwrite = DIR_NONE;
+    switch (direction)
+    {
+        case DIR_NORTH:
+            ScriptMovement_StartObjectMovementScript(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, sSpeakNorthMovementScript);
+            break;
+        case DIR_EAST:
+            ScriptMovement_StartObjectMovementScript(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, sSpeakEastMovementScript);
+            break;
+        case DIR_WEST:
+            ScriptMovement_StartObjectMovementScript(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, sSpeakWestMovementScript);
+            break;
+        case DIR_SOUTH:
+            ScriptMovement_StartObjectMovementScript(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, sSpeakSouthMovementScript);
+            break;
+        default:
+            ScriptMovement_StartObjectMovementScript(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, sSpeakNorthMovementScript);
+            break;
+    }
+    //sMovingNpcId = localId;
+
+    SetSpeakerName(name);
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    if (msg == NULL)
+        msg = (const u8 *)ctx->data[0];
+    ShowFieldMessage(msg);
+
+    return FALSE;
+}
+
 bool8 ScrCmd_message(struct ScriptContext *ctx)
 {
     const u8 *msg = (const u8 *)ScriptReadWord(ctx);
@@ -3249,7 +3323,7 @@ bool8 Scrcmd_checkspecies_choose(struct ScriptContext *ctx)
 bool8 Scrcmd_getobjectfacingdirection(struct ScriptContext *ctx)
 {
     u32 objectId = VarGet(ScriptReadHalfword(ctx));
-    u32 varId = ScriptReadHalfword(ctx);
+    u32 varId = ScriptReadWord(ctx);
 
     Script_RequestEffects(SCREFF_V1);
     Script_RequestWriteVar(varId);

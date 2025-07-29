@@ -4647,36 +4647,19 @@ AI: Basic Trainer
 Mugshot: Green
 
 Dusclops
-Level: 48
+Level: 5
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Shadow Punch
 - Confuse Ray
 - Curse
-- Protect
 
 Banette
-Level: 49
+Level: 5
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Shadow Ball
 - Grudge
 - Will O Wisp
 - Feint Attack
-
-Sableye
-Level: 50
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Ball
-- Double Team
-- Night Shade
-- Feint Attack
-
-Banette
-Level: 49
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Ball
-- Psychic
-- Thunderbolt
-- Facade
 
 Dusclops @ Sitrus Berry
 Level: 51

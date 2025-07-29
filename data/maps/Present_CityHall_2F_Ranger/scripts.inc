@@ -14,18 +14,15 @@ Present_CityHall_2F_Ranger_EventScript_HeadRanger::
 	end
 
 Present_CityHall_2F_Ranger_EventScript_HeadRangerInitiateQuest::
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	msgbox Present_CityHall_2F_Ranger_Text_LookerHello, MSGBOX_DEFAULT
-	applymovement LOCALID_CITYHALL_RANGER, Common_Movement_WalkInPlaceFasterLeft
-	msgbox Present_CityHall_2F_Ranger_Text_2_RangerGladYouMadeItOut
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	msgbox Present_CityHall_2F_Ranger_Text_LookerOfCourse, MSGBOX_DEFAULT
-	applymovement LOCALID_CITYHALL_RANGER, Common_Movement_WalkInPlaceFasterLeft
-	msgbox Present_CityHall_2F_Ranger_Text_HeadRangerInitiate, MSGBOX_DEFAULT
+	call Script_GetNPCFacingDirection
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_CityHall_2F_Ranger_Text_LookerHello
+	speak LOCALID_CITYHALL_RANGER, VAR_0x8005, Name_Head_Ranger, Present_CityHall_2F_Ranger_Text_HeadRangerGladYouMadeItOut
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_CityHall_2F_Ranger_Text_LookerOfCourse
+	speak LOCALID_CITYHALL_RANGER, VAR_0x8005, Name_Head_Ranger, Present_CityHall_2F_Ranger_Text_HeadRangerInitiate
 	closemessage
 	applymovement LOCALID_CITYHALL_RANGER, Common_Movement_FaceOriginalDirection
 	waitmovement 0
-	questmenu QUEST_MENU_SET_ACTIVE, QUEST_INVESTIGATE_PROSPERITY
+	startquest QUEST_INVESTIGATE_PROSPERITY
 	setvar VAR_QUEUE_GENIE_FIGHT, 2
 	releaseall
 	end
@@ -39,19 +36,16 @@ Present_CityHall_2F_Ranger_EventScript_HeadRangerActiveQuest::
 	end
 	
 Present_CityHall_2F_Ranger_EventScript_HeadRangerRewardQuest::
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	msgbox Present_CityHall_2F_Ranger_Text_LookerImBack, MSGBOX_DEFAULT
-	applymovement LOCALID_CITYHALL_RANGER, Common_Movement_WalkInPlaceFasterLeft
-	msgbox Present_CityHall_2F_Ranger_Text_HeadRangerDang, MSGBOX_DEFAULT
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	msgbox Present_CityHall_2F_Ranger_Text_LookerAllInADaysWork, MSGBOX_DEFAULT
-	applymovement LOCALID_CITYHALL_RANGER, Common_Movement_WalkInPlaceFasterLeft
-	msgbox Present_CityHall_2F_Ranger_Text_HeadRangerReward, MSGBOX_DEFAULT
+	call Script_GetNPCFacingDirection
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_CityHall_2F_Ranger_Text_LookerImBack
+	speak LOCALID_CITYHALL_RANGER, VAR_0x8005, Name_Head_Ranger, Present_CityHall_2F_Ranger_Text_HeadRangerDang
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_CityHall_2F_Ranger_Text_LookerAllInADaysWork
+	speak LOCALID_CITYHALL_RANGER, VAR_0x8005, Name_Head_Ranger, Present_CityHall_2F_Ranger_Text_HeadRangerReward
 	giveitem ITEM_SAFARI_BALL, 500
 	closemessage
 	applymovement LOCALID_CITYHALL_RANGER, Common_Movement_FaceOriginalDirection
 	waitmovement 0
-	questmenu QUEST_MENU_COMPLETE_QUEST QUEST_INVESTIGATE_PROSPERITY
+	completequest QUEST_INVESTIGATE_PROSPERITY
 	releaseall
 	end
 	
@@ -93,7 +87,7 @@ Present_CityHall_2F_Ranger_Text_LookerHello:
 	.string "Looker: Hello.\n"
 	.string "Has Anabel reported in on what happened?$"
 
-Present_CityHall_2F_Ranger_Text_2_RangerGladYouMadeItOut:
+Present_CityHall_2F_Ranger_Text_HeadRangerGladYouMadeItOut:
 	.string "Ranger: Welcome back, Looker!\p"
 	.string "She filled me in on everything that\n"
 	.string "happened in the woods.\p"

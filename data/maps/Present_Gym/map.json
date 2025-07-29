@@ -15,6 +15,7 @@
   "connections": null,
   "object_events": [
     {
+      "local_id": "LOCALID_GYM_PHOEBE",
       "graphics_id": "OBJ_EVENT_GFX_PHOEBE",
       "x": 9,
       "y": 4,
@@ -67,8 +68,9 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_GYM_GUY",
       "graphics_id": "OBJ_EVENT_GFX_MAN_2",
-      "x": 9,
+      "x": 8,
       "y": 30,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -76,7 +78,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DewfordTown_Gym_EventScript_GymGuide",
+      "script": "Present_Gym_EventScript_GymGuide",
       "flag": "0"
     },
     {

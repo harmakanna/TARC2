@@ -1919,9 +1919,11 @@
 	questmenu QUEST_MENU_SET_ACTIVE, \quest
 	questmenu QUEST_MENU_BUFFER_QUEST_NAME \quest
     bufferstring 1 gText_QuestActive
-	playfanfare MUS_LEVEL_UP
+	playfanfare MUS_REGISTER_MATCH_CALL
 	msgbox gText_QuestAnnounce, MSGBOX_SIGN
 	waitfanfare
+	closemessage
+	delay 30
 	.endm
 
     @ Completes the specified quest.
@@ -1931,12 +1933,14 @@
 	questmenu QUEST_MENU_COMPLETE_QUEST, \quest
 	questmenu QUEST_MENU_BUFFER_QUEST_NAME \quest
     bufferstring 1 gText_QuestComplete
-	playfanfare MUS_LEVEL_UP
+	playfanfare MUS_OBTAIN_TMHM
 	msgbox gText_QuestAnnounce, MSGBOX_SIGN
 	waitfanfare
+	closemessage
+	delay 30
 	.endm
 
-.macro goto_if_quest_inactive quest:req, dest:req
+	.macro goto_if_quest_inactive quest:req, dest:req
 	questmenu QUEST_MENU_CHECK_INACTIVE \quest
 	goto_if_eq VAR_RESULT, TRUE, \dest
 	.endm
@@ -2041,6 +2045,21 @@
     call_if_eq VAR_RESULT, FALSE, \dest
     .endm
 	
+	@ Sets the text of the name box in the next-shown message box.
+	.macro speakername text:req
+	.byte SCR_OP_SETSPEAKER
+	.4byte \text
+	.endm
+
+	.macro speak localId:req,direction:req,name:req,text:req,type=MSGBOX_DEFAULT
+	.byte SCR_OP_SPEAK
+	.2byte \localId
+	.4byte \direction
+	.4byte \name
+	.4byte \text
+	callstd \type
+	.endm
+
 @ Supplementary
 
 	.macro goto_if_unset flag:req, dest:req
@@ -2627,7 +2646,7 @@
 	.macro getobjectfacingdirection localId:req, dest:req
 	callnative Scrcmd_getobjectfacingdirection, requests_effects=1
 	.2byte \localId
-	.2byte \dest
+	.4byte \dest
 	.endm
 
 	@ Hides any follower Pokémon if present, putting them into their Poké Ball; by default waits for their movement to finish.

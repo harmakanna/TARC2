@@ -47,7 +47,7 @@
 #define FLAG_MET_CELEBI                        0x21 // Unused Flag
 #define FLAG_HIDE_OUTSIDE_NPCS                 0x22 // Unused Flag
 #define FLAG_HIDE_INSIDE_OUTSIDE_NPCS          0x23 // Unused Flag
-#define FLAG_HIDE_RANGERS                      0x24 // Unused Flag
+#define FLAG_HIDE_SHRINE_PEACE_RANGER          0x24 // Unused Flag
 #define FLAG_HIDE_MATT_OUTSIDE                 0x25 // Unused Flag
 #define FLAG_HIDE_AQUA_GRUNT_OUTSIDE           0x26 // Unused Flag
 #define FLAG_HIDE_ANABEL_PRESENTTOWN           0x27 // Unused Flag
@@ -71,8 +71,8 @@
 #define FLAG_HIDE_SHRINE_TORNADUS              0x39 // Unused Flag
 #define FLAG_HIDE_SHRINE_THUNDURUS             0x3A // Unused Flag
 #define FLAG_DEFEATED_SHRINE_GENIES            0x3B // Unused Flag
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
+#define FLAG_ENTERED_GYM_IN_INTRO              0x3C // Unused Flag
+#define FLAG_HIDE_SHRINE_PROSPERITY_RANGER     0x3D // Unused Flag
 #define FLAG_UNUSED_0x03E    0x3E // Unused Flag
 #define FLAG_UNUSED_0x03F    0x3F // Unused Flag
 #define FLAG_UNUSED_0x040    0x40 // Unused Flag
@@ -1503,7 +1503,7 @@
 #define FLAG_ARRIVED_AT_NAVEL_ROCK                  (SYSTEM_FLAGS + 0x81)
 #define FLAG_LANDMARK_TRAINER_HILL                  (SYSTEM_FLAGS + 0x82)
 
-#define FLAG_UNUSED_0x8E3                           (SYSTEM_FLAGS + 0x83) // Unused Flag
+#define FLAG_SUPPRESS_SPEAKER_NAME                  (SYSTEM_FLAGS + 0x83) // Unused Flag
 
 #define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x84)
 

@@ -110,7 +110,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PresentTown_EventScript_PeaceRanger",
-      "flag": "FLAG_HIDE_RANGERS"
+      "flag": "FLAG_HIDE_SHRINE_PEACE_RANGER"
     },
     {
       "local_id": "LOCALID_PRESENT_PROSPERITY_RANGER",
@@ -124,7 +124,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PresentTown_EventScript_ProsperityRanger",
-      "flag": "FLAG_HIDE_RANGERS"
+      "flag": "FLAG_HIDE_SHRINE_PROSPERITY_RANGER"
     }
   ],
   "warp_events": [
