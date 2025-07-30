@@ -1588,6 +1588,23 @@ void CreateMonWithEVSpreadNatureOTID(struct Pokemon *mon, u16 species, u8 level,
     CalculateMonStats(mon);
 }
 
+void CreateMonWithNatureGenderOTID(struct Pokemon *mon, u16 species, u8 level, u8 nature, u8 gender, u32 otId)
+{
+    s32 i;
+
+    // i is reused as personality value
+    do
+    {
+        i = Random32();
+    } while (nature != GetNatureFromPersonality(i)
+            || gender != GetGenderFromSpeciesAndPersonality(species, i));
+
+    CreateMon(mon, species, level, 32, TRUE, i, OT_ID_PRESET, otId);
+
+
+    CalculateMonStats(mon);
+}
+
 void ConvertPokemonToBattleTowerPokemon(struct Pokemon *mon, struct BattleTowerPokemon *dest)
 {
     s32 i;

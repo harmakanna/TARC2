@@ -1,0 +1,9 @@
+#ifndef GUARD_CONSTANTS_OTS_H
+#define GUARD_CONSTANTS_OTS_H
+
+#define OT_PHOEBE_DUSKNOIR     1
+#define OT_PHOEBE_SABLEYE      2
+#define OT_SHELLY_HUNTAIL      3
+#define OT_SHELLY_GOREBYSS     4
+
+#endif //GUARD_CONSTANTS_OTS_H

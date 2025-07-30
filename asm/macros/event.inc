@@ -2059,6 +2059,11 @@
 	.4byte \text
 	callstd \type
 	.endm
+	
+	.macro givemonwithot ot:req
+	.byte SCR_OP_CREATEMONWITHOT
+	.byte \ot
+	.endm
 
 @ Supplementary
 
