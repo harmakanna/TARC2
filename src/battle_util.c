@@ -1732,7 +1732,7 @@ bool32 HandleFaintedMonActions(void)
                  && !(gBattleStruct->givenExpMons & (1u << gBattlerPartyIndexes[gBattleStruct->faintedActionsBattlerId]))
                  && !(gAbsentBattlerFlags & (1u << gBattleStruct->faintedActionsBattlerId)))
                 {
-                    BattleScriptExecute(BattleScript_GiveExp);
+                    //BattleScriptExecute(BattleScript_GiveExp);
                     gBattleStruct->faintedActionsState = 2;
                     return TRUE;
                 }
