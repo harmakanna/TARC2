@@ -75,11 +75,11 @@
 #define FLAG_HIDE_SHRINE_PROSPERITY_RANGER     0x3D // Unused Flag
 #define FLAG_SPOKE_TO_PHOEBE                   0x3E // Unused Flag
 #define FLAG_DEFEATED_MATT                     0x3F // Unused Flag
-#define FLAG_UNUSED_0x040    0x40 // Unused Flag
-#define FLAG_UNUSED_0x041    0x41 // Unused Flag
-#define FLAG_UNUSED_0x042    0x42 // Unused Flag
-#define FLAG_UNUSED_0x043    0x43 // Unused Flag
-#define FLAG_UNUSED_0x044    0x44 // Unused Flag
+#define FLAG_HIDE_CLAMPERL                     0x40 // Unused Flag
+#define FLAG_HIDE_GOREBYSS                     0x41 // Unused Flag
+#define FLAG_HIDE_HUNTAIL                      0x42 // Unused Flag
+#define FLAG_HIDE_CITY_THUNDURUS               0x43 // Unused Flag
+#define FLAG_HIDE_CITY_TORNADUS                0x44 // Unused Flag
 #define FLAG_UNUSED_0x045    0x45 // Unused Flag
 #define FLAG_UNUSED_0x046    0x46 // Unused Flag
 #define FLAG_UNUSED_0x047    0x47 // Unused Flag
