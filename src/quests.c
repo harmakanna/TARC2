@@ -2553,7 +2553,8 @@ void HandleQuestIconForSingleObjectEvent(struct ObjectEvent *objectEvent, u32 ob
         return;
 
 	// Remove icon if quest is completed
-	if (QuestMenu_GetSetQuestState(questId, FLAG_GET_COMPLETED))
+	if (QuestMenu_GetSetQuestState(questId, FLAG_GET_COMPLETED)
+		|| QuestMenu_GetSetQuestState(questId, FLAG_GET_ACTIVE))
 	{
 		RemoveQuestIconFieldEffect(objectEvent);
 		return;

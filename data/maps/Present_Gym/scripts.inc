@@ -1,5 +1,6 @@
 Present_Gym_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Present_Gym_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, Present_Gym_OnFrame
 	.byte 0
 
 Present_Gym_OnTransition:
@@ -20,103 +21,37 @@ Present_Gym_OnFrame:
 	map_script_2 VAR_PRESENT_GYM_STATE, 1, Present_Gym_EventScript_GuyIntroducesQuest
 	.2byte 0
 
-Present_Gym_EventScript_Phoebe::
+Present_Gym_EventScript_GuyPushesYouOut::
 	lockall
-	faceplayer
-	call Script_GetNPCFacingDirection
-	goto_if_set FLAG_DEFEATED_ELITE_4_PHOEBE, Present_Gym_EventScript_PhoebePostBattleSpeech
-	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
-	goto_if_set FLAG_SPOKE_TO_PHOEBE, Present_Gym_EventScript_PhoebeStartBattleFast
-	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeHiLooker
-	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Gym_Text_LookerImHereOnOfficialBusiness
-	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeIHeardYouWanted
-	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Gym_Text_LookerCorrect
-	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeThankYou
-	setflag FLAG_SPOKE_TO_PHOEBE
-	trainerbattle_no_intro TRAINER_PHOEBE, Present_Gym_Text_PhoebeDefeat
-	goto Present_Gym_EventScript_PhoebeDefeated
-	end
-
-Present_Gym_EventScript_PhoebeStartBattleFast::
-	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeRematch
-	trainerbattle_no_intro TRAINER_PHOEBE, Present_Gym_Text_PhoebeDefeat
-	goto Present_Gym_EventScript_PhoebeDefeated
-	end
-
-Present_Gym_EventScript_PhoebePostBattleSpeech::
-	speakername Name_Phoebe
-	msgbox Present_Gym_Text_PhoebePostBattleSpeech, MSGBOX_DEFAULT
-	closemessage
-	releaseall
-	end
-
-Present_Gym_EventScript_PhoebeDefeated::
-	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeICouldGoForAnother
-	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Gym_Text_LookerNoTimeToFoolAround
-	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeFineWhatDoYouNeed
-	call_if_unset FLAG_DEFEATED_MATT, Present_Gym_EventScript_PhoebeTeamAquaSuspicious
-	call_if_set FLAG_DEFEATED_MATT, Present_Gym_EventScript_PhoebeIDontKnow
-	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Gym_Text_LookerHmm
-	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeAnyTime
-	multichoicedefault 21, 6, MULTI_PHOEBE_GIVEMON, 1, TRUE
-	goto_if_eq VAR_RESULT, 0, Present_Gym_EventScript_PhoebeGiveDusknoir
-	goto_if_eq VAR_RESULT, 1, Present_Gym_EventScript_PhoebeGiveSableye
-	end
-
-Present_Gym_EventScript_PhoebeDefeatedSetFlags::
-	special HealPlayerParty
-	setflag FLAG_DEFEATED_ELITE_4_PHOEBE
-	setflag FLAG_DEFEATED_GYM_TRAINER_1
-	setflag FLAG_DEFEATED_GYM_TRAINER_2
-	setflag FLAG_DEFEATED_GYM_TRAINER_3
-	setflag FLAG_DEFEATED_GYM_TRAINER_4
-	setflag FLAG_DEFEATED_GYM_TRAINER_5
-	setflag FLAG_DEFEATED_GYM_TRAINER_6
-	completequest QUEST_DEFEAT_PHOEBE
-	releaseall
-	end
-
-Present_Gym_EventScript_PhoebeTeamAquaSuspicious::
-	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Gym_Text_LookerINeedInfoOnTwo
-	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeTeamAquaSuspicious
-	return
-
-Present_Gym_EventScript_PhoebeIDontKnow::
-	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Gym_Text_LookerINeedInfoOnOne
-	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeTheStormsAreCertainlyWeird
-	return
-
-Present_Gym_EventScript_GymGuide::
-	lockall
-	faceplayer
-	goto_if_set FLAG_DEFEATED_ELITE_4_PHOEBE, Present_Gym_EventScript_GymGuyBeatPhoebe
+	playse SE_PIN
+	applymovement LOCALID_GYM_GUY, Present_Gym_Movement_GymGuyWalksToPlayer
+	waitmovement 0
+	goto_if_unset FLAG_ENTERED_GYM_IN_INTRO, Present_Gym_EventScript_LookerMeetsGuyPregame
 	speakername Name_Gym_Guy
-	msgbox Present_Gym_Text_GymGuyJustKnowRepeat, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, Present_Gym_EventScript_GymGuyHealsYou
-	msgbox Present_Gym_Text_GymGuyGoodLuck, MSGBOX_DEFAULT
+	msgbox Present_Gym_Text_TheresAChallenger, MSGBOX_DEFAULT
 	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_PLAYER
+	warp MAP_PRESENT_TOWN, 55, 18
+	waitstate
 	releaseall
 	end
 
-Present_Gym_EventScript_GymGuyHealsYou::
+Present_Gym_EventScript_LookerMeetsGuyPregame::
+	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_Gym_Text_LookerHelloPregame
+	speak LOCALID_GYM_GUY, DIR_SOUTH, Name_Gym_Guy, Present_Gym_Text_TheresAChallenger
+	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_Gym_Text_LookerUnderstandable
 	closemessage
-	playse SE_USE_ITEM
-	delay 40
-	special HealPlayerParty
-	call Present_Gym_EventScript_ResetTrainers
-	speakername Name_Gym_Guy
-	msgbox Present_Gym_Text_GymGuyGoodLuck, MSGBOX_DEFAULT
-	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_PLAYER
+	setflag FLAG_ENTERED_GYM_IN_INTRO
+	warp MAP_PRESENT_TOWN, 55, 18
+	waitstate
 	releaseall
 	end
 
-Present_Gym_EventScript_GymGuyBeatPhoebe::
-	speakername Name_Gym_Guy
-	msgbox Present_Gym_Text_GymGuyBeatPhoebe, MSGBOX_DEFAULT
-	closemessage
-	releaseall
-	end
-	
 Present_Gym_EventScript_GuyIntroducesQuest::
 	lockall
 	playse SE_PIN
@@ -149,33 +84,6 @@ Present_Gym_EventScript_GuyDoesntRecognizeYou::
 	speak LOCALID_GYM_GUY, DIR_SOUTH, Name_Gym_Guy, Present_Gym_Text_GymGuyNoCanDoInTown
 	return
 
-Present_Gym_EventScript_GuyPushesYouOut::
-	lockall
-	playse SE_PIN
-	applymovement LOCALID_GYM_GUY, Present_Gym_Movement_GymGuyWalksToPlayer
-	waitmovement 0
-	goto_if_unset FLAG_ENTERED_GYM_IN_INTRO, Present_Gym_EventScript_LookerMeetsGuyPregame
-	speakername Name_Gym_Guy
-	msgbox Present_Gym_Text_TheresAChallenger, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
-	fadescreen FADE_TO_BLACK
-	warp MAP_PRESENT_TOWN, 55, 18
-	releaseall
-	end
-
-Present_Gym_EventScript_LookerMeetsGuyPregame::
-	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_Gym_Text_LookerHelloPregame
-	speak LOCALID_GYM_GUY, DIR_SOUTH, Name_Gym_Guy, Present_Gym_Text_TheresAChallenger
-	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_Gym_Text_LookerUnderstandable
-	closemessage
-	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
-	fadescreen FADE_TO_BLACK
-	setflag FLAG_ENTERED_GYM_IN_INTRO
-	warp MAP_PRESENT_TOWN, 55, 18
-	releaseall
-	end
-
 Present_Gym_Movement_GymGuyWalksToPlayer:
 	emote_exclamation_mark
 	delay_16
@@ -192,6 +100,90 @@ Present_Gym_Movement_GymGuyWalksBackToStartingPosition:
 	walk_left
 	face_down
 	step_end
+
+Present_Gym_EventScript_Phoebe::
+	lock
+	faceplayer
+	goto_if_set FLAG_DEFEATED_ELITE_4_PHOEBE, Present_Gym_EventScript_PhoebePostBattleSpeech
+	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
+	goto_if_set FLAG_SPOKE_TO_PHOEBE, Present_Gym_EventScript_PhoebeStartBattleFast
+	call Script_GetNPCFacingDirection
+	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeHiLooker
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Gym_Text_LookerImHereOnOfficialBusiness
+	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeIHeardYouWanted
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Gym_Text_LookerCorrect
+	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeThankYou
+	setflag FLAG_SPOKE_TO_PHOEBE
+	trainerbattle_no_intro TRAINER_PHOEBE, Present_Gym_Text_PhoebeDefeat
+	goto Present_Gym_EventScript_PhoebeDefeated
+	end
+
+Present_Gym_EventScript_PhoebeStartBattleFast::
+	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeRematch
+	trainerbattle_no_intro TRAINER_PHOEBE, Present_Gym_Text_PhoebeDefeat
+	goto Present_Gym_EventScript_PhoebeDefeated
+	end
+
+Present_Gym_EventScript_PhoebePostBattleSpeech::
+	faceplayer
+	speakername Name_Phoebe
+	msgbox Present_Gym_Text_PhoebePostBattleSpeech, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Present_Gym_EventScript_PhoebeDefeated::
+	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeICouldGoForAnother
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Gym_Text_LookerNoTimeToFoolAround
+	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeFineWhatDoYouNeed
+	call_if_unset FLAG_DEFEATED_MATT, Present_Gym_EventScript_PhoebeTeamAquaSuspicious
+	call_if_set FLAG_DEFEATED_MATT, Present_Gym_EventScript_PhoebeIDontKnow
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Gym_Text_LookerHmm
+	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeAnyTime
+	multichoicedefault 0, 6, MULTI_PHOEBE_GIVEMON, 1, TRUE
+	goto_if_eq VAR_RESULT, 0, Present_Gym_EventScript_PhoebeGiveDusknoir
+	goto_if_eq VAR_RESULT, 1, Present_Gym_EventScript_PhoebeGiveSableye
+	end
+
+Present_Gym_EventScript_PhoebeDefeatedSetFlags::
+	special HealPlayerParty
+	setflag FLAG_DEFEATED_ELITE_4_PHOEBE
+	setflag FLAG_DEFEATED_GYM_TRAINER_1
+	setflag FLAG_DEFEATED_GYM_TRAINER_2
+	setflag FLAG_DEFEATED_GYM_TRAINER_3
+	setflag FLAG_DEFEATED_GYM_TRAINER_4
+	setflag FLAG_DEFEATED_GYM_TRAINER_5
+	setflag FLAG_DEFEATED_GYM_TRAINER_6
+	completequest QUEST_DEFEAT_PHOEBE
+	release
+	end
+
+Present_Gym_EventScript_PhoebeTeamAquaSuspicious::
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Gym_Text_LookerINeedInfoOnTwo
+	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeTeamAquaSuspicious
+	return
+
+Present_Gym_EventScript_PhoebeIDontKnow::
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Gym_Text_LookerINeedInfoOnOne
+	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeTheStormsAreCertainlyWeird
+	return
+
+Present_Gym_EventScript_GymGuide::
+	lock
+	faceplayer
+	goto_if_set FLAG_DEFEATED_ELITE_4_PHOEBE, Present_Gym_EventScript_GymGuyBeatPhoebe
+	speakername Name_Gym_Guy
+	msgbox Present_Gym_Text_GymGuyJustKnowRepeat, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Present_Gym_EventScript_GymGuyBeatPhoebe::
+	speakername Name_Gym_Guy
+	msgbox Present_Gym_Text_GymGuyBeatPhoebe, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
 
 @ Hex Maniac Top, TRAINER_LEAH
 Present_Gym_EventScript_GymTrainer1::
@@ -330,8 +322,8 @@ Present_Gym_Text_PhoebeFineWhatDoYouNeed:
 
 Present_Gym_Text_LookerINeedInfoOnTwo:
 	.string "I need information on two things -\n"
-	.string "Team Aqua and any recent goings-on in\l"
-	.string "Porta Bella you might be privy to.$"
+	.string "Team Aqua and any recent goings-on\l"
+	.string "in Porta Bella you might be privy to.$"
 
 Present_Gym_Text_LookerINeedInfoOnOne:
 	.string "I need information on the recent\n"
@@ -340,48 +332,48 @@ Present_Gym_Text_LookerINeedInfoOnOne:
 	.string "all suspicion.$"
 
 Present_Gym_Text_PhoebeTeamAquaSuspicious:
-	.string "Team Aqua has been acting suspicious ever\n"
-	.string "since they moved in.\p"
-	.string "They're constantly performing experiments\n"
-	.string "on the local wild Pokémon, which has put\l"
-	.string "them at odds with the city government\l"
-	.string "and the residents of Porta Bella.\p"
+	.string "Well, Team Aqua has been acting\n"
+	.string "suspicious ever since they moved in.\p"
+	.string "They're constantly doing experiments\n"
+	.string "on the local wild Pokémon, which has\l"
+	.string "put them at odds with the city and\l"
+	.string "the residents of Porta Bella.\p"
 	.string "I wouldn't be surprised if they had\n"
 	.string "something to do with the storm.\p"
-	.string "Outside of that, we've also had a number of\n"
-	.string "gym challengers come in, as we only just\l"
-	.string "started gym season in the past few days.\p"
-	.string "There's a few trainers who have come by\n"
-	.string "already, but only one has been strong enough\l"
-	.string "to beat me thus far.\p"
+	.string "Outside of that, we've also had a few\n"
+	.string "gym challengers come by, as we just\l"
+	.string "started gym season a few days ago.\p"
+	.string "There's a few trainers who have come\n"
+	.string "by already, but only one has been\l"
+	.string "strong enough to beat me thus far.\p"
 	.string "Does that help?$"
 
 Present_Gym_Text_PhoebeTheStormsAreCertainlyWeird:
-	.string "The big storm which rolled in earlier is\n"
-	.string "certainly weird…\p"
-	.string "If it's not Team Aqua who's the culprit, I\n"
-	.string "couldn't imagine who it would be…"
-	.string "I suppose you could check in with the Rangers\n"
-	.string "if you haven't already?\p"
-	.string "Outside of that, we've also had a number of\n"
-	.string "gym challengers come in, as we only just\l"
-	.string "started gym season in the past few days.\p"
-	.string "There's a few trainers who have come by\n"
-	.string "already, but only one has been strong enough\l"
-	.string "to beat me thus far.\p"
+	.string "The big storm which rolled in earlier\n"
+	.string "is certainly weird…\p"
+	.string "If it's not Team Aqua who's the culprit,\n"
+	.string "I couldn't imagine who it would be…"
+	.string "I suppose you could check in with the\n"
+	.string "Rangers if you haven't already?\p"
+	.string "Outside of that, we've also had a few\n"
+	.string "gym challengers come by, as we just\l"
+	.string "started gym season a few days ago.\p"
+	.string "There's a few trainers who have come\n"
+	.string "by already, but only one has been\l"
+	.string "strong enough to beat me thus far.\p"
 	.string "Does that help?$"
 
 Present_Gym_Text_LookerHmm:
 	.string "Hmm…\p"
-	.string "Thank you, Phoebe. I believe I am getting\n"
+	.string "Thank you, Phoebe. I believe I am now\n"
 	.string "closer to cracking open this case!$"
 
 Present_Gym_Text_PhoebeAnyTime:
 	.string "Any time, Looker! Thanks for such an\n"
 	.string "exciting battle!\p"
-	.string "While you're in town, feel free to borrow\n"
-	.string "one of my Pokémon! I think they could be a\l"
-	.string "great help to your investigation.\p"
+	.string "While you're in town, feel free to\n"
+	.string "borrow a Pokémon! It might be a great\l"
+	.string "help to your investigation.\p"
 	.string "Which would you like?$"
 
 Present_Gym_Text_PhoebeHiLooker:
@@ -393,12 +385,12 @@ Present_Gym_Text_LookerImHereOnOfficialBusiness:
 	.string "subsequently, the recent downpour.$"
 
 Present_Gym_Text_PhoebeIHeardYouWanted:
-	.string "I heard you were in town! I'd be glad to\n"
-	.string "help out, but would you PLEASE save me\l"
-	.string "from my job and entertain me with a\n"
-	.string "battle?\p"
-	.string "Sometimes this new job makes me feel like\n"
-	.string "I'm a glorified babysitter…\p"
+	.string "I heard you were in town! I'd be glad\n"
+	.string "to help out, but would you PLEASE save\l"
+	.string "me from my job and entertain me with\l"
+	.string "a battle?\p"
+	.string "Sometimes this new job makes me feel\n"
+	.string "like I'm a glorified babysitter…\p"
 	.string "I'd appreciate a change of pace…$"
 
 Present_Gym_Text_LookerCorrect:
@@ -408,14 +400,14 @@ Present_Gym_Text_LookerCorrect:
 Present_Gym_Text_PhoebeThankYou:
 	.string "Thank you!\n"
 	.string "Okay Looker…\p"
-	.string "Get ready for a beatdown from the strongest\n"
-	.string "trainer in all of Porta Bella!$"
+	.string "Get ready for a beatdown from the\n"
+	.string "strongest trainer in Porta Bella!$"
 
 Present_Gym_Text_PhoebeRematch:
 	.string "Back again for more?\n"
 	.string "Okay Looker…\p"
-	.string "Get ready for another beatdown from the\n"
-	.string "strongest trainer in Porta Bella!$"
+	.string "Get ready for another beatdown from\n"
+	.string "the strongest trainer in Porta Bella!$"
 
 Present_Gym_Text_PhoebeIntroSpeech:
 	.string "Ahahaha!\p"
@@ -441,9 +433,6 @@ Present_Gym_Text_GymGuyBeatPhoebe:
 	.string "Hopefully she complains less after that\n"
 	.string "heated battle…$"
 
-Present_Gym_Text_GymGuyGoodLuck:
-	.string "All right, good luck out there!$"
-
 Present_Gym_Text_LookerIAmBack:
 	.string "Hello, I am back. I hope there\n"
 	.string "isn't a gym challenger around this time?\p"
@@ -452,37 +441,37 @@ Present_Gym_Text_LookerIAmBack:
 	.string "Would she have time now?$"
 
 Present_Gym_Text_GymGuyYouWereHereEarlier:
-	.string "Ah, Looker! I remember you\n"
-	.string "came by here earlier.\p"
-	.string "The gym leader is, in fact, available\n"
-	.string "to speak now!$"
+	.string "Ah, Looker! I remember you came by here\n"
+	.string "earlier.\p"
+	.string "The gym leader is, in fact, available to\n"
+	.string "speak now!$"
 
 Present_Gym_Text_GymGuyIveHeardOfYou:
-	.string "Hello, Looker! I'm so glad to\n"
-	.string "meet you - I'm a big fan.\p"
-	.string "The gym leader isn't taking any challengers\n"
-	.string "now, so you should be able to talk to her.$"
+	.string "Hello, Looker! I'm so glad to meet you -\n"
+	.string "I'm a big fan.\p"
+	.string "The gym leader isn't being challenged\n"
+	.string "now, so you can go talk to her.$"
 
 Present_Gym_Text_LookerWonderfulCanSheComeUp:
-	.string "Wonderful. Could she come up to\n"
-	.string "the front so we can talk?$"
+	.string "Wonderful. Could she come up to the front,\n"
+	.string "in that case?$"
 
 Present_Gym_Text_GymGuyNoCanDoInTown:
-	.string "No can do. She heard you were\n"
-	.string "in the city and said she wanted to see what\l"
-	.string "you're made of if you swung by, so you\l"
-	.string "gotta do the whole gym challenge.\p"
-	.string "Being a leader, she rarely gets the chance\n"
-	.string "to battle adults.\p"
+	.string "No can do. She heard you were in the city\n"
+	.string "and said she wanted to see what you're\l"
+	.string "made of if you swung by, so you gotta\l"
+	.string "do the whole gym challenge.\p"
+	.string "Being a leader, she rarely gets the\n"
+	.string "chance to battle adults.\p"
 	.string "Only kids really take the gyms seriously.$"
 
 Present_Gym_Text_GymGuyNoCanDo:
-	.string "No can do. I told her you\n"
-	.string "swung by earlier and she said she wanted\l"
-	.string "to see what you're made of, so you gotta\l"
-	.string "do the whole gym challenge.\p"
-	.string "Being a leader, she rarely gets the chance\n"
-	.string "to battle adults.\p"
+	.string "No can do. I told her you swung by\n"
+	.string "earlier and she said she wanted to see\l"
+	.string "what you're made of, so you gotta do\l"
+	.string "the whole gym challenge.\p"
+	.string "Being a leader, she rarely gets the\n"
+	.string "chance to battle adults.\p"
 	.string "Only kids really take the gyms seriously.$"
 
 Present_Gym_Text_LookerSoSheWantsAChangeOfPace:
@@ -491,21 +480,20 @@ Present_Gym_Text_LookerSoSheWantsAChangeOfPace:
 	.string "I have some time to indulge.$"
 
 Present_Gym_Text_GymGuyGreatJustKnow:
-	.string "Great! Just so you know, if\n"
-	.string "you beat any gym trainers here but leave\l"
-	.string "the gym, you will have to re-fight them!\p"
+	.string "Great! Just so you know, if you beat any\n"
+	.string "gym trainers here but leave the gym,\l"
+	.string "you will have to re-fight them!\p"
 	.string "The gym leader wants to see how tough a\n"
 	.string "member of the police like yourself is.$"
 
 Present_Gym_Text_LookerSure:
-	.string "Sure. It's been too long since\n"
-	.string "I did a gym challenge.$"
+	.string "Sure. It's been too long since I did a\n"
+	.string "gym challenge. This will be fun.$"
 
 Present_Gym_Text_GymGuyJustKnowRepeat:
-	.string "Just so you know, if you\n"
-	.string "leave the gym or get healed by me, you\l"
-	.string "will have to re-fight the gym trainers!\p"
-	.string "Knowing that, would you like a heal?$"
+	.string "Just so you know, if you leave the gym,\n"
+	.string "you will have to refight the trainers!\p"
+	.string "Good luck out there!$"
 
 Present_Gym_Text_LookerHello:
 	.string "Hello. My name is Looker with the\n"
@@ -518,20 +506,19 @@ Present_Gym_Text_LookerHello:
 Present_Gym_Text_LookerHelloPregame:
 	.string "Hello. My name is Looker with the\n"
 	.string "International Police.\p"
-	.string "I am here to ask the gym leader about the\n"
-	.string "recent activities of Team Aqua?\p"
-	.string "I am here on official business and would\n"
+	.string "I am here to ask the gym leader about\n"
+	.string "the recent activities of Team Aqua?\p"
+	.string "I am on official business and would\n"
 	.string "appreciate an audience with her.$"
 
 Present_Gym_Text_TheresAChallenger:
-	.string "Hello, Looker! Sorry, but a\n"
-	.string "trainer is currently challenging the gym.\p"
-	.string "You will have to come back later once the\n"
-	.string "gym is cleared.$"
+	.string "Hello, Looker! Sorry, but a trainer\n"
+	.string "is currently challenging the gym.\p"
+	.string "You will have to come back later once\n"
+	.string "the gym is cleared.$"
 
 Present_Gym_Text_LookerUnderstandable:
-	.string "Oh, that's unfortunate.\n"
-	.string "I'll come by to speak with her later.$"
+	.string "Oh, that's unfortunate.$"
 
 Present_Gym_Text_GymTrainer1Intro:
 	.string "Hehehehe…\n"
