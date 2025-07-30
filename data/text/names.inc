@@ -1,5 +1,5 @@
 Name_Unknown:
-    .string "  ???  $"
+    .string " ??? $"
 
 Name_Looker:
     .string "Looker$"
@@ -48,3 +48,6 @@ Name_Thundurus:
 
 Name_Scientist:
     .string "Scientist$"
+
+Name_Lass:
+    .string "Marie$"

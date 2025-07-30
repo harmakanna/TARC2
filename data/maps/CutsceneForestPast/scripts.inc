@@ -3,6 +3,7 @@ CutsceneForestPast_MapScripts::
 
 CutsceneForestPast_EventScript_IGottaFindAnabel::
 	lockall
+	speakername Name_Looker
 	msgbox CutsceneForestPast_Text_IGottaFindAnabel, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
@@ -12,6 +13,7 @@ CutsceneForestPast_EventScript_IGottaFindAnabel::
 
 CutsceneForestPast_EventScript_AmIGoingTheRightWayL::
 	lockall
+	speakername Name_Looker
 	msgbox CutsceneForestPast_Text_AmIGoingTheRightWay, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_PLAYER, Common_Movement_WalkRight2
@@ -20,6 +22,7 @@ CutsceneForestPast_EventScript_AmIGoingTheRightWayL::
 
 CutsceneForestPast_EventScript_AmIGoingTheRightWayR::
 	lockall
+	speakername Name_Looker
 	msgbox CutsceneForestPast_Text_AmIGoingTheRightWay, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft2
@@ -29,6 +32,7 @@ CutsceneForestPast_EventScript_AmIGoingTheRightWayR::
 
 CutsceneForestPast_EventScript_AmIGoingTheRightWayM::
 	lockall
+	speakername Name_Looker
 	msgbox CutsceneForestPast_Text_AmIGoingTheRightWay, MSGBOX_DEFAULT
 	closemessage
 	goto CutsceneForestPast_EventScript_AmIGoingTheRightWay
@@ -38,6 +42,7 @@ CutsceneForestPast_EventScript_AmIGoingTheRightWay::
 	delay 40
 	applymovement LOCALID_PLAYER, CutsceneForestPast_Movement_LookAround
 	waitmovement 0
+	speakername Name_Looker
 	msgbox CutsceneForestPast_Text_SeemsRight, MSGBOX_DEFAULT
 	closemessage
 	clearflag FLAG_SYS_NO_MUSIC_ON_TRANSITION

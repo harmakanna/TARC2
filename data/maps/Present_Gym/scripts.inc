@@ -180,30 +180,30 @@ Present_Gym_Text_GymGuyGoodLuck:
 	.string "All right, good luck out there!$"
 
 Present_Gym_Text_LookerIAmBack:
-	.string "Looker: Hello, I am back. I hope there\n"
+	.string "Hello, I am back. I hope there\n"
 	.string "isn't a gym challenger around this time?\p"
 	.string "I am here on official business to discuss\n"
 	.string "the most recent torrent with the leader.\p"
 	.string "Would she have time now?$"
 
 Present_Gym_Text_GymGuyYouWereHereEarlier:
-	.string "Gym Guide: Ah, Looker! I remember you\n"
+	.string "Ah, Looker! I remember you\n"
 	.string "came by here earlier.\p"
 	.string "The gym leader is, in fact, available\n"
 	.string "to speak now!$"
 
 Present_Gym_Text_GymGuyIveHeardOfYou:
-	.string "Gym Guide: Hello, Looker! I'm so glad to\n"
+	.string "Hello, Looker! I'm so glad to\n"
 	.string "meet you - I'm a big fan.\p"
 	.string "The gym leader isn't taking any challengers\n"
 	.string "now, so you should be able to talk to her.$"
 
 Present_Gym_Text_LookerWonderfulCanSheComeUp:
-	.string "Looker: Wonderful. Could she come up to\n"
+	.string "Wonderful. Could she come up to\n"
 	.string "the front so we can talk?$"
 
 Present_Gym_Text_GymGuyNoCanDoInTown:
-	.string "Gym Guide: No can do. She heard you were\n"
+	.string "No can do. She heard you were\n"
 	.string "in the city and said she wanted to see what\l"
 	.string "you're made of if you swung by, so you\l"
 	.string "gotta do the whole gym challenge.\p"
@@ -212,7 +212,7 @@ Present_Gym_Text_GymGuyNoCanDoInTown:
 	.string "Only kids really take the gyms seriously.$"
 
 Present_Gym_Text_GymGuyNoCanDo:
-	.string "Gym Guide: No can do. I told her you\n"
+	.string "No can do. I told her you\n"
 	.string "swung by earlier and she said she wanted\l"
 	.string "to see what you're made of, so you gotta\l"
 	.string "do the whole gym challenge.\p"
@@ -221,30 +221,30 @@ Present_Gym_Text_GymGuyNoCanDo:
 	.string "Only kids really take the gyms seriously.$"
 
 Present_Gym_Text_LookerSoSheWantsAChangeOfPace:
-	.string "Looker: So she wants a change of\n"
+	.string "So she wants a change of\n"
 	.string "pace compared to her normal job?\p"
 	.string "I have some time to indulge.$"
 
 Present_Gym_Text_GymGuyGreatJustKnow:
-	.string "Gym Guide: Great! Just so you know, if\n"
+	.string "Great! Just so you know, if\n"
 	.string "you beat any gym trainers here but leave\l"
 	.string "the gym, you will have to re-fight them!\p"
 	.string "The gym leader wants to see how tough a\n"
 	.string "member of the police like yourself is.$"
 
 Present_Gym_Text_LookerSure:
-	.string "Looker: Sure. It's been too long since\n"
+	.string "Sure. It's been too long since\n"
 	.string "I did a gym challenge. This should be\l"
 	.string "a fun change of pace.$"
 
 Present_Gym_Text_GymGuyJustKnowRepeat:
-	.string "Gym Guide: Just so you know, if you\n"
+	.string "Just so you know, if you\n"
 	.string "leave the gym or get healed by me, you\l"
 	.string "will have to re-fight the gym trainers!\p"
 	.string "Knowing that, would you like a heal?$"
 
 Present_Gym_Text_LookerHello:
-	.string "Looker: Hello. My name is Looker with the\n"
+	.string "Hello. My name is Looker with the\n"
 	.string "International Police.\p"
 	.string "I am here to ask the gym leader about the\n"
 	.string "most recent downpour?\p"
@@ -252,7 +252,7 @@ Present_Gym_Text_LookerHello:
 	.string "appreciate an audience with her soon.$"
 
 Present_Gym_Text_LookerHelloPregame:
-	.string "Looker: Hello. My name is Looker with the\n"
+	.string "Hello. My name is Looker with the\n"
 	.string "International Police.\p"
 	.string "I am here to ask the gym leader about the\n"
 	.string "recent activities of Team Aqua?\p"
@@ -260,13 +260,13 @@ Present_Gym_Text_LookerHelloPregame:
 	.string "appreciate an audience with her.$"
 
 Present_Gym_Text_TheresAChallenger:
-	.string "Gym Guide: Hello, Looker! Sorry, but a\n"
+	.string "Hello, Looker! Sorry, but a\n"
 	.string "trainer is currently challenging the gym.\p"
 	.string "You will have to come back later once the\n"
 	.string "gym is cleared.$"
 
 Present_Gym_Text_LookerUnderstandable:
-	.string "Looker: Oh, that's unfortunate.\n"
+	.string "Oh, that's unfortunate.\n"
 	.string "I'll come by to speak with her later.$"
 
 Present_Gym_Text_GymStatue:

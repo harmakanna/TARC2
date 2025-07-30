@@ -40,8 +40,7 @@ ShrineOfPeacePresent_EventScript_CelebiEncounter::
 	applymovement LOCALID_SHRINE_PEACE_PRESENT_ANABEL, ShrineOfPeacePresent_Movement_RunToCenterCamera2
 	waitmovement 0
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
-	applymovement LOCALID_SHRINE_PEACE_PRESENT_ANABEL, Common_Movement_FaceLeft
-	msgbox ShrineOfPeacePresent_Text_AnabelAlmostToTheShrine, MSGBOX_DEFAULT
+	speak LOCALID_SHRINE_PEACE_PRESENT_ANABEL, DIR_WEST, Name_Anabel, ShrineOfPeacePresent_Text_AnabelAlmostToTheShrine
 	closemessage
 	applymovement LOCALID_CAMERA, ShrineOfPeacePresent_Movement_CameraTrailLooker
 	applymovement LOCALID_PLAYER, ShrineOfPeacePresent_Movement_LookerRunToShrine
@@ -51,6 +50,7 @@ ShrineOfPeacePresent_EventScript_CelebiEncounter::
 	applymovement LOCALID_PLAYER, Common_Movement_FaceUpExclamationMark
 	applymovement LOCALID_SHRINE_PEACE_PRESENT_ANABEL, Common_Movement_FaceUpExclamationMark
 	delay 48
+	speakername Name_Anabel
 	msgbox ShrineOfPeacePresent_Text_LookerLookUpAhead, MSGBOX_DEFAULT
 	closemessage
 	clearflag FLAG_HIDE_SHRINE_OF_PEACE_PRESENT_WILD_MONS
@@ -70,13 +70,13 @@ ShrineOfPeacePresent_EventScript_CelebiEncounter::
 	applymovement LOCALID_CAMERA, ShrineOfPeacePresent_Movement_PanCameraToLooker
 	waitmovement 0
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
-	applymovement LOCALID_SHRINE_PEACE_PRESENT_ANABEL, Common_Movement_FaceLeft
 	playse SE_SELECT
-	msgbox ShrineOfPeacePresent_Text_AnabelItsTooDangerous, MSGBOX_DEFAULT
+	speak LOCALID_SHRINE_PEACE_PRESENT_ANABEL, DIR_WEST, Name_Anabel, ShrineOfPeacePresent_Text_AnabelItsTooDangerous
 	playse SE_PIN
 	applymovement LOCALID_SHRINE_PEACE_PRESENT_ANABEL, Common_Movement_FaceDownExclamationMark
 	delay 48
 	playse SE_SELECT
+	speakername Name_Anabel
 	msgbox ShrineOfPeacePresent_Text_AnabelOhNo, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
@@ -91,6 +91,7 @@ ShrineOfPeacePresent_EventScript_CelebiEncounter::
 	clearflag FLAG_HIDE_SHRINE_PEACE_CELEBI
 	setobjectxyperm LOCALID_SHRINE_PRESENT_CELEBI, 14, 21
 	addobject LOCALID_SHRINE_PRESENT_CELEBI
+	speakername Name_Anabel
 	msgbox ShrineOfPeacePresent_Text_AnabelWhatNow, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_SHRINE_PEACE_PRESENT_MON1, Common_Movement_WalkRight
@@ -106,6 +107,7 @@ ShrineOfPeacePresent_EventScript_CelebiEncounter::
 	delay 40
 	playmoncry SPECIES_CELEBI, CRY_MODE_NORMAL
 	msgbox ShrineOfPeacePresent_Text_CelebiBii1, MSGBOX_DEFAULT
+	speakername Name_Anabel
 	msgbox ShrineOfPeacePresent_Text_AnabelShoutsLooker, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRightExclamationMark
@@ -118,6 +120,7 @@ ShrineOfPeacePresent_EventScript_CelebiEncounter::
 	applymovement LOCALID_SHRINE_PEACE_PRESENT_MON4, ShrineOfPeacePresent_Movement_Mon4Attack
 	setflag FLAG_HIDE_SHRINE_PEACE_PRESENT_ANABEL
 	delay 100
+	speakername Name_Looker
 	msgbox ShrineOfPeacePresent_Text_LookerAnabel, MSGBOX_DEFAULT
 	closemessage
 	delay 60
@@ -127,6 +130,7 @@ ShrineOfPeacePresent_EventScript_CelebiEncounter::
 	applymovement LOCALID_PLAYER, Common_Movement_QuestionMark
 	delay 48
 	playse SE_SELECT
+	speakername Name_Looker
 	msgbox ShrineOfPeacePresent_Text_LookerHuh, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_SHRINE_PEACE_PRESENT_MON1, Common_Movement_WalkRight
@@ -337,6 +341,9 @@ ShrineOfPeacePresent_Movement_PanCameraToLooker:
 ShrineOfPeacePresent_EventScript_Celebi::
 	lockall
 	faceplayer
+	speakername Name_Celebi
+	msgbox ShrineOfPeacePresent_Text_Celebi, MSGBOX_DEFAULT
+	speakername NULL
 	msgbox ShrineOfPeacePresent_Text_CelebiWarp, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, ShrineOfPeacePresent_EventScript_CelebiWarp
 	releaseall
@@ -351,8 +358,10 @@ ShrineOfPeacePresent_EventScript_CelebiWarp::
 ShrineOfPeacePresent_Text_MainGameStart:
 	.string "… … …$"
 
+ShrineOfPeacePresent_Text_Celebi:
+	.string "Biii?$"
+
 ShrineOfPeacePresent_Text_CelebiWarp:
-	.string "Biii?\p"
 	.string "Celebi is looking at you\n"
 	.string "expectantly…\p"
 	.string "Warp to the past?$"

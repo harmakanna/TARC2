@@ -32,12 +32,14 @@ ShrineOfPeacePast_EventScript_FirstWarp::
 	delay 60
 	applymovement LOCALID_PLAYER, ShrineOfPeacePast_Movement_LookerLooksAround
 	waitmovement 0
+	speakername Name_Looker
 	msgbox ShrineOfPeacePast_Text_LookerWhatHappened, MSGBOX_DEFAULT
 	closemessage
 	delay 60
 	playse SE_PIN
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDownExclamationMark
 	delay 48
+	speakername Name_Looker
 	msgbox ShrineOfPeacePast_Text_LookerAnabel, MSGBOX_DEFAULT
 	closemessage
 	clearflag FLAG_SYS_B_DASH
@@ -64,6 +66,7 @@ ShrineOfPeacePast_EventScript_FirstWarp::
 
 ShrineOfPeacePast_EventScript_WarpToForestL::
 	lockall
+	speakername Name_Looker
 	msgbox ShrineOfPeacePast_Text_LookerISeeFootsteps, MSGBOX_DEFAULT
 	closemessage
 	warp MAP_CUTSCENE_FOREST_PAST, 9, 6
@@ -72,6 +75,7 @@ ShrineOfPeacePast_EventScript_WarpToForestL::
 
 ShrineOfPeacePast_EventScript_WarpToForestM::
 	lockall
+	speakername Name_Looker
 	msgbox ShrineOfPeacePast_Text_LookerISeeFootsteps, MSGBOX_DEFAULT
 	closemessage
 	warp MAP_CUTSCENE_FOREST_PAST, 10, 6
@@ -80,6 +84,7 @@ ShrineOfPeacePast_EventScript_WarpToForestM::
 
 ShrineOfPeacePast_EventScript_WarpToForestR::
 	lockall
+	speakername Name_Looker
 	msgbox ShrineOfPeacePast_Text_LookerISeeFootsteps, MSGBOX_DEFAULT
 	closemessage
 	warp MAP_CUTSCENE_FOREST_PAST, 11, 6
@@ -90,6 +95,9 @@ ShrineOfPeacePast_EventScript_Celebi::
 	lockall
 	faceplayer
 	goto_if_unset FLAG_WARPED_WITH_CELEBI, ShrineOfPeacePast_EventScript_CelebiFirstWarp
+	speakername Name_Celebi
+	msgbox ShrineOfPeacePast_Text_Celebi
+	speakername NULL
 	msgbox ShrineOfPeacePast_Text_CelebiWarp, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, ShrineOfPeacePast_EventScript_CelebiWarp
 	releaseall
@@ -113,8 +121,10 @@ ShrineOfPeacePast_Text_CelebiFirstWarp:
 	.string "expectantly…\p"
 	.string "Reach out your hand?$"
 
+ShrineOfPeacePast_Text_Celebi:
+	.string "Biii?$"
+
 ShrineOfPeacePast_Text_CelebiWarp:
-	.string "Biii?\p"
 	.string "Celebi is looking at you\n"
 	.string "expectantly…\p"
 	.string "Warp to the present?$"

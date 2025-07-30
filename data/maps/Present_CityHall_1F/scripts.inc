@@ -47,26 +47,20 @@ Present_CityHall_1F_EventScript_PostStormDiscussion::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkUp2
 	waitmovement 0
 	msgbox Present_CityHall_1F_Text_MayorAreYouAlright, MSGBOX_DEFAULT
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
-	msgbox Present_CityHall_1F_Text_LookerYoureTheMayor, MSGBOX_DEFAULT
+	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_CityHall_1F_Text_LookerYoureTheMayor
 	applymovement LOCALID_CITYHALL_1F_MAYOR, Common_Movement_WalkInPlaceFasterDown
 	msgbox Present_CityHall_1F_Text_MayorIAmTheMayor, MSGBOX_DEFAULT
-	applymovement LOCALID_CITYHALL_1F_ANABEL, Common_Movement_WalkInPlaceFasterUp
-	msgbox Present_CityHall_1F_Text_AnabelWhatWasThat, MSGBOX_DEFAULT
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	speakername Name_Mayor
+	msgbox Present_CityHall_1F_Text_MayorMorrigan, MSGBOX_DEFAULT
+	speak LOCALID_CITYHALL_1F_ANABEL, DIR_NORTH, Name_Anabel, Present_CityHall_1F_Text_AnabelWhatWasThat
 	applymovement LOCALID_CITYHALL_1F_ANABEL, Common_Movement_WalkInPlaceFasterLeft
-	waitmovement 0
-	msgbox Present_CityHall_1F_Text_LookerDocilePokemon, MSGBOX_DEFAULT
-	applymovement LOCALID_CITYHALL_1F_ANABEL, Common_Movement_WalkInPlaceFasterLeft
-	msgbox Present_CityHall_1F_Text_AnabelButThatDoesntHoldUp, MSGBOX_DEFAULT
+	speak LOCALID_PLAYER, DIR_EAST, Name_Looker, Present_CityHall_1F_Text_LookerDocilePokemon
+	speak LOCALID_CITYHALL_1F_ANABEL, DIR_WEST, Name_Anabel, Present_CityHall_1F_Text_AnabelButThatDoesntHoldUp
 	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	applymovement LOCALID_CITYHALL_1F_ANABEL, Common_Movement_FaceUp
-	applymovement LOCALID_CITYHALL_1F_MAYOR, Common_Movement_WalkInPlaceFasterDown
-	waitmovement 0
-	msgbox Present_CityHall_1F_Text_MayorYouDontSuppose, MSGBOX_DEFAULT
-	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	speak LOCALID_CITYHALL_1F_MAYOR, DIR_SOUTH, Name_Mayor, Present_CityHall_1F_Text_MayorYouDontSuppose
 	applymovement LOCALID_CITYHALL_1F_ANABEL, Common_Movement_FaceLeft
-	msgbox Present_CityHall_1F_Text_LookerHmm, MSGBOX_DEFAULT
+	speak LOCALID_PLAYER, DIR_EAST, Name_Looker, Present_CityHall_1F_Text_LookerHmm
 	closemessage
 	clearflag FLAG_HIDE_CITYHALL_1F_CONCERNED_DAD
 	delay 50
@@ -93,26 +87,20 @@ Present_CityHall_1F_EventScript_PostStormDiscussion::
 	delay 48
 	applymovement LOCALID_CITYHALL_1F_CONCERNED_DAD, Common_Movement_WalkUp
 	waitmovement 0
-	msgbox Present_CityHall_1F_Text_LookerWhatsTheMatter, MSGBOX_DEFAULT
-	applymovement LOCALID_CITYHALL_1F_CONCERNED_DAD, Common_Movement_WalkInPlaceFasterUp
-	msgbox Present_CityHall_1F_Text_DadMyDaughter, MSGBOX_DEFAULT
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
-	msgbox Present_CityHall_1F_Text_LookerSlowDown, MSGBOX_DEFAULT
-	applymovement LOCALID_CITYHALL_1F_ANABEL, Common_Movement_WalkInPlaceFasterDown
-	msgbox Present_CityHall_1F_Text_AnabelItsOkay
-	applymovement LOCALID_CITYHALL_1F_CONCERNED_DAD, Common_Movement_WalkInPlaceFasterUp
-	msgbox Present_CityHall_1F_Text_DadThankYouLong, MSGBOX_DEFAULT
+	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, Present_CityHall_1F_Text_LookerWhatsTheMatter
+	speak LOCALID_CITYHALL_1F_CONCERNED_DAD, DIR_NORTH, Name_Concerned_Dad, Present_CityHall_1F_Text_DadMyDaughter
+	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, Present_CityHall_1F_Text_LookerSlowDown
+	speak LOCALID_CITYHALL_1F_ANABEL, DIR_SOUTH, Name_Anabel, Present_CityHall_1F_Text_AnabelItsOkay
+	speak LOCALID_CITYHALL_1F_CONCERNED_DAD, DIR_NORTH, Name_Concerned_Dad, Present_CityHall_1F_Text_DadThankYouLong
 	closemessage
 	playse SE_REPEL
 	waitse
 	delay 10
 	msgbox Present_CityHall_1F_Text_LookerUsedTheRepel, MSGBOX_DEFAULT
 	delay 48
-	applymovement LOCALID_CITYHALL_1F_CONCERNED_DAD, Common_Movement_WalkInPlaceFasterUp
-	msgbox Present_CityHall_1F_Text_DadWeLiveNear, MSGBOX_DEFAULT
+	speak LOCALID_CITYHALL_1F_CONCERNED_DAD, DIR_NORTH, Name_Concerned_Dad, Present_CityHall_1F_Text_DadWeLiveNear
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	applymovement LOCALID_CITYHALL_1F_ANABEL, Common_Movement_WalkInPlaceFasterLeft
-	msgbox Present_CityHall_1F_Text_AnabelLostChild
+	speak LOCALID_CITYHALL_1F_ANABEL, DIR_WEST, Name_Anabel, Present_CityHall_1F_Text_AnabelLostChild
 	closemessage
 	setvar VAR_CUTSCENE_STATE, 2
 	setflag FLAG_SYS_DISABLE_ENCOUNTERS
@@ -155,19 +143,23 @@ Present_CityHall_1F_Movement_FranticDad:
 	step_end
 
 Present_CityHall_1F_EventScript_ConcernedDad::
+	speakername Name_Concerned_Dad
 	msgbox Present_CityHall_1F_Text_DadThankYou, MSGBOX_NPC
 	end
 
 Present_CityHall_1F_EventScript_Mayor::
+	speakername Name_Mayor
 	msgbox Present_CityHall_1F_Text_MayorStaySafe, MSGBOX_NPC
 	end
 
 Present_CityHall_1F_EventScript_AnabelFollower::
     goto_if_set FLAG_STEPPED_OUT_OF_CITY_HALL, Present_CityHall_1F_EventScript_AnabelLockedDoors
+	speakername Name_Anabel
     msgbox Present_CityHall_1F_Text_AnabelFollowerLetsFindHer, MSGBOX_NPC
     end
 
 Present_CityHall_1F_EventScript_AnabelLockedDoors::
+	speakername Name_Anabel
     msgbox Present_CityHall_1F_Text_AnabelFollowerItSeemsEverybody, MSGBOX_NPC
     end
 
@@ -195,36 +187,38 @@ Present_CityHall_1F_Text_MayorAreYouAlright:
 	.string "bright for the next two weeks!$"
 
 Present_CityHall_1F_Text_LookerYoureTheMayor:
-	.string "Looker: We made it out okay.\p"
+	.string "We made it out okay.\p"
 	.string "If I understand correctly, you must be\n"
 	.string "the mayor of Porta Bella?$"
 
 Present_CityHall_1F_Text_MayorIAmTheMayor:
 	.string "Oh heavens, my apologies!\p"
-	.string "I am Mayor Morrigan!\p"
-	.string "Mayor: I hoped to greet you at the port,\n"
+	.string "I am Mayor Morrigan!$"
+
+Present_CityHall_1F_Text_MayorMorrigan:
+	.string "I hoped to greet you at the port,\n"
 	.string "but I was bogged down by endless\l"
 	.string "paperwork!$"
 
 Present_CityHall_1F_Text_AnabelWhatWasThat:
-	.string "Anabel: As we all are.\p"
+	.string "As we all are.\p"
 	.string "Enough of the formalities, though.\n"
 	.string "What the heck was that?$"
 
 Present_CityHall_1F_Text_LookerDocilePokemon:
-	.string "Looker: Pokémon in this area are known\n"
+	.string "Pokémon in this area are known\n"
 	.string "for their docility due to the climate.\p"
 	.string "It stands to reason the sudden storm\n"
 	.string "has the wildlife agitated.$"
 	
 Present_CityHall_1F_Text_AnabelButThatDoesntHoldUp:
-	.string "Anabel: But this region gets slammed\n"
+	.string "But this region gets slammed\n"
 	.string "by storms for half the year.\p"
 	.string "From the speed and ferocity it rolled\n"
 	.string "in, this does not seem natural at all.$"
 
 Present_CityHall_1F_Text_MayorYouDontSuppose:
-	.string "Mayor: Oh me, you don't suppose Team\n"
+	.string "Oh me, you don't suppose Team\n"
 	.string "Aqua is up to no good again?\p"
 	.string "Those goons moved in not long ago\n"
 	.string "and now the whole city is on edge!$"
@@ -240,17 +234,17 @@ Present_CityHall_1F_Text_AnabelFollowerItSeemsEverybody:
     .string "get to the bottom of this mystery!$"
 
 Present_CityHall_1F_Text_LookerHmm:
-	.string "Looker: Hmm…$"
+	.string "Hmm…$"
 
 Present_CityHall_1F_Text_DadHelpMe:
 	.string "Help! Somebody help!$"
 
 Present_CityHall_1F_Text_LookerWhatsTheMatter:
-	.string "Looker: Sir, what seems to be the\n"
+	.string "Sir, what seems to be the\n"
 	.string "matter?$"
 
 Present_CityHall_1F_Text_DadMyDaughter:
-	.string "Man: My daughter!\n"
+	.string "My daughter!\n"
 	.string "Estella!\p"
 	.string "When the storm started, she slipped out\n"
 	.string "of the house and ran to the woods!\p"
@@ -265,16 +259,16 @@ Present_CityHall_1F_Text_DadMyDaughter:
 	.string "I'm begging you!$"
 
 Present_CityHall_1F_Text_LookerSlowDown:
-	.string "Looker: Slow down.\p"
+	.string "Slow down.\p"
 	.string "We can find your daughter for you.$"
 
 Present_CityHall_1F_Text_AnabelItsOkay:
-	.string "Anabel: Don't worry!\p"
+	.string "Don't worry!\p"
 	.string "When Looker's on the hunt, there isn't\n"
 	.string "anyone who can shake his tail!$"
 
 Present_CityHall_1F_Text_DadThankYouLong:
-	.string "Man: Oh, thank you!\p"
+	.string "Oh, thank you!\p"
 	.string "Here, I brought repels to make my\n"
 	.string "way through the city.\p"
 	.string "Spray some of this on!$"
@@ -283,11 +277,11 @@ Present_CityHall_1F_Text_LookerUsedTheRepel:
 	.string "Looker used the repels.$"
 
 Present_CityHall_1F_Text_DadWeLiveNear:
-	.string "Man: We live near the western forest.\n"
+	.string "We live near the western forest.\n"
 	.string "I'm sure she snuck away there!$"
 
 Present_CityHall_1F_Text_AnabelLostChild:
-	.string "Anabel: Alright, the case of the sudden\n"
+	.string "Alright, the case of the sudden\n"
 	.string "storm can wait a bit.\p"
 	.string "Looker, we have a lost child to find!$"
 

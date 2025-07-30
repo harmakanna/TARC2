@@ -15,6 +15,8 @@ ShrineOfProsperityPresent_EventScript_StartGenieFight::
 	lockall
 	faceplayer
 	clearflag FLAG_HIDE_SHRINE_THUNDURUS
+	speakername Name_Tornadus
+	msgbox ShrineOfProsperityPresent_Text_Tornadus, MSGBOX_DEFAULT
 	playmoncry SPECIES_TORNADUS, CRY_MODE_NORMAL
 	waitmoncry
 	setobjectxyperm LOCALID_SHRINE_THUNDURUS, 12, 16
@@ -54,7 +56,10 @@ ShrineOfProsperityPresent_EventScript_ThundurusRushW::
 
 ShrineOfProsperityPresent_EventScript_DefeatedGenies::
  	delay 40
-	msgbox ShrineOfProsperityPresent_Text_TornadusThundurusDefeat, MSGBOX_DEFAULT
+	speakername Name_Tornadus
+	msgbox ShrineOfProsperityPresent_Text_TornadusDefeat, MSGBOX_DEFAULT
+	speakername Name_Thundurus
+	msgbox ShrineOfProsperityPresent_Text_TornadusDefeat, MSGBOX_DEFAULT
 	closemessage
 	call_if_eq VAR_FACING, DIR_NORTH, ShrineOfProsperityPresent_EventScript_GeniesEscapeN
 	call_if_eq VAR_FACING, DIR_EAST, ShrineOfProsperityPresent_EventScript_GeniesEscapeE
@@ -62,6 +67,7 @@ ShrineOfProsperityPresent_EventScript_DefeatedGenies::
 	removeobject LOCALID_SHRINE_TORNADUS
 	removeobject LOCALID_SHRINE_THUNDURUS
 	delay 40
+	speakername Name_Looker
 	msgbox ShrineOfProsperityPresent_Text_LookerReportBack, MSGBOX_DEFAULT
 	closemessage
 	clearflag FLAG_SYS_WEATHER_CTRL
@@ -73,6 +79,7 @@ ShrineOfProsperityPresent_EventScript_DefeatedGenies::
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
 	delay 100
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	speakername Name_Looker
 	msgbox ShrineOfProsperityPresent_Text_LookerTheWeather, MSGBOX_DEFAULT
 	closemessage
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_INVESTIGATE_PROSPERITY, SUB_QUEST_DEFEAT_GENIES
@@ -207,6 +214,7 @@ ShrineOfProsperityPresent_EventScript_GeniePan::
 	playse SE_PIN
 	applymovement LOCALID_PLAYER, Common_Movement_QuestionMark
 	delay 48
+	speakername Name_Looker
 	msgbox ShrineOfProsperityPresent_Text_LookerAreThosePokeballs, MSGBOX_DEFAULT
 	closemessage
 	delay 40
@@ -350,9 +358,11 @@ ShrineOfProsperityPresent_Movement_PanCameraDownR:
 ShrineOfProsperityPresent_Text_Tornadus:
 	.string "Graaaaargh!!!$"
 
-ShrineOfProsperityPresent_Text_TornadusThundurusDefeat:
-	.string "Tornadus: Grrrrrr…\p"
-	.string "Thundurus: Graaaah…$"
+ShrineOfProsperityPresent_Text_TornadusDefeat:
+	.string "Grrrrrr…$"
+
+ShrineOfProsperityPresent_Text_ThundurusDefeat:
+	.string "Graaaah…$"
 
 ShrineOfProsperityPresent_Text_LookerAreThosePokeballs:
 	.string "Huh?\n"
