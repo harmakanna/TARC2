@@ -560,6 +560,8 @@ struct RankingHall2P
     //u8 padding;
 };
 
+#include "constants/quests.h"
+
 struct SaveBlock2
 {
     /*0x00*/ u8 playerName[PLAYER_NAME_LENGTH + 1];
@@ -598,6 +600,12 @@ struct SaveBlock2
 #endif //FREE_RECORD_MIXING_HALL_RECORDS
     /*0x624*/ u16 contestLinkResults[CONTEST_CATEGORIES_COUNT][CONTESTANT_COUNT];
     /*0x64C*/ struct BattleFrontier frontier;
+#define QUEST_FLAGS_COUNT ROUND_BITS_TO_BYTES(QUEST_COUNT)
+#define SUB_FLAGS_COUNT ROUND_BITS_TO_BYTES(SUB_QUEST_COUNT)
+#define QUEST_STATES 5 //Number of different quest states tracked in the saveblock
+
+              u8 questData[QUEST_FLAGS_COUNT * QUEST_STATES];
+              u8 subQuests[SUB_FLAGS_COUNT];
 }; // sizeof=0xF2C
 
 extern struct SaveBlock2 *gSaveBlock2Ptr;
@@ -1072,8 +1080,9 @@ struct SaveBlock1
     /*0x690*/ struct ItemSlot bagPocket_TMHM[BAG_TMHM_COUNT];
     /*0x790*/ struct ItemSlot bagPocket_Berries[BAG_BERRIES_COUNT];
     /*0x848*/ struct Pokeblock pokeblocks[POKEBLOCKS_COUNT];
+    /*0x988*/ struct Coords16 savedPos;
 #if FREE_EXTRA_SEEN_FLAGS_SAVEBLOCK1 == FALSE
-    /*0x988*/ u8 filler1[0x34]; // Previously Dex Flags, feel free to remove.
+    /*0x98C*/ u8 filler1[0x30]; // Previously Dex Flags, feel free to remove.
 #endif //FREE_EXTRA_SEEN_FLAGS_SAVEBLOCK1
     /*0x9BC*/ u16 berryBlenderRecords[3];
     /*0x9C2*/ u8 unused_9C2[6];

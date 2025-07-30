@@ -61,6 +61,7 @@
 #include "constants/union_room.h"
 #include "constants/vars.h"
 #include "constants/weather.h"
+#include "constants/quests.h"
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
 	.include "constants/constants.inc"
@@ -757,6 +758,10 @@ Common_EventScript_SetAbnormalWeather::
 	setweather WEATHER_ABNORMAL
 	return
 
+Common_EventScript_SetStormWeather::
+	setweather WEATHER_DOWNPOUR
+	return
+
 Common_EventScript_PlayGymBadgeFanfare::
 	playfanfare MUS_OBTAIN_BADGE
 	waitfanfare
@@ -1157,6 +1162,8 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
 	.include "data/scripts/dexnav.inc"
+	.include "data/text/names.inc"
+	.include "data/scripts/givemon.inc"
 
 	.include "data/maps/PresentTown/scripts.inc"
 
@@ -1216,4 +1223,6 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/Past_TownHall/scripts.inc"
 
-	.include "data/maps/PresentGym/scripts.inc"
+	.include "data/maps/CutsceneForestPast/scripts.inc"
+	
+	.include "data/maps/Present_Gym/scripts.inc"

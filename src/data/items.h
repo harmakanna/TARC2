@@ -533,8 +533,8 @@ const struct Item gItemsInfo[] =
         .price = 0,
         .description = COMPOUND_STRING(
             "A special Ball that\n"
-            "is used only in the\n"
-            "Safari Zone."),
+            "is used only by\n"
+            "Rangers."),
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,

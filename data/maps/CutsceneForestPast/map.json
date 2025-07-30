@@ -1,0 +1,260 @@
+{
+  "id": "MAP_CUTSCENE_FOREST_PAST",
+  "name": "CutsceneForestPast",
+  "layout": "LAYOUT_CUTSCENE_FOREST_PAST",
+  "music": "MUS_NONE",
+  "region_map_section": "MAPSEC_SHRINE_OF_PEACE",
+  "requires_flash": false,
+  "weather": "WEATHER_SHADE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 9,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_PAST_TOWN",
+      "dest_warp_id": "TOWN_FROM_PEACE_M"
+    },
+    {
+      "x": 8,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_PAST_TOWN",
+      "dest_warp_id": "TOWN_FROM_PEACE_L"
+    },
+    {
+      "x": 7,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_PAST_TOWN",
+      "dest_warp_id": "TOWN_FROM_PEACE_L"
+    },
+    {
+      "x": 11,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_PAST_TOWN",
+      "dest_warp_id": "TOWN_FROM_PEACE_M"
+    },
+    {
+      "x": 12,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_PAST_TOWN",
+      "dest_warp_id": "TOWN_FROM_PEACE_R"
+    },
+    {
+      "x": 13,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_PAST_TOWN",
+      "dest_warp_id": "TOWN_FROM_PEACE_R"
+    },
+    {
+      "x": 10,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_PAST_TOWN",
+      "dest_warp_id": "TOWN_FROM_PEACE_M"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "4",
+      "script": "CutsceneForestPast_EventScript_IGottaFindAnabel"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "4",
+      "script": "CutsceneForestPast_EventScript_IGottaFindAnabel"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "4",
+      "script": "CutsceneForestPast_EventScript_IGottaFindAnabel"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "4",
+      "script": "CutsceneForestPast_EventScript_IGottaFindAnabel"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "4",
+      "script": "CutsceneForestPast_EventScript_IGottaFindAnabel"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "4",
+      "script": "CutsceneForestPast_EventScript_IGottaFindAnabel"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "4",
+      "script": "CutsceneForestPast_EventScript_IGottaFindAnabel"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "4",
+      "script": "CutsceneForestPast_EventScript_AmIGoingTheRightWayM"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "4",
+      "script": "CutsceneForestPast_EventScript_AmIGoingTheRightWayM"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "4",
+      "script": "CutsceneForestPast_EventScript_AmIGoingTheRightWayR"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "4",
+      "script": "CutsceneForestPast_EventScript_AmIGoingTheRightWayR"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "4",
+      "script": "CutsceneForestPast_EventScript_AmIGoingTheRightWayM"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "4",
+      "script": "CutsceneForestPast_EventScript_AmIGoingTheRightWayL"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "4",
+      "script": "CutsceneForestPast_EventScript_AmIGoingTheRightWayL"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "5",
+      "script": "CutsceneForestPast_EventScript_IGottaFindAnabel"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "5",
+      "script": "CutsceneForestPast_EventScript_IGottaFindAnabel"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "5",
+      "script": "CutsceneForestPast_EventScript_IGottaFindAnabel"
+    },
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "5",
+      "script": "CutsceneForestPast_EventScript_IGottaFindAnabel"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "5",
+      "script": "CutsceneForestPast_EventScript_IGottaFindAnabel"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "5",
+      "script": "CutsceneForestPast_EventScript_IGottaFindAnabel"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "5",
+      "script": "CutsceneForestPast_EventScript_IGottaFindAnabel"
+    }
+  ],
+  "bg_events": []
+}

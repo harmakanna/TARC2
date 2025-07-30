@@ -1300,3 +1300,144 @@ const u8 gText_PM[] = _("PM");
 const u8 gText_Relearn[] = _("{START_BUTTON} RELEARN"); // future note: don't decap this, because it mimics the summary screen BG graphics which will not get decapped
 const u8 gText_Rename[] = _("RENAME");
 const u8 gText_CannotSendMonToBoxHM[] = _("Cannot send that mon to the box,\nbecause it knows a HM move.{PAUSE_UNTIL_PRESS}");
+
+//// side quest data
+//generic strings
+const u8 gText_QuestAnnounce[] = _("The quest '{STR_VAR_1}'\nis now {STR_VAR_2}!");
+const u8 gText_QuestComplete[] =_("complete");
+const u8 gText_QuestActive[] =_("active");
+
+//names
+const u8 gText_SideQuestName_1[] = _("Save Estella"); // Find Estella
+const u8 gText_SideQuestName_2[] = _("Shrine Investigation"); // Defeat Genies
+const u8 gText_SideQuestName_3[] = _("Interrogate Matt"); // Defeat Matt
+const u8 gText_SideQuestName_4[] = _("Defeat the Gym"); // Defeat Gym
+const u8 gText_SideQuestName_5[] = _("Side Quest 5"); // Which gym challenger did it?
+const u8 gText_SideQuestName_6[] = _("Side Quest 6");
+const u8 gText_SideQuestName_7[] = _("Side Quest 7");
+const u8 gText_SideQuestName_8[] = _("Side Quest 8");
+const u8 gText_SideQuestName_9[] = _("Side Quest 9");
+const u8 gText_SideQuestName_10[] = _("Side Quest 10");
+const u8 gText_SideQuestName_11[] = _("Side Quest 11");
+const u8 gText_SideQuestName_12[] = _("Side Quest 12");
+const u8 gText_SideQuestName_13[] = _("Side Quest 13");
+const u8 gText_SideQuestName_14[] = _("Side Quest 14");
+const u8 gText_SideQuestName_15[] = _("Side Quest 15");
+const u8 gText_SideQuestName_16[] = _("Side Quest 16");
+const u8 gText_SideQuestName_17[] = _("Side Quest 17");
+const u8 gText_SideQuestName_18[] = _("Side Quest 18");
+const u8 gText_SideQuestName_19[] = _("Side Quest 19");
+const u8 gText_SideQuestName_20[] = _("Side Quest 20");
+const u8 gText_SideQuestName_21[] = _("Side Quest 21");
+const u8 gText_SideQuestName_22[] = _("Side Quest 22");
+const u8 gText_SideQuestName_23[] = _("Side Quest 23");
+const u8 gText_SideQuestName_24[] = _("Side Quest 24");
+const u8 gText_SideQuestName_25[] = _("Side Quest 25");
+const u8 gText_SideQuestName_26[] = _("Side Quest 26");
+const u8 gText_SideQuestName_27[] = _("Side Quest 27");
+const u8 gText_SideQuestName_28[] = _("Side Quest 28");
+const u8 gText_SideQuestName_29[] = _("Side Quest 29");
+const u8 gText_SideQuestName_30[] = _("Side Quest 30");
+
+//descriptions
+const u8 gText_SideQuestDesc_1[] = _("Find the concerned man's daughter,\nEstella, in the forest!"); // Find Estella
+const u8 gText_SideQuestDesc_2[] = _("Investigate the abnormality at the\nShrine of Prosperity!"); // Defeat Genies
+const u8 gText_SideQuestDesc_3[] = _("Enter AquaCorp HQ, defeat Team Aqua,\nand interrogate the admin!"); // Defeat Matt
+const u8 gText_SideQuestDesc_4[] = _("Claim victory over Porta Bella City's\n gym leader!"); // Defeat Gym
+const u8 gText_SideQuestDesc_5[] = _("Description 5"); // Which gym challenger did it?
+const u8 gText_SideQuestDesc_6[] = _("Description 6");
+const u8 gText_SideQuestDesc_7[] = _("Description 7");
+const u8 gText_SideQuestDesc_8[] = _("Description 8");
+const u8 gText_SideQuestDesc_9[] = _("Description 9");
+const u8 gText_SideQuestDesc_10[] = _("Description 10");
+const u8 gText_SideQuestDesc_11[] = _("Description 11");
+const u8 gText_SideQuestDesc_12[] = _("Description 12");
+const u8 gText_SideQuestDesc_13[] = _("Description 13");
+const u8 gText_SideQuestDesc_14[] = _("Description 14");
+const u8 gText_SideQuestDesc_15[] = _("Description 15");
+const u8 gText_SideQuestDesc_16[] = _("Description 16");
+const u8 gText_SideQuestDesc_17[] = _("Description 17");
+const u8 gText_SideQuestDesc_18[] = _("Description 18");
+const u8 gText_SideQuestDesc_19[] = _("Description 19");
+const u8 gText_SideQuestDesc_20[] = _("Description 20");
+const u8 gText_SideQuestDesc_21[] = _("Description 21");
+const u8 gText_SideQuestDesc_22[] = _("Description 22");
+const u8 gText_SideQuestDesc_23[] = _("Description 23");
+const u8 gText_SideQuestDesc_24[] = _("Description 24");
+const u8 gText_SideQuestDesc_25[] = _("Description 25");
+const u8 gText_SideQuestDesc_26[] = _("Description 26");
+const u8 gText_SideQuestDesc_27[] = _("Description 27");
+const u8 gText_SideQuestDesc_28[] = _("Description 28");
+const u8 gText_SideQuestDesc_29[] = _("Description 29");
+const u8 gText_SideQuestDesc_30[] = _("Description 30");
+
+//completed quest description
+const u8 gText_SideQuestDoneDesc_1[] = _("Estella's back home safe with her\nfamily!"); // Find Estella
+const u8 gText_SideQuestDoneDesc_2[] = _("Tornadus and Thundurus have been\nquelled… For now…"); // Defeat Genies
+const u8 gText_SideQuestDoneDesc_3[] = _("Turns out Team Aqua HAS turned\na new leaf!"); // Defeat Matt
+const u8 gText_SideQuestDoneDesc_4[] = _("Phoebe couldn't be happier with\nyour battle!"); // Defeat Gym
+const u8 gText_SideQuestDoneDesc_5[] = _("Completed Quest 5"); // Which gym challenger did it?
+const u8 gText_SideQuestDoneDesc_6[] = _("Completed Quest 6");
+const u8 gText_SideQuestDoneDesc_7[] = _("Completed Quest 7");
+const u8 gText_SideQuestDoneDesc_8[] = _("Completed Quest 8");
+const u8 gText_SideQuestDoneDesc_9[] = _("Completed Quest 9");
+const u8 gText_SideQuestDoneDesc_10[] = _("Completed Quest 10");
+const u8 gText_SideQuestDoneDesc_11[] = _("Completed Quest 11");
+const u8 gText_SideQuestDoneDesc_12[] = _("Completed Quest 12");
+const u8 gText_SideQuestDoneDesc_13[] = _("Completed Quest 13");
+const u8 gText_SideQuestDoneDesc_14[] = _("Completed Quest 14");
+const u8 gText_SideQuestDoneDesc_15[] = _("Completed Quest 15");
+const u8 gText_SideQuestDoneDesc_16[] = _("Completed Quest 16");
+const u8 gText_SideQuestDoneDesc_17[] = _("Completed Quest 17");
+const u8 gText_SideQuestDoneDesc_18[] = _("Completed Quest 18");
+const u8 gText_SideQuestDoneDesc_19[] = _("Completed Quest 19");
+const u8 gText_SideQuestDoneDesc_20[] = _("Completed Quest 20");
+const u8 gText_SideQuestDoneDesc_21[] = _("Completed Quest 21");
+const u8 gText_SideQuestDoneDesc_22[] = _("Completed Quest 22");
+const u8 gText_SideQuestDoneDesc_23[] = _("Completed Quest 23");
+const u8 gText_SideQuestDoneDesc_24[] = _("Completed Quest 24");
+const u8 gText_SideQuestDoneDesc_25[] = _("Completed Quest 25");
+const u8 gText_SideQuestDoneDesc_26[] = _("Completed Quest 26");
+const u8 gText_SideQuestDoneDesc_27[] = _("Completed Quest 27");
+const u8 gText_SideQuestDoneDesc_28[] = _("Completed Quest 28");
+const u8 gText_SideQuestDoneDesc_29[] = _("Completed Quest 29");
+const u8 gText_SideQuestDoneDesc_30[] = _("Completed Quest 30");
+
+//map
+const u8 gText_SideQuestMap1[] = _("Present"); // Find Estella
+const u8 gText_SideQuestMap2[] = _("Present: City Hall"); // Defeat Genies
+const u8 gText_SideQuestMap3[] = _("Present: AquaCorp HQ"); // Defeat Matt
+const u8 gText_SideQuestMap4[] = _("Present: Gym"); // Defeat Gym
+const u8 gText_SideQuestMap5[] = _("Present"); // Which gym challenger did it?
+const u8 gText_SideQuestMap6[] = _("Map 6");
+const u8 gText_SideQuestMap7[] = _("Map 7");
+const u8 gText_SideQuestMap8[] = _("Map 8");
+const u8 gText_SideQuestMap9[] = _("Map 9");
+const u8 gText_SideQuestMap10[] = _("Map 10");
+const u8 gText_SideQuestMap11[] = _("Map 11");
+const u8 gText_SideQuestMap12[] = _("Map 12");
+const u8 gText_SideQuestMap13[] = _("Map 13");
+const u8 gText_SideQuestMap14[] = _("Map 14");
+const u8 gText_SideQuestMap15[] = _("Map 15");
+const u8 gText_SideQuestMap16[] = _("Map 16");
+const u8 gText_SideQuestMap17[] = _("Map 17");
+const u8 gText_SideQuestMap18[] = _("Map 18");
+const u8 gText_SideQuestMap19[] = _("Map 19");
+const u8 gText_SideQuestMap20[] = _("Map 20");
+const u8 gText_SideQuestMap21[] = _("Map 21");
+const u8 gText_SideQuestMap22[] = _("Map 22");
+const u8 gText_SideQuestMap23[] = _("Map 23");
+const u8 gText_SideQuestMap24[] = _("Map 24");
+const u8 gText_SideQuestMap25[] = _("Map 25");
+const u8 gText_SideQuestMap26[] = _("Map 26");
+const u8 gText_SideQuestMap27[] = _("Map 27");
+const u8 gText_SideQuestMap28[] = _("Map 28");
+const u8 gText_SideQuestMap29[] = _("Map 29");
+const u8 gText_SideQuestMap30[] = _("Map 30");
+
+//subquests
+const u8 gText_SubQuestInvestigateProsperity_Name1[] = _("Defeat the genies.");
+
+const u8 gText_SubQuestInvestigateProsperity_Desc1[] = _("Defeat Tornadus and Thundurus at\nthe Shrine of Prosperity!");
+
+const u8 gText_SubQuestInvestigateProsperity_Map1[] = _("Present: Shrine of Prosperity");

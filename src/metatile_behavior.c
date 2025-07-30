@@ -210,6 +210,7 @@ bool8 MetatileBehavior_IsReflective(u8 metatileBehavior)
      || metatileBehavior == MB_PUDDLE
      || metatileBehavior == MB_UNUSED_SOOTOPOLIS_DEEP_WATER_2
      || metatileBehavior == MB_ICE
+     || metatileBehavior == MB_ICE_WARP
      || metatileBehavior == MB_SOOTOPOLIS_DEEP_WATER
      || metatileBehavior == MB_REFLECTION_UNDER_BRIDGE)
         return TRUE;
@@ -219,7 +220,8 @@ bool8 MetatileBehavior_IsReflective(u8 metatileBehavior)
 
 bool8 MetatileBehavior_IsIce(u8 metatileBehavior)
 {
-    if (metatileBehavior == MB_ICE)
+    if (metatileBehavior == MB_ICE
+        || metatileBehavior == MB_ICE_WARP)
         return TRUE;
     else
         return FALSE;
@@ -322,7 +324,8 @@ bool8 MetatileBehavior_IsSouthArrowWarp(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_SOUTH_ARROW_WARP
      || metatileBehavior == MB_WATER_SOUTH_ARROW_WARP
-     || metatileBehavior == MB_SHOAL_CAVE_ENTRANCE)
+     || metatileBehavior == MB_SHOAL_CAVE_ENTRANCE
+     || metatileBehavior == MB_ICE_WARP)
         return TRUE;
     else
         return FALSE;
@@ -350,7 +353,7 @@ bool8 MetatileBehavior_IsForcedMovementTile(u8 metatileBehavior)
      || metatileBehavior == MB_MUDDY_SLOPE
      || metatileBehavior == MB_CRACKED_FLOOR
      || metatileBehavior == MB_WATERFALL
-     || metatileBehavior == MB_ICE
+     //|| metatileBehavior == MB_ICE
      || metatileBehavior == MB_SECRET_BASE_JUMP_MAT
      || metatileBehavior == MB_SECRET_BASE_SPIN_MAT)
         return TRUE;
@@ -360,7 +363,8 @@ bool8 MetatileBehavior_IsForcedMovementTile(u8 metatileBehavior)
 
 bool8 MetatileBehavior_IsIce_2(u8 metatileBehavior)
 {
-    if (metatileBehavior == MB_ICE)
+    if (metatileBehavior == MB_ICE
+        || metatileBehavior == MB_ICE_WARP)
         return TRUE;
     else
         return FALSE;

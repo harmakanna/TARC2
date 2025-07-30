@@ -71,6 +71,10 @@ Common_Movement_WalkInPlaceRight:
 	walk_in_place_right
 	step_end
 
+Common_Movement_WalkInPlaceUp:
+	walk_in_place_up
+	step_end
+
 @ End of follower-safe movements
 Common_Movement_FollowerSafeEnd::
 	step_end
@@ -91,6 +95,30 @@ Common_Movement_WalkUp4:
 	walk_up
 	step_end
 
+Common_Movement_FaceUpExclamationMark::
+	face_up
+	emote_exclamation_mark
+	step_end
+
+Common_Movement_FaceDownExclamationMark::
+	face_down
+	emote_exclamation_mark
+	step_end
+
+Common_Movement_FaceLeftExclamationMark::
+	face_left
+	emote_exclamation_mark
+	step_end
+
+Common_Movement_FaceRightExclamationMark::
+	face_right
+	emote_exclamation_mark
+	step_end
+
+Common_Movement_Delay16:
+	delay_16
+	step_end
+
 Common_Movement_Delay32:
 	delay_16
 	delay_16
@@ -100,12 +128,29 @@ Common_Movement_WalkUp::
 	walk_up
 	step_end
 
-@ Unused
 Common_Movement_WalkUp2::
 	walk_up
 	walk_up
 	step_end
 
+Common_Movement_WalkDown2::
+	walk_down
+	walk_down
+	step_end
+
+Common_Movement_WalkFastUp::
+	walk_fast_up
+	step_end
+
+Common_Movement_WalkFastUp2::
+	walk_fast_up
+	walk_fast_up
+	step_end
+
+Common_Movement_SetVisible::
+	set_visible
+	step_end
+	
 @ Follower NPC
 Common_Movement_WalkUpSlow::
     walk_slow_up
@@ -131,8 +176,18 @@ Common_Movement_WalkRight::
     walk_right
     step_end
 
+Common_Movement_WalkRight2::
+	walk_right
+	walk_right
+	step_end
+
 Common_Movement_WalkLeft::
     walk_left
+    step_end
+
+Common_Movement_WalkLeft2::
+    walk_left
+	walk_left
     step_end
 
 Common_Movement_WalkUpFast::
@@ -166,3 +221,26 @@ Common_Movement_WalkRightFaster::
 Common_Movement_WalkLeftFaster::
     walk_faster_left
     step_end
+
+Script_GetNPCFacingDirection::
+	call_if_eq VAR_FACING, DIR_NORTH, Script_SetNPCVarSouth
+	call_if_eq VAR_FACING, DIR_EAST, Script_SetNPCVarWest
+	call_if_eq VAR_FACING, DIR_WEST, Script_SetNPCVarEast
+	call_if_eq VAR_FACING, DIR_SOUTH, Script_SetNPCVarNorth
+	return
+
+Script_SetNPCVarSouth::
+	setvar VAR_0x8005, DIR_SOUTH
+	return
+
+Script_SetNPCVarWest::
+	setvar VAR_0x8005, DIR_WEST
+	return
+
+Script_SetNPCVarEast::
+	setvar VAR_0x8005, DIR_EAST
+	return
+
+Script_SetNPCVarNorth::
+	setvar VAR_0x8005, DIR_NORTH
+	return

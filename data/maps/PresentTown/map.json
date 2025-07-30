@@ -13,7 +13,120 @@
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
-  "object_events": [],
+  "object_events": [
+    {
+      "local_id": "LOCALID_PRESENTTOWN_ANABEL",
+      "graphics_id": "OBJ_EVENT_GFX_ANABEL",
+      "x": 44,
+      "y": 26,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_ANABEL_PRESENTTOWN"
+    },
+    {
+      "local_id": "LOCALID_PRESENTTOWN_MATT",
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_ADMIN_M",
+      "x": 15,
+      "y": 35,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PresentTown_EventScript_Matt",
+      "flag": "FLAG_HIDE_MATT_OUTSIDE"
+    },
+    {
+      "local_id": "LOCALID_PRESENTTOWN_GRUNT",
+      "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_F",
+      "x": 16,
+      "y": 35,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PresentTown_EventScript_AquaMemberF",
+      "flag": "FLAG_HIDE_AQUA_GRUNT_OUTSIDE"
+    },
+    {
+      "local_id": "LOCALID_PRESENTTOWN_WILDMON1",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ABSOL)",
+      "x": 0,
+      "y": 0,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_PORTO_BELLA_WILD_MONS"
+    },
+    {
+      "local_id": "LOCALID_PRESENTTOWN_WILDMON2",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ELECTRIKE)",
+      "x": 0,
+      "y": 0,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_PORTO_BELLA_WILD_MONS"
+    },
+    {
+      "local_id": "LOCALID_PRESENTTOWN_WILDMON3",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ELECTRIKE)",
+      "x": 0,
+      "y": 0,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_PORTO_BELLA_WILD_MONS"
+    },
+    {
+      "local_id": "LOCALID_PRESENT_PEACE_RANGER",
+      "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
+      "x": 14,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PresentTown_EventScript_PeaceRanger",
+      "flag": "FLAG_HIDE_SHRINE_PEACE_RANGER"
+    },
+    {
+      "local_id": "LOCALID_PRESENT_PROSPERITY_RANGER",
+      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
+      "x": 63,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PresentTown_EventScript_ProsperityRanger",
+      "flag": "FLAG_HIDE_SHRINE_PROSPERITY_RANGER"
+    }
+  ],
   "warp_events": [
     {
       "warp_id": "PEACE_FROM_CITY_ML",
@@ -81,7 +194,7 @@
     },
     {
       "warp_id": "CITY_SCHOOL_ENTRANCE",
-      "x": 24,
+      "x": 23,
       "y": 34,
       "elevation": 0,
       "dest_map": "MAP_PRESENT_SCHOOL",
@@ -161,7 +274,7 @@
     },
     {
       "warp_id": "Present_CelebiSociety_Entrance",
-      "x": 33,
+      "x": 32,
       "y": 12,
       "elevation": 0,
       "dest_map": "MAP_PRESENT_CELEBI_SOCIETY",
@@ -174,8 +287,241 @@
       "elevation": 0,
       "dest_map": "MAP_PRESENT_CITY_HALL_1F",
       "dest_warp_id": "Present_City_Hall_Exit_1"
+    },
+    {
+      "warp_id": "PresentTown_Gym",
+      "x": 55,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_GYM",
+      "dest_warp_id": "Present_Gym_Middle"
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 28,
+      "elevation": 0,
+      "var": "VAR_PORTO_BELLA_CITY_STATE",
+      "var_value": "1",
+      "script": "PresentTown_EventScript_StartStorm2"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 27,
+      "elevation": 0,
+      "var": "VAR_PORTO_BELLA_CITY_STATE",
+      "var_value": "1",
+      "script": "PresentTown_EventScript_StartStorm1"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "2",
+      "script": "PresentTown_EventScript_CatchPeaceRangerAttention1"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "2",
+      "script": "PresentTown_EventScript_CatchPeaceRangerAttention2"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "2",
+      "script": "PresentTown_EventScript_CatchPeaceRangerAttention3"
+    },
+    {
+      "type": "trigger",
+      "x": 62,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "2",
+      "script": "PresentTown_EventScript_CatchProsperityRangerAttention"
+    },
+    {
+      "type": "trigger",
+      "x": 61,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "2",
+      "script": "PresentTown_EventScript_CatchProsperityRangerAttention"
+    },
+    {
+      "type": "trigger",
+      "x": 60,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "2",
+      "script": "PresentTown_EventScript_CatchProsperityRangerAttention"
+    },
+    {
+      "type": "trigger",
+      "x": 60,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_PORTO_BELLA_CITY_STATE",
+      "var_value": "0",
+      "script": "PresentTown_EventScript_NoBusinessInTheForest"
+    },
+    {
+      "type": "trigger",
+      "x": 61,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_PORTO_BELLA_CITY_STATE",
+      "var_value": "0",
+      "script": "PresentTown_EventScript_NoBusinessInTheForest"
+    },
+    {
+      "type": "trigger",
+      "x": 62,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_PORTO_BELLA_CITY_STATE",
+      "var_value": "0",
+      "script": "PresentTown_EventScript_NoBusinessInTheForest"
+    },
+    {
+      "type": "trigger",
+      "x": 63,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_PORTO_BELLA_CITY_STATE",
+      "var_value": "0",
+      "script": "PresentTown_EventScript_NoBusinessInTheForest"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_PORTO_BELLA_CITY_STATE",
+      "var_value": "0",
+      "script": "PresentTown_EventScript_NoBusinessInTheForest"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_PORTO_BELLA_CITY_STATE",
+      "var_value": "0",
+      "script": "PresentTown_EventScript_NoBusinessInTheForest"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_PORTO_BELLA_CITY_STATE",
+      "var_value": "0",
+      "script": "PresentTown_EventScript_NoBusinessInTheForest"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_PORTO_BELLA_CITY_STATE",
+      "var_value": "0",
+      "script": "PresentTown_EventScript_NoBusinessInTheForest"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_PORTO_BELLA_CITY_STATE",
+      "var_value": "1",
+      "script": "PresentTown_EventScript_NoBusinessInTheForest2"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_PORTO_BELLA_CITY_STATE",
+      "var_value": "1",
+      "script": "PresentTown_EventScript_NoBusinessInTheForest2"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_PORTO_BELLA_CITY_STATE",
+      "var_value": "1",
+      "script": "PresentTown_EventScript_NoBusinessInTheForest2"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_PORTO_BELLA_CITY_STATE",
+      "var_value": "1",
+      "script": "PresentTown_EventScript_NoBusinessInTheForest2"
+    },
+    {
+      "type": "trigger",
+      "x": 62,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_QUEUE_GENIE_FIGHT",
+      "var_value": "1",
+      "script": "PresentTown_EventScript_CatchProsperityRangerAttention2"
+    },
+    {
+      "type": "trigger",
+      "x": 61,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_QUEUE_GENIE_FIGHT",
+      "var_value": "1",
+      "script": "PresentTown_EventScript_CatchProsperityRangerAttention2"
+    },
+    {
+      "type": "trigger",
+      "x": 60,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_QUEUE_GENIE_FIGHT",
+      "var_value": "1",
+      "script": "PresentTown_EventScript_CatchProsperityRangerAttention2"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 37,
+      "y": 11,
+      "elevation": 0,
+      "item": "ITEM_LEFTOVERS",
+      "flag": "FLAG_HIDDEN_ITEM_SS_TIDAL_LOWER_DECK_LEFTOVERS"
+    },
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 34,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "PresentTown_Sign_AquaCorpHQ"
+    }
+  ]
 }

@@ -34,7 +34,7 @@
 #include "constants/songs.h"
 #include "constants/trainer_types.h"
 
-#define NUM_FORCED_MOVEMENTS 18
+#define NUM_FORCED_MOVEMENTS 17
 #define NUM_ACRO_BIKE_COLLISIONS 5
 
 enum SpinDirection
@@ -185,7 +185,7 @@ static u8 TrySpinPlayerForWarp(struct ObjectEvent *, s16 *);
 static bool8 (*const sForcedMovementTestFuncs[NUM_FORCED_MOVEMENTS])(u8) =
 {
     MetatileBehavior_IsTrickHouseSlipperyFloor,
-    MetatileBehavior_IsIce_2,
+    //MetatileBehavior_IsIce_2,
     MetatileBehavior_IsWalkSouth,
     MetatileBehavior_IsWalkNorth,
     MetatileBehavior_IsWalkWest,
@@ -209,7 +209,7 @@ static bool8 (*const sForcedMovementFuncs[NUM_FORCED_MOVEMENTS + 1])(void) =
 {
     ForcedMovement_None,
     ForcedMovement_Slip,
-    ForcedMovement_Slip,
+    //ForcedMovement_Slip,
     ForcedMovement_WalkSouth,
     ForcedMovement_WalkNorth,
     ForcedMovement_WalkWest,
@@ -1637,6 +1637,12 @@ void InitPlayerAvatar(s16 x, s16 y, u8 direction, u8 gender)
     gPlayerAvatar.gender = gender;
     SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_CONTROLLABLE | PLAYER_AVATAR_FLAG_ON_FOOT);
     CreateFollowerNPCAvatar();
+
+    if (FlagGet(FLAG_SYS_SPAWN_INVISIBLE))
+    {
+        FlagClear(FLAG_SYS_SPAWN_INVISIBLE);
+        objectEvent->invisible = TRUE;
+    }
 }
 
 void SetPlayerInvisibility(bool8 invisible)

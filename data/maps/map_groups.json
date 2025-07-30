@@ -48,7 +48,8 @@
   "gMapGroup_LookerPast": [
     "PastTown",
     "ShrineOfPeacePast",
-    "ShrineOfProsperityPast"
+    "ShrineOfProsperityPast",
+    "CutsceneForestPast"
   ],
   "gMapGroup_IndoorLookerPresent": [
     "Present_School",
@@ -67,7 +68,8 @@
     "Present_Celebi_Society",
     "Present_CityHall_1F",
     "Present_CityHall_2F_Ranger",
-    "Present_CityHall_2F_Office"
+    "Present_CityHall_2F_Office",
+    "Present_Gym"
   ],
   "gMapGroup_IndoorLookerPast": [
     "Past_House1",
@@ -155,8 +157,7 @@
     "DewfordTown_PokemonCenter_2F",
     "DewfordTown_Gym",
     "DewfordTown_Hall",
-    "DewfordTown_House2",
-    "PresentGym"
+    "DewfordTown_House2"
   ],
   "gMapGroup_IndoorLavaridge": [
     "LavaridgeTown_HerbShop",

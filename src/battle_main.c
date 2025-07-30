@@ -4053,6 +4053,11 @@ u8 IsRunningFromBattleImpossible(u32 battler)
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_DONT_LEAVE_BIRCH;
         return BATTLE_RUN_FORBIDDEN;
     }
+    if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY_DOUBLE) // Cannot run from genies.
+    {
+        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_THUNDURUS_BLOCKING;
+        return BATTLE_RUN_FORBIDDEN;
+    }
     if (GetBattlerPosition(battler) == B_POSITION_PLAYER_RIGHT && WILD_DOUBLE_BATTLE
         && IsBattlerAlive(GetBattlerAtPosition(B_POSITION_PLAYER_LEFT))) // The second pokemon cannot run from a double wild battle, unless it's the only alive mon.
     {

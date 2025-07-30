@@ -330,6 +330,7 @@ gSpecials::
 	def_special ShakeCamera
 	def_special StartGroudonKyogreBattle
 	def_special BattleSetup_StartLegendaryBattle
+	def_special BattleSetup_StartLegendaryBattleDouble
 	def_special StartRegiBattle
 	def_special SetTrainerFacingDirection
 	def_special DoSealedChamberShakingEffect_Short
@@ -563,3 +564,6 @@ gSpecials::
 	def_special UseBlankMessageToCancelPokemonPic
 	def_special EnterCode
 	def_special GetCodeFeedback
+	def_special TeleportCamera
+	def_special ReturnCameraToPlayer
+	

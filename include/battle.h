@@ -665,7 +665,7 @@ struct BattleStruct
     u8 anyMonHasTransformed:1; // Only used in battle_tv.c
     u8 multipleSwitchInState:2;
     u8 multipleSwitchInCursor:3;
-    u8 padding1:2;
+    u8 movePreviewDisplayed:2;
     u8 multipleSwitchInSortedBattlers[MAX_BATTLERS_COUNT];
     void (*savedCallback)(void);
     u16 usedHeldItems[PARTY_SIZE][NUM_BATTLE_SIDES]; // For each party member and side. For harvest, recycle
@@ -735,6 +735,7 @@ struct BattleStruct
     u8 throwingPokeBall:1;
     u8 ballSpriteIds[2];    // item gfx, window gfx
     u8 moveInfoSpriteId; // move info, window gfx
+    u8 movePreviewSpriteId; //preview info L gfx, R gfx
     u8 appearedInBattle; // Bitfield to track which Pokemon appeared in battle. Used for Burmy's form change
     u8 skyDropTargets[MAX_BATTLERS_COUNT]; // For Sky Drop, to account for if multiple Pokemon use Sky Drop in a double battle.
     // When using a move which hits multiple opponents which is then bounced by a target, we need to make sure, the move hits both opponents, the one with bounce, and the one without.
@@ -782,7 +783,7 @@ struct BattleStruct
     u8 trainerSlideSpriteIds[MAX_BATTLERS_COUNT];
     u16 opponentMonCanTera:6;
     u16 opponentMonCanDynamax:6;
-    u16 padding:4;
+    u16 padding:2;
 };
 
 struct AiBattleData

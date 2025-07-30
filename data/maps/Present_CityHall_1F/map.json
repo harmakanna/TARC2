@@ -13,7 +13,63 @@
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
-  "object_events": [],
+  "object_events": [
+    {
+      "local_id": "LOCALID_CITYHALL_1F_ANABEL",
+      "graphics_id": "OBJ_EVENT_GFX_ANABEL",
+      "x": 16,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_ANABEL_CITYHALL"
+    },
+    {
+      "local_id": "LOCALID_CITYHALL_1F_MAYOR",
+      "graphics_id": "OBJ_EVENT_GFX_CONTEST_JUDGE",
+      "x": 5,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Present_CityHall_1F_EventScript_Mayor",
+      "flag": "FLAG_HIDE_CITYHALL_1F_MAYOR"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
+      "x": 8,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_CITYHALL_1F_CONCERNED_DAD",
+      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M",
+      "x": 8,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Present_CityHall_1F_EventScript_ConcernedDad",
+      "flag": "FLAG_HIDE_CITYHALL_1F_CONCERNED_DAD"
+    }
+  ],
   "warp_events": [
     {
       "warp_id": "Present_City_Hall_Exit_1",

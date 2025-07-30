@@ -286,7 +286,7 @@ const struct Tileset gTileset_CableClub =
     .palettes = gTilesetPalettes_CableClub,
     .metatiles = gMetatiles_CableClub,
     .metatileAttributes = gMetatileAttributes_CableClub,
-    .callback = NULL,
+    .callback = InitTilesetAnim_CableClub,
 };
 
 const struct Tileset gTileset_SeashoreHouse =
