@@ -380,7 +380,8 @@ Present_Gym_Text_PhoebeAnyTime:
 	.string "Any time, Looker! Thanks for such an\n"
 	.string "exciting battle!\p"
 	.string "While you're in town, feel free to borrow\n"
-	.string "one of my Pokémon!\p"
+	.string "one of my Pokémon! I think they could be a\l"
+	.string "great help to your investigation.\p"
 	.string "Which would you like?$"
 
 Present_Gym_Text_PhoebeHiLooker:
