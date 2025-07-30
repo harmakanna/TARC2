@@ -73,8 +73,8 @@
 #define FLAG_DEFEATED_SHRINE_GENIES            0x3B // Unused Flag
 #define FLAG_ENTERED_GYM_IN_INTRO              0x3C // Unused Flag
 #define FLAG_HIDE_SHRINE_PROSPERITY_RANGER     0x3D // Unused Flag
-#define FLAG_UNUSED_0x03E    0x3E // Unused Flag
-#define FLAG_UNUSED_0x03F    0x3F // Unused Flag
+#define FLAG_SPOKE_TO_PHOEBE                   0x3E // Unused Flag
+#define FLAG_DEFEATED_MATT                     0x3F // Unused Flag
 #define FLAG_UNUSED_0x040    0x40 // Unused Flag
 #define FLAG_UNUSED_0x041    0x41 // Unused Flag
 #define FLAG_UNUSED_0x042    0x42 // Unused Flag
@@ -516,12 +516,12 @@
 #define FLAG_DEFEATED_HO_OH                  0x1DC
 #define FLAG_DEFEATED_LUGIA                  0x1DD
 
-#define FLAG_UNUSED_0x1DE                    0x1DE // Unused Flag
-#define FLAG_UNUSED_0x1DF                    0x1DF // Unused Flag
-#define FLAG_UNUSED_0x1E0                    0x1E0 // Unused Flag
-#define FLAG_UNUSED_0x1E1                    0x1E1 // Unused Flag
-#define FLAG_UNUSED_0x1E2                    0x1E2 // Unused Flag
-#define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag
+#define FLAG_DEFEATED_GYM_TRAINER_1                    0x1DE // Unused Flag
+#define FLAG_DEFEATED_GYM_TRAINER_2                    0x1DF // Unused Flag
+#define FLAG_DEFEATED_GYM_TRAINER_3                    0x1E0 // Unused Flag
+#define FLAG_DEFEATED_GYM_TRAINER_4                    0x1E1 // Unused Flag
+#define FLAG_DEFEATED_GYM_TRAINER_5                    0x1E2 // Unused Flag
+#define FLAG_DEFEATED_GYM_TRAINER_6                    0x1E3 // Unused Flag
 
 // Mystery Gift Flags (Unknown)
 #define FLAG_MYSTERY_GIFT_DONE               0x1E4

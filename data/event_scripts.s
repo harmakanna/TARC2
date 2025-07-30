@@ -1163,6 +1163,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/birch_speech.inc"
 	.include "data/scripts/dexnav.inc"
 	.include "data/text/names.inc"
+	.include "data/scripts/givemon.inc"
 
 	.include "data/maps/PresentTown/scripts.inc"
 

@@ -1,0 +1,63 @@
+Present_Gym_EventScript_PhoebeGiveDusknoir::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DUSKNOIR
+	givemon SPECIES_DUSKNOIR, 50
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Gym_EventScript_ReceiveDusknoirParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Gym_EventScript_ReceiveDusknoirPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+Present_Gym_EventScript_ReceiveDusknoirParty::
+	call Present_Gym_EventScript_ReceivedDusknoirFanfare
+	goto Present_Gym_EventScript_PhoebeDefeatedSetFlags
+	end
+	
+Present_Gym_EventScript_ReceiveDusknoirPC::
+	call Present_Gym_EventScript_ReceivedDusknoirFanfare
+	call Common_EventScript_TransferredToPC
+	goto Present_Gym_EventScript_PhoebeDefeatedSetFlags
+	end
+
+Present_Gym_EventScript_ReceivedDusknoirFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_DUSKNOIR
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox Present_Gym_Text_YouReceivedDusknoir, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_DUSKNOIR
+	return
+
+Present_Gym_EventScript_PhoebeGiveSableye::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SABLEYE
+	givemon SPECIES_SABLEYE, 50
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Gym_EventScript_ReceiveSableyeParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Gym_EventScript_ReceiveSableyePC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+Present_Gym_EventScript_ReceiveSableyeParty::
+	call Present_Gym_EventScript_ReceivedSableyeFanfare
+	goto Present_Gym_EventScript_PhoebeDefeatedSetFlags
+	end
+	
+Present_Gym_EventScript_ReceiveSableyePC::
+	call Present_Gym_EventScript_ReceivedSableyeFanfare
+	call Common_EventScript_TransferredToPC
+	goto Present_Gym_EventScript_PhoebeDefeatedSetFlags
+	end
+
+Present_Gym_EventScript_ReceivedSableyeFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_SABLEYE
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox Present_Gym_Text_YouReceivedSableye, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_SABLEYE
+	return
+
+Present_Gym_Text_YouReceivedDusknoir:
+	.string "You received a Dusknoir!$"
+
+Present_Gym_Text_YouReceivedSableye:
+	.string "You received a Sableye!$"

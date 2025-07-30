@@ -7,6 +7,12 @@ Present_Gym_OnTransition:
 	end
 
 Present_Gym_EventScript_ResetTrainers::
+	clearflag FLAG_DEFEATED_GYM_TRAINER_1
+	clearflag FLAG_DEFEATED_GYM_TRAINER_2
+	clearflag FLAG_DEFEATED_GYM_TRAINER_3
+	clearflag FLAG_DEFEATED_GYM_TRAINER_4
+	clearflag FLAG_DEFEATED_GYM_TRAINER_5
+	clearflag FLAG_DEFEATED_GYM_TRAINER_6
 	return
 
 Present_Gym_OnFrame:
@@ -20,26 +26,65 @@ Present_Gym_EventScript_Phoebe::
 	call Script_GetNPCFacingDirection
 	goto_if_set FLAG_DEFEATED_ELITE_4_PHOEBE, Present_Gym_EventScript_PhoebePostBattleSpeech
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
-	@speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeHiLooker
-	@speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Gym_Text_LookerImHereOnOfficialBusiness
-	@speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeIHeardYouWanted
-	@speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Gym_Text_LookerCorrect
-	@speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeCouldWePleaseFight
+	goto_if_set FLAG_SPOKE_TO_PHOEBE, Present_Gym_EventScript_PhoebeStartBattleFast
+	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeHiLooker
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Gym_Text_LookerImHereOnOfficialBusiness
+	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeIHeardYouWanted
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Gym_Text_LookerCorrect
+	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeThankYou
+	setflag FLAG_SPOKE_TO_PHOEBE
+	trainerbattle_no_intro TRAINER_PHOEBE, Present_Gym_Text_PhoebeDefeat
+	goto Present_Gym_EventScript_PhoebeDefeated
+	end
+
+Present_Gym_EventScript_PhoebeStartBattleFast::
+	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeRematch
 	trainerbattle_no_intro TRAINER_PHOEBE, Present_Gym_Text_PhoebeDefeat
 	goto Present_Gym_EventScript_PhoebeDefeated
 	end
 
 Present_Gym_EventScript_PhoebePostBattleSpeech::
+	speakername Name_Phoebe
 	msgbox Present_Gym_Text_PhoebePostBattleSpeech, MSGBOX_DEFAULT
+	closemessage
 	releaseall
 	end
 
 Present_Gym_EventScript_PhoebeDefeated::
+	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeICouldGoForAnother
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Gym_Text_LookerNoTimeToFoolAround
+	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeFineWhatDoYouNeed
+	call_if_unset FLAG_DEFEATED_MATT, Present_Gym_EventScript_PhoebeTeamAquaSuspicious
+	call_if_set FLAG_DEFEATED_MATT, Present_Gym_EventScript_PhoebeIDontKnow
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Gym_Text_LookerHmm
+	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeAnyTime
+	multichoicedefault 21, 6, MULTI_PHOEBE_GIVEMON, 1, TRUE
+	goto_if_eq VAR_RESULT, 0, Present_Gym_EventScript_PhoebeGiveDusknoir
+	goto_if_eq VAR_RESULT, 1, Present_Gym_EventScript_PhoebeGiveSableye
+	end
+
+Present_Gym_EventScript_PhoebeDefeatedSetFlags::
+	special HealPlayerParty
 	setflag FLAG_DEFEATED_ELITE_4_PHOEBE
-	msgbox Present_Gym_Text_PhoebePostBattleSpeech, MSGBOX_DEFAULT
+	setflag FLAG_DEFEATED_GYM_TRAINER_1
+	setflag FLAG_DEFEATED_GYM_TRAINER_2
+	setflag FLAG_DEFEATED_GYM_TRAINER_3
+	setflag FLAG_DEFEATED_GYM_TRAINER_4
+	setflag FLAG_DEFEATED_GYM_TRAINER_5
+	setflag FLAG_DEFEATED_GYM_TRAINER_6
 	completequest QUEST_DEFEAT_PHOEBE
 	releaseall
 	end
+
+Present_Gym_EventScript_PhoebeTeamAquaSuspicious::
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Gym_Text_LookerINeedInfoOnTwo
+	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeTeamAquaSuspicious
+	return
+
+Present_Gym_EventScript_PhoebeIDontKnow::
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Gym_Text_LookerINeedInfoOnOne
+	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeTheStormsAreCertainlyWeird
+	return
 
 Present_Gym_EventScript_GymGuide::
 	lockall
@@ -148,10 +193,228 @@ Present_Gym_Movement_GymGuyWalksBackToStartingPosition:
 	face_down
 	step_end
 
+@ Hex Maniac Top, TRAINER_LEAH
+Present_Gym_EventScript_GymTrainer1::
+	lockall
+	goto_if_set FLAG_DEFEATED_GYM_TRAINER_1, Present_Gym_EventScript_GymTrainer1PostBattle
+	speakername Name_Gym_Trainer_1
+	msgbox Present_Gym_Text_GymTrainer1Intro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_LEAH, Present_Gym_Text_GymTrainer1Defeat
+	setflag FLAG_DEFEATED_GYM_TRAINER_1
+	releaseall
+	end
+
+Present_Gym_EventScript_GymTrainer1PostBattle::
+	faceplayer
+	speakername Name_Gym_Trainer_1
+	msgbox Present_Gym_Text_GymTrainer1PostBattle, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+@ Psychic M, TRAINER_BLAKE
+Present_Gym_EventScript_GymTrainer2::
+	lockall
+	goto_if_set FLAG_DEFEATED_GYM_TRAINER_2, Present_Gym_EventScript_GymTrainer2PostBattle
+	speakername Name_Gym_Trainer_2
+	msgbox Present_Gym_Text_GymTrainer2Intro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_BLAKE, Present_Gym_Text_GymTrainer2Defeat
+	setflag FLAG_DEFEATED_GYM_TRAINER_2
+	releaseall
+	end
+
+Present_Gym_EventScript_GymTrainer2PostBattle::
+	faceplayer
+	speakername Name_Gym_Trainer_2
+	msgbox Present_Gym_Text_GymTrainer2PostBattle, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+@ Ranger, TRAINER_SEBASTIAN
+Present_Gym_EventScript_GymTrainer3::
+	lockall
+	goto_if_set FLAG_DEFEATED_GYM_TRAINER_3, Present_Gym_EventScript_GymTrainer3PostBattle
+	speakername Name_Gym_Trainer_3
+	msgbox Present_Gym_Text_GymTrainer3Intro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_SEBASTIAN, Present_Gym_Text_GymTrainer3Defeat
+	setflag FLAG_DEFEATED_GYM_TRAINER_3
+	releaseall
+	end
+
+Present_Gym_EventScript_GymTrainer3PostBattle::
+	faceplayer
+	speakername Name_Gym_Trainer_3
+	msgbox Present_Gym_Text_GymTrainer3PostBattle, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+@ Psychic F, TRAINER_SAMANTHA
+Present_Gym_EventScript_GymTrainer4::
+	lockall
+	goto_if_set FLAG_DEFEATED_GYM_TRAINER_4, Present_Gym_EventScript_GymTrainer4PostBattle
+	speakername Name_Gym_Trainer_4
+	msgbox Present_Gym_Text_GymTrainer4Intro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_SAMANTHA, Present_Gym_Text_GymTrainer4Defeat
+	setflag FLAG_DEFEATED_GYM_TRAINER_4
+	releaseall
+	end
+
+Present_Gym_EventScript_GymTrainer4PostBattle::
+	faceplayer
+	speakername Name_Gym_Trainer_4
+	msgbox Present_Gym_Text_GymTrainer4PostBattle, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+@ Beauty, TRAINER_CONNIE
+Present_Gym_EventScript_GymTrainer5::
+	lockall
+	goto_if_set FLAG_DEFEATED_GYM_TRAINER_5, Present_Gym_EventScript_GymTrainer5PostBattle
+	speakername Name_Gym_Trainer_5
+	msgbox Present_Gym_Text_GymTrainer5Intro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_CONNIE, Present_Gym_Text_GymTrainer5Defeat
+	setflag FLAG_DEFEATED_GYM_TRAINER_5
+	releaseall
+	end
+
+Present_Gym_EventScript_GymTrainer5PostBattle::
+	faceplayer
+	speakername Name_Gym_Trainer_5
+	msgbox Present_Gym_Text_GymTrainer5PostBattle, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+
+@ Hex Maniac Bottom, TRAINER_TASHA
+Present_Gym_EventScript_GymTrainer6::
+	lockall
+	goto_if_set FLAG_DEFEATED_GYM_TRAINER_6, Present_Gym_EventScript_GymTrainer6PostBattle
+	speakername Name_Gym_Trainer_6
+	msgbox Present_Gym_Text_GymTrainer6Intro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_TASHA, Present_Gym_Text_GymTrainer6Defeat
+	setflag FLAG_DEFEATED_GYM_TRAINER_6
+	releaseall
+	end
+
+Present_Gym_EventScript_GymTrainer6PostBattle::
+	faceplayer
+	speakername Name_Gym_Trainer_6
+	msgbox Present_Gym_Text_GymTrainer6PostBattle, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
 Present_Gym_EventScript_GymStatue::
 	msgbox Present_Gym_Text_GymStatue, MSGBOX_SIGN
 	end
 
+Present_Gym_Text_PhoebeICouldGoForAnother:
+	.string "That.\p"
+	.string "Was.\p"
+	.string "EXHILERATING!\p"
+	.string "C'mon Looker, let's do another! I can\n"
+	.string "even heal up your Pokémon right now!$"
+
+Present_Gym_Text_LookerNoTimeToFoolAround:
+	.string "I have no time to fool around any\n"
+	.string "longer than I already have.\p"
+	.string "Could you please help with the\n"
+	.string "investigation?$"
+
+Present_Gym_Text_PhoebeFineWhatDoYouNeed:
+	.string "Fine… What do you need…?$"
+
+Present_Gym_Text_LookerINeedInfoOnTwo:
+	.string "I need information on two things -\n"
+	.string "Team Aqua and any recent goings-on in\l"
+	.string "Porta Bella you might be privy to.$"
+
+Present_Gym_Text_LookerINeedInfoOnOne:
+	.string "I need information on the recent\n"
+	.string "lightning storms in Porta Bella.\p"
+	.string "I have already cleared Team Aqua of\n"
+	.string "all suspicion.$"
+
+Present_Gym_Text_PhoebeTeamAquaSuspicious:
+	.string "Team Aqua has been acting suspicious ever\n"
+	.string "since they moved in.\p"
+	.string "They're constantly performing experiments\n"
+	.string "on the local wild Pokémon, which has put\l"
+	.string "them at odds with the city government\l"
+	.string "and the residents of Porta Bella.\p"
+	.string "I wouldn't be surprised if they had\n"
+	.string "something to do with the storm.\p"
+	.string "Outside of that, we've also had a number of\n"
+	.string "gym challengers come in, as we only just\l"
+	.string "started gym season in the past few days.\p"
+	.string "There's a few trainers who have come by\n"
+	.string "already, but only one has been strong enough\l"
+	.string "to beat me thus far.\p"
+	.string "Does that help?$"
+
+Present_Gym_Text_PhoebeTheStormsAreCertainlyWeird:
+	.string "The big storm which rolled in earlier is\n"
+	.string "certainly weird…\p"
+	.string "If it's not Team Aqua who's the culprit, I\n"
+	.string "couldn't imagine who it would be…"
+	.string "I suppose you could check in with the Rangers\n"
+	.string "if you haven't already?\p"
+	.string "Outside of that, we've also had a number of\n"
+	.string "gym challengers come in, as we only just\l"
+	.string "started gym season in the past few days.\p"
+	.string "There's a few trainers who have come by\n"
+	.string "already, but only one has been strong enough\l"
+	.string "to beat me thus far.\p"
+	.string "Does that help?$"
+
+Present_Gym_Text_LookerHmm:
+	.string "Hmm…\p"
+	.string "Thank you, Phoebe. I believe I am getting\n"
+	.string "closer to cracking open this case!$"
+
+Present_Gym_Text_PhoebeAnyTime:
+	.string "Any time, Looker! Thanks for such an\n"
+	.string "exciting battle!\p"
+	.string "While you're in town, feel free to borrow\n"
+	.string "one of my Pokémon!\p"
+	.string "Which would you like?$"
+
+Present_Gym_Text_PhoebeHiLooker:
+	.string "Hi!$"
+
+Present_Gym_Text_LookerImHereOnOfficialBusiness:
+	.string "Hi, Phoebe. I'm here as part of an\n"
+	.string "investigation into Team Aqua and,\l"
+	.string "subsequently, the recent downpour.$"
+
+Present_Gym_Text_PhoebeIHeardYouWanted:
+	.string "I heard you were in town! I'd be glad to\n"
+	.string "help out, but would you PLEASE save me\l"
+	.string "from my job and entertain me with a\n"
+	.string "battle?\p"
+	.string "Sometimes this new job makes me feel like\n"
+	.string "I'm a glorified babysitter…\p"
+	.string "I'd appreciate a change of pace…$"
+
+Present_Gym_Text_LookerCorrect:
+	.string "I would love to humor this little gym\n"
+	.string "challenge.$"
+
+Present_Gym_Text_PhoebeThankYou:
+	.string "Thank you!\n"
+	.string "Okay Looker…\p"
+	.string "Get ready for a beatdown from the strongest\n"
+	.string "trainer in all of Porta Bella!$"
+
+Present_Gym_Text_PhoebeRematch:
+	.string "Back again for more?\n"
+	.string "Okay Looker…\p"
+	.string "Get ready for another beatdown from the\n"
+	.string "strongest trainer in Porta Bella!$"
 
 Present_Gym_Text_PhoebeIntroSpeech:
 	.string "Ahahaha!\p"
@@ -174,7 +437,8 @@ Present_Gym_Text_PhoebePostBattleSpeech:
 
 Present_Gym_Text_GymGuyBeatPhoebe:
 	.string "Dang, good stuff beating Phoebe!\p"
-	.string "She's the toughest trainer around!$"
+	.string "Hopefully she complains less after that\n"
+	.string "heated battle…$"
 
 Present_Gym_Text_GymGuyGoodLuck:
 	.string "All right, good luck out there!$"
@@ -221,8 +485,8 @@ Present_Gym_Text_GymGuyNoCanDo:
 	.string "Only kids really take the gyms seriously.$"
 
 Present_Gym_Text_LookerSoSheWantsAChangeOfPace:
-	.string "So she wants a change of\n"
-	.string "pace compared to her normal job?\p"
+	.string "So she wants me to provide a bit of a\n"
+	.string "distraction from her normal job?\p"
 	.string "I have some time to indulge.$"
 
 Present_Gym_Text_GymGuyGreatJustKnow:
@@ -234,8 +498,7 @@ Present_Gym_Text_GymGuyGreatJustKnow:
 
 Present_Gym_Text_LookerSure:
 	.string "Sure. It's been too long since\n"
-	.string "I did a gym challenge. This should be\l"
-	.string "a fun change of pace.$"
+	.string "I did a gym challenge.$"
 
 Present_Gym_Text_GymGuyJustKnowRepeat:
 	.string "Just so you know, if you\n"
@@ -268,6 +531,86 @@ Present_Gym_Text_TheresAChallenger:
 Present_Gym_Text_LookerUnderstandable:
 	.string "Oh, that's unfortunate.\n"
 	.string "I'll come by to speak with her later.$"
+
+Present_Gym_Text_GymTrainer1Intro:
+	.string "Hehehehe…\n"
+	.string "I put a spell on you!$"
+
+Present_Gym_Text_GymTrainer1Defeat:
+	.string "No! Witchcraft fails me again!$"
+
+Present_Gym_Text_GymTrainer1PostBattle:
+	.string "Sometimes I wonder if witchcraft\n"
+	.string "is actually real or not…$"
+
+Present_Gym_Text_GymTrainer2Intro:
+	.string "Catch this! Kamehameha!$"
+
+Present_Gym_Text_GymTrainer2Defeat:
+	.string "Drat, it didn't work!$"
+
+Present_Gym_Text_GymTrainer2PostBattle:
+	.string "I've been watching too many TV shows\n"
+	.string "lately…$"
+
+Present_Gym_Text_GymTrainer3Intro:
+	.string "Man… Why do I gotta be here…\p"
+	.string "I want to hang out with wild Pokémon…$"
+
+Present_Gym_Text_GymTrainer3Defeat:
+	.string "Sigh…$"
+
+Present_Gym_Text_GymTrainer3PostBattle:
+	.string "I don't get paid enough to work as a\n"
+	.string "Ranger, so I had to take up a side\l"
+	.string "hustle at the gym to make ends meet…"
+
+Present_Gym_Text_GymTrainer4Intro:
+	.string "Porta Bella City is considered the gold\n"
+	.string "standard for gym challenges!\p"
+	.string "Our gym leader is one of the elites in\n"
+	.string "this country!$"
+
+Present_Gym_Text_GymTrainer4Defeat:
+	.string "Well, at least I did my part!$"
+
+Present_Gym_Text_GymTrainer4PostBattle:
+	.string "Have you figured out who the gym leader\n"
+	.string "of Porta Bella is yet?$"
+
+Present_Gym_Text_GymTrainer5Intro:
+	.string "This gym is a perfect way for me to get\n"
+	.string "out of the sun!\p"
+	.string "I could do without all the children\n"
+	.string "coming in, though…$"
+
+Present_Gym_Text_GymTrainer5Defeat:
+	.string "Oh well…$"
+
+Present_Gym_Text_GymTrainer5PostBattle:
+	.string "Living a childfree life is so hard…\n"
+	.string "Couldn't they just… like…\p"
+	.string "Go away?$"
+
+Present_Gym_Text_GymTrainer6Intro:
+	.string "Fufufufu…\p"
+	.string "… … …\n"
+	.string "… … …\p"
+	.string "… … …\n"
+	.string "… … …\p"
+	.string "… … …\n"
+	.string "… … …\p"
+	.string "Why are you looking at me like that?\n"
+	.string "I'm just laughing…$"
+
+Present_Gym_Text_GymTrainer6Defeat:
+	.string "I swear! I just have a weird laugh!$"
+
+Present_Gym_Text_GymTrainer6PostBattle:
+	.string "I've been friends with the gym leader\n"
+	.string "since we were kids…\p"
+	.string "You won't have an easy time with her…\n"
+	.string "Fufufufu…$"
 
 Present_Gym_Text_GymStatue:
 	.string "Porta Bella City Pokémon Gym$"

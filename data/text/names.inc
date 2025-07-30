@@ -51,3 +51,27 @@ Name_Scientist:
 
 Name_Lass:
     .string "Marie$"
+
+@ Hex Maniac Top
+Name_Gym_Trainer_1:
+    .string "Leah$"
+
+@ Psychic M
+Name_Gym_Trainer_2:
+    .string "Blake$"
+
+@ Ranger    
+Name_Gym_Trainer_3:
+    .string "Sebastian$"
+
+@ Psychic F  
+Name_Gym_Trainer_4:
+    .string "Samantha$"
+    
+@ Beauty
+Name_Gym_Trainer_5:
+    .string "Connie$"
+
+@Hex Maniac Bottom    
+Name_Gym_Trainer_6:
+    .string "Tasha$"

@@ -524,13 +524,12 @@ Level: 30
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_MATT ===
-Name: MATT
+Name: Matt
 Class: Aqua Admin
 Pic: Aqua Admin M
 Gender: Male
 Music: Aqua
-Items: Super Potion
-Double Battle: No
+Double Battle: Yes
 AI: Basic Trainer
 
 Mightyena
@@ -611,13 +610,17 @@ Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_LEAH ===
-Name: LEAH
+Name: Leah
 Class: Hex Maniac
 Pic: Hex Maniac
 Gender: Female
 Music: Suspicious
-Double Battle: No
+Double Battle: Yes
 AI: Check Bad Move
+
+Spoink
+Level: 31
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Spoink
 Level: 31
@@ -2029,13 +2032,17 @@ Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_TASHA ===
-Name: TASHA
+Name: Tasha
 Class: Hex Maniac
 Pic: Hex Maniac
 Gender: Female
 Music: Suspicious
-Double Battle: No
+Double Battle: Yes
 AI: Check Bad Move
+
+Shuppet
+Level: 32
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Shuppet
 Level: 32
@@ -2343,13 +2350,17 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Crunch
 
 === TRAINER_CONNIE ===
-Name: CONNIE
+Name: Connie
 Class: Beauty
 Pic: Beauty
 Gender: Female
 Music: Female
-Double Battle: No
+Double Battle: Yes
 AI: Check Bad Move
+
+Goldeen
+Level: 40
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Goldeen
 Level: 40
@@ -4139,13 +4150,17 @@ Level: 36
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_BLAKE ===
-Name: BLAKE
+Name: Blake
 Class: Psychic
 Pic: Psychic M
 Gender: Male
 Music: Intense
-Double Battle: No
+Double Battle: Yes
 AI: Check Bad Move
+
+Girafarig
+Level: 36
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Girafarig
 Level: 36
@@ -4298,13 +4313,17 @@ Level: 36
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_SAMANTHA ===
-Name: SAMANTHA
+Name: Samantha
 Class: Psychic
 Pic: Psychic F
 Gender: Female
 Music: Intense
-Double Battle: No
+Double Battle: Yes
 AI: Check Bad Move
+
+Xatu
+Level: 36
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Xatu
 Level: 36
@@ -4636,13 +4655,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Slash
 
 === TRAINER_PHOEBE ===
-Name: PHOEBE
+Name: Phoebe
 Class: Elite Four
 Pic: Elite Four Phoebe
 Gender: Female
 Music: Elite Four
-Items: Full Restore / Full Restore
-Double Battle: No
+Double Battle: Yes
 AI: Basic Trainer
 Mugshot: Green
 
@@ -10250,14 +10268,17 @@ Level: 28
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_SEBASTIAN ===
-Name: SEBASTIAN
+Name: Sebastian
 Class: Pkmn Ranger
 Pic: Pokemon Ranger M
 Gender: Male
 Music: Cool
-Items: Full Restore
-Double Battle: No
+Double Battle: Yes
 AI: Basic Trainer
+
+Cacturne
+Level: 39
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Cacturne
 Level: 39
