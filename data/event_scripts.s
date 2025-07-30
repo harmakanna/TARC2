@@ -1164,7 +1164,8 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/dexnav.inc"
 	.include "data/text/names.inc"
 	.include "data/scripts/givemon.inc"
-
+	.include "data/scripts/city_outside_npcs.inc"
+	
 	.include "data/maps/PresentTown/scripts.inc"
 
 	.include "data/maps/PastTown/scripts.inc"
