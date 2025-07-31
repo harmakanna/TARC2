@@ -19,6 +19,7 @@ PresentTown_EventScript_ChangeAnabelFollowerText::
 PresentTown_EventScript_GiveLookerStarters::
 	givemonwithot OT_LOOKER_GROWLITHE
 	givemonwithot OT_LOOKER_TOXICROAK
+	setflag FLAG_LOOKER_STARTERS
 	return 
 
 PresentTown_EventScript_DebugMainGameStart::

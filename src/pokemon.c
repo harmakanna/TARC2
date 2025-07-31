@@ -1598,8 +1598,11 @@ void CreateMonWithNatureGenderOTID(struct Pokemon *mon, u16 species, u8 level, u
         i = Random32();
     } while (nature != GetNatureFromPersonality(i)
             || gender != GetGenderFromSpeciesAndPersonality(species, i));
-
-    CreateMon(mon, species, level, fixedIV, TRUE, i, OT_ID_PRESET, otId);
+            
+    if (otId == OT_ID_PLAYER_ID)
+        CreateMon(mon, species, level, fixedIV, TRUE, i, OT_ID_PLAYER_ID, 0);
+    else
+        CreateMon(mon, species, level, fixedIV, TRUE, i, OT_ID_PRESET, otId);
 
     CalculateMonStats(mon);
 }
@@ -1614,7 +1617,10 @@ void CreateMonWithNatureOTID(struct Pokemon *mon, u16 species, u8 level, u8 natu
         i = Random32();
     } while (nature != GetNatureFromPersonality(i));
 
-    CreateMon(mon, species, level, fixedIV, TRUE, i, OT_ID_PRESET, otId);
+    if (otId == OT_ID_PLAYER_ID)
+        CreateMon(mon, species, level, fixedIV, TRUE, i, OT_ID_PLAYER_ID, 0);
+    else
+        CreateMon(mon, species, level, fixedIV, TRUE, i, OT_ID_PRESET, otId);
 
     CalculateMonStats(mon);
 }
