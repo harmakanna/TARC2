@@ -16959,22 +16959,23 @@ Pic: Lass
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Check Bad Move
+AI: Basic Trainer
 
-Noctowl  
-Ability: Insomnia  
-Tera Type: Normal  
-IVs: 0 Atk  
-- Air Slash  
-- Extrasensory  
+Wormadam  
+Ability: Overcoat  
+Level: 50  
+Tera Type: Bug  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Psychic  
 - Protect  
 
-Venomoth  
-Ability: Shield Dust  
-Tera Type: Bug  
-IVs: 0 Atk  
-- Psychic Noise  
-- Sludge Bomb  
+Lumineon  
+Ability: Swift Swim  
+Level: 50  
+Tera Type: Water  
+Sassy Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Scald  
 
 === TRAINER_RED ===
 Name: RED
