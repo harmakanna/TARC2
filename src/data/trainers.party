@@ -611,47 +611,29 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_LEAH ===
 Name: Leah
-Class: Battle Girl
-Pic: Battle Girl
+Class: Expert
+Pic: Expert F
 Gender: Female
 Music: Suspicious
 Double Battle: Yes
-AI: Check Bad Move
+AI: Basic Trainer
 
-Froslass (F)  
-Ability: Snow Cloak  
-Tera Type: Ice  
-IVs: 0 Atk  
-- Ice Beam  
+Cursola @ Power Herb  
+Level: 50
+Ability: Perish Body  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Curse  
 - Shadow Ball  
-- Chilling Water  
-- Destiny Bond  
+- Reflect  
+- Meteor Beam  
 
-Typhlosion-Hisui  
-Ability: Blaze  
-Tera Type: Fire  
-IVs: 0 Atk  
-- Infernal Parade  
-- Detect  
-- Flamethrower  
-- Extrasensory  
-
-Decidueye  
-Ability: Long Reach  
-Tera Type: Grass  
-- Spirit Shackle  
-- Leaf Blade  
-- Dual Wingbeat  
-- Knock Off  
-
-Jellicent  
-Ability: Water Absorb  
-Tera Type: Water  
-IVs: 0 Atk  
-- Hex  
-- Scald  
-- Will-O-Wisp  
-- Pain Split  
+Houndstone @ Choice Scarf    
+Level: 50
+Ability: Fluffy  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Last Respects  
+- Play Rough  
+- Trick   
 
 === TRAINER_DAISY ===
 Name: DAISY
@@ -663,40 +645,40 @@ Double Battle: No
 AI: Check Bad Move
 
 Hitmontop (M) @ Assault Vest  
+Level: 50
 Ability: Intimidate  
-Tera Type: Fighting  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Fake Out  
 - Triple Kick  
 - Triple Axel  
 - Rapid Spin  
 
 Bellossom  
+Level: 50
 Ability: Healer  
-Tera Type: Grass  
-IVs: 0 Atk  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Sludge Bomb  
 - Energy Ball  
 - Pollen Puff  
 - Quiver Dance  
 
 Gardevoir  
+Level: 50
 Ability: Synchronize  
-Tera Type: Psychic  
-IVs: 0 Atk  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Alluring Voice  
 - Psychic  
 - Aura Sphere  
 - Thunderbolt  
 
 Quaquaval  
+Level: 50
 Ability: Moxie  
-Tera Type: Water  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Acrobatics  
 - Aqua Step  
 - Knock Off  
 - Bulk Up  
-
-
 
 === TRAINER_ROSE_1 ===
 Name: ROSE
@@ -2084,32 +2066,53 @@ AI: Check Bad Move
 
 Sableye
 Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 === TRAINER_TASHA ===
 Name: Tasha
-Class: Expert
-Pic: Expert F
+Class: Hex Maniac
+Pic: Hex Maniac
 Gender: Female
 Music: Suspicious
 Double Battle: Yes
-AI: Check Bad Move
+AI: Basic Trainer
 
-Cursola @ Power Herb  
-Ability: Perish Body  
-Tera Type: Ghost  
-IVs: 0 Atk  
-- Curse  
+Froslass (F)  
+Level: 50
+Ability: Snow Cloak  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Ice Beam  
 - Shadow Ball  
-- Reflect  
-- Meteor Beam  
+- Chilling Water  
+- Destiny Bond  
 
-Houndstone @ Choice Scarf  
-Ability: Fluffy  
-Tera Type: Ghost  
-- Last Respects  
-- Play Rough  
-- Trick  
+Typhlosion-Hisui  
+Level: 50
+Ability: Blaze  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Infernal Parade  
+- Detect  
+- Flamethrower  
+- Extrasensory  
+
+Decidueye  
+Level: 50
+Ability: Long Reach  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Spirit Shackle  
+- Leaf Blade  
+- Dual Wingbeat  
+- Knock Off  
+
+Jellicent  
+Level: 50
+Ability: Water Absorb  
+Tera Type: Water  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Hex  
+- Scald  
+- Will-O-Wisp  
+- Pain Split 
 
 === TRAINER_VALERIE_2 ===
 Name: VALERIE
@@ -2422,34 +2425,38 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Mr. Rime  
+Level: 50
 Ability: Tangled Feet  
-Tera Type: Ice  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Teeter Dance  
 - Fake Out  
 - Ice Beam  
 - Protect  
 
 Lilligant  
+Level: 50
 Ability: Own Tempo  
 Tera Type: Grass  
-IVs: 0 Atk  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Petal Dance  
 - Pollen Puff  
 - Alluring Voice  
 - Quiver Dance  
 
 Oricorio-Sensu  
+Level: 50
 Ability: Dancer  
-Tera Type: Ghost  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Revelation Dance  
 - Acrobatics  
 - Feather Dance  
 - Quiver Dance  
 
 Ludicolo  
+Level: 50
 Ability: Swift Swim  
 Tera Type: Water  
-IVs: 0 Atk  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Rain Dance  
 - Energy Ball  
 - Scald  
@@ -4247,30 +4254,6 @@ Music: Intense
 Double Battle: Yes
 AI: Check Bad Move
 
-Bruxish  
-Ability: Dazzling  
-Tera Type: Water  
-- Aqua Jet  
-- Flip Turn  
-- Psychic Fangs  
-- Ice Fang  
-
-Toucannon  
-Ability: Skill Link  
-Tera Type: Normal  
-- Beak Blast  
-- Bullet Seed  
-- Rock Blast  
-- Heat Wave  
-
-Exeggutor-Alola @ Sitrus Berry  
-Ability: Harvest  
-Tera Type: Grass  
-- Dragon Hammer  
-- Grass Knot  
-- Extrasensory  
-- Sleep Powder  
-
 === TRAINER_WILLIAM ===
 Name: WILLIAM
 Class: Psychic
@@ -4419,20 +4402,39 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_SAMANTHA ===
 Name: Samantha
-Class: Psychic
-Pic: Psychic F
+Class: Pkmn Ranger
+Pic: Pokemon Ranger F
 Gender: Female
 Music: Intense
 Double Battle: Yes
 AI: Check Bad Move
 
-Xatu
-Level: 36
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Bruxish  
+Level: 50
+Ability: Dazzling  
+Tera Type: Water  
+- Aqua Jet  
+- Flip Turn  
+- Psychic Fangs  
+- Ice Fang  
 
-Xatu
-Level: 36
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Toucannon  
+Level: 50
+Ability: Skill Link  
+Tera Type: Normal  
+- Beak Blast  
+- Bullet Seed  
+- Rock Blast  
+- Heat Wave  
+
+Exeggutor-Alola @ Sitrus Berry  
+Level: 50
+Ability: Harvest  
+Tera Type: Grass  
+- Dragon Hammer  
+- Grass Knot  
+- Extrasensory  
+- Sleep Powder  
 
 === TRAINER_MAURA ===
 Name: MAURA
@@ -10374,6 +10376,54 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Tropius @ Life Orb  
+Level: 50
+Ability: Chlorophyll 
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Dual Wingbeat  
+- Dragon Hammer  
+- Tailwind  
+- Leaf Storm  
+
+Kingler  
+Level: 50
+Ability: Sheer Force  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Razor Shell  
+- Hammer Arm  
+- Protect  
+- Rock Slide  
+
+Chatot  
+Level: 50
+Ability: Keen Eye  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Chatter  
+- Hyper Voice  
+- U-turn  
+- Feather Dance  
+
+Volcarona  
+Level: 50
+Ability: Flame Body  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Fiery Dance  
+- Bug Buzz  
+- Rage Powder  
+- Psychic  
+
+
+
+=== TRAINER_JACKSON_2 ===
+Name: JACKSON
+Class: Pkmn Ranger
+Pic: Pokemon Ranger M
+Gender: Male
+Music: Cool
+Items: Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Force Setup First Turn
+
+Tropius @ Life Orb  
 Ability: Chlorophyll  
 Tera Type: Grass  
 - Dual Wingbeat  
@@ -10405,20 +10455,6 @@ IVs: 0 Atk
 - Bug Buzz  
 - Rage Powder  
 - Psychic  
-
-=== TRAINER_JACKSON_2 ===
-Name: JACKSON
-Class: Pkmn Ranger
-Pic: Pokemon Ranger M
-Gender: Male
-Music: Cool
-Items: Full Restore
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Force Setup First Turn
-
-Breloom
-Level: 31
-IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
 
 === TRAINER_JACKSON_3 ===
 Name: JACKSON
@@ -16964,7 +17000,6 @@ AI: Basic Trainer
 Wormadam  
 Ability: Overcoat  
 Level: 50  
-Tera Type: Bug  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Psychic  
 - Protect  
@@ -16972,7 +17007,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Lumineon  
 Ability: Swift Swim  
 Level: 50  
-Tera Type: Water  
 Sassy Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Scald  

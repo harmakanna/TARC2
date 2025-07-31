@@ -185,7 +185,7 @@ Present_Gym_EventScript_GymGuyBeatPhoebe::
 	releaseall
 	end
 
-@ Hex Maniac Top, TRAINER_LEAH
+@ Expert, TRAINER_LEAH
 Present_Gym_EventScript_GymTrainer1::
 	lockall
 	goto_if_set FLAG_DEFEATED_GYM_TRAINER_1, Present_Gym_EventScript_GymTrainer1PostBattle
@@ -204,13 +204,13 @@ Present_Gym_EventScript_GymTrainer1PostBattle::
 	releaseall
 	end
 
-@ Psychic M, TRAINER_BLAKE
+@ Battle Girl, TRAINER_DAISY
 Present_Gym_EventScript_GymTrainer2::
 	lockall
 	goto_if_set FLAG_DEFEATED_GYM_TRAINER_2, Present_Gym_EventScript_GymTrainer2PostBattle
 	speakername Name_Gym_Trainer_2
 	msgbox Present_Gym_Text_GymTrainer2Intro, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_BLAKE, Present_Gym_Text_GymTrainer2Defeat
+	trainerbattle_no_intro TRAINER_DAISY, Present_Gym_Text_GymTrainer2Defeat
 	setflag FLAG_DEFEATED_GYM_TRAINER_2
 	releaseall
 	end
@@ -223,7 +223,7 @@ Present_Gym_EventScript_GymTrainer2PostBattle::
 	releaseall
 	end
 
-@ Ranger, TRAINER_SEBASTIAN
+@ Ranger M, TRAINER_SEBASTIAN
 Present_Gym_EventScript_GymTrainer3::
 	lockall
 	goto_if_set FLAG_DEFEATED_GYM_TRAINER_3, Present_Gym_EventScript_GymTrainer3PostBattle
@@ -242,7 +242,7 @@ Present_Gym_EventScript_GymTrainer3PostBattle::
 	releaseall
 	end
 
-@ Psychic F, TRAINER_SAMANTHA
+@ Ranger F, TRAINER_SAMANTHA
 Present_Gym_EventScript_GymTrainer4::
 	lockall
 	goto_if_set FLAG_DEFEATED_GYM_TRAINER_4, Present_Gym_EventScript_GymTrainer4PostBattle
