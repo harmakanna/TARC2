@@ -87,9 +87,9 @@ void CopyTrainerId(u8 *dst, u8 *src)
         dst[i] = src[i];
 }
 
-static void InitPlayerTrainerId(void)
+void InitPlayerTrainerId(void)
 {
-    u32 trainerId = (Random() << 16) | GetGeneratedTrainerIdLower();
+    u32 trainerId = GetGeneratedTrainerIdLower();
     SetTrainerId(trainerId, gSaveBlock2Ptr->playerTrainerId);
 }
 
@@ -169,6 +169,7 @@ void NewGameInitData(void)
     gSaveBlock2Ptr->specialSaveWarpFlags = 0;
     gSaveBlock2Ptr->gcnLinkFlags = 0;
     InitPlayerTrainerId();
+    SetTrainerId(10053, gSaveBlock2Ptr->playerTrainerId);
     PlayTimeCounter_Reset();
     ClearPokedexFlags();
     InitEventData();

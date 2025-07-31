@@ -27,10 +27,152 @@
 #include "constants/abilities.h"
 #include "constants/items.h"
 #include "constants/battle_frontier.h"
+#include "constants/ots.h"
 
 static void CB2_ReturnFromChooseHalfParty(void);
 static void CB2_ReturnFromChooseBattleFrontierParty(void);
 static void HealPlayerBoxes(void);
+
+
+struct InGameOT {
+    u16 species;
+    u8 level;
+    u16 heldItem;
+    u8 ivs[NUM_STATS];
+    u8 evs[NUM_STATS];
+    u16 moves[MAX_MON_MOVES];
+    enum PokeBall ball;
+    u8 nature;
+    u8 abilityNum;
+    u8 gender;
+    u32 otId;
+    u8 otName[TRAINER_NAME_LENGTH + 1];
+    u8 otGender;
+    bool8 isShiny;
+};
+
+static const struct InGameOT sIngameOTs[] =
+{
+    [OT_LOOKER_GROWLITHE] =
+    {
+        .species = SPECIES_GROWLITHE,
+        .level = 50,
+        .heldItem = ITEM_SITRUS_BERRY,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_FLAMETHROWER, MOVE_CRUNCH, MOVE_HELPING_HAND, MOVE_HOWL},
+        .ball = BALL_CHERISH,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_FEMALE,
+        .otId = 10053,
+        .otName = _("Looker"),
+        .otGender = MALE,
+        .isShiny = FALSE,
+    },
+    [OT_LOOKER_TOXICROAK] =
+    {
+        .species = SPECIES_TOXICROAK,
+        .level = 50,
+        .heldItem = ITEM_FOCUS_SASH,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_VACUUM_WAVE, MOVE_BRICK_BREAK, MOVE_POISON_JAB, MOVE_TAUNT},
+        .ball = BALL_CHERISH,
+        .nature = NATURE_HARDY,
+        .abilityNum = 1,
+        .gender = MON_MALE,
+        .otId = 10053,
+        .otName = _("Looker"),
+        .otGender = MALE,
+        .isShiny = FALSE,
+    },
+    [OT_LOOKER_MAGIKARP] =
+    {
+        .species = SPECIES_MAGIKARP,
+        .level = 45,
+        .heldItem = ITEM_RING_TARGET,
+        .ivs = {31, 31, 31, 31, 31, 31}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {85, 85, 85, 85, 85, 85}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_SPLASH, MOVE_NONE, MOVE_NONE, MOVE_NONE},
+        .ball = BALL_POKE,
+        .nature = NATURE_BRAVE,
+        .abilityNum = 0,
+        .gender = MON_MALE,
+        .otId = 10053,
+        .otName = _("Looker"),
+        .otGender = MALE,
+        .isShiny = TRUE,
+    },
+    [OT_PHOEBE_DUSKNOIR] =
+    {
+        .species = SPECIES_DUSKNOIR,
+        .level = 50,
+        .heldItem = ITEM_NONE,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE},
+        .ball = BALL_LUXURY,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_FEMALE,
+        .otId = 60632,
+        .otName = _("Phoebe"),
+        .otGender = FEMALE,
+        .isShiny = FALSE,
+    },
+    [OT_PHOEBE_SABLEYE] =
+    {
+        .species = SPECIES_SABLEYE,
+        .level = 50,
+        .heldItem = ITEM_NONE,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE},
+        .ball = BALL_LUXURY,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_FEMALE,
+        .otId = 60632,
+        .otName = _("Phoebe"),
+        .otGender = FEMALE,
+        .isShiny = FALSE,
+    },
+    [OT_SHELLY_HUNTAIL] =
+    {
+        .species = SPECIES_HUNTAIL,
+        .level = 50,
+        .heldItem = ITEM_WACAN_BERRY,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_DIVE, MOVE_SUCKER_PUNCH, MOVE_ICE_FANG, MOVE_COIL},
+        .ball = BALL_DIVE,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_MALE,
+        .otId = 42784,
+        .otName = _("Shelly"),
+        .otGender = FEMALE,
+        .isShiny = FALSE,
+    },
+    [OT_SHELLY_GOREBYSS] =
+    {
+        .species = SPECIES_GOREBYSS,
+        .level = 50,
+        .heldItem = ITEM_RINDO_BERRY,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_SURF, MOVE_PSYCHIC, MOVE_DRAINING_KISS, MOVE_SAFEGUARD},
+        .ball = BALL_DIVE,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_MALE,
+        .otId = 42784,
+        .otName = _("Shelly"),
+        .otGender = FEMALE,
+        .isShiny = FALSE,
+    }
+};
 
 void HealPlayerParty(void)
 {
@@ -332,6 +474,107 @@ void SetTeraType(struct ScriptContext *ctx)
  * if side/slot are assigned, it will create the mon at the assigned party location
  * if slot == PARTY_SIZE, it will give the mon to first available party or storage slot
  */
+ 
+static u32 ScriptGiveMonOTPokemonParametrized(u8 whichOTMon)
+{
+    u16 nationalDexNum;
+    int sentToPc;
+    u32 i;
+    const struct InGameOT *inGameOT = &sIngameOTs[whichOTMon];
+    u8 genderRatio = gSpeciesInfo[inGameOT->species].genderRatio;
+
+    struct Pokemon mon;
+
+    // create a Pokémon with basic data
+    if ((inGameOT->gender == MON_MALE && genderRatio != MON_FEMALE && genderRatio != MON_GENDERLESS)
+     || (inGameOT->gender == MON_FEMALE && genderRatio != MON_MALE && genderRatio != MON_GENDERLESS)
+     || (inGameOT->gender == MON_GENDERLESS && genderRatio == MON_GENDERLESS))
+        CreateMonWithNatureOTID(&mon, inGameOT->species, inGameOT->level, inGameOT->nature, USE_RANDOM_IVS, inGameOT->otId);
+    else
+        CreateMonWithNatureGenderOTID(&mon, inGameOT->species, inGameOT->level, inGameOT->nature, USE_RANDOM_IVS, inGameOT->gender, inGameOT->otId);
+
+    // ability 
+    SetMonData(&mon, MON_DATA_ABILITY_NUM, &inGameOT->abilityNum);
+
+    // held item
+    if (inGameOT->heldItem != ITEM_NONE)
+        SetMonData(&mon, MON_DATA_HELD_ITEM, &inGameOT->heldItem);
+
+    // shininess
+    SetMonData(&mon, MON_DATA_IS_SHINY, &inGameOT->isShiny);
+
+    // EV and IV
+    for (i = 0; i < NUM_STATS; i++)
+    {
+        // EV
+        if (inGameOT->evs[i] <= MAX_PER_STAT_EVS)
+            SetMonData(&mon, MON_DATA_HP_EV + i, &inGameOT->evs[i]);
+
+        // IV
+        if (inGameOT->ivs[i] <= MAX_PER_STAT_IVS)
+            SetMonData(&mon, MON_DATA_HP_IV + i, &inGameOT->ivs[i]);
+    }
+    CalculateMonStats(&mon);
+
+    // moves
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        if (inGameOT->moves[0] == MOVE_NONE)
+            break;
+        if (inGameOT->moves[i] >= MOVES_COUNT)
+            continue;
+        SetMonMoveSlot(&mon, inGameOT->moves[i], i);
+    }
+
+    SetMonData(&mon, MON_DATA_POKEBALL, &inGameOT->ball);
+
+    if(inGameOT->otId == OT_ID_PLAYER_ID)
+    {
+        SetMonData(&mon, MON_DATA_OT_NAME, gSaveBlock2Ptr->playerName);
+        SetMonData(&mon, MON_DATA_OT_GENDER, &gSaveBlock2Ptr->playerGender);
+    }
+    else
+    {
+        SetMonData(&mon, MON_DATA_OT_NAME, inGameOT->otName);
+        SetMonData(&mon, MON_DATA_OT_GENDER, &inGameOT->otGender);
+    }
+
+    // find empty party slot to decide whether the Pokémon goes to the Player's party or the storage system.
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL) == SPECIES_NONE)
+            break;
+    }
+    if (i >= PARTY_SIZE)
+    {
+        sentToPc = CopyMonToPC(&mon);
+    }
+    else
+    {
+        sentToPc = MON_GIVEN_TO_PARTY;
+        CopyMon(&gPlayerParty[i], &mon, sizeof(mon));
+        gPlayerPartyCount = i + 1;
+    }
+
+    // set pokédex flags
+    nationalDexNum = SpeciesToNationalPokedexNum(inGameOT->species);
+    if (sentToPc != MON_CANT_GIVE)
+    {
+        GetSetPokedexFlag(nationalDexNum, FLAG_SET_SEEN);
+        GetSetPokedexFlag(nationalDexNum, FLAG_SET_CAUGHT);
+    }
+
+    return sentToPc;
+}
+
+void ScrCmd_createmonwithot(struct ScriptContext *ctx)
+{
+    u8 whichOTMon = VarGet(ScriptReadHalfword(ctx));
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+    gSpecialVar_Result = ScriptGiveMonOTPokemonParametrized(whichOTMon);
+}
+
 static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u16 item, enum PokeBall ball, u8 nature, u8 abilityNum, u8 gender, u8 *evs, u8 *ivs, u16 *moves, bool8 isShiny, bool8 gmaxFactor, u8 teraType, u8 dmaxLevel)
 {
     u16 nationalDexNum;

@@ -256,6 +256,7 @@ gScriptCmdTable::
     script_cmd_table_entry SCR_OP_RETURNQUESTSTATE              ScrCmd_returnqueststate,            requests_effects=1  @ 0xe7
 	script_cmd_table_entry SCR_OP_SETSPEAKER                    ScrCmd_setspeaker,                  requests_effects=1  @ 0xe8
 	script_cmd_table_entry SCR_OP_SPEAK                         ScrCmd_speak                        requests_effects=1	@ 0xe9
+	script_cmd_table_entry SCR_OP_CREATEMONWITHOT               ScrCmd_createmonwithot,             requests_effects=1  @ 0xe9
 	.if ALLOCATE_SCRIPT_CMD_TABLE
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop

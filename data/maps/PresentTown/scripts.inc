@@ -17,8 +17,8 @@ PresentTown_EventScript_ChangeAnabelFollowerText::
 
 @ debug script so Looker isn't flooded with Growlithe and Toxicroak 
 PresentTown_EventScript_GiveLookerStarters::
-	givemon SPECIES_GROWLITHE, 48
-	givemon SPECIES_TOXICROAK, 48
+	givemonwithot OT_LOOKER_GROWLITHE
+	givemonwithot OT_LOOKER_TOXICROAK
 	return 
 
 PresentTown_EventScript_DebugMainGameStart::
