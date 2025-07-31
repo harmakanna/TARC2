@@ -2062,7 +2062,7 @@
 	
 	.macro givemonwithot ot:req
 	.byte SCR_OP_CREATEMONWITHOT
-	.byte \ot
+	.2byte \ot
 	.endm
 
 @ Supplementary

@@ -1,6 +1,6 @@
 Present_Gym_EventScript_PhoebeGiveDusknoir::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DUSKNOIR
-	givemonwithot OT_PHOEBE_DUSKNOIR
+    givemonwithot OT_PHOEBE_DUSKNOIR
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Gym_EventScript_ReceiveDusknoirParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Gym_EventScript_ReceiveDusknoirPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -29,7 +29,7 @@ Present_Gym_EventScript_ReceivedDusknoirFanfare::
 
 Present_Gym_EventScript_PhoebeGiveSableye::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SABLEYE
-	givemonwithot OT_PHOEBE_DUSKNOIR
+	givemonwithot OT_PHOEBE_SABLEYE
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Gym_EventScript_ReceiveSableyeParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Gym_EventScript_ReceiveSableyePC
 	goto Common_EventScript_NoMoreRoomForPokemon
