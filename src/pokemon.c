@@ -1598,7 +1598,7 @@ void CreateMonWithNatureGenderOTID(struct Pokemon *mon, u16 species, u8 level, u
         i = Random32();
     } while (nature != GetNatureFromPersonality(i)
             || gender != GetGenderFromSpeciesAndPersonality(species, i));
-            
+
     if (otId == OT_ID_PLAYER_ID)
         CreateMon(mon, species, level, fixedIV, TRUE, i, OT_ID_PLAYER_ID, 0);
     else
@@ -5900,10 +5900,10 @@ u16 GetBattleBGM(void)
         {
         case TRAINER_CLASS_AQUA_LEADER:
         case TRAINER_CLASS_MAGMA_LEADER:
+        case TRAINER_CLASS_AQUA_ADMIN:
             return MUS_VS_AQUA_MAGMA_LEADER;
         case TRAINER_CLASS_TEAM_AQUA:
         case TRAINER_CLASS_TEAM_MAGMA:
-        case TRAINER_CLASS_AQUA_ADMIN:
         case TRAINER_CLASS_MAGMA_ADMIN:
             return MUS_VS_AQUA_MAGMA;
         case TRAINER_CLASS_LEADER:
