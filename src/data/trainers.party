@@ -611,20 +611,47 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_LEAH ===
 Name: Leah
-Class: Hex Maniac
-Pic: Hex Maniac
+Class: Battle Girl
+Pic: Battle Girl
 Gender: Female
 Music: Suspicious
 Double Battle: Yes
 AI: Check Bad Move
 
-Spoink
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Froslass (F)  
+Ability: Snow Cloak  
+Tera Type: Ice  
+IVs: 0 Atk  
+- Ice Beam  
+- Shadow Ball  
+- Chilling Water  
+- Destiny Bond  
 
-Spoink
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Typhlosion-Hisui  
+Ability: Blaze  
+Tera Type: Fire  
+IVs: 0 Atk  
+- Infernal Parade  
+- Detect  
+- Flamethrower  
+- Extrasensory  
+
+Decidueye  
+Ability: Long Reach  
+Tera Type: Grass  
+- Spirit Shackle  
+- Leaf Blade  
+- Dual Wingbeat  
+- Knock Off  
+
+Jellicent  
+Ability: Water Absorb  
+Tera Type: Water  
+IVs: 0 Atk  
+- Hex  
+- Scald  
+- Will-O-Wisp  
+- Pain Split  
 
 === TRAINER_DAISY ===
 Name: DAISY
@@ -635,13 +662,41 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Shroomish
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Hitmontop (M) @ Assault Vest  
+Ability: Intimidate  
+Tera Type: Fighting  
+- Fake Out  
+- Triple Kick  
+- Triple Axel  
+- Rapid Spin  
 
-Roselia
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Bellossom  
+Ability: Healer  
+Tera Type: Grass  
+IVs: 0 Atk  
+- Sludge Bomb  
+- Energy Ball  
+- Pollen Puff  
+- Quiver Dance  
+
+Gardevoir  
+Ability: Synchronize  
+Tera Type: Psychic  
+IVs: 0 Atk  
+- Alluring Voice  
+- Psychic  
+- Aura Sphere  
+- Thunderbolt  
+
+Quaquaval  
+Ability: Moxie  
+Tera Type: Water  
+- Acrobatics  
+- Aqua Step  
+- Knock Off  
+- Bulk Up  
+
+
 
 === TRAINER_ROSE_1 ===
 Name: ROSE
@@ -2033,20 +2088,28 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_TASHA ===
 Name: Tasha
-Class: Hex Maniac
-Pic: Hex Maniac
+Class: Expert
+Pic: Expert F
 Gender: Female
 Music: Suspicious
 Double Battle: Yes
 AI: Check Bad Move
 
-Shuppet
-Level: 32
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Cursola @ Power Herb  
+Ability: Perish Body  
+Tera Type: Ghost  
+IVs: 0 Atk  
+- Curse  
+- Shadow Ball  
+- Reflect  
+- Meteor Beam  
 
-Shuppet
-Level: 32
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Houndstone @ Choice Scarf  
+Ability: Fluffy  
+Tera Type: Ghost  
+- Last Respects  
+- Play Rough  
+- Trick  
 
 === TRAINER_VALERIE_2 ===
 Name: VALERIE
@@ -2358,13 +2421,39 @@ Music: Female
 Double Battle: Yes
 AI: Check Bad Move
 
-Goldeen
-Level: 40
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Mr. Rime  
+Ability: Tangled Feet  
+Tera Type: Ice  
+- Teeter Dance  
+- Fake Out  
+- Ice Beam  
+- Protect  
 
-Goldeen
-Level: 40
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Lilligant  
+Ability: Own Tempo  
+Tera Type: Grass  
+IVs: 0 Atk  
+- Petal Dance  
+- Pollen Puff  
+- Alluring Voice  
+- Quiver Dance  
+
+Oricorio-Sensu  
+Ability: Dancer  
+Tera Type: Ghost  
+- Revelation Dance  
+- Acrobatics  
+- Feather Dance  
+- Quiver Dance  
+
+Ludicolo  
+Ability: Swift Swim  
+Tera Type: Water  
+IVs: 0 Atk  
+- Rain Dance  
+- Energy Ball  
+- Scald  
+- Encore  
 
 === TRAINER_BRIDGET ===
 Name: BRIDGET
@@ -4158,13 +4247,29 @@ Music: Intense
 Double Battle: Yes
 AI: Check Bad Move
 
-Girafarig
-Level: 36
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Bruxish  
+Ability: Dazzling  
+Tera Type: Water  
+- Aqua Jet  
+- Flip Turn  
+- Psychic Fangs  
+- Ice Fang  
 
-Girafarig
-Level: 36
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Toucannon  
+Ability: Skill Link  
+Tera Type: Normal  
+- Beak Blast  
+- Bullet Seed  
+- Rock Blast  
+- Heat Wave  
+
+Exeggutor-Alola @ Sitrus Berry  
+Ability: Harvest  
+Tera Type: Grass  
+- Dragon Hammer  
+- Grass Knot  
+- Extrasensory  
+- Sleep Powder  
 
 === TRAINER_WILLIAM ===
 Name: WILLIAM
@@ -10268,13 +10373,38 @@ Music: Cool
 Double Battle: Yes
 AI: Basic Trainer
 
-Cacturne
-Level: 39
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Tropius @ Life Orb  
+Ability: Chlorophyll  
+Tera Type: Grass  
+- Dual Wingbeat  
+- Dragon Hammer  
+- Tailwind  
+- Leaf Storm  
 
-Cacturne
-Level: 39
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Kingler  
+Ability: Sheer Force  
+Tera Type: Water  
+- Razor Shell  
+- Hammer Arm  
+- Protect  
+- Rock Slide  
+
+Chatot  
+Ability: Keen Eye  
+Tera Type: Normal  
+- Chatter  
+- Hyper Voice  
+- U-turn  
+- Feather Dance  
+
+Volcarona  
+Ability: Flame Body  
+Tera Type: Bug  
+IVs: 0 Atk  
+- Fiery Dance  
+- Bug Buzz  
+- Rage Powder  
+- Psychic  
 
 === TRAINER_JACKSON_2 ===
 Name: JACKSON
@@ -16831,13 +16961,20 @@ Music: Female
 Double Battle: Yes
 AI: Check Bad Move
 
-Lotad
-Level: 4
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Noctowl  
+Ability: Insomnia  
+Tera Type: Normal  
+IVs: 0 Atk  
+- Air Slash  
+- Extrasensory  
+- Protect  
 
-Lotad
-Level: 4
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Venomoth  
+Ability: Shield Dust  
+Tera Type: Bug  
+IVs: 0 Atk  
+- Psychic Noise  
+- Sludge Bomb  
 
 === TRAINER_RED ===
 Name: RED
