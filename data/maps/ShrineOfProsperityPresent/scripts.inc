@@ -1,5 +1,6 @@
 ShrineOfProsperityPresent_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, ShrineOfProsperityPresent_EventScript_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, ShrineOfProsperityPresent_OnResume
 	.byte 0
 
 ShrineOfProsperityPresent_EventScript_OnTransition:
@@ -11,6 +12,10 @@ ShrineOfProsperityPresent_EventScript_SetTornadusFaceDown::
 	setobjectmovementtype LOCALID_SHRINE_TORNADUS, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
 	return
 
+ShrineOfProsperityPresent_OnResume:
+	special HealPlayerParty
+	end
+	
 ShrineOfProsperityPresent_EventScript_StartGenieFight::
 	lockall
 	faceplayer

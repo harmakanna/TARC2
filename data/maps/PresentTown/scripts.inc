@@ -1,6 +1,7 @@
 PresentTown_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, PresentTown_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, PresentTown_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, PresentTown_OnResume
 	.byte 0
 
 @ Comment out FLAG_SYS_MAIN_GAME_START_SCRIPT_DEBUG line to test intro
@@ -78,6 +79,10 @@ PresentTown_EventScript_AquaMemberFPositioning::
 PresentTown_EventScript_PrepareAnabelForCutscene::
 	setobjectxyperm LOCALID_PRESENTTOWN_ANABEL, 37, 28
 	return
+	
+PresentTown_OnResume:
+	special HealPlayerParty
+	end
 	
 PresentTown_EventScript_StartStorm1::
 	lockall

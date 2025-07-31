@@ -1,6 +1,7 @@
 PastTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, PastTown_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, PastTown_OnFrame
+	map_script MAP_SCRIPT_ON_RESUME, PastTown_OnResume
 	.byte 0
 
 PastTown_OnTransition:
@@ -15,6 +16,39 @@ PastTown_EventScript_LassPlacement::
 PastTown_OnFrame:
 	map_script_2 VAR_CUTSCENE_STATE, 5, PastTown_EventScript_LookerEnters
 	.2byte 0
+
+PastTown_EventScript_LookerEnters::
+	lockall
+	speakername Name_Looker
+	msgbox PastTown_Text_LookerWhatIsThis, MSGBOX_DEFAULT
+	closemessage
+	delay 40
+	fadescreen FADE_TO_BLACK
+	delay 40
+	playse SE_EFFECTIVE
+	delay 10
+	speakername Name_Looker
+	msgbox PastTown_Text_LookerYowch, MSGBOX_DEFAULT
+	delay 30
+	closemessage
+	delay 30
+	fadescreen FADE_FROM_BLACK
+	delay 60
+	speakername Name_Looker
+	msgbox PastTown_Text_LookerImNotDreaming, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PLAYER, PastTown_Movement_LookerLookAround
+	waitmovement 0
+	speakername Name_Looker
+	msgbox PastTown_Text_LookerOutOfTheWoods, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_CUTSCENE_STATE, 6
+	releaseall
+	end
+	
+PastTown_OnResume:
+	special HealPlayerParty
+	end
 
 PastTown_EventScript_Lass::
 	lock
@@ -105,35 +139,6 @@ PastTown_EventScript_WalkBackBelowTrigger::
 	waitmovement 0
 	clearflag FLAG_SYS_FROM_TRIGGER
 	return
-
-PastTown_EventScript_LookerEnters::
-	lockall
-	speakername Name_Looker
-	msgbox PastTown_Text_LookerWhatIsThis, MSGBOX_DEFAULT
-	closemessage
-	delay 40
-	fadescreen FADE_TO_BLACK
-	delay 40
-	playse SE_EFFECTIVE
-	delay 10
-	speakername Name_Looker
-	msgbox PastTown_Text_LookerYowch, MSGBOX_DEFAULT
-	delay 30
-	closemessage
-	delay 30
-	fadescreen FADE_FROM_BLACK
-	delay 60
-	speakername Name_Looker
-	msgbox PastTown_Text_LookerImNotDreaming, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_PLAYER, PastTown_Movement_LookerLookAround
-	waitmovement 0
-	speakername Name_Looker
-	msgbox PastTown_Text_LookerOutOfTheWoods, MSGBOX_DEFAULT
-	closemessage
-	setvar VAR_CUTSCENE_STATE, 6
-	releaseall
-	end
 
 PastTown_EventScript_LookerPassOut::
 	lockall

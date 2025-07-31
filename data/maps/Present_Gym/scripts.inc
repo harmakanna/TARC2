@@ -1,6 +1,7 @@
 Present_Gym_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Present_Gym_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Present_Gym_OnFrame
+	map_script MAP_SCRIPT_ON_RESUME, Present_Gym_OnResume
 	.byte 0
 
 Present_Gym_OnTransition:
@@ -101,6 +102,10 @@ Present_Gym_Movement_GymGuyWalksBackToStartingPosition:
 	face_down
 	step_end
 
+Present_Gym_OnResume:
+	special HealPlayerParty
+	end
+
 Present_Gym_EventScript_Phoebe::
 	lock
 	faceplayer
@@ -140,7 +145,7 @@ Present_Gym_EventScript_PhoebeDefeated::
 	call_if_set FLAG_DEFEATED_MATT, Present_Gym_EventScript_PhoebeIDontKnow
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Gym_Text_LookerHmm
 	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeAnyTime
-	multichoicedefault 0, 6, MULTI_PHOEBE_GIVEMON, 1, TRUE
+	multichoice 0, 6, MULTI_PHOEBE_GIVEMON, TRUE
 	goto_if_eq VAR_RESULT, 0, Present_Gym_EventScript_PhoebeGiveDusknoir
 	goto_if_eq VAR_RESULT, 1, Present_Gym_EventScript_PhoebeGiveSableye
 	end

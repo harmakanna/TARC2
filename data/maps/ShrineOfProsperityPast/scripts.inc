@@ -1,5 +1,6 @@
 ShrineOfProsperityPast_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, ShrineOfProsperityPast_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, ShrineOfProsperityPast_OnResume
 	.byte 0
 
 ShrineOfProsperityPast_OnTransition:
@@ -10,6 +11,10 @@ ShrineOfProsperityPast_EventScript_SetupMyth::
 	setobjectmovementtype LOCALID_SHRINE_PROSPERITY_PAST_ORATOR, MOVEMENT_TYPE_FACE_LEFT
 	return
 
+ShrineOfProsperityPast_OnResume:
+	special HealPlayerParty
+	end
+	
 ShrineOfProsperityPast_EventScript_VillageOrator::
 	msgbox ShrineOfProsperityPast_Text_Orator, MSGBOX_NPC
 	end
