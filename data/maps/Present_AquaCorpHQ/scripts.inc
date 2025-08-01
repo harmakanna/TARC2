@@ -199,11 +199,13 @@ Present_AquaCorpHQ_EventScript_AquaGauntletMattDefeated::
 	waitmovement 0
 	delay 10
 	speak LOCALID_AQUACORP_SHELLY, DIR_SOUTH, Name_Shelly, Present_AquaCorpHQ_Text_ShellyLookerComeSeeClamperl
+	closemessage
 	playbgm MUS_FOLLOW_ME, FALSE
 	applymovement LOCALID_AQUACORP_SARAH, Present_AquaCorpHQ_Movement_SarahWalkUpToClam
 	applymovement LOCALID_AQUACORP_SHELLY, Present_AquaCorpHQ_Movement_ShellyWalkToClamperl
 	applymovement LOCALID_PLAYER, Present_AquaCorpHQ_Movement_LookerFollowToClamperl
 	waitmovement 0
+	delay 20
 	speak LOCALID_AQUACORP_SHELLY, DIR_SOUTH, Name_Shelly, Present_AquaCorpHQ_Text_ShellyThisClamperl
 	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceUp
 	speak LOCALID_AQUACORP_SARAH, DIR_SOUTH, Name_Sarah, Present_AquaCorpHQ_Text_SarahClamperlIsReady
