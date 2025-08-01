@@ -57,24 +57,28 @@ Present_Gym_EventScript_ReceivedSableyeFanfare::
 	return
 
 Present_AquaCorpHQ_EventScript_ShellyGiveGorebyss::
-	speak LOCALID_AQUACORP_SHELLY, DIR_SOUTH, Name_Shelly, Present_AquaCorpHQ_Text_ShellyGorebyssItIs
+	speak LOCALID_AQUACORP_SHELLY, DIR_NORTH, Name_Shelly, Present_AquaCorpHQ_Text_ShellyGorebyssItIs
 	closemessage
 	applymovement LOCALID_AQUACORP_SARAH, Present_AquaCorpHQ_Movement_SarahGiveDeepSea
 	delay 10
 	speakername Name_Sarah
 	msgbox Present_AquaCorpHQ_Text_SarahHereYouGoClamperl, MSGBOX_DEFAULT
 	closemessage
+	playmoncry SPECIES_CLAMPERL, CRY_MODE_NORMAL
+	waitmoncry
 	fadescreen FADE_TO_WHITE
-	waitstate
 	removeobject LOCALID_CLAMPERL
 	clearflag FLAG_HIDE_GOREBYSS
 	addobject LOCALID_GOREBYSS
 	speakername Name_Sarah
 	msgbox Present_AquaCorpHQ_Text_SarahWhoa, MSGBOX_DEFAULT
 	closemessage
-	playmoncry SPECIES_GOREBYSS, CRY_MODE_NORMAL
-	delay 10
+	delay 40
 	fadescreen FADE_FROM_WHITE
+	delay 20
+	playmoncry SPECIES_GOREBYSS, CRY_MODE_NORMAL
+	waitmoncry
+	delay 5
 	msgbox Present_AquaCorpHQ_Text_EvolvedGorebyss
 	playfanfare MUS_OBTAIN_BADGE
 	waitfanfare
@@ -95,7 +99,9 @@ Present_AquaCorpHQ_EventScript_ShellyGiveGorebyss::
 	delay 48
 	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceDown
 	speak LOCALID_AQUACORP_SARAH, DIR_SOUTH, Name_Sarah, Present_AquaCorpHQ_Text_SarahGorebyssWantsToComeWithYou
+	playmoncry SPECIES_GOREBYSS, CRY_MODE_NORMAL
 	speak LOCALID_GOREBYSS, DIR_EAST, NULL, Present_AquaCorpHQ_Text_GorebyssExcited
+	waitmoncry
 	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_AquaCorpHQ_Text_LookerIWillTakeGorebyssAlong
 	closemessage
 	playmoncry SPECIES_GOREBYSS, CRY_MODE_NORMAL
@@ -131,25 +137,28 @@ Present_AquaCorpHQ_EventScript_ReceivedGorebyssFanfare::
 	return
 
 Present_AquaCorpHQ_EventScript_ShellyGiveHuntail::
-	speak LOCALID_AQUACORP_SHELLY, DIR_SOUTH, Name_Shelly, Present_AquaCorpHQ_Text_ShellyHuntailItIs
+	speak LOCALID_AQUACORP_SHELLY, DIR_NORTH, Name_Shelly, Present_AquaCorpHQ_Text_ShellyHuntailItIs
 	closemessage
 	applymovement LOCALID_AQUACORP_SARAH, Present_AquaCorpHQ_Movement_SarahGiveDeepSea
 	delay 10
 	speakername Name_Sarah
 	msgbox Present_AquaCorpHQ_Text_SarahHereYouGoClamperl, MSGBOX_DEFAULT
 	closemessage
+	playmoncry SPECIES_CLAMPERL, CRY_MODE_NORMAL
+	waitmoncry
 	fadescreen FADE_TO_WHITE
-	waitstate
 	removeobject LOCALID_CLAMPERL
 	clearflag FLAG_HIDE_HUNTAIL
 	addobject LOCALID_HUNTAIL
 	speakername Name_Sarah
 	msgbox Present_AquaCorpHQ_Text_SarahWhoa, MSGBOX_DEFAULT
 	closemessage
-	playmoncry SPECIES_HUNTAIL, CRY_MODE_NORMAL
-	delay 10
+	delay 40
 	fadescreen FADE_FROM_WHITE
-	delay 10
+	delay 20
+	playmoncry SPECIES_HUNTAIL, CRY_MODE_NORMAL
+	waitmoncry
+	delay 5
 	msgbox Present_AquaCorpHQ_Text_EvolvedHuntail
 	playfanfare MUS_OBTAIN_BADGE
 	waitfanfare
@@ -169,7 +178,9 @@ Present_AquaCorpHQ_EventScript_ShellyGiveHuntail::
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRightExclamationMark
 	delay 48
 	speak LOCALID_AQUACORP_SARAH, DIR_SOUTH, Name_Sarah, Present_AquaCorpHQ_Text_SarahHuntailWantsToComeWithYou
+	playmoncry SPECIES_HUNTAIL, CRY_MODE_NORMAL
 	speak LOCALID_HUNTAIL, DIR_EAST, NULL, Present_AquaCorpHQ_Text_HuntailExcited
+	waitmoncry
 	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_AquaCorpHQ_Text_LookerIWillTakeHuntailAlong
 	closemessage
 	playmoncry SPECIES_HUNTAIL, CRY_MODE_NORMAL
@@ -205,10 +216,10 @@ Present_AquaCorpHQ_EventScript_ReceivedHuntailFanfare::
 	return
 
 Present_AquaCorp_Text_YouReceivedGorebyss:
-	.string "A Gorebyss joined your party!$"
+	.string "Gorb joined your party!$"
 
 Present_AquaCorp_Text_YouReceivedHuntail:
-	.string "A Huntail joined your party!$"
+	.string "Huntsman joined your party!$"
 
 Present_Gym_Text_YouReceivedDusknoir:
 	.string "You received a Dusknoir!$"

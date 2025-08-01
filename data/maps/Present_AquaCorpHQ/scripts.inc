@@ -4,7 +4,8 @@ Present_AquaCorpHQ_MapScripts::
 	.byte 0
 
 Present_AquaCorpHQ_OnFrame:
-	call_if_lt VAR_AQUACORP_STATE, 2, Present_AquaCorpHQ_EventScript_StartAquaGauntlet
+	map_script_2 VAR_AQUACORP_STATE, 0, Present_AquaCorpHQ_EventScript_StartAquaGauntlet
+	map_script_2 VAR_AQUACORP_STATE, 1, Present_AquaCorpHQ_EventScript_StartAquaGauntletRematch
 	.2byte 0
 
 Present_AquaCorpHQ_OnResume:
@@ -13,15 +14,16 @@ Present_AquaCorpHQ_OnResume:
 
 Present_AquaCorpHQ_EventScript_StartAquaGauntlet::
 	lockall
-	applymovement LOCALID_PLAYER, Present_AquaCorpHQ_Movement_LookerApproachMatt
-	goto_if_eq VAR_AQUACORP_STATE, 1, Present_AquaCorpHQ_EventScript_StartAquaGauntletRematch
 	setvar VAR_AQUACORP_STATE, 1
+	applymovement LOCALID_PLAYER, Present_AquaCorpHQ_Movement_LookerApproachMatt
+	waitmovement 0
 	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_AquaCorpHQ_Text_LookerMatt
+	closemessage
 	delay 10
 	playse SE_PIN
 	applymovement LOCALID_AQUACORP_MATT, Common_Movement_FaceDownExclamationMark
 	applymovement LOCALID_AQUACORP_SHELDON, Common_Movement_FaceDownExclamationMark
-	delay 48
+	delay 60
 	speak LOCALID_AQUACORP_MATT, DIR_SOUTH, Name_Matt, Present_AquaCorpHQ_Text_MattWhyAreYouHere
 	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_AquaCorpHQ_Text_LookerYoureUnderArrest
 	closemessage
@@ -54,13 +56,13 @@ Present_AquaCorpHQ_EventScript_StartAquaGauntlet::
 	applymovement LOCALID_AQUACORP_GRUNTM_TABLE, Present_AquaCorpHQ_Movement_TableGruntMWalkToSee
 	applymovement LOCALID_AQUACORP_SCIENTIST_WAILMER, Present_AquaCorpHQ_Movement_WailmerScientistWalkToSee
 	applymovement LOCALID_AQUACORP_GRUNTF_TABLE, Present_AquaCorpHQ_Movement_TableGruntFWalkToSee
-	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_AquaCorpHQ_Text_LookerJustThreeMonthsAgo
+	msgbox Present_AquaCorpHQ_Text_LookerJustThreeMonthsAgo, MSGBOX_DEFAULT
 	speak LOCALID_AQUACORP_MATT, DIR_SOUTH, Name_Matt, Present_AquaCorpHQ_Text_MattGrr
 	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_WalkLeft
 	speakername Name_Shelly
 	msgbox Present_AquaCorpHQ_Text_ShellyWillYouJustStop, MSGBOX_DEFAULT
 	speak LOCALID_AQUACORP_MATT, DIR_EAST, Name_Matt, Present_AquaCorpHQ_Text_MattNoIWillNot
-	playse SE_PIN
+	playse SE_SELECT
 	speak LOCALID_AQUACORP_MATT, DIR_SOUTH, Name_Matt, Present_AquaCorpHQ_Text_MattEnoughOfThis
 	closemessage
 	goto Present_AquaCorpHQ_EventScript_AquaGauntlet
@@ -92,6 +94,8 @@ Present_AquaCorpHQ_EventScript_ConfirmedWas::
 	return
 
 Present_AquaCorpHQ_EventScript_StartAquaGauntletRematch::
+	lockall
+	applymovement LOCALID_PLAYER, Present_AquaCorpHQ_Movement_LookerApproachMattFast
 	applymovement LOCALID_AQUACORP_GRUNTF_TABLE, Common_Movement_FaceRight
 	applymovement LOCALID_AQUACORP_GRUNTM_WAILMER, Common_Movement_FaceUp
 	applymovement LOCALID_AQUACORP_SCIENTIST_WAILMER, Common_Movement_FaceUp
@@ -119,6 +123,8 @@ Present_AquaCorpHQ_EventScript_AquaGauntlet::
 	applymovement LOCALID_AQUACORP_GEOFF, Present_AquaCorpHQ_Movement_GeoffRushLooker
 	applymovement LOCALID_AQUACORP_SARAH, Present_AquaCorpHQ_Movement_SarahRushLooker
 	waitmovement 0
+	delay 10
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 	speak LOCALID_AQUACORP_GEOFF, DIR_EAST, Name_Unknown, Present_AquaCorpHQ_Text_GeoffIntro
 	trainerbattle_no_intro TRAINER_GRUNT_AQUA_HIDEOUT_1, Present_AquaCorpHQ_Text_GeoffDefeat
 	goto Present_AquaCorpHQ_EventScript_AquaGauntletSecondTrainer
@@ -127,6 +133,7 @@ Present_AquaCorpHQ_EventScript_AquaGauntlet::
 @ Second grunt: TRAINER_GRUNT_AQUA_HIDEOUT_2
 Present_AquaCorpHQ_EventScript_AquaGauntletSecondTrainer::
 	speak LOCALID_AQUACORP_GEOFF, DIR_EAST, Name_Geoff, Present_AquaCorpHQ_Text_GeoffUnfulfilling
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
 	speak LOCALID_AQUACORP_SARAH, DIR_WEST, Name_Unknown, Present_AquaCorpHQ_Text_SarahIntro
 	trainerbattle_no_intro TRAINER_GRUNT_AQUA_HIDEOUT_2, Present_AquaCorpHQ_Text_SarahDefeat
 	goto Present_AquaCorpHQ_EventScript_AquaGauntletThirdTrainer
@@ -135,6 +142,7 @@ Present_AquaCorpHQ_EventScript_AquaGauntletSecondTrainer::
 @ Third grunt: TRAINER_GRUNT_AQUA_HIDEOUT_3
 Present_AquaCorpHQ_EventScript_AquaGauntletThirdTrainer::
 	speak LOCALID_AQUACORP_SARAH, DIR_WEST, Name_Sarah, Present_AquaCorpHQ_Text_SarahCmonGuys
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	speak LOCALID_AQUACORP_SHELDON, DIR_SOUTH, Name_Unknown, Present_AquaCorpHQ_Text_SheldonIntro
 	trainerbattle_no_intro TRAINER_GRUNT_AQUA_HIDEOUT_3, Present_AquaCorpHQ_Text_SheldonDefeat
 	goto Present_AquaCorpHQ_EventScript_AquaGauntletMatt
@@ -145,7 +153,6 @@ Present_AquaCorpHQ_EventScript_AquaGauntletMatt::
 	speak LOCALID_AQUACORP_MATT, DIR_SOUTH, Name_Matt, Present_AquaCorpHQ_Text_MattBunchOfWorthless
 	closemessage
 	applymovement LOCALID_AQUACORP_MATT, Present_AquaCorpHQ_MattPushSheldon
-	delay 5
 	playse SE_EFFECTIVE
 	applymovement LOCALID_AQUACORP_SHELDON, Present_AquaCorpHQ_SheldonPushed
 	waitmovement 0
@@ -210,16 +217,28 @@ Present_AquaCorpHQ_EventScript_AquaGauntletMattDefeated::
 
 Present_AquaCorpHQ_EventScript_FinishAquaGauntlet::
 	fadescreenswapbuffers FADE_TO_BLACK
+	delay 20
 	removeobject LOCALID_GOREBYSS
 	removeobject LOCALID_HUNTAIL
 	setvar VAR_AQUACORP_STATE, 2
 	setflag FLAG_DEFEATED_MATT
-	fadescreenswapbuffers FADE_TO_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	completequest QUEST_INTERROGATE_MATT
 	releaseall
 	end
 
 Present_AquaCorpHQ_Movement_LookerApproachMatt:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+Present_AquaCorpHQ_Movement_LookerApproachMattFast:
+	walk_fast_up
 	walk_fast_up
 	walk_fast_up
 	walk_fast_up
@@ -340,7 +359,6 @@ Present_AquaCorpHQ_Movement_SarahRunToClamperl:
 	walk_fast_up
 	walk_fast_up
 	walk_fast_up
-	walk_fast_up
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right
@@ -357,7 +375,6 @@ Present_AquaCorpHQ_Movement_ShellyWalkToClamperl:
 	walk_up
 	walk_up
 	walk_up
-	walk_up
 	walk_right
 	walk_right
 	walk_right
@@ -365,7 +382,6 @@ Present_AquaCorpHQ_Movement_ShellyWalkToClamperl:
 	step_end
 
 Present_AquaCorpHQ_Movement_LookerFollowToClamperl:
-	walk_up
 	walk_up
 	walk_up
 	walk_up
@@ -526,7 +542,7 @@ Present_AquaCorpHQ_Text_SarahDefeat:
 
 Present_AquaCorpHQ_Text_SarahCmonGuys:
 	.string "C'mon guys, do we really have\n"
-	.string "To do this?\p"
+	.string "to do this?\p"
 	.string "I thought we changed…$"
 
 Present_AquaCorpHQ_Text_SheldonIntro:
@@ -719,7 +735,7 @@ Present_AquaCorpHQ_Text_LookerISupposeAquaIsCleared:
 	.string "then.\p"
 	.string "I'll turn a blind eye to the assault\n"
 	.string "now and earlier today.\p"
-	.string "Less paperwork that way anyways.$"
+	.string "Less paperwork that way…$"
 
 Present_AquaCorpHQ_Text_ShellyImGladToHear:
 	.string "I'm glad to hear.\p"
