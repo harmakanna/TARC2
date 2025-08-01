@@ -1,6 +1,7 @@
 ShrineOfPeacePast_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, ShrineOfPeacePast_OnTransition
     map_script MAP_SCRIPT_ON_FRAME_TABLE, ShrineOfPeacePast_OnFrame
+	map_script MAP_SCRIPT_ON_RESUME, ShrineOfPeacePast_OnResume
 	.byte 0
 
 ShrineOfPeacePast_OnTransition:
@@ -64,6 +65,10 @@ ShrineOfPeacePast_EventScript_FirstWarp::
 	delay_16
 	step_end
 
+ShrineOfPeacePast_OnResume:
+	special HealPlayerParty
+	end
+	
 ShrineOfPeacePast_EventScript_WarpToForestL::
 	lockall
 	speakername Name_Looker

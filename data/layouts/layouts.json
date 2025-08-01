@@ -4514,7 +4514,7 @@
     {
       "id": "LAYOUT_PRESENT_AQUA_CORP_HQ",
       "name": "Present_AquaCorpHQ_Layout",
-      "width": 15,
+      "width": 16,
       "height": 14,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Facility",

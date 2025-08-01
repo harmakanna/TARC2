@@ -49,6 +49,8 @@ struct InGameOT {
     u8 otName[TRAINER_NAME_LENGTH + 1];
     u8 otGender;
     bool8 isShiny;
+    bool8 isNicknamed;
+    u8 nickname[POKEMON_NAME_LENGTH + 1];
 };
 
 static const struct InGameOT sIngameOTs[] =
@@ -65,10 +67,12 @@ static const struct InGameOT sIngameOTs[] =
         .nature = NATURE_HARDY,
         .abilityNum = 0,
         .gender = MON_FEMALE,
-        .otId = 10053,
+        .otId = OT_ID_PLAYER_ID,
         .otName = _("Looker"),
         .otGender = MALE,
         .isShiny = FALSE,
+        .isNicknamed = FALSE,
+        .nickname = _(""),
     },
     [OT_LOOKER_TOXICROAK] =
     {
@@ -82,10 +86,12 @@ static const struct InGameOT sIngameOTs[] =
         .nature = NATURE_QUIRKY,
         .abilityNum = 1,
         .gender = MON_MALE,
-        .otId = 10053,
+        .otId = OT_ID_PLAYER_ID,
         .otName = _("Looker"),
         .otGender = MALE,
         .isShiny = FALSE,
+        .isNicknamed = FALSE,
+        .nickname = _(""),
     },
     [OT_LOOKER_MAGIKARP] =
     {
@@ -99,10 +105,12 @@ static const struct InGameOT sIngameOTs[] =
         .nature = NATURE_BRAVE,
         .abilityNum = 0,
         .gender = MON_MALE,
-        .otId = 10053,
+        .otId = OT_ID_PLAYER_ID,
         .otName = _("Looker"),
         .otGender = MALE,
         .isShiny = TRUE,
+        .isNicknamed = FALSE,
+        .nickname = _(""),
     },
     [OT_PHOEBE_DUSKNOIR] =
     {
@@ -120,6 +128,8 @@ static const struct InGameOT sIngameOTs[] =
         .otName = _("Phoebe"),
         .otGender = FEMALE,
         .isShiny = FALSE,
+        .isNicknamed = FALSE,
+        .nickname = _(""),
     },
     [OT_PHOEBE_SABLEYE] =
     {
@@ -137,6 +147,8 @@ static const struct InGameOT sIngameOTs[] =
         .otName = _("Phoebe"),
         .otGender = FEMALE,
         .isShiny = FALSE,
+        .isNicknamed = FALSE,
+        .nickname = _(""),
     },
     [OT_SHELLY_HUNTAIL] =
     {
@@ -151,9 +163,11 @@ static const struct InGameOT sIngameOTs[] =
         .abilityNum = 0,
         .gender = MON_MALE,
         .otId = 42784,
-        .otName = _("Shelly"),
+        .otName = _("Sarah"),
         .otGender = FEMALE,
         .isShiny = FALSE,
+        .isNicknamed = TRUE,
+        .nickname = _("Huntsman"),
     },
     [OT_SHELLY_GOREBYSS] =
     {
@@ -168,9 +182,11 @@ static const struct InGameOT sIngameOTs[] =
         .abilityNum = 0,
         .gender = MON_MALE,
         .otId = 42784,
-        .otName = _("Shelly"),
+        .otName = _("Sarah"),
         .otGender = FEMALE,
         .isShiny = FALSE,
+        .isNicknamed = TRUE,
+        .nickname = _("Gorb"),
     }
 };
 
@@ -496,6 +512,10 @@ static u32 ScriptGiveMonOTPokemonParametrized(u8 whichOTMon)
     // ability 
     SetMonData(&mon, MON_DATA_ABILITY_NUM, &inGameOT->abilityNum);
 
+    // nickname
+    if (inGameOT->isNicknamed == TRUE)
+        SetMonData(&mon, MON_DATA_NICKNAME, inGameOT->nickname);
+        
     // held item
     if (inGameOT->heldItem != ITEM_NONE)
         SetMonData(&mon, MON_DATA_HELD_ITEM, &inGameOT->heldItem);
