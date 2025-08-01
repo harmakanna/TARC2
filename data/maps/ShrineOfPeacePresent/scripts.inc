@@ -342,7 +342,7 @@ ShrineOfPeacePresent_Movement_PanCameraToLooker:
 	step_end
 
 
-ShrineOfPeacePast_OnResume:
+ShrineOfPeacePresent_OnResume:
 	special HealPlayerParty
 	end
 	

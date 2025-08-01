@@ -59,7 +59,7 @@ Present_Gym_EventScript_ReceivedSableyeFanfare::
 Present_AquaCorpHQ_EventScript_ShellyGiveGorebyss::
 	speak LOCALID_AQUACORP_SHELLY, DIR_SOUTH, Name_Shelly, Present_AquaCorpHQ_Text_ShellyGorebyssItIs
 	closemessage
-	applymovement LOCALID_AQUACORP_SARAH, Present_AquaCorpHQ_Movement_SarahWalkToClamperl
+	applymovement LOCALID_AQUACORP_SARAH, Present_AquaCorpHQ_Movement_SarahGiveDeepSea
 	delay 10
 	speakername Name_Sarah
 	msgbox Present_AquaCorpHQ_Text_SarahHereYouGoClamperl, MSGBOX_DEFAULT
@@ -72,7 +72,7 @@ Present_AquaCorpHQ_EventScript_ShellyGiveGorebyss::
 	speakername Name_Sarah
 	msgbox Present_AquaCorpHQ_Text_SarahWhoa, MSGBOX_DEFAULT
 	closemessage
-	playmoncry CRY_GOREBYSS, CRY_MODE_NORMAL
+	playmoncry SPECIES_GOREBYSS, CRY_MODE_NORMAL
 	delay 10
 	fadescreen FADE_FROM_WHITE
 	msgbox Present_AquaCorpHQ_Text_EvolvedGorebyss
@@ -93,9 +93,10 @@ Present_AquaCorpHQ_EventScript_ShellyGiveGorebyss::
 	applymovement LOCALID_GOREBYSS, Present_AquaCorpHQ_Movement_MonWalkToPlayer
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRightExclamationMark
 	delay 48
-	speak LOCALID_AQUACORP_SHELLY, DIR_SOUTH, Name_Shelly, Present_AquaCorpHQ_Text_ShellyGorebyssWantsToComeWithYou
-	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_AquaCorpHQ_Text_LookerIWillTakeGorebyssAlong
+	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceDown
+	speak LOCALID_AQUACORP_SARAH, DIR_SOUTH, Name_Sarah, Present_AquaCorpHQ_Text_SarahGorebyssWantsToComeWithYou
 	speak LOCALID_GOREBYSS, DIR_EAST, NULL, Present_AquaCorpHQ_Text_GorebyssExcited
+	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_AquaCorpHQ_Text_LookerIWillTakeGorebyssAlong
 	closemessage
 	playmoncry SPECIES_GOREBYSS, CRY_MODE_NORMAL
 	delay 16
@@ -113,7 +114,7 @@ Present_AquaCorpHQ_EventScript_ReceiveGorebyssParty::
 	goto Present_AquaCorpHQ_EventScript_FinishAquaGauntlet
 	end
 	
-Present_Gym_EventScript_ReceiveGorebyssPC::
+Present_AquaCorpHQ_EventScript_ReceiveGorebyssPC::
 	call Present_AquaCorpHQ_EventScript_ReceivedGorebyssFanfare
 	call Common_EventScript_TransferredToPC
 	goto Present_AquaCorpHQ_EventScript_FinishAquaGauntlet
@@ -132,7 +133,7 @@ Present_AquaCorpHQ_EventScript_ReceivedGorebyssFanfare::
 Present_AquaCorpHQ_EventScript_ShellyGiveHuntail::
 	speak LOCALID_AQUACORP_SHELLY, DIR_SOUTH, Name_Shelly, Present_AquaCorpHQ_Text_ShellyHuntailItIs
 	closemessage
-	applymovement LOCALID_AQUACORP_SARAH, Present_AquaCorpHQ_Movement_SarahWalkToClamperl
+	applymovement LOCALID_AQUACORP_SARAH, Present_AquaCorpHQ_Movement_SarahGiveDeepSea
 	delay 10
 	speakername Name_Sarah
 	msgbox Present_AquaCorpHQ_Text_SarahHereYouGoClamperl, MSGBOX_DEFAULT
@@ -145,9 +146,10 @@ Present_AquaCorpHQ_EventScript_ShellyGiveHuntail::
 	speakername Name_Sarah
 	msgbox Present_AquaCorpHQ_Text_SarahWhoa, MSGBOX_DEFAULT
 	closemessage
-	playmoncry CRY_HUNTAIL, CRY_MODE_NORMAL
+	playmoncry SPECIES_HUNTAIL, CRY_MODE_NORMAL
 	delay 10
 	fadescreen FADE_FROM_WHITE
+	delay 10
 	msgbox Present_AquaCorpHQ_Text_EvolvedHuntail
 	playfanfare MUS_OBTAIN_BADGE
 	waitfanfare
@@ -166,9 +168,9 @@ Present_AquaCorpHQ_EventScript_ShellyGiveHuntail::
 	applymovement LOCALID_HUNTAIL, Present_AquaCorpHQ_Movement_MonWalkToPlayer
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRightExclamationMark
 	delay 48
-	speak LOCALID_AQUACORP_SHELLY, DIR_SOUTH, Name_Shelly, Present_AquaCorpHQ_Text_ShellyHuntailWantsToComeWithYou
-	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_AquaCorpHQ_Text_LookerIWillTakeHuntailAlong
+	speak LOCALID_AQUACORP_SARAH, DIR_SOUTH, Name_Sarah, Present_AquaCorpHQ_Text_SarahHuntailWantsToComeWithYou
 	speak LOCALID_HUNTAIL, DIR_EAST, NULL, Present_AquaCorpHQ_Text_HuntailExcited
+	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_AquaCorpHQ_Text_LookerIWillTakeHuntailAlong
 	closemessage
 	playmoncry SPECIES_HUNTAIL, CRY_MODE_NORMAL
 	delay 16
@@ -186,7 +188,7 @@ Present_AquaCorpHQ_EventScript_ReceiveHuntailParty::
 	goto Present_AquaCorpHQ_EventScript_FinishAquaGauntlet
 	end
 	
-Present_Gym_EventScript_ReceiveHuntailPC::
+Present_AquaCorpHQ_EventScript_ReceiveHuntailPC::
 	call Present_AquaCorpHQ_EventScript_ReceivedHuntailFanfare
 	call Common_EventScript_TransferredToPC
 	goto Present_AquaCorpHQ_EventScript_FinishAquaGauntlet

@@ -115,6 +115,26 @@ Common_Movement_FaceRightExclamationMark::
 	emote_exclamation_mark
 	step_end
 
+Common_Movement_FaceUpQuestionMark:
+	face_up
+	emote_question_mark
+	step_end
+
+Common_Movement_FaceRightQuestionMark:
+	face_right
+	emote_question_mark
+	step_end
+
+Common_Movement_FaceLeftQuestionMark:
+	face_left
+	emote_question_mark
+	step_end
+
+Common_Movement_FaceDownQuestionMark:
+	face_down
+	emote_question_mark
+	step_end
+
 Common_Movement_Delay16:
 	delay_16
 	step_end
