@@ -80,7 +80,7 @@
 #define FLAG_HIDE_HUNTAIL                      0x42 // Unused Flag
 #define FLAG_HIDE_CITY_THUNDURUS               0x43 // Unused Flag
 #define FLAG_HIDE_CITY_TORNADUS                0x44 // Unused Flag
-#define FLAG_DEFEATED_GRUNT_1                  0x45 // Unused Flag
+#define FLAG_HIDE_SHELDON_KRABBY               0x45 // Unused Flag
 #define FLAG_DEFEATED_GRUNT_2                  0x46 // Unused Flag
 #define FLAG_DEFEATED_GRUNT_3                  0x47 // Unused Flag
 #define FLAG_UNUSED_0x048    0x48 // Unused Flag
