@@ -2,7 +2,7 @@
   "id": "MAP_PRESENT_AQUA_CORP_HQ",
   "name": "Present_AquaCorpHQ",
   "layout": "LAYOUT_PRESENT_AQUA_CORP_HQ",
-  "music": "MUS_AQUA_MAGMA_HIDEOUT",
+  "music": "MUS_MT_CHIMNEY",
   "region_map_section": "MAPSEC_PORTO_BELLA_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -196,6 +196,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_KRABBY",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(KRABBY)",
       "x": 15,
       "y": 6,

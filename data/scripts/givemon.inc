@@ -62,10 +62,13 @@ Present_AquaCorpHQ_EventScript_ShellyGiveGorebyss::
 	delay 20
 	applymovement LOCALID_AQUACORP_SARAH, Present_AquaCorpHQ_Movement_SarahGiveDeepSea
 	delay 40
+	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceRight
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
 	speakername Name_Sarah
 	msgbox Present_AquaCorpHQ_Text_SarahHereYouGoClamperl, MSGBOX_DEFAULT
 	closemessage
-	fadeoutbgm 5
+	fadeoutbgm 0
+	savebgm MUS_NONE
 	playmoncry SPECIES_CLAMPERL, CRY_MODE_NORMAL
 	waitmoncry
 	fadescreen FADE_TO_WHITE
@@ -87,19 +90,24 @@ Present_AquaCorpHQ_EventScript_ShellyGiveGorebyss::
 	delay 40
 	closemessage
 	delay 40
-	fadenewbgm MUS_AQUA_MAGMA_HIDEOUT
 	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceRight
 	speak LOCALID_AQUACORP_SARAH, DIR_WEST, Name_Sarah, Present_AquaCorpHQ_Text_SarahThatWasAwesome
+	closemessage
+	fadeoutbgm 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	speak LOCALID_AQUACORP_SHELLY, DIR_SOUTH, Name_Shelly, Present_AquaCorpHQ_Text_ShellySeeLookerNothingMalicious
+	playbgm MUS_PL_LOOKER, FALSE
 	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_AquaCorpHQ_Text_LookerISupposeAquaIsCleared
 	speak LOCALID_AQUACORP_SHELLY, DIR_SOUTH, Name_Shelly, Present_AquaCorpHQ_Text_ShellyImGladToHear
 	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 	applymovement LOCALID_AQUACORP_MATT, Present_AquaCorpHQ_Movement_MattApproachLooker
 	waitmovement 0
 	delay 40
 	speakername Name_Matt
 	msgbox Present_AquaCorpHQ_Text_MattImSorry, MSGBOX_DEFAULT
 	speak LOCALID_PLAYER, DIR_WEST, Name_Looker, Present_AquaCorpHQ_Text_LookerApologyAcceptedImSorry
+	applymovement LOCALID_AQUACORP_SARAH, Common_Movement_FaceDownExclamationMark
 	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceRightExclamationMark
 	playse SE_PIN
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRightExclamationMark
@@ -109,19 +117,22 @@ Present_AquaCorpHQ_EventScript_ShellyGiveGorebyss::
 	playmoncry SPECIES_GOREBYSS, CRY_MODE_NORMAL
 	waitmoncry
 	delay 20
-	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceDown
+	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceUp
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	speak LOCALID_AQUACORP_SARAH, DIR_SOUTH, Name_Sarah, Present_AquaCorpHQ_Text_SarahGorebyssWantsToComeWithYou
 	playmoncry SPECIES_GOREBYSS, CRY_MODE_NORMAL
-	speak LOCALID_GOREBYSS, DIR_EAST, NULL, Present_AquaCorpHQ_Text_GorebyssExcited
+	speak LOCALID_GOREBYSS, DIR_NORTH, NULL, Present_AquaCorpHQ_Text_GorebyssExcited
 	waitmoncry
 	delay 20
 	applymovement LOCALID_GOREBYSS, Common_Movement_FaceLeft
-	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_AquaCorpHQ_Text_LookerIWillTakeGorebyssAlong
+	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceDown
+	speak LOCALID_PLAYER, DIR_EAST, Name_Looker, Present_AquaCorpHQ_Text_LookerIWillTakeGorebyssAlong
 	closemessage
+	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceRight
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
 	playmoncry SPECIES_GOREBYSS, CRY_MODE_NORMAL
 	waitmoncry
 	delay 20
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GOREBYSS
     givemonwithot OT_SHELLY_GOREBYSS
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_AquaCorpHQ_EventScript_ReceiveGorebyssParty
@@ -156,9 +167,12 @@ Present_AquaCorpHQ_EventScript_ShellyGiveHuntail::
 	applymovement LOCALID_AQUACORP_SARAH, Present_AquaCorpHQ_Movement_SarahGiveDeepSea
 	delay 10
 	speakername Name_Sarah
+	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceRight
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
 	msgbox Present_AquaCorpHQ_Text_SarahHereYouGoClamperl, MSGBOX_DEFAULT
 	closemessage
-	fadeoutbgm 5
+	fadeoutbgm 0
+	savebgm MUS_NONE
 	playmoncry SPECIES_CLAMPERL, CRY_MODE_NORMAL
 	waitmoncry
 	fadescreen FADE_TO_WHITE
@@ -180,19 +194,24 @@ Present_AquaCorpHQ_EventScript_ShellyGiveHuntail::
 	delay 40
 	closemessage
 	delay 40
-	fadenewbgm MUS_AQUA_MAGMA_HIDEOUT
 	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceRight
 	speak LOCALID_AQUACORP_SARAH, DIR_WEST, Name_Sarah, Present_AquaCorpHQ_Text_SarahThatWasAwesome
+	closemessage
+	fadeoutbgm 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	speak LOCALID_AQUACORP_SHELLY, DIR_SOUTH, Name_Shelly, Present_AquaCorpHQ_Text_ShellySeeLookerNothingMalicious
+	playbgm MUS_PL_LOOKER, FALSE
 	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_AquaCorpHQ_Text_LookerISupposeAquaIsCleared
 	speak LOCALID_AQUACORP_SHELLY, DIR_SOUTH, Name_Shelly, Present_AquaCorpHQ_Text_ShellyImGladToHear
 	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 	applymovement LOCALID_AQUACORP_MATT, Present_AquaCorpHQ_Movement_MattApproachLooker
 	waitmovement 0
 	delay 40
 	speakername Name_Matt
 	msgbox Present_AquaCorpHQ_Text_MattImSorry, MSGBOX_DEFAULT
 	speak LOCALID_PLAYER, DIR_WEST, Name_Looker, Present_AquaCorpHQ_Text_LookerApologyAcceptedImSorry
+	applymovement LOCALID_AQUACORP_SARAH, Common_Movement_FaceDownExclamationMark
 	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceRightExclamationMark
 	playse SE_PIN
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRightExclamationMark
@@ -202,19 +221,22 @@ Present_AquaCorpHQ_EventScript_ShellyGiveHuntail::
 	playmoncry SPECIES_HUNTAIL, CRY_MODE_NORMAL
 	waitmoncry
 	delay 20
+	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceUp
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	speak LOCALID_AQUACORP_SARAH, DIR_SOUTH, Name_Sarah, Present_AquaCorpHQ_Text_SarahHuntailWantsToComeWithYou
 	playmoncry SPECIES_HUNTAIL, CRY_MODE_NORMAL
-	speak LOCALID_HUNTAIL, DIR_EAST, NULL, Present_AquaCorpHQ_Text_HuntailExcited
+	speak LOCALID_HUNTAIL, DIR_NORTH, NULL, Present_AquaCorpHQ_Text_HuntailExcited
 	waitmoncry
 	delay 20
 	applymovement LOCALID_HUNTAIL, Common_Movement_FaceLeft
 	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceDown
-	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_AquaCorpHQ_Text_LookerIWillTakeHuntailAlong
+	speak LOCALID_PLAYER, DIR_EAST, Name_Looker, Present_AquaCorpHQ_Text_LookerIWillTakeHuntailAlong
 	closemessage
+	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceRight
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
 	playmoncry SPECIES_HUNTAIL, CRY_MODE_NORMAL
 	waitmoncry
 	delay 20
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HUNTAIL
     givemonwithot OT_SHELLY_HUNTAIL
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_AquaCorpHQ_EventScript_ReceiveHuntailParty

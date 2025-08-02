@@ -524,7 +524,7 @@ void BattleSetup_StartLegendaryBattleDouble(void)
 {
     LockPlayerFieldControls();
     gMain.savedCallback = CB2_EndScriptedWildBattle;
-    gBattleTypeFlags = BATTLE_TYPE_LEGENDARY_DOUBLE | BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS;
+    gBattleTypeFlags = BATTLE_TYPE_LEGENDARY_DOUBLE | BATTLE_TYPE_DOUBLE;
 
     switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
     {

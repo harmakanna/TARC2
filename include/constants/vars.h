@@ -269,7 +269,7 @@
 #define VAR_QUEUE_GENIE_FIGHT                            0x40F9 // Unused Var
 #define VAR_PRESENT_GYM_STATE                            0x40FA // Unused Var
 #define VAR_AQUACORP_STATE                               0x40FB // Unused Var
-#define VAR_AQUA_GAUNTLET_STATE                          0x40FC // Unused Var
+#define VAR_MAIN_QUEST_STATE                             0x40FC // Unused Var
 #define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
 #define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
 #define VAR_UNUSED_0x40FF                                0x40FF // Unused Var

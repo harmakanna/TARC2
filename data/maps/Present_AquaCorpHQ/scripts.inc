@@ -10,13 +10,18 @@ Present_AquaCorpHQ_OnFrame:
 	.2byte 0
 
 Present_AquaCorpHQ_OnResume:
+	call_if_eq VAR_AQUACORP_STATE, 1, Present_AquaCorpHP_EventScript_SaveLookerMusic
 	special HealPlayerParty
 	end
-
+	
 Present_AquaCorpHQ_OnTransition:
 	call_if_lt VAR_AQUACORP_STATE, 2, Present_AquaCorpHQ_EventScript_SetAquaCorpNPCsForGauntlet
 	call_if_eq VAR_AQUACORP_STATE, 1, Present_AquaCorpHQ_EventScript_SetShellyForGauntletRematch
 	end
+
+Present_AquaCorpHP_EventScript_SaveLookerMusic:
+	savebgm MUS_PL_LOOKER
+	return
 
 Present_AquaCorpHQ_EventScript_SetAquaCorpNPCsForGauntlet::
 	setobjectxyperm LOCALID_AQUACORP_SCIENTIST_WAILMER, 3, 12
@@ -70,8 +75,9 @@ Present_AquaCorpHQ_EventScript_StartAquaGauntlet::
 	delay 40
 	speak LOCALID_AQUACORP_MATT, DIR_SOUTH, Name_Matt, Present_AquaCorpHQ_Text_MattOhComeOn
 	applymovement LOCALID_AQUACORP_GRUNTM_WAILMER, Common_Movement_FaceDownQuestionMark
-	applymovement LOCALID_AQUACORP_GRUNTM_TABLE, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_AQUACORP_GRUNTM_TABLE, Common_Movement_FaceUp
 	applymovement LOCALID_AQUACORP_SCIENTIST_WAILMER, Common_Movement_FaceUp
+	applymovement LOCALID_AQUACORP_GRUNTF_TABLE, Common_Movement_FaceUp
 	playbgm MUS_PL_LOOKER, FALSE
 	applymovement LOCALID_CAMERA, Common_Movement_WalkDown
 	call_if_unset FLAG_SYS_WEATHER_CTRL, Present_AquaCorpHQ_EventScript_LookerWasAStorm
@@ -92,6 +98,7 @@ Present_AquaCorpHQ_EventScript_StartAquaGauntlet::
 	speak LOCALID_AQUACORP_MATT, DIR_SOUTH, Name_Matt, Present_AquaCorpHQ_Text_MattEnoughOfThis
 	closemessage
 	applymovement LOCALID_CAMERA, Common_Movement_WalkDown
+	waitmovement 0
 	special RemoveCameraObject
 	goto Present_AquaCorpHQ_EventScript_AquaGauntlet
 	end
@@ -123,15 +130,15 @@ Present_AquaCorpHQ_EventScript_ConfirmedWas::
 
 Present_AquaCorpHQ_EventScript_StartAquaGauntletRematch::
 	lockall
-	applymovement LOCALID_AQUACORP_GRUNTF_TABLE, Common_Movement_FaceRight
-	applymovement LOCALID_AQUACORP_GRUNTM_WAILMER, Common_Movement_FaceDown
-	applymovement LOCALID_AQUACORP_SCIENTIST_WAILMER, Common_Movement_FaceUp
-	applymovement LOCALID_AQUACORP_GRUNTM_TABLE, Common_Movement_WalkInPlaceFasterRight
 	applymovement LOCALID_PLAYER, Present_AquaCorpHQ_Movement_LookerApproachMattFast
 	waitmovement 0
 	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_AquaCorpHQ_Text_LookerImBack
+	applymovement LOCALID_AQUACORP_GRUNTF_TABLE, Common_Movement_FaceUp
+	applymovement LOCALID_AQUACORP_GRUNTM_WAILMER, Common_Movement_FaceDown
+	applymovement LOCALID_AQUACORP_SCIENTIST_WAILMER, Common_Movement_FaceUp
+	applymovement LOCALID_AQUACORP_GRUNTM_TABLE, Common_Movement_FaceUp
 	speak LOCALID_AQUACORP_MATT, DIR_SOUTH, Name_Matt, Present_AquaCorpHQ_Text_MattYouWantMore
-	applymovement LOCALID_AQUACORP_SHELLY, Present_AquaCorpHQ_Movement_ShellyApproachGauntlet2
+	applymovement LOCALID_AQUACORP_SHELLY, Present_AquaCorpHQ_Movement_ShellyApproachGauntlet
 	waitmovement 0
 	speak LOCALID_AQUACORP_SHELLY, DIR_WEST, Name_Shelly, Present_AquaCorpHQ_Text_ShellyThisIsntHelping
 	speak LOCALID_AQUACORP_MATT, DIR_EAST, Name_Matt, Present_AquaCorpHQ_Text_MattTheGuyWontLeaveUsAlone
@@ -150,6 +157,7 @@ Present_AquaCorpHQ_EventScript_AquaGauntlet::
 	delay 10
 	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 	speak LOCALID_AQUACORP_GEOFF, DIR_EAST, Name_Unknown, Present_AquaCorpHQ_Text_GeoffIntro
+	savebgm MUS_DUMMY
 	trainerbattle_no_intro TRAINER_GRUNT_AQUA_HIDEOUT_1, Present_AquaCorpHQ_Text_GeoffDefeat
 	goto Present_AquaCorpHQ_EventScript_AquaGauntletSecondTrainer
 	end
@@ -159,6 +167,7 @@ Present_AquaCorpHQ_EventScript_AquaGauntletSecondTrainer::
 	speak LOCALID_AQUACORP_GEOFF, DIR_EAST, Name_Geoff, Present_AquaCorpHQ_Text_GeoffUnfulfilling
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
 	speak LOCALID_AQUACORP_SARAH, DIR_WEST, Name_Unknown, Present_AquaCorpHQ_Text_SarahIntro
+	savebgm MUS_DUMMY
 	trainerbattle_no_intro TRAINER_GRUNT_AQUA_HIDEOUT_2, Present_AquaCorpHQ_Text_SarahDefeat
 	goto Present_AquaCorpHQ_EventScript_AquaGauntletThirdTrainer
 	end
@@ -173,6 +182,7 @@ Present_AquaCorpHQ_EventScript_AquaGauntletThirdTrainer::
 	delay 40
 	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	speak LOCALID_AQUACORP_SHELDON, DIR_SOUTH, Name_Unknown, Present_AquaCorpHQ_Text_SheldonIntro
+	savebgm MUS_DUMMY
 	trainerbattle_no_intro TRAINER_GRUNT_AQUA_HIDEOUT_3, Present_AquaCorpHQ_Text_SheldonDefeat
 	goto Present_AquaCorpHQ_EventScript_AquaGauntletMatt
 	end
@@ -194,6 +204,7 @@ Present_AquaCorpHQ_EventScript_AquaGauntletMatt::
 
 Present_AquaCorpHQ_EventScript_AquaGauntletMattDefeated::
 	speak LOCALID_AQUACORP_MATT, DIR_SOUTH, Name_Matt, Present_AquaCorpHQ_Text_MattAreYouKiddingMe
+	playbgm MUS_NONE, FALSE
 	speak LOCALID_AQUACORP_SHELLY, DIR_WEST, Name_Shelly, Present_AquaCorpHQ_Text_ShellyEnough
 	closemessage
 	playse SE_PIN
@@ -224,6 +235,7 @@ Present_AquaCorpHQ_EventScript_AquaGauntletMattDefeated::
 	waitmovement 0
 	speak LOCALID_AQUACORP_SARAH, DIR_SOUTH, Name_Sarah, Present_AquaCorpHQ_Text_SarahCanWeClamperl
 	speak LOCALID_AQUACORP_SHELLY, DIR_NORTH, Name_Shelly, Present_AquaCorpHQ_Text_ShellyOfCourseWeCan
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	speak LOCALID_AQUACORP_SARAH, DIR_SOUTH, Name_Sarah, Present_AquaCorpHQ_Text_SarahIllPrepareTheDeepSea
 	closemessage
 	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceUp
@@ -238,6 +250,7 @@ Present_AquaCorpHQ_EventScript_AquaGauntletMattDefeated::
 	applymovement LOCALID_PLAYER, Present_AquaCorpHQ_Movement_LookerFollowToClamperl
 	waitmovement 0
 	delay 40
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	speak LOCALID_AQUACORP_SHELLY, DIR_SOUTH, Name_Shelly, Present_AquaCorpHQ_Text_ShellyThisClamperl
 	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceUp
 	speak LOCALID_AQUACORP_SARAH, DIR_SOUTH, Name_Sarah, Present_AquaCorpHQ_Text_SarahClamperlIsReady
@@ -251,9 +264,19 @@ Present_AquaCorpHQ_EventScript_AquaGauntletMattDefeated::
 Present_AquaCorpHQ_EventScript_FinishAquaGauntlet::
 	fadescreenswapbuffers FADE_TO_BLACK
 	delay 20
+	fadeoutbgm 0
+	delay 20
 	removeobject LOCALID_GOREBYSS
 	removeobject LOCALID_HUNTAIL
 	clearflag FLAG_HIDE_SHELDON_KRABBY
+	addobject LOCALID_KRABBY
+	setobjectxy LOCALID_AQUACORP_SCIENTIST_WAILMER, 9, 11
+	setobjectxy LOCALID_AQUACORP_GRUNTM_WAILMER, 9, 9
+	setobjectxy LOCALID_AQUACORP_SHELDON, 14, 6
+	setobjectxy LOCALID_AQUACORP_MATT, 7, 3
+	setobjectxy LOCALID_AQUACORP_SHELLY, 11, 4
+	setobjectxy LOCALID_AQUACORP_SARAH, 11, 5
+	setobjectxy LOCALID_AQUACORP_GEOFF, 1, 6
 	setobjectxyperm LOCALID_AQUACORP_SCIENTIST_WAILMER, 9, 11
 	setobjectxyperm LOCALID_AQUACORP_GRUNTM_WAILMER, 9, 9
 	setobjectxyperm LOCALID_AQUACORP_SHELDON, 14, 6
@@ -268,10 +291,18 @@ Present_AquaCorpHQ_EventScript_FinishAquaGauntlet::
 	setobjectmovementtype LOCALID_AQUACORP_SHELLY, MOVEMENT_TYPE_FACE_DOWN
 	setobjectmovementtype LOCALID_AQUACORP_SARAH, MOVEMENT_TYPE_FACE_UP
 	setobjectmovementtype LOCALID_AQUACORP_GEOFF, MOVEMENT_TYPE_FACE_UP
+	applymovement LOCALID_AQUACORP_SCIENTIST_WAILMER, Common_Movement_FaceRight
+	applymovement LOCALID_AQUACORP_GRUNTM_WAILMER, Common_Movement_FaceRight
+	applymovement LOCALID_AQUACORP_SHELDON, Common_Movement_FaceDown
+	applymovement LOCALID_AQUACORP_MATT, Common_Movement_FaceUp
+	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceDown
+	applymovement LOCALID_AQUACORP_SARAH, Common_Movement_FaceUp
+	applymovement LOCALID_AQUACORP_GEOFF, Common_Movement_FaceUp
 	setvar VAR_AQUACORP_STATE, 2
 	setflag FLAG_DEFEATED_MATT
 	fadescreenswapbuffers FADE_FROM_BLACK
 	completequest QUEST_INTERROGATE_MATT
+	playbgm MUS_AQUA_MAGMA_HIDEOUT, FALSE
 	releaseall
 	end
 
@@ -335,14 +366,6 @@ Present_AquaCorpHQ_Movement_TableGruntFWalkToSee:
 	step_end
 
 Present_AquaCorpHQ_Movement_ShellyApproachGauntlet:
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	step_end
-
-Present_AquaCorpHQ_Movement_ShellyApproachGauntlet2:
-	walk_left
 	walk_left
 	walk_left
 	step_end
@@ -545,14 +568,14 @@ Present_AquaCorpHQ_Text_LookerWeHaveItOnGoodIntel:
 Present_AquaCorpHQ_Text_LookerWeHaveConfirmed:
 	.string "I'll let you know, in fact, we have\n"
 	.string "confirmed the storm was caused by\l"
-	.string "Tornadus and Thundurus rampaging in the\l"
-	.string "absense of Landorus!$"
+	.string "Tornadus and Thundurus rampaging in\l"
+	.string "the absense of Landorus!$"
 
 Present_AquaCorpHQ_Text_LookerWeHaveConfirmedAreBeing:
 	.string "I'll let you know, in fact, we have\n"
 	.string "confirmed the storms are being caused\l"
-	.string "by Tornadus and Thundurus rampaging in\l"
-	.string "the absense of Landorus!$"
+	.string "by Tornadus and Thundurus rampaging\l"
+	.string "in the absense of Landorus!$"
 
 Present_AquaCorpHQ_Text_LookerJustThreeMonthsAgo:
 	.string "Not even three months ago, your group\n"
