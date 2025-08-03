@@ -539,13 +539,14 @@ Gender: Male
 Music: Aqua
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Blue
 
 Mightyena
-Level: 34
+Level: 5
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Golbat
-Level: 34
+Level: 5
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_ZANDER ===
@@ -4670,7 +4671,7 @@ Gender: Female
 Music: Elite Four
 Double Battle: Yes
 AI: Basic Trainer
-Mugshot: Green
+Mugshot: Pink
 
 Dusclops
 Level: 5

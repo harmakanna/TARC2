@@ -7,8 +7,8 @@ static const struct MenuAction MultichoiceList_PhoebeGiveMon[] =
 
 static const struct MenuAction MultichoiceList_MattGiveMon[] =
 {
-    {COMPOUND_STRING("Gorebyss")},
-    {COMPOUND_STRING("Huntail")},
+    {COMPOUND_STRING("DeepSeaScale")},
+    {COMPOUND_STRING("DeepSeaTooth")},
 };
 
 static const struct MenuAction MultichoiceList_BlueGiveMon[] =

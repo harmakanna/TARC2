@@ -1,5 +1,6 @@
 ShrineOfProsperityPast_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, ShrineOfProsperityPast_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, ShrineOfProsperityPast_OnResume
 	.byte 0
 
 ShrineOfProsperityPast_OnTransition:
@@ -10,6 +11,10 @@ ShrineOfProsperityPast_EventScript_SetupMyth::
 	setobjectmovementtype LOCALID_SHRINE_PROSPERITY_PAST_ORATOR, MOVEMENT_TYPE_FACE_LEFT
 	return
 
+ShrineOfProsperityPast_OnResume:
+	special HealPlayerParty
+	end
+	
 ShrineOfProsperityPast_EventScript_VillageOrator::
 	msgbox ShrineOfProsperityPast_Text_Orator, MSGBOX_NPC
 	end
@@ -56,6 +61,7 @@ ShrineOfProsperityPast_EventScript_LandorusMyth::
 	clearflag FLAG_HIDE_SHRINE_PEACE_CELEBI
 	clearflag FLAG_LOCK_CITY_DOORS
 	setflag FLAG_HIDE_PAST_TOWN_HALL_ESTELLA
+	setflag FLAG_HIDE_CITYHALL_1F_CONCERNED_DAD
 	setflag FLAG_SYS_B_DASH
 	setflag FLAG_SYS_MAIN_GAME_START
 	setvar VAR_CUTSCENE_STATE, 9

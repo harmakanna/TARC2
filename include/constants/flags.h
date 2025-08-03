@@ -80,15 +80,15 @@
 #define FLAG_HIDE_HUNTAIL                      0x42 // Unused Flag
 #define FLAG_HIDE_CITY_THUNDURUS               0x43 // Unused Flag
 #define FLAG_HIDE_CITY_TORNADUS                0x44 // Unused Flag
-#define FLAG_UNUSED_0x045    0x45 // Unused Flag
-#define FLAG_UNUSED_0x046    0x46 // Unused Flag
-#define FLAG_UNUSED_0x047    0x47 // Unused Flag
-#define FLAG_UNUSED_0x048    0x48 // Unused Flag
-#define FLAG_UNUSED_0x049    0x49 // Unused Flag
-#define FLAG_UNUSED_0x04A    0x4A // Unused Flag
-#define FLAG_UNUSED_0x04B    0x4B // Unused Flag
-#define FLAG_UNUSED_0x04C    0x4C // Unused Flag
-#define FLAG_UNUSED_0x04D    0x4D // Unused Flag
+#define FLAG_HIDE_SHELDON_KRABBY               0x45 // Unused Flag
+#define FLAG_PLAY_LOOKER_AQUA_ON_TRANSITION    0x46 // Unused Flag
+#define FLAG_PLAY_LOOKER_GYM_ON_TRANSITION     0x47 // Unused Flag
+#define FLAG_PLAY_LOOKER_RANGER_ON_TRANSITION  0x48 // Unused Flag
+#define FLAG_PLAY_LOOKER_ESTELLA_ON_TRANSITION 0x49 // Unused Flag
+#define FLAG_DEFEATED_CULPRIT                  0x4A // Unused Flag
+#define FLAG_DEFEATED_BLUE                     0x4B // Unused Flag
+#define FLAG_DEFEATED_MAY                      0x4C // Unused Flag
+#define FLAG_PLAY_LOOKER_SCENE_ON_TRANSITION   0x4D // Unused Flag
 #define FLAG_UNUSED_0x04E    0x4E // Unused Flag
 #define FLAG_UNUSED_0x04F    0x4F // Unused Flag
 
@@ -1413,7 +1413,7 @@
 #define FLAG_SYS_MIX_RECORD                         (SYSTEM_FLAGS + 0x34)
 #define FLAG_SYS_CLOCK_SET                          (SYSTEM_FLAGS + 0x35)
 #define FLAG_SYS_NATIONAL_DEX                       (SYSTEM_FLAGS + 0x36)
-#define FLAG_SYS_CAVE_SHIP                          (SYSTEM_FLAGS + 0x37) // Unused Flag, leftover from R/S debug, presumably used by Emerald's debug too
+#define FLAG_SYS_LOOKER_MUSIC_ON_TRANSITION         (SYSTEM_FLAGS + 0x37) // Unused Flag, leftover from R/S debug, presumably used by Emerald's debug too
 #define FLAG_SYS_CAVE_WONDER                        (SYSTEM_FLAGS + 0x38) // Unused Flag, same as above
 #define FLAG_SYS_CAVE_BATTLE                        (SYSTEM_FLAGS + 0x39) // Unused Flag, same as above
 #define FLAG_SYS_SHOAL_TIDE                         (SYSTEM_FLAGS + 0x3A)
@@ -1507,7 +1507,7 @@
 
 #define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x84)
 
-#define FLAG_UNUSED_0x8E5                           (SYSTEM_FLAGS + 0x85) // Unused Flag
+#define FLAG_FORCE_LOAD_OFFSCREEN_OBJEV             (SYSTEM_FLAGS + 0x85) // Unused Flag
 #define FLAG_UNUSED_0x8E6                           (SYSTEM_FLAGS + 0x86) // Unused Flag
 #define FLAG_UNUSED_0x8E7                           (SYSTEM_FLAGS + 0x87) // Unused Flag
 #define FLAG_UNUSED_0x8E8                           (SYSTEM_FLAGS + 0x88) // Unused Flag

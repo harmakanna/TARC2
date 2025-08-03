@@ -474,6 +474,7 @@ void BattleSetup_StartLatiBattle(void)
 
 void BattleSetup_StartLegendaryBattle(void)
 {
+    u16 species;
     LockPlayerFieldControls();
     gMain.savedCallback = CB2_EndScriptedWildBattle;
     gBattleTypeFlags = BATTLE_TYPE_LEGENDARY;
@@ -505,6 +506,7 @@ void BattleSetup_StartLegendaryBattle(void)
         break;
     case SPECIES_THUNDURUS:
     case SPECIES_TORNADUS:
+    case SPECIES_ENAMORUS:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_BW_VS_LEGENDARY);
         break;
     case SPECIES_MEW:

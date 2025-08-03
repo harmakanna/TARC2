@@ -2581,12 +2581,29 @@ static void HBlankCB_Mugshots(void)
         REG_BG0HOFS = sTransitionData->BG0HOFS_Upper;
 }
 
+
 static void Mugshots_CreateTrainerPics(struct Task *task)
 {
+    //u16 speciesA, speciesB;
     struct Sprite *opponentSpriteA, *opponentSpriteB=0, *playerSprite, *partnerSprite=0;
 
-    u8 trainerAPicId = GetTrainerPicFromId(TRAINER_BATTLE_PARAM.opponentA);
-    u8 trainerBPicId = GetTrainerPicFromId(TRAINER_BATTLE_PARAM.opponentB);
+    /*if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY_DOUBLE)
+    {
+        speciesA = GetMonData(&gEnemyParty[0], MON_DATA_SPECIES);
+        speciesB = GetMonData(&gEnemyParty[3], MON_DATA_SPECIES);
+        u8 trainerAPicId = GetPokemonSpriteToDisplay(species);
+        u8 trainerBPicId = GetPokemonSpriteToDisplay(species);
+    }
+    else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
+    {
+        speciesA = GetMonData(&gEnemyParty[0], MON_DATA_SPECIES);
+        u8 trainerAPicId = GetPokemonSpriteToDisplay(species);
+    }
+    else
+    {*/
+        u8 trainerAPicId = GetTrainerPicFromId(TRAINER_BATTLE_PARAM.opponentA);
+        u8 trainerBPicId = GetTrainerPicFromId(TRAINER_BATTLE_PARAM.opponentB);
+    //}
     u8 partnerPicId = gTrainerPicToTrainerBackPic[GetTrainerPicFromId(gPartnerTrainerId)];
     s16 opponentARotationScales = 0;
     s16 opponentBRotationScales = 0;
