@@ -4,58 +4,6 @@ PresentTown_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, PresentTown_OnFrame
 	map_script MAP_SCRIPT_ON_RESUME, PresentTown_OnResume
 	.byte 0
-
-PresentTown_OnFrame:
-	map_script_2 VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1, PresentTown_EventScript_LookerThinkingScenes
-	.2byte 0
-
-PresentTown_EventScript_LookerThinkingScenes::
-	call_if_set FLAG_PLAY_LOOKER_AQUA_ON_TRANSITION, PresentTown_EventScript_LookerThinkingAqua
-	call_if_set FLAG_PLAY_LOOKER_AQUA_ON_TRANSITION, PresentTown_EventScript_LookerThinkingGym
-	call_if_set FLAG_PLAY_LOOKER_AQUA_ON_TRANSITION, PresentTown_EventScript_LookerThinkingEstella
-	call_if_eq VAR_MAIN_QUEST_STATE, 4, PresentTown_EventScript_LookerThinkingIGotIt
-	call_if_eq VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1, PresentTown_EventScript_EndLookerThinking
-	end
-
-PresentTown_EventScript_LookerThinkingAqua::
-	lockall
-	playbgm MUS_PL_LOOKER, FALSE
-	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerThinkingAqua
-	return
-
-PresentTown_EventScript_LookerThinkingGym::
-	lockall
-	playbgm MUS_PL_LOOKER, FALSE
-	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerThinkingGym
-	return
-
-PresentTown_EventScript_LookerThinkingEstella::
-	lockall
-	playbgm MUS_PL_LOOKER, FALSE
-	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerThinkingEstella
-	return
-
-PresentTown_EventScript_LookerThinkingIGotIt::
-	closemessage
-	playse SE_PIN
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-	delay 48
-	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerIGotIt
-	return
-
-PresentTown_EventScript_EndLookerThinking::
-	closemessage
-	fadeoutbgm 0
-	playbgm MUS_DP_SUNYSHORE_DAY, FALSE
-	clearflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
-	clearflag FLAG_PLAY_LOOKER_AQUA_ON_TRANSITION
-	clearflag FLAG_PLAY_LOOKER_GYM_ON_TRANSITION
-	clearflag FLAG_PLAY_LOOKER_ESTELLA_ON_TRANSITION
-	clearflag FLAG_PLAY_LOOKER_RANGER_ON_TRANSITION
-	addvar VAR_MAIN_QUEST_STATE, 1
-	setvar VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 0
-	releaseall
-	end
 	
 @ Comment out FLAG_SYS_MAIN_GAME_START_SCRIPT_DEBUG line to test intro
 PresentTown_OnLoad:
@@ -133,6 +81,58 @@ PresentTown_EventScript_PrepareAnabelForCutscene::
 	setobjectxyperm LOCALID_PRESENTTOWN_ANABEL, 37, 28
 	return
 	
+PresentTown_OnFrame:
+	map_script_2 VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1, PresentTown_EventScript_LookerThinkingScenes
+	.2byte 0
+
+PresentTown_EventScript_LookerThinkingScenes::
+	call_if_set FLAG_PLAY_LOOKER_AQUA_ON_TRANSITION, PresentTown_EventScript_LookerThinkingAqua
+	call_if_set FLAG_PLAY_LOOKER_GYM_ON_TRANSITION, PresentTown_EventScript_LookerThinkingGym
+	call_if_set FLAG_PLAY_LOOKER_ESTELLA_ON_TRANSITION, PresentTown_EventScript_LookerThinkingEstella
+	call_if_eq VAR_MAIN_QUEST_STATE, 4, PresentTown_EventScript_LookerThinkingIGotIt
+	call_if_eq VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1, PresentTown_EventScript_EndLookerThinking
+	end
+
+PresentTown_EventScript_LookerThinkingAqua::
+	lockall
+	playbgm MUS_PL_LOOKER, FALSE
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerThinkingAqua
+	return
+
+PresentTown_EventScript_LookerThinkingGym::
+	lockall
+	playbgm MUS_PL_LOOKER, FALSE
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerThinkingGym
+	return
+
+PresentTown_EventScript_LookerThinkingEstella::
+	lockall
+	playbgm MUS_PL_LOOKER, FALSE
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerThinkingEstella
+	return
+
+PresentTown_EventScript_LookerThinkingIGotIt::
+	closemessage
+	playse SE_PIN
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	delay 48
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerIGotIt
+	return
+
+PresentTown_EventScript_EndLookerThinking::
+	closemessage
+	fadeoutbgm 0
+	playbgm MUS_DP_SUNYSHORE_DAY, FALSE
+	clearflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
+	clearflag FLAG_PLAY_LOOKER_AQUA_ON_TRANSITION
+	clearflag FLAG_PLAY_LOOKER_GYM_ON_TRANSITION
+	clearflag FLAG_PLAY_LOOKER_ESTELLA_ON_TRANSITION
+	clearflag FLAG_PLAY_LOOKER_RANGER_ON_TRANSITION
+	addvar VAR_MAIN_QUEST_STATE, 1
+	setvar VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 0
+	releaseall
+	end
+
 PresentTown_OnResume:
 	special HealPlayerParty
 	end

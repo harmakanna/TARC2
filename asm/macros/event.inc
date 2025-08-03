@@ -1922,8 +1922,8 @@
 	playfanfare MUS_REGISTER_MATCH_CALL
 	msgbox gText_QuestAnnounce, MSGBOX_SIGN
 	waitfanfare
-	closemessage
 	delay 30
+	closemessage
 	.endm
 
     @ Completes the specified quest.
@@ -1933,11 +1933,12 @@
 	questmenu QUEST_MENU_COMPLETE_QUEST, \quest
 	questmenu QUEST_MENU_BUFFER_QUEST_NAME \quest
     bufferstring 1 gText_QuestComplete
+	message gText_QuestAnnounce
+	waitmessage
 	playfanfare MUS_OBTAIN_TMHM
-	msgbox gText_QuestAnnounce, MSGBOX_SIGN
 	waitfanfare
-	closemessage
 	delay 30
+	closemessage
 	.endm
 
 	.macro goto_if_quest_inactive quest:req, dest:req
