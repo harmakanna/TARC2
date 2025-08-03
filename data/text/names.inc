@@ -63,3 +63,6 @@ Name_Scientist:
 
 Name_Lass:
     .string "Marie$"
+
+Name_Gym_Trainer_2:
+    .string "Daisy$"
