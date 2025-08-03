@@ -645,11 +645,11 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Trick   
 
 === TRAINER_DAISY ===
-Name: DAISY
-Class: Aroma Lady
-Pic: Aroma Lady
+Name: Daisy
+Class: Battle Girl
+Pic: Battle Girl
 Gender: Female
-Music: Female
+Music: Intense
 Double Battle: No
 AI: Check Bad Move
 

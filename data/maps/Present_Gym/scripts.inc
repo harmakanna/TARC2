@@ -200,21 +200,8 @@ Present_Gym_EventScript_GymTrainer1::
 
 @ Battle Girl, TRAINER_DAISY
 Present_Gym_EventScript_GymTrainer2::
-	lockall
-	goto_if_set FLAG_DEFEATED_GYM_TRAINER_2, Present_Gym_EventScript_GymTrainer2PostBattle
-	speakername Name_Gym_Trainer_2
-	msgbox Present_Gym_Text_GymTrainer2Intro, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_DAISY, Present_Gym_Text_GymTrainer2Defeat
-	setflag FLAG_DEFEATED_GYM_TRAINER_2
-	releaseall
-	end
-
-Present_Gym_EventScript_GymTrainer2PostBattle::
-	faceplayer
-	speakername Name_Gym_Trainer_2
-	msgbox Present_Gym_Text_GymTrainer2PostBattle, MSGBOX_DEFAULT
-	closemessage
-	releaseall
+	trainerbattle_double TRAINER_DAISY, Present_Gym_Text_GymTrainer2Intro, Present_Gym_Text_GymTrainer2Defeat, Common_Text_NotEnoughPokemon
+	msgbox Present_Gym_Text_GymTrainer2PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 @ Ranger M, TRAINER_SEBASTIAN
@@ -225,7 +212,7 @@ Present_Gym_EventScript_GymTrainer3::
 
 @ Ranger F, TRAINER_SAMANTHA
 Present_Gym_EventScript_GymTrainer4::
-	trainerbattle_double TRAINER_SAMANTHA, Present_Gym_Text_GymTrainer4Intro, Present_Gym_Text_GymTrainer4Defeat, Common_Text_NotEnoughPokemon
+	trainerbattle_single TRAINER_SAMANTHA, Present_Gym_Text_GymTrainer4Intro, Present_Gym_Text_GymTrainer4Defeat
 	msgbox Present_Gym_Text_GymTrainer4PostBattle, MSGBOX_AUTOCLOSE
 	end
 
