@@ -1,5 +1,6 @@
 Present_AquaCorpHQ_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Present_AquaCorpHQ_OnFrame
+	map_script MAP_SCRIPT_ON_TRANSITION, Present_AquaCorpHQ_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, Present_AquaCorpHQ_OnResume
 	.byte 0
 
@@ -9,8 +10,36 @@ Present_AquaCorpHQ_OnFrame:
 	.2byte 0
 
 Present_AquaCorpHQ_OnResume:
+	call_if_eq VAR_AQUACORP_STATE, 1, Present_AquaCorpHP_EventScript_SaveLookerMusic
 	special HealPlayerParty
 	end
+	
+Present_AquaCorpHQ_OnTransition:
+	call_if_lt VAR_AQUACORP_STATE, 2, Present_AquaCorpHQ_EventScript_SetAquaCorpNPCsForGauntlet
+	call_if_eq VAR_AQUACORP_STATE, 1, Present_AquaCorpHQ_EventScript_SetShellyForGauntletRematch
+	end
+
+Present_AquaCorpHP_EventScript_SaveLookerMusic:
+	savebgm MUS_PL_LOOKER
+	return
+
+Present_AquaCorpHQ_EventScript_SetAquaCorpNPCsForGauntlet::
+	setobjectxyperm LOCALID_AQUACORP_SCIENTIST_WAILMER, 3, 12
+	setobjectxyperm LOCALID_AQUACORP_GRUNTM_WAILMER, 3, 2
+	setobjectxyperm LOCALID_AQUACORP_SHELDON, 5, 4
+	setobjectxyperm LOCALID_AQUACORP_MATT, 6, 4
+	setobjectxyperm LOCALID_AQUACORP_SARAH, 11, 5
+	setobjectmovementtype LOCALID_AQUACORP_SCIENTIST_WAILMER, MOVEMENT_TYPE_FACE_LEFT
+	setobjectmovementtype LOCALID_AQUACORP_GRUNTM_WAILMER, MOVEMENT_TYPE_FACE_UP
+	setobjectmovementtype LOCALID_AQUACORP_SHELDON, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectmovementtype LOCALID_AQUACORP_MATT, MOVEMENT_TYPE_FACE_LEFT
+	return
+
+Present_AquaCorpHQ_EventScript_SetShellyForGauntletRematch::
+	setobjectxyperm LOCALID_AQUACORP_SHELLY, 11, 4
+	setobjectmovementtype LOCALID_AQUACORP_SHELLY, MOVEMENT_TYPE_FACE_DOWN
+	setobjectmovementtype LOCALID_AQUACORP_SARAH, MOVEMENT_TYPE_FACE_UP
+	return
 
 Present_AquaCorpHQ_EventScript_StartAquaGauntlet::
 	lockall
@@ -27,9 +56,12 @@ Present_AquaCorpHQ_EventScript_StartAquaGauntlet::
 	speak LOCALID_AQUACORP_MATT, DIR_SOUTH, Name_Matt, Present_AquaCorpHQ_Text_MattWhyAreYouHere
 	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_AquaCorpHQ_Text_LookerYoureUnderArrest
 	closemessage
+	special SpawnCameraObject
+	applymovement LOCALID_CAMERA, Common_Movement_WalkUp2
 	delay 40
 	speak LOCALID_AQUACORP_MATT, DIR_SOUTH, Name_Matt, Present_AquaCorpHQ_Text_MattWhat
 	closemessage
+	fadeoutbgm 1
 	delay 60
 	applymovement LOCALID_AQUACORP_MATT, Common_Movement_FaceLeft
 	delay 60
@@ -42,29 +74,32 @@ Present_AquaCorpHQ_EventScript_StartAquaGauntlet::
 	closemessage
 	delay 40
 	speak LOCALID_AQUACORP_MATT, DIR_SOUTH, Name_Matt, Present_AquaCorpHQ_Text_MattOhComeOn
-	applymovement LOCALID_AQUACORP_GRUNTF_TABLE, Common_Movement_FaceRightQuestionMark
-	applymovement LOCALID_AQUACORP_GRUNTM_WAILMER, Common_Movement_FaceUpQuestionMark
+	applymovement LOCALID_AQUACORP_GRUNTM_WAILMER, Common_Movement_FaceDownQuestionMark
+	applymovement LOCALID_AQUACORP_GRUNTM_TABLE, Common_Movement_FaceUp
 	applymovement LOCALID_AQUACORP_SCIENTIST_WAILMER, Common_Movement_FaceUp
-	applymovement LOCALID_AQUACORP_GRUNTM_TABLE, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_AQUACORP_GRUNTF_TABLE, Common_Movement_FaceUp
+	playbgm MUS_PL_LOOKER, FALSE
+	applymovement LOCALID_CAMERA, Common_Movement_WalkDown
 	call_if_unset FLAG_SYS_WEATHER_CTRL, Present_AquaCorpHQ_EventScript_LookerWasAStorm
 	call_if_set FLAG_SYS_WEATHER_CTRL, Present_AquaCorpHQ_EventScript_LookerIsAStorm
-	applymovement LOCALID_AQUACORP_GRUNTM_WAILMER, Present_AquaCorpHQ_Movement_WailmerGruntWalkToSee
 	speak LOCALID_AQUACORP_MATT, DIR_SOUTH, Name_Matt, Present_AquaCorpHQ_Text_MattSoWhatIfTheresAStorm
 	call_if_unset FLAG_DEFEATED_SHRINE_GENIES, Present_AquaCorpHQ_EventScript_LookerGoodIntel
 	call_if_set FLAG_DEFEATED_SHRINE_GENIES, Present_AquaCorpHQ_EventScript_LookerConfirmed
 	playse SE_SELECT
-	applymovement LOCALID_AQUACORP_GRUNTM_TABLE, Present_AquaCorpHQ_Movement_TableGruntMWalkToSee
-	applymovement LOCALID_AQUACORP_SCIENTIST_WAILMER, Present_AquaCorpHQ_Movement_WailmerScientistWalkToSee
-	applymovement LOCALID_AQUACORP_GRUNTF_TABLE, Present_AquaCorpHQ_Movement_TableGruntFWalkToSee
 	msgbox Present_AquaCorpHQ_Text_LookerJustThreeMonthsAgo, MSGBOX_DEFAULT
 	speak LOCALID_AQUACORP_MATT, DIR_SOUTH, Name_Matt, Present_AquaCorpHQ_Text_MattGrr
-	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_WalkLeft
+	closemessage
+	applymovement LOCALID_AQUACORP_SHELLY, Present_AquaCorpHQ_Movement_ShellyApproachGauntlet
+	waitmovement 0
 	speakername Name_Shelly
 	msgbox Present_AquaCorpHQ_Text_ShellyWillYouJustStop, MSGBOX_DEFAULT
 	speak LOCALID_AQUACORP_MATT, DIR_EAST, Name_Matt, Present_AquaCorpHQ_Text_MattNoIWillNot
 	playse SE_SELECT
 	speak LOCALID_AQUACORP_MATT, DIR_SOUTH, Name_Matt, Present_AquaCorpHQ_Text_MattEnoughOfThis
 	closemessage
+	applymovement LOCALID_CAMERA, Common_Movement_WalkDown
+	waitmovement 0
+	special RemoveCameraObject
 	goto Present_AquaCorpHQ_EventScript_AquaGauntlet
 	end
 
@@ -96,24 +131,20 @@ Present_AquaCorpHQ_EventScript_ConfirmedWas::
 Present_AquaCorpHQ_EventScript_StartAquaGauntletRematch::
 	lockall
 	applymovement LOCALID_PLAYER, Present_AquaCorpHQ_Movement_LookerApproachMattFast
-	applymovement LOCALID_AQUACORP_GRUNTF_TABLE, Common_Movement_FaceRight
-	applymovement LOCALID_AQUACORP_GRUNTM_WAILMER, Common_Movement_FaceUp
-	applymovement LOCALID_AQUACORP_SCIENTIST_WAILMER, Common_Movement_FaceUp
-	applymovement LOCALID_AQUACORP_GRUNTM_TABLE, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
 	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_AquaCorpHQ_Text_LookerImBack
-	applymovement LOCALID_AQUACORP_GRUNTM_TABLE, Present_AquaCorpHQ_Movement_TableGruntMWalkToSee
+	applymovement LOCALID_AQUACORP_GRUNTF_TABLE, Common_Movement_FaceUp
+	applymovement LOCALID_AQUACORP_GRUNTM_WAILMER, Common_Movement_FaceDown
+	applymovement LOCALID_AQUACORP_SCIENTIST_WAILMER, Common_Movement_FaceUp
+	applymovement LOCALID_AQUACORP_GRUNTM_TABLE, Common_Movement_FaceUp
 	speak LOCALID_AQUACORP_MATT, DIR_SOUTH, Name_Matt, Present_AquaCorpHQ_Text_MattYouWantMore
-	applymovement LOCALID_AQUACORP_SCIENTIST_WAILMER, Present_AquaCorpHQ_Movement_WailmerScientistWalkToSee
-	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_WalkLeft
+	applymovement LOCALID_AQUACORP_SHELLY, Present_AquaCorpHQ_Movement_ShellyApproachGauntlet
 	waitmovement 0
 	speak LOCALID_AQUACORP_SHELLY, DIR_WEST, Name_Shelly, Present_AquaCorpHQ_Text_ShellyThisIsntHelping
 	speak LOCALID_AQUACORP_MATT, DIR_EAST, Name_Matt, Present_AquaCorpHQ_Text_MattTheGuyWontLeaveUsAlone
 	playse SE_SELECT
 	speak LOCALID_AQUACORP_MATT, DIR_SOUTH, Name_Matt, Present_AquaCorpHQ_Text_MattWeGottaTeachHim
 	closemessage
-	clearflag FLAG_DEFEATED_GRUNT_1
-	clearflag FLAG_DEFEATED_GRUNT_2
-	clearflag FLAG_DEFEATED_GRUNT_3
 	goto Present_AquaCorpHQ_EventScript_AquaGauntlet
 	end
 
@@ -126,6 +157,7 @@ Present_AquaCorpHQ_EventScript_AquaGauntlet::
 	delay 10
 	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 	speak LOCALID_AQUACORP_GEOFF, DIR_EAST, Name_Unknown, Present_AquaCorpHQ_Text_GeoffIntro
+	savebgm MUS_DUMMY
 	trainerbattle_no_intro TRAINER_GRUNT_AQUA_HIDEOUT_1, Present_AquaCorpHQ_Text_GeoffDefeat
 	goto Present_AquaCorpHQ_EventScript_AquaGauntletSecondTrainer
 	end
@@ -135,6 +167,7 @@ Present_AquaCorpHQ_EventScript_AquaGauntletSecondTrainer::
 	speak LOCALID_AQUACORP_GEOFF, DIR_EAST, Name_Geoff, Present_AquaCorpHQ_Text_GeoffUnfulfilling
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
 	speak LOCALID_AQUACORP_SARAH, DIR_WEST, Name_Unknown, Present_AquaCorpHQ_Text_SarahIntro
+	savebgm MUS_DUMMY
 	trainerbattle_no_intro TRAINER_GRUNT_AQUA_HIDEOUT_2, Present_AquaCorpHQ_Text_SarahDefeat
 	goto Present_AquaCorpHQ_EventScript_AquaGauntletThirdTrainer
 	end
@@ -142,8 +175,14 @@ Present_AquaCorpHQ_EventScript_AquaGauntletSecondTrainer::
 @ Third grunt: TRAINER_GRUNT_AQUA_HIDEOUT_3
 Present_AquaCorpHQ_EventScript_AquaGauntletThirdTrainer::
 	speak LOCALID_AQUACORP_SARAH, DIR_WEST, Name_Sarah, Present_AquaCorpHQ_Text_SarahCmonGuys
+	closemessage
+	applymovement LOCALID_AQUACORP_SHELDON, Common_Movement_FaceRight
+	applymovement LOCALID_AQUACORP_SARAH, Present_AquaCorpHQ_Movement_SarahLeave
+	waitmovement 0
+	delay 40
 	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	speak LOCALID_AQUACORP_SHELDON, DIR_SOUTH, Name_Unknown, Present_AquaCorpHQ_Text_SheldonIntro
+	savebgm MUS_DUMMY
 	trainerbattle_no_intro TRAINER_GRUNT_AQUA_HIDEOUT_3, Present_AquaCorpHQ_Text_SheldonDefeat
 	goto Present_AquaCorpHQ_EventScript_AquaGauntletMatt
 	end
@@ -165,21 +204,23 @@ Present_AquaCorpHQ_EventScript_AquaGauntletMatt::
 
 Present_AquaCorpHQ_EventScript_AquaGauntletMattDefeated::
 	speak LOCALID_AQUACORP_MATT, DIR_SOUTH, Name_Matt, Present_AquaCorpHQ_Text_MattAreYouKiddingMe
+	playbgm MUS_NONE, FALSE
 	speak LOCALID_AQUACORP_SHELLY, DIR_WEST, Name_Shelly, Present_AquaCorpHQ_Text_ShellyEnough
 	closemessage
 	playse SE_PIN
 	applymovement LOCALID_AQUACORP_MATT, Common_Movement_FaceRightExclamationMark
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRightExclamationMark
-	delay 48
-	applymovement LOCALID_AQUACORP_SARAH, Present_AquaCorpHQ_Movement_SarahMoveOutOfTheWay
-	applymovement LOCALID_AQUACORP_SHELLY, Present_AquaCorpHQ_Movement_ShellyWalkToLooker
+	delay 60
+	applymovement LOCALID_AQUACORP_SHELLY, Present_AquaCorpHQ_Movement_ShellyWalkToMatt
 	waitmovement 0
 	speak LOCALID_AQUACORP_SHELLY, DIR_WEST, Name_Shelly, Present_AquaCorpHQ_Text_ShellyHaventYouNoticed
 	speak LOCALID_AQUACORP_MATT, DIR_EAST, Name_Matt, Present_AquaCorpHQ_Text_MattSorry
+	closemessage
+	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_WalkDown
+	waitmovement 0
 	speak LOCALID_AQUACORP_SHELLY, DIR_WEST, Name_Shelly, Present_AquaCorpHQ_Text_ShellyAndLookerYou
 	speak LOCALID_PLAYER, DIR_EAST, Name_Looker, Present_AquaCorpHQ_Text_LookerSorry
 	speak LOCALID_AQUACORP_SHELLY, DIR_WEST, Name_Shelly, Present_AquaCorpHQ_Text_ShellyLookerComeHere
-	closemessage
 	speak LOCALID_PLAYER, DIR_EAST, Name_Looker, Present_AquaCorpHQ_Text_LookerOkay
 	closemessage
 	applymovement LOCALID_AQUACORP_SHELLY, Present_AquaCorpHQ_Movement_ShellyWalkToWailmer
@@ -188,10 +229,13 @@ Present_AquaCorpHQ_EventScript_AquaGauntletMattDefeated::
 	speak LOCALID_AQUACORP_SHELLY, DIR_EAST, Name_Shelly, Present_AquaCorpHQ_Text_ShellyWeAreResearchers
 	speak LOCALID_AQUACORP_SARAH, DIR_SOUTH, Name_Sarah, Present_AquaCorpHQ_Text_SarahShellyDots
 	closemessage
-	applymovement LOCALID_AQUACORP_SARAH, Common_Movement_WalkDown2
+	playse SE_PIN
+	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceUpQuestionMark
+	applymovement LOCALID_AQUACORP_SARAH, Present_AquaCorpHQ_Movement_SarahWalkToShelly
 	waitmovement 0
 	speak LOCALID_AQUACORP_SARAH, DIR_SOUTH, Name_Sarah, Present_AquaCorpHQ_Text_SarahCanWeClamperl
 	speak LOCALID_AQUACORP_SHELLY, DIR_NORTH, Name_Shelly, Present_AquaCorpHQ_Text_ShellyOfCourseWeCan
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	speak LOCALID_AQUACORP_SARAH, DIR_SOUTH, Name_Sarah, Present_AquaCorpHQ_Text_SarahIllPrepareTheDeepSea
 	closemessage
 	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceUp
@@ -199,16 +243,18 @@ Present_AquaCorpHQ_EventScript_AquaGauntletMattDefeated::
 	waitmovement 0
 	delay 10
 	speak LOCALID_AQUACORP_SHELLY, DIR_SOUTH, Name_Shelly, Present_AquaCorpHQ_Text_ShellyLookerComeSeeClamperl
+	closemessage
 	playbgm MUS_FOLLOW_ME, FALSE
 	applymovement LOCALID_AQUACORP_SARAH, Present_AquaCorpHQ_Movement_SarahWalkUpToClam
 	applymovement LOCALID_AQUACORP_SHELLY, Present_AquaCorpHQ_Movement_ShellyWalkToClamperl
 	applymovement LOCALID_PLAYER, Present_AquaCorpHQ_Movement_LookerFollowToClamperl
 	waitmovement 0
+	delay 40
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	speak LOCALID_AQUACORP_SHELLY, DIR_SOUTH, Name_Shelly, Present_AquaCorpHQ_Text_ShellyThisClamperl
 	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceUp
 	speak LOCALID_AQUACORP_SARAH, DIR_SOUTH, Name_Sarah, Present_AquaCorpHQ_Text_SarahClamperlIsReady
 	speak LOCALID_AQUACORP_SHELLY, DIR_NORTH, Name_Shelly, Present_AquaCorpHQ_Text_ShellyLetLookerDecide
-	fadedefaultbgm
 	speak LOCALID_AQUACORP_SHELLY, DIR_SOUTH, Name_Shelly, Present_AquaCorpHQ_Text_ShellyWhichItemWouldYouWantToUse
 	multichoice 0, 6, MULTI_MATT_GIVEMON, TRUE
 	goto_if_eq VAR_RESULT, 0, Present_AquaCorpHQ_EventScript_ShellyGiveGorebyss
@@ -218,12 +264,45 @@ Present_AquaCorpHQ_EventScript_AquaGauntletMattDefeated::
 Present_AquaCorpHQ_EventScript_FinishAquaGauntlet::
 	fadescreenswapbuffers FADE_TO_BLACK
 	delay 20
+	fadeoutbgm 0
+	delay 20
 	removeobject LOCALID_GOREBYSS
 	removeobject LOCALID_HUNTAIL
+	clearflag FLAG_HIDE_SHELDON_KRABBY
+	addobject LOCALID_KRABBY
+	setobjectxy LOCALID_AQUACORP_SCIENTIST_WAILMER, 9, 11
+	setobjectxy LOCALID_AQUACORP_GRUNTM_WAILMER, 9, 9
+	setobjectxy LOCALID_AQUACORP_SHELDON, 14, 6
+	setobjectxy LOCALID_AQUACORP_MATT, 7, 3
+	setobjectxy LOCALID_AQUACORP_SHELLY, 11, 4
+	setobjectxy LOCALID_AQUACORP_SARAH, 11, 5
+	setobjectxy LOCALID_AQUACORP_GEOFF, 1, 6
+	setobjectxyperm LOCALID_AQUACORP_SCIENTIST_WAILMER, 9, 11
+	setobjectxyperm LOCALID_AQUACORP_GRUNTM_WAILMER, 9, 9
+	setobjectxyperm LOCALID_AQUACORP_SHELDON, 14, 6
+	setobjectxyperm LOCALID_AQUACORP_MATT, 7, 3
+	setobjectxyperm LOCALID_AQUACORP_SHELLY, 11, 4
+	setobjectxyperm LOCALID_AQUACORP_SARAH, 11, 5
+	setobjectxyperm LOCALID_AQUACORP_GEOFF, 1, 6
+	setobjectmovementtype LOCALID_AQUACORP_SCIENTIST_WAILMER, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectmovementtype LOCALID_AQUACORP_GRUNTM_WAILMER, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectmovementtype LOCALID_AQUACORP_SHELDON, MOVEMENT_TYPE_FACE_DOWN
+	setobjectmovementtype LOCALID_AQUACORP_MATT, MOVEMENT_TYPE_FACE_UP
+	setobjectmovementtype LOCALID_AQUACORP_SHELLY, MOVEMENT_TYPE_FACE_DOWN
+	setobjectmovementtype LOCALID_AQUACORP_SARAH, MOVEMENT_TYPE_FACE_UP
+	setobjectmovementtype LOCALID_AQUACORP_GEOFF, MOVEMENT_TYPE_FACE_UP
+	applymovement LOCALID_AQUACORP_SCIENTIST_WAILMER, Common_Movement_FaceRight
+	applymovement LOCALID_AQUACORP_GRUNTM_WAILMER, Common_Movement_FaceRight
+	applymovement LOCALID_AQUACORP_SHELDON, Common_Movement_FaceDown
+	applymovement LOCALID_AQUACORP_MATT, Common_Movement_FaceUp
+	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceDown
+	applymovement LOCALID_AQUACORP_SARAH, Common_Movement_FaceUp
+	applymovement LOCALID_AQUACORP_GEOFF, Common_Movement_FaceUp
 	setvar VAR_AQUACORP_STATE, 2
 	setflag FLAG_DEFEATED_MATT
 	fadescreenswapbuffers FADE_FROM_BLACK
 	completequest QUEST_INTERROGATE_MATT
+	playbgm MUS_AQUA_MAGMA_HIDEOUT, FALSE
 	releaseall
 	end
 
@@ -286,6 +365,11 @@ Present_AquaCorpHQ_Movement_TableGruntFWalkToSee:
 	face_up
 	step_end
 
+Present_AquaCorpHQ_Movement_ShellyApproachGauntlet:
+	walk_left
+	walk_left
+	step_end
+
 Present_AquaCorpHQ_Movement_SheldonRushLooker:
 	walk_fast_down
 	walk_fast_right
@@ -320,45 +404,58 @@ Present_AquaCorpHQ_SheldonPushed:
 	unlock_facing_direction
 	step_end
 
-Present_AquaCorpHQ_Movement_SarahMoveOutOfTheWay:
-	lock_facing_direction
+Present_AquaCorpHQ_Movement_SarahLeave:
 	walk_right
 	walk_right
-	unlock_facing_direction
+	walk_right
+	walk_right
+	walk_right
+	face_down
+	step_end
+
+Present_AquaCorpHQ_Movement_ShellyWalkToMatt:
+	walk_down
+	walk_left
+	walk_left
 	step_end
 
 Present_AquaCorpHQ_Movement_ShellyWalkToLooker:
-	walk_left
-	walk_left
-	walk_left
 	walk_down
-	walk_down
-	walk_left
+	face_left
 	step_end
 
 Present_AquaCorpHQ_Movement_ShellyWalkToWailmer:
+	walk_down
+	walk_down
+	walk_down
 	walk_right
-	walk_down
-	walk_down
-	walk_down
 	walk_right
 	step_end
 
 Present_AquaCorpHQ_Movement_LookerFollowToWailmer:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
 	walk_right
 	walk_right
-	walk_down
-	walk_down
-	walk_down
-	walk_down
 	walk_right
 	step_end
 	
+Present_AquaCorpHQ_Movement_SarahWalkToShelly:
+	walk_left
+	walk_left
+	walk_left
+	walk_down
+	walk_down
+	step_end
+
 Present_AquaCorpHQ_Movement_SarahRunToClamperl:
 	walk_fast_up
 	walk_fast_up
 	walk_fast_up
 	walk_fast_up
+	walk_fast_right
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right
@@ -378,7 +475,6 @@ Present_AquaCorpHQ_Movement_ShellyWalkToClamperl:
 	walk_right
 	walk_right
 	walk_right
-	walk_right
 	step_end
 
 Present_AquaCorpHQ_Movement_LookerFollowToClamperl:
@@ -387,17 +483,25 @@ Present_AquaCorpHQ_Movement_LookerFollowToClamperl:
 	walk_up
 	walk_up
 	walk_up
+	walk_up
 	walk_right
 	walk_right
+	walk_down
 	walk_right
 	step_end
 
 Present_AquaCorpHQ_Movement_SarahGiveDeepSea:	
 	walk_right
-	walk_right
 	face_down
 	step_end
 
+Present_AquaCorpHQ_Movement_MattApproachLooker:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+	
 Present_AquaCorpHQ_Movement_MonWalkToPlayer:
 	walk_down
 	walk_left
@@ -464,14 +568,14 @@ Present_AquaCorpHQ_Text_LookerWeHaveItOnGoodIntel:
 Present_AquaCorpHQ_Text_LookerWeHaveConfirmed:
 	.string "I'll let you know, in fact, we have\n"
 	.string "confirmed the storm was caused by\l"
-	.string "Tornadus and Thundurus rampaging in the\l"
-	.string "absense of Landorus!$"
+	.string "Tornadus and Thundurus rampaging in\l"
+	.string "the absense of Landorus!$"
 
 Present_AquaCorpHQ_Text_LookerWeHaveConfirmedAreBeing:
 	.string "I'll let you know, in fact, we have\n"
 	.string "confirmed the storms are being caused\l"
-	.string "by Tornadus and Thundurus rampaging in\l"
-	.string "the absense of Landorus!$"
+	.string "by Tornadus and Thundurus rampaging\l"
+	.string "in the absense of Landorus!$"
 
 Present_AquaCorpHQ_Text_LookerJustThreeMonthsAgo:
 	.string "Not even three months ago, your group\n"
@@ -524,26 +628,23 @@ Present_AquaCorpHQ_Text_GeoffIntro:
 	.string "to do something like this!$"
 
 Present_AquaCorpHQ_Text_GeoffDefeat:
-	.string "I don't know why, but that didn't\n"
-	.string "feel like I hoped it would…$"
+	.string "Huh? That didn't feel right…$"
 
 Present_AquaCorpHQ_Text_GeoffUnfulfilling:
 	.string "That was… Unfulfilling…\p"
 	.string "Have I grown soft?$"
 
 Present_AquaCorpHQ_Text_SarahIntro:
-	.string "Don't worry about it, Geoff.\n"
-	.string "We can talk after this fight.\p"
-	.string "Let's just get this over with…$"
+	.string "I don't wanna do this…\p"
+	.string "Let's just get it over with…$"
 
 Present_AquaCorpHQ_Text_SarahDefeat:
-	.string "Yeah… That felt weird.\n"
-	.string "That's to be expected, I guess.$"
-
-Present_AquaCorpHQ_Text_SarahCmonGuys:
-	.string "C'mon guys, do we really have\n"
+	.string "C'mon, do we really have\n"
 	.string "to do this?\p"
 	.string "I thought we changed…$"
+
+Present_AquaCorpHQ_Text_SarahCmonGuys:
+	.string "This isn't worth it…$"
 
 Present_AquaCorpHQ_Text_SheldonIntro:
 	.string "Please don't hurt my crabs sir…\p"
@@ -651,10 +752,10 @@ Present_AquaCorpHQ_Text_SarahShellyDots:
 Present_AquaCorpHQ_Text_SarahCanWeClamperl:
 	.string "I'm tired of waiting around…\p"
 	.string "If you're going to show the man\n"
-	.string "around our lab, could we at least\l"
-	.string "get on with our experiment on\p"
-	.string "Chowder? Poor thing's been waiting\n"
-	.string "ages for his big moment…$"
+	.string "around the lab, could we at least\l"
+	.string "get on with the test on Chowder?\p"
+	.string "Poor thing's been waiting ages for\n"
+	.string "his big moment…$"
 
 Present_AquaCorpHQ_Text_ShellyOfCourseWeCan:
 	.string "Great idea, Sarah.\n"
@@ -712,29 +813,23 @@ Present_AquaCorpHQ_Text_ShellySeeLookerNothingMalicious:
 	.string "See, Looker? Nothing malicious is\n"
 	.string "going on here any more.\p"
 	.string "We're caring for Pokémon who are\n"
-	.string "struggling out in the wild in one\l"
-	.string "way or another.\p"
+	.string "struggling out in the wild.\p"
 	.string "In return, they help us learn more\n"
 	.string "about the world around us.\p"
-	.string "Like Clampe-\p"
-	.string "Well, I guess he's not a Clamperl\n"
-	.string "any more, actually!\p"
-	.string "In the wild, he would normally\n"
-	.string "evolve holding both Deep Sea items.\p"
-	.string "It's dependent on which item it\n"
-	.string "nurses in its shell for longer.\p"
-	.string "The tooth gives us a Huntail, and\n"
-	.string "the scale a Gorebyss!\p"
+	.string "In nature, Clamperl normally evolve\n"
+	.string "by holding both Deep Sea items.\p"
+	.string "Which form it evolves into is dependent\n"
+	.string "on which item it nurses in its shell\l"
+	.string "the longest.\p"
 	.string "Sarah made the discovery a week\n"
-	.string "ago, and we've been alternating\l"
-	.string "its held item since then.$"
+	.string "ago, and we've been switching its\l"
+	.string "item every day since then until now.$"
 
 Present_AquaCorpHQ_Text_LookerISupposeAquaIsCleared:
 	.string "I see…\p"
 	.string "I suppose Team Aqua is off the hook\n"
 	.string "then.\p"
-	.string "I'll turn a blind eye to the assault\n"
-	.string "now and earlier today.\p"
+	.string "I'll turn a blind eye to the assaults.\p"
 	.string "Less paperwork that way…$"
 
 Present_AquaCorpHQ_Text_ShellyImGladToHear:
@@ -742,7 +837,9 @@ Present_AquaCorpHQ_Text_ShellyImGladToHear:
 	.string "I guess.$"
 
 Present_AquaCorpHQ_Text_MattImSorry:
-	.string "I'm sorry for before.\p"
+	.string "… … …\n"
+	.string "… … …\p"
+	.string "…I'm sorry for before.\p"
 	.string "Old habits die hard.$"
 
 Present_AquaCorpHQ_Text_LookerApologyAcceptedImSorry:
@@ -757,7 +854,7 @@ Present_AquaCorpHQ_Text_SarahGorebyssWantsToComeWithYou:
 	.string "It seems like he wants to try battles\n"
 	.string "in his new form.\p"
 	.string "Chowder doesn't feel as appropriate\n"
-	.string "a name any more thougn.\p"
+	.string "a name any more though.\p"
 	.string "How about…\p"
 	.string "Gorb?$"
 
