@@ -1,6 +1,7 @@
 Present_Gym_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Present_Gym_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Present_Gym_OnFrame
+	map_script MAP_SCRIPT_ON_RESUME, Present_Gym_OnResume
 	.byte 0
 
 Present_Gym_OnTransition:
@@ -8,12 +9,12 @@ Present_Gym_OnTransition:
 	end
 
 Present_Gym_EventScript_ResetTrainers::
-	clearflag FLAG_DEFEATED_GYM_TRAINER_1
-	clearflag FLAG_DEFEATED_GYM_TRAINER_2
-	clearflag FLAG_DEFEATED_GYM_TRAINER_3
-	clearflag FLAG_DEFEATED_GYM_TRAINER_4
-	clearflag FLAG_DEFEATED_GYM_TRAINER_5
-	clearflag FLAG_DEFEATED_GYM_TRAINER_6
+	cleartrainerflag TRAINER_LEAH
+	cleartrainerflag TRAINER_TASHA
+	cleartrainerflag TRAINER_BLAKE
+	cleartrainerflag TRAINER_SAMANTHA
+	cleartrainerflag TRAINER_CONNIE
+	cleartrainerflag TRAINER_SEBASTIAN
 	return
 
 Present_Gym_OnFrame:
@@ -101,6 +102,10 @@ Present_Gym_Movement_GymGuyWalksBackToStartingPosition:
 	face_down
 	step_end
 
+Present_Gym_OnResume:
+	special HealPlayerParty
+	end
+
 Present_Gym_EventScript_Phoebe::
 	lock
 	faceplayer
@@ -140,7 +145,7 @@ Present_Gym_EventScript_PhoebeDefeated::
 	call_if_set FLAG_DEFEATED_MATT, Present_Gym_EventScript_PhoebeIDontKnow
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Gym_Text_LookerHmm
 	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeAnyTime
-	multichoicedefault 0, 6, MULTI_PHOEBE_GIVEMON, 1, TRUE
+	multichoice 0, 6, MULTI_PHOEBE_GIVEMON, TRUE
 	goto_if_eq VAR_RESULT, 0, Present_Gym_EventScript_PhoebeGiveDusknoir
 	goto_if_eq VAR_RESULT, 1, Present_Gym_EventScript_PhoebeGiveSableye
 	end
@@ -148,12 +153,12 @@ Present_Gym_EventScript_PhoebeDefeated::
 Present_Gym_EventScript_PhoebeDefeatedSetFlags::
 	special HealPlayerParty
 	setflag FLAG_DEFEATED_ELITE_4_PHOEBE
-	setflag FLAG_DEFEATED_GYM_TRAINER_1
-	setflag FLAG_DEFEATED_GYM_TRAINER_2
-	setflag FLAG_DEFEATED_GYM_TRAINER_3
-	setflag FLAG_DEFEATED_GYM_TRAINER_4
-	setflag FLAG_DEFEATED_GYM_TRAINER_5
-	setflag FLAG_DEFEATED_GYM_TRAINER_6
+	settrainerflag TRAINER_LEAH
+	settrainerflag TRAINER_TASHA
+	settrainerflag TRAINER_BLAKE
+	settrainerflag TRAINER_SAMANTHA
+	settrainerflag TRAINER_CONNIE
+	settrainerflag TRAINER_SEBASTIAN
 	completequest QUEST_DEFEAT_PHOEBE
 	release
 	end
@@ -187,21 +192,8 @@ Present_Gym_EventScript_GymGuyBeatPhoebe::
 
 @ Expert, TRAINER_LEAH
 Present_Gym_EventScript_GymTrainer1::
-	lockall
-	goto_if_set FLAG_DEFEATED_GYM_TRAINER_1, Present_Gym_EventScript_GymTrainer1PostBattle
-	speakername Name_Gym_Trainer_1
-	msgbox Present_Gym_Text_GymTrainer1Intro, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_LEAH, Present_Gym_Text_GymTrainer1Defeat
-	setflag FLAG_DEFEATED_GYM_TRAINER_1
-	releaseall
-	end
-
-Present_Gym_EventScript_GymTrainer1PostBattle::
-	faceplayer
-	speakername Name_Gym_Trainer_1
-	msgbox Present_Gym_Text_GymTrainer1PostBattle, MSGBOX_DEFAULT
-	closemessage
-	releaseall
+	trainerbattle_single TRAINER_LEAH, Present_Gym_Text_GymTrainer1Intro, Present_Gym_Text_GymTrainer1Defeat
+	msgbox Present_Gym_Text_GymTrainer1PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 @ Battle Girl, TRAINER_DAISY
@@ -225,79 +217,27 @@ Present_Gym_EventScript_GymTrainer2PostBattle::
 
 @ Ranger M, TRAINER_SEBASTIAN
 Present_Gym_EventScript_GymTrainer3::
-	lockall
-	goto_if_set FLAG_DEFEATED_GYM_TRAINER_3, Present_Gym_EventScript_GymTrainer3PostBattle
-	speakername Name_Gym_Trainer_3
-	msgbox Present_Gym_Text_GymTrainer3Intro, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_SEBASTIAN, Present_Gym_Text_GymTrainer3Defeat
-	setflag FLAG_DEFEATED_GYM_TRAINER_3
-	releaseall
-	end
-
-Present_Gym_EventScript_GymTrainer3PostBattle::
-	faceplayer
-	speakername Name_Gym_Trainer_3
-	msgbox Present_Gym_Text_GymTrainer3PostBattle, MSGBOX_DEFAULT
-	closemessage
-	releaseall
+	trainerbattle_double TRAINER_SEBASTIAN, Present_Gym_Text_GymTrainer3Intro, Present_Gym_Text_GymTrainer3Defeat, Common_Text_NotEnoughPokemon
+	msgbox Present_Gym_Text_GymTrainer3PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 @ Ranger F, TRAINER_SAMANTHA
 Present_Gym_EventScript_GymTrainer4::
-	lockall
-	goto_if_set FLAG_DEFEATED_GYM_TRAINER_4, Present_Gym_EventScript_GymTrainer4PostBattle
-	speakername Name_Gym_Trainer_4
-	msgbox Present_Gym_Text_GymTrainer4Intro, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_SAMANTHA, Present_Gym_Text_GymTrainer4Defeat
-	setflag FLAG_DEFEATED_GYM_TRAINER_4
-	releaseall
-	end
-
-Present_Gym_EventScript_GymTrainer4PostBattle::
-	faceplayer
-	speakername Name_Gym_Trainer_4
-	msgbox Present_Gym_Text_GymTrainer4PostBattle, MSGBOX_DEFAULT
-	closemessage
-	releaseall
+	trainerbattle_double TRAINER_SAMANTHA, Present_Gym_Text_GymTrainer4Intro, Present_Gym_Text_GymTrainer4Defeat, Common_Text_NotEnoughPokemon
+	msgbox Present_Gym_Text_GymTrainer4PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 @ Beauty, TRAINER_CONNIE
 Present_Gym_EventScript_GymTrainer5::
-	lockall
-	goto_if_set FLAG_DEFEATED_GYM_TRAINER_5, Present_Gym_EventScript_GymTrainer5PostBattle
-	speakername Name_Gym_Trainer_5
-	msgbox Present_Gym_Text_GymTrainer5Intro, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_CONNIE, Present_Gym_Text_GymTrainer5Defeat
-	setflag FLAG_DEFEATED_GYM_TRAINER_5
-	releaseall
-	end
-
-Present_Gym_EventScript_GymTrainer5PostBattle::
-	faceplayer
-	speakername Name_Gym_Trainer_5
-	msgbox Present_Gym_Text_GymTrainer5PostBattle, MSGBOX_DEFAULT
-	closemessage
-	releaseall
+	trainerbattle_double TRAINER_CONNIE, Present_Gym_Text_GymTrainer5Intro, Present_Gym_Text_GymTrainer5Defeat, Common_Text_NotEnoughPokemon
+	msgbox Present_Gym_Text_GymTrainer5PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 @ Hex Maniac Bottom, TRAINER_TASHA
 Present_Gym_EventScript_GymTrainer6::
-	lockall
-	goto_if_set FLAG_DEFEATED_GYM_TRAINER_6, Present_Gym_EventScript_GymTrainer6PostBattle
-	speakername Name_Gym_Trainer_6
-	msgbox Present_Gym_Text_GymTrainer6Intro, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_TASHA, Present_Gym_Text_GymTrainer6Defeat
-	setflag FLAG_DEFEATED_GYM_TRAINER_6
-	releaseall
-	end
-
-Present_Gym_EventScript_GymTrainer6PostBattle::
-	faceplayer
-	speakername Name_Gym_Trainer_6
-	msgbox Present_Gym_Text_GymTrainer6PostBattle, MSGBOX_DEFAULT
-	closemessage
-	releaseall
+	trainerbattle_double TRAINER_TASHA, Present_Gym_Text_GymTrainer6Intro, Present_Gym_Text_GymTrainer6Defeat, Common_Text_NotEnoughPokemon
+	msgbox Present_Gym_Text_GymTrainer6PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Present_Gym_EventScript_GymStatue::
@@ -551,7 +491,7 @@ Present_Gym_Text_GymTrainer3Defeat:
 Present_Gym_Text_GymTrainer3PostBattle:
 	.string "I don't get paid enough to work as a\n"
 	.string "Ranger, so I had to take up a side\l"
-	.string "hustle at the gym to make ends meet…"
+	.string "hustle at the gym to make ends meet…$"
 
 Present_Gym_Text_GymTrainer4Intro:
 	.string "Porta Bella City is considered the gold\n"

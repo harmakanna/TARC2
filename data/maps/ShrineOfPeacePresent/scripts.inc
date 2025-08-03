@@ -1,6 +1,7 @@
 ShrineOfPeacePresent_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, ShrineOfPeacePresent_OnTransition
     map_script MAP_SCRIPT_ON_FRAME_TABLE, ShrineOfPeacePresent_OnFrame
+	map_script MAP_SCRIPT_ON_RESUME, ShrineOfPeacePresent_OnResume
 	.byte 0
 
 ShrineOfPeacePresent_OnTransition:
@@ -20,8 +21,10 @@ ShrineOfPeacePresent_OnFrame:
 
 ShrineOfPeacePresent_EventScript_MainGameStart::
 	lockall
-	msgbox ShrineOfPeacePresent_Text_MainGameStart, MSGBOX_DEFAULT
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, ShrineOfPeacePresent_Text_MainGameStart
 	closemessage
+	delay 40
+	startquest QUEST_INTERROGATE_MATT
 	setvar VAR_CUTSCENE_STATE, 10
 	releaseall
 	end
@@ -338,6 +341,11 @@ ShrineOfPeacePresent_Movement_PanCameraToLooker:
 	walk_down
 	step_end
 
+
+ShrineOfPeacePresent_OnResume:
+	special HealPlayerParty
+	end
+	
 ShrineOfPeacePresent_EventScript_Celebi::
 	lockall
 	faceplayer
@@ -356,7 +364,13 @@ ShrineOfPeacePresent_EventScript_CelebiWarp::
 	end
 
 ShrineOfPeacePresent_Text_MainGameStart:
-	.string "… … …$"
+	.string "Alright, first things first.\p"
+	.string "I am highly suspicious of Team Aqua\n"
+	.string "following the new info.\p"
+	.string "However, if they don't cooperate, they\n"
+	.string "will surely be tough to take down alone.\p"
+	.string "I wonder if I could do some favors and\n"
+	.string "get some help in my investigation…$"
 
 ShrineOfPeacePresent_Text_Celebi:
 	.string "Biii?$"

@@ -1030,6 +1030,14 @@ void TrainerBattleLoadArgsSecondTrainer(const u8 *data)
 
 void SetMapVarsToTrainerA(void)
 {
+    u16 trainerId;
+    enum DifficultyLevel difficulty = GetCurrentDifficultyLevel();
+
+    if (gApproachingTrainerId == 0)
+        trainerId = TRAINER_BATTLE_PARAM.opponentA;
+    else
+        trainerId = TRAINER_BATTLE_PARAM.opponentB;
+
     if (TRAINER_BATTLE_PARAM.objEventLocalIdA != 0)
     {
         gSpecialVar_LastTalked = TRAINER_BATTLE_PARAM.objEventLocalIdA;
@@ -1037,12 +1045,20 @@ void SetMapVarsToTrainerA(void)
     }
 
     if (TRAINER_BATTLE_PARAM.opponentA != 0) {
-        gSpeakerName = gTrainers[TRAINER_BATTLE_PARAM.opponentA]->trainerName;
+        gSpeakerName = gTrainers[difficulty][trainerId].trainerName;
     }
 }
 
 void SetMapVarsToTrainerB(void)
 {
+    u16 trainerId;
+    enum DifficultyLevel difficulty = GetCurrentDifficultyLevel();
+
+    if (gApproachingTrainerId == 0)
+        trainerId = TRAINER_BATTLE_PARAM.opponentA;
+    else
+        trainerId = TRAINER_BATTLE_PARAM.opponentB;
+
     if (TRAINER_BATTLE_PARAM.objEventLocalIdB != LOCALID_NONE)
     {
         gSpecialVar_LastTalked = TRAINER_BATTLE_PARAM.objEventLocalIdB;
@@ -1050,7 +1066,7 @@ void SetMapVarsToTrainerB(void)
     }
     
     if (TRAINER_BATTLE_PARAM.opponentB != 0) {
-        gSpeakerName = gTrainers[TRAINER_BATTLE_PARAM.opponentB]->trainerName;
+        gSpeakerName = gTrainers[difficulty][trainerId].trainerName;
     }
 }
 
@@ -1521,13 +1537,21 @@ static const u8 *ReturnEmptyStringIfNull(const u8 *string)
 
 static const u8 *GetIntroSpeechOfApproachingTrainer(void)
 {
+    u16 trainerId;
+    enum DifficultyLevel difficulty = GetCurrentDifficultyLevel();
+
+    if (gApproachingTrainerId == 0)
+        trainerId = TRAINER_BATTLE_PARAM.opponentA;
+    else
+        trainerId = TRAINER_BATTLE_PARAM.opponentB;
+
     if (gApproachingTrainerId == 0) {
-        gSpeakerName = gTrainers[TRAINER_BATTLE_PARAM.opponentA]->trainerName;
+        gSpeakerName = gTrainers[difficulty][trainerId].trainerName;
         return ReturnEmptyStringIfNull(TRAINER_BATTLE_PARAM.introTextA);
     }
 
     else {
-        gSpeakerName = gTrainers[TRAINER_BATTLE_PARAM.opponentB]->trainerName;
+        gSpeakerName = gTrainers[difficulty][trainerId].trainerName;
         return ReturnEmptyStringIfNull(TRAINER_BATTLE_PARAM.introTextB);
     }
 }
