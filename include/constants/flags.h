@@ -81,14 +81,14 @@
 #define FLAG_HIDE_CITY_THUNDURUS               0x43 // Unused Flag
 #define FLAG_HIDE_CITY_TORNADUS                0x44 // Unused Flag
 #define FLAG_HIDE_SHELDON_KRABBY               0x45 // Unused Flag
-#define FLAG_COMPLETED_AQUA                    0x46 // Unused Flag
-#define FLAG_COMPLETED_GENIES                  0x47 // Unused Flag
-#define FLAG_COMPLETED_GYM                     0x48 // Unused Flag
-#define FLAG_COMPLETED_ESTELLA                 0x49 // Unused Flag
+#define FLAG_PLAY_LOOKER_AQUA_ON_TRANSITION    0x46 // Unused Flag
+#define FLAG_PLAY_LOOKER_GYM_ON_TRANSITION     0x47 // Unused Flag
+#define FLAG_PLAY_LOOKER_RANGER_ON_TRANSITION  0x48 // Unused Flag
+#define FLAG_PLAY_LOOKER_ESTELLA_ON_TRANSITION 0x49 // Unused Flag
 #define FLAG_DEFEATED_CULPRIT                  0x4A // Unused Flag
 #define FLAG_DEFEATED_BLUE                     0x4B // Unused Flag
 #define FLAG_DEFEATED_MAY                      0x4C // Unused Flag
-#define FLAG_UNUSED_0x04D    0x4D // Unused Flag
+#define FLAG_PLAY_LOOKER_SCENE_ON_TRANSITION   0x4D // Unused Flag
 #define FLAG_UNUSED_0x04E    0x4E // Unused Flag
 #define FLAG_UNUSED_0x04F    0x4F // Unused Flag
 

@@ -135,6 +135,11 @@ Common_Movement_FaceDownQuestionMark:
 	emote_question_mark
 	step_end
 
+Common_Movement_SetVisibleFaceUp:
+	face_up
+	set_visible
+	step_end
+
 Common_Movement_Delay16:
 	delay_16
 	step_end

@@ -4720,6 +4720,16 @@
       "secondary_tileset": "gTileset_CableClub",
       "border_filepath": "data/layouts/Present_Gym/border.bin",
       "blockdata_filepath": "data/layouts/Present_Gym/map.bin"
+    },
+    {
+      "id": "LAYOUT_CUTSCENE_OFFICE",
+      "name": "CutsceneOffice_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_LittleOffice",
+      "border_filepath": "data/layouts/CutsceneOffice/border.bin",
+      "blockdata_filepath": "data/layouts/CutsceneOffice/map.bin"
     }
   ]
 }

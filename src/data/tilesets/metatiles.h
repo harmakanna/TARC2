@@ -223,3 +223,6 @@ const u16 gMetatileAttributes_PokeCenterAlt[] = INCBIN_U16("data/tilesets/second
 
 const u16 gMetatiles_PresentTown[] = INCBIN_U16("data/tilesets/secondary/present_town/metatiles.bin");
 const u16 gMetatileAttributes_PresentTown[] = INCBIN_U16("data/tilesets/secondary/present_town/metatile_attributes.bin");
+
+const u16 gMetatiles_LittleOffice[] = INCBIN_U16("data/tilesets/secondary/little_office/metatiles.bin");
+const u16 gMetatileAttributes_LittleOffice[] = INCBIN_U16("data/tilesets/secondary/little_office/metatile_attributes.bin");

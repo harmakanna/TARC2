@@ -1,9 +1,62 @@
 PresentTown_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, PresentTown_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, PresentTown_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, PresentTown_OnFrame
 	map_script MAP_SCRIPT_ON_RESUME, PresentTown_OnResume
 	.byte 0
 
+PresentTown_OnFrame:
+	map_script_2 VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1, PresentTown_EventScript_LookerThinkingScenes
+	.2byte 0
+
+PresentTown_EventScript_LookerThinkingScenes::
+	call_if_set FLAG_PLAY_LOOKER_AQUA_ON_TRANSITION, PresentTown_EventScript_LookerThinkingAqua
+	call_if_set FLAG_PLAY_LOOKER_AQUA_ON_TRANSITION, PresentTown_EventScript_LookerThinkingGym
+	call_if_set FLAG_PLAY_LOOKER_AQUA_ON_TRANSITION, PresentTown_EventScript_LookerThinkingEstella
+	call_if_eq VAR_MAIN_QUEST_STATE, 4, PresentTown_EventScript_LookerThinkingIGotIt
+	call_if_eq VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1, PresentTown_EventScript_EndLookerThinking
+	end
+
+PresentTown_EventScript_LookerThinkingAqua::
+	lockall
+	playbgm MUS_PL_LOOKER, FALSE
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerThinkingAqua
+	return
+
+PresentTown_EventScript_LookerThinkingGym::
+	lockall
+	playbgm MUS_PL_LOOKER, FALSE
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerThinkingGym
+	return
+
+PresentTown_EventScript_LookerThinkingEstella::
+	lockall
+	playbgm MUS_PL_LOOKER, FALSE
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerThinkingEstella
+	return
+
+PresentTown_EventScript_LookerThinkingIGotIt::
+	closemessage
+	playse SE_PIN
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	delay 48
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerIGotIt
+	return
+
+PresentTown_EventScript_EndLookerThinking::
+	closemessage
+	fadeoutbgm 0
+	playbgm MUS_DP_SUNYSHORE_DAY, FALSE
+	clearflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
+	clearflag FLAG_PLAY_LOOKER_AQUA_ON_TRANSITION
+	clearflag FLAG_PLAY_LOOKER_GYM_ON_TRANSITION
+	clearflag FLAG_PLAY_LOOKER_ESTELLA_ON_TRANSITION
+	clearflag FLAG_PLAY_LOOKER_RANGER_ON_TRANSITION
+	addvar VAR_MAIN_QUEST_STATE, 1
+	setvar VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 0
+	releaseall
+	end
+	
 @ Comment out FLAG_SYS_MAIN_GAME_START_SCRIPT_DEBUG line to test intro
 PresentTown_OnLoad:
 	call_if_eq VAR_CUTSCENE_STATE, 2, PresentTown_EventScript_ChangeAnabelFollowerText
@@ -171,6 +224,7 @@ PresentTown_EventScript_StartStorm::
 	hideobjectat LOCALID_PRESENTTOWN_ANABEL, MAP_PRESENT_TOWN
 	hideobjectat LOCALID_PLAYER, 0
 	setflag FLAG_SYS_WEATHER_CTRL
+	setflag FLAG_SYS_SPAWN_INVISIBLE
 	setflag FLAG_LOCK_CITY_DOORS
 	setflag FLAG_HIDE_OUTSIDE_NPCS
 	setflag FLAG_HIDE_AQUA_GRUNT_OUTSIDE
@@ -812,3 +866,39 @@ PresentTown_Text_AquaMemberFNowHesMad:
 	.string "Now you've done it!\p"
 	.string "It'll take hours to get him\n"
 	.string "to calm down…$"
+
+PresentTown_Text_LookerThinkingGym:
+	.string "Hmm…\p"
+	.string "So there are some pretty strong\n"
+	.string "gym challengers running around\l"
+	.string "the city right now…\p"
+	.string "Including one strong enough to\n"
+	.string "beat a former Elite Four…\p"
+	.string "Hmm…$"
+
+PresentTown_Text_LookerThinkingAqua:
+	.string "Hmm…\p"
+	.string "So Team Aqua did not cause\n"
+	.string "Landorus to disappear…\p"
+	.string "They seem to be a lot less\n"
+	.string "reckless now…\p"
+	.string "Hmm…$"
+
+PresentTown_Text_LookerThinkingEstella:
+	.string "Hmm…\p"
+	.string "So the story of Landorus is much\n"
+	.string "less well known in the present, to\l"
+	.string "the point only locals know it…\p"
+	.string "And outsiders are less respectful\n"
+	.string "of the power of the legends…\p"
+	.string "Hmm…$"
+
+PresentTown_Text_LookerIGotIt:
+	.string "I got it!\p"
+	.string "One of the gym challengers, a\n"
+	.string "child, MUST have captured Landorus\l"
+	.string "at the shrine, not understanding\l"
+	.string "the implications of their actions!\p"
+	.string "I need to find which challenger\n"
+	.string "caught the legendary and close this\l"
+	.string "case shut!$"
