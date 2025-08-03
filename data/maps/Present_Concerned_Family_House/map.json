@@ -40,6 +40,16 @@
       "dest_warp_id": "Family_House_Stairs_2F"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_PLAY_LOOKER_SCENE_ON_TRANSITION",
+      "var_value": "1",
+      "script": "Present_ConcernedFamilyHouse_EventScript_LookerINeedToThink"
+    }
+  ],
   "bg_events": []
 }

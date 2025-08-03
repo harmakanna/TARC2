@@ -61,6 +61,7 @@ ShrineOfProsperityPast_EventScript_LandorusMyth::
 	clearflag FLAG_HIDE_SHRINE_PEACE_CELEBI
 	clearflag FLAG_LOCK_CITY_DOORS
 	setflag FLAG_HIDE_PAST_TOWN_HALL_ESTELLA
+	setflag FLAG_HIDE_CITYHALL_1F_CONCERNED_DAD
 	setflag FLAG_SYS_B_DASH
 	setflag FLAG_SYS_MAIN_GAME_START
 	setvar VAR_CUTSCENE_STATE, 9

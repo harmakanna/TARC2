@@ -160,6 +160,8 @@ Present_Gym_EventScript_PhoebeDefeatedSetFlags::
 	settrainerflag TRAINER_CONNIE
 	settrainerflag TRAINER_SEBASTIAN
 	completequest QUEST_DEFEAT_PHOEBE
+	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
+	setflag FLAG_PLAY_LOOKER_GYM_ON_TRANSITION
 	release
 	end
 

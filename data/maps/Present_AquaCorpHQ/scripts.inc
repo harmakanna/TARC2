@@ -302,7 +302,9 @@ Present_AquaCorpHQ_EventScript_FinishAquaGauntlet::
 	setflag FLAG_DEFEATED_MATT
 	fadescreenswapbuffers FADE_FROM_BLACK
 	completequest QUEST_INTERROGATE_MATT
-	playbgm MUS_AQUA_MAGMA_HIDEOUT, FALSE
+	playbgm MUS_MT_CHIMNEY, FALSE
+	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
+	setflag FLAG_PLAY_LOOKER_AQUA_ON_TRANSITION
 	releaseall
 	end
 
