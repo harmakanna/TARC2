@@ -46,6 +46,7 @@ Present_CityHall_2F_Ranger_EventScript_HeadRangerRewardQuest::
 	applymovement LOCALID_CITYHALL_RANGER, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	completequest QUEST_INVESTIGATE_PROSPERITY
+	setvar VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1
 	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	setflag FLAG_PLAY_LOOKER_RANGER_ON_TRANSITION
 	releaseall

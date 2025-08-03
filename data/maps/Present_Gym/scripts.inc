@@ -152,6 +152,7 @@ Present_Gym_EventScript_PhoebeDefeated::
 
 Present_Gym_EventScript_PhoebeDefeatedSetFlags::
 	special HealPlayerParty
+	setvar VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1
 	setflag FLAG_DEFEATED_ELITE_4_PHOEBE
 	settrainerflag TRAINER_LEAH
 	settrainerflag TRAINER_TASHA
