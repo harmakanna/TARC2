@@ -170,6 +170,19 @@ PastTown_Movement_LookerLookAround:
 	delay_16
 	step_end
 
+PastTown_EventScript_Past_Fisherman::
+	lockall
+	goto_if_quest_inactive QUEST_HELP_FISHERMAN, PastTown_EventScript_Past_Fisherman_GiveQuest
+	end
+
+PastTown_EventScript_Past_Fisherman_GiveQuest::
+	speak LOCALID_FISHERMAN, VAR_FACING, Name_Fisherman, PastTown_Text_FishermanFrustrated
+	faceplayer
+	call Script_GetNPCFacingDirection
+	speak LOCALID_FISHERMAN, VAR_0x8005, Name_Fisherman, PastTown_Text_FishermanHelp
+	releaseall
+	end
+
 PastTown_Text_LassHeyNoFair:
 	.string "What sorcery was that!?\p"
 	.string "I have never seen a battler with\n"
@@ -232,3 +245,13 @@ PastTown_Text_LookerYowch:
 PastTown_Text_LassLoss:
 	.string "Impossible!\n"
 	.string "It was like you knew my every move!$"
+
+PastTown_Text_FishermanFrustrated:
+	.string "UGH!!\p"
+	.string "I can't find any fish!\p"
+	.string "There must be somewhere in town\n"
+	.string "where I can catch some fish…$"
+
+PastTown_Text_FishermanHelp:
+	.string "I wish someone could tell me\n"
+	.string "where the best place to fish is!$"

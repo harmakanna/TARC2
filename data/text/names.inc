@@ -66,3 +66,6 @@ Name_Lass:
 
 Name_Gym_Trainer_2:
     .string "Daisy$"
+
+Name_Fisherman:
+    .string "Fisherman$"

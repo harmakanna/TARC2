@@ -94,9 +94,9 @@ Geodude
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_AQUA_HIDEOUT_1 ===
-Name: Geoff
-Class: Team Aqua
+=== TRAINER_PRESENT_FISHERMAN ===
+Name: Tee
+Class: Fisherman
 Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua

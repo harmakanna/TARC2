@@ -148,7 +148,7 @@ Present_AquaCorpHQ_EventScript_StartAquaGauntletRematch::
 	goto Present_AquaCorpHQ_EventScript_AquaGauntlet
 	end
 
-@ First grunt: TRAINER_GRUNT_AQUA_HIDEOUT_1
+@ First grunt: TRAINER_PRESENT_FISHERMAN
 Present_AquaCorpHQ_EventScript_AquaGauntlet::
 	applymovement LOCALID_AQUACORP_SHELDON, Present_AquaCorpHQ_Movement_SheldonRushLooker
 	applymovement LOCALID_AQUACORP_GEOFF, Present_AquaCorpHQ_Movement_GeoffRushLooker
@@ -158,7 +158,7 @@ Present_AquaCorpHQ_EventScript_AquaGauntlet::
 	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 	speak LOCALID_AQUACORP_GEOFF, DIR_EAST, Name_Unknown, Present_AquaCorpHQ_Text_GeoffIntro
 	savebgm MUS_DUMMY
-	trainerbattle_no_intro TRAINER_GRUNT_AQUA_HIDEOUT_1, Present_AquaCorpHQ_Text_GeoffDefeat
+	trainerbattle_no_intro TRAINER_PRESENT_FISHERMAN, Present_AquaCorpHQ_Text_GeoffDefeat
 	goto Present_AquaCorpHQ_EventScript_AquaGauntletSecondTrainer
 	end
 
