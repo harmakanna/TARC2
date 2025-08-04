@@ -4730,6 +4730,16 @@
       "secondary_tileset": "gTileset_LittleOffice",
       "border_filepath": "data/layouts/CutsceneOffice/border.bin",
       "blockdata_filepath": "data/layouts/CutsceneOffice/map.bin"
+    },
+    {
+      "id": "LAYOUT_CUTSCENE_WATER",
+      "name": "CutsceneWater_Layout",
+      "width": 60,
+      "height": 11,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_PresentTown",
+      "border_filepath": "data/layouts/CutsceneWater/border.bin",
+      "blockdata_filepath": "data/layouts/CutsceneWater/map.bin"
     }
   ]
 }

@@ -44,7 +44,8 @@
     "ShrineOfPeacePresent",
     "ShrineOfProsperityPresent",
     "CutsceneForest",
-    "CutsceneOffice"
+    "CutsceneOffice",
+    "CutsceneWater"
   ],
   "gMapGroup_LookerPast": [
     "PastTown",
