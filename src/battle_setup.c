@@ -474,6 +474,7 @@ void BattleSetup_StartLatiBattle(void)
 
 void BattleSetup_StartLegendaryBattle(void)
 {
+    u16 species;
     LockPlayerFieldControls();
     gMain.savedCallback = CB2_EndScriptedWildBattle;
     gBattleTypeFlags = BATTLE_TYPE_LEGENDARY;
@@ -503,8 +504,34 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_HO_OH:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
         break;
+    case SPECIES_THUNDURUS:
+    case SPECIES_TORNADUS:
+    case SPECIES_ENAMORUS:
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_BW_VS_LEGENDARY);
+        break;
     case SPECIES_MEW:
         CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_MEW);
+        break;
+    }
+
+    IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
+    IncrementGameStat(GAME_STAT_WILD_BATTLES);
+    IncrementDailyWildBattles();
+    TryUpdateGymLeaderRematchFromWild();
+}
+
+void BattleSetup_StartLegendaryBattleDouble(void)
+{
+    LockPlayerFieldControls();
+    gMain.savedCallback = CB2_EndScriptedWildBattle;
+    gBattleTypeFlags = BATTLE_TYPE_LEGENDARY_DOUBLE | BATTLE_TYPE_DOUBLE;
+
+    switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
+    {
+    default:
+    case SPECIES_THUNDURUS:
+    case SPECIES_TORNADUS:
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_BW_VS_LEGENDARY);
         break;
     }
 
@@ -1005,19 +1032,43 @@ void TrainerBattleLoadArgsSecondTrainer(const u8 *data)
 
 void SetMapVarsToTrainerA(void)
 {
+    u16 trainerId;
+    enum DifficultyLevel difficulty = GetCurrentDifficultyLevel();
+
+    if (gApproachingTrainerId == 0)
+        trainerId = TRAINER_BATTLE_PARAM.opponentA;
+    else
+        trainerId = TRAINER_BATTLE_PARAM.opponentB;
+
     if (TRAINER_BATTLE_PARAM.objEventLocalIdA != 0)
     {
         gSpecialVar_LastTalked = TRAINER_BATTLE_PARAM.objEventLocalIdA;
         gSelectedObjectEvent = GetObjectEventIdByLocalIdAndMap(TRAINER_BATTLE_PARAM.objEventLocalIdA, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
     }
+
+    if (TRAINER_BATTLE_PARAM.opponentA != 0) {
+        gSpeakerName = gTrainers[difficulty][trainerId].trainerName;
+    }
 }
 
 void SetMapVarsToTrainerB(void)
 {
+    u16 trainerId;
+    enum DifficultyLevel difficulty = GetCurrentDifficultyLevel();
+
+    if (gApproachingTrainerId == 0)
+        trainerId = TRAINER_BATTLE_PARAM.opponentA;
+    else
+        trainerId = TRAINER_BATTLE_PARAM.opponentB;
+
     if (TRAINER_BATTLE_PARAM.objEventLocalIdB != LOCALID_NONE)
     {
         gSpecialVar_LastTalked = TRAINER_BATTLE_PARAM.objEventLocalIdB;
         gSelectedObjectEvent = GetObjectEventIdByLocalIdAndMap(TRAINER_BATTLE_PARAM.objEventLocalIdB, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
+    }
+    
+    if (TRAINER_BATTLE_PARAM.opponentB != 0) {
+        gSpeakerName = gTrainers[difficulty][trainerId].trainerName;
     }
 }
 
@@ -1488,10 +1539,23 @@ static const u8 *ReturnEmptyStringIfNull(const u8 *string)
 
 static const u8 *GetIntroSpeechOfApproachingTrainer(void)
 {
+    u16 trainerId;
+    enum DifficultyLevel difficulty = GetCurrentDifficultyLevel();
+
     if (gApproachingTrainerId == 0)
-        return ReturnEmptyStringIfNull(TRAINER_BATTLE_PARAM.introTextA);
+        trainerId = TRAINER_BATTLE_PARAM.opponentA;
     else
+        trainerId = TRAINER_BATTLE_PARAM.opponentB;
+
+    if (gApproachingTrainerId == 0) {
+        gSpeakerName = gTrainers[difficulty][trainerId].trainerName;
+        return ReturnEmptyStringIfNull(TRAINER_BATTLE_PARAM.introTextA);
+    }
+
+    else {
+        gSpeakerName = gTrainers[difficulty][trainerId].trainerName;
         return ReturnEmptyStringIfNull(TRAINER_BATTLE_PARAM.introTextB);
+    }
 }
 
 const u8 *GetTrainerALoseText(void)

@@ -110,7 +110,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PresentTown_EventScript_PeaceRanger",
-      "flag": "FLAG_HIDE_RANGERS"
+      "flag": "FLAG_HIDE_SHRINE_PEACE_RANGER"
     },
     {
       "local_id": "LOCALID_PRESENT_PROSPERITY_RANGER",
@@ -124,7 +124,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PresentTown_EventScript_ProsperityRanger",
-      "flag": "FLAG_HIDE_RANGERS"
+      "flag": "FLAG_HIDE_SHRINE_PROSPERITY_RANGER"
     }
   ],
   "warp_events": [
@@ -348,7 +348,7 @@
       "x": 62,
       "y": 8,
       "elevation": 0,
-      "var": "VAR_PORTO_BELLA_CITY_STATE",
+      "var": "VAR_CUTSCENE_STATE",
       "var_value": "2",
       "script": "PresentTown_EventScript_CatchProsperityRangerAttention"
     },
@@ -357,7 +357,7 @@
       "x": 61,
       "y": 8,
       "elevation": 0,
-      "var": "VAR_PORTO_BELLA_CITY_STATE",
+      "var": "VAR_CUTSCENE_STATE",
       "var_value": "2",
       "script": "PresentTown_EventScript_CatchProsperityRangerAttention"
     },
@@ -366,7 +366,7 @@
       "x": 60,
       "y": 8,
       "elevation": 0,
-      "var": "VAR_PORTO_BELLA_CITY_STATE",
+      "var": "VAR_CUTSCENE_STATE",
       "var_value": "2",
       "script": "PresentTown_EventScript_CatchProsperityRangerAttention"
     },
@@ -477,6 +477,33 @@
       "var": "VAR_PORTO_BELLA_CITY_STATE",
       "var_value": "1",
       "script": "PresentTown_EventScript_NoBusinessInTheForest2"
+    },
+    {
+      "type": "trigger",
+      "x": 62,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_QUEUE_GENIE_FIGHT",
+      "var_value": "1",
+      "script": "PresentTown_EventScript_CatchProsperityRangerAttention2"
+    },
+    {
+      "type": "trigger",
+      "x": 61,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_QUEUE_GENIE_FIGHT",
+      "var_value": "1",
+      "script": "PresentTown_EventScript_CatchProsperityRangerAttention2"
+    },
+    {
+      "type": "trigger",
+      "x": 60,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_QUEUE_GENIE_FIGHT",
+      "var_value": "1",
+      "script": "PresentTown_EventScript_CatchProsperityRangerAttention2"
     }
   ],
   "bg_events": [

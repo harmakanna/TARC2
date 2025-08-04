@@ -266,11 +266,11 @@
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
 #define VAR_PORTO_BELLA_CITY_STATE                       0x40F7 // Unused Var
 #define VAR_CUTSCENE_STATE                               0x40F8 // Unused Var
-#define VAR_UNUSED_0x40F9                                0x40F9 // Unused Var
-#define VAR_UNUSED_0x40FA                                0x40FA // Unused Var
-#define VAR_UNUSED_0x40FB                                0x40FB // Unused Var
-#define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
-#define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
+#define VAR_QUEUE_GENIE_FIGHT                            0x40F9 // Unused Var
+#define VAR_PRESENT_GYM_STATE                            0x40FA // Unused Var
+#define VAR_AQUACORP_STATE                               0x40FB // Unused Var
+#define VAR_MAIN_QUEST_STATE                             0x40FC // Unused Var
+#define VAR_PLAY_LOOKER_SCENE_ON_TRANSITION              0x40FD // Unused Var
 #define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
 #define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
 

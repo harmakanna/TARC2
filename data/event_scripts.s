@@ -43,6 +43,7 @@
 #include "constants/mauville_old_man.h"
 #include "constants/metatile_labels.h"
 #include "constants/moves.h"
+#include "constants/ots.h"
 #include "constants/party_menu.h"
 #include "constants/pokedex.h"
 #include "constants/pokemon.h"
@@ -1162,7 +1163,10 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
 	.include "data/scripts/dexnav.inc"
-
+	.include "data/text/names.inc"
+	.include "data/scripts/givemon.inc"
+	.include "data/scripts/city_outside_npcs.inc"
+	
 	.include "data/maps/PresentTown/scripts.inc"
 
 	.include "data/maps/PastTown/scripts.inc"
@@ -1224,3 +1228,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/CutsceneForestPast/scripts.inc"
 	
 	.include "data/maps/Present_Gym/scripts.inc"
+
+	.include "data/maps/CutsceneOffice/scripts.inc"

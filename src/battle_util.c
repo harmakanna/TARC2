@@ -1732,7 +1732,7 @@ bool32 HandleFaintedMonActions(void)
                  && !(gBattleStruct->givenExpMons & (1u << gBattlerPartyIndexes[gBattleStruct->faintedActionsBattlerId]))
                  && !(gAbsentBattlerFlags & (1u << gBattleStruct->faintedActionsBattlerId)))
                 {
-                    BattleScriptExecute(BattleScript_GiveExp);
+                    //BattleScriptExecute(BattleScript_GiveExp);
                     gBattleStruct->faintedActionsState = 2;
                     return TRUE;
                 }
@@ -10640,11 +10640,11 @@ void TryRestoreHeldItems(void)
             u16 lostItem = gBattleStruct->itemLost[B_SIDE_PLAYER][i].originalItem;
 
             // Check if the lost item is a berry and the mon is not holding it
-            if (GetItemPocket(lostItem) == POCKET_BERRIES && GetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM) != lostItem)
+            if (/*GetItemPocket(lostItem) == POCKET_BERRIES && */GetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM) != lostItem)
                 lostItem = ITEM_NONE;
 
             // Check if the lost item should be restored
-            if ((lostItem != ITEM_NONE || returnNPCItems) && GetItemPocket(lostItem) != POCKET_BERRIES)
+            if ((lostItem != ITEM_NONE || returnNPCItems) /*&& GetItemPocket(lostItem) != POCKET_BERRIES*/)
                 SetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM, &lostItem);
         }
     }

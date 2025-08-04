@@ -1,0 +1,278 @@
+Present_Gym_EventScript_PhoebeGiveDusknoir::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DUSKNOIR
+    givemonwithot OT_PHOEBE_DUSKNOIR
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Gym_EventScript_ReceiveDusknoirParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Gym_EventScript_ReceiveDusknoirPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+Present_Gym_EventScript_ReceiveDusknoirParty::
+	call Present_Gym_EventScript_ReceivedDusknoirFanfare
+	goto Present_Gym_EventScript_PhoebeDefeatedSetFlags
+	end
+	
+Present_Gym_EventScript_ReceiveDusknoirPC::
+	call Present_Gym_EventScript_ReceivedDusknoirFanfare
+	call Common_EventScript_TransferredToPC
+	goto Present_Gym_EventScript_PhoebeDefeatedSetFlags
+	end
+
+Present_Gym_EventScript_ReceivedDusknoirFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_DUSKNOIR
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox Present_Gym_Text_YouReceivedDusknoir, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_DUSKNOIR
+	return
+
+Present_Gym_EventScript_PhoebeGiveSableye::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SABLEYE
+	givemonwithot OT_PHOEBE_SABLEYE
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Gym_EventScript_ReceiveSableyeParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Gym_EventScript_ReceiveSableyePC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+Present_Gym_EventScript_ReceiveSableyeParty::
+	call Present_Gym_EventScript_ReceivedSableyeFanfare
+	goto Present_Gym_EventScript_PhoebeDefeatedSetFlags
+	end
+	
+Present_Gym_EventScript_ReceiveSableyePC::
+	call Present_Gym_EventScript_ReceivedSableyeFanfare
+	call Common_EventScript_TransferredToPC
+	goto Present_Gym_EventScript_PhoebeDefeatedSetFlags
+	end
+
+Present_Gym_EventScript_ReceivedSableyeFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_SABLEYE
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox Present_Gym_Text_YouReceivedSableye, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_SABLEYE
+	return
+
+Present_AquaCorpHQ_EventScript_ShellyGiveGorebyss::
+	speak LOCALID_AQUACORP_SHELLY, DIR_NORTH, Name_Shelly, Present_AquaCorpHQ_Text_ShellyGorebyssItIs
+	closemessage
+	delay 20
+	applymovement LOCALID_AQUACORP_SARAH, Present_AquaCorpHQ_Movement_SarahGiveDeepSea
+	delay 40
+	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceRight
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	speakername Name_Sarah
+	msgbox Present_AquaCorpHQ_Text_SarahHereYouGoClamperl, MSGBOX_DEFAULT
+	closemessage
+	fadeoutbgm 0
+	savebgm MUS_NONE
+	playmoncry SPECIES_CLAMPERL, CRY_MODE_NORMAL
+	waitmoncry
+	fadescreen FADE_TO_WHITE
+	removeobject LOCALID_CLAMPERL
+	clearflag FLAG_HIDE_GOREBYSS
+	addobject LOCALID_GOREBYSS
+	speakername Name_Sarah
+	msgbox Present_AquaCorpHQ_Text_SarahWhoa, MSGBOX_DEFAULT
+	closemessage
+	delay 40
+	fadescreen FADE_FROM_WHITE
+	delay 20
+	playmoncry SPECIES_GOREBYSS, CRY_MODE_NORMAL
+	waitmoncry
+	delay 5
+	playfanfare MUS_EVOLVED
+	msgbox Present_AquaCorpHQ_Text_EvolvedGorebyss
+	waitfanfare
+	delay 40
+	closemessage
+	delay 40
+	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceRight
+	speak LOCALID_AQUACORP_SARAH, DIR_WEST, Name_Sarah, Present_AquaCorpHQ_Text_SarahThatWasAwesome
+	closemessage
+	fadeoutbgm 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	speak LOCALID_AQUACORP_SHELLY, DIR_SOUTH, Name_Shelly, Present_AquaCorpHQ_Text_ShellySeeLookerNothingMalicious
+	playbgm MUS_PL_LOOKER, FALSE
+	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_AquaCorpHQ_Text_LookerISupposeAquaIsCleared
+	speak LOCALID_AQUACORP_SHELLY, DIR_SOUTH, Name_Shelly, Present_AquaCorpHQ_Text_ShellyImGladToHear
+	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
+	applymovement LOCALID_AQUACORP_MATT, Present_AquaCorpHQ_Movement_MattApproachLooker
+	waitmovement 0
+	delay 40
+	speakername Name_Matt
+	msgbox Present_AquaCorpHQ_Text_MattImSorry, MSGBOX_DEFAULT
+	speak LOCALID_PLAYER, DIR_WEST, Name_Looker, Present_AquaCorpHQ_Text_LookerApologyAcceptedImSorry
+	applymovement LOCALID_AQUACORP_SARAH, Common_Movement_FaceDownExclamationMark
+	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceRightExclamationMark
+	playse SE_PIN
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRightExclamationMark
+	delay 48
+	applymovement LOCALID_GOREBYSS, Present_AquaCorpHQ_Movement_MonWalkToPlayer
+	waitmovement 0
+	playmoncry SPECIES_GOREBYSS, CRY_MODE_NORMAL
+	waitmoncry
+	delay 20
+	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceUp
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	speak LOCALID_AQUACORP_SARAH, DIR_SOUTH, Name_Sarah, Present_AquaCorpHQ_Text_SarahGorebyssWantsToComeWithYou
+	playmoncry SPECIES_GOREBYSS, CRY_MODE_NORMAL
+	speak LOCALID_GOREBYSS, DIR_NORTH, NULL, Present_AquaCorpHQ_Text_GorebyssExcited
+	waitmoncry
+	delay 20
+	applymovement LOCALID_GOREBYSS, Common_Movement_FaceLeft
+	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceDown
+	speak LOCALID_PLAYER, DIR_EAST, Name_Looker, Present_AquaCorpHQ_Text_LookerIWillTakeGorebyssAlong
+	closemessage
+	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceRight
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	playmoncry SPECIES_GOREBYSS, CRY_MODE_NORMAL
+	waitmoncry
+	delay 20
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GOREBYSS
+    givemonwithot OT_SHELLY_GOREBYSS
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_AquaCorpHQ_EventScript_ReceiveGorebyssParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_AquaCorpHQ_EventScript_ReceiveGorebyssPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+Present_AquaCorpHQ_EventScript_ReceiveGorebyssParty::
+	call Present_AquaCorpHQ_EventScript_ReceivedGorebyssFanfare
+	goto Present_AquaCorpHQ_EventScript_FinishAquaGauntlet
+	end
+	
+Present_AquaCorpHQ_EventScript_ReceiveGorebyssPC::
+	call Present_AquaCorpHQ_EventScript_ReceivedGorebyssFanfare
+	call Common_EventScript_TransferredToPC
+	goto Present_AquaCorpHQ_EventScript_FinishAquaGauntlet
+	end
+
+Present_AquaCorpHQ_EventScript_ReceivedGorebyssFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_GOREBYSS
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox Present_AquaCorp_Text_YouReceivedGorebyss, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_GOREBYSS
+	return
+
+Present_AquaCorpHQ_EventScript_ShellyGiveHuntail::
+	speak LOCALID_AQUACORP_SHELLY, DIR_NORTH, Name_Shelly, Present_AquaCorpHQ_Text_ShellyHuntailItIs
+	closemessage
+	applymovement LOCALID_AQUACORP_SARAH, Present_AquaCorpHQ_Movement_SarahGiveDeepSea
+	delay 10
+	speakername Name_Sarah
+	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceRight
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	msgbox Present_AquaCorpHQ_Text_SarahHereYouGoClamperl, MSGBOX_DEFAULT
+	closemessage
+	fadeoutbgm 0
+	savebgm MUS_NONE
+	playmoncry SPECIES_CLAMPERL, CRY_MODE_NORMAL
+	waitmoncry
+	fadescreen FADE_TO_WHITE
+	removeobject LOCALID_CLAMPERL
+	clearflag FLAG_HIDE_HUNTAIL
+	addobject LOCALID_HUNTAIL
+	speakername Name_Sarah
+	msgbox Present_AquaCorpHQ_Text_SarahWhoa, MSGBOX_DEFAULT
+	closemessage
+	delay 40
+	fadescreen FADE_FROM_WHITE
+	delay 20
+	playmoncry SPECIES_HUNTAIL, CRY_MODE_NORMAL
+	waitmoncry
+	delay 5
+	playfanfare MUS_EVOLVED
+	msgbox Present_AquaCorpHQ_Text_EvolvedHuntail
+	waitfanfare
+	delay 40
+	closemessage
+	delay 40
+	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceRight
+	speak LOCALID_AQUACORP_SARAH, DIR_WEST, Name_Sarah, Present_AquaCorpHQ_Text_SarahThatWasAwesome
+	closemessage
+	fadeoutbgm 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	speak LOCALID_AQUACORP_SHELLY, DIR_SOUTH, Name_Shelly, Present_AquaCorpHQ_Text_ShellySeeLookerNothingMalicious
+	playbgm MUS_PL_LOOKER, FALSE
+	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_AquaCorpHQ_Text_LookerISupposeAquaIsCleared
+	speak LOCALID_AQUACORP_SHELLY, DIR_SOUTH, Name_Shelly, Present_AquaCorpHQ_Text_ShellyImGladToHear
+	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
+	applymovement LOCALID_AQUACORP_MATT, Present_AquaCorpHQ_Movement_MattApproachLooker
+	waitmovement 0
+	delay 40
+	speakername Name_Matt
+	msgbox Present_AquaCorpHQ_Text_MattImSorry, MSGBOX_DEFAULT
+	speak LOCALID_PLAYER, DIR_WEST, Name_Looker, Present_AquaCorpHQ_Text_LookerApologyAcceptedImSorry
+	applymovement LOCALID_AQUACORP_SARAH, Common_Movement_FaceDownExclamationMark
+	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceRightExclamationMark
+	playse SE_PIN
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRightExclamationMark
+	delay 48
+	applymovement LOCALID_HUNTAIL, Present_AquaCorpHQ_Movement_MonWalkToPlayer
+	waitmovement 0
+	playmoncry SPECIES_HUNTAIL, CRY_MODE_NORMAL
+	waitmoncry
+	delay 20
+	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceUp
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	speak LOCALID_AQUACORP_SARAH, DIR_SOUTH, Name_Sarah, Present_AquaCorpHQ_Text_SarahHuntailWantsToComeWithYou
+	playmoncry SPECIES_HUNTAIL, CRY_MODE_NORMAL
+	speak LOCALID_HUNTAIL, DIR_NORTH, NULL, Present_AquaCorpHQ_Text_HuntailExcited
+	waitmoncry
+	delay 20
+	applymovement LOCALID_HUNTAIL, Common_Movement_FaceLeft
+	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceDown
+	speak LOCALID_PLAYER, DIR_EAST, Name_Looker, Present_AquaCorpHQ_Text_LookerIWillTakeHuntailAlong
+	closemessage
+	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceRight
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	playmoncry SPECIES_HUNTAIL, CRY_MODE_NORMAL
+	waitmoncry
+	delay 20
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HUNTAIL
+    givemonwithot OT_SHELLY_HUNTAIL
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_AquaCorpHQ_EventScript_ReceiveHuntailParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_AquaCorpHQ_EventScript_ReceiveHuntailPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+Present_AquaCorpHQ_EventScript_ReceiveHuntailParty::
+	call Present_AquaCorpHQ_EventScript_ReceivedHuntailFanfare
+	goto Present_AquaCorpHQ_EventScript_FinishAquaGauntlet
+	end
+	
+Present_AquaCorpHQ_EventScript_ReceiveHuntailPC::
+	call Present_AquaCorpHQ_EventScript_ReceivedHuntailFanfare
+	call Common_EventScript_TransferredToPC
+	goto Present_AquaCorpHQ_EventScript_FinishAquaGauntlet
+	end
+
+Present_AquaCorpHQ_EventScript_ReceivedHuntailFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_HUNTAIL
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox Present_AquaCorp_Text_YouReceivedHuntail, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_HUNTAIL
+	return
+
+Present_AquaCorp_Text_YouReceivedGorebyss:
+	.string "Gorb joined your party!$"
+
+Present_AquaCorp_Text_YouReceivedHuntail:
+	.string "Huntsman joined your party!$"
+
+Present_Gym_Text_YouReceivedDusknoir:
+	.string "You received a Dusknoir!$"
+
+Present_Gym_Text_YouReceivedSableye:
+	.string "You received a Sableye!$"

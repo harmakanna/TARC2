@@ -1588,6 +1588,43 @@ void CreateMonWithEVSpreadNatureOTID(struct Pokemon *mon, u16 species, u8 level,
     CalculateMonStats(mon);
 }
 
+void CreateMonWithNatureGenderOTID(struct Pokemon *mon, u16 species, u8 level, u8 nature, u8 fixedIV, u8 gender, u32 otId)
+{
+    s32 i;
+
+    // i is reused as personality value
+    do
+    {
+        i = Random32();
+    } while (nature != GetNatureFromPersonality(i)
+            || gender != GetGenderFromSpeciesAndPersonality(species, i));
+
+    if (otId == OT_ID_PLAYER_ID)
+        CreateMon(mon, species, level, fixedIV, TRUE, i, OT_ID_PLAYER_ID, 0);
+    else
+        CreateMon(mon, species, level, fixedIV, TRUE, i, OT_ID_PRESET, otId);
+
+    CalculateMonStats(mon);
+}
+
+void CreateMonWithNatureOTID(struct Pokemon *mon, u16 species, u8 level, u8 nature, u8 fixedIV, u32 otId)
+{
+    s32 i;
+
+    // i is reused as personality value
+    do
+    {
+        i = Random32();
+    } while (nature != GetNatureFromPersonality(i));
+
+    if (otId == OT_ID_PLAYER_ID)
+        CreateMon(mon, species, level, fixedIV, TRUE, i, OT_ID_PLAYER_ID, 0);
+    else
+        CreateMon(mon, species, level, fixedIV, TRUE, i, OT_ID_PRESET, otId);
+
+    CalculateMonStats(mon);
+}
+
 void ConvertPokemonToBattleTowerPokemon(struct Pokemon *mon, struct BattleTowerPokemon *dest)
 {
     s32 i;
@@ -5821,7 +5858,7 @@ bool32 IsSpeciesInHoennDex(u16 species)
 
 u16 GetBattleBGM(void)
 {
-    if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
+    if (gBattleTypeFlags & (BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_LEGENDARY_DOUBLE))
     {
         switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
         {
@@ -5837,6 +5874,9 @@ u16 GetBattleBGM(void)
         case SPECIES_REGIELEKI:
         case SPECIES_REGIDRAGO:
             return MUS_VS_REGI;
+        case SPECIES_THUNDURUS:
+        case SPECIES_TORNADUS:
+            return MUS_BW_VS_LEGENDARY;
         default:
             return MUS_RG_VS_LEGEND;
         }
@@ -5860,10 +5900,10 @@ u16 GetBattleBGM(void)
         {
         case TRAINER_CLASS_AQUA_LEADER:
         case TRAINER_CLASS_MAGMA_LEADER:
+        case TRAINER_CLASS_AQUA_ADMIN:
             return MUS_VS_AQUA_MAGMA_LEADER;
         case TRAINER_CLASS_TEAM_AQUA:
         case TRAINER_CLASS_TEAM_MAGMA:
-        case TRAINER_CLASS_AQUA_ADMIN:
         case TRAINER_CLASS_MAGMA_ADMIN:
             return MUS_VS_AQUA_MAGMA;
         case TRAINER_CLASS_LEADER:
@@ -6371,7 +6411,7 @@ u16 PlayerGenderToFrontTrainerPicId(u8 playerGender)
     if (playerGender != MALE)
         return FacilityClassToPicIndex(FACILITY_CLASS_MAY);
     else
-        return FacilityClassToPicIndex(FACILITY_CLASS_BRENDAN);
+        return FacilityClassToPicIndex(FACILITY_CLASS_LOOKER);
 }
 
 void HandleSetPokedexFlag(u16 nationalNum, u8 caseId, u32 personality)

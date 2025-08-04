@@ -113,12 +113,14 @@ Past_TownHall_EventScript_LookerWakesUp::
 Past_TownHall_EventScript_Camilla::
 	lock
 	faceplayer
+	speakername Name_Camilla
 	msgbox Past_TownHall_Text_CamillaIWillLookAfterHer, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
 
 Past_TownHall_EventScript_Estella::
+	speakername Name_Estella
 	msgbox Past_TownHall_Text_Estella, MSGBOX_NPC
 	end
 

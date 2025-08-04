@@ -13,7 +13,63 @@
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
-  "object_events": [],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
+      "x": 5,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Present_ConcernedFamilyHouse_EventScript_Mom",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_CONCERNEDFAMILY_DAD",
+      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M",
+      "x": 11,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_QUEST_GIVER",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Present_ConcernedFamilyHouse_EventScript_Dad",
+      "flag": "0",
+      "quest_id": 0
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
+      "x": 11,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Present_ConcernedFamilyHouse_EventScript_Estella",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_CONCERNEDFAMILY_GRANDMA",
+      "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
+      "x": 8,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Present_ConcernedFamilyHouse_EventScript_Grandma",
+      "flag": "FLAG_HIDE_CONCERNED_GRANDMA"
+    }
+  ],
   "warp_events": [
     {
       "warp_id": "Family_House_Exit_1",
@@ -40,6 +96,16 @@
       "dest_warp_id": "Family_House_Stairs_2F"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_PLAY_LOOKER_SCENE_ON_TRANSITION",
+      "var_value": "1",
+      "script": "Present_ConcernedFamilyHouse_EventScript_LookerINeedToThink"
+    }
+  ],
   "bg_events": []
 }

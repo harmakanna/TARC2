@@ -1,4 +1,22 @@
 // multichoice lists
+static const struct MenuAction MultichoiceList_PhoebeGiveMon[] =
+{
+    {COMPOUND_STRING("Dusknoir")},
+    {COMPOUND_STRING("Sableye")},
+};
+
+static const struct MenuAction MultichoiceList_MattGiveMon[] =
+{
+    {COMPOUND_STRING("DeepSeaScale")},
+    {COMPOUND_STRING("DeepSeaTooth")},
+};
+
+static const struct MenuAction MultichoiceList_BlueGiveMon[] =
+{
+    {COMPOUND_STRING("Golem")},
+    {COMPOUND_STRING("Machamp")},
+};
+
 static const struct MenuAction MultichoiceList_BrineyOnDewford[] =
 {
     {COMPOUND_STRING("PETALBURG")},
@@ -791,6 +809,9 @@ struct MultichoiceListStruct
 
 static const struct MultichoiceListStruct sMultichoiceLists[] =
 {
+    [MULTI_PHOEBE_GIVEMON]             = MULTICHOICE(MultichoiceList_PhoebeGiveMon),
+    [MULTI_MATT_GIVEMON]               = MULTICHOICE(MultichoiceList_MattGiveMon),
+    [MULTI_BLUE_GIVEMON]               = MULTICHOICE(MultichoiceList_BlueGiveMon),
     [MULTI_BRINEY_ON_DEWFORD]          = MULTICHOICE(MultichoiceList_BrineyOnDewford),
     [MULTI_PC]                         = MULTICHOICE(MultichoiceList_Exit),
     [MULTI_ENTERINFO]                  = MULTICHOICE(MultichoiceList_EnterInfo),

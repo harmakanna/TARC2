@@ -286,7 +286,7 @@ const struct Tileset gTileset_CableClub =
     .palettes = gTilesetPalettes_CableClub,
     .metatiles = gMetatiles_CableClub,
     .metatileAttributes = gMetatileAttributes_CableClub,
-    .callback = NULL,
+    .callback = InitTilesetAnim_CableClub,
 };
 
 const struct Tileset gTileset_SeashoreHouse =
@@ -884,5 +884,16 @@ const struct Tileset gTileset_PresentTown =
     .palettes = gTilesetPalettes_PresentTown,
     .metatiles = gMetatiles_PresentTown,
     .metatileAttributes = gMetatileAttributes_PresentTown,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_LittleOffice =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_LittleOffice,
+    .palettes = gTilesetPalettes_LittleOffice,
+    .metatiles = gMetatiles_LittleOffice,
+    .metatileAttributes = gMetatileAttributes_LittleOffice,
     .callback = NULL,
 };

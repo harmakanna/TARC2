@@ -1,5 +1,6 @@
 ShrineOfProsperityPast_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, ShrineOfProsperityPast_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, ShrineOfProsperityPast_OnResume
 	.byte 0
 
 ShrineOfProsperityPast_OnTransition:
@@ -10,6 +11,10 @@ ShrineOfProsperityPast_EventScript_SetupMyth::
 	setobjectmovementtype LOCALID_SHRINE_PROSPERITY_PAST_ORATOR, MOVEMENT_TYPE_FACE_LEFT
 	return
 
+ShrineOfProsperityPast_OnResume:
+	special HealPlayerParty
+	end
+	
 ShrineOfProsperityPast_EventScript_VillageOrator::
 	msgbox ShrineOfProsperityPast_Text_Orator, MSGBOX_NPC
 	end
@@ -54,13 +59,15 @@ ShrineOfProsperityPast_EventScript_LandorusMyth::
 	delay 40
 	removeobject LOCALID_SHRINE_PROSPERITY_PAST_ANABEL
 	clearflag FLAG_HIDE_SHRINE_PEACE_CELEBI
-	clearflag FLAG_HIDE_RANGERS
 	clearflag FLAG_LOCK_CITY_DOORS
 	setflag FLAG_HIDE_PAST_TOWN_HALL_ESTELLA
+	setflag FLAG_HIDE_CITYHALL_1F_CONCERNED_DAD
 	setflag FLAG_SYS_B_DASH
 	setflag FLAG_SYS_MAIN_GAME_START
 	setvar VAR_CUTSCENE_STATE, 9
 	setvar VAR_PORTO_BELLA_CITY_STATE, 3
+	setvar VAR_QUEUE_GENIE_FIGHT, 1
+	setvar VAR_PRESENT_GYM_STATE, 1
 	releaseall
 	end
 

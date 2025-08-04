@@ -1,6 +1,7 @@
 PastTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, PastTown_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, PastTown_OnFrame
+	map_script MAP_SCRIPT_ON_RESUME, PastTown_OnResume
 	.byte 0
 
 PastTown_OnTransition:
@@ -16,10 +17,44 @@ PastTown_OnFrame:
 	map_script_2 VAR_CUTSCENE_STATE, 5, PastTown_EventScript_LookerEnters
 	.2byte 0
 
+PastTown_EventScript_LookerEnters::
+	lockall
+	speakername Name_Looker
+	msgbox PastTown_Text_LookerWhatIsThis, MSGBOX_DEFAULT
+	closemessage
+	delay 40
+	fadescreen FADE_TO_BLACK
+	delay 40
+	playse SE_EFFECTIVE
+	delay 10
+	speakername Name_Looker
+	msgbox PastTown_Text_LookerYowch, MSGBOX_DEFAULT
+	delay 30
+	closemessage
+	delay 30
+	fadescreen FADE_FROM_BLACK
+	delay 60
+	speakername Name_Looker
+	msgbox PastTown_Text_LookerImNotDreaming, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PLAYER, PastTown_Movement_LookerLookAround
+	waitmovement 0
+	speakername Name_Looker
+	msgbox PastTown_Text_LookerOutOfTheWoods, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_CUTSCENE_STATE, 6
+	releaseall
+	end
+	
+PastTown_OnResume:
+	special HealPlayerParty
+	end
+
 PastTown_EventScript_Lass::
 	lock
 	faceplayer
 	goto_if_eq VAR_CUTSCENE_STATE, 7, PastTown_EventScript_LassFight
+	speakername Name_Lass
 	msgbox PastTown_Text_LassYouCheated, MSGBOX_DEFAULT
 	closemessage
 	release
@@ -65,6 +100,7 @@ PastTown_EventScript_LassFight::
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_BeatLass
 	special HealPlayerParty
+	speakername Name_Lass
 	msgbox PastTown_Text_LassNobodyCanBeatMe, MSGBOX_DEFAULT
 	closemessage
 	getplayerxy VAR_TEMP_1, VAR_TEMP_2
@@ -80,17 +116,19 @@ PastTown_EventScript_LassWalkBackToPosition::
 	
 PastTown_EventScript_LassOyGeezer::
 	setflag FLAG_FOUGHT_LASS
+	speakername Name_Lass
 	msgbox PastTown_Text_LassOyGeezer, MSGBOX_DEFAULT
 	return
 
 PastTown_EventScript_LassAnotherRound::
+	speakername Name_Lass
 	msgbox PastTown_Text_LassAnotherRound, MSGBOX_DEFAULT
 	return
 
 PastTown_EventScript_BeatLass::
+	speakername Name_Lass
 	msgbox PastTown_Text_LassHeyNoFair, MSGBOX_DEFAULT
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
-	msgbox PastTown_Text_LookerThatWasStrange, MSGBOX_DEFAULT
+	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, PastTown_Text_LookerThatWasStrange
 	closemessage
 	setvar VAR_CUTSCENE_STATE, 8
 	release
@@ -102,33 +140,9 @@ PastTown_EventScript_WalkBackBelowTrigger::
 	clearflag FLAG_SYS_FROM_TRIGGER
 	return
 
-PastTown_EventScript_LookerEnters::
-	lockall
-	msgbox PastTown_Text_LookerWhatIsThis, MSGBOX_DEFAULT
-	closemessage
-	delay 40
-	fadescreen FADE_TO_BLACK
-	delay 40
-	playse SE_EFFECTIVE
-	delay 10
-	msgbox PastTown_Text_LookerYowch, MSGBOX_DEFAULT
-	delay 30
-	closemessage
-	delay 30
-	fadescreen FADE_FROM_BLACK
-	delay 60
-	msgbox PastTown_Text_LookerImNotDreaming, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_PLAYER, PastTown_Movement_LookerLookAround
-	waitmovement 0
-	msgbox PastTown_Text_LookerOutOfTheWoods, MSGBOX_DEFAULT
-	closemessage
-	setvar VAR_CUTSCENE_STATE, 6
-	releaseall
-	end
-
 PastTown_EventScript_LookerPassOut::
 	lockall
+	speakername Name_Looker
 	msgbox PastTown_Text_LookerUrgh, MSGBOX_DEFAULT
 	closemessage
 	fadescreen FADE_TO_BLACK
@@ -164,7 +178,7 @@ PastTown_Text_LassHeyNoFair:
 	.string "Old man, you must be cheating!$"
 
 PastTown_Text_LookerThatWasStrange:
-	.string "Looker: That was odd…\p"
+	.string "That was odd…\p"
 	.string "Did I see into the future just now?$"
 	
 PastTown_Text_LassNobodyCanBeatMe:

@@ -115,6 +115,31 @@ Common_Movement_FaceRightExclamationMark::
 	emote_exclamation_mark
 	step_end
 
+Common_Movement_FaceUpQuestionMark:
+	face_up
+	emote_question_mark
+	step_end
+
+Common_Movement_FaceRightQuestionMark:
+	face_right
+	emote_question_mark
+	step_end
+
+Common_Movement_FaceLeftQuestionMark:
+	face_left
+	emote_question_mark
+	step_end
+
+Common_Movement_FaceDownQuestionMark:
+	face_down
+	emote_question_mark
+	step_end
+
+Common_Movement_SetVisibleFaceUp:
+	face_up
+	set_visible
+	step_end
+
 Common_Movement_Delay16:
 	delay_16
 	step_end
@@ -221,3 +246,26 @@ Common_Movement_WalkRightFaster::
 Common_Movement_WalkLeftFaster::
     walk_faster_left
     step_end
+
+Script_GetNPCFacingDirection::
+	call_if_eq VAR_FACING, DIR_NORTH, Script_SetNPCVarSouth
+	call_if_eq VAR_FACING, DIR_EAST, Script_SetNPCVarWest
+	call_if_eq VAR_FACING, DIR_WEST, Script_SetNPCVarEast
+	call_if_eq VAR_FACING, DIR_SOUTH, Script_SetNPCVarNorth
+	return
+
+Script_SetNPCVarSouth::
+	setvar VAR_0x8005, DIR_SOUTH
+	return
+
+Script_SetNPCVarWest::
+	setvar VAR_0x8005, DIR_WEST
+	return
+
+Script_SetNPCVarEast::
+	setvar VAR_0x8005, DIR_EAST
+	return
+
+Script_SetNPCVarNorth::
+	setvar VAR_0x8005, DIR_NORTH
+	return

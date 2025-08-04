@@ -227,7 +227,7 @@ void SeedRngAndSetTrainerId(void)
 
 u16 GetGeneratedTrainerIdLower(void)
 {
-    return sTrainerId;
+    return 10053;//sTrainerId;
 }
 
 void EnableVCountIntrAtLine150(void)

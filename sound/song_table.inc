@@ -537,6 +537,7 @@ gSongTable::
 	song mus_dp_eterna_night, 0, 0
 	song mus_dp_eterna_forest, 0, 0
 	song mus_pl_looker, 0, 0
+	song mus_bw_vs_legendary, 0, 0
 
 	.align 2
 dummy_song_header:

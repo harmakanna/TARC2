@@ -26,38 +26,28 @@ CutsceneForest_EventScript_SearchForEstella::
 	applymovement LOCALID_FOREST_ANABEL, CutsceneForest_Movement_AnabelRunIntoShot
 	waitmovement 0
 	delay 10
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	applymovement LOCALID_FOREST_ANABEL, CutsceneForest_Movement_LookAround1
 	applymovement LOCALID_FOREST_RANGER, CutsceneForest_Movement_LookAround2
-	msgbox CutsceneForest_Text_LookerEstella, MSGBOX_DEFAULT
+	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, CutsceneForest_Text_LookerEstella
 	delay 20
 	closemessage
 	delay 10
-	applymovement LOCALID_FOREST_ANABEL, Common_Movement_WalkInPlaceFasterRight
 	applymovement LOCALID_PLAYER, CutsceneForest_Movement_LookAround3
 	applymovement LOCALID_FOREST_RANGER, CutsceneForest_Movement_LookAround4
-	msgbox CutsceneForest_Text_AnabelEstella, MSGBOX_DEFAULT
+	speak LOCALID_FOREST_ANABEL, DIR_EAST, Name_Anabel, CutsceneForest_Text_AnabelEstella
 	delay 20
 	closemessage
 	delay 40
 	playse SE_SELECT
-	applymovement LOCALID_FOREST_ANABEL, Common_Movement_WalkInPlaceFasterRight
-	msgbox CutsceneForest_Text_AnabelDrat, MSGBOX_DEFAULT
-	applymovement LOCALID_FOREST_RANGER, Common_Movement_WalkInPlaceFasterLeft
-	msgbox CutsceneForest_Text_RangerSeemsLikeShesNotHere, MSGBOX_DEFAULT
+	speak LOCALID_FOREST_ANABEL, DIR_WEST, Name_Anabel, CutsceneForest_Text_AnabelDrat
+	speak LOCALID_FOREST_RANGER, DIR_EAST, Name_Head_Ranger, CutsceneForest_Text_RangerSeemsLikeShesNotHere
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
-	applymovement LOCALID_FOREST_RANGER, Common_Movement_FaceRight
-	applymovement LOCALID_FOREST_ANABEL, Common_Movement_FaceLeft
 	playse SE_SELECT
 	msgbox CutsceneForest_Text_RangerMeetBackAtCityHall, MSGBOX_DEFAULT
-	applymovement LOCALID_FOREST_ANABEL, Common_Movement_WalkInPlaceFasterLeft
-	msgbox CutsceneForest_Text_AnabelGotIt, MSGBOX_DEFAULT
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
-	msgbox CutsceneForest_Text_LookerUnderstood, MSGBOX_DEFAULT
-	applymovement LOCALID_FOREST_RANGER, Common_Movement_WalkInPlaceFasterRight
-	msgbox CutsceneForest_Text_RangerGreatBeSafe, MSGBOX_DEFAULT
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
-	msgbox CutsceneForest_Text_LookerOfCourse, MSGBOX_DEFAULT
+	speak LOCALID_FOREST_ANABEL, DIR_WEST, Name_Anabel, CutsceneForest_Text_AnabelGotIt
+	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, CutsceneForest_Text_LookerUnderstood
+	speak LOCALID_FOREST_RANGER, DIR_EAST, Name_Head_Ranger, CutsceneForest_Text_RangerGreatBeSafe
+	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, CutsceneForest_Text_LookerOfCourse
 	closemessage
 	delay 10
 	applymovement LOCALID_FOREST_RANGER, CutsceneForest_Movement_RangerRunOutOfShot
@@ -225,31 +215,31 @@ CutsceneForest_Text_Celebi:
 	.string "Biii…$"
 
 CutsceneForest_Text_AnabelEstella:
-	.string "Anabel: Estellaaaa!$"
+	.string "Estellaaaa!$"
 
 CutsceneForest_Text_LookerEstella:
-	.string "Looker: Estella!$"
+	.string "Estella!$"
 
 CutsceneForest_Text_AnabelGotIt:
-	.string "Anabel: Got it.\n"
+	.string "Got it.\n"
 	.string "Looker?$"
 
 CutsceneForest_Text_LookerUnderstood:
-	.string "Looker: I heard.$"
+	.string "I heard.$"
 
 CutsceneForest_Text_RangerGreatBeSafe:
-	.string "Ranger: Great. Please be safe\n"
+	.string "Great. Please be safe\n"
 	.string "out there!$"
 
 CutsceneForest_Text_LookerOfCourse:
-	.string "Looker: Of course.$"
+	.string "Of course.$"
 
 CutsceneForest_Text_AnabelDrat:
-	.string "Anabel: Drat, there's been no\n"
+	.string "Drat, there's been no\n"
 	.string "sign of her at all out here!$"
 
 CutsceneForest_Text_RangerSeemsLikeShesNotHere:
-	.string "Ranger: She doesn't seem to be in\n"
+	.string "She doesn't seem to be in\n"
 	.string "this neck of the woods!$"
 
 CutsceneForest_Text_RangerMeetBackAtCityHall:

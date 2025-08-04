@@ -1,9 +1,11 @@
 ShrineOfPeacePresent_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, ShrineOfPeacePresent_OnTransition
     map_script MAP_SCRIPT_ON_FRAME_TABLE, ShrineOfPeacePresent_OnFrame
+	map_script MAP_SCRIPT_ON_RESUME, ShrineOfPeacePresent_OnResume
 	.byte 0
 
 ShrineOfPeacePresent_OnTransition:
+	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetStormWeather
 	call_if_eq VAR_CUTSCENE_STATE, 3, ShrineOfPeacePresent_EventScript_CelebiEncounterSetup
 	end
 
@@ -19,8 +21,10 @@ ShrineOfPeacePresent_OnFrame:
 
 ShrineOfPeacePresent_EventScript_MainGameStart::
 	lockall
-	msgbox ShrineOfPeacePresent_Text_MainGameStart, MSGBOX_DEFAULT
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, ShrineOfPeacePresent_Text_MainGameStart
 	closemessage
+	delay 40
+	startquest QUEST_INTERROGATE_MATT
 	setvar VAR_CUTSCENE_STATE, 10
 	releaseall
 	end
@@ -39,8 +43,7 @@ ShrineOfPeacePresent_EventScript_CelebiEncounter::
 	applymovement LOCALID_SHRINE_PEACE_PRESENT_ANABEL, ShrineOfPeacePresent_Movement_RunToCenterCamera2
 	waitmovement 0
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
-	applymovement LOCALID_SHRINE_PEACE_PRESENT_ANABEL, Common_Movement_FaceLeft
-	msgbox ShrineOfPeacePresent_Text_AnabelAlmostToTheShrine, MSGBOX_DEFAULT
+	speak LOCALID_SHRINE_PEACE_PRESENT_ANABEL, DIR_WEST, Name_Anabel, ShrineOfPeacePresent_Text_AnabelAlmostToTheShrine
 	closemessage
 	applymovement LOCALID_CAMERA, ShrineOfPeacePresent_Movement_CameraTrailLooker
 	applymovement LOCALID_PLAYER, ShrineOfPeacePresent_Movement_LookerRunToShrine
@@ -50,6 +53,7 @@ ShrineOfPeacePresent_EventScript_CelebiEncounter::
 	applymovement LOCALID_PLAYER, Common_Movement_FaceUpExclamationMark
 	applymovement LOCALID_SHRINE_PEACE_PRESENT_ANABEL, Common_Movement_FaceUpExclamationMark
 	delay 48
+	speakername Name_Anabel
 	msgbox ShrineOfPeacePresent_Text_LookerLookUpAhead, MSGBOX_DEFAULT
 	closemessage
 	clearflag FLAG_HIDE_SHRINE_OF_PEACE_PRESENT_WILD_MONS
@@ -69,13 +73,13 @@ ShrineOfPeacePresent_EventScript_CelebiEncounter::
 	applymovement LOCALID_CAMERA, ShrineOfPeacePresent_Movement_PanCameraToLooker
 	waitmovement 0
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
-	applymovement LOCALID_SHRINE_PEACE_PRESENT_ANABEL, Common_Movement_FaceLeft
 	playse SE_SELECT
-	msgbox ShrineOfPeacePresent_Text_AnabelItsTooDangerous, MSGBOX_DEFAULT
+	speak LOCALID_SHRINE_PEACE_PRESENT_ANABEL, DIR_WEST, Name_Anabel, ShrineOfPeacePresent_Text_AnabelItsTooDangerous
 	playse SE_PIN
 	applymovement LOCALID_SHRINE_PEACE_PRESENT_ANABEL, Common_Movement_FaceDownExclamationMark
 	delay 48
 	playse SE_SELECT
+	speakername Name_Anabel
 	msgbox ShrineOfPeacePresent_Text_AnabelOhNo, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
@@ -90,6 +94,7 @@ ShrineOfPeacePresent_EventScript_CelebiEncounter::
 	clearflag FLAG_HIDE_SHRINE_PEACE_CELEBI
 	setobjectxyperm LOCALID_SHRINE_PRESENT_CELEBI, 14, 21
 	addobject LOCALID_SHRINE_PRESENT_CELEBI
+	speakername Name_Anabel
 	msgbox ShrineOfPeacePresent_Text_AnabelWhatNow, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_SHRINE_PEACE_PRESENT_MON1, Common_Movement_WalkRight
@@ -105,6 +110,7 @@ ShrineOfPeacePresent_EventScript_CelebiEncounter::
 	delay 40
 	playmoncry SPECIES_CELEBI, CRY_MODE_NORMAL
 	msgbox ShrineOfPeacePresent_Text_CelebiBii1, MSGBOX_DEFAULT
+	speakername Name_Anabel
 	msgbox ShrineOfPeacePresent_Text_AnabelShoutsLooker, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRightExclamationMark
@@ -117,6 +123,7 @@ ShrineOfPeacePresent_EventScript_CelebiEncounter::
 	applymovement LOCALID_SHRINE_PEACE_PRESENT_MON4, ShrineOfPeacePresent_Movement_Mon4Attack
 	setflag FLAG_HIDE_SHRINE_PEACE_PRESENT_ANABEL
 	delay 100
+	speakername Name_Looker
 	msgbox ShrineOfPeacePresent_Text_LookerAnabel, MSGBOX_DEFAULT
 	closemessage
 	delay 60
@@ -126,6 +133,7 @@ ShrineOfPeacePresent_EventScript_CelebiEncounter::
 	applymovement LOCALID_PLAYER, Common_Movement_QuestionMark
 	delay 48
 	playse SE_SELECT
+	speakername Name_Looker
 	msgbox ShrineOfPeacePresent_Text_LookerHuh, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_SHRINE_PEACE_PRESENT_MON1, Common_Movement_WalkRight
@@ -333,9 +341,17 @@ ShrineOfPeacePresent_Movement_PanCameraToLooker:
 	walk_down
 	step_end
 
+
+ShrineOfPeacePresent_OnResume:
+	special HealPlayerParty
+	end
+	
 ShrineOfPeacePresent_EventScript_Celebi::
 	lockall
 	faceplayer
+	speakername Name_Celebi
+	msgbox ShrineOfPeacePresent_Text_Celebi, MSGBOX_DEFAULT
+	speakername NULL
 	msgbox ShrineOfPeacePresent_Text_CelebiWarp, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, ShrineOfPeacePresent_EventScript_CelebiWarp
 	releaseall
@@ -348,10 +364,18 @@ ShrineOfPeacePresent_EventScript_CelebiWarp::
 	end
 
 ShrineOfPeacePresent_Text_MainGameStart:
-	.string "… … …$"
+	.string "Alright, first things first.\p"
+	.string "I am highly suspicious of Team Aqua\n"
+	.string "following the new info.\p"
+	.string "However, if they don't cooperate, they\n"
+	.string "will surely be tough to take down alone.\p"
+	.string "I wonder if I could do some favors and\n"
+	.string "get some help in my investigation…$"
+
+ShrineOfPeacePresent_Text_Celebi:
+	.string "Biii?$"
 
 ShrineOfPeacePresent_Text_CelebiWarp:
-	.string "Biii?\p"
 	.string "Celebi is looking at you\n"
 	.string "expectantly…\p"
 	.string "Warp to the past?$"

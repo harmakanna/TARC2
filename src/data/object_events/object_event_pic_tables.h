@@ -1356,3 +1356,7 @@ static const struct SpriteFrameImage sPicTable_LookerNormal[] = {
 static const struct SpriteFrameImage sPicTable_AquaAdminM[] = {
     overworld_ascending_frames(gObjectEventPic_AquaAdminM, 2, 4),
 };
+
+static const struct SpriteFrameImage sPicTable_AquaAdminF[] = {
+    overworld_ascending_frames(gObjectEventPic_AquaAdminF, 2, 4),
+};

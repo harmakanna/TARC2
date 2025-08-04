@@ -4455,7 +4455,7 @@
       "id": "LAYOUT_SHRINE_OF_PROSPERITY_PRESENT",
       "name": "ShrineOfProsperityPresent_Layout",
       "width": 28,
-      "height": 27,
+      "height": 28,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_LugiaShrine",
       "border_filepath": "data/layouts/ShrineOfProsperityPresent/border.bin",
@@ -4514,9 +4514,9 @@
     {
       "id": "LAYOUT_PRESENT_AQUA_CORP_HQ",
       "name": "Present_AquaCorpHQ_Layout",
-      "width": 14,
+      "width": 16,
       "height": 14,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/Present_AquaCorpHQ/border.bin",
       "blockdata_filepath": "data/layouts/Present_AquaCorpHQ/map.bin"
@@ -4524,10 +4524,10 @@
     {
       "id": "LAYOUT_PRESENT_POKEMON_CENTER",
       "name": "Present_PokemonCenter_Layout",
-      "width": 15,
+      "width": 14,
       "height": 13,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_PokeCenterAlt",
+      "secondary_tileset": "gTileset_PokemonCenter",
       "border_filepath": "data/layouts/Present_PokemonCenter/border.bin",
       "blockdata_filepath": "data/layouts/Present_PokemonCenter/map.bin"
     },
@@ -4720,6 +4720,16 @@
       "secondary_tileset": "gTileset_CableClub",
       "border_filepath": "data/layouts/Present_Gym/border.bin",
       "blockdata_filepath": "data/layouts/Present_Gym/map.bin"
+    },
+    {
+      "id": "LAYOUT_CUTSCENE_OFFICE",
+      "name": "CutsceneOffice_Layout",
+      "width": 9,
+      "height": 9,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_LittleOffice",
+      "border_filepath": "data/layouts/CutsceneOffice/border.bin",
+      "blockdata_filepath": "data/layouts/CutsceneOffice/map.bin"
     }
   ]
 }
