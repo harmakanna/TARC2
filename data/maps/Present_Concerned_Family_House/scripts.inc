@@ -28,6 +28,7 @@ Present_ConcernedFamilyHouse_EventScript_DadRewardQuest::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_ConcernedFamilyHouse_Text_LookerDaughterBackHomeSafe
 	speak LOCALID_CONCERNEDFAMILY_DAD, VAR_0x8005, Name_Relieved_Dad, Present_ConcernedFamilyHouse_Text_DadThankYou
 	giveitem ITEM_FIRE_STONE
+	closemessage
 	copyvar VAR_0x8004, VAR_0x8005 @Dad is 8004, Grandma is 8005
 	copyvar VAR_0x8003, VAR_FACING @0x8003 is Looker's original direction
 	getplayerxy VAR_0x8000, VAR_0x8001
@@ -51,6 +52,7 @@ Present_ConcernedFamilyHouse_EventScript_MoveGrandmaToLookerNorth::
 	waitmovement 0
 	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0
+	delay 5
 	return
 
 Present_ConcernedFamilyHouse_EventScript_MoveGrandmaToLookerWest::
@@ -58,6 +60,7 @@ Present_ConcernedFamilyHouse_EventScript_MoveGrandmaToLookerWest::
 	waitmovement 0
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0
+	delay 5
 	return
 
 Present_ConcernedFamilyHouse_EventScript_DadSpeakLookerNorth::
