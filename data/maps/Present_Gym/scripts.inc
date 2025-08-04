@@ -193,27 +193,27 @@ Present_Gym_EventScript_GymGuyBeatPhoebe::
 	releaseall
 	end
 
-@ Hex Maniac Top, TRAINER_LEAH
+@ Expert, TRAINER_LEAH
 Present_Gym_EventScript_GymTrainer1::
 	trainerbattle_single TRAINER_LEAH, Present_Gym_Text_GymTrainer1Intro, Present_Gym_Text_GymTrainer1Defeat
 	msgbox Present_Gym_Text_GymTrainer1PostBattle, MSGBOX_AUTOCLOSE
 	end
 
-@ Psychic M, TRAINER_BLAKE
+@ Battle Girl, TRAINER_DAISY
 Present_Gym_EventScript_GymTrainer2::
-	trainerbattle_single TRAINER_BLAKE, Present_Gym_Text_GymTrainer2Intro, Present_Gym_Text_GymTrainer2Defeat
+	trainerbattle_double TRAINER_DAISY, Present_Gym_Text_GymTrainer2Intro, Present_Gym_Text_GymTrainer2Defeat, Common_Text_NotEnoughPokemon
 	msgbox Present_Gym_Text_GymTrainer2PostBattle, MSGBOX_AUTOCLOSE
 	end
 
-@ Ranger, TRAINER_SEBASTIAN
+@ Ranger M, TRAINER_SEBASTIAN
 Present_Gym_EventScript_GymTrainer3::
 	trainerbattle_double TRAINER_SEBASTIAN, Present_Gym_Text_GymTrainer3Intro, Present_Gym_Text_GymTrainer3Defeat, Common_Text_NotEnoughPokemon
 	msgbox Present_Gym_Text_GymTrainer3PostBattle, MSGBOX_AUTOCLOSE
 	end
 
-@ Psychic F, TRAINER_SAMANTHA
+@ Ranger F, TRAINER_SAMANTHA
 Present_Gym_EventScript_GymTrainer4::
-	trainerbattle_double TRAINER_SAMANTHA, Present_Gym_Text_GymTrainer4Intro, Present_Gym_Text_GymTrainer4Defeat, Common_Text_NotEnoughPokemon
+	trainerbattle_single TRAINER_SAMANTHA, Present_Gym_Text_GymTrainer4Intro, Present_Gym_Text_GymTrainer4Defeat
 	msgbox Present_Gym_Text_GymTrainer4PostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -282,7 +282,7 @@ Present_Gym_Text_PhoebeTheStormsAreCertainlyWeird:
 	.string "The big storm which rolled in earlier\n"
 	.string "is certainly weird…\p"
 	.string "If it's not Team Aqua who's the culprit,\n"
-	.string "I couldn't imagine who it would be…"
+	.string "I couldn't imagine who it would be…\p"
 	.string "I suppose you could check in with the\n"
 	.string "Rangers if you haven't already?\p"
 	.string "Outside of that, we've also had a few\n"

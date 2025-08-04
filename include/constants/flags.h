@@ -90,7 +90,7 @@
 #define FLAG_DEFEATED_MAY                      0x4C // Unused Flag
 #define FLAG_ENTER_CELEBI_SOCIETY_FROM_QUEST   0x4D // Unused Flag
 #define FLAG_HIDE_CELEBI_SOCIETY_GRANDMA       0x4E // Unused Flag
-#define FLAG_UNUSED_0x04F    0x4F // Unused Flag
+#define FLAG_HIDE_CONCERNED_GRANDMA            0x4F // Unused Flag
 
 // Scripts
 #define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL  0x50
@@ -1414,7 +1414,7 @@
 #define FLAG_SYS_CLOCK_SET                          (SYSTEM_FLAGS + 0x35)
 #define FLAG_SYS_NATIONAL_DEX                       (SYSTEM_FLAGS + 0x36)
 #define FLAG_SYS_LOOKER_MUSIC_ON_TRANSITION         (SYSTEM_FLAGS + 0x37) // Unused Flag, leftover from R/S debug, presumably used by Emerald's debug too
-#define FLAG_SYS_CAVE_WONDER                        (SYSTEM_FLAGS + 0x38) // Unused Flag, same as above
+#define FLAG_SYS_DISAPPEAR_QUESTS                   (SYSTEM_FLAGS + 0x38) // Unused Flag, same as above
 #define FLAG_SYS_CAVE_BATTLE                        (SYSTEM_FLAGS + 0x39) // Unused Flag, same as above
 #define FLAG_SYS_SHOAL_TIDE                         (SYSTEM_FLAGS + 0x3A)
 #define FLAG_SYS_RIBBON_GET                         (SYSTEM_FLAGS + 0x3B)

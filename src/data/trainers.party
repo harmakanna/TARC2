@@ -16678,14 +16678,15 @@ Swellow
 Level: 35
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-=== TRAINER_GABRIELLE_5 ===
+=== TRAINER_TORN_AND_THUND ===
 Name: GABRIELLE
 Class: Pkmn Breeder
-Pic: Pokemon Breeder F
+Pic: Torn And Thund
 Gender: Female
 Music: Female
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Purple
 
 Delcatty
 Level: 37
@@ -16711,14 +16712,15 @@ Swellow
 Level: 37
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-=== TRAINER_THALIA_2 ===
+=== TRAINER_TORNADUS ===
 Name: THALIA
 Class: Beauty
-Pic: Beauty
+Pic: Tornadus
 Gender: Female
 Music: Female
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Purple
 
 Wailmer
 Level: 34
@@ -16728,14 +16730,15 @@ Horsea
 Level: 34
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-=== TRAINER_THALIA_3 ===
+=== TRAINER_THUNDURUS ===
 Name: THALIA
 Class: Beauty
-Pic: Beauty
+Pic: Thundurus
 Gender: Female
 Music: Female
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Purple
 
 Luvdisc
 Level: 36
@@ -16749,14 +16752,15 @@ Seadra
 Level: 36
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-=== TRAINER_THALIA_4 ===
+=== TRAINER_LANDORUS ===
 Name: THALIA
 Class: Beauty
-Pic: Beauty
+Pic: Landorus
 Gender: Female
 Music: Female
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Yellow
 
 Luvdisc
 Level: 38
@@ -16770,14 +16774,15 @@ Seadra
 Level: 38
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-=== TRAINER_THALIA_5 ===
+=== TRAINER_ENAMORUS ===
 Name: THALIA
 Class: Beauty
-Pic: Beauty
+Pic: Enamorus
 Gender: Female
 Music: Female
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Pink
 
 Luvdisc
 Level: 40

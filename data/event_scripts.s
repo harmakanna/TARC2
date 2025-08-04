@@ -1230,3 +1230,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Present_Gym/scripts.inc"
 
 	.include "data/maps/CutsceneOffice/scripts.inc"
+
+	.include "data/maps/CutsceneWater/scripts.inc"

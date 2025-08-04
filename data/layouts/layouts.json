@@ -4524,10 +4524,10 @@
     {
       "id": "LAYOUT_PRESENT_POKEMON_CENTER",
       "name": "Present_PokemonCenter_Layout",
-      "width": 15,
+      "width": 14,
       "height": 13,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_PokeCenterAlt",
+      "secondary_tileset": "gTileset_PokemonCenter",
       "border_filepath": "data/layouts/Present_PokemonCenter/border.bin",
       "blockdata_filepath": "data/layouts/Present_PokemonCenter/map.bin"
     },
@@ -4730,6 +4730,16 @@
       "secondary_tileset": "gTileset_LittleOffice",
       "border_filepath": "data/layouts/CutsceneOffice/border.bin",
       "blockdata_filepath": "data/layouts/CutsceneOffice/map.bin"
+    },
+    {
+      "id": "LAYOUT_CUTSCENE_WATER",
+      "name": "CutsceneWater_Layout",
+      "width": 60,
+      "height": 11,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_PresentTown",
+      "border_filepath": "data/layouts/CutsceneWater/border.bin",
+      "blockdata_filepath": "data/layouts/CutsceneWater/map.bin"
     }
   ]
 }

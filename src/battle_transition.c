@@ -2584,31 +2584,18 @@ static void HBlankCB_Mugshots(void)
 
 static void Mugshots_CreateTrainerPics(struct Task *task)
 {
-    //u16 speciesA, speciesB;
     struct Sprite *opponentSpriteA, *opponentSpriteB=0, *playerSprite, *partnerSprite=0;
+    u8 trainerAPicId, trainerBPicId;
 
-    /*if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY_DOUBLE)
-    {
-        speciesA = GetMonData(&gEnemyParty[0], MON_DATA_SPECIES);
-        speciesB = GetMonData(&gEnemyParty[3], MON_DATA_SPECIES);
-        u8 trainerAPicId = GetPokemonSpriteToDisplay(species);
-        u8 trainerBPicId = GetPokemonSpriteToDisplay(species);
-    }
-    else if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
-    {
-        speciesA = GetMonData(&gEnemyParty[0], MON_DATA_SPECIES);
-        u8 trainerAPicId = GetPokemonSpriteToDisplay(species);
-    }
-    else
-    {*/
-        u8 trainerAPicId = GetTrainerPicFromId(TRAINER_BATTLE_PARAM.opponentA);
-        u8 trainerBPicId = GetTrainerPicFromId(TRAINER_BATTLE_PARAM.opponentB);
-    //}
+    trainerAPicId = GetTrainerPicFromId(TRAINER_BATTLE_PARAM.opponentA);
+    trainerBPicId = GetTrainerPicFromId(TRAINER_BATTLE_PARAM.opponentB);
+
     u8 partnerPicId = gTrainerPicToTrainerBackPic[GetTrainerPicFromId(gPartnerTrainerId)];
     s16 opponentARotationScales = 0;
     s16 opponentBRotationScales = 0;
 
     gReservedSpritePaletteCount = 10;
+
     if (TRAINER_BATTLE_PARAM.opponentB != TRAINER_NONE && gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
     {
         task->tOpponentSpriteBId = CreateTrainerSprite(trainerBPicId,
@@ -2625,11 +2612,21 @@ static void Mugshots_CreateTrainerPics(struct Task *task)
         opponentBRotationScales = gTrainerSprites[trainerBPicId].mugshotRotation;
         SetOamMatrixRotationScaling(opponentSpriteB->oam.matrixNum, opponentBRotationScales, opponentBRotationScales, 0);
     }
-
+    
+    if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY_DOUBLE)
+    {
+    task->tOpponentSpriteAId = CreateTrainerSprite(trainerAPicId,
+                                                  gTrainerSprites[trainerAPicId].mugshotCoords.x - 60,
+                                                  gTrainerSprites[trainerAPicId].mugshotCoords.y + 42,
+                                                  0, NULL);
+    }
+    else 
+    {                                              
     task->tOpponentSpriteAId = CreateTrainerSprite(trainerAPicId,
                                                   gTrainerSprites[trainerAPicId].mugshotCoords.x - 32,
                                                   gTrainerSprites[trainerAPicId].mugshotCoords.y + 42,
                                                   0, NULL);
+    }
 
     gReservedSpritePaletteCount = 12;
     if (gPartnerTrainerId != TRAINER_PARTNER(PARTNER_NONE) && gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER) 
