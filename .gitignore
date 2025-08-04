@@ -40,6 +40,7 @@ prefabs.json
 *.js
 /pokeemerald-*.png
 src/data/map_group_count.h
+src/data/trainers.party
 src/data/trainers.h
 tools/trainerproc/trainerproc
 *.Identifier

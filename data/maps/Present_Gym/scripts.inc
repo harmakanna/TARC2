@@ -193,27 +193,27 @@ Present_Gym_EventScript_GymGuyBeatPhoebe::
 	releaseall
 	end
 
-@ Expert, TRAINER_LEAH
+@ Hex Maniac Top, TRAINER_LEAH
 Present_Gym_EventScript_GymTrainer1::
 	trainerbattle_single TRAINER_LEAH, Present_Gym_Text_GymTrainer1Intro, Present_Gym_Text_GymTrainer1Defeat
 	msgbox Present_Gym_Text_GymTrainer1PostBattle, MSGBOX_AUTOCLOSE
 	end
 
-@ Battle Girl, TRAINER_DAISY
+@ Psychic M, TRAINER_BLAKE
 Present_Gym_EventScript_GymTrainer2::
-	trainerbattle_double TRAINER_DAISY, Present_Gym_Text_GymTrainer2Intro, Present_Gym_Text_GymTrainer2Defeat, Common_Text_NotEnoughPokemon
+	trainerbattle_single TRAINER_BLAKE, Present_Gym_Text_GymTrainer2Intro, Present_Gym_Text_GymTrainer2Defeat
 	msgbox Present_Gym_Text_GymTrainer2PostBattle, MSGBOX_AUTOCLOSE
 	end
 
-@ Ranger M, TRAINER_SEBASTIAN
+@ Ranger, TRAINER_SEBASTIAN
 Present_Gym_EventScript_GymTrainer3::
 	trainerbattle_double TRAINER_SEBASTIAN, Present_Gym_Text_GymTrainer3Intro, Present_Gym_Text_GymTrainer3Defeat, Common_Text_NotEnoughPokemon
 	msgbox Present_Gym_Text_GymTrainer3PostBattle, MSGBOX_AUTOCLOSE
 	end
 
-@ Ranger F, TRAINER_SAMANTHA
+@ Psychic F, TRAINER_SAMANTHA
 Present_Gym_EventScript_GymTrainer4::
-	trainerbattle_single TRAINER_SAMANTHA, Present_Gym_Text_GymTrainer4Intro, Present_Gym_Text_GymTrainer4Defeat
+	trainerbattle_double TRAINER_SAMANTHA, Present_Gym_Text_GymTrainer4Intro, Present_Gym_Text_GymTrainer4Defeat, Common_Text_NotEnoughPokemon
 	msgbox Present_Gym_Text_GymTrainer4PostBattle, MSGBOX_AUTOCLOSE
 	end
 
