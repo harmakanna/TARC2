@@ -10,5 +10,25 @@
 #define OT_SHELLY_GOREBYSS     6
 #define OT_EMMA_GUMSHOOS       7
 #define OT_EMMA_MEOWSTIC       8
+#define OT_TONY_CLEFAIRY       9
+#define OT_TONY_MURKROW        10
+#define OT_JANE_YANMEGA        11
+#define OT_JANE_MAMOSWINE      12
+#define OT_MIKEY_DEDENNE       13
+#define OT_MIKEY_TOGEDEMARU    14
+#define OT_EDUARDO_BRELOOM     15
+#define OT_EDUARDO_SHIINOTIC   16
+#define OT_TEE_OVERQWIL        17
+#define OT_TEE_DRAGALGE        18
+#define OT_DAMIAN_TAUROS       19
+#define OT_DAMIAN_MILTANK      20
+#define OT_BARTOZ_GALVANTULA   21
+#define OT_BARTOZ_PROBOPASS    22
+#define OT_BRENDAN_WALREIN     23
+#define OT_BRENDAN_CAMERUPT    24
+#define OT_BLUE_GOLEM          25
+#define OT_BLUE_MACHAMP        26
+#define OT_BETH_SWANNA         27
+#define OT_BETH_UNFEZANT       28
 
 #endif //GUARD_CONSTANTS_OTS_H
