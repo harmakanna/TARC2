@@ -4,21 +4,23 @@ Present_Celebi_Society_MapScripts::
 	.byte 0
 
 Present_CelebiSociety_OnTransition:
-	call_if_eq VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1, Present_CelebiSociety_PreparePostSaveEstella
+	call_if_eq VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 2, Present_CelebiSociety_PreparePostSaveEstella
 	end
 
 Present_CelebiSociety_OnFrame:
-	map_script_2 VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1, Present_CelebiSociety_PostSaveEstella
+	map_script_2 VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 2, Present_CelebiSociety_PostSaveEstella
 	.2byte 0
 
 Present_CelebiSociety_PreparePostSaveEstella::
-	setobjectxy LOCALID_CELEBISOCIETY_GRANDMA, 3, 8
+	setobjectxyperm LOCALID_CELEBISOCIETY_GRANDMA, 3, 8
+	setobjectmovementtype LOCALID_CELEBISOCIETY_GRANDMA, MOVEMENT_TYPE_FACE_UP
+	setobjectmovementtype LOCALID_PLAYER, MOVEMENT_TYPE_FACE_UP
 	return
 
 Present_CelebiSociety_PostSaveEstella::
 	lockall
-	applymovement LOCALID_PLAYER, Common_Movement_WalkUp2
-	applymovement LOCALID_CELEBISOCIETY_GRANDMA, Common_Movement_WalkUp2
+	applymovement LOCALID_PLAYER, Present_CelebiSociety_Movement_LookerWalkUp4
+	applymovement LOCALID_CELEBISOCIETY_GRANDMA, Present_CelebiSociety_Movement_GrandmaWalkUp4
 	waitmovement 0
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
 	speak LOCALID_CELEBISOCIETY_GRANDMA, DIR_WEST, Name_Grandma, Present_CelebiSociety_Text_GrandmaDidYouMeetCelebi
@@ -28,15 +30,33 @@ Present_CelebiSociety_PostSaveEstella::
 	speak LOCALID_CELEBISOCIETY_GRANDMA, DIR_WEST, Name_Grandma, Present_CelebiSociety_Text_GrandmaIWish
 	speak LOCALID_PLAYER, DIR_EAST, Name_Looker, Present_CelebiSociety_Text_LookerThankYou
 	speak LOCALID_CELEBISOCIETY_GRANDMA, DIR_WEST, Name_Grandma, Present_CelebiSociety_Text_GrandmaOfCourseDearie
+	closemessage
 	applymovement LOCALID_CELEBISOCIETY_GRANDMA, Present_CelebiSociety_Movement_GrandmaWalkToChair
 	waitmovement 0
 	setobjectxyperm LOCALID_CELEBISOCIETY_GRANDMA, 8, 5
 	closemessage
 	completequest QUEST_SAVE_ESTELLA
+	setvar VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1
 	clearflag FLAG_ENTER_CELEBI_SOCIETY_FROM_QUEST
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	setflag FLAG_PLAY_LOOKER_ESTELLA_ON_TRANSITION
 	releaseall
 	end
+
+Present_CelebiSociety_Movement_GrandmaWalkUp4:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+Present_CelebiSociety_Movement_LookerWalkUp4:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	face_right
+	step_end
 
 Present_CelebiSociety_Movement_GrandmaWalkToChair:
 	walk_down
@@ -61,7 +81,7 @@ Present_CelebiSociety_EventScript_Eldegoss::
 	end
 
 Present_CelebiSociety_Text_GrandmaDidYouMeetCelebi:
-	.string "Here we are.\n"
+	.string "Here we are.\p"
 	.string "To continue our conversation,\n"
 	.string "did you truly meet Celebi?$"
 
@@ -95,7 +115,7 @@ Present_CelebiSociety_Text_GrandmaIWish:
 	.string "Very few people have reverence for\n"
 	.string "the spirits who gave Porta Bella its\l"
 	.string "peaceful skies and fertile land…\p"
-	.string "We fear these stories will die with\l"
+	.string "We fear these stories will die with\n"
 	.string "us, only written in books as fables…$"
 
 Present_CelebiSociety_Text_LookerThankYou:

@@ -98,24 +98,28 @@ PresentTown_EventScript_LookerThinkingScenes::
 PresentTown_EventScript_LookerThinkingAqua::
 	lockall
 	playbgm MUS_PL_LOOKER, FALSE
+	addvar VAR_MAIN_QUEST_STATE, 1
 	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, PresentTown_Text_LookerThinkingAqua
 	return
 
 PresentTown_EventScript_LookerThinkingGym::
 	lockall
 	playbgm MUS_PL_LOOKER, FALSE
+	addvar VAR_MAIN_QUEST_STATE, 1
 	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, PresentTown_Text_LookerThinkingGym
 	return
 
 PresentTown_EventScript_LookerThinkingEstella::
 	lockall
 	playbgm MUS_PL_LOOKER, FALSE
+	addvar VAR_MAIN_QUEST_STATE, 1
 	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, PresentTown_Text_LookerThinkingEstella
 	return
 	
 PresentTown_EventScript_LookerThinkingRanger::
 	lockall
 	playbgm MUS_PL_LOOKER, FALSE
+	addvar VAR_MAIN_QUEST_STATE, 1
 	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, PresentTown_Text_LookerThinkingRanger
 	return
 
@@ -137,7 +141,6 @@ PresentTown_EventScript_EndLookerThinking::
 	clearflag FLAG_PLAY_LOOKER_GYM_ON_TRANSITION
 	clearflag FLAG_PLAY_LOOKER_ESTELLA_ON_TRANSITION
 	clearflag FLAG_PLAY_LOOKER_RANGER_ON_TRANSITION
-	addvar VAR_MAIN_QUEST_STATE, 1
 	setvar VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 0
 	releaseall
 	end

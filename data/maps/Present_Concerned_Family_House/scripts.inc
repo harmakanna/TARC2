@@ -24,25 +24,21 @@ Present_ConcernedFamilyHouse_EventScript_Dad::
 	end
 
 Present_ConcernedFamilyHouse_EventScript_DadRewardQuest::
+	setflag FLAG_SYS_DISAPPEAR_QUESTS
 	call Script_GetNPCFacingDirection
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_ConcernedFamilyHouse_Text_LookerDaughterBackHomeSafe
 	speak LOCALID_CONCERNEDFAMILY_DAD, VAR_0x8005, Name_Relieved_Dad, Present_ConcernedFamilyHouse_Text_DadThankYou
+	speakername NULL
 	giveitem ITEM_FIRE_STONE
+	closemessage
 	copyvar VAR_0x8004, VAR_0x8005 @Dad is 8004, Grandma is 8005
 	copyvar VAR_0x8003, VAR_FACING @0x8003 is Looker's original direction
 	getplayerxy VAR_0x8000, VAR_0x8001
 	call_if_eq VAR_0x8000, 11, Present_ConcernedFamilyHouse_EventScript_MoveGrandmaToLookerNorth
 	call_if_eq VAR_0x8000, 12, Present_ConcernedFamilyHouse_EventScript_MoveGrandmaToLookerWest
-	call Script_GetNPCFacingDirection
-	speak LOCALID_CONCERNEDFAMILY_GRANDMA, VAR_0x8005, Name_Grandma, Present_ConcernedFamilyHouse_Text_GrandmaDidYouLearn
-	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_ConcernedFamilyHouse_Text_LookerILearnedAbout
-	speak LOCALID_CONCERNEDFAMILY_GRANDMA, VAR_0x8005, Name_Grandma, Present_ConcernedFamilyHouse_Text_GrandmaSoTheLegendsAreTrue
-	call_if_eq VAR_0x8000, 11, Present_ConcernedFamilyHouse_EventScript_DadSpeakLookerNorth
-	call_if_eq VAR_0x8000, 12, Present_ConcernedFamilyHouse_EventScript_DadSpeakLookerWest
-	speak LOCALID_CONCERNEDFAMILY_GRANDMA, VAR_0x8005, Name_Grandma, Present_ConcernedFamilyHouse_Text_GrandmaSigh
-	setvar VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1
+	setvar VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 2
 	clearflag FLAG_HIDE_CELEBI_SOCIETY_GRANDMA
-	warpdoor MAP_PRESENT_CELEBI_SOCIETY, 2, 8
+	warp MAP_PRESENT_CELEBI_SOCIETY, 2, 8
 	delay 48
 	end
 
@@ -51,6 +47,14 @@ Present_ConcernedFamilyHouse_EventScript_MoveGrandmaToLookerNorth::
 	waitmovement 0
 	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0
+	speak LOCALID_CONCERNEDFAMILY_GRANDMA, DIR_EAST, Name_Grandma, Present_ConcernedFamilyHouse_Text_GrandmaDidYouLearn
+	speak LOCALID_PLAYER, DIR_WEST, Name_Looker, Present_ConcernedFamilyHouse_Text_LookerILearnedAbout
+	speak LOCALID_CONCERNEDFAMILY_GRANDMA, DIR_EAST, Name_Grandma, Present_ConcernedFamilyHouse_Text_GrandmaSoTheLegendsAreTrue
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	applymovement LOCALID_CONCERNEDFAMILY_GRANDMA, Common_Movement_FaceUp
+	speak LOCALID_CONCERNEDFAMILY_DAD, DIR_SOUTH, Name_Relieved_Dad, Present_ConcernedFamilyHouse_Text_DadWillYouQuitIt
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
+	speak LOCALID_CONCERNEDFAMILY_GRANDMA, DIR_EAST, Name_Grandma, Present_ConcernedFamilyHouse_Text_GrandmaSigh
 	return
 
 Present_ConcernedFamilyHouse_EventScript_MoveGrandmaToLookerWest::
@@ -58,20 +62,14 @@ Present_ConcernedFamilyHouse_EventScript_MoveGrandmaToLookerWest::
 	waitmovement 0
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0
-	return
-
-Present_ConcernedFamilyHouse_EventScript_DadSpeakLookerNorth::
-	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
-	applymovement LOCALID_CONCERNEDFAMILY_GRANDMA, Common_Movement_FaceUp
-	speak LOCALID_CONCERNEDFAMILY_DAD, DIR_WEST, Name_Relieved_Dad, Present_ConcernedFamilyHouse_Text_DadWillYouQuitIt
-	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
-	return
-
-Present_ConcernedFamilyHouse_EventScript_DadSpeakLookerWest::
+	speak LOCALID_CONCERNEDFAMILY_GRANDMA, DIR_NORTH, Name_Grandma, Present_ConcernedFamilyHouse_Text_GrandmaDidYouLearn
+	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, Present_ConcernedFamilyHouse_Text_LookerILearnedAbout
+	speak LOCALID_CONCERNEDFAMILY_GRANDMA, DIR_NORTH, Name_Grandma, Present_ConcernedFamilyHouse_Text_GrandmaSoTheLegendsAreTrue
 	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 	applymovement LOCALID_CONCERNEDFAMILY_GRANDMA, Common_Movement_FaceLeft
-	speak LOCALID_CONCERNEDFAMILY_DAD, DIR_SOUTH, Name_Relieved_Dad, Present_ConcernedFamilyHouse_Text_DadWillYouQuitIt
+	speak LOCALID_CONCERNEDFAMILY_DAD, DIR_EAST, Name_Relieved_Dad, Present_ConcernedFamilyHouse_Text_DadWillYouQuitIt
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	speak LOCALID_CONCERNEDFAMILY_GRANDMA, DIR_NORTH, Name_Grandma, Present_ConcernedFamilyHouse_Text_GrandmaSigh
 	return
 
 Present_ConcernedFamilyHouse_Movement_MoveGrandmaToLookerNorth:

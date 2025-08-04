@@ -1919,10 +1919,11 @@
 	questmenu QUEST_MENU_SET_ACTIVE, \quest
 	questmenu QUEST_MENU_BUFFER_QUEST_NAME \quest
     bufferstring 1 gText_QuestActive
+	message gText_QuestAnnounce
 	playfanfare MUS_REGISTER_MATCH_CALL
-	msgbox gText_QuestAnnounce, MSGBOX_SIGN
 	waitfanfare
-	delay 40
+	waitmessage
+	delay 10
 	closemessage
 	.endm
 
@@ -1935,9 +1936,9 @@
     bufferstring 1 gText_QuestComplete
 	message gText_QuestAnnounce
 	playfanfare MUS_OBTAIN_TMHM
-	msgbox gText_QuestAnnounce, MSGBOX_SIGN
 	waitfanfare
-	delay 40
+	waitmessage
+	delay 10
 	closemessage
 	.endm
 

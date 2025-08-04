@@ -282,7 +282,7 @@ Present_Gym_Text_PhoebeTheStormsAreCertainlyWeird:
 	.string "The big storm which rolled in earlier\n"
 	.string "is certainly weird…\p"
 	.string "If it's not Team Aqua who's the culprit,\n"
-	.string "I couldn't imagine who it would be…"
+	.string "I couldn't imagine who it would be…\p"
 	.string "I suppose you could check in with the\n"
 	.string "Rangers if you haven't already?\p"
 	.string "Outside of that, we've also had a few\n"

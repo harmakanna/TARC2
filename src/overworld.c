@@ -1174,6 +1174,8 @@ u16 GetLocationMusic(struct WarpData *warp)
         return MUS_MT_CHIMNEY;
     else if (VarGet(VAR_AQUACORP_STATE) == 1 && warp->mapNum == MAP_NUM(MAP_PRESENT_AQUA_CORP_HQ))
         return MUS_PL_LOOKER;
+    else if (warp->mapNum == MAP_NUM(MAP_PRESENT_TOWN) && FlagGet(FLAG_SYS_WEATHER_CTRL))
+        return MUS_NONE;
     else if (FlagGet(FLAG_SYS_NO_MUSIC_ON_TRANSITION))
         return MUS_NONE;
     else
