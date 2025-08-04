@@ -62,6 +62,7 @@ ShrineOfProsperityPresent_EventScript_ThundurusRushE::
 
 ShrineOfProsperityPresent_EventScript_ThundurusRushW::
 	applymovement LOCALID_SHRINE_THUNDURUS, ShrineOfProsperityPresent_Movement_ThundurusRushW
+	waitmovement 0
 	setobjectmovementtype LOCALID_SHRINE_THUNDURUS, MOVEMENT_TYPE_WALK_IN_PLACE_UP
 	return
 
