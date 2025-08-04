@@ -187,6 +187,44 @@ static const struct InGameOT sIngameOTs[] =
         .isShiny = FALSE,
         .isNicknamed = TRUE,
         .nickname = _("Gorb"),
+    },
+    [OT_EMMA_GUMSHOOS] =
+    {
+        .species = SPECIES_GUMSHOOS,
+        .level = 50,
+        .heldItem = ITEM_FOCUS_SASH,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_SURF, MOVE_PSYCHIC, MOVE_DRAINING_KISS, MOVE_SAFEGUARD},
+        .ball = BALL_FRIEND,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_MALE,
+        .otId = 42784,
+        .otName = _("Emma"),
+        .otGender = FEMALE,
+        .isShiny = FALSE,
+        .isNicknamed = TRUE,
+        .nickname = _("Gumbo"),
+    },
+    [OT_EMMA_MEOWSTIC] =
+    {
+        .species = SPECIES_MEOWSTIC_F,
+        .level = 50,
+        .heldItem = ITEM_FOCUS_SASH,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_SURF, MOVE_PSYCHIC, MOVE_DRAINING_KISS, MOVE_SAFEGUARD},
+        .ball = BALL_FRIEND,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_FEMALE,
+        .otId = 42784,
+        .otName = _("Emma"),
+        .otGender = FEMALE,
+        .isShiny = FALSE,
+        .isNicknamed = TRUE,
+        .nickname = _("Mimi"),
     }
 };
 

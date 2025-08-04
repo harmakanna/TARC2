@@ -8,5 +8,7 @@
 #define OT_PHOEBE_SABLEYE      4
 #define OT_SHELLY_HUNTAIL      5
 #define OT_SHELLY_GOREBYSS     6
+#define OT_EMMA_GUMSHOOS       7
+#define OT_EMMA_MEOWSTIC       8
 
 #endif //GUARD_CONSTANTS_OTS_H

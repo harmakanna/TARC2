@@ -172,14 +172,42 @@ PastTown_Movement_LookerLookAround:
 
 PastTown_EventScript_Past_Fisherman::
 	lockall
-	goto_if_quest_inactive QUEST_HELP_FISHERMAN, PastTown_EventScript_Past_Fisherman_GiveQuest
+	faceplayer
+	returnqueststate QUEST_HELP_FISHERMAN
+	switch VAR_RESULT
+	case 1, PastTown_EventScript_Past_Fisherman_QuestGive
+	case 2, PastTown_EventScript_Past_Fisherman_QuestActive
+	case 3, PastTown_EventScript_Past_Fisherman_QuestReward
+	case 4, PastTown_EventScript_Past_Fisherman_QuestComplete
+	releaseall
 	end
 
-PastTown_EventScript_Past_Fisherman_GiveQuest::
+PastTown_EventScript_Past_Fisherman_QuestGive::
 	speak LOCALID_FISHERMAN, VAR_FACING, Name_Fisherman, PastTown_Text_FishermanFrustrated
 	faceplayer
 	call Script_GetNPCFacingDirection
 	speak LOCALID_FISHERMAN, VAR_0x8005, Name_Fisherman, PastTown_Text_FishermanHelp
+	startquest QUEST_HELP_FISHERMAN
+	applymovement LOCALID_FISHERMAN, Common_Movement_FaceUp
+	releaseall
+	end
+
+PastTown_EventScript_Past_Fisherman_QuestActive::
+	faceplayer
+	speak LOCALID_FISHERMAN, VAR_FACING, Name_Fisherman, PastTown_Text_FishermanHelp
+	releaseall
+	end
+
+PastTown_EventScript_Past_Fisherman_QuestReward::
+	faceplayer
+	speak LOCALID_FISHERMAN, VAR_FACING, Name_Fisherman, PastTown_Text_FishermanReward
+	completequest QUEST_HELP_FISHERMAN
+	releaseall
+	end
+
+PastTown_EventScript_Past_Fisherman_QuestComplete::
+	faceplayer
+	speak LOCALID_FISHERMAN, VAR_FACING, Name_Fisherman, PastTown_Text_FishermanComplete
 	releaseall
 	end
 
@@ -255,3 +283,16 @@ PastTown_Text_FishermanFrustrated:
 PastTown_Text_FishermanHelp:
 	.string "I wish someone could tell me\n"
 	.string "where the best place to fish is!$"
+
+PastTown_Text_FishermanReward:
+	.string "Woah, you mean I should be\n"
+	.string "fishing by the sea, instead\l"
+	.string "of by the river?\p"
+	.string "Thank you, stranger.\p"
+	.string "Here, take one of these Pokémon.\p"
+	.string "They're both fish, but neither is\n"
+	.string "actually Water-type.$"
+
+PastTown_Text_FishermanComplete:
+	.string "Thanks for the heads up!\p"
+	.string "Now I need to make a fishing rod…$"

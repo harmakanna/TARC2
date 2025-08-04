@@ -73,6 +73,7 @@ PresentTown_EventScript_ChangeAnabelFollowerText::
 PresentTown_EventScript_GiveLookerStarters::
 	givemonwithot OT_LOOKER_GROWLITHE
 	givemonwithot OT_LOOKER_TOXICROAK
+	givemonwithot OT_EMMA_GUMSHOOS
 	setflag FLAG_LOOKER_STARTERS
 	return 
 
@@ -692,6 +693,39 @@ PresentTown_Movement_PeaceRangerEmoteTurn:
 	face_right
 	step_end
 
+PresentTown_EventScript_Fisherman::
+	lockall
+	faceplayer
+	returnqueststate QUEST_HELP_FISHERMAN
+	switch VAR_RESULT
+	case 1, PresentTown_EventScript_Fisherman_Unaware
+	case 2, PresentTown_EventScript_Fisherman_Battle
+	case 3, PresentTown_EventScript_Fisherman_Defeated
+	case 4, PresentTown_EventScript_Fisherman_Defeated
+	releaseall
+	end
+
+PresentTown_EventScript_Fisherman_Unaware::
+	call Script_GetNPCFacingDirection
+	speak LOCALID_PRESENT_FISHERMAN, VAR_0x8005, Name_Fisherman, PresentTown_Text_Fisherman_Unaware
+	applymovement LOCALID_PRESENT_FISHERMAN, Common_Movement_FaceDown
+	releaseall
+	end
+
+PresentTown_EventScript_Fisherman_Battle::
+	call Script_GetNPCFacingDirection
+	speak LOCALID_PRESENT_FISHERMAN, VAR_0x8005, Name_Fisherman, PresentTown_Text_Fisherman_PreBattle
+	trainerbattle_no_intro TRAINER_PRESENT_FISHERMAN, PresentTown_Text_Fisherman_Defeat
+	questmenu QUEST_MENU_SET_REWARD QUEST_HELP_FISHERMAN
+	goto PresentTown_EventScript_Fisherman_Defeated
+
+PresentTown_EventScript_Fisherman_Defeated::
+	call Script_GetNPCFacingDirection
+	speak LOCALID_PRESENT_FISHERMAN, VAR_0x8005, Name_Fisherman, PresentTown_Text_Fisherman_PostBattle
+	applymovement LOCALID_PRESENT_FISHERMAN, Common_Movement_FaceDown
+	releaseall
+	end
+
 PresentTown_Text_ProsperityRangerYouCanPass:
 	.string "Hello! I got the call from HQ. You're\n"
 	.string "free to go to the shrine as needed!$"
@@ -902,3 +936,19 @@ PresentTown_Text_LookerIGotIt:
 	.string "I need to find which challenger\n"
 	.string "caught the legendary and close this\l"
 	.string "case shut!$"
+
+PresentTown_Text_Fisherman_Unaware:
+	.string "Hey you, look at all these fish!$"
+
+PresentTown_Text_Fisherman_PreBattle:
+	.string "The fish down here by the sea are\n"
+	.string "second to none!\p"
+	.string "You look strong, let me prove it!$"
+
+PresentTown_Text_Fisherman_Defeat:
+	.string "You don't even have any fish!$"
+
+PresentTown_Text_Fisherman_PostBattle:
+	.string "I may have lost, but this fishing\n"
+	.string "spot is still unbeatable!\p"
+	.string "I sure hope no one finds out…$"
