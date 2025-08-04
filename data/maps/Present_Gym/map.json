@@ -46,12 +46,12 @@
       "x": 4,
       "y": 19,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
-      "script": "Present_Gym_EventScript_GymTrainer4",
+      "script": "Present_Gym_EventScript_GymTrainer2",
       "flag": "0"
     },
     {
@@ -104,7 +104,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Present_Gym_EventScript_GymTrainer2",
+      "script": "Present_Gym_EventScript_GymTrainer4",
       "flag": "0"
     },
     {
