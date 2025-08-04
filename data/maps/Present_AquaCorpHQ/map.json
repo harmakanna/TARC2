@@ -2,7 +2,7 @@
   "id": "MAP_PRESENT_AQUA_CORP_HQ",
   "name": "Present_AquaCorpHQ",
   "layout": "LAYOUT_PRESENT_AQUA_CORP_HQ",
-  "music": "MUS_MT_CHIMNEY",
+  "music": "MUS_DP_VEILSTONE_DAY",
   "region_map_section": "MAPSEC_PORTO_BELLA_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
