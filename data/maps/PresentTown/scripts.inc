@@ -50,6 +50,7 @@ PresentTown_EventScript_DebugMainGameStart::
 	setflag FLAG_FOUGHT_LASS
 	setflag FLAG_HIDE_SHRINE_PROSPERITY_PAST_ANABEL
 	clearflag FLAG_HIDE_SHRINE_PEACE_CELEBI
+	questmenu QUEST_MENU_SET_REWARD, QUEST_SAVE_ESTELLA
 	return
 
 PresentTown_EventScript_LockCityDoors::
@@ -89,6 +90,7 @@ PresentTown_EventScript_LookerThinkingScenes::
 	call_if_set FLAG_PLAY_LOOKER_AQUA_ON_TRANSITION, PresentTown_EventScript_LookerThinkingAqua
 	call_if_set FLAG_PLAY_LOOKER_GYM_ON_TRANSITION, PresentTown_EventScript_LookerThinkingGym
 	call_if_set FLAG_PLAY_LOOKER_ESTELLA_ON_TRANSITION, PresentTown_EventScript_LookerThinkingEstella
+	call_if_set FLAG_PLAY_LOOKER_RANGER_ON_TRANSITION, PresentTown_EventScript_LookerThinkingRanger
 	call_if_eq VAR_MAIN_QUEST_STATE, 4, PresentTown_EventScript_LookerThinkingIGotIt
 	call_if_eq VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1, PresentTown_EventScript_EndLookerThinking
 	end
@@ -96,19 +98,25 @@ PresentTown_EventScript_LookerThinkingScenes::
 PresentTown_EventScript_LookerThinkingAqua::
 	lockall
 	playbgm MUS_PL_LOOKER, FALSE
-	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerThinkingAqua
+	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, PresentTown_Text_LookerThinkingAqua
 	return
 
 PresentTown_EventScript_LookerThinkingGym::
 	lockall
 	playbgm MUS_PL_LOOKER, FALSE
-	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerThinkingGym
+	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, PresentTown_Text_LookerThinkingGym
 	return
 
 PresentTown_EventScript_LookerThinkingEstella::
 	lockall
 	playbgm MUS_PL_LOOKER, FALSE
-	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerThinkingEstella
+	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, PresentTown_Text_LookerThinkingEstella
+	return
+	
+PresentTown_EventScript_LookerThinkingRanger::
+	lockall
+	playbgm MUS_PL_LOOKER, FALSE
+	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, PresentTown_Text_LookerThinkingRanger
 	return
 
 PresentTown_EventScript_LookerThinkingIGotIt::
@@ -122,7 +130,8 @@ PresentTown_EventScript_LookerThinkingIGotIt::
 PresentTown_EventScript_EndLookerThinking::
 	closemessage
 	fadeoutbgm 0
-	playbgm MUS_DP_SUNYSHORE_DAY, FALSE
+	call_if_set FLAG_SYS_WEATHER_CTRL, PresentTown_EventScript_PlayNoMusic
+	call_if_unset FLAG_SYS_WEATHER_CTRL, PresentTown_EventScript_PlayDefaultMusic
 	clearflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	clearflag FLAG_PLAY_LOOKER_AQUA_ON_TRANSITION
 	clearflag FLAG_PLAY_LOOKER_GYM_ON_TRANSITION
@@ -132,6 +141,14 @@ PresentTown_EventScript_EndLookerThinking::
 	setvar VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 0
 	releaseall
 	end
+
+PresentTown_EventScript_PlayNoMusic:
+	playbgm MUS_NONE, TRUE
+	return
+
+PresentTown_EventScript_PlayDefaultMusic:
+	playbgm MUS_DP_SUNYSHORE_DAY, TRUE
+	return 
 
 PresentTown_OnResume:
 	special HealPlayerParty
@@ -893,6 +910,17 @@ PresentTown_Text_LookerThinkingEstella:
 	.string "of the power of the legends…\p"
 	.string "Hmm…$"
 
+PresentTown_Text_LookerThinkingRanger:
+	.string "Hmm…\p"
+	.string "So there was nobody posted at the\n"
+	.string "entrance to the Shrine of Prosperity\l"
+	.string "due to staffing issues…\p"
+	.string "And while adults are more reserved in\n"
+	.string "their catching habits, children often\l"
+	.string "cause trouble for the wildlife with\l"
+	.string "their insane catching sprees…\p"
+	.string "Hmm…$"
+	
 PresentTown_Text_LookerIGotIt:
 	.string "I got it!\p"
 	.string "One of the gym challengers, a\n"

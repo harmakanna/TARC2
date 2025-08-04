@@ -31,9 +31,15 @@ Name_Mayor:
 Name_Concerned_Dad:
     .string "Concerned Dad$"
 
+Name_Relieved_Dad:
+    .string "Relieved Dad$"
+
 Name_Estella:
     .string "Estella$"
 
+Name_Grandma:
+    .string "Grandma$"
+    
 Name_Head_Ranger:
     .string "Head Ranger$"
 
