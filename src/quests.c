@@ -2553,8 +2553,9 @@ void HandleQuestIconForSingleObjectEvent(struct ObjectEvent *objectEvent, u32 ob
         return;
 
 	// Remove icon if quest is completed
-	if (QuestMenu_GetSetQuestState(questId, FLAG_GET_COMPLETED)
-		|| QuestMenu_GetSetQuestState(questId, FLAG_GET_ACTIVE))
+	if ((IsQuestCompletedState(questId)
+		|| IsQuestActiveState(questId))
+		|| FlagGet(FLAG_SYS_DISAPPEAR_QUESTS))
 	{
 		RemoveQuestIconFieldEffect(objectEvent);
 		return;
@@ -2565,8 +2566,9 @@ void HandleQuestIconForSingleObjectEvent(struct ObjectEvent *objectEvent, u32 ob
         return;
 
 	// Add icon to NPCs who have quests
-	if (!objectEvent->hasQuestIcon && !FieldEffectActiveListContains(FLDEFF_QUEST_ICON))
+	if (!objectEvent->hasQuestIcon && !FieldEffectActiveListContains(FLDEFF_QUEST_ICON) && !FlagGet(FLAG_SYS_DISAPPEAR_QUESTS))
 		SpawnQuestIconForObject(objectEvent, objectEventId);
+
 }
 
 static void RemoveQuestIconFieldEffect(struct ObjectEvent *objectEvent)

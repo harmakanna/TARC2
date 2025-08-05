@@ -21,20 +21,7 @@ Present_CityHall_1F_EventScript_PlaceNPCsForCutscene::
 
 Present_CityHall_1F_EventScript_OnFrame:
 	map_script_2 VAR_CUTSCENE_STATE, 1, Present_CityHall_1F_EventScript_PostStormDiscussion
-	map_script_2 VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1, Present_CityHall_1F_EventScript_LookerThinking
 	.2byte 0
-
-Present_CityHall_1F_EventScript_LookerThinking::
-	call_if_set FLAG_PLAY_LOOKER_RANGER_ON_TRANSITION, Present_CityHall_1F_EventScript_LookerThinkingRanger
-	call_if_eq VAR_MAIN_QUEST_STATE, 4, PresentTown_EventScript_LookerThinkingIGotIt
-	call_if_eq VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1, PresentTown_EventScript_EndLookerThinking
-	end
-	
-Present_CityHall_1F_EventScript_LookerThinkingRanger::
-	lockall
-	playbgm MUS_PL_LOOKER, FALSE
-	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerThinkingRanger
-	return
 
 Present_CityHall_1F_EventScript_PostStormDiscussion::
 	lockall
@@ -314,14 +301,3 @@ Present_CityHall_1F_Text_DadThankYou:
 	.string "Oh, thank you!\p"
 	.string "We live near the western forest.\n"
 	.string "I'm sure she snuck away there!$"
-
-PresentTown_Text_LookerThinkingRanger:
-	.string "Hmm…\p"
-	.string "So there was nobody posted at the\n"
-	.string "entrance to the Shrine of Prosperity\l"
-	.string "due to staffing issues…\p"
-	.string "And while adults are more reserved in\n"
-	.string "their catching habits, children often\l"
-	.string "cause trouble for the wildlife with their\l"
-	.string "insane catching sprees…\p"
-	.string "Hmm…$"

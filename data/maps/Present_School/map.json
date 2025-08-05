@@ -2,7 +2,7 @@
   "id": "MAP_PRESENT_SCHOOL",
   "name": "Present_School",
   "layout": "LAYOUT_PRESENT_SCHOOL",
-  "music": "MUS_SCHOOL",
+  "music": "MUS_DP_SUNYSHORE_DAY",
   "region_map_section": "MAPSEC_PORTO_BELLA_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

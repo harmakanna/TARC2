@@ -2,7 +2,7 @@
   "id": "MAP_PRESENT_POKEMON_CENTER",
   "name": "Present_PokemonCenter",
   "layout": "LAYOUT_PRESENT_POKEMON_CENTER",
-  "music": "MUS_POKE_CENTER",
+  "music": "MUS_DP_POKE_CENTER_DAY",
   "region_map_section": "MAPSEC_PORTO_BELLA_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -17,8 +17,16 @@
   "warp_events": [
     {
       "warp_id": "POKEMON_CENTER_EXIT",
+      "x": 6,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_TOWN",
+      "dest_warp_id": "POKEMON_CENTER_ENTRANCE"
+    },
+    {
+      "warp_id": "POKEMON_CENTER_EXIT_2",
       "x": 7,
-      "y": 11,
+      "y": 12,
       "elevation": 0,
       "dest_map": "MAP_PRESENT_TOWN",
       "dest_warp_id": "POKEMON_CENTER_ENTRANCE"
