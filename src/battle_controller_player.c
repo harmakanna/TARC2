@@ -457,33 +457,34 @@ static void HandleInputChooseAction(u32 battler)
     }
 }
 
-void CreateMovePreviewText(u8 battlerPosition)
+void CreateMovePreviewText(u32 battlerPosition)
 {       
-        if (gBattleStruct->monToSwitchIntoId[GetBattlerAtPosition(battlerPosition)] != PARTY_SIZE) // If the opponent is switching:
+        u32 battler = GetBattlerAtPosition(battlerPosition);
+        if (gBattleStruct->monToSwitchIntoId[battler] != PARTY_SIZE) // If the opponent is switching:
         {
-            s32 chosenMonId = gBattleStruct->monToSwitchIntoId[GetBattlerAtPosition(battlerPosition)];
-            StringCopy(gStringVar1, GetSpeciesName(GetMonData(GetBattlerMon(GetBattlerAtPosition(battlerPosition)), MON_DATA_SPECIES, NULL)));
+            s32 chosenMonId = gBattleStruct->monToSwitchIntoId[battler];
+            StringCopy(gStringVar1, GetSpeciesName(GetMonData(GetBattlerMon(battler), MON_DATA_SPECIES, NULL)));
             StringAppend(gStringVar1, COMPOUND_STRING(" will switch\nto "));
             StringAppend(gStringVar1, GetSpeciesName(GetMonData(GetBattlerMon(chosenMonId), MON_DATA_SPECIES, NULL)));
             StringAppend(gStringVar1, COMPOUND_STRING("!"));
         }
         else
         {
-            StringCopy(gStringVar1, GetSpeciesName(GetMonData(GetBattlerMon(GetBattlerAtPosition(battlerPosition)), MON_DATA_SPECIES, NULL)));
+            StringCopy(gStringVar1, GetSpeciesName(GetMonData(GetBattlerMon(battler), MON_DATA_SPECIES, NULL)));
             StringAppend(gStringVar1, COMPOUND_STRING(" will use:\n"));
-            u32 move = gBattleMons[battlerPosition].moves[gBattleStruct->chosenMovePositions[battlerPosition]];
+            u32 move = gBattleMons[battler].moves[gBattleStruct->chosenMovePositions[battler]];
             StringAppend(gStringVar1, GetMoveName(move));
-            u32 moveTarget = GetBattlerMoveTargetType(battlerPosition, move);
+            u32 moveTarget = GetBattlerMoveTargetType(battler, move);
             if (moveTarget == MOVE_TARGET_SELECTED)
             {
-                if (gAiBattleData->chosenTarget[battlerPosition] == B_POSITION_OPPONENT_LEFT)
+                if (gAiBattleData->chosenTarget[battler] == B_POSITION_OPPONENT_LEFT)
                     StringAppend(gStringVar1, COMPOUND_STRING(" -{UP_ARROW}"));
-                else if (gAiBattleData->chosenTarget[battlerPosition] == B_POSITION_OPPONENT_RIGHT)
+                else if (gAiBattleData->chosenTarget[battler] == B_POSITION_OPPONENT_RIGHT)
                     StringAppend(gStringVar1, COMPOUND_STRING(" {UP_ARROW}-"));
-                else if (gAiBattleData->chosenTarget[battlerPosition] == B_POSITION_PLAYER_LEFT)
+                else if (gAiBattleData->chosenTarget[battler] == B_POSITION_PLAYER_LEFT)
                     StringAppend(gStringVar1, COMPOUND_STRING(" {DOWN_ARROW}-"));
-                else if (gAiBattleData->chosenTarget[battlerPosition] == B_POSITION_PLAYER_RIGHT)
-                    StringAppend(gStringVar1, COMPOUND_STRING(" {DOWN_ARROW}-"));
+                else if (gAiBattleData->chosenTarget[battler] == B_POSITION_PLAYER_RIGHT)
+                    StringAppend(gStringVar1, COMPOUND_STRING(" -{DOWN_ARROW}"));
             }
             else if (moveTarget == MOVE_TARGET_BOTH)
             {
