@@ -319,7 +319,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
-	side_quest(
+	side_quest(// 5 - Which gym challenger did it?
 	      gText_SideQuestName_5,
 	      gText_SideQuestDesc_5,
 	      gText_SideQuestDoneDesc_5,
@@ -329,12 +329,12 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
-	side_quest(
+	side_quest( // 6 - Where's the best place to fish?
 	      gText_SideQuestName_6,
 	      gText_SideQuestDesc_6,
 	      gText_SideQuestDoneDesc_6,
 	      gText_SideQuestMap6,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_FISHERMAN,
 	      OBJECT,
 	      NULL,
 	      0

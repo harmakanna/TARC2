@@ -53,7 +53,6 @@ Optional fields for Pokemon:
     - Dynamax Level (Number between 0 and 10, default 10, also sets "shouldDynamax" to True)
     - Gigantamax (Yes/No, sets to Gigantamax factor)
                  (doesn't do anything to Pokemon without a Gigantamax form, also sets "shouldDynamax" to True)
-    - Tera Type (Set to a Type, either Fire or TYPE_FIRE, also sets "shouldTerastal" to True)
 Moves are defined with a - (dash) followed by a single space, then the move name.
 Either "- Tackle" or "- MOVE_TACKLE" works. One move per line.
 Moves have to be the last lines of a Pokemon.
@@ -94,22 +93,40 @@ Geodude
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_AQUA_HIDEOUT_1 ===
-Name: Geoff
-Class: Team Aqua
-Pic: Aqua Grunt M
+=== TRAINER_PRESENT_FISHERMAN ===
+Name: Tee
+Class: Fisherman
+Pic: Fisherman
 Gender: Male
 Music: Aqua
 Double Battle: Yes
 AI: Check Bad Move
 
-Poochyena
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Alomomola  
+Ability: Regenerator  
+Level: 50    
+- Flip Turn  
+- Helping Hand  
+- Heal Pulse  
+- Protect  
 
-Poochyena
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Palafin  
+Ability: Zero to Hero  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Flip Turn  
+- Iron Head  
+- Aqua Tail  
+- Ice Punch  
+
+Basculin-White-Striped @ Choice Band  
+Ability: Rattled  
+Level: 50    
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Flip Turn  
+- Crunch  
+- Last Respects  
+- Psychic Fangs  
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_2 ===
 Name: Sarah
@@ -2116,7 +2133,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Jellicent  
 Level: 50
 Ability: Water Absorb  
-Tera Type: Water  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Hex  
 - Scald  
@@ -2445,7 +2461,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Lilligant  
 Level: 50
 Ability: Own Tempo  
-Tera Type: Grass  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Petal Dance  
 - Pollen Puff  
@@ -2464,7 +2479,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Ludicolo  
 Level: 50
 Ability: Swift Swim  
-Tera Type: Water  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Rain Dance  
 - Energy Ball  
@@ -4429,7 +4443,6 @@ AI: Check Bad Move
 Bruxish  
 Level: 50
 Ability: Dazzling  
-Tera Type: Water  
 - Aqua Jet  
 - Flip Turn  
 - Psychic Fangs  
@@ -4438,7 +4451,6 @@ Tera Type: Water
 Toucannon  
 Level: 50
 Ability: Skill Link  
-Tera Type: Normal  
 - Beak Blast  
 - Bullet Seed  
 - Rock Blast  
@@ -4447,7 +4459,6 @@ Tera Type: Normal
 Exeggutor-Alola @ Sitrus Berry  
 Level: 50
 Ability: Harvest  
-Tera Type: Grass  
 - Dragon Hammer  
 - Grass Knot  
 - Extrasensory  
@@ -10442,7 +10453,6 @@ AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
 Tropius @ Life Orb  
 Ability: Chlorophyll  
-Tera Type: Grass  
 - Dual Wingbeat  
 - Dragon Hammer  
 - Tailwind  
@@ -10450,7 +10460,6 @@ Tera Type: Grass
 
 Kingler  
 Ability: Sheer Force  
-Tera Type: Water  
 - Razor Shell  
 - Hammer Arm  
 - Protect  
@@ -10458,7 +10467,6 @@ Tera Type: Water
 
 Chatot  
 Ability: Keen Eye  
-Tera Type: Normal  
 - Chatter  
 - Hyper Voice  
 - U-turn  
@@ -10466,7 +10474,6 @@ Tera Type: Normal
 
 Volcarona  
 Ability: Flame Body  
-Tera Type: Bug  
 IVs: 0 Atk  
 - Fiery Dance  
 - Bug Buzz  

@@ -3121,12 +3121,7 @@ bool8 ScrCmd_questmenu(struct ScriptContext *ctx)
 
     switch (caseId)
     {
-    case QUEST_MENU_OPEN:
-    default:
-        BeginNormalPaletteFade(0xFFFFFFFF, 2, 16, 0, 0);
-        QuestMenu_Init(0, CB2_ReturnToFieldContinueScriptPlayMapMusic);
-        ScriptContext_Stop();
-        break;
+    
     case QUEST_MENU_UNLOCK_QUEST:
         QuestMenu_GetSetQuestState(questId, FLAG_SET_UNLOCKED);
         break;
@@ -3171,6 +3166,12 @@ bool8 ScrCmd_questmenu(struct ScriptContext *ctx)
         break;
     case QUEST_MENU_BUFFER_QUEST_NAME:
             QuestMenu_CopyQuestName(gStringVar1, questId);
+        break;
+    case QUEST_MENU_OPEN:
+    default:
+        BeginNormalPaletteFade(0xFFFFFFFF, 2, 16, 0, 0);
+        QuestMenu_Init(0, CB2_ReturnToFieldContinueScriptPlayMapMusic);
+        ScriptContext_Stop();
         break;
     }
 

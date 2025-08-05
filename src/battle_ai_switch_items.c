@@ -775,10 +775,10 @@ static bool32 ShouldSwitchIfAbilityBenefit(u32 battler)
 
             return FALSE;
 
-        case ABILITY_ZERO_TO_HERO:
-            // Want to activate Palafin-Zero at all costs
-            if (gBattleMons[battler].species == SPECIES_PALAFIN_ZERO)
-                break;
+        // case ABILITY_ZERO_TO_HERO:
+        //     // Want to activate Palafin-Zero at all costs
+        //     if (gBattleMons[battler].species == SPECIES_PALAFIN_ZERO)
+        //         break;
 
         default:
             return FALSE;

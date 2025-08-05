@@ -17,11 +17,11 @@
 // quest number defines
 #define QUEST_NONE  0xFFFF
 #define QUEST_SAVE_ESTELLA          0
-#define QUEST_INVESTIGATE_PROSPERITY          1
+#define QUEST_INVESTIGATE_PROSPERITY          11
 #define QUEST_INTERROGATE_MATT          2
 #define QUEST_DEFEAT_PHOEBE          3
 #define QUEST_5          4
-#define QUEST_6          5
+#define QUEST_HELP_FISHERMAN          5
 #define QUEST_7          6
 #define QUEST_8          7
 #define QUEST_9          8

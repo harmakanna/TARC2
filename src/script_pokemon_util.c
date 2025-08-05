@@ -97,11 +97,11 @@ static const struct InGameOT sIngameOTs[] =
     {
         .species = SPECIES_MAGIKARP,
         .level = 45,
-        .heldItem = ITEM_RING_TARGET,
+        .heldItem = ITEM_HEAVY_DUTY_BOOTS,
         .ivs = {31, 31, 31, 31, 31, 31}, //HP, Atk, Def, Spe, SpA, SpDef
-        .evs = {85, 85, 85, 85, 85, 85}, //HP, Atk, Def, Spe, SpA, SpDef
-        .moves = {MOVE_SPLASH, MOVE_NONE, MOVE_NONE, MOVE_NONE},
-        .ball = BALL_POKE,
+        .evs = {88, 84, 84, 84, 84, 84}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_SPLASH, MOVE_TACKLE, MOVE_FLAIL, MOVE_BOUNCE},
+        .ball = BALL_CHERISH,
         .nature = NATURE_BRAVE,
         .abilityNum = 0,
         .gender = MON_MALE,
@@ -116,10 +116,10 @@ static const struct InGameOT sIngameOTs[] =
     {
         .species = SPECIES_DUSKNOIR,
         .level = 50,
-        .heldItem = ITEM_NONE,
+        .heldItem = ITEM_UTILITY_UMBRELLA,
         .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
         .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
-        .moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE},
+        .moves = {MOVE_PHANTOM_FORCE, MOVE_PAYBACK, MOVE_PAIN_SPLIT, MOVE_PROTECT},
         .ball = BALL_LUXURY,
         .nature = NATURE_HARDY,
         .abilityNum = 0,
@@ -135,10 +135,10 @@ static const struct InGameOT sIngameOTs[] =
     {
         .species = SPECIES_SABLEYE,
         .level = 50,
-        .heldItem = ITEM_NONE,
+        .heldItem = ITEM_UTILITY_UMBRELLA,
         .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
         .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
-        .moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE},
+        .moves = {MOVE_FAKE_OUT, MOVE_SHADOW_SNEAK, MOVE_QUASH, MOVE_PROTECT},
         .ball = BALL_LUXURY,
         .nature = NATURE_HARDY,
         .abilityNum = 0,
@@ -157,7 +157,7 @@ static const struct InGameOT sIngameOTs[] =
         .heldItem = ITEM_WACAN_BERRY,
         .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
         .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
-        .moves = {MOVE_DIVE, MOVE_SUCKER_PUNCH, MOVE_ICE_FANG, MOVE_COIL},
+        .moves = {MOVE_DIVE, MOVE_SUCKER_PUNCH, MOVE_ICE_FANG, MOVE_PROTECT},
         .ball = BALL_DIVE,
         .nature = NATURE_HARDY,
         .abilityNum = 0,
@@ -176,7 +176,7 @@ static const struct InGameOT sIngameOTs[] =
         .heldItem = ITEM_RINDO_BERRY,
         .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
         .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
-        .moves = {MOVE_SURF, MOVE_PSYCHIC, MOVE_DRAINING_KISS, MOVE_SAFEGUARD},
+        .moves = {MOVE_SURF, MOVE_PSYCHIC, MOVE_DRAINING_KISS, MOVE_PROTECT},
         .ball = BALL_DIVE,
         .nature = NATURE_HARDY,
         .abilityNum = 0,
@@ -187,6 +187,424 @@ static const struct InGameOT sIngameOTs[] =
         .isShiny = FALSE,
         .isNicknamed = TRUE,
         .nickname = _("Gorb"),
+    },
+    [OT_EMMA_GUMSHOOS] =
+    {
+        .species = SPECIES_GUMSHOOS,
+        .level = 50,
+        .heldItem = ITEM_FOCUS_SASH,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_BODY_SLAM, MOVE_FIRE_FANG, MOVE_ICE_FANG, MOVE_PROTECT},
+        .ball = BALL_FRIEND,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_MALE,
+        .otId = 42784,
+        .otName = _("Emma"),
+        .otGender = FEMALE,
+        .isShiny = FALSE,
+        .isNicknamed = TRUE,
+        .nickname = _("Gumbo"),
+    },
+    [OT_EMMA_MEOWSTIC] =
+    {
+        .species = SPECIES_MEOWSTIC_F,
+        .level = 50,
+        .heldItem = ITEM_FOCUS_SASH,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_PSYCHIC, MOVE_COVET, MOVE_LEER, MOVE_PROTECT},
+        .ball = BALL_FRIEND,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_FEMALE,
+        .otId = 42784,
+        .otName = _("Emma"),
+        .otGender = FEMALE,
+        .isShiny = FALSE,
+        .isNicknamed = TRUE,
+        .nickname = _("Mimi"),
+    },
+    [OT_TONY_MISDREAVUS] =
+    {
+        .species = SPECIES_MISDREAVUS,
+        .level = 50,
+        .heldItem = ITEM_EVIOLITE,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_SHADOW_BALL, MOVE_DAZZLING_GLEAM, MOVE_SKILL_SWAP, MOVE_PROTECT},
+        .ball = BALL_NEST,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_MALE,
+        .otId = 42784,
+        .otName = _("Tony"),
+        .otGender = MALE,
+        .isShiny = FALSE,
+        .isNicknamed = TRUE,
+        .nickname = _("Mooney"),
+    },
+    [OT_TONY_MURKROW] =
+    {
+        .species = SPECIES_MURKROW,
+        .level = 50,
+        .heldItem = ITEM_EVIOLITE,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_FOUL_PLAY, MOVE_FLY, MOVE_TORMENT, MOVE_PROTECT},
+        .ball = BALL_NEST,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_MALE,
+        .otId = 42784,
+        .otName = _("Tony"),
+        .otGender = MALE,
+        .isShiny = FALSE,
+        .isNicknamed = TRUE,
+        .nickname = _("Flapster"),
+    },
+    [OT_JANE_YANMEGA] =
+    {
+        .species = SPECIES_YANMEGA,
+        .level = 50,
+        .heldItem = ITEM_EARTH_PLATE,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_SURF, MOVE_PSYCHIC, MOVE_DRAINING_KISS, MOVE_PROTECT},
+        .ball = BALL_TIMER,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_FEMALE,
+        .otId = 42784,
+        .otName = _("Jane"),
+        .otGender = FEMALE,
+        .isShiny = FALSE,
+        .isNicknamed = TRUE,
+        .nickname = _("Grace"),
+    },
+    [OT_JANE_MAMOSWINE] =
+    {
+        .species = SPECIES_MAMOSWINE,
+        .level = 50,
+        .heldItem = ITEM_SKY_PLATE,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_STOMPING_TANTRUM, MOVE_ICICLE_CRASH, MOVE_ROCK_SLIDE, MOVE_PROTECT},
+        .ball = BALL_TIMER,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_MALE,
+        .otId = 42784,
+        .otName = _("Jane"),
+        .otGender = FEMALE,
+        .isShiny = FALSE,
+        .isNicknamed = TRUE,
+        .nickname = _("Hubert"),
+    },
+    [OT_MIKEY_DEDENNE] =
+    {
+        .species = SPECIES_DEDENNE,
+        .level = 50,
+        .heldItem = ITEM_AIR_BALLOON,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_NUZZLE, MOVE_PARABOLIC_CHARGE, MOVE_DAZZLING_GLEAM, MOVE_PROTECT},
+        .ball = BALL_TIMER,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_MALE,
+        .otId = 42784,
+        .otName = _("Mikey"),
+        .otGender = FEMALE,
+        .isShiny = FALSE,
+        .isNicknamed = TRUE,
+        .nickname = _("Dr. Cheeks"),
+    },
+    [OT_MIKEY_TOGEDEMARU] =
+    {
+        .species = SPECIES_TOGEDEMARU,
+        .level = 50,
+        .heldItem = ITEM_AIR_BALLOON,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_NUZZLE, MOVE_ZING_ZAP, MOVE_IRON_HEAD, MOVE_PROTECT},
+        .ball = BALL_TIMER,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_FEMALE,
+        .otId = 42784,
+        .otName = _("Mikey"),
+        .otGender = FEMALE,
+        .isShiny = FALSE,
+        .isNicknamed = TRUE,
+        .nickname = _("Dr. Round"),
+    },
+    [OT_EDUARDO_BRELOOM] =
+    {
+        .species = SPECIES_BRELOOM,
+        .level = 50,
+        .heldItem = ITEM_MENTAL_HERB,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_MACH_PUNCH, MOVE_SEED_BOMB, MOVE_ROCK_TOMB, MOVE_PROTECT},
+        .ball = BALL_SAFARI,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_MALE,
+        .otId = 42784,
+        .otName = _("Eduardo"),
+        .otGender = MALE,
+        .isShiny = FALSE,
+        .isNicknamed = TRUE,
+        .nickname = _("Nappy"),
+    },
+    [OT_EDUARDO_SHIINOTIC] =
+    {
+        .species = SPECIES_SHIINOTIC,
+        .level = 50,
+        .heldItem = ITEM_MENTAL_HERB,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_MOONBLAST, MOVE_GIGA_DRAIN, MOVE_STRENGTH_SAP, MOVE_PROTECT},
+        .ball = BALL_SAFARI,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_MALE,
+        .otId = 42784,
+        .otName = _("Eduardo"),
+        .otGender = MALE,
+        .isShiny = FALSE,
+        .isNicknamed = TRUE,
+        .nickname = _("Nappy"),
+    },
+    [OT_TEE_OVERQWIL] =
+    {
+        .species = SPECIES_OVERQWIL,
+        .level = 50,
+        .heldItem = ITEM_CLEAR_AMULET,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_BARB_BARRAGE, MOVE_THROAT_CHOP, MOVE_LIQUIDATION, MOVE_PROTECT},
+        .ball = BALL_NET,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_MALE,
+        .otId = 42784,
+        .otName = _("Tee"),
+        .otGender = MALE,
+        .isShiny = FALSE,
+        .isNicknamed = TRUE,
+        .nickname = _("Swimminson"),
+    },
+    [OT_TEE_DRAGALGE] =
+    {
+        .species = SPECIES_DRAGALGE,
+        .level = 50,
+        .heldItem = ITEM_CLEAR_AMULET,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_DRAGON_PULSE, MOVE_ACID, MOVE_CHILLING_WATER, MOVE_PROTECT},
+        .ball = BALL_NET,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_FEMALE,
+        .otId = 42784,
+        .otName = _("Tee"),
+        .otGender = MALE,
+        .isShiny = FALSE,
+        .isNicknamed = TRUE,
+        .nickname = _("Swimminson"),
+    },
+    [OT_DAMIAN_TAUROS] =
+    {
+        .species = SPECIES_TAUROS,
+        .level = 50,
+        .heldItem = ITEM_LUM_BERRY,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_RAGING_BULL, MOVE_ZEN_HEADBUTT, MOVE_HIGH_HORSEPOWER, MOVE_PROTECT},
+        .ball = BALL_HEAL,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_MALE,
+        .otId = 42784,
+        .otName = _("Damian"),
+        .otGender = MALE,
+        .isShiny = FALSE,
+        .isNicknamed = TRUE,
+        .nickname = _("Biggie Bag"),
+    },
+    [OT_DAMIAN_MILTANK] =
+    {
+        .species = SPECIES_MILTANK,
+        .level = 50,
+        .heldItem = ITEM_LUM_BERRY,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_BODY_SLAM, MOVE_HELPING_HAND, MOVE_HEAL_BELL, MOVE_PROTECT},
+        .ball = BALL_HEAL,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_FEMALE,
+        .otId = 42784,
+        .otName = _("Damian"),
+        .otGender = MALE,
+        .isShiny = FALSE,
+        .isNicknamed = TRUE,
+        .nickname = _("Hapi"),
+    },
+    [OT_BARTOZ_GALVANTULA] =
+    {
+        .species = SPECIES_GALVANTULA,
+        .level = 50,
+        .heldItem = ITEM_LIFE_ORB,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_DISCHARGE, MOVE_BUG_BUZZ, MOVE_VOLT_SWITCH, MOVE_PROTECT},
+        .ball = BALL_QUICK,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_MALE,
+        .otId = 42784,
+        .otName = _("Bartoz"),
+        .otGender = MALE,
+        .isShiny = FALSE,
+        .isNicknamed = TRUE,
+        .nickname = _("Galvin"),
+    },
+    [OT_BARTOZ_PROBOPASS] =
+    {
+        .species = SPECIES_PROBOPASS,
+        .level = 50,
+        .heldItem = ITEM_LIFE_ORB,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_HEAVY_SLAM, MOVE_POWER_GEM, MOVE_VOLT_SWITCH, MOVE_PROTECT},
+        .ball = BALL_QUICK,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_FEMALE,
+        .otId = 42784,
+        .otName = _("Bartoz"),
+        .otGender = MALE,
+        .isShiny = FALSE,
+        .isNicknamed = TRUE,
+        .nickname = _("Polaris"),
+    },
+    [OT_BRENDAN_WALREIN] =
+    {
+        .species = SPECIES_WALREIN,
+        .level = 50,
+        .heldItem = ITEM_LIFE_ORB,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_GLACIATE, MOVE_BRINE, MOVE_ROLLOUT, MOVE_PROTECT},
+        .ball = BALL_HEAVY,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_MALE,
+        .otId = 42784,
+        .otName = _("Brendan"),
+        .otGender = MALE,
+        .isShiny = FALSE,
+        .isNicknamed = TRUE,
+        .nickname = _("Big Man"),
+    },
+    [OT_BRENDAN_CAMERUPT] =
+    {
+        .species = SPECIES_CAMERUPT,
+        .level = 50,
+        .heldItem = ITEM_LIFE_ORB,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_SCORCHING_SANDS, MOVE_LAVA_PLUME, MOVE_YAWN, MOVE_PROTECT},
+        .ball = BALL_HEAVY,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_MALE,
+        .otId = 42784,
+        .otName = _("Brendan"),
+        .otGender = MALE,
+        .isShiny = FALSE,
+        .isNicknamed = TRUE,
+        .nickname = _("Big Man"),
+    },
+    [OT_BLUE_GOLEM] =
+    {
+        .species = SPECIES_GOLEM,
+        .level = 50,
+        .heldItem = ITEM_LIFE_ORB,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_SCORCHING_SANDS, MOVE_LAVA_PLUME, MOVE_YAWN, MOVE_PROTECT},
+        .ball = BALL_MOON,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_MALE,
+        .otId = 42784,
+        .otName = _("Blue"),
+        .otGender = MALE,
+        .isShiny = FALSE,
+        .isNicknamed = TRUE,
+        .nickname = _("Big Man"),
+    },
+    [OT_BLUE_MACHAMP] =
+    {
+        .species = SPECIES_MACHAMP,
+        .level = 50,
+        .heldItem = ITEM_LIFE_ORB,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_SCORCHING_SANDS, MOVE_LAVA_PLUME, MOVE_YAWN, MOVE_PROTECT},
+        .ball = BALL_MOON,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_MALE,
+        .otId = 42784,
+        .otName = _("Blue"),
+        .otGender = MALE,
+        .isShiny = FALSE,
+        .isNicknamed = TRUE,
+        .nickname = _("Big Man"),
+    },
+    [OT_BETH_SWANNA] =
+    {
+        .species = SPECIES_SWANNA,
+        .level = 50,
+        .heldItem = ITEM_COVERT_CLOAK,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_SCALD, MOVE_AIR_SLASH, MOVE_ALLURING_VOICE, MOVE_PROTECT},
+        .ball = BALL_LOVE,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_FEMALE,
+        .otId = 42784,
+        .otName = _("Beth"),
+        .otGender = MALE,
+        .isShiny = FALSE,
+        .isNicknamed = TRUE,
+        .nickname = _("Katherine"),
+    },
+    [OT_BETH_UNFEZANT] =
+    {
+        .species = SPECIES_UNFEZANT,
+        .level = 50,
+        .heldItem = ITEM_COVERT_CLOAK,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_QUICK_ATTACK, MOVE_DUAL_WINGBEAT, MOVE_YAWN, MOVE_PROTECT},
+        .ball = BALL_LOVE,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_FEMALE,
+        .otId = 42784,
+        .otName = _("Beth"),
+        .otGender = MALE,
+        .isShiny = FALSE,
+        .isNicknamed = TRUE,
+        .nickname = _("Charlotte"),
     }
 };
 
