@@ -4735,7 +4735,7 @@
       "id": "LAYOUT_CUTSCENE_WATER",
       "name": "CutsceneWater_Layout",
       "width": 60,
-      "height": 11,
+      "height": 12,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_PresentTown",
       "border_filepath": "data/layouts/CutsceneWater/border.bin",

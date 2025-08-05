@@ -239,13 +239,14 @@ static void ScriptMovement_TakeStep(u8 taskId, u8 moveScrId, u8 objEventId, cons
         SetMovementScriptFinished(taskId, moveScrId);
         FreezeObjectEvent(&gObjectEvents[objEventId]);
     }
-    else if (nextMoveActionId == MOVEMENT_ACTION_LOOP_LAST_ACTION)
+    /*else if (nextMoveActionId == MOVEMENT_ACTION_LOOP_LAST_ACTION)
     {        
         if (!ObjectEventSetHeldMovement(&gObjectEvents[objEventId], nextMoveActionId))
         {
+            movementScript--;
             SetMovementScript(moveScrId, movementScript);
         }
-    }
+    }*/
     else
     {
         if (!ObjectEventSetHeldMovement(&gObjectEvents[objEventId], nextMoveActionId))

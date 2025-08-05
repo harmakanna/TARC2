@@ -113,6 +113,8 @@ EventScript_ResetAllBerries::
 	return
 
 EventScript_ResetAllMapFlags::
+	setflag FLAG_SYS_PREVENT_MAP_FADE
+	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	setflag FLAG_HIDE_INSIDE_OUTSIDE_NPCS
 	setflag FLAG_HIDE_SHRINE_PEACE_RANGER
 	setflag FLAG_HIDE_SHRINE_PROSPERITY_RANGER
