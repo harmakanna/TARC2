@@ -459,13 +459,15 @@ static void HandleInputChooseAction(u32 battler)
 
 void CreateMovePreviewText(u32 battlerPosition)
 {       
+        u32 switchMon;
         u32 battler = GetBattlerAtPosition(battlerPosition);
+
         if (gBattleStruct->monToSwitchIntoId[battler] != PARTY_SIZE) // If the opponent is switching:
         {
-            s32 chosenMonId = gBattleStruct->monToSwitchIntoId[battler];
+            switchMon = GetMonData(&gEnemyParty[gAiLogicData->mostSuitableMonId[battler]], MON_DATA_SPECIES);
             StringCopy(gStringVar1, GetSpeciesName(GetMonData(GetBattlerMon(battler), MON_DATA_SPECIES, NULL)));
             StringAppend(gStringVar1, COMPOUND_STRING(" will switch\nto "));
-            StringAppend(gStringVar1, GetSpeciesName(GetMonData(GetBattlerMon(chosenMonId), MON_DATA_SPECIES, NULL)));
+            StringAppend(gStringVar1, GetSpeciesName(switchMon));
             StringAppend(gStringVar1, COMPOUND_STRING("!"));
         }
         else
