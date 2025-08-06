@@ -15,11 +15,13 @@ CutsceneOffice_EventScript_StartGame::
 	setvar VAR_0x8004, 4
 	setvar VAR_0x8005, 6
 	special TeleportCamera
-	msgbox CutsceneOffice_Text_SomewhereInUnova, MSGBOX_DEFAULT
+	message CutsceneOffice_Text_SomewhereInUnova
+	waitmessage
+	delay 60
 	closemessage
 	delay 100
 	fadescreen FADE_FROM_BLACK
-	@call CutsceneOffice_EventScript_Scene
+	call CutsceneOffice_EventScript_Scene
 	fadescreen FADE_TO_BLACK
 	delay 60
 	special ReturnCameraToPlayer
@@ -57,17 +59,19 @@ CutsceneOffice_EventScript_Scene::
 	delay 10
 	playse SE_WALL_HIT
 	speakername Name_Looker
-	msgbox CutsceneOffice_Text_LookerAhh MSGBOX_DEFAULT
+	message CutsceneOffice_Text_LookerAhh
+	waitmessage
+	delay 10
 	closemessage
 	delay 80
-	@speak LOCALID_PLAYER, DIR_EAST, Name_Looker, CutsceneOffice_Text_LookerAnabel
-	@speak LOCALID_OFFICE_ANABEL, DIR_WEST, Name_Anabel, CutsceneOffice_Text_AnabelWeReceived
-	@speak LOCALID_PLAYER, DIR_EAST, Name_Looker, CutsceneOffice_Text_LookerThePortCity
-	@speak LOCALID_OFFICE_ANABEL, DIR_WEST, Name_Anabel, CutsceneOffice_Text_AnabelRecently
-	@speak LOCALID_PLAYER, DIR_EAST, Name_Looker, CutsceneOffice_Text_LookerAhAProcedural
-	@speak LOCALID_OFFICE_ANABEL, DIR_WEST, Name_Anabel, CutsceneOffice_Text_AnabelKeepSharp
-	@speak LOCALID_PLAYER, DIR_EAST, Name_Looker, CutsceneOffice_Text_LookerOhFine
-	@speak LOCALID_OFFICE_ANABEL, DIR_WEST, Name_Anabel, CutsceneOffice_Text_AnabelIllReachOut
+	speak LOCALID_PLAYER, DIR_EAST, Name_Looker, CutsceneOffice_Text_LookerAnabel
+	speak LOCALID_OFFICE_ANABEL, DIR_WEST, Name_Anabel, CutsceneOffice_Text_AnabelWeReceived
+	speak LOCALID_PLAYER, DIR_EAST, Name_Looker, CutsceneOffice_Text_LookerThePortCity
+	speak LOCALID_OFFICE_ANABEL, DIR_WEST, Name_Anabel, CutsceneOffice_Text_AnabelRecently
+	speak LOCALID_PLAYER, DIR_EAST, Name_Looker, CutsceneOffice_Text_LookerAhAProcedural
+	speak LOCALID_OFFICE_ANABEL, DIR_WEST, Name_Anabel, CutsceneOffice_Text_AnabelKeepSharp
+	speak LOCALID_PLAYER, DIR_EAST, Name_Looker, CutsceneOffice_Text_LookerOhFine
+	speak LOCALID_OFFICE_ANABEL, DIR_WEST, Name_Anabel, CutsceneOffice_Text_AnabelIllReachOut
 	closemessage
 	delay 40
 	return
@@ -135,12 +139,12 @@ CutsceneOffice_Text_AnabelRecently:
 	.string "As you know, Team Aqua went missing\n"
 	.string "for quite a while following the events\l"
 	.string "at Sootopolis City.\p"
-	.string "But within the past three months, they've\n"
+	.string "But in the past three months, they've\n"
 	.string "reestablished operations in the city,\l"
 	.string "putting its population on high alert.\p"
-	.string "Thus, Mayor Morrigan is requesting we do\n"
-	.string "an audit of their new facility to ensure\l"
-	.string "no trouble is afoot.$"
+	.string "Thus, Mayor Morrigan is requesting we\n"
+	.string "do an audit of their new facility to\l"
+	.string "ensure no trouble is afoot.$"
 
 CutsceneOffice_Text_LookerAhAProcedural:
 	.string "Ah, so nothing more than a procedural\n"
