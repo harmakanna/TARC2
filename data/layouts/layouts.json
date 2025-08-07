@@ -4740,6 +4740,26 @@
       "secondary_tileset": "gTileset_PresentTown",
       "border_filepath": "data/layouts/CutsceneWater/border.bin",
       "blockdata_filepath": "data/layouts/CutsceneWater/map.bin"
+    },
+    {
+      "id": "LAYOUT_CUTSCENE_MYTH",
+      "name": "CutsceneMyth_Layout",
+      "width": 57,
+      "height": 42,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SmallTownWithLab",
+      "border_filepath": "data/layouts/CutsceneMyth/border.bin",
+      "blockdata_filepath": "data/layouts/CutsceneMyth/map.bin"
+    },
+    {
+      "id": "LAYOUT_CUTSCENE_TOWN",
+      "name": "CutsceneTown_Layout",
+      "width": 57,
+      "height": 42,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SmallTownWithLab",
+      "border_filepath": "data/layouts/CutsceneTown/border.bin",
+      "blockdata_filepath": "data/layouts/CutsceneTown/map.bin"
     }
   ]
 }

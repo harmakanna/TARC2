@@ -52,6 +52,9 @@ Name_Celebi:
 Name_Camilla:
     .string "Camilla$"
 
+Name_Orator:
+    .string "Village Elder$"
+
 Name_Gym_Guy:
     .string "Gym Guide$"
 
