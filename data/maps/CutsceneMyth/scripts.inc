@@ -21,7 +21,7 @@ Myth_Text_SpiritOfWind:
 
 @Pan up to Thundurus
 Myth_Text_SpiritOfStorms:
-	.string "…While the Spirit of Storms claimed\n"
+	.string "…While the Spirit of Lightning claimed\n"
 	.string "dominion over the bay.$"
 
 @Genies at each others' throats
