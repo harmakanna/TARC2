@@ -1,22 +1,32 @@
 ShrineOfProsperityPast_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, ShrineOfProsperityPast_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, ShrineOfProsperityPast_OnFrame
 	map_script MAP_SCRIPT_ON_RESUME, ShrineOfProsperityPast_OnResume
 	.byte 0
 
 ShrineOfProsperityPast_OnTransition:
 	call_if_eq VAR_CUTSCENE_STATE, 8, ShrineOfProsperityPast_EventScript_SetupMyth
+	call_if_eq VAR_CUTSCENE_STATE, 9, ShrineOfProsperityPast_EventScript_SetupMythReturn
 	end
 
 ShrineOfProsperityPast_EventScript_SetupMyth::
 	setobjectmovementtype LOCALID_SHRINE_PROSPERITY_PAST_ORATOR, MOVEMENT_TYPE_FACE_LEFT
 	return
 
+ShrineOfProsperityPast_EventScript_SetupMythReturn::
+	setobjectmovementtype LOCALID_SHRINE_PROSPERITY_PAST_ORATOR, MOVEMENT_TYPE_FACE_DOWN
+	return
+
+ShrineOfProsperityPast_OnFrame:
+	map_script_2 VAR_CUTSCENE_STATE, 9, ShrineOfProsperityPast_EventScript_EndLandorusMyth
+	.2byte 0
+
 ShrineOfProsperityPast_OnResume:
 	special HealPlayerParty
 	end
 	
 ShrineOfProsperityPast_EventScript_VillageOrator::
-	msgbox ShrineOfProsperityPast_Text_Orator, MSGBOX_NPC
+	msgbox ShrineOfProsperityPast_Text_OratorPleaseReturn, MSGBOX_NPC
 	end
 
 ShrineOfProsperityPast_EventScript_StartLandorusMyth::
@@ -54,7 +64,7 @@ ShrineOfProsperityPast_EventScript_StartLandorusMythR::
 	end
 
 ShrineOfProsperityPast_EventScript_LandorusMyth::
-	speak LOCALID_SHRINE_PROSPERITY_PAST_ANABEL, DIR_SOUTH, Name_Anabel, ShrineOfProsperitPast_Text_AnabelCompanionArrived
+	speak LOCALID_SHRINE_PROSPERITY_PAST_ANABEL, DIR_SOUTH, Name_Anabel, ShrineOfProsperityPast_Text_AnabelCompanionArrived
 	speak LOCALID_SHRINE_PROSPERITY_PAST_ORATOR, DIR_SOUTH, Name_Orator, ShrineOfProsperityPast_Text_OratorWonderful
 	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, ShrineOfProsperityPast_Text_LookerAsWellAsICouldBe
 	applymovement LOCALID_SHRINE_PROSPERITY_PAST_ORATOR, Common_Movement_FaceLeft
@@ -69,6 +79,7 @@ ShrineOfProsperityPast_EventScript_LandorusMyth::
 	speak LOCALID_SHRINE_PROSPERITY_PAST_ORATOR, DIR_EAST, Name_Orator, ShrineOfProsperityPast_Text_OratorStartFromBeginning
 	closemessage
 	delay 40
+	fadeoutbgm 0
 	fadescreen FADE_TO_BLACK
 	delay 80
 	speakername Name_Orator
@@ -79,25 +90,45 @@ ShrineOfProsperityPast_EventScript_LandorusMyth::
 	delay 80
 	setflag FLAG_SYS_SPAWN_INVISIBLE
 	setflag FLAG_SYS_PREVENT_MAP_FADE
+	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	warpsilent MAP_CUTSCENE_MYTH, 56, 41
-	goto ShrineOfProsperityPast_EventScript_EndLandorusMyth
+	waitstate
 	end
 
 ShrineOfProsperityPast_EventScript_EndLandorusMyth::
 	lockall
-	clearflag FLAG_SYS_PREVENT_MAP_FADE
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	fadescreen FADE_FROM_BLACK
+	delay 40
+	applymovement LOCALID_SHRINE_PROSPERITY_PAST_ORATOR, Common_Movement_FaceLeft
+	speak LOCALID_SHRINE_PROSPERITY_PAST_ANABEL, DIR_EAST, Name_Anabel, ShrineOfProsperityPast_Text_AnabelSoTheSpiritsAre
+	applymovement LOCALID_SHRINE_PROSPERITY_PAST_ORATOR, Common_Movement_FaceDown
+	applymovement LOCALID_SHRINE_PROSPERITY_PAST_ANABEL, Common_Movement_FaceDown
+	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, ShrineOfProsperityPast_Text_LookerThisCanOnlyMean
+	applymovement LOCALID_PLAYER, ShrineOfProsperityPast_Movement_WalkLeftFaceUp
+	waitmovement 0
+	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, ShrineOfProsperityPast_Text_LookerAnabelWeNeedToGoBack
+	speak LOCALID_SHRINE_PROSPERITY_PAST_ANABEL, DIR_SOUTH, Name_Anabel, ShrineOfProsperityPast_Text_AnabelIllHeadBackWithEstella
+	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, ShrineOfProsperityPast_Text_LookerIWill
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	applymovement LOCALID_SHRINE_PROSPERITY_PAST_ANABEL, Common_Movement_FaceRight
+	speak LOCALID_SHRINE_PROSPERITY_PAST_ORATOR, DIR_WEST, Name_Orator, ShrineOfProsperityPast_Text_OratorPleaseReturn
+	speak LOCALID_SHRINE_PROSPERITY_PAST_ANABEL, DIR_EAST, Name_Anabel, ShrineOfProsperityPast_Text_AnabelWeWill
+	applymovement LOCALID_PLAYER, ShrineOfProsperityPast_Movement_LookerWatchAnabelWalkOffScreen
 	applymovement LOCALID_SHRINE_PROSPERITY_PAST_ANABEL, ShrineOfProsperityPast_Movement_AnabelWalkOffScreen
 	waitmovement 0
 	delay 40
 	removeobject LOCALID_SHRINE_PROSPERITY_PAST_ANABEL
+	playbgm MUS_DP_ETERNA_FOREST, FALSE
 	clearflag FLAG_HIDE_SHRINE_PEACE_CELEBI
 	clearflag FLAG_LOCK_CITY_DOORS
+	clearflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
+	clearflag FLAG_SYS_PREVENT_MAP_FADE
 	setflag FLAG_HIDE_PAST_TOWN_HALL_ESTELLA
 	setflag FLAG_HIDE_CITYHALL_1F_CONCERNED_DAD
 	setflag FLAG_SYS_B_DASH
 	setflag FLAG_SYS_MAIN_GAME_START
-	setvar VAR_CUTSCENE_STATE, 9
+	setvar VAR_CUTSCENE_STATE, 10
 	setvar VAR_PORTO_BELLA_CITY_STATE, 3
 	setvar VAR_QUEUE_GENIE_FIGHT, 1
 	setvar VAR_PRESENT_GYM_STATE, 1
@@ -152,6 +183,19 @@ ShrineOfProsperityPast_Movement_WalkToOratorR:
 	face_up
 	step_end
 
+ShrineOfProsperityPast_Movement_WalkLeftFaceUp:
+	walk_left
+	face_up
+	step_end
+
+ShrineOfProsperityPast_Movement_LookerWatchAnabelWalkOffScreen:
+	delay_16
+	face_left
+	delay_16
+	delay_16
+	face_down
+	step_end
+
 ShrineOfProsperityPast_Movement_AnabelWalkOffScreen:
 	walk_left
 	walk_down
@@ -165,8 +209,8 @@ ShrineOfProsperityPast_Movement_AnabelWalkOffScreen:
 	walk_down
 	step_end
 
-ShrineOfProsperitPast_Text_AnabelCompanionArrived:
-	.string "My companion has arrived, sir.\$"
+ShrineOfProsperityPast_Text_AnabelCompanionArrived:
+	.string "My companion has arrived, sir.$"
 
 ShrineOfProsperityPast_Text_OratorWonderful:
 	.string "Wonderful…\p"
@@ -212,21 +256,35 @@ ShrineOfProsperityPast_Text_OratorThisIsALegend:
 	.string "town…$"
 
 ShrineOfProsperityPast_Text_AnabelSoTheSpiritsAre:
+	.string "Wow…\p"
 	.string "So a storm of that ferocity could only\n"
 	.string "be caused by a fight between Tornadus\l"
 	.string "and Thundurus…$"
 
+ShrineOfProsperityPast_Text_LookerThisCanOnlyMean:
+	.string "This can only mean one thing…\p"
+	.string "Landorus has gone missing!$"
+
+ShrineOfProsperityPast_Text_LookerAnabelWeNeedToGoBack:
+	.string "Anabel, We need to go back to the future\n"
+	.string "and get to the bottom of what happened\l"
+	.string "to Porta Bella's Spirit of Prosperity.$"
+
 ShrineOfProsperityPast_Text_AnabelIllHeadBackWithEstella:
-	.string "Looker, I'm going to head back to the\n"
-	.string "future now with Estella.\p"
-	.string "Be sure to meet up with her parents. I'm\n"
-	.string "sure they'll want to show their gratitude.$"
+	.string "I'm 100 percent with you, Looker.\p"
+	.string "I'll rush back to the city proper now\n"
+	.string "with Estella.\p"
+	.string "Be sure to meet up with her parents, okay?\n"
+	.string "I know they'll want to show their gratitude.$"
 
 ShrineOfProsperityPast_Text_LookerIWill:
-	.string "I will.$"
+	.string "Of course.$"
 
-ShrineOfProsperityPast_Text_Orator:
+ShrineOfProsperityPast_Text_OratorPleaseReturn:
 	.string "Please, return to your time and\n"
-	.string "restore balance to Portabella.\p"
+	.string "restore balance to Porta Bella.\p"
 	.string "Something must have happened to\n"
 	.string "Landorus in the future.$"
+
+ShrineOfProsperityPast_Text_AnabelWeWill:
+	.string "We will.$"

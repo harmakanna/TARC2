@@ -16,7 +16,7 @@ ShrineOfPeacePresent_EventScript_CelebiEncounterSetup::
 
 ShrineOfPeacePresent_OnFrame:
     map_script_2 VAR_CUTSCENE_STATE, 3, ShrineOfPeacePresent_EventScript_CelebiEncounter
-	map_script_2 VAR_CUTSCENE_STATE, 9, ShrineOfPeacePresent_EventScript_MainGameStart
+	map_script_2 VAR_CUTSCENE_STATE, 10, ShrineOfPeacePresent_EventScript_MainGameStart
     .2byte 0
 
 ShrineOfPeacePresent_EventScript_MainGameStart::
@@ -25,7 +25,7 @@ ShrineOfPeacePresent_EventScript_MainGameStart::
 	closemessage
 	delay 40
 	startquest QUEST_INTERROGATE_MATT
-	setvar VAR_CUTSCENE_STATE, 10
+	setvar VAR_CUTSCENE_STATE, 11
 	releaseall
 	end
 
