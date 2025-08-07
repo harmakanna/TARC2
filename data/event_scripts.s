@@ -1236,3 +1236,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/CutsceneMyth/scripts.inc"
 
 	.include "data/maps/CutsceneTown/scripts.inc"
+
+	.include "data/maps/PresentTown_Port/scripts.inc"

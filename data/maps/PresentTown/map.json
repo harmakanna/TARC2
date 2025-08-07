@@ -295,6 +295,22 @@
       "elevation": 0,
       "dest_map": "MAP_PRESENT_GYM",
       "dest_warp_id": "Present_Gym_Middle"
+    },
+    {
+      "warp_id": "PresentTown_Port_EntranceL",
+      "x": 49,
+      "y": 43,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_TOWN_PORT",
+      "dest_warp_id": "PresentTown_EntranceL"
+    },
+    {
+      "warp_id": "PresentTown_Port_EntranceR",
+      "x": 50,
+      "y": 43,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_TOWN_PORT",
+      "dest_warp_id": "PresentTown_EntranceR"
     }
   ],
   "coord_events": [

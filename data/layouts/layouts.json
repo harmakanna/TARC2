@@ -4760,6 +4760,16 @@
       "secondary_tileset": "gTileset_SmallTownWithLab",
       "border_filepath": "data/layouts/CutsceneTown/border.bin",
       "blockdata_filepath": "data/layouts/CutsceneTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_TOWN_PORT",
+      "name": "PresentTown_Port_Layout",
+      "width": 30,
+      "height": 21,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_PresentTown",
+      "border_filepath": "data/layouts/PresentTown_Port/border.bin",
+      "blockdata_filepath": "data/layouts/PresentTown_Port/map.bin"
     }
   ]
 }
