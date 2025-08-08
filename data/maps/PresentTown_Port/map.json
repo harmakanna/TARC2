@@ -15,11 +15,40 @@
   "connections": null,
   "object_events": [
     {
+      "local_id": "LOCALID_PORT_SHIP",
       "graphics_id": "OBJ_EVENT_GFX_SS_TIDAL",
       "x": 10,
       "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_PORT_ANABEL",
+      "graphics_id": "OBJ_EVENT_GFX_ANABEL",
+      "x": 10,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_PORT_ANABEL"
+    },
+    {
+      "local_id": "LOCALID_PORT_MAGIKARPMAN",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
+      "x": 21,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -46,6 +75,25 @@
       "dest_warp_id": "PresentTown_Port_EntranceR"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "1",
+      "script": "PresentTown_Port_EventScript_MagikarpManTrigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_CUTSCENE_STATE",
+      "var_value": "1",
+      "script": "PresentTown_Port_EventScript_MagikarpManTrigger2"
+    }
+  ],
   "bg_events": []
 }

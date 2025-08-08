@@ -26,7 +26,6 @@ CutsceneOffice_EventScript_StartGame::
 	delay 60
 	special ReturnCameraToPlayer
 	setflag FLAG_SYS_SPAWN_INVISIBLE
-	setvar VAR_CUTSCENE_STATE, 1
 	warpsilent MAP_CUTSCENE_WATER, 0, 11
 	waitstate
 	releaseall

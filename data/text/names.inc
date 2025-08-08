@@ -72,3 +72,6 @@ Name_Scientist:
 
 Name_Lass:
     .string "Marie$"
+
+Name_Magikarp_Man:
+    .string "Shady Man$"

@@ -3,7 +3,7 @@ CutsceneWater_MapScripts::
 	.byte 0
 
 CutsceneWater_OnFrame:
-	map_script_2 VAR_CUTSCENE_STATE, 1, CutsceneWater_EventScript_StartGame
+	map_script_2 VAR_CUTSCENE_STATE, 0, CutsceneWater_EventScript_StartGame
 	.2byte 0
 
 CutsceneWater_EventScript_StartGame::
@@ -63,14 +63,13 @@ CutsceneWater_EventScript_StartGame::
 	delay 40
 	fadescreen FADE_TO_BLACK
 	delay 40
-	setvar VAR_CUTSCENE_STATE, 0
-	clearflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
-	clearflag FLAG_SYS_PREVENT_MAP_FADE
-	clearflag FLAG_SYS_SPAWN_INVISIBLE
+	setflag FLAG_SYS_PREVENT_MAP_FADE
+	setflag FLAG_SYS_SPAWN_INVISIBLE
+	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	clearflag FLAG_FORCE_LOAD_OFFSCREEN_OBJEV
 	special ReturnCameraToPlayer
 	special RemoveCameraObject
-	warp MAP_PRESENT_TOWN, 49, 42
+	warp MAP_PRESENT_TOWN_PORT, 3, 9
 	releaseall
 	end
 
