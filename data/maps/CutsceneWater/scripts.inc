@@ -15,15 +15,14 @@ CutsceneWater_EventScript_StartGame::
 	msgbox CutsceneWater_Text_ThreeDaysLater, MSGBOX_DEFAULT
 	closemessage
 	delay 80
-	fadescreen FADE_FROM_BLACK
 	playse SE_SHIP
 	waitse
-	@delay 60
-	@applymovement LOCALID_SHIP, CutsceneWater_Movement_ShipToCenterCamera
-	@waitmovement 0
 	special SpawnCameraObject
 	applymovement LOCALID_SHIP, CutsceneWater_Movement_InfiniteMovement
 	applymovement LOCALID_CAMERA, CutsceneWater_Movement_InfiniteMovement
+	fadescreen FADE_FROM_BLACK
+	@applymovement LOCALID_SHIP, CutsceneWater_Movement_ShipToCenterCamera
+	@waitmovement 0
 	delay 60
 	speakername Name_Looker
 	message CutsceneWater_Text_LookerSoHasAqua
@@ -64,7 +63,6 @@ CutsceneWater_EventScript_StartGame::
 	fadescreen FADE_TO_BLACK
 	delay 40
 	setflag FLAG_SYS_PREVENT_MAP_FADE
-	setflag FLAG_SYS_SPAWN_INVISIBLE
 	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	clearflag FLAG_FORCE_LOAD_OFFSCREEN_OBJEV
 	special ReturnCameraToPlayer

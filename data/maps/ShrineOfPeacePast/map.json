@@ -61,7 +61,7 @@
       "y": 19,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "4",
+      "var_value": "6",
       "script": "ShrineOfPeacePast_EventScript_WarpToForestL"
     },
     {
@@ -70,7 +70,7 @@
       "y": 19,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "4",
+      "var_value": "6",
       "script": "ShrineOfPeacePast_EventScript_WarpToForestM"
     },
     {
@@ -79,7 +79,7 @@
       "y": 19,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "4",
+      "var_value": "6",
       "script": "ShrineOfPeacePast_EventScript_WarpToForestR"
     }
   ],

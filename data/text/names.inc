@@ -26,7 +26,7 @@ Name_Aqua_Grunt:
     .string "Aqua Grunt$"
 
 Name_Mayor:
-    .string "Mayor Morrigan$"
+    .string "Mr. Morrigan$"
 
 Name_Concerned_Dad:
     .string "Concerned Dad$"

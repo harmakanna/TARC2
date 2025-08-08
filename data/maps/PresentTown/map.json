@@ -330,7 +330,7 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 28,
+      "x": 32,
       "y": 28,
       "elevation": 0,
       "var": "VAR_PORTO_BELLA_CITY_STATE",
@@ -339,7 +339,7 @@
     },
     {
       "type": "trigger",
-      "x": 28,
+      "x": 32,
       "y": 27,
       "elevation": 0,
       "var": "VAR_PORTO_BELLA_CITY_STATE",
@@ -352,7 +352,7 @@
       "y": 8,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "2",
+      "var_value": "4",
       "script": "PresentTown_EventScript_CatchPeaceRangerAttention1"
     },
     {
@@ -361,7 +361,7 @@
       "y": 8,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "2",
+      "var_value": "4",
       "script": "PresentTown_EventScript_CatchPeaceRangerAttention2"
     },
     {
@@ -370,7 +370,7 @@
       "y": 8,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "2",
+      "var_value": "4",
       "script": "PresentTown_EventScript_CatchPeaceRangerAttention3"
     },
     {
@@ -379,7 +379,7 @@
       "y": 8,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "2",
+      "var_value": "4",
       "script": "PresentTown_EventScript_CatchProsperityRangerAttention"
     },
     {
@@ -388,7 +388,7 @@
       "y": 8,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "2",
+      "var_value": "4",
       "script": "PresentTown_EventScript_CatchProsperityRangerAttention"
     },
     {
@@ -397,7 +397,7 @@
       "y": 8,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "2",
+      "var_value": "4",
       "script": "PresentTown_EventScript_CatchProsperityRangerAttention"
     },
     {
@@ -475,7 +475,7 @@
     {
       "type": "trigger",
       "x": 15,
-      "y": 9,
+      "y": 10,
       "elevation": 0,
       "var": "VAR_PORTO_BELLA_CITY_STATE",
       "var_value": "1",
@@ -484,7 +484,7 @@
     {
       "type": "trigger",
       "x": 16,
-      "y": 9,
+      "y": 10,
       "elevation": 0,
       "var": "VAR_PORTO_BELLA_CITY_STATE",
       "var_value": "1",
@@ -493,7 +493,7 @@
     {
       "type": "trigger",
       "x": 17,
-      "y": 9,
+      "y": 10,
       "elevation": 0,
       "var": "VAR_PORTO_BELLA_CITY_STATE",
       "var_value": "1",
@@ -502,7 +502,7 @@
     {
       "type": "trigger",
       "x": 14,
-      "y": 9,
+      "y": 10,
       "elevation": 0,
       "var": "VAR_PORTO_BELLA_CITY_STATE",
       "var_value": "1",

@@ -999,12 +999,22 @@ u8 FldEff_QuestIcon(void)
     return 0;
 }
 
+void SpawnQuestIcons(void)
+{
+    RefreshQuestIcons();
+}
+
 void SpriteCB_QuestIcon(struct Sprite *sprite)
 {
     u8 objEventId;
     u16 questId;
     u32 localIdIndex;
     struct Sprite *objEventSprite;
+
+    if (TryGetObjectEventIdByLocalIdAndMap(sprite->sLocalId, sprite->sMapNum, sprite->sMapGroup, &objEventId))
+        StopQuestFieldEffect(sprite, objEventId);
+
+    objEventSprite = &gSprites[gObjectEvents[objEventId].spriteId];
 
     if (FlagGet(FLAG_SYS_DISAPPEAR_QUESTS))
     {
@@ -1014,10 +1024,6 @@ void SpriteCB_QuestIcon(struct Sprite *sprite)
         }
     }
 
-    if (TryGetObjectEventIdByLocalIdAndMap(sprite->sLocalId, sprite->sMapNum, sprite->sMapGroup, &objEventId))
-        StopQuestFieldEffect(sprite, objEventId);
-
-    objEventSprite = &gSprites[gObjectEvents[objEventId].spriteId];
 
     if (gObjectEvents[objEventId].localId == gSpecialVar_LastTalked)
     {

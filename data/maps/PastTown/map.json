@@ -176,7 +176,7 @@
       "y": 13,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "6",
+      "var_value": "8",
       "script": "PastTown_EventScript_LookerPassOut"
     },
     {
@@ -185,7 +185,7 @@
       "y": 14,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "6",
+      "var_value": "8",
       "script": "PastTown_EventScript_LookerPassOut"
     },
     {
@@ -194,7 +194,7 @@
       "y": 15,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "6",
+      "var_value": "8",
       "script": "PastTown_EventScript_LookerPassOut"
     },
     {
@@ -203,7 +203,7 @@
       "y": 16,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "6",
+      "var_value": "8",
       "script": "PastTown_EventScript_LookerPassOut"
     },
     {
@@ -212,7 +212,7 @@
       "y": 18,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "6",
+      "var_value": "8",
       "script": "PastTown_EventScript_LookerPassOut"
     },
     {
@@ -221,7 +221,7 @@
       "y": 18,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "6",
+      "var_value": "8",
       "script": "PastTown_EventScript_LookerPassOut"
     },
     {
@@ -230,7 +230,7 @@
       "y": 18,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "6",
+      "var_value": "8",
       "script": "PastTown_EventScript_LookerPassOut"
     },
     {
@@ -239,7 +239,7 @@
       "y": 18,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "6",
+      "var_value": "8",
       "script": "PastTown_EventScript_LookerPassOut"
     },
     {
@@ -248,7 +248,7 @@
       "y": 18,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "6",
+      "var_value": "8",
       "script": "PastTown_EventScript_LookerPassOut"
     },
     {
@@ -257,7 +257,7 @@
       "y": 18,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "6",
+      "var_value": "8",
       "script": "PastTown_EventScript_LookerPassOut"
     },
     {
@@ -266,7 +266,7 @@
       "y": 9,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "7",
+      "var_value": "9",
       "script": "PastTown_EventScript_LassTurnLeft"
     },
     {
@@ -275,7 +275,7 @@
       "y": 9,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "7",
+      "var_value": "9",
       "script": "PastTown_EventScript_LassTurnRight"
     },
     {
@@ -284,7 +284,7 @@
       "y": 9,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "7",
+      "var_value": "9",
       "script": "PastTown_EventScript_LassWalkRight"
     }
   ],

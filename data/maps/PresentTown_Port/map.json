@@ -10,7 +10,7 @@
   "allow_cycling": false,
   "allow_escaping": false,
   "allow_running": true,
-  "show_map_name": true,
+  "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [
@@ -53,7 +53,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PresentTown_Port_EventScript_MagikarpMan",
       "flag": "0"
     },
     {
@@ -68,7 +68,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PresentTown_Port_EventScript_Thundurus",
-      "flag": "0"
+      "flag": "FLAG_HIDE_CITY_THUNDURUS"
     }
   ],
   "warp_events": [

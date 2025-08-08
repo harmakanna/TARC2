@@ -5,7 +5,7 @@ ShrineOfPeacePast_MapScripts::
 	.byte 0
 
 ShrineOfPeacePast_OnTransition:
-	call_if_eq VAR_CUTSCENE_STATE, 3, ShrineOfPeacePast_EventScript_ShrineFirstWarpSetup
+	call_if_eq VAR_CUTSCENE_STATE, 5, ShrineOfPeacePast_EventScript_ShrineFirstWarpSetup
 	end
 
 ShrineOfPeacePast_EventScript_ShrineFirstWarpSetup::
@@ -13,7 +13,7 @@ ShrineOfPeacePast_EventScript_ShrineFirstWarpSetup::
 	return
 
 ShrineOfPeacePast_OnFrame:
-    map_script_2 VAR_CUTSCENE_STATE, 3, ShrineOfPeacePast_EventScript_FirstWarp
+    map_script_2 VAR_CUTSCENE_STATE, 5, ShrineOfPeacePast_EventScript_FirstWarp
     .2byte 0
 
 ShrineOfPeacePast_EventScript_FirstWarp::
@@ -29,6 +29,7 @@ ShrineOfPeacePast_EventScript_FirstWarp::
 	closemessage
 	delay 80
 	clearflag FLAG_SYS_PREVENT_MAP_FADE
+	playbgm MUS_DP_ETERNA_FOREST, FALSE
 	fadescreen FADE_FROM_BLACK
 	delay 60
 	applymovement LOCALID_PLAYER, ShrineOfPeacePast_Movement_LookerLooksAround
@@ -44,7 +45,8 @@ ShrineOfPeacePast_EventScript_FirstWarp::
 	msgbox ShrineOfPeacePast_Text_LookerAnabel, MSGBOX_DEFAULT
 	closemessage
 	clearflag FLAG_SYS_B_DASH
-	setvar VAR_CUTSCENE_STATE, 4
+	clearflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
+	setvar VAR_CUTSCENE_STATE, 6
 	releaseall
 	end
 
@@ -116,12 +118,18 @@ ShrineOfPeacePast_EventScript_CelebiFirstWarp::
 
 ShrineOfPeacePast_EventScript_HandleWarpEvents::
 	setrespawn HEAL_LOCATION_PRESENT
+	call_if_unset FLAG_DEFEATED_SHRINE_GENIES, ShrineOfPeacePast_EventScript_EnableInclementWeather
 	call_if_set FLAG_DEFEATED_SHRINE_GENIES, ShrineOfPeacePast_EventScript_HandlePresentGenieSpawns
 	goto ShrineOfPeacePast_EventScript_CelebiWarp
 	end
 
+ShrineOfPeacePast_EventScript_EnableInclementWeather::
+	setflag FLAG_SYS_WEATHER_CTRL
+	return
+
 ShrineOfPeacePast_EventScript_HandlePresentGenieSpawns::
 	clearflag FLAG_SYS_WEATHER_CTRL
+	fwdtime 6, 30
 	setflag FLAG_HIDE_CITY_TORNADUS
 	setflag FLAG_HIDE_CITY_THUNDURUS
 	randompercentage 4
@@ -144,6 +152,7 @@ ShrineOfPeacePast_EventScript_TrySpawnThundurus::
 
 ShrineOfPeacePast_EventScript_SpawnTornadus::
 	setflag FLAG_SYS_WEATHER_CTRL
+	fwdtime 13, 30
 	setflag FLAG_HIDE_OUTSIDE_NPCS
 	clearflag FLAG_HIDE_INSIDE_OUTSIDE_NPCS
 	clearflag FLAG_HIDE_CITY_TORNADUS
@@ -151,6 +160,7 @@ ShrineOfPeacePast_EventScript_SpawnTornadus::
 
 ShrineOfPeacePast_EventScript_SpawnThundurus::
 	setflag FLAG_SYS_WEATHER_CTRL
+	fwdtime 13, 30
 	setflag FLAG_HIDE_OUTSIDE_NPCS
 	clearflag FLAG_HIDE_INSIDE_OUTSIDE_NPCS
 	clearflag FLAG_HIDE_CITY_THUNDURUS

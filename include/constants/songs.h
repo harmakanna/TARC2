@@ -580,7 +580,7 @@
 #define MUS_DP_GYM                        539
 #define MUS_DP_TWINLEAF_DAY               540
 #define MUS_DP_LAKE_CAVERNS               541
-#define DP_MUSIC_END                      MUS_DP_ETERNA_FOREST
+#define DP_MUSIC_END                      MUS_DP_LAKE_CAVERNS
 
 // Platinum Music
 #define PL_MUSIC_START                    (DP_MUSIC_END + 1)

@@ -39,20 +39,18 @@ CutsceneForestPast_EventScript_AmIGoingTheRightWayM::
 	end
 
 CutsceneForestPast_EventScript_AmIGoingTheRightWay::
-	delay 40
+	delay 50
 	applymovement LOCALID_PLAYER, CutsceneForestPast_Movement_LookAround
 	waitmovement 0
 	speakername Name_Looker
 	msgbox CutsceneForestPast_Text_SeemsRight, MSGBOX_DEFAULT
 	closemessage
-	clearflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
-	setvar VAR_CUTSCENE_STATE, 5
+	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
+	setvar VAR_CUTSCENE_STATE, 7
 	releaseall
 	end
 
 CutsceneForestPast_Movement_LookAround:
-	delay_16
-	delay_16
 	face_right
 	delay_16
 	delay_16

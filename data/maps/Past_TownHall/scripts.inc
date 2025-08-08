@@ -4,8 +4,8 @@ Past_TownHall_MapScripts::
 	.byte 0
 
 Past_TownHall_OnTransition:
-	call_if_eq VAR_CUTSCENE_STATE, 6, Past_TownHall_EventScript_LookerWakesUpSetup
-	call_if_eq VAR_CUTSCENE_STATE, 7, Past_TownHall_EventScript_PreMythSetup
+	call_if_eq VAR_CUTSCENE_STATE, 8, Past_TownHall_EventScript_LookerWakesUpSetup
+	call_if_eq VAR_CUTSCENE_STATE, 9, Past_TownHall_EventScript_PreMythSetup
 	end
 
 Past_TownHall_EventScript_LookerWakesUpSetup::
@@ -30,56 +30,57 @@ Past_TownHall_EventScript_PreMythSetup::
 	return
 
 Past_TownHall_OnFrame:
-	map_script_2 VAR_CUTSCENE_STATE, 6, Past_TownHall_EventScript_LookerWakesUp
+	map_script_2 VAR_CUTSCENE_STATE, 8, Past_TownHall_EventScript_LookerWakesUp
 	.2byte 0
 
 Past_TownHall_EventScript_LookerWakesUp::
 	lockall
 	delay 100
 	msgbox Past_TownHall_Text_Dots, MSGBOX_DEFAULT
-	delay 48
 	closemessage
 	delay 150
-	msgbox Past_TownHall_Text_LookerUgh, MSGBOX_DEFAULT
-	delay 48
+	speakername Name_Looker
+	message Past_TownHall_Text_LookerUgh
+	delay 60
 	closemessage
 	delay 30
-	msgbox Past_TownHall_Text_SoundsLikeHesMoving, MSGBOX_DEFAULT
-	delay 48
+	speakername Name_Unknown
+	message Past_TownHall_Text_SoundsLikeHesMoving
+	delay 80
 	closemessage
 	delay 30
-	msgbox Past_TownHall_Text_AnabelPleaseWakeUp, MSGBOX_DEFAULT
-	delay 48
+	speakername Name_Anabel
+	message Past_TownHall_Text_AnabelPleaseWakeUp
+	waitmessage
+	delay 60
+	message Past_TownHall_Text_AnabelIKnowYoureStrongEnough
+	waitmessage
+	delay 80
 	closemessage
-	delay 100
+	delay 60
 	msgbox Past_TownHall_Text_Dots, MSGBOX_DEFAULT
-	delay 48
 	closemessage
 	delay 100
+	clearflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	clearflag FLAG_SYS_PREVENT_MAP_FADE
+	fadedefaultbgm
+	playbgm MUS_DP_ETERNA_NIGHT, FALSE
 	fadescreen FADE_FROM_BLACK
 	delay 48
+	speakername Name_Looker
 	msgbox Past_TownHall_Text_LookerWakingUp, MSGBOX_DEFAULT
-	applymovement LOCALID_TOWNHALL_ANABEL, Common_Movement_WalkInPlaceFasterUp
-	msgbox Past_TownHall_Text_AnabelDontSpeak, MSGBOX_DEFAULT
-	applymovement LOCALID_TOWNHALL_CAMILLA, Common_Movement_WalkInPlaceFasterLeft
-	msgbox Past_TownHall_Text_CamillaYouAreNotTheFirst, MSGBOX_DEFAULT
-	applymovement LOCALID_TOWNHALL_ANABEL, Common_Movement_WalkInPlaceFasterUp
-	msgbox Past_TownHall_Text_AnabelThisIsCamilla, MSGBOX_DEFAULT
-	applymovement LOCALID_TOWNHALL_ESTELLA, Common_Movement_WalkInPlaceFasterUp
-	msgbox Past_TownHall_Text_LostGirl, MSGBOX_DEFAULT
-	applymovement LOCALID_TOWNHALL_CAMILLA, Common_Movement_WalkInPlaceFasterDown
-	msgbox Past_TownHall_Text_CamillaProsperity, MSGBOX_DEFAULT
-	applymovement LOCALID_TOWNHALL_ESTELLA, Common_Movement_WalkInPlaceFasterUp
-	msgbox Past_TownHall_Text_LostGirl2, MSGBOX_DEFAULT
-	applymovement LOCALID_TOWNHALL_ANABEL, Common_Movement_WalkInPlaceFasterUp
-	msgbox Past_TownHall_Text_AnabelCamillaToldMe, MSGBOX_DEFAULT
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	speak LOCALID_TOWNHALL_ANABEL, DIR_NORTH, Name_Anabel, Past_TownHall_Text_AnabelDontSpeak
+	speak LOCALID_TOWNHALL_CAMILLA, DIR_WEST, Name_Unknown, Past_TownHall_Text_CamillaYouAreNotTheFirst
+	speak LOCALID_TOWNHALL_ANABEL, DIR_NORTH, Name_Anabel, Past_TownHall_Text_AnabelThisIsCamilla
+	speak LOCALID_TOWNHALL_ESTELLA, DIR_NORTH, Name_Estella, Past_TownHall_Text_LostGirl
+	speak LOCALID_TOWNHALL_CAMILLA, DIR_SOUTH, Name_Camilla, Past_TownHall_Text_CamillaProsperity
+	speak LOCALID_TOWNHALL_ESTELLA, DIR_NORTH, Name_Estella, Past_TownHall_Text_LostGirl2
+	speak LOCALID_TOWNHALL_ANABEL, DIR_NORTH, Name_Anabel, Past_TownHall_Text_AnabelCamillaToldMe
 	applymovement LOCALID_TOWNHALL_CAMILLA, Common_Movement_FaceLeft
-	msgbox Past_TownHall_Text_LookerSure, MSGBOX_DEFAULT
+	speak LOCALID_PLAYER, DIR_EAST, Name_Looker, Past_TownHall_Text_LookerSure
 	closemessage
 	fadescreen FADE_TO_BLACK
-	delay 150
+	delay 100
 	msgbox Past_TownHall_Text_Dots, MSGBOX_DEFAULT
 	delay 40
 	closemessage
@@ -101,12 +102,14 @@ Past_TownHall_EventScript_LookerWakesUp::
 	delay 50
 	fadescreen FADE_FROM_BLACK
 	delay 60
+	speakername Name_Looker
 	msgbox Past_TownHall_Text_LookerWakingUpAgain, MSGBOX_DEFAULT
 	closemessage
 	delay 60
 	applymovement LOCALID_PLAYER, Common_Movement_WalkRight, MSGBOX_DEFAULT
 	waitmovement 0
-	setvar VAR_CUTSCENE_STATE, 7
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	setvar VAR_CUTSCENE_STATE, 9
 	releaseall
 	end
 
@@ -156,20 +159,22 @@ Past_TownHall_Text_LookerWakingUpAgain:
 	.string "… … …$"
 
 Past_TownHall_Text_SoundsLikeHesMoving:
-	.string "???: Miss Anabel, your companion's\n"
+	.string "Miss Anabel, your companion's\n"
 	.string "moving again!$"
 
 Past_TownHall_Text_AnabelPleaseWakeUp:
-	.string "Anabel: Looker, please wake up!\p"
+	.string "Looker, please wake up!$"
+
+Past_TownHall_Text_AnabelIKnowYoureStrongEnough:
 	.string "I know you're strong enough to not\n"
 	.string "let a few bruises do you in!$"
 
 Past_TownHall_Text_LookerWakingUp:
-	.string "Looker: Anabel…\n"
+	.string "Anabel…\n"
 	.string "You're safe…?$"
 
 Past_TownHall_Text_AnabelDontSpeak:
-	.string "Anabel: Don't worry about me,\n"
+	.string "Don't worry about me,\n"
 	.string "you're a mess right now!\p"
 	.string "You collapsed right at the town's\n"
 	.string "entrance!\p"
@@ -177,7 +182,7 @@ Past_TownHall_Text_AnabelDontSpeak:
 	.string "hundred years in the past!$"
 
 Past_TownHall_Text_CamillaYouAreNotTheFirst:
-	.string "???: Yes, you three are not the\n"
+	.string "Yes, you three are not the\n"
 	.string "first to be sent here, nor do I\l"
 	.string "believe you will be the last!\p"
 	.string "For some reason, the Spirit of\n"
@@ -187,14 +192,13 @@ Past_TownHall_Text_CamillaYouAreNotTheFirst:
 	.string "Pleased to make your acquaintance!$"
 
 Past_TownHall_Text_AnabelThisIsCamilla:
-	.string "Anabel: Camilla here acts as both\n"
+	.string "Camilla here acts as both\n"
 	.string "doctor and mayor to the city! \p"
 	.string "She and Happiny nursed me back to\n"
-	.string "full health a few days ago -\l"
-	.string "they're dang good at what they do.$"
+	.string "full health a few days ago.$"
 
 Past_TownHall_Text_LostGirl:
-	.string "Estella: um, um, um!\p"
+	.string "um, um, um!\p"
 	.string "sorry for causing so much trouble,\n"
 	.string "sir!\p"
 	.string "grammy taught me bad things happen\n"
@@ -204,13 +208,12 @@ Past_TownHall_Text_CamillaProsperity:
 	.string "Camilla: Prosperity, not posterity!$"
 
 Past_TownHall_Text_LostGirl2:
-	.string "Estella: posperity are messed with!\p"
+	.string "posperity are messed with!\p"
 	.string "i had to do something to save them, but\n"
-	.string "then i was attacked by strong pokémon…\p"
-	.string "now i'm here!$"
+	.string "then i was attacked by strong pokémon…$"
 
 Past_TownHall_Text_AnabelCamillaToldMe:
-	.string "Anabel: Camilla told me she came\n"
+	.string "Camilla told me she came\n"
 	.string "a week ago today.\p"
 	.string "Kinda crazy, right?\n"
 	.string "There's more though.\p"
@@ -222,13 +225,13 @@ Past_TownHall_Text_AnabelCamillaToldMe:
 	.string "village orator there.$"
 
 Past_TownHall_Text_LookerSure:
-	.string "Looker: Sure…\p"
+	.string "Sure…\p"
 	.string "So long as everyone's safe…\p"
 	.string "… … …\n"
 	.string "… … …$"
 
 Past_TownHall_Text_LookerUgh:
-	.string "Looker: Ugh…$"
+	.string "Ugh…$"
 
 Past_TownHall_Text_Dots:
 	.string "… … …\n"

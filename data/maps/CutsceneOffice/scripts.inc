@@ -17,7 +17,7 @@ CutsceneOffice_EventScript_StartGame::
 	special TeleportCamera
 	message CutsceneOffice_Text_SomewhereInUnova
 	waitmessage
-	delay 60
+	delay 120
 	closemessage
 	delay 100
 	fadescreen FADE_FROM_BLACK
@@ -53,12 +53,12 @@ CutsceneOffice_EventScript_Scene::
 	playse SE_PIN
 	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 	delay 16
-	playse SE_BIKE_HOP
 	applymovement LOCALID_PLAYER, CutsceneOffice_Movement_LookerJumpOutOfChair
-	delay 10
-	playse SE_WALL_HIT
 	speakername Name_Looker
 	message CutsceneOffice_Text_LookerAhh
+	playse SE_BIKE_HOP
+	waitse
+	playse SE_EFFECTIVE
 	waitmessage
 	delay 10
 	closemessage

@@ -41,12 +41,12 @@
   ],
   "gMapGroup_LookerPresent": [
     "PresentTown",
+    "PresentTown_Port",
     "ShrineOfPeacePresent",
     "ShrineOfProsperityPresent",
     "CutsceneForest",
     "CutsceneOffice",
-    "CutsceneWater",
-    "PresentTown_Port"
+    "CutsceneWater"
   ],
   "gMapGroup_LookerPast": [
     "PastTown",

@@ -30,7 +30,7 @@ PresentTown_Port_OnTransition:
 PresentTown_Port_SetUpArrival::
 	setobjectmovementtype LOCALID_PORT_MAGIKARPMAN, MOVEMENT_TYPE_FACE_RIGHT
 	setobjectxyperm LOCALID_PORT_MAGIKARPMAN, 16, 7
-	setobjectxy LOCALID_PORT_SHIP, 3, 9
+	setobjectxyperm LOCALID_PORT_SHIP, 3, 9
 	return
 
 PresentTown_Port_OnFrame:
@@ -69,6 +69,7 @@ PresentTown_Port_EventScript_Arrival::
 	givemonwithot OT_LOOKER_TOXICROAK
 	setrespawn HEAL_LOCATION_PRESENT
 	setvar VAR_CUTSCENE_STATE, 1
+	setobjectxyperm LOCALID_PORT_SHIP, 10, 9
 	clearflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	clearflag FLAG_SYS_SPAWN_INVISIBLE
 	clearflag FLAG_SYS_PREVENT_MAP_FADE
@@ -138,7 +139,6 @@ PresentTown_Port_EventScript_MagikarpManTrigger2::
 	end
 
 PresentTown_Port_EventScript_MagikarpManInitialOffer::
-	setvar VAR_CUTSCENE_STATE, 2
 	applymovement LOCALID_PORT_MAGIKARPMAN, Common_Movement_WalkInPlaceFasterRight
 	speakername Name_Magikarp_Man
 	showmoneybox 0, 0
@@ -148,7 +148,7 @@ PresentTown_Port_EventScript_MagikarpManInitialOffer::
 	applymovement LOCALID_PORT_MAGIKARPMAN, Common_Movement_WalkInPlaceFasterRight
 	speakername Name_Magikarp_Man
 	msgbox PresentTown_Port_Text_MagikarpManYouSure, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, PresentTown_Port_EventScript_MagikarpManGivesMagikarpFromTrigger
+	goto_if_eq VAR_RESULT, NO, PresentTown_Port_EventScript_MagikarpManGivesMagikarpFromTrigger
 	speak LOCALID_PLAYER, DIR_WEST, Name_Looker, PresentTown_Port_Text_LookerPositive
 	applymovement LOCALID_PORT_MAGIKARPMAN, Common_Movement_WalkInPlaceFasterRight
 	speakername Name_Magikarp_Man
@@ -160,34 +160,37 @@ PresentTown_Port_EventScript_MagikarpManInitialOffer::
 	call_if_eq VAR_TEMP_0, 18, PresentTown_Port_EventScript_MagikarpManWalkToBench
 	setobjectxyperm LOCALID_PORT_MAGIKARPMAN, 21, 8
 	setobjectmovementtype LOCALID_PORT_MAGIKARPMAN, MOVEMENT_TYPE_FACE_LEFT
+	setvar VAR_CUTSCENE_STATE, 2
 	releaseall
 	end
 	
 PresentTown_Port_EventScript_MagikarpManGivesMagikarpFromTrigger::
 	speak LOCALID_PLAYER, DIR_WEST, Name_Looker, PresentTown_Port_Text_LookerSupportLocalBusiness
 	removemoney 3000
+	updatemoneybox
 	playse SE_SHOP
 	speak LOCALID_PORT_MAGIKARPMAN, DIR_EAST, Name_Magikarp_Man, PresentTown_Port_Text_MagikarpManRememberNoTakebacks
-	hidemoneybox
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MAGIKARP
     givemonwithot OT_LOOKER_MAGIKARP
 	speakername NULL
 	call PresentTown_Port_EventScript_ReceivedMagikarpFanfare
 	closemessage
+	hidemoneybox
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	call_if_eq VAR_TEMP_0, 17, PresentTown_Port_EventScript_LookerStepAside
 	call_if_eq VAR_TEMP_0, 18, PresentTown_Port_EventScript_MagikarpManWalkToBench
 	setobjectxyperm LOCALID_PORT_MAGIKARPMAN, 21, 8
 	setobjectmovementtype LOCALID_PORT_MAGIKARPMAN, MOVEMENT_TYPE_FACE_LEFT
+	setvar VAR_CUTSCENE_STATE, 2
 	releaseall
 	end
 
 PresentTown_Port_EventScript_MagikarpManGivesMagikarpFromBench::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Port_Text_LookerSupportLocalBusiness
 	removemoney 3000
+	updatemoneybox
 	playse SE_SHOP
 	speak LOCALID_PORT_MAGIKARPMAN, VAR_0x8005, Name_Magikarp_Man, PresentTown_Port_Text_MagikarpManRememberNoTakebacks
-	hidemoneybox
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MAGIKARP
     givemonwithot OT_LOOKER_MAGIKARP
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PresentTown_Port_EventScript_ReceiveMagikarpParty
@@ -227,6 +230,8 @@ PresentTown_Port_EventScript_LookerStepAside::
 	
 PresentTown_Port_EventScript_FinishGiveMagikarp::
 	speak LOCALID_PORT_MAGIKARPMAN, VAR_0x8005, Name_Magikarp_Man, PresentTown_Port_Text_MagikarpManRememberNoTakebacks
+	closemessage
+	hidemoneybox
 	release
 	end
 
@@ -244,7 +249,7 @@ PresentTown_Port_EventScript_MagikarpMan::
 	speakername Name_Magikarp_Man
 	showmoneybox 0, 0
 	msgbox PresentTown_Port_Text_MagikarpManYouSureYouDontWant, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, PresentTown_Port_EventScript_MagikarpManGivesMagikarpFromBench
+	goto_if_eq VAR_RESULT, NO, PresentTown_Port_EventScript_MagikarpManGivesMagikarpFromBench
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Port_Text_LookerNotInterested
 	closemessage
 	release
@@ -321,7 +326,7 @@ PresentTown_Port_EventScript_RanFromThundurus::
 	end
 
 PresentTown_Port_Text_MagikarpManYouSureYouDontWant:
-	.string "You suuuuuuure you don't want a\n$"
+	.string "You suuuuuuure you don't want a\n"
 	.string "golden Magikarp?$"
 
 PresentTown_Port_Text_MagikarpManYouWantAMagikarp:

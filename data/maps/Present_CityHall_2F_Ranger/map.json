@@ -26,7 +26,7 @@
       "trainer_type": "TRAINER_TYPE_QUEST_GIVER",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Present_CityHall_2F_Ranger_EventScript_HeadRanger",
-      "flag": "0",
+      "flag": "FLAG_HIDE_CITYHALL_2F_RANGER_HEADRANGER",
       "quest_id": 1
     },
     {

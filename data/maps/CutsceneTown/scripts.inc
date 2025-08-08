@@ -3,18 +3,20 @@ CutsceneTown_MapScripts::
 	.byte 0
 
 CutsceneTown_OnFrame:
-	map_script_2 VAR_CUTSCENE_STATE, 9, CutsceneTown_Event
+	map_script_2 VAR_CUTSCENE_STATE, 11, CutsceneTown_Event
 	.2byte 0
 
 CutsceneTown_Event::
 	lockall
 	special SpawnCameraObject
-	setvar VAR_0x8004, 10
-	setvar VAR_0x8005, 24
-	special TeleportCamera
+	applymovement LOCALID_CAMERA, MythTown_Movement_PositionCameraToFirstShot
+	waitmovement 0
+	delay 80
+	playbgm MUS_DP_TWINLEAF_DAY, FALSE
 	fadescreen FADE_FROM_BLACK
-	delay 40
+	delay 80
 	message Myth_Text_WhoRestoredLife
+	waitmessage
 	applymovement LOCALID_TOWNMYTH_WESTWOMAN, MythTown_Movement_ManWomanEnterWestScene
 	delay 5
 	applymovement LOCALID_TOWNMYTH_WESTMAN, MythTown_Movement_ManWomanEnterWestScene
@@ -23,26 +25,29 @@ CutsceneTown_Event::
 	delay 20
 	applymovement LOCALID_TOWNMYTH_WESTMAN, MythTown_Movement_ManLoveWoman
 	applymovement LOCALID_TOWNMYTH_WESTWOMAN, MythTown_Movement_WomanLoveMan
-	delay 50
+	delay 80
 	fadescreen FADE_TO_BLACK
 	delay 40
-	setvar VAR_0x8004, 21
-	setvar VAR_0x8005, 29
-	special TeleportCamera
+	applymovement LOCALID_CAMERA, MythTown_Movement_PositionCameraToSecondShot
+	waitmovement 0
 	applymovement LOCALID_CAMERA, MythTown_Movement_CameraPanOverFarms
 	fadescreen FADE_FROM_BLACK
 	applymovement LOCALID_TOWNMYTH_CARROTMAN, MythTown_Movement_CarrotMan
 	applymovement LOCALID_TOWNMYTH_CABBAGEMAN, MythTown_Movement_CabbageMan
 	message Myth_Text_Landorus
 	waitmessage
+	delay 60
+	applymovement LOCALID_TOWNMYTH_LANDORUS, MythTown_Movement_Landorus
 	delay 80
+	closemessage
 	fadescreen FADE_TO_BLACK
-	setvar VAR_0x8004, 14
-	setvar VAR_0x8005, 10
-	special TeleportCamera
-	message Myth_Text_Celebi
+	delay 80
+	applymovement LOCALID_CAMERA, MythTown_Movement_PositionCameraToThirdShot
+	waitmovement 0
 	fadescreen FADE_FROM_BLACK
-	delay 40
+	message Myth_Text_Celebi
+	waitmessage
+	delay 80
 	applymovement LOCALID_TOWNMYTH_KECLEON, Myth_Movement_KecleonAppears
 	delay 60
 	closemessage
@@ -50,7 +55,9 @@ CutsceneTown_Event::
 	delay 48
 	applymovement LOCALID_TOWNMYTH_KECLEON, Myth_Movement_KecleonEscapeToForest
 	waitmovement 0
+	fadenewbgm MUS_NONE
 	fadescreen FADE_TO_BLACK
+	playbgm MUS_NONE, TRUE
 	delay 80
 	message Myth_Text_NowLandorus
 	waitmessage
@@ -64,6 +71,32 @@ CutsceneTown_Event::
 	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	warpsilent MAP_SHRINE_OF_PROSPERITY_PAST, 12, 10
 	end
+
+@9 23 to 10 24
+MythTown_Movement_PositionCameraToFirstShot:
+	walk_faster_down
+	walk_faster_right
+	step_end
+
+@10 24 to 21 29
+MythTown_Movement_PositionCameraToSecondShot:
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	step_end
 
 MythTown_Movement_ManWomanEnterWestScene:
 	walk_left
@@ -84,6 +117,7 @@ MythTown_Movement_WomanLoveMan:
 	emote_heart
 	step_end
 
+@21 29 to 44 29
 MythTown_Movement_CameraPanOverFarms:
 	walk_right
 	walk_right
@@ -104,10 +138,20 @@ MythTown_Movement_CameraPanOverFarms:
 	walk_right
 	walk_right
 	walk_right
+	step_end
+
+MythTown_Movement_Landorus:
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	delay 16
+	delay_16
+	delay_16
+	delay_16
 	walk_right
 	walk_right
-	walk_right
-	walk_right
+	delay_16
 	step_end
 
 MythTown_Movement_CarrotMan:
@@ -153,6 +197,33 @@ MythTown_Movement_CabbageMan:
 	walk_fast_left
 	walk_fast_left
 	walk_fast_left
+	step_end
+
+@44 29 to 38 18
+MythTown_Movement_PositionCameraToThirdShot:
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
 	step_end
 
 Myth_Movement_KecleonAppears:

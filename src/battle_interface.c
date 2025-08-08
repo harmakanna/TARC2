@@ -2904,7 +2904,7 @@ static const struct SpriteTemplate sSpriteTemplate_LastUsedBallWindow =
 };
 
 #define MOVE_INFO_WINDOW_TAG 0xE722
-#define MOVE_PREVIEW_WINDOW_TAG 0xE722
+#define MOVE_PREVIEW_WINDOW_TAG 0xE723
 
 static const struct OamData sOamData_MoveInfoWindow =
 {
