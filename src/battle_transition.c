@@ -2613,7 +2613,7 @@ static void Mugshots_CreateTrainerPics(struct Task *task)
         SetOamMatrixRotationScaling(opponentSpriteB->oam.matrixNum, opponentBRotationScales, opponentBRotationScales, 0);
     }
     
-    if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY_DOUBLE)
+    if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY_DOUBLE || gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
     {
     task->tOpponentSpriteAId = CreateTrainerSprite(trainerAPicId,
                                                   gTrainerSprites[trainerAPicId].mugshotCoords.x - 60,

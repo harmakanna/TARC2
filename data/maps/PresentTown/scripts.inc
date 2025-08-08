@@ -8,21 +8,13 @@ PresentTown_MapScripts::
 @ Comment out FLAG_SYS_MAIN_GAME_START_SCRIPT_DEBUG line to test intro
 PresentTown_OnLoad:
 	call_if_eq VAR_CUTSCENE_STATE, 2, PresentTown_EventScript_ChangeAnabelFollowerText
-	call_if_unset FLAG_LOOKER_STARTERS, PresentTown_EventScript_GiveLookerStarters
-	call_if_unset FLAG_SYS_MAIN_GAME_START_SCRIPT_DEBUG, PresentTown_EventScript_DebugMainGameStart
+	@call_if_unset FLAG_SYS_MAIN_GAME_START_SCRIPT_DEBUG, PresentTown_EventScript_DebugMainGameStart
 	call_if_set FLAG_LOCK_CITY_DOORS, PresentTown_EventScript_LockCityDoors
 	end
 
 PresentTown_EventScript_ChangeAnabelFollowerText::
 	setflag FLAG_STEPPED_OUT_OF_CITY_HALL
 	return
-
-@ debug script so Looker isn't flooded with Growlithe and Toxicroak 
-PresentTown_EventScript_GiveLookerStarters::
-	givemonwithot OT_LOOKER_GROWLITHE
-	givemonwithot OT_LOOKER_TOXICROAK
-	setflag FLAG_LOOKER_STARTERS
-	return 
 
 PresentTown_EventScript_DebugMainGameStart::
 	setvar VAR_CUTSCENE_STATE, 10
@@ -50,6 +42,8 @@ PresentTown_EventScript_DebugMainGameStart::
 	setflag FLAG_FOUGHT_LASS
 	setflag FLAG_HIDE_SHRINE_PROSPERITY_PAST_ANABEL
 	clearflag FLAG_HIDE_SHRINE_PEACE_CELEBI
+	givemonwithot OT_LOOKER_GROWLITHE
+	givemonwithot OT_LOOKER_TOXICROAK
 	questmenu QUEST_MENU_SET_REWARD, QUEST_SAVE_ESTELLA
 	return
 
@@ -155,8 +149,22 @@ PresentTown_EventScript_PlayDefaultMusic:
 
 PresentTown_OnResume:
 	special HealPlayerParty
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, PresentTown_EventScript_TryRemoveTornadus
 	end
 	
+PresentTown_EventScript_TryRemoveTornadus::
+	specialvar VAR_RESULT, GetBattleOutcome
+	call_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, PresentTown_EventScript_RemoveTornadus
+	return
+
+PresentTown_EventScript_RemoveTornadus::
+	setflag FLAG_CAUGHT_TORNADUS
+	setweather WEATHER_SUNNY
+	doweather
+	call Common_EventScript_MoveInsideNPCsOutside
+	removeobject LOCALID_CITY_TORNADUS
+	return
+
 PresentTown_EventScript_StartStorm1::
 	lockall
 	clearflag FLAG_HIDE_PORTO_BELLA_WILD_MONS
@@ -711,6 +719,49 @@ PresentTown_Movement_PeaceRangerEmoteTurn:
 	emote_exclamation_mark
 	face_right
 	step_end
+
+PresentTown_EventScript_Tornadus::
+	lock
+	faceplayer
+	waitse
+	setflag FLAG_SYS_NO_WHITEOUT
+	playmoncry SPECIES_TORNADUS, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_TORNADUS, 70
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	clearflag FLAG_SYS_NO_WHITEOUT
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PresentTown_EventScript_DefeatedTornadus
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, PresentTown_EventScript_RanFromTornadus
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, PresentTown_EventScript_RanFromTornadus
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, PresentTown_EventScript_RanFromTornadus
+	clearflag FLAG_SYS_WEATHER_CTRL
+	setweather WEATHER_SUNNY
+	doweather
+	removeobject VAR_LAST_TALKED
+	release
+	end
+
+PresentTown_EventScript_DefeatedTornadus::
+	clearflag FLAG_SYS_WEATHER_CTRL
+	setweather WEATHER_SUNNY
+	doweather
+	call Common_EventScript_MoveInsideNPCsOutside
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+PresentTown_EventScript_RanFromTornadus::
+	clearflag FLAG_SYS_WEATHER_CTRL
+	setweather WEATHER_SUNNY
+	doweather
+	call Common_EventScript_MoveInsideNPCsOutside
+	setvar VAR_0x8004, SPECIES_TORNADUS
+	goto Common_EventScript_LegendaryFlewAway
+	end
 
 PresentTown_Text_ProsperityRangerYouCanPass:
 	.string "Hello! I got the call from HQ. You're\n"

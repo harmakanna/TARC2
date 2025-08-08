@@ -1,9 +1,29 @@
 PresentTown_Port_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, PresentTown_Port_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, PresentTown_Port_OnFrame
+	map_script MAP_SCRIPT_ON_RESUME, PresentTown_Port_OnResume
 	.byte 0
 
+PresentTown_Port_OnResume:
+	special HealPlayerParty
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, PresentTown_Port_EventScript_TryRemoveThundurus
+	end
+	
+PresentTown_Port_EventScript_TryRemoveThundurus::
+	specialvar VAR_RESULT, GetBattleOutcome
+	call_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, PresentTown_Port_EventScript_RemoveThundurus
+	return
+
+PresentTown_Port_EventScript_RemoveThundurus::
+	setflag FLAG_CAUGHT_THUNDURUS
+	setweather WEATHER_SUNNY
+	doweather
+	call Common_EventScript_MoveInsideNPCsOutside
+	removeobject LOCALID_CITY_THUNDURUS
+	return
+
 PresentTown_Port_OnTransition:
+	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetStormWeather
 	call_if_eq VAR_CUTSCENE_STATE, 0, PresentTown_Port_SetUpArrival
 	end
 
@@ -45,6 +65,9 @@ PresentTown_Port_EventScript_Arrival::
 	applymovement LOCALID_PORT_ANABEL, PresentTown_Port_Movement_AnabelExitShot
 	waitmovement 0
 	removeobject LOCALID_PORT_ANABEL
+	givemonwithot OT_LOOKER_GROWLITHE
+	givemonwithot OT_LOOKER_TOXICROAK
+	setrespawn HEAL_LOCATION_PRESENT
 	setvar VAR_CUTSCENE_STATE, 1
 	clearflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	clearflag FLAG_SYS_SPAWN_INVISIBLE
@@ -118,6 +141,7 @@ PresentTown_Port_EventScript_MagikarpManInitialOffer::
 	setvar VAR_CUTSCENE_STATE, 2
 	applymovement LOCALID_PORT_MAGIKARPMAN, Common_Movement_WalkInPlaceFasterRight
 	speakername Name_Magikarp_Man
+	showmoneybox 0, 0
 	msgbox PresentTown_Port_Text_MagikarpManYouWantAMagikarp, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, PresentTown_Port_EventScript_MagikarpManGivesMagikarpFromTrigger
 	speak LOCALID_PLAYER, DIR_WEST, Name_Looker, PresentTown_Port_Text_LookerNotInterested
@@ -130,6 +154,7 @@ PresentTown_Port_EventScript_MagikarpManInitialOffer::
 	speakername Name_Magikarp_Man
 	msgbox PresentTown_Port_Text_MagikarpManOhFine, MSGBOX_DEFAULT
 	closemessage
+	hidemoneybox
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	call_if_eq VAR_TEMP_0, 17, PresentTown_Port_EventScript_LookerStepAside
 	call_if_eq VAR_TEMP_0, 18, PresentTown_Port_EventScript_MagikarpManWalkToBench
@@ -140,7 +165,10 @@ PresentTown_Port_EventScript_MagikarpManInitialOffer::
 	
 PresentTown_Port_EventScript_MagikarpManGivesMagikarpFromTrigger::
 	speak LOCALID_PLAYER, DIR_WEST, Name_Looker, PresentTown_Port_Text_LookerSupportLocalBusiness
+	removemoney 3000
+	playse SE_SHOP
 	speak LOCALID_PORT_MAGIKARPMAN, DIR_EAST, Name_Magikarp_Man, PresentTown_Port_Text_MagikarpManRememberNoTakebacks
+	hidemoneybox
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MAGIKARP
     givemonwithot OT_LOOKER_MAGIKARP
 	speakername NULL
@@ -156,7 +184,10 @@ PresentTown_Port_EventScript_MagikarpManGivesMagikarpFromTrigger::
 
 PresentTown_Port_EventScript_MagikarpManGivesMagikarpFromBench::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Port_Text_LookerSupportLocalBusiness
+	removemoney 3000
+	playse SE_SHOP
 	speak LOCALID_PORT_MAGIKARPMAN, VAR_0x8005, Name_Magikarp_Man, PresentTown_Port_Text_MagikarpManRememberNoTakebacks
+	hidemoneybox
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MAGIKARP
     givemonwithot OT_LOOKER_MAGIKARP
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PresentTown_Port_EventScript_ReceiveMagikarpParty
@@ -211,6 +242,7 @@ PresentTown_Port_EventScript_MagikarpMan::
 	goto_if_set FLAG_PURCHASED_MAGIKARP, PresentTown_Port_EventScript_MagikarpManNoTakebacks
 	call Script_GetNPCFacingDirection
 	speakername Name_Magikarp_Man
+	showmoneybox 0, 0
 	msgbox PresentTown_Port_Text_MagikarpManYouSureYouDontWant, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, PresentTown_Port_EventScript_MagikarpManGivesMagikarpFromBench
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Port_Text_LookerNotInterested
@@ -242,6 +274,51 @@ PresentTown_Port_Movement_MagikarpManWalkToBench:
 	walk_right
 	face_left
 	step_end
+
+
+PresentTown_Port_EventScript_Thundurus::
+	lock
+	faceplayer
+	waitse
+	setflag FLAG_SYS_NO_WHITEOUT
+	playmoncry SPECIES_THUNDURUS, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_THUNDURUS, 70
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	clearflag FLAG_SYS_NO_WHITEOUT
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PresentTown_Port_EventScript_DefeatedThundurus
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, PresentTown_Port_EventScript_RanFromThundurus
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, PresentTown_Port_EventScript_RanFromThundurus
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, PresentTown_Port_EventScript_RanFromThundurus
+	clearflag FLAG_SYS_WEATHER_CTRL
+	setweather WEATHER_SUNNY
+	doweather
+	removeobject VAR_LAST_TALKED
+	call Common_EventScript_MoveInsideNPCsOutside
+	release
+	end
+
+PresentTown_Port_EventScript_DefeatedThundurus::
+	clearflag FLAG_SYS_WEATHER_CTRL
+	setweather WEATHER_SUNNY
+	doweather
+	call Common_EventScript_MoveInsideNPCsOutside
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+PresentTown_Port_EventScript_RanFromThundurus::
+	clearflag FLAG_SYS_WEATHER_CTRL
+	setweather WEATHER_SUNNY
+	doweather
+	call Common_EventScript_MoveInsideNPCsOutside
+	setvar VAR_0x8004, SPECIES_THUNDURUS
+	goto Common_EventScript_LegendaryFlewAway
+	end
 
 PresentTown_Port_Text_MagikarpManYouSureYouDontWant:
 	.string "You suuuuuuure you don't want a\n$"

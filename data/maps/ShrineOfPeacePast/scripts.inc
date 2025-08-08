@@ -104,15 +104,60 @@ ShrineOfPeacePast_EventScript_Celebi::
 	msgbox ShrineOfPeacePast_Text_Celebi
 	speakername NULL
 	msgbox ShrineOfPeacePast_Text_CelebiWarp, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, ShrineOfPeacePast_EventScript_CelebiWarp
+	goto_if_eq VAR_RESULT, YES, ShrineOfPeacePast_EventScript_HandleWarpEvents
 	releaseall
 	end
 
 ShrineOfPeacePast_EventScript_CelebiFirstWarp::
 	msgbox ShrineOfPeacePast_Text_CelebiFirstWarp, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, ShrineOfPeacePast_EventScript_CelebiWarp
+	goto_if_eq VAR_RESULT, YES, ShrineOfPeacePast_EventScript_HandleWarpEvents
 	releaseall
 	end
+
+ShrineOfPeacePast_EventScript_HandleWarpEvents::
+	setrespawn HEAL_LOCATION_PRESENT
+	call_if_set FLAG_DEFEATED_SHRINE_GENIES, ShrineOfPeacePast_EventScript_HandlePresentGenieSpawns
+	goto ShrineOfPeacePast_EventScript_CelebiWarp
+	end
+
+ShrineOfPeacePast_EventScript_HandlePresentGenieSpawns::
+	clearflag FLAG_SYS_WEATHER_CTRL
+	setflag FLAG_HIDE_CITY_TORNADUS
+	setflag FLAG_HIDE_CITY_THUNDURUS
+	randompercentage 4
+	call_if_eq VAR_RESULT, TRUE, ShrineOfPeacePast_EventScript_TrySpawnPresentGenies
+	return
+
+ShrineOfPeacePast_EventScript_TrySpawnPresentGenies::
+	randomelement SPECIES_TORNADUS, SPECIES_THUNDURUS
+	call_if_eq VAR_RESULT, SPECIES_TORNADUS, ShrineOfPeacePast_EventScript_TrySpawnTornadus
+	call_if_eq VAR_RESULT, SPECIES_THUNDURUS, ShrineOfPeacePast_EventScript_TrySpawnThundurus
+	return
+
+ShrineOfPeacePast_EventScript_TrySpawnTornadus::
+	call_if_unset FLAG_CAUGHT_TORNADUS, ShrineOfPeacePast_EventScript_SpawnTornadus
+	return
+
+ShrineOfPeacePast_EventScript_TrySpawnThundurus::
+	call_if_unset FLAG_CAUGHT_THUNDURUS, ShrineOfPeacePast_EventScript_SpawnThundurus
+	return
+
+ShrineOfPeacePast_EventScript_SpawnTornadus::
+	setflag FLAG_SYS_WEATHER_CTRL
+	setflag FLAG_HIDE_OUTSIDE_NPCS
+	clearflag FLAG_HIDE_INSIDE_OUTSIDE_NPCS
+	clearflag FLAG_HIDE_CITY_TORNADUS
+	return
+
+ShrineOfPeacePast_EventScript_SpawnThundurus::
+	setflag FLAG_SYS_WEATHER_CTRL
+	setflag FLAG_HIDE_OUTSIDE_NPCS
+	clearflag FLAG_HIDE_INSIDE_OUTSIDE_NPCS
+	clearflag FLAG_HIDE_CITY_THUNDURUS
+	return
+
+ShrineOfPeacePast_EventScript_EndSpawnGenie::
+	return
 
 ShrineOfPeacePast_EventScript_CelebiWarp::
 	setflag FLAG_WARPED_WITH_CELEBI

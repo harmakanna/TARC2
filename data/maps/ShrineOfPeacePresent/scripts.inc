@@ -166,6 +166,7 @@ ShrineOfPeacePresent_EventScript_CelebiEncounter::
 	delay 30
 	setflag FLAG_HIDE_SHRINE_OF_PEACE_PRESENT_WILD_MONS
 	setflag FLAG_HIDE_SHRINE_PEACE_CELEBI
+	setrespawn HEAL_LOCATION_PAST
 	warpsilent MAP_SHRINE_OF_PEACE_PAST, 14, 13
 	end
 
@@ -353,8 +354,13 @@ ShrineOfPeacePresent_EventScript_Celebi::
 	msgbox ShrineOfPeacePresent_Text_Celebi, MSGBOX_DEFAULT
 	speakername NULL
 	msgbox ShrineOfPeacePresent_Text_CelebiWarp, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, ShrineOfPeacePresent_EventScript_CelebiWarp
+	goto_if_eq VAR_RESULT, YES, ShrineOfPeacePresent_EventScript_HandleWarpEvents
 	releaseall
+	end
+
+ShrineOfPeacePresent_EventScript_HandleWarpEvents::
+	setrespawn HEAL_LOCATION_PAST
+	goto ShrineOfPeacePresent_EventScript_CelebiWarp
 	end
 
 ShrineOfPeacePresent_EventScript_CelebiWarp::

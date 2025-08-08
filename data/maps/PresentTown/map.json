@@ -125,6 +125,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PresentTown_EventScript_ProsperityRanger",
       "flag": "FLAG_HIDE_SHRINE_PROSPERITY_RANGER"
+    },
+    {
+      "local_id": "LOCALID_CITY_TORNADUS",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TORNADUS)",
+      "x": 41,
+      "y": 11,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_SEQUENCE_RIGHT_DOWN_UP_LEFT",
+      "movement_range_x": 7,
+      "movement_range_y": 5,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PresentTown_EventScript_Tornadus",
+      "flag": "FLAG_HIDE_CITY_TORNADUS"
     }
   ],
   "warp_events": [
@@ -538,6 +552,22 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "PresentTown_Sign_AquaCorpHQ"
+    },
+    {
+      "type": "sign",
+      "x": 54,
+      "y": 26,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Common_EventScript_ShowPokemonCenterSign"
+    },
+    {
+      "type": "sign",
+      "x": 55,
+      "y": 26,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Common_EventScript_ShowPokemonCenterSign"
     }
   ]
 }
