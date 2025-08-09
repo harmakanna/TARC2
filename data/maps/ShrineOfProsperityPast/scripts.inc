@@ -64,7 +64,7 @@ ShrineOfProsperityPast_EventScript_StartLandorusMythR::
 	end
 
 ShrineOfProsperityPast_EventScript_LandorusMyth::
-	speak LOCALID_SHRINE_PROSPERITY_PAST_ANABEL, DIR_EAST, Name_Anabel, ShrineOfProsperityPast_Text_AnabelCompanionArrived
+	speak LOCALID_SHRINE_PROSPERITY_PAST_ANABEL, DIR_SOUTH, Name_Anabel, ShrineOfProsperityPast_Text_AnabelCompanionArrived
 	applymovement LOCALID_SHRINE_PROSPERITY_PAST_ANABEL, Common_Movement_FaceDown
 	speak LOCALID_SHRINE_PROSPERITY_PAST_ORATOR, DIR_SOUTH, Name_Orator, ShrineOfProsperityPast_Text_OratorWonderful
 	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, ShrineOfProsperityPast_Text_LookerAsWellAsICouldBe
@@ -75,9 +75,8 @@ ShrineOfProsperityPast_EventScript_LandorusMyth::
 	applymovement LOCALID_SHRINE_PROSPERITY_PAST_ANABEL, Common_Movement_FaceDown
 	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, ShrineOfProsperityPast_Text_LookerSpiritsOfWindAndStorms
 	speak LOCALID_SHRINE_PROSPERITY_PAST_ORATOR, DIR_SOUTH, Name_Orator, ShrineOfProsperityPast_Text_OratorYesTheSpirits
-	applymovement LOCALID_SHRINE_PROSPERITY_PAST_ORATOR, Common_Movement_FaceLeft
-	speak LOCALID_SHRINE_PROSPERITY_PAST_ANABEL, DIR_EAST, Name_Anabel, ShrineOfProsperityPast_Text_AnabelWhatHappened
-	speak LOCALID_SHRINE_PROSPERITY_PAST_ORATOR, DIR_WEST, Name_Orator, ShrineOfProsperityPast_Text_OratorStartFromBeginning
+	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, ShrineOfProsperityPast_Text_LookerWhatHappened
+	speak LOCALID_SHRINE_PROSPERITY_PAST_ORATOR, DIR_SOUTH, Name_Orator, ShrineOfProsperityPast_Text_OratorStartFromBeginning
 	closemessage
 	delay 40
 	fadenewbgm MUS_NONE
@@ -100,8 +99,13 @@ ShrineOfProsperityPast_EventScript_EndLandorusMyth::
 	delay 40
 	applymovement LOCALID_SHRINE_PROSPERITY_PAST_ORATOR, Common_Movement_FaceLeft
 	speak LOCALID_SHRINE_PROSPERITY_PAST_ANABEL, DIR_EAST, Name_Anabel, ShrineOfProsperityPast_Text_AnabelSoTheSpiritsAre
+	closemessage
+	delay 80
 	applymovement LOCALID_SHRINE_PROSPERITY_PAST_ORATOR, Common_Movement_FaceDown
 	applymovement LOCALID_SHRINE_PROSPERITY_PAST_ANABEL, Common_Movement_FaceDown
+	playse SE_PIN
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDownExclamationMark
+	delay 60
 	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, ShrineOfProsperityPast_Text_LookerThisCanOnlyMean
 	applymovement LOCALID_PLAYER, ShrineOfProsperityPast_Movement_WalkLeftFaceUp
 	waitmovement 0
@@ -123,15 +127,16 @@ ShrineOfProsperityPast_EventScript_EndLandorusMyth::
 	clearflag FLAG_LOCK_CITY_DOORS
 	clearflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	clearflag FLAG_SYS_PREVENT_MAP_FADE
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	clearflag FLAG_HIDE_CITYHALL_2F_RANGER_HEADRANGER
 	setflag FLAG_HIDE_PAST_TOWN_HALL_ESTELLA
 	setflag FLAG_HIDE_CITYHALL_1F_CONCERNED_DAD
-	setflag FLAG_SYS_B_DASH
 	setflag FLAG_SYS_MAIN_GAME_START
 	setvar VAR_CUTSCENE_STATE, 12
 	setvar VAR_PORTO_BELLA_CITY_STATE, 3
 	setvar VAR_QUEUE_GENIE_FIGHT, 1
 	setvar VAR_PRESENT_GYM_STATE, 1
+	questmenu QUEST_MENU_SET_REWARD QUEST_SAVE_ESTELLA
 	releaseall
 	end
 
@@ -240,11 +245,12 @@ ShrineOfProsperityPast_Text_OratorYesTheSpirits:
 	.string "territory which Porta Bella has now\l"
 	.string "settled on.$"
 
-ShrineOfProsperityPast_Text_AnabelWhatHappened:
+ShrineOfProsperityPast_Text_LookerWhatHappened:
 	.string "Ruled the territory?\p"
-	.string "What stopped them? Why did they cede\n"
+	.string "Who are the spirits? Why did they cede\n"
 	.string "the territory to the humans?\p"
-	.string "Who even ARE these spirits?$"
+	.string "We must learn how to stop these spirits\n"
+	.string "if they really caused the storm.$"
 
 ShrineOfProsperityPast_Text_OratorStartFromBeginning:
 	.string "Ah, so you are entirely unfamiliar…\n"

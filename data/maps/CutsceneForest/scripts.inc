@@ -17,7 +17,7 @@ CutsceneForest_EventScript_SearchForEstella::
 	setvar VAR_0x8004, 10  @ x
 	setvar VAR_0x8005, 9  @ y
 	special TeleportCamera
-	delay 80
+	delay 150
 	clearflag FLAG_SYS_PREVENT_MAP_FADE
 	fadescreen FADE_FROM_BLACK
 	delay 10
@@ -234,7 +234,7 @@ CutsceneForest_Text_AnabelGotIt:
 	.string "Looker?$"
 
 CutsceneForest_Text_LookerUnderstood:
-	.string "I heard.$"
+	.string "Understood.$"
 
 CutsceneForest_Text_RangerGreatBeSafe:
 	.string "Great. Please be safe\n"

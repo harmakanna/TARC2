@@ -1179,6 +1179,9 @@ u16 GetLocationMusic(struct WarpData *warp)
             || warp->mapNum == MAP_NUM(MAP_PRESENT_CITY_HALL_2F_RANGER)
             || warp->mapNum == MAP_NUM(MAP_PRESENT_CITY_HALL_2F_OFFICE)))
         return MUS_PL_LOOKER;
+    else if (FlagGet(FLAG_PLAY_LOOKER_RANGER_ON_TRANSITION)
+            && warp->mapNum == MAP_NUM(MAP_PRESENT_TOWN))
+        return MUS_NONE;
     else if (FlagGet(FLAG_SYS_WEATHER_CTRL)
             && (warp->mapNum == MAP_NUM(MAP_PRESENT_TOWN)))
         return MUS_NONE;

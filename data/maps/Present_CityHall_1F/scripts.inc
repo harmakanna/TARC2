@@ -45,6 +45,7 @@ Present_CityHall_1F_EventScript_PostStormDiscussion::
 	playse SE_LEDGE
 	delay 80
 	closemessage
+	delay 120
 	applymovement LOCALID_CITYHALL_1F_ANABEL, Common_Movement_SetVisibleFaceUp
 	applymovement LOCALID_PLAYER, Common_Movement_SetVisible
 	playse SE_EXIT
@@ -115,7 +116,7 @@ Present_CityHall_1F_EventScript_PostStormDiscussion::
 	closemessage
 	playse SE_REPEL
 	waitse
-	delay 10
+	delay 40
 	message Present_CityHall_1F_Text_LookerUsedTheRepel
 	waitmessage
 	delay 50
@@ -133,6 +134,8 @@ Present_CityHall_1F_EventScript_PostStormDiscussion::
 	setflag FLAG_HIDE_MAP_NAME_POPUP
 	setfollowernpc LOCALID_CITYHALL_1F_ANABEL, FNPC_NONE, Present_CityHall_1F_EventScript_AnabelFollower
 	special RemoveCameraObject
+	delay 40
+	startquest QUEST_INTERROGATE_MATT
 	releaseall
 	end
 

@@ -1,5 +1,14 @@
 Present_Concerned_Family_House_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Present_Concerned_Family_House_OnTransition
 	.byte 0
+
+Present_Concerned_Family_House_OnTransition:
+	call_if_set FLAG_SYS_WEATHER_CTRL, Present_Concerned_Family_House_EventScript_ForcePlayMusic
+	end
+
+Present_Concerned_Family_House_EventScript_ForcePlayMusic::
+	playbgm MUS_DP_SUNYSHORE_DAY, FALSE
+	return
 
 Present_ConcernedFamilyHouse_EventScript_LookerINeedToThink::
 	lockall

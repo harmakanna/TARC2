@@ -12,19 +12,23 @@ CutsceneMyth_Event::
 	applymovement LOCALID_CAMERA, Myth_Movement_PositionCameraToFirstShot
 	waitmovement 0
 	delay 160
-	applymovement LOCALID_CAMERA, Myth_Movement_CameraPanDiagonalDownSetScene
-	playbgm MUS_DP_LAKE_CAVERNS, FALSE
-	fadescreen FADE_FROM_BLACK
 	message Myth_Text_LongAgo
 	waitmessage
 	delay 90
+	applymovement LOCALID_CAMERA, Myth_Movement_CameraPanDiagonalDownSetScene
+	playbgm MUS_DP_LAKE_CAVERNS, FALSE
+	fadescreen FADE_FROM_BLACK
+	delay 80
 	message Myth_Text_LongAgo2
 	waitmessage
-	delay 80
+	delay 140
 	closemessage
 	fadescreen FADE_TO_BLACK
 	delay 80
 	clearflag FLAG_HIDE_FIRST_PAN
+	addobject LOCALID_MYTH_TORNADUS
+	addobject LOCALID_MYTH_THUNDURUS
+	applymovement LOCALID_MYTH_TORNADUS, Myth_Movement_FlyInPlace
 	applymovement LOCALID_CAMERA, Myth_Movement_PositionCameraToSecondShot
 	waitmovement 0
 	applymovement LOCALID_CAMERA, Myth_Movement_CameraPanUpTornadus
@@ -33,19 +37,20 @@ CutsceneMyth_Event::
 	playmoncry SPECIES_TORNADUS, CRY_MODE_NORMAL
 	message Myth_Text_SpiritOfWind
 	waitmessage
-	delay 80
+	delay 100
 	closemessage
 	delay 40
 	fadescreen FADE_TO_BLACK
 	applymovement LOCALID_CAMERA, Myth_Movement_PositionCameraToThirdShot
 	waitmovement 0
+	applymovement LOCALID_MYTH_THUNDURUS, Myth_Movement_FlyInPlace
 	applymovement LOCALID_CAMERA, Myth_Movement_CameraPanDownThundurus
 	fadescreen FADE_FROM_BLACK
 	delay 20
 	playmoncry SPECIES_THUNDURUS, CRY_MODE_NORMAL
 	message Myth_Text_SpiritOfStorms
 	waitmessage
-	delay 80
+	delay 100
 	closemessage
 	delay 40
 	fadescreen FADE_TO_BLACK
@@ -62,6 +67,10 @@ CutsceneMyth_Event::
 	addobject LOCALID_MYTH_MAN
 	addobject LOCALID_MYTH_MAN2
 	addobject LOCALID_MYTH_WOMAN
+	setvar VAR_0x8004, 3  @ vertical pan
+	setvar VAR_0x8005, 3  @ horizontal pan
+	setvar VAR_0x8006, 5  @ num shakes
+	setvar VAR_0x8007, 3  @ shake delay
 	fadescreen FADE_FROM_BLACK
 	delay 25
 	message Myth_Text_FightEndlessly
@@ -72,18 +81,19 @@ CutsceneMyth_Event::
 	applymovement LOCALID_MYTH_TORNADUS, Myth_Movement_TornadusFightThundurus1
 	applymovement LOCALID_MYTH_THUNDURUS, Myth_Movement_ThundurusFightTornadus1
 	waitmovement 0
-	playse SE_EFFECTIVE
+	playse SE_BANG
+	special ShakeCamera
 	applymovement LOCALID_MYTH_TORNADUS, Myth_Movement_TornadusRetreatFromThund1
 	applymovement LOCALID_MYTH_THUNDURUS, Myth_Movement_ThundurusRetreatFromTorn1
-	waitmovement 0
-	applymovement LOCALID_MYTH_TORNADUS, Myth_Movement_TornadusFightThund2
+	delay 140
+	applymovement LOCALID_MYTH_TORNADUS, Myth_Movement_TornadusFightThundurus2
 	applymovement LOCALID_MYTH_THUNDURUS, Myth_Movement_ThundurusFightTornadus2
 	waitmovement 0
-	playse SE_EFFECTIVE
+	playse SE_BANG
+	special ShakeCamera
 	applymovement LOCALID_MYTH_TORNADUS, Myth_Movement_TornadusRetreatFromThund2
 	applymovement LOCALID_MYTH_THUNDURUS, Myth_Movement_ThundurusRetreatFromTorn2
-	waitmovement 0
-	delay 60
+	delay 100
 	closemessage
 	playmoncry SPECIES_TORNADUS, CRY_MODE_NORMAL
 	delay 10
@@ -97,20 +107,27 @@ CutsceneMyth_Event::
 	fadescreen FADE_FROM_BLACK
 	delay 20
 	message Myth_Text_Humans
+	playse SE_EXIT
 	applymovement LOCALID_MYTH_MAN2, Myth_Movement_Man2HideInCave
 	waitmovement 0
 	applymovement LOCALID_MYTH_MAN, Myth_Movement_ManHideInCave
 	applymovement LOCALID_MYTH_WOMAN, Myth_Movement_WomanHideInCave
-	delay 70
+	delay 48
+	playse SE_EXIT
+	delay 16
+	playse SE_EXIT
+	delay 56
 	message Myth_Text_Pokemon
 	delay 40
+	playmoncry SPECIES_KECLEON, CRY_MODE_NORMAL
 	applymovement LOCALID_MYTH_KECLEON, Myth_Movement_KecleonDisappears
 	delay 60
+	playmoncry SPECIES_BUNNELBY, CRY_MODE_NORMAL
 	applymovement LOCALID_MYTH_BUNNELBY_RIGHT, Myth_Movement_BunnelbyRRunToForest
 	applymovement LOCALID_MYTH_BUNNELBY_LEFT, Myth_Movement_BunnelbyLRunToForest
-	delay 60
+	delay 100
 	closemessage
-	delay 40
+	delay 60
 	fadescreen FADE_TO_BLACK
 	delay 20
 	applymovement LOCALID_CAMERA, Myth_Movement_PositionCameraToSixthShot
@@ -123,13 +140,18 @@ CutsceneMyth_Event::
 	setobjectxyperm LOCALID_MYTH_THUNDURUS, 18, 23
 	setobjectxyperm LOCALID_MYTH_CELEBI, 8, 22
 	setobjectmovementtype LOCALID_MYTH_TORNADUS, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT
-	setobjectmovementtype LOCALID_MYTH_TORNADUS, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT
+	setobjectmovementtype LOCALID_MYTH_THUNDURUS, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT
+	clearflag FLAG_HIDE_FIRST_PAN
 	addobject LOCALID_MYTH_TORNADUS
 	addobject LOCALID_MYTH_THUNDURUS
 	addobject LOCALID_MYTH_CELEBI
+	setvar VAR_0x8004, 3  @ vertical pan
+	setvar VAR_0x8005, 3  @ horizontal pan
+	setvar VAR_0x8006, 8  @ num shakes
+	setvar VAR_0x8007, 3  @ shake delay
 	message Myth_Text_AsIfFromTheHeavens
 	waitmessage
-	delay 60
+	delay 80
 	closemessage
 	playmoncry SPECIES_LANDORUS, CRY_MODE_NORMAL
 	waitmoncry
@@ -142,18 +164,21 @@ CutsceneMyth_Event::
 	playmoncry SPECIES_LANDORUS, CRY_MODE_NORMAL
 	applymovement LOCALID_MYTH_LANDORUS, Myth_Movement_LandorusBeatTorn
 	waitmovement 0
-	playse SE_SUPER_EFFECTIVE 
-	applymovement LOCALID_MYTH_LANDORUS, Myth_Movement_LandorusRetreatFromTorn
+	playse SE_SUPER_EFFECTIVE
+	special ShakeCamera
 	applymovement LOCALID_MYTH_TORNADUS, Myth_Movement_TornadusBeatenByLandorus
+	applymovement LOCALID_MYTH_LANDORUS, Myth_Movement_LandorusRetreatFromTorn
 	waitmovement 0
-	delay 30
+	delay 90
 	playmoncry SPECIES_LANDORUS, CRY_MODE_NORMAL
 	applymovement LOCALID_MYTH_LANDORUS, Myth_Movement_LandorusBeatThund
 	waitmovement 0
-	playse SE_SUPER_EFFECTIVE 
-	applymovement LOCALID_MYTH_LANDORUS, Myth_Movement_LandorusRetreatFromThund
+	playse SE_SUPER_EFFECTIVE
+	special ShakeCamera 
 	applymovement LOCALID_MYTH_THUNDURUS, Myth_Movement_ThundurusBeatenByLandorus
-	delay 60
+	applymovement LOCALID_MYTH_LANDORUS, Myth_Movement_LandorusRetreatFromThund
+	waitmovement 0
+	delay 90
 	message Myth_Text_LandorusCameDown
 	waitmessage
 	delay 100
@@ -169,13 +194,15 @@ CutsceneMyth_Event::
 	setobjectxyperm LOCALID_MYTH_TORNADUS, 0, 0
 	setobjectxyperm LOCALID_MYTH_THUNDURUS, 0, 0
 	message Myth_Text_WithTheSpiritsQuelled
-	applymovement LOCALID_MYTH_CELEBI, Myth_Movement_CelebiEnterScene
 	applymovement LOCALID_CAMERA, Myth_Movement_PanCameraToCelebi
-	waitmovement 0
-	delay 80
-	closemessage
+	delay 60
+	applymovement LOCALID_MYTH_CELEBI, Myth_Movement_CelebiEnterScene
+	delay 100
 	playmoncry SPECIES_CELEBI, CRY_MODE_NORMAL
 	waitmoncry
+	delay 40
+	closemessage
+	delay 40
 	fadescreen FADE_TO_BLACK
 	delay 10
 	special RemoveCameraObject
@@ -196,26 +223,38 @@ Myth_Movement_PositionCameraToFirstShot:
 
 @14 21 to 26 21
 Myth_Movement_CameraPanDiagonalDownSetScene:
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
+	walk_slow_diag_southeast
+	walk_slow_diag_southeast
+	walk_slow_diag_southeast
+	walk_slow_diag_southeast
+	walk_slow_diag_southeast
+	walk_slow_diag_southeast
+	walk_slow_diag_southeast
+	walk_slow_diag_southeast
+	walk_slow_diag_southeast
+	walk_slow_diag_southeast
+	walk_slow_diag_southeast
+	walk_slow_diag_southeast
 	step_end
 
 @26 21 to 31 22
 Myth_Movement_PositionCameraToSecondShot:
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_up
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
 	walk_faster_right
 	step_end
 
@@ -227,6 +266,55 @@ Myth_Movement_CameraPanUpTornadus:
 	walk_up
 	walk_up
 	walk_up
+	step_end
+
+Myth_Movement_FlyInPlace:
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
+	walk_in_place_down
 	step_end
 
 @31 15 to 16 21
@@ -281,15 +369,15 @@ Myth_Movement_PositionCameraToFourthShot:
 	step_end
 
 Myth_Movement_TornadusFightThundurus1:
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
 	step_end
 
 Myth_Movement_TornadusRetreatFromThund1:
@@ -302,8 +390,9 @@ Myth_Movement_TornadusRetreatFromThund1:
 	delay_16
 	delay_16
 	unlock_facing_direction
+	step_end
 
-Myth_Movement_TornadusFightThund2:
+Myth_Movement_TornadusFightThundurus2:
 	walk_faster_up
 	walk_faster_up
 	walk_faster_up
@@ -318,16 +407,16 @@ Myth_Movement_TornadusRetreatFromThund2:
 	unlock_facing_direction
 	step_end
 
-Myth_Movement_ThundurusFightTornadus:
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
+Myth_Movement_ThundurusFightTornadus1:
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
 	step_end
 
 Myth_Movement_ThundurusRetreatFromTorn1:
@@ -449,6 +538,7 @@ Myth_Movement_PositionCameraToSixthShot:
 	walk_faster_down
 	walk_faster_down
 	walk_faster_down
+	walk_faster_down
 	step_end
 
 Myth_Movement_Man2HideInCave:
@@ -512,6 +602,8 @@ Myth_Movement_BunnelbyRRunToForest:
 Myth_Movement_BunnelbyLRunToForest:
 	delay 16
 	delay_16
+	delay_16
+	delay_8
 	jump_right
 	jump_up
 	jump_up
@@ -530,7 +622,6 @@ Myth_Movement_LandorusEnterScene:
 	step_end
 
 Myth_Movement_LandorusBeatThund:
-	walk_faster_down
 	walk_faster_left
 	walk_faster_left
 	walk_faster_left
@@ -553,7 +644,7 @@ Myth_Movement_ThundurusBeatenByLandorus:
 	step_end
 	
 Myth_Movement_LandorusBeatTorn:
-	walk_faster_right
+	walk_faster_down
 	walk_faster_right
 	walk_faster_right
 	walk_faster_right
@@ -588,6 +679,7 @@ Myth_Movement_TornadusFlee:
 
 Myth_Movement_ThundurusFlee:
 	delay_16
+	walk_faster_right
 	walk_faster_down
 	walk_faster_down
 	walk_faster_down
@@ -624,6 +716,16 @@ Myth_Movement_PanCameraToCelebi:
 	walk_left
 	walk_left
 	walk_left
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	walk_slowly_up
+	walk_slowly_up
+	walk_slowly_up
+	walk_slowly_up
+	walk_slowly_up
+	walk_slowly_up
 	step_end
 
 @Pan over an empty forest

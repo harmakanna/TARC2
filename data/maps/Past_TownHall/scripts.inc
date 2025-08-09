@@ -109,6 +109,7 @@ Past_TownHall_EventScript_LookerWakesUp::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkRight, MSGBOX_DEFAULT
 	waitmovement 0
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	setflag FLAG_SYS_B_DASH
 	setvar VAR_CUTSCENE_STATE, 9
 	releaseall
 	end

@@ -12,6 +12,7 @@ CutsceneOffice_EventScript_StartGame::
 	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 	special SpawnCameraObject
 	waitmovement 0
+	delay 100
 	setvar VAR_0x8004, 4
 	setvar VAR_0x8005, 6
 	special TeleportCamera

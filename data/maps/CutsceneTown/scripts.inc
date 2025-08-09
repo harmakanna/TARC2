@@ -9,68 +9,252 @@ CutsceneTown_OnFrame:
 CutsceneTown_Event::
 	lockall
 	special SpawnCameraObject
+	delay 100
+	playbgm MUS_DP_TWINLEAF_DAY, FALSE
 	applymovement LOCALID_CAMERA, MythTown_Movement_PositionCameraToFirstShot
 	waitmovement 0
 	delay 80
-	playbgm MUS_DP_TWINLEAF_DAY, FALSE
+	applymovement LOCALID_TOWNMYTH_WESTCELEBI, MythTown_Movement_WestCelebi
 	fadescreen FADE_FROM_BLACK
 	delay 80
 	message Myth_Text_WhoRestoredLife
 	waitmessage
+	applymovement LOCALID_TOWNMYTH_BUNNELBYN, TownMyth_Movement_BunnelbyN
+	delay 20
+	applymovement LOCALID_TOWNMYTH_BUNNELBYS, TownMyth_Movement_BunnelbyS
+	delay 70
 	applymovement LOCALID_TOWNMYTH_WESTWOMAN, MythTown_Movement_ManWomanEnterWestScene
 	delay 5
 	applymovement LOCALID_TOWNMYTH_WESTMAN, MythTown_Movement_ManWomanEnterWestScene
 	delay 80
 	closemessage
-	delay 20
+	delay 60
+	playse SE_PIN
 	applymovement LOCALID_TOWNMYTH_WESTMAN, MythTown_Movement_ManLoveWoman
 	applymovement LOCALID_TOWNMYTH_WESTWOMAN, MythTown_Movement_WomanLoveMan
-	delay 80
+	delay 150
 	fadescreen FADE_TO_BLACK
 	delay 40
 	applymovement LOCALID_CAMERA, MythTown_Movement_PositionCameraToSecondShot
 	waitmovement 0
+	applymovement LOCALID_TOWNMYTH_TAUROS, MythTown_Movement_DrinkWater
+	applymovement LOCALID_TOWNMYTH_MUDSDALE, MythTown_Movement_DrinkWater
+	applymovement LOCALID_TOWNMYTH_CARROTMAN, MythTown_Movement_CarrotMan
 	applymovement LOCALID_CAMERA, MythTown_Movement_CameraPanOverFarms
 	fadescreen FADE_FROM_BLACK
-	applymovement LOCALID_TOWNMYTH_CARROTMAN, MythTown_Movement_CarrotMan
-	applymovement LOCALID_TOWNMYTH_CABBAGEMAN, MythTown_Movement_CabbageMan
 	message Myth_Text_Landorus
 	waitmessage
-	delay 60
+	playmoncry SPECIES_LANDORUS, CRY_MODE_NORMAL
+	applymovement LOCALID_TOWNMYTH_CABBAGEMAN, MythTown_Movement_CabbageMan
 	applymovement LOCALID_TOWNMYTH_LANDORUS, MythTown_Movement_Landorus
-	delay 80
+	delay 40
+	delay 130
 	closemessage
 	fadescreen FADE_TO_BLACK
 	delay 80
 	applymovement LOCALID_CAMERA, MythTown_Movement_PositionCameraToThirdShot
 	waitmovement 0
+	applymovement LOCALID_TOWN_NORTHCELEBI, MythTown_Movement_WestCelebi
 	fadescreen FADE_FROM_BLACK
 	message Myth_Text_Celebi
 	waitmessage
-	delay 80
+	delay 100
+	playmoncry SPECIES_KECLEON, CRY_MODE_NORMAL
 	applymovement LOCALID_TOWNMYTH_KECLEON, Myth_Movement_KecleonAppears
 	delay 60
 	closemessage
+	playse SE_PIN
 	applymovement LOCALID_TOWNMYTH_NORTHWOMAN, Common_Movement_FaceUpExclamationMark
-	delay 48
+	delay 80
 	applymovement LOCALID_TOWNMYTH_KECLEON, Myth_Movement_KecleonEscapeToForest
 	waitmovement 0
 	fadenewbgm MUS_NONE
-	fadescreen FADE_TO_BLACK
+	delay 100
 	playbgm MUS_NONE, TRUE
+	fadescreen FADE_TO_BLACK
 	delay 80
 	message Myth_Text_NowLandorus
 	waitmessage
-	delay 80
+	delay 150
 	message Myth_Text_NowCelebi
 	waitmessage
-	delay 80
+	delay 150
 	closemessage
 	delay 80
 	clearflag FLAG_SYS_SPAWN_INVISIBLE
 	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	warpsilent MAP_SHRINE_OF_PROSPERITY_PAST, 12, 10
 	end
+
+MythTown_Movement_CarrotMan:
+	delay_16
+	delay_16
+	walk_left
+	walk_left
+	face_up
+	delay_16
+	delay_16
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	face_down
+	step_end
+
+TownMyth_Movement_BunnelbyN:
+	jump_right
+	delay_16
+	delay_8
+	jump_left
+	delay_16
+	delay_16
+	jump_up
+	jump_up
+	jump_up
+	jump_up
+	jump_up
+	step_end
+
+TownMyth_Movement_BunnelbyS:
+	jump_right
+	delay_4
+	jump_right
+	delay_8
+	jump_up
+	delay_16
+	delay_16
+	delay_8
+	jump_right
+	jump_down
+	jump_down
+	jump_down
+	jump_down
+	jump_down
+	step_end
+	
+MythTown_Movement_WestCelebi:
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	step_end
+
+MythTown_Movement_DrinkWater:
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	step_end
+
+MythTown_Movement_Landorus:
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_in_place_left
+	walk_right
+	walk_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	walk_in_place_right
+	step_end
 
 @9 23 to 10 24
 MythTown_Movement_PositionCameraToFirstShot:
@@ -140,35 +324,6 @@ MythTown_Movement_CameraPanOverFarms:
 	walk_right
 	step_end
 
-MythTown_Movement_Landorus:
-	walk_down
-	walk_down
-	walk_down
-	walk_left
-	delay 16
-	delay_16
-	delay_16
-	delay_16
-	walk_right
-	walk_right
-	delay_16
-	step_end
-
-MythTown_Movement_CarrotMan:
-	delay_16
-	delay_16
-	walk_left
-	walk_left
-	face_up
-	delay_16
-	delay_16
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	face_down
-	step_end
-
 MythTown_Movement_CabbageMan:
 	face_down
 	delay_4
@@ -203,14 +358,6 @@ MythTown_Movement_CabbageMan:
 MythTown_Movement_PositionCameraToThirdShot:
 	walk_faster_left
 	walk_faster_left
-	walk_faster_left
-	walk_faster_left
-	walk_faster_left
-	walk_faster_left
-	walk_faster_left
-	walk_faster_left
-	walk_faster_left
-	walk_faster_up
 	walk_faster_up
 	walk_faster_up
 	walk_faster_up

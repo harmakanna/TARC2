@@ -21,13 +21,13 @@ ShrineOfPeacePresent_OnFrame:
 
 ShrineOfPeacePresent_EventScript_MainGameStart::
 	lockall
-	delay 10
-	applymovement LOCALID_PLAYER, Common_Movement_WalkDown2
+	delay 60
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
 	waitmovement 0
 	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, ShrineOfPeacePresent_Text_MainGameStart
 	closemessage
 	delay 40
-	startquest QUEST_INTERROGATE_MATT
+	startquest QUEST_SAVE_ESTELLA
 	setvar VAR_CUTSCENE_STATE, 13
 	releaseall
 	end
