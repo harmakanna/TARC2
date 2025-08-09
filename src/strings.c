@@ -1312,7 +1312,7 @@ const u8 gText_SideQuestName_1[] = _("Save Estella"); // Find Estella
 const u8 gText_SideQuestName_2[] = _("Shrine Investigation"); // Defeat Genies
 const u8 gText_SideQuestName_3[] = _("Interrogate Matt"); // Defeat Matt
 const u8 gText_SideQuestName_4[] = _("Defeat the Gym"); // Defeat Gym
-const u8 gText_SideQuestName_5[] = _("Side Quest 5"); // Which gym challenger did it?
+const u8 gText_SideQuestName_5[] = _("Find the Culprit!"); // Which gym challenger did it?
 const u8 gText_SideQuestName_6[] = _("Side Quest 6");
 const u8 gText_SideQuestName_7[] = _("Side Quest 7");
 const u8 gText_SideQuestName_8[] = _("Side Quest 8");
@@ -1344,7 +1344,7 @@ const u8 gText_SideQuestDesc_1[] = _("Find the concerned man's daughter,\nEstell
 const u8 gText_SideQuestDesc_2[] = _("Investigate the abnormality at the\nShrine of Prosperity!"); // Defeat Genies
 const u8 gText_SideQuestDesc_3[] = _("Enter AquaCorp HQ, defeat Team Aqua,\nand interrogate the admin!"); // Defeat Matt
 const u8 gText_SideQuestDesc_4[] = _("Claim victory over Porta Bella City's\n gym leader!"); // Defeat Gym
-const u8 gText_SideQuestDesc_5[] = _("Description 5"); // Which gym challenger did it?
+const u8 gText_SideQuestDesc_5[] = _("One of the gym challengers must have\ncaught Landorus! But who?"); // Which gym challenger did it?
 const u8 gText_SideQuestDesc_6[] = _("Description 6");
 const u8 gText_SideQuestDesc_7[] = _("Description 7");
 const u8 gText_SideQuestDesc_8[] = _("Description 8");
@@ -1376,7 +1376,7 @@ const u8 gText_SideQuestDoneDesc_1[] = _("Estella's back home safe with her\nfam
 const u8 gText_SideQuestDoneDesc_2[] = _("Tornadus and Thundurus have been\nquelled… For now…"); // Defeat Genies
 const u8 gText_SideQuestDoneDesc_3[] = _("Turns out Team Aqua HAS turned\na new leaf!"); // Defeat Matt
 const u8 gText_SideQuestDoneDesc_4[] = _("Phoebe couldn't be happier with\nyour battle!"); // Defeat Gym
-const u8 gText_SideQuestDoneDesc_5[] = _("Completed Quest 5"); // Which gym challenger did it?
+const u8 gText_SideQuestDoneDesc_5[] = _("The youngster holding Landorus\ncaptive has released him!"); // Which gym challenger did it?
 const u8 gText_SideQuestDoneDesc_6[] = _("Completed Quest 6");
 const u8 gText_SideQuestDoneDesc_7[] = _("Completed Quest 7");
 const u8 gText_SideQuestDoneDesc_8[] = _("Completed Quest 8");
@@ -1436,8 +1436,22 @@ const u8 gText_SideQuestMap29[] = _("Map 29");
 const u8 gText_SideQuestMap30[] = _("Map 30");
 
 //subquests
-const u8 gText_SubQuestInvestigateProsperity_Name1[] = _("Defeat the genies.");
-
-const u8 gText_SubQuestInvestigateProsperity_Desc1[] = _("Defeat Tornadus and Thundurus at\nthe Shrine of Prosperity!");
-
+const u8 gText_SubQuestInvestigateProsperity_Name1[] = _("Defeat the genies");
+const u8 gText_SubQuestInvestigateProsperity_Desc1[] = _("Defeated Tornadus and Thundurus at\nthe Shrine of Prosperity!");
 const u8 gText_SubQuestInvestigateProsperity_Map1[] = _("Present: Shrine of Prosperity");
+
+const u8 gText_SubQuestFindTheCulprit_Name1[] = _("Defeat Blue");
+const u8 gText_SubQuestFindTheCulprit_Desc1[] = _("It wasn't Blue! Who could it be?");
+const u8 gText_SubQuestFindTheCulprit_Map1[] = _("Present");
+const u8 gText_SubQuestFindTheCulprit_Name2[] = _("Defeat May");
+const u8 gText_SubQuestFindTheCulprit_Desc2[] = _("It wasn't May! Who could it be?");
+const u8 gText_SubQuestFindTheCulprit_Map2[] = _("Present");
+const u8 gText_SubQuestFindTheCulprit_Name3[] = _("Defeat Cooltrainer");
+const u8 gText_SubQuestFindTheCulprit_Desc3[] = _("It wasn't the Cooltrainer! Who could it be?");
+const u8 gText_SubQuestFindTheCulprit_Map3[] = _("Present");
+const u8 gText_SubQuestFindTheCulprit_Name4[] = _("Defeat Youngster");
+const u8 gText_SubQuestFindTheCulprit_Desc4[] = _("It was the youngster!");
+const u8 gText_SubQuestFindTheCulprit_Map4[] = _("Present");
+const u8 gText_SubQuestFindTheCulprit_Name5[] = _("Defeat Leaf");
+const u8 gText_SubQuestFindTheCulprit_Desc5[] = _("It wasn't Leaf! Who could it be?");
+const u8 gText_SubQuestFindTheCulprit_Map5[] = _("Present");
