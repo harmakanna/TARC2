@@ -720,12 +720,12 @@ Myth_Movement_PanCameraToCelebi:
 	delay_16
 	delay_16
 	delay_16
-	walk_slowly_up
-	walk_slowly_up
-	walk_slowly_up
-	walk_slowly_up
-	walk_slowly_up
-	walk_slowly_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
+	walk_slow_up
 	step_end
 
 @Pan over an empty forest
