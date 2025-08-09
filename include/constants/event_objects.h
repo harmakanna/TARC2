@@ -385,7 +385,8 @@
 #define OBJ_EVENT_PAL_TAG_RS_MAY                  0x1123
 #define OBJ_EVENT_PAL_TAG_LOOKER                  0x1124
 #define OBJ_EVENT_PAL_TAG_AQUA_ADMIN              0x1125
-#define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1126
+#define OBJ_EVENT_PAL_TAG_BLUE                    0x1126
+#define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1127
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla
