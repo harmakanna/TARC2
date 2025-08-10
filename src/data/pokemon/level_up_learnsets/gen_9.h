@@ -6376,7 +6376,7 @@ static const struct LevelUpMove sPiloswineLevelUpLearnset[] = {
 #if P_GEN_4_CROSS_EVOS
 static const struct LevelUpMove sMamoswineLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_PROTECT),
-    LEVEL_UP_MOVE( 1, MOVE_STOMPING_TANTURM),
+    LEVEL_UP_MOVE( 1, MOVE_STOMPING_TANTRUM),
     LEVEL_UP_MOVE( 1, MOVE_ICICLE_SPEAR),
     LEVEL_UP_MOVE( 1, MOVE_ROCK_SLIDE),
     LEVEL_UP_MOVE( 1, MOVE_AMNESIA),

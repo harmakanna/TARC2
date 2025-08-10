@@ -10,7 +10,7 @@
 #define OT_SHELLY_GOREBYSS     6
 #define OT_EMMA_GUMSHOOS       7
 #define OT_EMMA_MEOWSTIC       8
-#define OT_TONY_CLEFAIRY       9
+#define OT_TONY_MISDREAVUS     9
 #define OT_TONY_MURKROW        10
 #define OT_JANE_YANMEGA        11
 #define OT_JANE_MAMOSWINE      12
