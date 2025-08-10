@@ -251,7 +251,7 @@
       "x": 55,
       "y": 33,
       "elevation": 0,
-      "dest_map": "MAP_PRESENT_COMPLEX",
+      "dest_map": "MAP_PRESENT_CAFE",
       "dest_warp_id": "COMPLEX_EXIT_1_1"
     },
     {
@@ -259,7 +259,7 @@
       "x": 59,
       "y": 33,
       "elevation": 0,
-      "dest_map": "MAP_PRESENT_COMPLEX",
+      "dest_map": "MAP_PRESENT_CAFE",
       "dest_warp_id": "COMPLEX_EXIT_2_1"
     },
     {
