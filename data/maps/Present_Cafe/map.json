@@ -95,36 +95,36 @@
   ],
   "warp_events": [
     {
-      "warp_id": "COMPLEX_EXIT_1_1",
+      "warp_id": "CAFE_EXIT_1_1",
       "x": 4,
       "y": 17,
       "elevation": 0,
       "dest_map": "MAP_PRESENT_TOWN",
-      "dest_warp_id": "COMPLEX_ENTRANCE_1"
+      "dest_warp_id": "CAFE_ENTRANCE_1"
     },
     {
-      "warp_id": "COMPLEX_EXIT_1_2",
+      "warp_id": "CAFE_EXIT_1_2",
       "x": 5,
       "y": 17,
       "elevation": 0,
       "dest_map": "MAP_PRESENT_TOWN",
-      "dest_warp_id": "COMPLEX_ENTRANCE_1"
+      "dest_warp_id": "CAFE_ENTRANCE_1"
     },
     {
-      "warp_id": "COMPLEX_EXIT_2_2",
-      "x": 17,
-      "y": 17,
-      "elevation": 0,
-      "dest_map": "MAP_PRESENT_TOWN",
-      "dest_warp_id": "COMPLEX_ENTRANCE_2"
-    },
-    {
-      "warp_id": "COMPLEX_EXIT_2_1",
+      "warp_id": "CAFE_EXIT_2_1",
       "x": 16,
       "y": 17,
       "elevation": 0,
       "dest_map": "MAP_PRESENT_TOWN",
-      "dest_warp_id": "COMPLEX_ENTRANCE_2"
+      "dest_warp_id": "CAFE_ENTRANCE_2"
+    },
+    {
+      "warp_id": "CAFE_EXIT_2_2",
+      "x": 17,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_TOWN",
+      "dest_warp_id": "CAFE_ENTRANCE_2"
     }
   ],
   "coord_events": [],
