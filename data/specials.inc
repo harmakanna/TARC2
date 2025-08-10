@@ -566,4 +566,6 @@ gSpecials::
 	def_special GetCodeFeedback
 	def_special TeleportCamera
 	def_special ReturnCameraToPlayer
+	@def_special RemoveQuestIcons
+	def_special SpawnQuestIcons
 	

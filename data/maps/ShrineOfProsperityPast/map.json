@@ -25,7 +25,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "ShrineOfProsperityPast_EventScript_VillageOrator",
       "flag": "0"
     },
     {
@@ -76,7 +76,7 @@
       "y": 14,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "8",
+      "var_value": "10",
       "script": "ShrineOfProsperityPast_EventScript_StartLandorusMyth"
     },
     {
@@ -85,7 +85,7 @@
       "y": 14,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "8",
+      "var_value": "10",
       "script": "ShrineOfProsperityPast_EventScript_StartLandorusMyth"
     },
     {
@@ -94,7 +94,7 @@
       "y": 14,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "8",
+      "var_value": "10",
       "script": "ShrineOfProsperityPast_EventScript_StartLandorusMyth"
     }
   ],

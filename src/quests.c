@@ -269,6 +269,55 @@ static const struct SubQuest sSubQuestsInvestigateProsperity[QUEST_INVESTIGATE_P
 	
 };
 
+static const struct SubQuest sSubQuestsFindTheCulprit[QUEST_FIND_THE_CULPRIT_SUB_COUNT] =
+{
+	sub_quest(
+	      0,
+	      gText_SubQuestFindTheCulprit_Name1,
+	      gText_SubQuestFindTheCulprit_Desc1,
+	      gText_SubQuestFindTheCulprit_Map1,
+	      OBJ_EVENT_GFX_BLUE,
+	      OBJECT,
+	      sText_Found
+	),
+	sub_quest(
+	      0,
+	      gText_SubQuestFindTheCulprit_Name2,
+	      gText_SubQuestFindTheCulprit_Desc2,
+	      gText_SubQuestFindTheCulprit_Map2,
+	      OBJ_EVENT_GFX_LINK_RS_MAY,
+	      OBJECT,
+	      sText_Found
+	),
+	sub_quest(
+	      0,
+	      gText_SubQuestFindTheCulprit_Name3,
+	      gText_SubQuestFindTheCulprit_Desc3,
+	      gText_SubQuestFindTheCulprit_Map3,
+	      OBJ_EVENT_GFX_MAN_3,
+	      OBJECT,
+	      sText_Found
+	),
+	sub_quest(
+	      0,
+	      gText_SubQuestFindTheCulprit_Name4,
+	      gText_SubQuestFindTheCulprit_Desc4,
+	      gText_SubQuestFindTheCulprit_Map4,
+	      OBJ_EVENT_GFX_YOUNGSTER,
+	      OBJECT,
+	      sText_Found
+	),
+	sub_quest(
+	      0,
+	      gText_SubQuestFindTheCulprit_Name5,
+	      gText_SubQuestFindTheCulprit_Desc5,
+	      gText_SubQuestFindTheCulprit_Map5,
+	      OBJ_EVENT_GFX_LEAF,
+	      OBJECT,
+	      sText_Found
+	),
+};
+
 ////////////////////////END SUBQUEST CUSTOMIZATION/////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -324,10 +373,10 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestDesc_5,
 	      gText_SideQuestDoneDesc_5,
 	      gText_SideQuestMap5,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_LOOKER,
 	      OBJECT,
-	      NULL,
-	      0
+	      sSubQuestsFindTheCulprit,
+	      QUEST_FIND_THE_CULPRIT_SUB_COUNT
 	),
 	side_quest(
 	      gText_SideQuestName_6,

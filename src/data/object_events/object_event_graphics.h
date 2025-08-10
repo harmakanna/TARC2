@@ -395,7 +395,8 @@ const u16 gObjectEventPal_Looker[] = INCBIN_U16("graphics/object_events/palettes
 const u32 gObjectEventPic_AquaAdminM[] = INCBIN_U32("graphics/object_events/pics/people/team_aqua/aqua_admin_m.4bpp");
 const u32 gObjectEventPic_AquaAdminF[] = INCBIN_U32("graphics/object_events/pics/people/team_aqua/aqua_admin_f.4bpp");
 const u16 gObjectEventPal_AquaAdmin[] = INCBIN_U16("graphics/object_events/palettes/aqua_admin.gbapal");
-const u32 gObjectEventPic_Blue[] = INCBIN_U32("graphics/object_events/pics/people/team_aqua/aqua_admin_m.4bpp");
+const u32 gObjectEventPic_Blue[] = INCBIN_U32("graphics/object_events/pics/people/blue.4bpp");
+const u16 gObjectEventPal_Blue[] = INCBIN_U16("graphics/object_events/palettes/blue.gbapal");
 
 #if OW_FOLLOWERS_POKEBALLS
 const u32 gObjectEventPic_MasterBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_master.4bpp");

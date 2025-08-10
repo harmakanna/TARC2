@@ -26,7 +26,7 @@ Name_Aqua_Grunt:
     .string "Aqua Grunt$"
 
 Name_Mayor:
-    .string "Mayor Morrigan$"
+    .string "Mr. Morrigan$"
 
 Name_Concerned_Dad:
     .string "Concerned Dad$"
@@ -52,6 +52,9 @@ Name_Celebi:
 Name_Camilla:
     .string "Camilla$"
 
+Name_Orator:
+    .string "Village Elder$"
+
 Name_Gym_Guy:
     .string "Gym Guide$"
 
@@ -69,3 +72,6 @@ Name_Scientist:
 
 Name_Lass:
     .string "Marie$"
+
+Name_Magikarp_Man:
+    .string "Shady Man$"

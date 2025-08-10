@@ -1640,7 +1640,7 @@ void InitPlayerAvatar(s16 x, s16 y, u8 direction, u8 gender)
 
     if (FlagGet(FLAG_SYS_SPAWN_INVISIBLE))
     {
-        FlagClear(FLAG_SYS_SPAWN_INVISIBLE);
+        //FlagClear(FLAG_SYS_SPAWN_INVISIBLE);
         objectEvent->invisible = TRUE;
     }
 }
