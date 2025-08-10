@@ -84,6 +84,7 @@ PresentTown_Port_Movement_ShipPullIntoPort:
 	walk_right
 	walk_right
 	walk_right
+	walk_right
 	step_end
 
 PresentTown_Port_Movement_LookerExitShip:
@@ -105,7 +106,6 @@ PresentTown_Port_Movement_AnabelStepAside:
 	step_end
 
 PresentTown_Port_Movement_AnabelExitShot:
-	walk_right
 	walk_right
 	walk_right
 	walk_right
