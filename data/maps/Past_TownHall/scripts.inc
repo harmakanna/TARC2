@@ -6,6 +6,7 @@ Past_TownHall_MapScripts::
 Past_TownHall_OnTransition:
 	call_if_eq VAR_CUTSCENE_STATE, 8, Past_TownHall_EventScript_LookerWakesUpSetup
 	call_if_eq VAR_CUTSCENE_STATE, 9, Past_TownHall_EventScript_PreMythSetup
+	call_if_eq VAR_CUTSCENE_STATE, 10, Past_TownHall_EventScript_PreMythSetup
 	end
 
 Past_TownHall_EventScript_LookerWakesUpSetup::
