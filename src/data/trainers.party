@@ -16853,7 +16853,6 @@ Lotad
 Level: 4
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-
 === TRAINER_PRESENT_FISHERMAN ===
 Name: Tee
 Class: Fisherman
@@ -16864,17 +16863,15 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Alomomola  
-Ability: Regenerator  
-Tera Type: Water  
+Ability: Regenerator
 - Flip Turn  
 - Helping Hand  
 - Heal Pulse  
 - Protect  
 
-Palafin  
+Palafin
 Ability: Zero to Hero  
-Level: 50  
-Tera Type: Water  
+Level: 50
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Flip Turn  
 - Iron Head  
@@ -16883,8 +16880,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Basculin-White-Striped @ Choice Band  
 Ability: Rattled  
-Level: 50  
-Tera Type: Water  
+Level: 50
 IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Flip Turn  
 - Crunch  

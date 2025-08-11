@@ -16,17 +16,6 @@ PresentTown_EventScript_ChangeAnabelFollowerText::
 	setflag FLAG_STEPPED_OUT_OF_CITY_HALL
 	return
 
-<<<<<<< HEAD
-@ debug script so Looker isn't flooded with Growlithe and Toxicroak 
-PresentTown_EventScript_GiveLookerStarters::
-	givemonwithot OT_LOOKER_GROWLITHE
-	givemonwithot OT_LOOKER_TOXICROAK
-	givemonwithot OT_EMMA_GUMSHOOS
-	setflag FLAG_LOOKER_STARTERS
-	return 
-
-=======
->>>>>>> dev-main
 PresentTown_EventScript_DebugMainGameStart::
 	setvar VAR_CUTSCENE_STATE, 13
 	setvar VAR_PORTO_BELLA_CITY_STATE, 3
@@ -56,6 +45,7 @@ PresentTown_EventScript_DebugMainGameStart::
 	clearflag FLAG_HIDE_CITYHALL_2F_RANGER_HEADRANGER
 	givemonwithot OT_LOOKER_GROWLITHE
 	givemonwithot OT_LOOKER_TOXICROAK
+	givemonwithot OT_EMMA_GUMSHOOS
 	questmenu QUEST_MENU_SET_REWARD, QUEST_SAVE_ESTELLA
 	startquest QUEST_INTERROGATE_MATT
 	return
