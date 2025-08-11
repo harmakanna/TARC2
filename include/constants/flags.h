@@ -661,7 +661,7 @@
 #define FLAG_HIDE_CITYHALL_2F_RANGER_HEADRANGER  0x266 // Unused Flag
 #define FLAG_HIDE_MYTH_CELEBI  0x267 // Unused Flag
 #define FLAG_HIDE_FIRST_PAN    0x268 // Unused Flag
-#define FLAG_UNUSED_0x269  0x269 // Unused Flag
+#define FLAG_HIDE_FLAT1_2F_FAITHFUL_MAN  0x269 // Unused Flag
 #define FLAG_UNUSED_0x26A  0x26A // Unused Flag
 #define FLAG_UNUSED_0x26B  0x26B // Unused Flag
 #define FLAG_UNUSED_0x26C  0x26C // Unused Flag

@@ -115,7 +115,15 @@
 #define TRAINER_PIC_ENAMORUS              97
 #define TRAINER_PIC_TORN_AND_THUND        98
 #define TRAINER_PIC_BLUE                  99
-#define TRAINER_PIC_COUNT                 100
+#define TRAINER_PIC_BREEDER_F             100
+#define TRAINER_PIC_BW_ACE_TRAINER_F      101
+#define TRAINER_PIC_BW_ACE_TRAINER_M      102
+#define TRAINER_PIC_CYNTHIA               103
+#define TRAINER_PIC_IDOL                  104
+#define TRAINER_PIC_LISIA                 105
+#define TRAINER_PIC_LASS_NEW              106
+#define TRAINER_PIC_YOUNGSTER_NEW         107
+#define TRAINER_PIC_COUNT                 108
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0

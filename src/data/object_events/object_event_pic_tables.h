@@ -1361,6 +1361,14 @@ static const struct SpriteFrameImage sPicTable_AquaAdminF[] = {
     overworld_ascending_frames(gObjectEventPic_AquaAdminF, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_BWAceTrainerF[] = {
+    overworld_ascending_frames(gObjectEventPic_BWAceTrainerF, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_BWAceTrainerM[] = {
+    overworld_ascending_frames(gObjectEventPic_BWAceTrainerM, 2, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_Blue[] = {
     overworld_frame(gObjectEventPic_Blue, 2, 4, 0),
     overworld_frame(gObjectEventPic_Blue, 2, 4, 1),
@@ -1371,4 +1379,60 @@ static const struct SpriteFrameImage sPicTable_Blue[] = {
     overworld_frame(gObjectEventPic_Blue, 2, 4, 1),
     overworld_frame(gObjectEventPic_Blue, 2, 4, 2),
     overworld_frame(gObjectEventPic_Blue, 2, 4, 2),
+};
+
+static const struct SpriteFrameImage sPicTable_Cynthia[] = {
+    overworld_frame(gObjectEventPic_Cynthia, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Cynthia, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Cynthia, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Cynthia, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Cynthia, 2, 4, 0),
+    overworld_frame(gObjectEventPic_Cynthia, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Cynthia, 2, 4, 1),
+    overworld_frame(gObjectEventPic_Cynthia, 2, 4, 2),
+    overworld_frame(gObjectEventPic_Cynthia, 2, 4, 2),
+};
+
+static const struct SpriteFrameImage sPicTable_Daisy[] = {
+    overworld_ascending_frames(gObjectEventPic_Daisy, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_PastGirl[] = {
+    overworld_ascending_frames(gObjectEventPic_PastGirl, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_FairyTaleGirl[] = {
+    overworld_ascending_frames(gObjectEventPic_FairyTaleGirl, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Idol[] = {
+    overworld_ascending_frames(gObjectEventPic_Idol, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_BreederF[] = {
+    overworld_ascending_frames(gObjectEventPic_BreederF, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_BreederM[] = {
+    overworld_ascending_frames(gObjectEventPic_BreederM, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Lisia[] = {
+    overworld_ascending_frames(gObjectEventPic_Lisia, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_OfficerF[] = {
+    overworld_ascending_frames(gObjectEventPic_OfficerF, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_OfficerM[] = {
+    overworld_ascending_frames(gObjectEventPic_OfficerM, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_LassNew[] = {
+    overworld_ascending_frames(gObjectEventPic_LassNew, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_YoungsterNew[] = {
+    overworld_ascending_frames(gObjectEventPic_YoungsterNew, 2, 4),
 };
