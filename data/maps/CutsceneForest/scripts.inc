@@ -8,7 +8,7 @@ CutsceneForest_OnTransition:
 	end
 
 CutsceneForest_OnFrame:
-    map_script_2 VAR_CUTSCENE_STATE, 3, CutsceneForest_EventScript_SearchForEstella
+    map_script_2 VAR_CUTSCENE_STATE, 5, CutsceneForest_EventScript_SearchForEstella
     .2byte 0
 
 CutsceneForest_EventScript_SearchForEstella::
@@ -17,7 +17,7 @@ CutsceneForest_EventScript_SearchForEstella::
 	setvar VAR_0x8004, 10  @ x
 	setvar VAR_0x8005, 9  @ y
 	special TeleportCamera
-	delay 80
+	delay 150
 	clearflag FLAG_SYS_PREVENT_MAP_FADE
 	fadescreen FADE_FROM_BLACK
 	delay 10
@@ -28,14 +28,19 @@ CutsceneForest_EventScript_SearchForEstella::
 	delay 10
 	applymovement LOCALID_FOREST_ANABEL, CutsceneForest_Movement_LookAround1
 	applymovement LOCALID_FOREST_RANGER, CutsceneForest_Movement_LookAround2
-	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, CutsceneForest_Text_LookerEstella
-	delay 20
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	speakername Name_Looker
+	message CutsceneForest_Text_LookerEstella
+	delay 60
 	closemessage
-	delay 10
+	delay 40
 	applymovement LOCALID_PLAYER, CutsceneForest_Movement_LookAround3
 	applymovement LOCALID_FOREST_RANGER, CutsceneForest_Movement_LookAround4
-	speak LOCALID_FOREST_ANABEL, DIR_EAST, Name_Anabel, CutsceneForest_Text_AnabelEstella
-	delay 20
+	applymovement LOCALID_FOREST_ANABEL, Common_Movement_WalkInPlaceFasterRight
+	speakername Name_Anabel
+	message CutsceneForest_Text_AnabelEstella
+	waitmessage
+	delay 60
 	closemessage
 	delay 40
 	playse SE_SELECT
@@ -59,14 +64,18 @@ CutsceneForest_EventScript_SearchForEstella::
 	waitmovement 0
 	setobjectmovementtype LOCALID_FOREST_CELEBI, MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_UP
 	playmoncry SPECIES_CELEBI, CRY_MODE_NORMAL
-	msgbox CutsceneForest_Text_Celebi, MSGBOX_DEFAULT
+	message CutsceneForest_Text_Celebi
+	waitmessage
+	delay 80
 	closemessage
-	delay 10
 	applymovement LOCALID_FOREST_CELEBI, CutsceneForest_Movement_CelebiFloatInOutOfShot
 	fadescreen FADE_TO_BLACK
 	delay 60
-	msgbox CutsceneForest_Text_RepelsEffect, MSGBOX_DEFAULT
-	delay 20
+	message CutsceneForest_Text_RepelsEffect
+	waitmessage
+	delay 80
+	closemessage
+	delay 100
 	special ReturnCameraToPlayer
 	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	warp MAP_SHRINE_OF_PEACE_PRESENT, 14, 28
@@ -225,7 +234,7 @@ CutsceneForest_Text_AnabelGotIt:
 	.string "Looker?$"
 
 CutsceneForest_Text_LookerUnderstood:
-	.string "I heard.$"
+	.string "Understood.$"
 
 CutsceneForest_Text_RangerGreatBeSafe:
 	.string "Great. Please be safe\n"
@@ -243,9 +252,9 @@ CutsceneForest_Text_RangerSeemsLikeShesNotHere:
 	.string "this neck of the woods!$"
 
 CutsceneForest_Text_RangerMeetBackAtCityHall:
-	.string "Looker,\n"
-	.string "Anabel,\p"
-	.string "the trail branches off up ahead -\n"
+	.string "Looker.\n"
+	.string "Anabel.\p"
+	.string "The trail branches off up ahead -\n"
 	.string "one way goes to the shrine and the\l"
 	.string "other loops back to the entrance.\p"
 	.string "I'll take the loop,\n"

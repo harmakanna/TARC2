@@ -88,9 +88,9 @@
 #define FLAG_DEFEATED_CULPRIT                  0x4A // Unused Flag
 #define FLAG_DEFEATED_BLUE                     0x4B // Unused Flag
 #define FLAG_DEFEATED_MAY                      0x4C // Unused Flag
-#define FLAG_PLAY_LOOKER_SCENE_ON_TRANSITION   0x4D // Unused Flag
-#define FLAG_UNUSED_0x04E    0x4E // Unused Flag
-#define FLAG_UNUSED_0x04F    0x4F // Unused Flag
+#define FLAG_ENTER_CELEBI_SOCIETY_FROM_QUEST   0x4D // Unused Flag
+#define FLAG_HIDE_CELEBI_SOCIETY_GRANDMA       0x4E // Unused Flag
+#define FLAG_HIDE_CONCERNED_GRANDMA            0x4F // Unused Flag
 
 // Scripts
 #define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL  0x50
@@ -98,8 +98,8 @@
 #define FLAG_RESCUED_BIRCH                       0x52
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS           0x53
 
-#define FLAG_UNUSED_0x054                    0x54  // Unused Flag
-#define FLAG_UNUSED_0x055                    0x55  // Unused Flag
+#define FLAG_HIDE_PORT_ANABEL                0x54  // Unused Flag
+#define FLAG_PURCHASED_MAGIKARP              0x55  // Unused Flag
 
 #define FLAG_HIDE_CONTEST_POKE_BALL          0x56  // Always set after new game, object it hides is added directly
 #define FLAG_MET_RIVAL_MOM                   0x57
@@ -656,12 +656,12 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 
-#define FLAG_UNUSED_0x264  0x264 // Unused Flag
-#define FLAG_UNUSED_0x265  0x265 // Unused Flag
-#define FLAG_UNUSED_0x266  0x266 // Unused Flag
-#define FLAG_UNUSED_0x267  0x267 // Unused Flag
-#define FLAG_UNUSED_0x268  0x268 // Unused Flag
-#define FLAG_UNUSED_0x269  0x269 // Unused Flag
+#define FLAG_CAUGHT_TORNADUS  0x264 // Unused Flag
+#define FLAG_CAUGHT_THUNDURUS  0x265 // Unused Flag
+#define FLAG_HIDE_CITYHALL_2F_RANGER_HEADRANGER  0x266 // Unused Flag
+#define FLAG_HIDE_MYTH_CELEBI  0x267 // Unused Flag
+#define FLAG_HIDE_FIRST_PAN    0x268 // Unused Flag
+#define FLAG_HIDE_FLAT1_2F_FAITHFUL_MAN  0x269 // Unused Flag
 #define FLAG_UNUSED_0x26A  0x26A // Unused Flag
 #define FLAG_UNUSED_0x26B  0x26B // Unused Flag
 #define FLAG_UNUSED_0x26C  0x26C // Unused Flag
@@ -1414,7 +1414,7 @@
 #define FLAG_SYS_CLOCK_SET                          (SYSTEM_FLAGS + 0x35)
 #define FLAG_SYS_NATIONAL_DEX                       (SYSTEM_FLAGS + 0x36)
 #define FLAG_SYS_LOOKER_MUSIC_ON_TRANSITION         (SYSTEM_FLAGS + 0x37) // Unused Flag, leftover from R/S debug, presumably used by Emerald's debug too
-#define FLAG_SYS_CAVE_WONDER                        (SYSTEM_FLAGS + 0x38) // Unused Flag, same as above
+#define FLAG_SYS_DISAPPEAR_QUESTS                   (SYSTEM_FLAGS + 0x38) // Unused Flag, same as above
 #define FLAG_SYS_CAVE_BATTLE                        (SYSTEM_FLAGS + 0x39) // Unused Flag, same as above
 #define FLAG_SYS_SHOAL_TIDE                         (SYSTEM_FLAGS + 0x3A)
 #define FLAG_SYS_RIBBON_GET                         (SYSTEM_FLAGS + 0x3B)

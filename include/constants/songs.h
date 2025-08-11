@@ -573,14 +573,20 @@
 #define MUS_DP_SUNYSHORE_DAY              532 // Sunyshore City (Day)
 #define MUS_DP_ETERNA_NIGHT               533 // Eterna City (Night)
 #define MUS_DP_ETERNA_FOREST              534 // Eterna Forest
-
-#define DP_MUSIC_END                      MUS_DP_ETERNA_FOREST
+#define MUS_DP_ETERNA_DAY                 535
+#define MUS_DP_VEILSTONE_DAY              536
+#define MUS_DP_POKE_CENTER_DAY            537
+#define MUS_DP_POKE_CENTER_NIGHT          538
+#define MUS_DP_GYM                        539
+#define MUS_DP_TWINLEAF_DAY               540
+#define MUS_DP_LAKE_CAVERNS               541
+#define DP_MUSIC_END                      MUS_DP_LAKE_CAVERNS
 
 // Platinum Music
 #define PL_MUSIC_START                    (DP_MUSIC_END + 1)
 
-#define MUS_PL_LOOKER                     535 // Looker's Theme
-#define MUS_BW_VS_LEGENDARY               536
+#define MUS_PL_LOOKER                     542 // Looker's Theme
+#define MUS_BW_VS_LEGENDARY               543
 
 #define PL_MUSIC_END                      MUS_BW_VS_LEGENDARY
 

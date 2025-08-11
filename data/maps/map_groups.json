@@ -41,16 +41,20 @@
   ],
   "gMapGroup_LookerPresent": [
     "PresentTown",
+    "PresentTown_Port",
     "ShrineOfPeacePresent",
     "ShrineOfProsperityPresent",
     "CutsceneForest",
-    "CutsceneOffice"
+    "CutsceneOffice",
+    "CutsceneWater"
   ],
   "gMapGroup_LookerPast": [
     "PastTown",
     "ShrineOfPeacePast",
     "ShrineOfProsperityPast",
-    "CutsceneForestPast"
+    "CutsceneForestPast",
+    "CutsceneMyth",
+    "CutsceneTown"
   ],
   "gMapGroup_IndoorLookerPresent": [
     "Present_School",
@@ -70,7 +74,8 @@
     "Present_CityHall_1F",
     "Present_CityHall_2F_Ranger",
     "Present_CityHall_2F_Office",
-    "Present_Gym"
+    "Present_Gym",
+    "Present_Cafe"
   ],
   "gMapGroup_IndoorLookerPast": [
     "Past_House1",

@@ -5,7 +5,7 @@ PastTown_MapScripts::
 	.byte 0
 
 PastTown_OnTransition:
-	call_if_eq VAR_CUTSCENE_STATE, 7, PastTown_EventScript_LassPlacement
+	call_if_eq VAR_CUTSCENE_STATE, 9, PastTown_EventScript_LassPlacement
 	end
 
 PastTown_EventScript_LassPlacement::
@@ -14,11 +14,14 @@ PastTown_EventScript_LassPlacement::
 	return
 
 PastTown_OnFrame:
-	map_script_2 VAR_CUTSCENE_STATE, 5, PastTown_EventScript_LookerEnters
+	map_script_2 VAR_CUTSCENE_STATE, 7, PastTown_EventScript_LookerEnters
 	.2byte 0
 
 PastTown_EventScript_LookerEnters::
 	lockall
+	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
+	delay 40
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
 	speakername Name_Looker
 	msgbox PastTown_Text_LookerWhatIsThis, MSGBOX_DEFAULT
 	closemessage
@@ -42,7 +45,7 @@ PastTown_EventScript_LookerEnters::
 	speakername Name_Looker
 	msgbox PastTown_Text_LookerOutOfTheWoods, MSGBOX_DEFAULT
 	closemessage
-	setvar VAR_CUTSCENE_STATE, 6
+	setvar VAR_CUTSCENE_STATE, 8
 	releaseall
 	end
 	
@@ -53,39 +56,47 @@ PastTown_OnResume:
 PastTown_EventScript_Lass::
 	lock
 	faceplayer
-	goto_if_eq VAR_CUTSCENE_STATE, 7, PastTown_EventScript_LassFight
+	goto_if_eq VAR_CUTSCENE_STATE, 9, PastTown_EventScript_LassFightTalked
 	speakername Name_Lass
 	msgbox PastTown_Text_LassYouCheated, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
 
+PastTown_EventScript_LassFightTalked::
+	playbgm MUS_ENCOUNTER_FEMALE, FALSE
+	goto PastTown_EventScript_LassFight
+	end
+	
 PastTown_EventScript_LassTurnLeft::
 	lock
+	playbgm MUS_ENCOUNTER_FEMALE, FALSE
 	playse SE_PIN
 	applymovement LOCALID_PASTTOWN_LASS, Common_Movement_FaceLeftExclamationMark
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
-	delay 48
+	delay 60
 	setflag FLAG_SYS_FROM_TRIGGER
 	goto PastTown_EventScript_LassFight
 	end
 
 PastTown_EventScript_LassTurnRight::
 	lock
+	playbgm MUS_ENCOUNTER_FEMALE, FALSE
 	playse SE_PIN
 	applymovement LOCALID_PASTTOWN_LASS, Common_Movement_FaceRightExclamationMark
 	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
-	delay 48
+	delay 60
 	setflag FLAG_SYS_FROM_TRIGGER
 	goto PastTown_EventScript_LassFight
 	end
 
 PastTown_EventScript_LassWalkRight::
 	lock
+	playbgm MUS_ENCOUNTER_FEMALE, FALSE
 	playse SE_PIN
 	applymovement LOCALID_PASTTOWN_LASS, Common_Movement_FaceRightExclamationMark
 	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
-	delay 48
+	delay 60
 	applymovement LOCALID_PASTTOWN_LASS, Common_Movement_WalkRight
 	waitmovement 0
 	setflag FLAG_SYS_FROM_TRIGGER
@@ -130,7 +141,7 @@ PastTown_EventScript_BeatLass::
 	msgbox PastTown_Text_LassHeyNoFair, MSGBOX_DEFAULT
 	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, PastTown_Text_LookerThatWasStrange
 	closemessage
-	setvar VAR_CUTSCENE_STATE, 8
+	setvar VAR_CUTSCENE_STATE, 10
 	release
 	end
 
@@ -145,6 +156,7 @@ PastTown_EventScript_LookerPassOut::
 	speakername Name_Looker
 	msgbox PastTown_Text_LookerUrgh, MSGBOX_DEFAULT
 	closemessage
+	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	fadescreen FADE_TO_BLACK
 	warpsilent MAP_PAST_TOWN_HALL, 2, 2
 	delay 48

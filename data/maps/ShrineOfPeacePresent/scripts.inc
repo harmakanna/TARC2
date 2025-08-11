@@ -6,7 +6,7 @@ ShrineOfPeacePresent_MapScripts::
 
 ShrineOfPeacePresent_OnTransition:
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetStormWeather
-	call_if_eq VAR_CUTSCENE_STATE, 3, ShrineOfPeacePresent_EventScript_CelebiEncounterSetup
+	call_if_eq VAR_CUTSCENE_STATE, 5, ShrineOfPeacePresent_EventScript_CelebiEncounterSetup
 	end
 
 ShrineOfPeacePresent_EventScript_CelebiEncounterSetup::
@@ -15,23 +15,27 @@ ShrineOfPeacePresent_EventScript_CelebiEncounterSetup::
 	return
 
 ShrineOfPeacePresent_OnFrame:
-    map_script_2 VAR_CUTSCENE_STATE, 3, ShrineOfPeacePresent_EventScript_CelebiEncounter
-	map_script_2 VAR_CUTSCENE_STATE, 9, ShrineOfPeacePresent_EventScript_MainGameStart
+    map_script_2 VAR_CUTSCENE_STATE, 5, ShrineOfPeacePresent_EventScript_CelebiEncounter
+	map_script_2 VAR_CUTSCENE_STATE, 12, ShrineOfPeacePresent_EventScript_MainGameStart
     .2byte 0
 
 ShrineOfPeacePresent_EventScript_MainGameStart::
 	lockall
-	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, ShrineOfPeacePresent_Text_MainGameStart
+	delay 60
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
+	waitmovement 0
+	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, ShrineOfPeacePresent_Text_MainGameStart
 	closemessage
 	delay 40
-	startquest QUEST_INTERROGATE_MATT
-	setvar VAR_CUTSCENE_STATE, 10
+	startquest QUEST_SAVE_ESTELLA
+	setvar VAR_CUTSCENE_STATE, 13
 	releaseall
 	end
 
 ShrineOfPeacePresent_EventScript_CelebiEncounter::
 	lockall
 	delay 80
+	clearflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	special SpawnCameraObject
 	setvar VAR_0x8004, 14  @ x
 	setvar VAR_0x8005, 22  @ y
@@ -53,7 +57,7 @@ ShrineOfPeacePresent_EventScript_CelebiEncounter::
 	applymovement LOCALID_PLAYER, Common_Movement_FaceUpExclamationMark
 	applymovement LOCALID_SHRINE_PEACE_PRESENT_ANABEL, Common_Movement_FaceUpExclamationMark
 	delay 48
-	speakername Name_Anabel
+	speakername Name_Looker
 	msgbox ShrineOfPeacePresent_Text_LookerLookUpAhead, MSGBOX_DEFAULT
 	closemessage
 	clearflag FLAG_HIDE_SHRINE_OF_PEACE_PRESENT_WILD_MONS
@@ -108,15 +112,17 @@ ShrineOfPeacePresent_EventScript_CelebiEncounter::
 	applymovement LOCALID_SHRINE_PEACE_PRESENT_MON7, Common_Movement_WalkUp
 	waitmovement 0
 	delay 40
+	message ShrineOfPeacePresent_Text_CelebiBii1
 	playmoncry SPECIES_CELEBI, CRY_MODE_NORMAL
-	msgbox ShrineOfPeacePresent_Text_CelebiBii1, MSGBOX_DEFAULT
+	waitmoncry
+	delay 80
 	speakername Name_Anabel
-	msgbox ShrineOfPeacePresent_Text_AnabelShoutsLooker, MSGBOX_DEFAULT
-	closemessage
+	message ShrineOfPeacePresent_Text_AnabelShoutsLooker
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRightExclamationMark
 	playse SE_PIN
 	applymovement LOCALID_SHRINE_PEACE_PRESENT_ANABEL, ShrineOfPeacePresent_Movement_TeleportAway
 	waitmovement 0
+	closemessage
 	playse SE_WARP_IN
 	removeobject LOCALID_SHRINE_PEACE_PRESENT_ANABEL
 	playmoncry SPECIES_MANECTRIC, CRY_MODE_NORMAL
@@ -149,12 +155,14 @@ ShrineOfPeacePresent_EventScript_CelebiEncounter::
 	waitmovement 0
 	setobjectmovementtype LOCALID_SHRINE_PRESENT_CELEBI, MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_UP
 	delay 100
+	message ShrineOfPeacePresent_Text_CelebiBii2
 	playmoncry SPECIES_CELEBI, CRY_MODE_NORMAL
-	msgbox ShrineOfPeacePresent_Text_CelebiBii2, MSGBOX_DEFAULT
+	waitmoncry
+	delay 40
+	applymovement LOCALID_PLAYER, ShrineOfPeacePresent_Movement_TeleportAwayLooker
 	delay 40
 	closemessage
 	playse SE_WARP_IN
-	applymovement LOCALID_PLAYER, ShrineOfPeacePresent_Movement_TeleportAway
 	applymovement LOCALID_SHRINE_PEACE_PRESENT_MON5, Common_Movement_WalkFastUp
 	applymovement LOCALID_SHRINE_PEACE_PRESENT_MON6, Common_Movement_WalkFastUp
 	applymovement LOCALID_SHRINE_PEACE_PRESENT_MON7, Common_Movement_WalkFastUp
@@ -162,10 +170,11 @@ ShrineOfPeacePresent_EventScript_CelebiEncounter::
 	playmoncry SPECIES_MANECTRIC, CRY_MODE_NORMAL
 	delay 10
 	fadescreen FADE_TO_BLACK
-	applymovement LOCALID_PLAYER, ShrineOfPeacePresent_Movement_TeleportAway
-	delay 30
+	clearflag FLAG_SYS_WEATHER_CTRL
+	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	setflag FLAG_HIDE_SHRINE_OF_PEACE_PRESENT_WILD_MONS
 	setflag FLAG_HIDE_SHRINE_PEACE_CELEBI
+	setrespawn HEAL_LOCATION_PAST
 	warpsilent MAP_SHRINE_OF_PEACE_PAST, 14, 13
 	end
 
@@ -182,6 +191,89 @@ ShrineOfPeacePresent_Movement_CelebiEnterShot:
 	step_end
 
 ShrineOfPeacePresent_Movement_TeleportAway:
+	face_down
+	face_right
+	face_up
+	face_left
+	face_down
+	face_right
+	face_up
+	face_left
+	face_down
+	face_right
+	face_up
+	face_left
+	face_down
+	face_right
+	face_up
+	face_left
+	face_down
+	face_right
+	face_up
+	face_left
+	face_down
+	face_right
+	face_up
+	face_left
+	step_end
+
+ShrineOfPeacePresent_Movement_TeleportAwayLooker:
+	face_down
+	face_right
+	face_up
+	face_left
+	face_down
+	face_right
+	face_up
+	face_left
+	face_down
+	face_right
+	face_up
+	face_left
+	face_down
+	face_right
+	face_up
+	face_left
+	face_down
+	face_right
+	face_up
+	face_left
+	face_down
+	face_right
+	face_up
+	face_left
+	face_down
+	face_right
+	face_up
+	face_left
+	face_down
+	face_right
+	face_up
+	face_left
+	face_down
+	face_right
+	face_up
+	face_left
+	face_down
+	face_right
+	face_up
+	face_left
+	face_down
+	face_right
+	face_up
+	face_left
+	face_down
+	face_right
+	face_up
+	face_left
+	face_down
+	face_right
+	face_up
+	face_left
+	face_down
+	face_right
+	face_up
+	face_left
 	face_down
 	face_right
 	face_up
@@ -353,9 +445,19 @@ ShrineOfPeacePresent_EventScript_Celebi::
 	msgbox ShrineOfPeacePresent_Text_Celebi, MSGBOX_DEFAULT
 	speakername NULL
 	msgbox ShrineOfPeacePresent_Text_CelebiWarp, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, ShrineOfPeacePresent_EventScript_CelebiWarp
+	goto_if_eq VAR_RESULT, YES, ShrineOfPeacePresent_EventScript_HandleWarpEvents
 	releaseall
 	end
+
+ShrineOfPeacePresent_EventScript_HandleWarpEvents::
+	setrespawn HEAL_LOCATION_PAST
+	call ShrineOfPeacePast_EventScript_DisableInclementWeather
+	goto ShrineOfPeacePresent_EventScript_CelebiWarp
+	end
+
+ShrineOfPeacePast_EventScript_DisableInclementWeather::
+	clearflag FLAG_SYS_WEATHER_CTRL
+	return
 
 ShrineOfPeacePresent_EventScript_CelebiWarp::
 	warpteleport MAP_SHRINE_OF_PEACE_PAST, 14, 9
@@ -381,18 +483,18 @@ ShrineOfPeacePresent_Text_CelebiWarp:
 	.string "Warp to the past?$"
 
 ShrineOfPeacePresent_Text_LookerHuh:
-	.string "Looker: Huh…?\p"
+	.string "Huh…?\p"
 	.string "What's that…?$"
 
 ShrineOfPeacePresent_Text_AnabelAlmostToTheShrine:
-	.string "Anabel: I see a clearing up ahead!\n"
+	.string "I see a clearing up ahead!\n"
 	.string "I think we're almost to the shrine!$"
 
 ShrineOfPeacePresent_Text_LookerLookUpAhead:
-	.string "Looker: Anabel, look up ahead!$"
+	.string "Anabel, look up ahead!$"
 
 ShrineOfPeacePresent_Text_AnabelItsTooDangerous:
-	.string "Anabel: It's an ambush!\p"
+	.string "It's an ambush!\p"
 	.string "Looker, it's too dangerous! We can't\n"
 	.string "save Estella if we're in danger\l"
 	.string "ourselves!\p"
@@ -403,8 +505,8 @@ ShrineOfPeacePresent_Text_AnabelOhNo:
 
 ShrineOfPeacePresent_Text_AnabelWhatNow:
 	.string "We're surrounded!\p"
-	.string "What do we do now? There's too\n"
-	.string "many to fight, even for us!$"
+	.string "What do we do now? There's just\n"
+	.string "too many of them to fight!$"
 
 ShrineOfPeacePresent_Text_CelebiBii1:
 	.string "Biii!$"
@@ -413,8 +515,8 @@ ShrineOfPeacePresent_Text_CelebiBii2:
 	.string "Biiiiiii!$"
 
 ShrineOfPeacePresent_Text_AnabelShoutsLooker:
-	.string "Anabel: Looker, help!$"
+	.string "Looker, help!$"
 
 ShrineOfPeacePresent_Text_LookerAnabel:
-	.string "Looker: What?\p"
+	.string "What?\p"
 	.string "Anabel…?$"	

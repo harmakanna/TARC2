@@ -226,3 +226,6 @@ const u16 gMetatileAttributes_PresentTown[] = INCBIN_U16("data/tilesets/secondar
 
 const u16 gMetatiles_LittleOffice[] = INCBIN_U16("data/tilesets/secondary/little_office/metatiles.bin");
 const u16 gMetatileAttributes_LittleOffice[] = INCBIN_U16("data/tilesets/secondary/little_office/metatile_attributes.bin");
+
+const u16 gMetatiles_BrickCafe[] = INCBIN_U16("data/tilesets/secondary/brick_cafe/metatiles.bin");
+const u16 gMetatileAttributes_BrickCafe[] = INCBIN_U16("data/tilesets/secondary/brick_cafe/metatile_attributes.bin");

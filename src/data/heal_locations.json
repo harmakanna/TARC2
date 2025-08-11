@@ -131,6 +131,18 @@
       "map": "MAP_BATTLE_FRONTIER_OUTSIDE_EAST",
       "x": 3,
       "y": 52
+    },
+    {
+      "id": "HEAL_LOCATION_PAST",
+      "map": "MAP_PAST_TOWN",
+      "x": 35,
+      "y": 23
+    },
+    {
+      "id": "HEAL_LOCATION_PRESENT",
+      "map": "MAP_PRESENT_TOWN",
+      "x": 53,
+      "y": 27
     }
   ]
 }

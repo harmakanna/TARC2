@@ -4,6 +4,7 @@ Present_CityHall_2F_Ranger_MapScripts::
 Present_CityHall_2F_Ranger_EventScript_HeadRanger::
 	lockall
 	faceplayer
+	goto_if_unset FLAG_SYS_MAIN_GAME_START, Present_CityHall_2F_Ranger_EventScript_HeadRangerBusy
 	returnqueststate QUEST_INVESTIGATE_PROSPERITY
 	switch VAR_RESULT
 	case 1, Present_CityHall_2F_Ranger_EventScript_HeadRangerInitiateQuest
@@ -11,6 +12,14 @@ Present_CityHall_2F_Ranger_EventScript_HeadRanger::
 	case 3, Present_CityHall_2F_Ranger_EventScript_HeadRangerRewardQuest
 	case 4, Present_CityHall_2F_Ranger_EventScript_HeadRangerCompletedQuest
 	releaseall
+	end
+
+Present_CityHall_2F_Ranger_EventScript_HeadRangerBusy:
+	msgbox Present_CityHall_2F_Ranger_Text_HeadRangerBusyWithPaperwork, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_CITYHALL_RANGER, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
 	end
 
 Present_CityHall_2F_Ranger_EventScript_HeadRangerInitiateQuest::
@@ -41,12 +50,13 @@ Present_CityHall_2F_Ranger_EventScript_HeadRangerRewardQuest::
 	speak LOCALID_CITYHALL_RANGER, VAR_0x8005, Name_Head_Ranger, Present_CityHall_2F_Ranger_Text_HeadRangerDang
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_CityHall_2F_Ranger_Text_LookerAllInADaysWork
 	speak LOCALID_CITYHALL_RANGER, VAR_0x8005, Name_Head_Ranger, Present_CityHall_2F_Ranger_Text_HeadRangerReward
+	speakername NULL
 	giveitem ITEM_SAFARI_BALL, 500
 	closemessage
 	applymovement LOCALID_CITYHALL_RANGER, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	completequest QUEST_INVESTIGATE_PROSPERITY
-	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
+	setvar VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1
 	setflag FLAG_PLAY_LOOKER_RANGER_ON_TRANSITION
 	releaseall
 	end
@@ -170,3 +180,8 @@ Present_CityHall_2F_Ranger_Text_HeadRangerComplete:
 	.string "help, Looker!\p"
 	.string "I hope those Safari Balls will\n"
 	.string "come in handy in the future.$"
+
+Present_CityHall_2F_Ranger_Text_HeadRangerBusyWithPaperwork:
+	.string "Sorry, I'm busy with too many reports\n"
+	.string "right now…\p"
+	.string "Could you please come back later?$"

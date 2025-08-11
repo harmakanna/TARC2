@@ -21,18 +21,22 @@ ShrineOfProsperityPresent_EventScript_StartGenieFight::
 	faceplayer
 	clearflag FLAG_HIDE_SHRINE_THUNDURUS
 	speakername Name_Tornadus
-	msgbox ShrineOfProsperityPresent_Text_Tornadus, MSGBOX_DEFAULT
+	message ShrineOfProsperityPresent_Text_Tornadus
 	playmoncry SPECIES_TORNADUS, CRY_MODE_NORMAL
 	waitmoncry
+	waitmessage
+	closemessage
 	setobjectxyperm LOCALID_SHRINE_THUNDURUS, 12, 16
 	addobject LOCALID_SHRINE_THUNDURUS
 	delay 40
 	call_if_eq VAR_FACING, DIR_NORTH, ShrineOfProsperityPresent_EventScript_ThundurusRushN
 	call_if_eq VAR_FACING, DIR_EAST, ShrineOfProsperityPresent_EventScript_ThundurusRushE
 	call_if_eq VAR_FACING, DIR_WEST, ShrineOfProsperityPresent_EventScript_ThundurusRushW
+	speakername Name_Thundurus
+	message ShrineOfProsperityPresent_Text_Thundurus
 	playmoncry SPECIES_THUNDURUS, CRY_MODE_ENCOUNTER
-	delay 40
 	waitmoncry
+	waitmessage
 	setwildbattle SPECIES_TORNADUS, 5, ITEM_NONE, SPECIES_THUNDURUS, 5, ITEM_NONE
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattleDouble
@@ -46,16 +50,19 @@ ShrineOfProsperityPresent_EventScript_StartGenieFight::
 
 ShrineOfProsperityPresent_EventScript_ThundurusRushN::
 	applymovement LOCALID_SHRINE_THUNDURUS, ShrineOfProsperityPresent_Movement_ThundurusRushN
+	waitmovement 0
 	setobjectmovementtype LOCALID_SHRINE_THUNDURUS, MOVEMENT_TYPE_WALK_IN_PLACE_UP
 	return
 
 ShrineOfProsperityPresent_EventScript_ThundurusRushE::
 	applymovement LOCALID_SHRINE_THUNDURUS, ShrineOfProsperityPresent_Movement_ThundurusRushE
+	waitmovement 0
 	setobjectmovementtype LOCALID_SHRINE_THUNDURUS, MOVEMENT_TYPE_WALK_IN_PLACE_UP
 	return
 
 ShrineOfProsperityPresent_EventScript_ThundurusRushW::
 	applymovement LOCALID_SHRINE_THUNDURUS, ShrineOfProsperityPresent_Movement_ThundurusRushW
+	waitmovement 0
 	setobjectmovementtype LOCALID_SHRINE_THUNDURUS, MOVEMENT_TYPE_WALK_IN_PLACE_UP
 	return
 
@@ -361,8 +368,11 @@ ShrineOfProsperityPresent_Movement_PanCameraDownR:
 	step_end
 
 ShrineOfProsperityPresent_Text_Tornadus:
-	.string "Graaaaargh!!!$"
+	.string "Graaaaargh!$"
 
+ShrineOfProsperityPresent_Text_Thundurus:
+	.string "Gyuuuuoooooh!$"
+	
 ShrineOfProsperityPresent_Text_TornadusDefeat:
 	.string "Grrrrrr…$"
 

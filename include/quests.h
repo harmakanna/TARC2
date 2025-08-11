@@ -79,5 +79,6 @@ void QuestMenu_ResetMenuSaveData(void);
 void ResetQuestIconOnObject(struct ObjectEvent*);
 void HandleQuestIconForSingleObjectEvent(struct ObjectEvent*, u32);
 void RefreshQuestIcons(void);
+void SpawnQuestIcons(void);
 
 #endif // GUARD_QUESTS_H

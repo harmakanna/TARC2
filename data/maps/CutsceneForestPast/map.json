@@ -2,7 +2,7 @@
   "id": "MAP_CUTSCENE_FOREST_PAST",
   "name": "CutsceneForestPast",
   "layout": "LAYOUT_CUTSCENE_FOREST_PAST",
-  "music": "MUS_NONE",
+  "music": "MUS_DP_ETERNA_FOREST",
   "region_map_section": "MAPSEC_SHRINE_OF_PEACE",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",
@@ -72,7 +72,7 @@
       "y": 5,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "4",
+      "var_value": "6",
       "script": "CutsceneForestPast_EventScript_IGottaFindAnabel"
     },
     {
@@ -81,7 +81,7 @@
       "y": 5,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "4",
+      "var_value": "6",
       "script": "CutsceneForestPast_EventScript_IGottaFindAnabel"
     },
     {
@@ -90,7 +90,7 @@
       "y": 5,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "4",
+      "var_value": "6",
       "script": "CutsceneForestPast_EventScript_IGottaFindAnabel"
     },
     {
@@ -99,7 +99,7 @@
       "y": 5,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "4",
+      "var_value": "6",
       "script": "CutsceneForestPast_EventScript_IGottaFindAnabel"
     },
     {
@@ -108,7 +108,7 @@
       "y": 5,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "4",
+      "var_value": "6",
       "script": "CutsceneForestPast_EventScript_IGottaFindAnabel"
     },
     {
@@ -117,7 +117,7 @@
       "y": 5,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "4",
+      "var_value": "6",
       "script": "CutsceneForestPast_EventScript_IGottaFindAnabel"
     },
     {
@@ -126,7 +126,7 @@
       "y": 5,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "4",
+      "var_value": "6",
       "script": "CutsceneForestPast_EventScript_IGottaFindAnabel"
     },
     {
@@ -135,7 +135,7 @@
       "y": 13,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "4",
+      "var_value": "6",
       "script": "CutsceneForestPast_EventScript_AmIGoingTheRightWayM"
     },
     {
@@ -144,7 +144,7 @@
       "y": 13,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "4",
+      "var_value": "6",
       "script": "CutsceneForestPast_EventScript_AmIGoingTheRightWayM"
     },
     {
@@ -153,7 +153,7 @@
       "y": 13,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "4",
+      "var_value": "6",
       "script": "CutsceneForestPast_EventScript_AmIGoingTheRightWayR"
     },
     {
@@ -162,7 +162,7 @@
       "y": 13,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "4",
+      "var_value": "6",
       "script": "CutsceneForestPast_EventScript_AmIGoingTheRightWayR"
     },
     {
@@ -171,7 +171,7 @@
       "y": 13,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "4",
+      "var_value": "6",
       "script": "CutsceneForestPast_EventScript_AmIGoingTheRightWayM"
     },
     {
@@ -180,7 +180,7 @@
       "y": 13,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "4",
+      "var_value": "6",
       "script": "CutsceneForestPast_EventScript_AmIGoingTheRightWayL"
     },
     {
@@ -189,7 +189,7 @@
       "y": 13,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "4",
+      "var_value": "6",
       "script": "CutsceneForestPast_EventScript_AmIGoingTheRightWayL"
     },
     {
@@ -198,7 +198,7 @@
       "y": 5,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "5",
+      "var_value": "7",
       "script": "CutsceneForestPast_EventScript_IGottaFindAnabel"
     },
     {
@@ -207,7 +207,7 @@
       "y": 5,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "5",
+      "var_value": "7",
       "script": "CutsceneForestPast_EventScript_IGottaFindAnabel"
     },
     {
@@ -216,7 +216,7 @@
       "y": 5,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "5",
+      "var_value": "7",
       "script": "CutsceneForestPast_EventScript_IGottaFindAnabel"
     },
     {
@@ -225,7 +225,7 @@
       "y": 5,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "5",
+      "var_value": "7",
       "script": "CutsceneForestPast_EventScript_IGottaFindAnabel"
     },
     {
@@ -234,7 +234,7 @@
       "y": 5,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "5",
+      "var_value": "7",
       "script": "CutsceneForestPast_EventScript_IGottaFindAnabel"
     },
     {
@@ -243,7 +243,7 @@
       "y": 5,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "5",
+      "var_value": "7",
       "script": "CutsceneForestPast_EventScript_IGottaFindAnabel"
     },
     {
@@ -252,7 +252,7 @@
       "y": 5,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "5",
+      "var_value": "7",
       "script": "CutsceneForestPast_EventScript_IGottaFindAnabel"
     }
   ],

@@ -250,11 +250,26 @@
 #define OBJ_EVENT_GFX_AQUA_ADMIN_M               243
 #define OBJ_EVENT_GFX_AQUA_ADMIN_F               244
 #define OBJ_EVENT_GFX_BLUE                       245
+#define OBJ_EVENT_GFX_BW_ACE_TRAINER_F           246
+#define OBJ_EVENT_GFX_BW_ACE_TRAINER_M           247
+#define OBJ_EVENT_GFX_CYNTHIA                    248
+#define OBJ_EVENT_GFX_DAISY                      249
+#define OBJ_EVENT_GFX_FAIRY_TALE_GIRL            250
+#define OBJ_EVENT_GFX_BREEDER_F                  251
+#define OBJ_EVENT_GFX_BREEDER_M                  252
+#define OBJ_EVENT_GFX_IDOL                       253
+#define OBJ_EVENT_GFX_LISIA                      254
+#define OBJ_EVENT_GFX_OFFICER_F                  255
+#define OBJ_EVENT_GFX_OFFICER_M                  256
+#define OBJ_EVENT_GFX_LASS_NEW                   257
+#define OBJ_EVENT_GFX_YOUNGSTER_NEW              258
+#define OBJ_EVENT_GFX_PAST_GIRL                  259
+#define OBJ_EVENT_GFX_PAST_FISHERMAN             260
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        246
+#define NUM_OBJ_EVENT_GFX                        261
 
 
 // These are dynamic object gfx ids.
@@ -385,7 +400,17 @@
 #define OBJ_EVENT_PAL_TAG_RS_MAY                  0x1123
 #define OBJ_EVENT_PAL_TAG_LOOKER                  0x1124
 #define OBJ_EVENT_PAL_TAG_AQUA_ADMIN              0x1125
-#define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1126
+#define OBJ_EVENT_PAL_TAG_BLUE                    0x1126
+#define OBJ_EVENT_PAL_TAG_BW_ACE_TRAINER          0x1127
+#define OBJ_EVENT_PAL_TAG_CYNTHIA                 0x1128
+#define OBJ_EVENT_PAL_TAG_DAISY                   0x1129
+#define OBJ_EVENT_PAL_TAG_IDOL                    0x1130
+#define OBJ_EVENT_PAL_TAG_LISIA                   0x1131
+#define OBJ_EVENT_PAL_TAG_OFFICER                 0x1132
+#define OBJ_EVENT_PAL_TAG_LASS_NEW                0x1133
+#define OBJ_EVENT_PAL_TAG_YOUNGSTER_NEW           0x1134
+#define OBJ_EVENT_PAL_TAG_BREEDER                 0x1135
+#define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1136
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

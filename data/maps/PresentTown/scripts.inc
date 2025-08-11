@@ -4,64 +4,11 @@ PresentTown_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, PresentTown_OnFrame
 	map_script MAP_SCRIPT_ON_RESUME, PresentTown_OnResume
 	.byte 0
-
-PresentTown_OnFrame:
-	map_script_2 VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1, PresentTown_EventScript_LookerThinkingScenes
-	.2byte 0
-
-PresentTown_EventScript_LookerThinkingScenes::
-	call_if_set FLAG_PLAY_LOOKER_AQUA_ON_TRANSITION, PresentTown_EventScript_LookerThinkingAqua
-	call_if_set FLAG_PLAY_LOOKER_AQUA_ON_TRANSITION, PresentTown_EventScript_LookerThinkingGym
-	call_if_set FLAG_PLAY_LOOKER_AQUA_ON_TRANSITION, PresentTown_EventScript_LookerThinkingEstella
-	call_if_eq VAR_MAIN_QUEST_STATE, 4, PresentTown_EventScript_LookerThinkingIGotIt
-	call_if_eq VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1, PresentTown_EventScript_EndLookerThinking
-	end
-
-PresentTown_EventScript_LookerThinkingAqua::
-	lockall
-	playbgm MUS_PL_LOOKER, FALSE
-	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerThinkingAqua
-	return
-
-PresentTown_EventScript_LookerThinkingGym::
-	lockall
-	playbgm MUS_PL_LOOKER, FALSE
-	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerThinkingGym
-	return
-
-PresentTown_EventScript_LookerThinkingEstella::
-	lockall
-	playbgm MUS_PL_LOOKER, FALSE
-	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerThinkingEstella
-	return
-
-PresentTown_EventScript_LookerThinkingIGotIt::
-	closemessage
-	playse SE_PIN
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-	delay 48
-	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerIGotIt
-	return
-
-PresentTown_EventScript_EndLookerThinking::
-	closemessage
-	fadeoutbgm 0
-	playbgm MUS_DP_SUNYSHORE_DAY, FALSE
-	clearflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
-	clearflag FLAG_PLAY_LOOKER_AQUA_ON_TRANSITION
-	clearflag FLAG_PLAY_LOOKER_GYM_ON_TRANSITION
-	clearflag FLAG_PLAY_LOOKER_ESTELLA_ON_TRANSITION
-	clearflag FLAG_PLAY_LOOKER_RANGER_ON_TRANSITION
-	addvar VAR_MAIN_QUEST_STATE, 1
-	setvar VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 0
-	releaseall
-	end
 	
 @ Comment out FLAG_SYS_MAIN_GAME_START_SCRIPT_DEBUG line to test intro
 PresentTown_OnLoad:
-	call_if_eq VAR_CUTSCENE_STATE, 2, PresentTown_EventScript_ChangeAnabelFollowerText
-	call_if_unset FLAG_LOOKER_STARTERS, PresentTown_EventScript_GiveLookerStarters
-	call_if_unset FLAG_SYS_MAIN_GAME_START_SCRIPT_DEBUG, PresentTown_EventScript_DebugMainGameStart
+	call_if_eq VAR_CUTSCENE_STATE, 4, PresentTown_EventScript_ChangeAnabelFollowerText
+	@call_if_unset FLAG_SYS_MAIN_GAME_START_SCRIPT_DEBUG, PresentTown_EventScript_DebugMainGameStart
 	call_if_set FLAG_LOCK_CITY_DOORS, PresentTown_EventScript_LockCityDoors
 	end
 
@@ -69,6 +16,7 @@ PresentTown_EventScript_ChangeAnabelFollowerText::
 	setflag FLAG_STEPPED_OUT_OF_CITY_HALL
 	return
 
+<<<<<<< HEAD
 @ debug script so Looker isn't flooded with Growlithe and Toxicroak 
 PresentTown_EventScript_GiveLookerStarters::
 	givemonwithot OT_LOOKER_GROWLITHE
@@ -77,8 +25,10 @@ PresentTown_EventScript_GiveLookerStarters::
 	setflag FLAG_LOOKER_STARTERS
 	return 
 
+=======
+>>>>>>> dev-main
 PresentTown_EventScript_DebugMainGameStart::
-	setvar VAR_CUTSCENE_STATE, 10
+	setvar VAR_CUTSCENE_STATE, 13
 	setvar VAR_PORTO_BELLA_CITY_STATE, 3
 	setvar VAR_QUEUE_GENIE_FIGHT, 1
 	setvar VAR_PRESENT_GYM_STATE, 1
@@ -103,6 +53,11 @@ PresentTown_EventScript_DebugMainGameStart::
 	setflag FLAG_FOUGHT_LASS
 	setflag FLAG_HIDE_SHRINE_PROSPERITY_PAST_ANABEL
 	clearflag FLAG_HIDE_SHRINE_PEACE_CELEBI
+	clearflag FLAG_HIDE_CITYHALL_2F_RANGER_HEADRANGER
+	givemonwithot OT_LOOKER_GROWLITHE
+	givemonwithot OT_LOOKER_TOXICROAK
+	questmenu QUEST_MENU_SET_REWARD, QUEST_SAVE_ESTELLA
+	startquest QUEST_INTERROGATE_MATT
 	return
 
 PresentTown_EventScript_LockCityDoors::
@@ -122,7 +77,7 @@ PresentTown_EventScript_LockCityDoors::
 PresentTown_OnTransition:
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetStormWeather
 	call_if_set FLAG_TALKED_TO_MATT_OUTSIDE, PresentTown_EventScript_AquaMemberFPositioning
-	call_if_eq VAR_PORTO_BELLA_CITY_STATE, 1, PresentTown_EventScript_PrepareAnabelForCutscene
+	@call_if_eq VAR_PORTO_BELLA_CITY_STATE, 1, PresentTown_EventScript_PrepareAnabelForCutscene
 	end
 
 PresentTown_EventScript_AquaMemberFPositioning::
@@ -134,29 +89,118 @@ PresentTown_EventScript_PrepareAnabelForCutscene::
 	setobjectxyperm LOCALID_PRESENTTOWN_ANABEL, 37, 28
 	return
 	
+PresentTown_OnFrame:
+	map_script_2 VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1, PresentTown_EventScript_LookerThinkingScenes
+	.2byte 0
+
+PresentTown_EventScript_LookerThinkingScenes::
+	call_if_set FLAG_PLAY_LOOKER_AQUA_ON_TRANSITION, PresentTown_EventScript_LookerThinkingAqua
+	call_if_set FLAG_PLAY_LOOKER_GYM_ON_TRANSITION, PresentTown_EventScript_LookerThinkingGym
+	call_if_set FLAG_PLAY_LOOKER_ESTELLA_ON_TRANSITION, PresentTown_EventScript_LookerThinkingEstella
+	call_if_set FLAG_PLAY_LOOKER_RANGER_ON_TRANSITION, PresentTown_EventScript_LookerThinkingRanger
+	call_if_eq VAR_MAIN_QUEST_STATE, 4, PresentTown_EventScript_LookerThinkingIGotIt
+	call_if_eq VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1, PresentTown_EventScript_EndLookerThinking
+	end
+
+PresentTown_EventScript_LookerThinkingAqua::
+	lockall
+	playbgm MUS_PL_LOOKER, FALSE
+	addvar VAR_MAIN_QUEST_STATE, 1
+	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, PresentTown_Text_LookerThinkingAqua
+	return
+
+PresentTown_EventScript_LookerThinkingGym::
+	lockall
+	playbgm MUS_PL_LOOKER, FALSE
+	addvar VAR_MAIN_QUEST_STATE, 1
+	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, PresentTown_Text_LookerThinkingGym
+	return
+
+PresentTown_EventScript_LookerThinkingEstella::
+	lockall
+	playbgm MUS_PL_LOOKER, FALSE
+	addvar VAR_MAIN_QUEST_STATE, 1
+	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, PresentTown_Text_LookerThinkingEstella
+	return
+	
+PresentTown_EventScript_LookerThinkingRanger::
+	lockall
+	playbgm MUS_PL_LOOKER, FALSE
+	addvar VAR_MAIN_QUEST_STATE, 1
+	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, PresentTown_Text_LookerThinkingRanger
+	return
+
+PresentTown_EventScript_LookerThinkingIGotIt::
+	closemessage
+	playse SE_PIN
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	delay 48
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerIGotIt
+	return
+
+PresentTown_EventScript_EndLookerThinking::
+	closemessage
+	fadeoutbgm 0
+	call_if_set FLAG_SYS_WEATHER_CTRL, PresentTown_EventScript_PlayNoMusic
+	call_if_unset FLAG_SYS_WEATHER_CTRL, PresentTown_EventScript_PlayDefaultMusic
+	clearflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
+	clearflag FLAG_PLAY_LOOKER_AQUA_ON_TRANSITION
+	clearflag FLAG_PLAY_LOOKER_GYM_ON_TRANSITION
+	clearflag FLAG_PLAY_LOOKER_ESTELLA_ON_TRANSITION
+	clearflag FLAG_PLAY_LOOKER_RANGER_ON_TRANSITION
+	setvar VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 0
+	releaseall
+	end
+
+PresentTown_EventScript_PlayNoMusic:
+	playbgm MUS_NONE, TRUE
+	return
+
+PresentTown_EventScript_PlayDefaultMusic:
+	playbgm MUS_DP_SUNYSHORE_DAY, TRUE
+	return 
+
 PresentTown_OnResume:
 	special HealPlayerParty
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, PresentTown_EventScript_TryRemoveTornadus
 	end
 	
+PresentTown_EventScript_TryRemoveTornadus::
+	specialvar VAR_RESULT, GetBattleOutcome
+	call_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, PresentTown_EventScript_RemoveTornadus
+	return
+
+PresentTown_EventScript_RemoveTornadus::
+	setflag FLAG_CAUGHT_TORNADUS
+	setweather WEATHER_SUNNY
+	doweather
+	call Common_EventScript_MoveInsideNPCsOutside
+	removeobject LOCALID_CITY_TORNADUS
+	return
+
 PresentTown_EventScript_StartStorm1::
 	lockall
 	clearflag FLAG_HIDE_PORTO_BELLA_WILD_MONS
-	applymovement LOCALID_PRESENTTOWN_ANABEL, PresentTown_Movement_AnabelWalkToPlayerBridge
-	applymovement LOCALID_PLAYER, PresentTown_Movement_LookerWalkAcrossBridge1
-	waitmovement 0
+	addobject LOCALID_PRESENTTOWN_ANABEL
+	setvar VAR_0x8008, 0
+	setvar VAR_FACING, DIR_EAST
+	setobjectxy LOCALID_PRESENTTOWN_ANABEL, 41, 27
 	goto PresentTown_EventScript_StartStorm
 	end
 
 PresentTown_EventScript_StartStorm2::
 	lockall
 	clearflag FLAG_HIDE_PORTO_BELLA_WILD_MONS
-	applymovement LOCALID_PRESENTTOWN_ANABEL, PresentTown_Movement_AnabelWalkToPlayerBridge
-	applymovement LOCALID_PLAYER, PresentTown_Movement_LookerWalkAcrossBridge2
-	waitmovement 0
+	addobject LOCALID_PRESENTTOWN_ANABEL
+	setvar VAR_0x8008, 1
+	setvar VAR_FACING, DIR_EAST
+	setobjectxy LOCALID_PRESENTTOWN_ANABEL, 41, 28
 	goto PresentTown_EventScript_StartStorm
 	end
 
 PresentTown_EventScript_StartStorm::
+	applymovement LOCALID_PRESENTTOWN_ANABEL, PresentTown_Movement_AnabelWalkToPlayerBridge
+	waitmovement 0
 	call Script_GetNPCFacingDirection
 	speak LOCALID_PRESENTTOWN_ANABEL, VAR_0x8005, Name_Anabel, PresentTown_Text_AnabelGreet
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerGreet
@@ -165,23 +209,9 @@ PresentTown_EventScript_StartStorm::
 	speak LOCALID_PRESENTTOWN_ANABEL, VAR_0x8005, Name_Anabel, PresentTown_Text_AnabelUnderstood
 	closemessage
 	playse SE_PIN
-	applymovement LOCALID_PRESENTTOWN_ANABEL, PresentTown_Movement_AnabelLookAtStorm2
-	delay 48
-	speakername Name_Anabel
-	msgbox PresentTown_Text_AnabelThatsStrange, MSGBOX_DEFAULT
-	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
-	waitmovement 0
-	speakername Name_Looker
-	msgbox PresentTown_Text_LookerWhatsWrong, MSGBOX_DEFAULT
-	applymovement LOCALID_PRESENTTOWN_ANABEL, Common_Movement_FaceDown
-	waitmovement 0
-	speakername Name_Anabel
-	msgbox PresentTown_Text_AnabelTakeACloserLook, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_PRESENTTOWN_ANABEL, Common_Movement_FaceUp
-	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
-	waitmovement 0
-	delay 60
+	call_if_eq VAR_0x8008, 0, PresentTown_EventScript_AnabelLookAtStormTop
+	call_if_eq VAR_0x8008, 1, PresentTown_EventScript_AnabelLookAtStormBottom
+	delay 100
 	speakername Name_Looker
 	msgbox PresentTown_Text_LookerISeeIt, MSGBOX_DEFAULT
 	closemessage
@@ -226,22 +256,52 @@ PresentTown_EventScript_StartStorm::
 	hideobjectat LOCALID_PLAYER, 0
 	setflag FLAG_SYS_WEATHER_CTRL
 	setflag FLAG_SYS_SPAWN_INVISIBLE
+	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	setflag FLAG_LOCK_CITY_DOORS
 	setflag FLAG_HIDE_OUTSIDE_NPCS
 	setflag FLAG_HIDE_AQUA_GRUNT_OUTSIDE
 	setflag FLAG_HIDE_ANABEL_PRESENTTOWN
+	setflag FLAG_HIDE_CITYHALL_2F_RANGER_HEADRANGER
 	clearflag FLAG_HIDE_INSIDE_OUTSIDE_NPCS
 	clearflag FLAG_HIDE_SHRINE_PEACE_RANGER
 	clearflag FLAG_HIDE_SHRINE_PROSPERITY_RANGER
 	clearflag FLAG_HIDE_CITYHALL_1F_MAYOR
 	clearflag FLAG_HIDE_ANABEL_CITYHALL
 	setvar VAR_PORTO_BELLA_CITY_STATE, 2
-	setvar VAR_CUTSCENE_STATE, 1
+	setvar VAR_CUTSCENE_STATE, 3
 	fwdtime 13, 30
 	warp MAP_PRESENT_CITY_HALL_1F, 8, 8
 	waitstate
 	releaseall
 	end
+
+PresentTown_EventScript_AnabelLookAtStormTop::
+	applymovement LOCALID_PRESENTTOWN_ANABEL, PresentTown_Movement_AnabelLookAtStorm1
+	waitmovement 0
+	fadenewbgm MUS_NONE
+	speakername Name_Anabel
+	msgbox PresentTown_Text_AnabelThatsStrange, MSGBOX_DEFAULT
+	speak LOCALID_PLAYER, DIR_EAST, Name_Looker, PresentTown_Text_LookerWhatsWrong
+	speak LOCALID_PRESENTTOWN_ANABEL, DIR_WEST, Name_Anabel, PresentTown_Text_AnabelTakeACloserLook
+	closemessage
+	applymovement LOCALID_PRESENTTOWN_ANABEL, Common_Movement_FaceUp
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
+	return
+
+PresentTown_EventScript_AnabelLookAtStormBottom::
+	applymovement LOCALID_PRESENTTOWN_ANABEL, PresentTown_Movement_AnabelLookAtStorm2
+	waitmovement 0
+	fadenewbgm MUS_NONE
+	speakername Name_Anabel
+	msgbox PresentTown_Text_AnabelThatsStrange, MSGBOX_DEFAULT
+	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, PresentTown_Text_LookerWhatsWrong
+	speak LOCALID_PRESENTTOWN_ANABEL, DIR_SOUTH, Name_Anabel, PresentTown_Text_AnabelTakeACloserLook
+	closemessage
+	applymovement LOCALID_PRESENTTOWN_ANABEL, Common_Movement_FaceUp
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
+	waitmovement 0
+	return
 
 PresentTown_Movement_CameraPanToLookerRunning:
 	walk_fast_right
@@ -351,6 +411,10 @@ PresentTown_Movement_AnabelWalkToPlayerBridge:
 	walk_left
 	walk_left
 	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
 	step_end
 
 PresentTown_Movement_LookerWalkAcrossBridge1:
@@ -374,11 +438,15 @@ PresentTown_Movement_AnabelLookAtStorm1:
 	delay_16
 	delay_16
 	delay_16
+	delay_16
+	delay_16
 	step_end
 
 PresentTown_Movement_AnabelLookAtStorm2:
 	face_up
 	emote_question_mark
+	delay_16
+	delay_16
 	delay_16
 	delay_16
 	delay_16
@@ -462,20 +530,22 @@ PresentTown_EventScript_FinishMattCutscene::
 	closedoor 15, 34
 	waitdooranim
 	speakername Name_Aqua_Grunt
-	msgbox PresentTown_Text_AquaMemberFWait, MSGBOX_AUTOCLOSE
+	message PresentTown_Text_AquaMemberFWait
+	waitmessage
 	applymovement LOCALID_PRESENTTOWN_GRUNT, PresentTown_Movement_GruntFollowsMatt
 	waitmovement 0
-	speakername Name_Aqua_Grunt
-	msgbox PresentTown_Text_AquaMemberFNowHesMad, MSGBOX_DEFAULT
 	closemessage
+	delay 80
+	speak LOCALID_PRESENTTOWN_GRUNT, VAR_0x8005, Name_Aqua_Grunt, PresentTown_Text_AquaMemberFNowHesMad
 	setobjectxyperm LOCALID_PRESENTTOWN_GRUNT, 15, 35
 	setobjectmovementtype LOCALID_PRESENTTOWN_GRUNT, MOVEMENT_TYPE_FACE_UP
 	applymovement LOCALID_PRESENTTOWN_GRUNT, Common_Movement_FaceUp
 	waitmovement 0
 	setflag FLAG_TALKED_TO_MATT_OUTSIDE
+	clearflag FLAG_HIDE_ANABEL_PRESENTTOWN
 	setvar VAR_PORTO_BELLA_CITY_STATE, 1
 	removeobject LOCALID_PRESENTTOWN_MATT
-	setobjectxyperm LOCALID_PRESENTTOWN_ANABEL, 37, 28
+	@setobjectxyperm LOCALID_PRESENTTOWN_ANABEL, 37, 28
 	releaseall
 	end
 
@@ -512,12 +582,6 @@ PresentTown_Movement_MattEnterAquaCorp:
 PresentTown_Movement_GruntFollowsMatt:
 	walk_fast_left
 	face_up
-	delay_16
-	delay_16
-	delay_16
-	delay_16
-	delay_16
-	face_player
 	step_end
 
 PresentTown_EventScript_AquaMemberF::
@@ -539,6 +603,7 @@ PresentTown_EventScript_AquaMemberNowHesMad::
 
 PresentTown_EventScript_NoBusinessInTheForest::
 	lockall
+	speakername Name_Looker
 	msgbox PresentTown_Text_LookerNoBusinessInTheForest, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
@@ -548,6 +613,7 @@ PresentTown_EventScript_NoBusinessInTheForest::
 
 PresentTown_EventScript_NoBusinessInTheForest2::
 	lockall
+	speakername Name_Looker
 	msgbox PresentTown_Text_LookerNoBusinessInTheForest2, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
@@ -587,7 +653,7 @@ PresentTown_EventScript_CatchProsperityRangerAttention2::
 PresentTown_EventScript_ProsperityRanger::
 	lockall
 	faceplayer
-	goto_if_eq VAR_CUTSCENE_STATE, 2, PresentTown_EventScript_ProsperityRangerOhNo
+	goto_if_eq VAR_CUTSCENE_STATE, 4, PresentTown_EventScript_ProsperityRangerOhNo
 	goto_if_eq VAR_QUEUE_GENIE_FIGHT, 1, PresentTown_EventScript_ProsperityRangerNoPassing
 	msgbox PresentTown_Text_ProsperityRangerYouCanPass, MSGBOX_DEFAULT
 	closemessage
@@ -621,6 +687,7 @@ PresentTown_EventScript_CatchPeaceRangerAttention1::
 	waitmovement 0
 	delay 56
 	applymovement LOCALID_PRESENT_PEACE_RANGER, Common_Movement_WalkInPlaceFasterRight
+	setvar VAR_FACING, DIR_WEST
 	goto PresentTown_EventScript_PeaceRangerCutscene
 	end
 
@@ -633,6 +700,7 @@ PresentTown_EventScript_CatchPeaceRangerAttention2::
 	delay 56
 	applymovement LOCALID_PRESENT_PEACE_RANGER, Common_Movement_WalkRight
 	waitmovement 0
+	setvar VAR_FACING, DIR_WEST
 	goto PresentTown_EventScript_PeaceRangerCutscene
 	end
 
@@ -645,6 +713,7 @@ PresentTown_EventScript_CatchPeaceRangerAttention3::
 	delay 56
 	applymovement LOCALID_PRESENT_PEACE_RANGER, Common_Movement_WalkRight2
 	waitmovement 0
+	setvar VAR_FACING, DIR_WEST
 	goto PresentTown_EventScript_PeaceRangerCutscene
 	end
 
@@ -669,7 +738,7 @@ PresentTown_EventScript_PeaceRangerCutscene::
 	removeobject LOCALID_PLAYER
 	removeobject OBJ_EVENT_ID_NPC_FOLLOWER
 	destroyfollowernpc
-	setvar VAR_CUTSCENE_STATE, 3
+	setvar VAR_CUTSCENE_STATE, 5
 	setflag FLAG_SYS_PREVENT_MAP_FADE
 	warp MAP_CUTSCENE_FOREST, 10, 17
 	releaseall
@@ -737,13 +806,48 @@ PresentTown_EventScript_Fisherman_Defeated::
 	release
 	end
 
-PresentTown_Text_LookerLookingForInformationOnFishing:
-	.string "I am looking for information on the best\n"
-	.string "fishing spot in Porta Bella.\p"
-	.string "Would you happen to know where that might be?$"
+PresentTown_EventScript_Tornadus::
+	lock
+	faceplayer
+	waitse
+	setflag FLAG_SYS_NO_WHITEOUT
+	playmoncry SPECIES_TORNADUS, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_TORNADUS, 70
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	clearflag FLAG_SYS_NO_WHITEOUT
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PresentTown_EventScript_DefeatedTornadus
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, PresentTown_EventScript_RanFromTornadus
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, PresentTown_EventScript_RanFromTornadus
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, PresentTown_EventScript_RanFromTornadus
+	clearflag FLAG_SYS_WEATHER_CTRL
+	setweather WEATHER_SUNNY
+	doweather
+	removeobject VAR_LAST_TALKED
+	release
+	end
 
-PresentTown_Text_LookerNowWillYouTellMeFishing:
-	.string "Now will you tell me, sir?$"
+PresentTown_EventScript_DefeatedTornadus::
+	clearflag FLAG_SYS_WEATHER_CTRL
+	setweather WEATHER_SUNNY
+	doweather
+	call Common_EventScript_MoveInsideNPCsOutside
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+PresentTown_EventScript_RanFromTornadus::
+	clearflag FLAG_SYS_WEATHER_CTRL
+	setweather WEATHER_SUNNY
+	doweather
+	call Common_EventScript_MoveInsideNPCsOutside
+	setvar VAR_0x8004, SPECIES_TORNADUS
+	goto Common_EventScript_LegendaryFlewAway
+	end
 
 PresentTown_Text_ProsperityRangerYouCanPass:
 	.string "Hello! I got the call from HQ. You're\n"
@@ -868,8 +972,8 @@ PresentTown_Text_AnabelWhatTheHeck:
 	.string "new operation is above board?$"
 
 PresentTown_Text_LookerThereWasOneThing:
-	.string "There was one thing Matt\n"
-	.string "said which caught my attention…$"
+	.string "I was not given access…\n"
+	.string "We will need to do a more tho-$"
 
 PresentTown_Text_AnabelLookOut:
 	.string "Shoot!\n"
@@ -946,6 +1050,17 @@ PresentTown_Text_LookerThinkingEstella:
 	.string "of the power of the legends…\p"
 	.string "Hmm…$"
 
+PresentTown_Text_LookerThinkingRanger:
+	.string "Hmm…\p"
+	.string "So there was nobody posted at the\n"
+	.string "entrance to the Shrine of Prosperity\l"
+	.string "due to staffing issues…\p"
+	.string "And while adults are more reserved in\n"
+	.string "their catching habits, children often\l"
+	.string "cause trouble for the wildlife with\l"
+	.string "their insane catching sprees…\p"
+	.string "Hmm…$"
+	
 PresentTown_Text_LookerIGotIt:
 	.string "I got it!\p"
 	.string "One of the gym challengers, a\n"
@@ -986,3 +1101,11 @@ PresentTown_Text_Fisherman_PostBattle:
 PresentTown_Text_Fisherman_PostQuest:
 	.string "When it comes to fishing spots, the mouth\n"
 	.string "of the river just can't be beat!$"
+
+PresentTown_Text_LookerLookingForInformationOnFishing:
+	.string "I am looking for information on the best\n"
+	.string "fishing spot in Porta Bella.\p"
+	.string "Would you happen to know where that might be?$"
+
+PresentTown_Text_LookerNowWillYouTellMeFishing:
+	.string "Now will you tell me, sir?$"

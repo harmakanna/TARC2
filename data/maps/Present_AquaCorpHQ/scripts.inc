@@ -48,7 +48,6 @@ Present_AquaCorpHQ_EventScript_StartAquaGauntlet::
 	waitmovement 0
 	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_AquaCorpHQ_Text_LookerMatt
 	closemessage
-	delay 10
 	playse SE_PIN
 	applymovement LOCALID_AQUACORP_MATT, Common_Movement_FaceDownExclamationMark
 	applymovement LOCALID_AQUACORP_SHELDON, Common_Movement_FaceDownExclamationMark
@@ -74,10 +73,13 @@ Present_AquaCorpHQ_EventScript_StartAquaGauntlet::
 	closemessage
 	delay 40
 	speak LOCALID_AQUACORP_MATT, DIR_SOUTH, Name_Matt, Present_AquaCorpHQ_Text_MattOhComeOn
+	playse SE_PIN
 	applymovement LOCALID_AQUACORP_GRUNTM_WAILMER, Common_Movement_FaceDownQuestionMark
 	applymovement LOCALID_AQUACORP_GRUNTM_TABLE, Common_Movement_FaceUp
 	applymovement LOCALID_AQUACORP_SCIENTIST_WAILMER, Common_Movement_FaceUp
 	applymovement LOCALID_AQUACORP_GRUNTF_TABLE, Common_Movement_FaceUp
+	applymovement LOCALID_AQUACORP_GEOFF, Common_Movement_FaceRight
+	applymovement LOCALID_AQUACORP_SARAH, Common_Movement_FaceLeftQuestionMark
 	playbgm MUS_PL_LOOKER, FALSE
 	applymovement LOCALID_CAMERA, Common_Movement_WalkDown
 	call_if_unset FLAG_SYS_WEATHER_CTRL, Present_AquaCorpHQ_EventScript_LookerWasAStorm
@@ -133,10 +135,17 @@ Present_AquaCorpHQ_EventScript_StartAquaGauntletRematch::
 	applymovement LOCALID_PLAYER, Present_AquaCorpHQ_Movement_LookerApproachMattFast
 	waitmovement 0
 	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_AquaCorpHQ_Text_LookerImBack
+	closemessage
+	playse SE_PIN
+	applymovement LOCALID_AQUACORP_MATT, Common_Movement_FaceDownExclamationMark
+	applymovement LOCALID_AQUACORP_SHELDON, Common_Movement_FaceDownExclamationMark
+	delay 60
 	applymovement LOCALID_AQUACORP_GRUNTF_TABLE, Common_Movement_FaceUp
 	applymovement LOCALID_AQUACORP_GRUNTM_WAILMER, Common_Movement_FaceDown
 	applymovement LOCALID_AQUACORP_SCIENTIST_WAILMER, Common_Movement_FaceUp
 	applymovement LOCALID_AQUACORP_GRUNTM_TABLE, Common_Movement_FaceUp
+	applymovement LOCALID_AQUACORP_GEOFF, Common_Movement_FaceRight
+	applymovement LOCALID_AQUACORP_SARAH, Common_Movement_FaceLeft
 	speak LOCALID_AQUACORP_MATT, DIR_SOUTH, Name_Matt, Present_AquaCorpHQ_Text_MattYouWantMore
 	applymovement LOCALID_AQUACORP_SHELLY, Present_AquaCorpHQ_Movement_ShellyApproachGauntlet
 	waitmovement 0
@@ -299,10 +308,11 @@ Present_AquaCorpHQ_EventScript_FinishAquaGauntlet::
 	applymovement LOCALID_AQUACORP_SARAH, Common_Movement_FaceUp
 	applymovement LOCALID_AQUACORP_GEOFF, Common_Movement_FaceUp
 	setvar VAR_AQUACORP_STATE, 2
+	setvar VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1
 	setflag FLAG_DEFEATED_MATT
 	fadescreenswapbuffers FADE_FROM_BLACK
 	completequest QUEST_INTERROGATE_MATT
-	playbgm MUS_MT_CHIMNEY, FALSE
+	playbgm MUS_DP_VEILSTONE_DAY, FALSE
 	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	setflag FLAG_PLAY_LOOKER_AQUA_ON_TRANSITION
 	releaseall
@@ -526,7 +536,8 @@ Present_AquaCorpHQ_Text_LookerYoureUnderArrest:
 Present_AquaCorpHQ_Text_MattWhat:
 	.string "… … …\n"
 	.string "… … …\p"
-	.string "…What did you say…?$"
+	.string "… … …\n"
+	.string "… … …$"
 
 Present_AquaCorpHQ_Text_LookerComeWithMe:
 	.string "Matt, you're gonna have to come with\n"
@@ -738,12 +749,9 @@ Present_AquaCorpHQ_Text_ShellyWeAreResearchers:
 	.string "from us wanting to do good for\l"
 	.string "all the water Pokémon in the\l"
 	.string "region, but we went too far.\p"
-	.string "After a lot of reflection, Archie\n"
-	.string "left the Team and put Matt and I\l"
-	.string "in charge.\p"
-	.string "With nothing else to do, I came up\n"
-	.string "with the idea that we turn toward\l"
-	.string "becoming marine biologists.\p"
+	.string "After Team Aqua dissolved, Matt\n"
+	.string "and I turned to studying marine\l"
+	.string "biology with the remnants of Aqua.\p"
 	.string "That way, we could help aquatic\n"
 	.string "Pokémon in need and learn more\l"
 	.string "about them in the process.$"
@@ -752,15 +760,12 @@ Present_AquaCorpHQ_Text_SarahShellyDots:
 	.string "Shelly…$"
 
 Present_AquaCorpHQ_Text_SarahCanWeClamperl:
-	.string "I'm tired of waiting around…\p"
-	.string "If you're going to show the man\n"
-	.string "around the lab, could we at least\l"
-	.string "get on with the test on Chowder?\p"
+	.string "Could we get on with the test\n"
+	.string "on Chowder?\p"
 	.string "Poor thing's been waiting ages for\n"
 	.string "his big moment…$"
 
 Present_AquaCorpHQ_Text_ShellyOfCourseWeCan:
-	.string "Great idea, Sarah.\n"
 	.string "Of course we can.$"
 
 Present_AquaCorpHQ_Text_SarahIllPrepareTheDeepSea:
@@ -817,15 +822,7 @@ Present_AquaCorpHQ_Text_ShellySeeLookerNothingMalicious:
 	.string "We're caring for Pokémon who are\n"
 	.string "struggling out in the wild.\p"
 	.string "In return, they help us learn more\n"
-	.string "about the world around us.\p"
-	.string "In nature, Clamperl normally evolve\n"
-	.string "by holding both Deep Sea items.\p"
-	.string "Which form it evolves into is dependent\n"
-	.string "on which item it nurses in its shell\l"
-	.string "the longest.\p"
-	.string "Sarah made the discovery a week\n"
-	.string "ago, and we've been switching its\l"
-	.string "item every day since then until now.$"
+	.string "about the world around us.$"
 
 Present_AquaCorpHQ_Text_LookerISupposeAquaIsCleared:
 	.string "I see…\p"
@@ -846,9 +843,7 @@ Present_AquaCorpHQ_Text_MattImSorry:
 
 Present_AquaCorpHQ_Text_LookerApologyAcceptedImSorry:
 	.string "Apology accepted. I apologize\n"
-	.string "for my rash assumptions.\p"
-	.string "Team Aqua really has turned over a\n"
-	.string "new leaf.$"
+	.string "for my rash assumptions.$"
 
 Present_AquaCorpHQ_Text_SarahGorebyssWantsToComeWithYou:
 	.string "I think Gorebyss wants to come\n"
