@@ -272,7 +272,7 @@ ShrineOfProsperityPast_Text_LookerThisCanOnlyMean:
 	.string "Landorus has gone missing!$"
 
 ShrineOfProsperityPast_Text_LookerAnabelWeNeedToGoBack:
-	.string "Anabel, We need to go back to the future\n"
+	.string "Anabel, we need to go back to the future\n"
 	.string "and get to the bottom of what happened\l"
 	.string "to Porta Bella's Spirit of Prosperity.$"
 

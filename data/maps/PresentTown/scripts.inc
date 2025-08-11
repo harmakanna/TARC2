@@ -766,7 +766,7 @@ PresentTown_EventScript_Fisherman::
 	end
 
 PresentTown_EventScript_Fisherman_Unaware::
-	speakername Name_Fisherman
+	speakername Name_Present_Fisherman
 	msgbox PresentTown_Text_Fisherman_Unaware, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_PRESENT_FISHERMAN, Common_Movement_FaceDown
@@ -775,13 +775,13 @@ PresentTown_EventScript_Fisherman_Unaware::
 
 PresentTown_EventScript_Fisherman_Battle::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerLookingForInformationOnFishing
-	speak LOCALID_PRESENT_FISHERMAN, VAR_0x8005, Name_Fisherman, PresentTown_Text_Fisherman_PreBattle
+	speak LOCALID_PRESENT_FISHERMAN, VAR_0x8005, Name_Present_Fisherman, PresentTown_Text_Fisherman_PreBattle
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_AlrightFine
 	trainerbattle_no_intro TRAINER_PRESENT_FISHERMAN, PresentTown_Text_Fisherman_Defeat
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerNowWillYouTellMeFishing
-	speak LOCALID_PRESENT_FISHERMAN, VAR_0x8005, Name_Fisherman, PresentTown_Text_Fisherman_PostBattle
+	speak LOCALID_PRESENT_FISHERMAN, VAR_0x8005, Name_Present_Fisherman, PresentTown_Text_Fisherman_PostBattle
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_ThankYouForTheIntel
-	speak LOCALID_PRESENT_FISHERMAN, VAR_0x8005, Name_Fisherman, Looker_Text_OfCourse
+	speak LOCALID_PRESENT_FISHERMAN, VAR_0x8005, Name_Present_Fisherman, Looker_Text_OfCourse
 	closemessage
 	applymovement LOCALID_PRESENT_FISHERMAN, Common_Movement_FaceDown
 	questmenu QUEST_MENU_SET_REWARD QUEST_HELP_FISHERMAN
@@ -789,7 +789,7 @@ PresentTown_EventScript_Fisherman_Battle::
 	end
 
 PresentTown_EventScript_Fisherman_Defeated::
-	speakername Name_Fisherman
+	speakername Name_Present_Fisherman
 	msgbox PresentTown_Text_Fisherman_PostQuest, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_PRESENT_FISHERMAN, Common_Movement_FaceDown
@@ -1077,8 +1077,9 @@ PresentTown_Text_Fisherman_Defeat:
 
 PresentTown_Text_Fisherman_PostBattle:
 	.string "Fine, I'll tell…\p"
-	.string "My grandpappy passed down to me his\n"
-	.string "knowledge of this fishing spot.\p"
+	.string "My grandpappy's great-grandpappy Tee\n"
+	.string "passed down to me his knowledge of this\l"
+	.string "phenomenal fishing spot.\p"
 	.string "Legend has it that a great Wailord\n"
 	.string "passed away in this bay before the\l"
 	.string "founding of Porta Bella.\p"
@@ -1095,7 +1096,8 @@ PresentTown_Text_Fisherman_PostQuest:
 PresentTown_Text_LookerLookingForInformationOnFishing:
 	.string "I am looking for information on the best\n"
 	.string "fishing spot in Porta Bella.\p"
-	.string "Would you happen to know where that might be?$"
+	.string "Would you happen to know where that\n"
+	.string "might be?$"
 
 PresentTown_Text_LookerNowWillYouTellMeFishing:
 	.string "Now will you tell me, sir?$"

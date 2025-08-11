@@ -202,11 +202,11 @@ PastTown_EventScript_FishermanPregame::
 	end
 
 PastTown_EventScript_FishermanQuestInitiate::
-	speakername Name_Fisherman
+	speakername Name_Past_Fisherman
 	msgbox PastTown_Text_FishermanFrustrated, MSGBOX_DEFAULT
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_IsSomethingWrong
 	faceplayer
-	speak LOCALID_FISHERMAN, VAR_0x8005, Name_Fisherman, PastTown_Text_FishermanHelp
+	speak LOCALID_FISHERMAN, VAR_0x8005, Name_Past_Fisherman, PastTown_Text_FishermanHelp
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_IdBeHappyToHelp
 	closemessage
 	startquest QUEST_HELP_FISHERMAN
@@ -216,14 +216,16 @@ PastTown_EventScript_FishermanQuestInitiate::
 	end
 
 PastTown_EventScript_FishermanQuestActive::
-	speak LOCALID_FISHERMAN, VAR_0x8005, Name_Fisherman, PastTown_Text_FishermanHelp
+	speak LOCALID_FISHERMAN, VAR_0x8005, Name_Past_Fisherman, PastTown_Text_FishermanHelp
 	closemessage
 	applymovement LOCALID_FISHERMAN, Common_Movement_FaceUp
 	release
 	end
 
 PastTown_EventScript_FishermanQuestReward::
-	speak LOCALID_FISHERMAN, VAR_0x8005, Name_Fisherman, PastTown_Text_FishermanReward
+	speak LOCALID_FISHERMAN, VAR_0x8005, Name_Past_Fisherman, PastTown_Text_FishermanRubbish
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_SoHeresTheThing
+	speak LOCALID_FISHERMAN, VAR_0x8005, Name_Past_Fisherman, PastTown_Text_FishermanReward
 	multichoice 0, 6, MULTI_FISHERMAN_GIVEMON, TRUE
 	goto_if_eq VAR_RESULT, 0, PastTown_EventScript_FishermanGiveOverqwil
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_FishermanGiveDragalge
@@ -237,7 +239,7 @@ PastTown_EventScript_FishermanQuestFinish::
 	end
 
 PastTown_EventScript_FishermanQuestComplete::
-	speakername Name_Fisherman
+	speakername Name_Past_Fisherman
 	msgbox PastTown_Text_FishermanComplete, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_FISHERMAN, Common_Movement_FaceUp
@@ -318,10 +320,13 @@ PastTown_Text_FishermanHelp:
 	.string "the best place to fish might be?\p"
 	.string "This spot is bearing no fruit!$"
 
+PastTown_Text_FishermanRubbish:
+	.string "Huh? What is this rubbish about a\n"
+	.string "Wailord and rotting carcasses?$"
+
 PastTown_Text_FishermanReward:
-	.string "So I should be fishing closer to\n"
-	.string "the mouth of the river rather than\l"
-	.string "the riverbank?\p"
+	.string "Ah! So the fish breed closer to the\n"
+	.string "mouth of the river than the riverbank?\p"
 	.string "Thank you, stranger.\p"
 	.string "Here, take one of these Pokémon.\p"
 	.string "I have no taste for poisonous marine\n"

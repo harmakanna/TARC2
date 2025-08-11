@@ -27,7 +27,7 @@ ShrineOfPeacePresent_EventScript_MainGameStart::
 	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, ShrineOfPeacePresent_Text_MainGameStart
 	closemessage
 	delay 40
-	startquest QUEST_SAVE_ESTELLA
+	startquest QUEST_INTERROGATE_MATT
 	setvar VAR_CUTSCENE_STATE, 13
 	releaseall
 	end

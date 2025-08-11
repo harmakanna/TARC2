@@ -16854,16 +16854,18 @@ Level: 4
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PRESENT_FISHERMAN ===
-Name: Tee
+Name: Trevor
 Class: Fisherman
 Pic: Fisherman
 Gender: Male
-Music: Aqua
+Music: Hiker
 Double Battle: Yes
 AI: Check Bad Move
 
 Alomomola  
 Ability: Regenerator
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Flip Turn  
 - Helping Hand  
 - Heal Pulse  

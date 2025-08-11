@@ -25,6 +25,7 @@ CutsceneMyth_Event::
 	closemessage
 	fadescreen FADE_TO_BLACK
 	delay 80
+	waitmovement LOCALID_CAMERA
 	clearflag FLAG_HIDE_FIRST_PAN
 	addobject LOCALID_MYTH_TORNADUS
 	addobject LOCALID_MYTH_THUNDURUS

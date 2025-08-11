@@ -73,8 +73,11 @@ Name_Scientist:
 Name_Lass:
     .string "Marie$"
 
-Name_Fisherman:
-    .string "Fisherman$"
+Name_Past_Fisherman:
+    .string "Tee$"
     
+Name_Present_Fisherman:
+    .string "Trevor$"
+
 Name_Magikarp_Man:
     .string "Shady Man$"

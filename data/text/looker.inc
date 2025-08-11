@@ -28,6 +28,9 @@ Looker_Text_OfCourse:
 Looker_Text_AlrightFine:
     .string "Alright, fine.$"
 
+Looker_Text_SoHeresTheThing:
+    .string "So here's the thing…$"
+    
 Looker_Text_Hmm:
     .string "Hmm…$"
 
