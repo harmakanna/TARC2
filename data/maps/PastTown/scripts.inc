@@ -118,6 +118,7 @@ PastTown_EventScript_LassFight::
 	call_if_eq VAR_TEMP_1, 48, PastTown_EventScript_LassWalkBackToPosition
 	call_if_set FLAG_SYS_FROM_TRIGGER, PastTown_EventScript_WalkBackBelowTrigger
 	applymovement LOCALID_PASTTOWN_LASS, Common_Movement_FaceDown
+	clearflag FLAG_SYS_NO_WHITEOUT
 	release
 	end
 
@@ -142,6 +143,7 @@ PastTown_EventScript_BeatLass::
 	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, PastTown_Text_LookerThatWasStrange
 	closemessage
 	setvar VAR_CUTSCENE_STATE, 10
+	clearflag FLAG_SYS_NO_WHITEOUT
 	release
 	end
 
@@ -208,6 +210,8 @@ PastTown_EventScript_FishermanQuestInitiate::
 	faceplayer
 	speak LOCALID_FISHERMAN, VAR_0x8005, Name_Past_Fisherman, PastTown_Text_FishermanHelp
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_IdBeHappyToHelp
+	speak LOCALID_FISHERMAN, VAR_0x8005, Name_Past_Fisherman, PastTown_Text_FishermanGreatWhere
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_LetMeThinkAboutThat
 	closemessage
 	startquest QUEST_HELP_FISHERMAN
 	closemessage
@@ -239,6 +243,7 @@ PastTown_EventScript_FishermanQuestFinish::
 	end
 
 PastTown_EventScript_FishermanQuestComplete::
+	faceplayer
 	speakername Name_Past_Fisherman
 	msgbox PastTown_Text_FishermanComplete, MSGBOX_DEFAULT
 	closemessage
@@ -319,6 +324,10 @@ PastTown_Text_FishermanHelp:
 	.string "Sir, have you an idea as to where\n"
 	.string "the best place to fish might be?\p"
 	.string "This spot is bearing no fruit!$"
+
+PastTown_Text_FishermanGreatWhere:
+	.string "Great! So where might I find a good\n"
+	.string "fishing spot then?$"
 
 PastTown_Text_FishermanRubbish:
 	.string "Huh? What is this rubbish about a\n"

@@ -758,39 +758,52 @@ PresentTown_EventScript_Fisherman::
 	call Script_GetNPCFacingDirection
 	returnqueststate QUEST_HELP_FISHERMAN
 	switch VAR_RESULT
-	case 1, PresentTown_EventScript_Fisherman_Unaware
-	case 2, PresentTown_EventScript_Fisherman_Battle
-	case 3, PresentTown_EventScript_Fisherman_Defeated
-	case 4, PresentTown_EventScript_Fisherman_Defeated
+	case 1, PresentTown_EventScript_FishermanUnaware
+	case 2, PresentTown_EventScript_FishermanBattle
+	case 3, PresentTown_EventScript_FishermanDefeated
+	case 4, PresentTown_EventScript_FishermanDefeated
 	releaseall
 	end
 
-PresentTown_EventScript_Fisherman_Unaware::
+PresentTown_EventScript_FishermanUnaware::
 	speakername Name_Present_Fisherman
-	msgbox PresentTown_Text_Fisherman_Unaware, MSGBOX_DEFAULT
+	msgbox PresentTown_Text_FishermanUnaware, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_PRESENT_FISHERMAN, Common_Movement_FaceDown
 	release
 	end
 
-PresentTown_EventScript_Fisherman_Battle::
+PresentTown_EventScript_FishermanBattle::
+	setflag FLAG_SYS_NO_WHITEOUT
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerLookingForInformationOnFishing
-	speak LOCALID_PRESENT_FISHERMAN, VAR_0x8005, Name_Present_Fisherman, PresentTown_Text_Fisherman_PreBattle
+	speak LOCALID_PRESENT_FISHERMAN, VAR_0x8005, Name_Present_Fisherman, PresentTown_Text_FishermanPreBattle
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_AlrightFine
-	trainerbattle_no_intro TRAINER_PRESENT_FISHERMAN, PresentTown_Text_Fisherman_Defeat
+	trainerbattle_no_intro TRAINER_PRESENT_FISHERMAN, PresentTown_Text_FishermanDefeat
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, PresentTown_EventScript_FishermanLost
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, PresentTown_EventScript_FishermanLost
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerNowWillYouTellMeFishing
-	speak LOCALID_PRESENT_FISHERMAN, VAR_0x8005, Name_Present_Fisherman, PresentTown_Text_Fisherman_PostBattle
+	speak LOCALID_PRESENT_FISHERMAN, VAR_0x8005, Name_Present_Fisherman, PresentTown_Text_FishermanPostBattle
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_ThankYouForTheIntel
-	speak LOCALID_PRESENT_FISHERMAN, VAR_0x8005, Name_Present_Fisherman, Looker_Text_OfCourse
 	closemessage
 	applymovement LOCALID_PRESENT_FISHERMAN, Common_Movement_FaceDown
+	clearflag FLAG_SYS_NO_WHITEOUT
 	questmenu QUEST_MENU_SET_REWARD QUEST_HELP_FISHERMAN
 	release
 	end
 
-PresentTown_EventScript_Fisherman_Defeated::
+PresentTown_EventScript_FishermanLost::
+	speak LOCALID_PRESENT_FISHERMAN, VAR_0x8005, Name_Present_Fisherman, PresentTown_Text_FishermanYouWontLearnMySecrets
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_Dots
+	closemessage
+	applymovement LOCALID_PRESENT_FISHERMAN, Common_Movement_FaceDown
+	clearflag FLAG_SYS_NO_WHITEOUT
+	release
+	end
+	
+PresentTown_EventScript_FishermanDefeated::
 	speakername Name_Present_Fisherman
-	msgbox PresentTown_Text_Fisherman_PostQuest, MSGBOX_DEFAULT
+	msgbox PresentTown_Text_FishermanPostQuest, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_PRESENT_FISHERMAN, Common_Movement_FaceDown
 	release
@@ -1061,21 +1074,21 @@ PresentTown_Text_LookerIGotIt:
 	.string "caught the legendary and close this\l"
 	.string "case shut!$"
 
-PresentTown_Text_Fisherman_Unaware:
+PresentTown_Text_FishermanUnaware:
 	.string "Man, I just cannot stop catching fish!$"
 
-PresentTown_Text_Fisherman_PreBattle:
+PresentTown_Text_FishermanPreBattle:
 	.string "I know where the best fishing spot would\n"
 	.string "be, but I won't give it up for free!\p"
 	.string "If you want it, you have to beat my fish\n"
 	.string "in a battle!\p"
 	.string "You want a taste of their power?$"
 
-PresentTown_Text_Fisherman_Defeat:
+PresentTown_Text_FishermanDefeat:
 	.string "Beaten by a man with no fish…\n"
 	.string "How embarrassing.$"
 
-PresentTown_Text_Fisherman_PostBattle:
+PresentTown_Text_FishermanPostBattle:
 	.string "Fine, I'll tell…\p"
 	.string "My grandpappy's great-grandpappy Tee\n"
 	.string "passed down to me his knowledge of this\l"
@@ -1089,7 +1102,7 @@ PresentTown_Text_Fisherman_PostBattle:
 	.string "When it comes to fishing spots, the mouth\n"
 	.string "of the river just can't be beat!$"
 
-PresentTown_Text_Fisherman_PostQuest:
+PresentTown_Text_FishermanPostQuest:
 	.string "When it comes to fishing spots, the mouth\n"
 	.string "of the river just can't be beat!$"
 
@@ -1101,3 +1114,7 @@ PresentTown_Text_LookerLookingForInformationOnFishing:
 
 PresentTown_Text_LookerNowWillYouTellMeFishing:
 	.string "Now will you tell me, sir?$"
+
+PresentTown_Text_FishermanYouWontLearnMySecrets:
+	.string "Heh! I won't tell you any of my fishing\n"
+	.string "secrets until you beat me in a battle!$"
