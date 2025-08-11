@@ -1,3 +1,61 @@
+PastTown_EventScript_FishermanGiveOverqwil::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_OVERQWIL
+	givemonwithot OT_TEE_OVERQWIL
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PastTown_EventScript_ReceiveOverqwilParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PastTown_EventScript_ReceiveOverqwilPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+PastTown_EventScript_ReceiveOverqwilParty::
+	call PastTown_EventScript_ReceivedOverqwilFanfare
+	goto PastTown_EventScript_FishermanQuestFinish
+	end
+	
+PastTown_EventScript_ReceiveOverqwilPC::
+	call PastTown_EventScript_ReceivedOverqwilFanfare
+	call Common_EventScript_TransferredToPC
+	goto PastTown_EventScript_FishermanQuestFinish
+	end
+
+PastTown_EventScript_ReceivedOverqwilFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_OVERQWIL
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox PastTown_Text_YouReceivedOverqwil, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_OVERQWIL
+	return
+
+PastTown_EventScript_FishermanGiveDragalge::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DRAGALGE
+	givemonwithot OT_TEE_DRAGALGE
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PastTown_EventScript_ReceiveDragalgeParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PastTown_EventScript_ReceiveDragalgePC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+PastTown_EventScript_ReceiveDragalgeParty::
+	call PastTown_EventScript_ReceivedDragalgeFanfare
+	goto PastTown_EventScript_FishermanQuestFinish
+	end
+	
+PastTown_EventScript_ReceiveDragalgePC::
+	call PastTown_EventScript_ReceivedDragalgeFanfare
+	call Common_EventScript_TransferredToPC
+	goto PastTown_EventScript_FishermanQuestFinish
+	end
+
+PastTown_EventScript_ReceivedDragalgeFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_DRAGALGE
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox PastTown_Text_YouReceivedDragalge, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_DRAGALGE
+	return
+
 Present_Gym_EventScript_PhoebeGiveDusknoir::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DUSKNOIR
     givemonwithot OT_PHOEBE_DUSKNOIR
@@ -276,3 +334,9 @@ Present_Gym_Text_YouReceivedDusknoir:
 
 Present_Gym_Text_YouReceivedSableye:
 	.string "You received a Sableye!$"
+
+PastTown_Text_YouReceivedOverqwil:
+	.string "You received an Overqwil!$"
+
+PastTown_Text_YouReceivedDragalge:
+	.string "You received a Dragalge!$"

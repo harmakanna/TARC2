@@ -694,8 +694,9 @@ PresentTown_Movement_PeaceRangerEmoteTurn:
 	step_end
 
 PresentTown_EventScript_Fisherman::
-	lockall
+	lock
 	faceplayer
+	call Script_GetNPCFacingDirection
 	returnqueststate QUEST_HELP_FISHERMAN
 	switch VAR_RESULT
 	case 1, PresentTown_EventScript_Fisherman_Unaware
@@ -706,25 +707,43 @@ PresentTown_EventScript_Fisherman::
 	end
 
 PresentTown_EventScript_Fisherman_Unaware::
-	call Script_GetNPCFacingDirection
-	speak LOCALID_PRESENT_FISHERMAN, VAR_0x8005, Name_Fisherman, PresentTown_Text_Fisherman_Unaware
+	speakername Name_Fisherman
+	msgbox PresentTown_Text_Fisherman_Unaware, MSGBOX_DEFAULT
+	closemessage
 	applymovement LOCALID_PRESENT_FISHERMAN, Common_Movement_FaceDown
-	releaseall
+	release
 	end
 
 PresentTown_EventScript_Fisherman_Battle::
-	call Script_GetNPCFacingDirection
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerLookingForInformationOnFishing
 	speak LOCALID_PRESENT_FISHERMAN, VAR_0x8005, Name_Fisherman, PresentTown_Text_Fisherman_PreBattle
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_AlrightFine
 	trainerbattle_no_intro TRAINER_PRESENT_FISHERMAN, PresentTown_Text_Fisherman_Defeat
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerNowWillYouTellMeFishing
+	speak LOCALID_PRESENT_FISHERMAN, VAR_0x8005, Name_Fisherman, PresentTown_Text_Fisherman_PostBattle
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_ThankYouForTheIntel
+	speak LOCALID_PRESENT_FISHERMAN, VAR_0x8005, Name_Fisherman, Looker_Text_OfCourse
+	closemessage
+	applymovement LOCALID_PRESENT_FISHERMAN, Common_Movement_FaceDown
 	questmenu QUEST_MENU_SET_REWARD QUEST_HELP_FISHERMAN
-	goto PresentTown_EventScript_Fisherman_Defeated
+	release
+	end
 
 PresentTown_EventScript_Fisherman_Defeated::
-	call Script_GetNPCFacingDirection
-	speak LOCALID_PRESENT_FISHERMAN, VAR_0x8005, Name_Fisherman, PresentTown_Text_Fisherman_PostBattle
+	speakername Name_Fisherman
+	msgbox PresentTown_Text_Fisherman_PostQuest, MSGBOX_DEFAULT
+	closemessage
 	applymovement LOCALID_PRESENT_FISHERMAN, Common_Movement_FaceDown
-	releaseall
+	release
 	end
+
+PresentTown_Text_LookerLookingForInformationOnFishing:
+	.string "I am looking for information on the best\n"
+	.string "fishing spot in Porta Bella.\p"
+	.string "Would you happen to know where that might be?$"
+
+PresentTown_Text_LookerNowWillYouTellMeFishing:
+	.string "Now will you tell me, sir?$"
 
 PresentTown_Text_ProsperityRangerYouCanPass:
 	.string "Hello! I got the call from HQ. You're\n"
@@ -938,17 +957,32 @@ PresentTown_Text_LookerIGotIt:
 	.string "case shut!$"
 
 PresentTown_Text_Fisherman_Unaware:
-	.string "Hey you, look at all these fish!$"
+	.string "Man, I just cannot stop catching fish!$"
 
 PresentTown_Text_Fisherman_PreBattle:
-	.string "The fish down here by the sea are\n"
-	.string "second to none!\p"
-	.string "You look strong, let me prove it!$"
+	.string "I know where the best fishing spot would\n"
+	.string "be, but I won't give it up for free!\p"
+	.string "If you want it, you have to beat my fish\n"
+	.string "in a battle!\p"
+	.string "You want a taste of their power?$"
 
 PresentTown_Text_Fisherman_Defeat:
-	.string "You don't even have any fish!$"
+	.string "Beaten by a man with no fish…\n"
+	.string "How embarrassing.$"
 
 PresentTown_Text_Fisherman_PostBattle:
-	.string "I may have lost, but this fishing\n"
-	.string "spot is still unbeatable!\p"
-	.string "I sure hope no one finds out…$"
+	.string "Fine, I'll tell…\p"
+	.string "My grandpappy passed down to me his\n"
+	.string "knowledge of this fishing spot.\p"
+	.string "Legend has it that a great Wailord\n"
+	.string "passed away in this bay before the\l"
+	.string "founding of Porta Bella.\p"
+	.string "This brought schools of Pokémon to the\n"
+	.string "mouth of this river, which have been\l"
+	.string "breeding here ever since.\p"
+	.string "When it comes to fishing spots, the mouth\n"
+	.string "of the river just can't be beat!$"
+
+PresentTown_Text_Fisherman_PostQuest:
+	.string "When it comes to fishing spots, the mouth\n"
+	.string "of the river just can't be beat!$"

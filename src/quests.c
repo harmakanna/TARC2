@@ -329,22 +329,22 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
-	side_quest( // 6 - Where's the best place to fish?
+	side_quest( // 6 - Hello, Emma!
 	      gText_SideQuestName_6,
 	      gText_SideQuestDesc_6,
 	      gText_SideQuestDoneDesc_6,
 	      gText_SideQuestMap6,
-	      OBJ_EVENT_GFX_FISHERMAN,
+	      OBJ_EVENT_GFX_GIRL_2,
 	      OBJECT,
 	      NULL,
 	      0
 	),
-	side_quest(
+	side_quest( // - 7 Where is the best place to fish?
 	      gText_SideQuestName_7,
 	      gText_SideQuestDesc_7,
 	      gText_SideQuestDoneDesc_7,
 	      gText_SideQuestMap7,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_FISHERMAN,
 	      OBJECT,
 	      NULL,
 	      0

@@ -126,6 +126,8 @@
 #define MULTI_PHOEBE_GIVEMON               115
 #define MULTI_MATT_GIVEMON                 116
 #define MULTI_BLUE_GIVEMON                 117
+#define MULTI_MAY_GIVEMON                  118
+#define MULTI_FISHERMAN_GIVEMON            119
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0

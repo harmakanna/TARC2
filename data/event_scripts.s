@@ -1166,6 +1166,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/names.inc"
 	.include "data/scripts/givemon.inc"
 	.include "data/scripts/city_outside_npcs.inc"
+	.include "data/text/looker.inc"
 	
 	.include "data/maps/PresentTown/scripts.inc"
 

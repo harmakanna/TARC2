@@ -21,8 +21,8 @@
 #define QUEST_INTERROGATE_MATT          2
 #define QUEST_DEFEAT_PHOEBE          3
 #define QUEST_5          4
-#define QUEST_HELP_FISHERMAN          5
-#define QUEST_7          6
+#define QUEST_6          5
+#define QUEST_HELP_FISHERMAN          6
 #define QUEST_8          7
 #define QUEST_9          8
 #define QUEST_10         9

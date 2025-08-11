@@ -170,45 +170,66 @@ PastTown_Movement_LookerLookAround:
 	delay_16
 	step_end
 
-PastTown_EventScript_Past_Fisherman::
-	lockall
-	faceplayer
+PastTown_EventScript_Fisherman::
+	lock
+	goto_if_unset FLAG_SYS_MAIN_GAME_START, PastTown_EventScript_FishermanPregame
+	call Script_GetNPCFacingDirection
 	returnqueststate QUEST_HELP_FISHERMAN
 	switch VAR_RESULT
-	case 1, PastTown_EventScript_Past_Fisherman_QuestGive
-	case 2, PastTown_EventScript_Past_Fisherman_QuestActive
-	case 3, PastTown_EventScript_Past_Fisherman_QuestReward
-	case 4, PastTown_EventScript_Past_Fisherman_QuestComplete
+	case 1, PastTown_EventScript_FishermanQuestInitiate
+	case 2, PastTown_EventScript_FishermanQuestActive
+	case 3, PastTown_EventScript_FishermanQuestReward
+	case 4, PastTown_EventScript_FishermanQuestComplete
 	releaseall
 	end
 
-PastTown_EventScript_Past_Fisherman_QuestGive::
-	speak LOCALID_FISHERMAN, VAR_FACING, Name_Fisherman, PastTown_Text_FishermanFrustrated
+PastTown_EventScript_FishermanPregame::
+	msgbox PastTown_Text_FishermanPregame, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+PastTown_EventScript_FishermanQuestInitiate::
+	speakername Name_Fisherman
+	msgbox PastTown_Text_FishermanFrustrated, MSGBOX_DEFAULT
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_IsSomethingWrong
 	faceplayer
-	call Script_GetNPCFacingDirection
 	speak LOCALID_FISHERMAN, VAR_0x8005, Name_Fisherman, PastTown_Text_FishermanHelp
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_IdBeHappyToHelp
+	closemessage
 	startquest QUEST_HELP_FISHERMAN
+	closemessage
 	applymovement LOCALID_FISHERMAN, Common_Movement_FaceUp
-	releaseall
+	release
 	end
 
-PastTown_EventScript_Past_Fisherman_QuestActive::
-	faceplayer
-	speak LOCALID_FISHERMAN, VAR_FACING, Name_Fisherman, PastTown_Text_FishermanHelp
-	releaseall
+PastTown_EventScript_FishermanQuestActive::
+	speak LOCALID_FISHERMAN, VAR_0x8005, Name_Fisherman, PastTown_Text_FishermanHelp
+	closemessage
+	applymovement LOCALID_FISHERMAN, Common_Movement_FaceUp
+	release
 	end
 
-PastTown_EventScript_Past_Fisherman_QuestReward::
-	faceplayer
-	speak LOCALID_FISHERMAN, VAR_FACING, Name_Fisherman, PastTown_Text_FishermanReward
+PastTown_EventScript_FishermanQuestReward::
+	speak LOCALID_FISHERMAN, VAR_0x8005, Name_Fisherman, PastTown_Text_FishermanReward
+	multichoice 0, 6, MULTI_FISHERMAN_GIVEMON, TRUE
+	goto_if_eq VAR_RESULT, 0, PastTown_EventScript_FishermanGiveOverqwil
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_FishermanGiveDragalge
+	end
+
+PastTown_EventScript_FishermanQuestFinish::
+	applymovement LOCALID_FISHERMAN, Common_Movement_FaceUp
 	completequest QUEST_HELP_FISHERMAN
-	releaseall
+	closemessage
+	release
 	end
 
-PastTown_EventScript_Past_Fisherman_QuestComplete::
-	faceplayer
-	speak LOCALID_FISHERMAN, VAR_FACING, Name_Fisherman, PastTown_Text_FishermanComplete
-	releaseall
+PastTown_EventScript_FishermanQuestComplete::
+	speakername Name_Fisherman
+	msgbox PastTown_Text_FishermanComplete, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_FISHERMAN, Common_Movement_FaceUp
+	release
 	end
 
 PastTown_Text_LassHeyNoFair:
@@ -275,24 +296,29 @@ PastTown_Text_LassLoss:
 	.string "It was like you knew my every move!$"
 
 PastTown_Text_FishermanFrustrated:
-	.string "UGH!!\p"
-	.string "I can't find any fish!\p"
+	.string "Grrr…\p"
+	.string "Nothing's biting…\p"
 	.string "There must be somewhere in town\n"
-	.string "where I can catch some fish…$"
+	.string "where I can catch some proper fish…$"
 
 PastTown_Text_FishermanHelp:
-	.string "I wish someone could tell me\n"
-	.string "where the best place to fish is!$"
+	.string "Sir, have you an idea as to where\n"
+	.string "the best place to fish might be?\p"
+	.string "This spot is bearing no fruit!$"
 
 PastTown_Text_FishermanReward:
-	.string "Woah, you mean I should be\n"
-	.string "fishing by the sea, instead\l"
-	.string "of by the river?\p"
+	.string "So I should be fishing closer to\n"
+	.string "the mouth of the river rather than\l"
+	.string "the riverbank?\p"
 	.string "Thank you, stranger.\p"
 	.string "Here, take one of these Pokémon.\p"
-	.string "They're both fish, but neither is\n"
-	.string "actually Water-type.$"
+	.string "I have no taste for poisonous marine\n"
+	.string "life, anyways.$"
 
 PastTown_Text_FishermanComplete:
 	.string "Thanks for the heads up!\p"
 	.string "Now I need to make a fishing rod…$"
+
+PastTown_Text_FishermanPregame:
+	.string "Grrr…\p"
+	.string "Nothing's biting…$"
