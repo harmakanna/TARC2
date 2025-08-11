@@ -42,7 +42,7 @@
     },
     {
       "local_id": "LOCALID_PASTTOWN_LASS",
-      "graphics_id": "OBJ_EVENT_GFX_LASS",
+      "graphics_id": "OBJ_EVENT_GFX_LASS_NEW",
       "x": 47,
       "y": 14,
       "elevation": 0,

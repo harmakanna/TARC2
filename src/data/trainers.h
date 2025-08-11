@@ -42101,7 +42101,7 @@ F_TRAINER_FEMALE |
 #line 16841
         .trainerClass = TRAINER_CLASS_LASS,
 #line 16842
-        .trainerPic = TRAINER_PIC_LASS,
+        .trainerPic = TRAINER_PIC_LASS_NEW,
         .encounterMusic_gender =
 #line 16843
 F_TRAINER_FEMALE | 

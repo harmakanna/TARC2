@@ -43,7 +43,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_4",
       "x": 1,
-      "y": 6,
+      "y": 5,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -56,9 +56,9 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
       "x": 11,
-      "y": 7,
+      "y": 4,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -68,8 +68,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_3",
-      "x": 2,
-      "y": 9,
+      "x": 1,
+      "y": 7,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -91,13 +91,26 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ZANGOOSE)",
+      "x": 2,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
     }
   ],
   "warp_events": [
     {
       "warp_id": "POKEMON_CENTER_EXIT",
       "x": 6,
-      "y": 12,
+      "y": 10,
       "elevation": 0,
       "dest_map": "MAP_PRESENT_TOWN",
       "dest_warp_id": "POKEMON_CENTER_ENTRANCE"
@@ -105,7 +118,7 @@
     {
       "warp_id": "POKEMON_CENTER_EXIT_2",
       "x": 7,
-      "y": 12,
+      "y": 10,
       "elevation": 0,
       "dest_map": "MAP_PRESENT_TOWN",
       "dest_warp_id": "POKEMON_CENTER_ENTRANCE"

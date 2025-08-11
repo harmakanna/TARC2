@@ -427,7 +427,7 @@ const u16 gObjectEventPal_Officer[] = INCBIN_U16("graphics/object_events/palette
 const u32 gObjectEventPic_LassNew[] = INCBIN_U32("graphics/object_events/pics/people/lass_new.4bpp");
 const u16 gObjectEventPal_LassNew[] = INCBIN_U16("graphics/object_events/palettes/lass_new.gbapal");
 
-const u32 gObjectEventPic_YoungsterNew[] = INCBIN_U32("graphics/object_events/pics/people/youngster.4bpp");
+const u32 gObjectEventPic_YoungsterNew[] = INCBIN_U32("graphics/object_events/pics/people/youngster_new.4bpp");
 const u16 gObjectEventPal_YoungsterNew[] = INCBIN_U16("graphics/object_events/palettes/youngster_new.gbapal");
 
 
