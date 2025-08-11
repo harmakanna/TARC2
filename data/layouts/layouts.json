@@ -4654,8 +4654,8 @@
     {
       "id": "LAYOUT_PAST_HOUSE1",
       "name": "Past_House1_Layout",
-      "width": 12,
-      "height": 8,
+      "width": 11,
+      "height": 7,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_lozinterior",
       "border_filepath": "data/layouts/Past_House1/border.bin",
@@ -4684,8 +4684,8 @@
     {
       "id": "LAYOUT_PAST_CELEBI_SOCIETY",
       "name": "Past_CelebiSociety_Layout",
-      "width": 20,
-      "height": 12,
+      "width": 19,
+      "height": 10,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_lozinterior",
       "border_filepath": "data/layouts/Past_CelebiSociety/border.bin",
