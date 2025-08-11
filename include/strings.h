@@ -2521,6 +2521,13 @@ extern const u8 gText_SubQuestFindTheCulprit_Name5[];
 extern const u8 gText_SubQuestFindTheCulprit_Desc5[];
 extern const u8 gText_SubQuestFindTheCulprit_Map5[];
 
+//Catch the genies
+extern const u8 gText_SubQuestCatchTheGenies_Name1[];
+extern const u8 gText_SubQuestCatchTheGenies_Desc1[];
+extern const u8 gText_SubQuestCatchTheGenies_Name2[];
+extern const u8 gText_SubQuestCatchTheGenies_Desc2[];
+extern const u8 gText_SubQuestCatchTheGenies_Map[];
+
 // Berry Blender
 extern const u8 gText_SavingDontTurnOff2[];
 extern const u8 gText_BlenderMaxSpeedRecord[];

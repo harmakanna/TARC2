@@ -318,6 +318,28 @@ static const struct SubQuest sSubQuestsFindTheCulprit[QUEST_FIND_THE_CULPRIT_SUB
 	),
 };
 
+static const struct SubQuest sSubQuestsCatchTheGenies[QUEST_CATCH_GENIES_SUB_COUNT] =
+{
+	sub_quest(
+	      0,
+	      gText_SubQuestCatchTheGenies_Name1,
+	      gText_SubQuestCatchTheGenies_Desc1,
+	      gText_SubQuestCatchTheGenies_Map,
+	      SPECIES_TORNADUS,
+	      PKMN,
+	      sText_Found
+	),
+	sub_quest(
+	      0,
+	      gText_SubQuestCatchTheGenies_Name2,
+	      gText_SubQuestCatchTheGenies_Desc2,
+	      gText_SubQuestCatchTheGenies_Map,
+	      SPECIES_THUNDURUS,
+	      PKMN,
+	      sText_Found
+	),
+};
+
 ////////////////////////END SUBQUEST CUSTOMIZATION/////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -328,7 +350,7 @@ static const struct SubQuest sSubQuestsFindTheCulprit[QUEST_FIND_THE_CULPRIT_SUB
 #define side_quest(n, d, dd, m, s, st, sq, ns) {.name = n, .desc = d, .donedesc = dd, .map = m, .sprite = s, .spritetype = st, .subquests = sq, .numSubquests = ns}
 static const struct SideQuest sSideQuests[QUEST_COUNT] =
 {
-	side_quest(// 1 - Find Estella
+	side_quest(// 0 QUEST_SAVE_ESTELLA - Find Estella
 	      gText_SideQuestName_1,
 	      gText_SideQuestDesc_1,
 	      gText_SideQuestDoneDesc_1,
@@ -338,7 +360,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
-	side_quest(// 2 - Investigate Shrine of Prosperity
+	side_quest(// 1 QUEST_INVESTIGATE_PROSPERITY - Investigate Shrine of Prosperity
 	      gText_SideQuestName_2,
 	      gText_SideQuestDesc_2,
 	      gText_SideQuestDoneDesc_2,
@@ -348,7 +370,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      sSubQuestsInvestigateProsperity,
 	      QUEST_INVESTIGATE_PROSPERITY_SUB_COUNT
 	),
-	side_quest( // 3 - Defeat Matt
+	side_quest( // 2 QUEST_INTERROGATE_MATT - Defeat Matt
 	      gText_SideQuestName_3,
 	      gText_SideQuestDesc_3,
 	      gText_SideQuestDoneDesc_3,
@@ -358,7 +380,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
-	side_quest( //4 - Defeat Gym Leader
+	side_quest( // 3 QUEST_DEFEAT_PHOEBE - Defeat Gym Leader
 	      gText_SideQuestName_4,
 	      gText_SideQuestDesc_4,
 	      gText_SideQuestDoneDesc_4,
@@ -368,7 +390,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
-	side_quest(// 5 - Which gym challenger did it?
+	side_quest(// 4 QUEST_FIND_THE_CULPRIT- Which gym challenger did it?
 	      gText_SideQuestName_5,
 	      gText_SideQuestDesc_5,
 	      gText_SideQuestDoneDesc_5,
@@ -378,7 +400,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      sSubQuestsFindTheCulprit,
 	      QUEST_FIND_THE_CULPRIT_SUB_COUNT
 	),
-	side_quest( // 6 - Hello, Emma!
+	side_quest( // 5 QUEST_BONJOUR_EMMA- Hello, Emma!
 	      gText_SideQuestName_6,
 	      gText_SideQuestDesc_6,
 	      gText_SideQuestDoneDesc_6,
@@ -388,7 +410,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
-	side_quest( // - 7 Where is the best place to fish?
+	side_quest( // 6 QUEST_HELP_FISHERMAN - Where is the best place to fish?
 	      gText_SideQuestName_7,
 	      gText_SideQuestDesc_7,
 	      gText_SideQuestDoneDesc_7,
@@ -398,7 +420,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
-	side_quest(
+	side_quest( // 7 QUEST_EUREKA - Harness the power of Mareep!
 	      gText_SideQuestName_8,
 	      gText_SideQuestDesc_8,
 	      gText_SideQuestDoneDesc_8,
@@ -408,7 +430,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
-	side_quest(
+	side_quest( // 8 QUEST_GET_INTO_THE_GROOVE - Find and prepare the idols for the show!
 	      gText_SideQuestName_9,
 	      gText_SideQuestDesc_9,
 	      gText_SideQuestDoneDesc_9,
@@ -418,7 +440,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
-	side_quest(
+	side_quest( // 9 QUEST_FARMLAND_INVASION_1 - Clear out the pests!
 	      gText_SideQuestName_10,
 	      gText_SideQuestDesc_10,
 	      gText_SideQuestDoneDesc_10,
@@ -428,7 +450,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
-	side_quest(
+	side_quest( // 10 QUEST_FARMLAND_INVASION_2 - Clear out the pests!
 	      gText_SideQuestName_11,
 	      gText_SideQuestDesc_11,
 	      gText_SideQuestDoneDesc_11,
@@ -438,7 +460,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
-	side_quest(
+	side_quest( // 11 QUEST_FARMLAND_INVASION_3 - Clear out the pests!
 	      gText_SideQuestName_12,
 	      gText_SideQuestDesc_12,
 	      gText_SideQuestDoneDesc_12,
@@ -448,7 +470,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
-	side_quest(
+	side_quest( // 12 QUEST_FOREVER_FAITHFUL - Defeat the hypnotized boyfriend!
 	      gText_SideQuestName_13,
 	      gText_SideQuestDesc_13,
 	      gText_SideQuestDoneDesc_13,
@@ -458,7 +480,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
-	side_quest(
+	side_quest( // 13 QUEST_SENTIMENTAL - Find a heart scale!
 	      gText_SideQuestName_14,
 	      gText_SideQuestDesc_14,
 	      gText_SideQuestDoneDesc_14,
@@ -468,7 +490,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
-	side_quest(
+	side_quest( // 14 QUEST_FIND_TASTY_MINT - Find a tasty mint!
 	      gText_SideQuestName_15,
 	      gText_SideQuestDesc_15,
 	      gText_SideQuestDoneDesc_15,
@@ -478,7 +500,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
-	side_quest(
+	side_quest( // 15 QUEST_SENT_TO_THE_FARM - Find modern medicine!
 	      gText_SideQuestName_16,
 	      gText_SideQuestDesc_16,
 	      gText_SideQuestDoneDesc_16,
@@ -488,7 +510,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
-	side_quest(
+	side_quest( // 16 QUEST_HOMEGROWN_REMEDIES - Find herbal remedies lost to time!
 	      gText_SideQuestName_17,
 	      gText_SideQuestDesc_17,
 	      gText_SideQuestDoneDesc_17,
@@ -498,7 +520,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
-	side_quest(
+	side_quest( // 17 QUEST_THE_BEST_TIME - Plant a tree in the past?
 	      gText_SideQuestName_18,
 	      gText_SideQuestDesc_18,
 	      gText_SideQuestDoneDesc_18,
@@ -508,7 +530,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
-	side_quest(
+	side_quest( // 18 QUEST_WITH_MUCH_GRATITUDE - Give Camilla a thank you gift
 	      gText_SideQuestName_19,
 	      gText_SideQuestDesc_19,
 	      gText_SideQuestDoneDesc_19,
@@ -613,7 +635,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestDesc_29,
 	      gText_SideQuestDoneDesc_29,
 	      gText_SideQuestMap29,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_LOOKER,
 	      OBJECT,
 	      NULL,
 	      0
@@ -623,10 +645,10 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestDesc_30,
 	      gText_SideQuestDoneDesc_30,
 	      gText_SideQuestMap30,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_SPECIES(TORNADUS),
 	      OBJECT,
-	      NULL,
-	      0
+	      sSubQuestsCatchTheGenies,
+	      QUEST_CATCH_GENIES_SUB_COUNT
 	),
 };
 ////////////////////////END QUEST CUSTOMIZATION////////////////////////////////

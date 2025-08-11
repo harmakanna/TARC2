@@ -16,25 +16,25 @@
 
 // quest number defines
 #define QUEST_NONE  0xFFFF
-#define QUEST_SAVE_ESTELLA          0
-#define QUEST_INVESTIGATE_PROSPERITY          11
-#define QUEST_INTERROGATE_MATT          2
-#define QUEST_DEFEAT_PHOEBE          3
-#define QUEST_FIND_THE_CULPRIT          4
-#define QUEST_6          5
-#define QUEST_HELP_FISHERMAN          6
-#define QUEST_8          7
-#define QUEST_9          8
-#define QUEST_10         9
-#define QUEST_11        10
-#define QUEST_12        11
-#define QUEST_13        12
-#define QUEST_14        13
-#define QUEST_15        14
-#define QUEST_16        15
-#define QUEST_17        16
-#define QUEST_18        17
-#define QUEST_19        18
+#define QUEST_SAVE_ESTELLA          0 //Find Estella in the past
+#define QUEST_INVESTIGATE_PROSPERITY          11 // Investigate the abnormality at the Shrine of Prosperity
+#define QUEST_INTERROGATE_MATT          2 // Defeat Team Aqua
+#define QUEST_DEFEAT_PHOEBE          3 // Defeat Phoebe
+#define QUEST_FIND_THE_CULPRIT          4 // Defeat the correct gym challenger
+#define QUEST_BONJOUR_EMMA          5 // Speak French to Emma
+#define QUEST_HELP_FISHERMAN          6 // Find the best fishing spot in town
+#define QUEST_EUREKA          7 // Find a battery to harness Mareep's power
+#define QUEST_GET_INTO_THE_GROOVE          8 // Find the idols scattered after the storm
+#define QUEST_FARMLAND_INVASION_1         9 // Clear out the first wave of pest Pokemon
+#define QUEST_FARMLAND_INVASION_2        10 // Clear out the second wave of pest Pokemon
+#define QUEST_FARMLAND_INVASION_3        11 // Clear out the third wave of pest Pokemon
+#define QUEST_FOREVER_FAITHFUL        12 // Defeat the hypnotized boyfriend
+#define QUEST_SENTIMENTAL        13 // Find a heart scale in the past and bring it to the present
+#define QUEST_FIND_TASTY_MINT        14 // Find a tasty mint in the present and bring it back to the past
+#define QUEST_SENT_TO_THE_FARM        15 // Find modern medicine for the ailing cows
+#define QUEST_HOMEGROWN_REMEDIES        16 // Find herbal remedies lost to time for the ailing old man
+#define QUEST_THE_BEST_TIME        17 // Plant a tree in the past ?
+#define QUEST_WITH_MUCH_GRATITUDE        18 // Send a thank you gift to Camilla from Estella
 #define QUEST_20        19
 #define QUEST_21        20
 #define QUEST_22        21
@@ -43,10 +43,10 @@
 #define QUEST_25        24
 #define QUEST_26        25
 #define QUEST_27        26
-#define QUEST_28        27
-#define QUEST_29        28
-#define QUEST_30        29
-#define QUEST_COUNT     (QUEST_30 + 1)
+#define QUEST_I_MADE_THIS        27 // Defeat the devs!
+#define QUEST_PARADOXICAL        28 // Defeat yourself!
+#define QUEST_CATCH_GENIES        29 // Catch the genies
+#define QUEST_COUNT     (QUEST_CATCH_GENIES + 1)
 
 #define SUB_QUEST_DEFEAT_GENIES 0
 
@@ -56,9 +56,13 @@
 #define SUB_QUEST_DEFEAT_YOUNGSTER 4
 #define SUB_QUEST_DEFEAT_LEAF 5
 
+#define SUB_QUEST_CATCH_TORNADUS 6
+#define SUB_QUEST_CATCH_THUNDURUS 7
+
 #define QUEST_INVESTIGATE_PROSPERITY_SUB_COUNT 1
 #define QUEST_FIND_THE_CULPRIT_SUB_COUNT 5
-#define SUB_QUEST_COUNT (QUEST_INVESTIGATE_PROSPERITY_SUB_COUNT + QUEST_FIND_THE_CULPRIT_SUB_COUNT)
+#define QUEST_CATCH_GENIES_SUB_COUNT 2
+#define SUB_QUEST_COUNT (QUEST_INVESTIGATE_PROSPERITY_SUB_COUNT + QUEST_FIND_THE_CULPRIT_SUB_COUNT + QUEST_CATCH_GENIES_SUB_COUNT)
 
 #define QUEST_ARRAY_COUNT (SUB_QUEST_COUNT > QUEST_COUNT ? SUB_QUEST_COUNT : QUEST_COUNT)
 #endif // GUARD_CONSTANTS_QUESTS_H
