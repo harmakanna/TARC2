@@ -410,7 +410,8 @@
 #define OBJ_EVENT_PAL_TAG_LASS_NEW                0x1133
 #define OBJ_EVENT_PAL_TAG_YOUNGSTER_NEW           0x1134
 #define OBJ_EVENT_PAL_TAG_BREEDER                 0x1135
-#define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1136
+#define OBJ_EVENT_PAL_TAG_HEX_MANIAC              0x1136
+#define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1137
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

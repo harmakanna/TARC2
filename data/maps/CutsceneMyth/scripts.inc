@@ -119,8 +119,9 @@ CutsceneMyth_Event::
 	playse SE_EXIT
 	delay 56
 	message Myth_Text_Pokemon
-	delay 40
+	delay 10
 	playmoncry SPECIES_KECLEON, CRY_MODE_NORMAL
+	delay 30
 	applymovement LOCALID_MYTH_KECLEON, Myth_Movement_KecleonDisappears
 	delay 60
 	playmoncry SPECIES_BUNNELBY, CRY_MODE_NORMAL

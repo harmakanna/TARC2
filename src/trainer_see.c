@@ -999,11 +999,6 @@ u8 FldEff_QuestIcon(void)
     return 0;
 }
 
-void SpawnQuestIcons(void)
-{
-    RefreshQuestIcons();
-}
-
 void SpriteCB_QuestIcon(struct Sprite *sprite)
 {
     u8 objEventId;

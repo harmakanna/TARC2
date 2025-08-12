@@ -267,6 +267,8 @@ PastTown_EventScript_ScientistPregame::
 	faceplayer
 	msgbox PastTown_Text_ScientistPregame, MSGBOX_DEFAULT
 	closemessage
+	applymovement LOCALID_PAST_SCIENTIST, Common_Movement_FaceDown
+	waitmovement 0
 	release
 	end
 
@@ -278,15 +280,17 @@ PastTown_EventScript_ScientistQuestInitiate::
 	playse SE_PIN
 	applymovement LOCALID_PAST_SCIENTIST, Common_Movement_FaceRightExclamationMark
 	waitmovement 0
+	delay 60
 	speak LOCALID_PAST_SCIENTIST, VAR_0x8005, Name_Past_Scientist, PastTown_Text_ScientistAhYouPassedByHere
 	closemessage
 	fadescreen FADE_TO_BLACK
 	delay 100
-	fadescreen FADE_FROM_WHITE
+	fadescreen FADE_FROM_BLACK
+	delay 60
 	speakername Name_Looker
 	msgbox Looker_Text_Asleep, MSGBOX_DEFAULT
 	speak LOCALID_PAST_SCIENTIST, VAR_0x8005, Name_Past_Scientist, PastTown_Text_ScientistAndThatsWhy
-	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_OfCourse
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PastTown_Text_LookerHuhWha
 	speak LOCALID_PAST_SCIENTIST, VAR_0x8005, Name_Past_Scientist, PastTown_Text_ScientistWhatIAmAsking
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_ConsiderItDone
 	speak LOCALID_PAST_SCIENTIST, VAR_0x8005, Name_Past_Scientist, PastTown_Text_ScientistWonderful
@@ -294,6 +298,7 @@ PastTown_EventScript_ScientistQuestInitiate::
 	startquest QUEST_EUREKA
 	closemessage
 	applymovement LOCALID_PAST_SCIENTIST, Common_Movement_FaceDown
+	waitmovement 0
 	release
 	end
 
@@ -305,6 +310,7 @@ PastTown_EventScript_ScientistQuestActive::
 	speak LOCALID_PAST_SCIENTIST, VAR_0x8005, Name_Past_Scientist, PastTown_Text_ScientistUnfortunate
 	closemessage
 	applymovement LOCALID_PAST_SCIENTIST, Common_Movement_FaceDown
+	waitmovement 0
 	release
 	end
 
@@ -312,8 +318,9 @@ PastTown_EventScript_ScientistQuestReward::
 	playse SE_PIN
 	applymovement LOCALID_PAST_SCIENTIST, Common_Movement_ExclamationMark
 	waitmovement 0
+	delay 60
 	speak LOCALID_PAST_SCIENTIST, VAR_0x8005, Name_Past_Scientist, PastTown_Text_ScientistGiveToMe
-	speak LOCALID_PLAYER, VAR_0x8005, Name_Looker, Looker_Text_HereYouGo
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_HereYouGo
 	removeitem ITEM_CELL_BATTERY, 1
 	speakername NULL
 	msgbox PastTown_Text_LookerHandedOverTheBattery, MSGBOX_DEFAULT
@@ -325,6 +332,7 @@ PastTown_EventScript_ScientistQuestReward::
 
 PastTown_EventScript_ScientistQuestFinish::
 	applymovement LOCALID_PAST_SCIENTIST, Common_Movement_FaceDown
+	waitmovement 0
 	completequest QUEST_EUREKA
 	closemessage
 	release
@@ -335,7 +343,8 @@ PastTown_EventScript_ScientistQuestComplete::
 	speakername Name_Past_Scientist
 	msgbox PastTown_Text_ScientistComplete, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_PAST_SCIENTIST, Common_Movement_FaceUp
+	applymovement LOCALID_PAST_SCIENTIST, Common_Movement_FaceDown
+	waitmovement 0
 	release
 	end
 
@@ -362,6 +371,12 @@ PastTown_Text_ScientistAndThatsWhy:
 	.string "…And that's why I come to you now,\n"
 	.string "sir…\p"
 	.string "Hey, have you been listening?$"
+
+PastTown_Text_LookerHuhWha:
+	.string "… … …\n"
+	.string "… … …\p"
+	.string "Huh? Wha…?\p"
+	.string "Oh, of course I was.$"
 
 PastTown_Text_ScientistWhatIAmAsking:
 	.string "Ah, fantastic.\p"

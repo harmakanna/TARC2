@@ -71,7 +71,7 @@ ShrineOfProsperityPresent_EventScript_DefeatedGenies::
 	speakername Name_Tornadus
 	msgbox ShrineOfProsperityPresent_Text_TornadusDefeat, MSGBOX_DEFAULT
 	speakername Name_Thundurus
-	msgbox ShrineOfProsperityPresent_Text_TornadusDefeat, MSGBOX_DEFAULT
+	msgbox ShrineOfProsperityPresent_Text_ThundurusDefeat, MSGBOX_DEFAULT
 	closemessage
 	call_if_eq VAR_FACING, DIR_NORTH, ShrineOfProsperityPresent_EventScript_GeniesEscapeN
 	call_if_eq VAR_FACING, DIR_EAST, ShrineOfProsperityPresent_EventScript_GeniesEscapeE

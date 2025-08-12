@@ -17,7 +17,7 @@
 // quest number defines
 #define QUEST_NONE  0xFFFF
 #define QUEST_SAVE_ESTELLA          0 //Find Estella in the past - Done
-#define QUEST_INVESTIGATE_PROSPERITY          11 // Investigate the abnormality at the Shrine of Prosperity - Done
+#define QUEST_INVESTIGATE_PROSPERITY          1 // Investigate the abnormality at the Shrine of Prosperity - Done
 #define QUEST_INTERROGATE_MATT          2 // Defeat Team Aqua - Done
 #define QUEST_DEFEAT_PHOEBE          3 // Defeat Phoebe - Done
 #define QUEST_FIND_THE_CULPRIT          4 // Defeat the correct gym challenger

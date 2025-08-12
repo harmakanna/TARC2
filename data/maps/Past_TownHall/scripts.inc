@@ -220,11 +220,11 @@ Past_TownHall_Text_AnabelCamillaToldMe:
 	.string "Kinda crazy, right?\n"
 	.string "There's more though.\p"
 	.string "Once you're feeling all rested up,\n"
-	.string "Come see me at the east forest\l"
+	.string "come see me at the east forest\l"
 	.string "shrine, the Shrine of Prosperity.\p"
 	.string "It seems we'll learn more about why\n"
 	.string "Porta Bella is out of whack from the\l"
-	.string "village orator there.$"
+	.string "village elder there.$"
 
 Past_TownHall_Text_LookerSure:
 	.string "Sure…\p"

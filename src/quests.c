@@ -2628,16 +2628,18 @@ void HandleQuestIconForSingleObjectEvent(struct ObjectEvent *objectEvent, u32 ob
 		|| IsQuestActiveState(questId))
 		|| FlagGet(FLAG_SYS_DISAPPEAR_QUESTS))
 	{
-		RemoveQuestIconFieldEffect(objectEvent);
+		//if (TryGetObjectEventIdByLocalIdAndMap(sprite->sLocalId, sprite->sMapNum, sprite->sMapGroup, &objEventId))
+        //	StopQuestFieldEffect(sprite, objEventId);
+		ResetQuestIconOnObject(objectEvent);
 		return;
 	}
 
 	// Already has icon? Do nothing
-	if (ObjectEventAlreadyHasQuest(objectEvent->hasQuestIcon))
+	if (objectEvent->hasQuestIcon == TRUE)//(ObjectEventAlreadyHasQuest(objectEvent->hasQuestIcon))
         return;
 
 	// Add icon to NPCs who have quests
-	if (!objectEvent->hasQuestIcon && !FieldEffectActiveListContains(FLDEFF_QUEST_ICON) && !FlagGet(FLAG_SYS_DISAPPEAR_QUESTS))
+	if (!objectEvent->hasQuestIcon /*&& !FieldEffectActiveListContains(FLDEFF_QUEST_ICON)*/ && !FlagGet(FLAG_SYS_DISAPPEAR_QUESTS))
 		SpawnQuestIconForObject(objectEvent, objectEventId);
 
 }
@@ -2648,9 +2650,12 @@ static void RemoveQuestIconFieldEffect(struct ObjectEvent *objectEvent)
 	
 	if (FieldEffectActiveListContains(FLDEFF_QUEST_ICON))
 	{
-		u8 spriteId = objectEvent->spriteId;
-		struct Sprite *sprite = &gSprites[spriteId];
-		FieldEffectStop(sprite, FLDEFF_QUEST_ICON);
+		
+		// u8 spriteId = objectEvent->spriteId;
+		// struct Sprite *sprite = &gSprites[spriteId];
+		// FieldEffectStop(sprite, FLDEFF_QUEST_ICON);
+    	// // DestroySprite(sprite);
+    	// // FieldEffectActiveListRemove(FLDEFF_QUEST_ICON);
 	}
 }
 

@@ -135,7 +135,7 @@ Present_CityHall_1F_EventScript_PostStormDiscussion::
 	setfollowernpc LOCALID_CITYHALL_1F_ANABEL, FNPC_NONE, Present_CityHall_1F_EventScript_AnabelFollower
 	special RemoveCameraObject
 	delay 40
-	startquest QUEST_INTERROGATE_MATT
+	startquest QUEST_SAVE_ESTELLA
 	releaseall
 	end
 

@@ -93,28 +93,28 @@ PresentTown_EventScript_LookerThinkingScenes::
 	end
 
 PresentTown_EventScript_LookerThinkingAqua::
-	lockall
+	lock
 	playbgm MUS_PL_LOOKER, FALSE
 	addvar VAR_MAIN_QUEST_STATE, 1
 	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, PresentTown_Text_LookerThinkingAqua
 	return
 
 PresentTown_EventScript_LookerThinkingGym::
-	lockall
+	lock
 	playbgm MUS_PL_LOOKER, FALSE
 	addvar VAR_MAIN_QUEST_STATE, 1
 	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, PresentTown_Text_LookerThinkingGym
 	return
 
 PresentTown_EventScript_LookerThinkingEstella::
-	lockall
+	lock
 	playbgm MUS_PL_LOOKER, FALSE
 	addvar VAR_MAIN_QUEST_STATE, 1
 	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, PresentTown_Text_LookerThinkingEstella
 	return
 	
 PresentTown_EventScript_LookerThinkingRanger::
-	lockall
+	lock
 	playbgm MUS_PL_LOOKER, FALSE
 	addvar VAR_MAIN_QUEST_STATE, 1
 	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, PresentTown_Text_LookerThinkingRanger
@@ -124,8 +124,10 @@ PresentTown_EventScript_LookerThinkingIGotIt::
 	closemessage
 	playse SE_PIN
 	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-	delay 48
-	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerIGotIt
+	waitmovement 0
+	delay 60
+	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, PresentTown_Text_LookerIGotIt
+	startquest QUEST_FIND_THE_CULPRIT
 	return
 
 PresentTown_EventScript_EndLookerThinking::
@@ -139,7 +141,7 @@ PresentTown_EventScript_EndLookerThinking::
 	clearflag FLAG_PLAY_LOOKER_ESTELLA_ON_TRANSITION
 	clearflag FLAG_PLAY_LOOKER_RANGER_ON_TRANSITION
 	setvar VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 0
-	releaseall
+	release
 	end
 
 PresentTown_EventScript_PlayNoMusic:
@@ -214,9 +216,9 @@ PresentTown_EventScript_StartStorm::
 	speak LOCALID_PRESENTTOWN_ANABEL, DIR_WEST, Name_Anabel, PresentTown_Text_AnabelWhatTheHeck
 	speak LOCALID_PLAYER, DIR_EAST, Name_Looker, PresentTown_Text_LookerThereWasOneThing
 	closemessage
-	setobjectxyperm LOCALID_PRESENTTOWN_WILDMON1, 23, 27
-	setobjectxyperm LOCALID_PRESENTTOWN_WILDMON2, 23, 28
-	setobjectxyperm LOCALID_PRESENTTOWN_WILDMON3, 22, 27
+	setobjectxyperm LOCALID_PRESENTTOWN_WILDMON1, 24, 27
+	setobjectxyperm LOCALID_PRESENTTOWN_WILDMON2, 24, 28
+	setobjectxyperm LOCALID_PRESENTTOWN_WILDMON3, 23, 27
 	addobject LOCALID_PRESENTTOWN_WILDMON1
 	addobject LOCALID_PRESENTTOWN_WILDMON2
 	addobject LOCALID_PRESENTTOWN_WILDMON3

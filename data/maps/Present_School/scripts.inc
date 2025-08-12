@@ -24,15 +24,30 @@ PresentSchool_EventScript_LeftGameboyKid::
 PresentSchool_EventScript_LeftGameboyKidGiveBattery::
 	call Script_GetNPCFacingDirection
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_INeedYourHelp
-	goto_if_unset FLAG_ASKED_FOR_BATTERY, PresentSchool_EventScript_LeftGameboyKidIGuess
+	call_if_unset FLAG_ASKED_FOR_BATTERY, PresentSchool_EventScript_LeftGameboyKidIGuess
 	checkitem ITEM_CELL_BATTERY
 	goto_if_eq VAR_RESULT, TRUE, PresentSchool_EventScript_LeftGameboyKidNoWay
-	call_if_set FLAG_ASKED_FOR_SECOND_BATTERY, PresentSchool_EventScript_LeftGameboyKidUghFine
-	call_if_unset FLAG_ASKED_FOR_SECOND_BATTERY, PresentSchool_EventScript_LeftGameboyKidLostBattery
+	goto_if_set FLAG_ASKED_FOR_BATTERY, PresentSchool_EventScript_LeftGameboyKidSecondBattery
+	speakername NULL
 	giveitem ITEM_CELL_BATTERY, 1
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	call_if_set FLAG_ASKED_FOR_BATTERY, PresentSchool_EventScript_LeftGameboyKidGaveSecondBattery
 	setflag FLAG_ASKED_FOR_BATTERY
+	applymovement LOCALID_LEFT_GAMEBOY_KID, Common_Movement_FaceRight
+	waitmovement 0
+	closemessage
+	release
+	end
+
+PresentSchool_EventScript_LeftGameboyKidSecondBattery::
+	call_if_set FLAG_ASKED_FOR_SECOND_BATTERY, PresentSchool_EventScript_LeftGameboyKidUghFine
+	call_if_unset FLAG_ASKED_FOR_SECOND_BATTERY, PresentSchool_EventScript_LeftGameboyKidLostBattery
+	speakername NULL
+	giveitem ITEM_CELL_BATTERY, 1
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	call_if_set FLAG_ASKED_FOR_BATTERY, PresentSchool_EventScript_LeftGameboyKidGaveSecondBattery
+	applymovement LOCALID_LEFT_GAMEBOY_KID, Common_Movement_FaceRight
+	waitmovement 0
 	closemessage
 	release
 	end
@@ -48,10 +63,13 @@ PresentSchool_EventScript_LeftGameboyKidGiveBatteryPostQuest::
 	goto_if_eq VAR_RESULT, TRUE, PresentSchool_EventScript_LeftGameboyKidNoWay
 	call_if_set FLAG_ASKED_FOR_SECOND_BATTERY, PresentSchool_EventScript_LeftGameboyKidUghFine
 	call_if_unset FLAG_ASKED_FOR_SECOND_BATTERY, PresentSchool_EventScript_LeftGameboyKidLostBattery
+	speakername NULL
 	giveitem ITEM_CELL_BATTERY, 1
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_ASKED_FOR_SECOND_BATTERY
 	closemessage
+	applymovement LOCALID_LEFT_GAMEBOY_KID, Common_Movement_FaceRight
+	waitmovement 0
 	release
 	end
 
@@ -90,6 +108,8 @@ PresentSchool_EventScript_RightGameboyKidBattery::
 	speak LOCALID_RIGHT_GAMEBOY_KID, VAR_0x8005, Name_Right_Gameboy_Kid, PresentSchool_Text_RightGameboyKidCantHelp
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_Dots
 	closemessage
+	applymovement LOCALID_RIGHT_GAMEBOY_KID, Common_Movement_FaceLeft
+	waitmovement 0
 	release
 	end
 
