@@ -214,9 +214,9 @@ PresentTown_EventScript_StartStorm::
 	speak LOCALID_PRESENTTOWN_ANABEL, DIR_WEST, Name_Anabel, PresentTown_Text_AnabelWhatTheHeck
 	speak LOCALID_PLAYER, DIR_EAST, Name_Looker, PresentTown_Text_LookerThereWasOneThing
 	closemessage
-	setobjectxyperm LOCALID_PRESENTTOWN_WILDMON1, 20, 27
-	setobjectxyperm LOCALID_PRESENTTOWN_WILDMON2, 20, 28
-	setobjectxyperm LOCALID_PRESENTTOWN_WILDMON3, 19, 27
+	setobjectxyperm LOCALID_PRESENTTOWN_WILDMON1, 23, 27
+	setobjectxyperm LOCALID_PRESENTTOWN_WILDMON2, 23, 28
+	setobjectxyperm LOCALID_PRESENTTOWN_WILDMON3, 22, 27
 	addobject LOCALID_PRESENTTOWN_WILDMON1
 	addobject LOCALID_PRESENTTOWN_WILDMON2
 	addobject LOCALID_PRESENTTOWN_WILDMON3
