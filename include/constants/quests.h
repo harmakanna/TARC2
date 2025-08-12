@@ -16,13 +16,13 @@
 
 // quest number defines
 #define QUEST_NONE  0xFFFF
-#define QUEST_SAVE_ESTELLA          0 //Find Estella in the past
-#define QUEST_INVESTIGATE_PROSPERITY          11 // Investigate the abnormality at the Shrine of Prosperity
-#define QUEST_INTERROGATE_MATT          2 // Defeat Team Aqua
-#define QUEST_DEFEAT_PHOEBE          3 // Defeat Phoebe
+#define QUEST_SAVE_ESTELLA          0 //Find Estella in the past - Done
+#define QUEST_INVESTIGATE_PROSPERITY          11 // Investigate the abnormality at the Shrine of Prosperity - Done
+#define QUEST_INTERROGATE_MATT          2 // Defeat Team Aqua - Done
+#define QUEST_DEFEAT_PHOEBE          3 // Defeat Phoebe - Done
 #define QUEST_FIND_THE_CULPRIT          4 // Defeat the correct gym challenger
 #define QUEST_BONJOUR_EMMA          5 // Speak French to Emma
-#define QUEST_HELP_FISHERMAN          6 // Find the best fishing spot in town
+#define QUEST_HELP_FISHERMAN          6 // Find the best fishing spot in town - Done
 #define QUEST_EUREKA          7 // Find a battery to harness Mareep's power
 #define QUEST_GET_INTO_THE_GROOVE          8 // Find the idols scattered after the storm
 #define QUEST_FARMLAND_INVASION_1         9 // Clear out the first wave of pest Pokemon

@@ -16,6 +16,9 @@ Looker_Text_Understood:
 Looker_Text_IdBeHappyToHelp:
     .string "I'd be happy to help.$"
 
+Looker_Text_ConsiderItDone:
+    .string "Consider it done.$"
+    
 Looker_Text_GladICouldHelp:
     .string "Glad I could help.$"
 
@@ -31,6 +34,9 @@ Looker_Text_AlrightFine:
 Looker_Text_SoHeresTheThing:
     .string "So here's the thing…$"
     
+Looker_Text_INeedYourHelp:
+    .string "I need your help.$"
+
 Looker_Text_Hmm:
     .string "Hmm…$"
 
@@ -52,6 +58,21 @@ Looker_Text_ThankYouForYourHelp:
 
 Looker_Text_ThankYouForTheIntel:
     .string "Thank you for the intel.$"
+
+Looker_Text_HereYouGo:
+    .string "Here you go.$"
+
+Looker_Text_NotYet:
+    .string "Not yet.$"
+
+Looker_Text_Unlucky:
+    .string "Unlucky.$"
+
+Looker_Text_ThankYou:
+    .string "Thank you.$"
+    
+Looker_Text_Asleep:
+    .string "Zzz…$"
 
 Looker_Text_Dots:
     .string "…$"

@@ -79,5 +79,14 @@ Name_Past_Fisherman:
 Name_Present_Fisherman:
     .string "Trevor$"
 
+Name_Past_Scientist:
+    .string "Bartoz$"
+
+Name_Left_Gameboy_Kid:
+    .string "Gameboy Kid L$"
+
+Name_Right_Gameboy_Kid:
+    .string "Gameboy Kid R$"
+
 Name_Magikarp_Man:
     .string "Shady Man$"

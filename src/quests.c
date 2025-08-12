@@ -294,7 +294,7 @@ static const struct SubQuest sSubQuestsFindTheCulprit[QUEST_FIND_THE_CULPRIT_SUB
 	      gText_SubQuestFindTheCulprit_Name3,
 	      gText_SubQuestFindTheCulprit_Desc3,
 	      gText_SubQuestFindTheCulprit_Map3,
-	      OBJ_EVENT_GFX_MAN_3,
+	      OBJ_EVENT_GFX_BW_ACE_TRAINER_F,
 	      OBJECT,
 	      sText_Found
 	),
@@ -303,7 +303,7 @@ static const struct SubQuest sSubQuestsFindTheCulprit[QUEST_FIND_THE_CULPRIT_SUB
 	      gText_SubQuestFindTheCulprit_Name4,
 	      gText_SubQuestFindTheCulprit_Desc4,
 	      gText_SubQuestFindTheCulprit_Map4,
-	      OBJ_EVENT_GFX_YOUNGSTER,
+	      OBJ_EVENT_GFX_YOUNGSTER_NEW,
 	      OBJECT,
 	      sText_Found
 	),
@@ -375,7 +375,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestDesc_3,
 	      gText_SideQuestDoneDesc_3,
 	      gText_SideQuestMap3,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_AQUA_ADMIN_M,
 	      OBJECT,
 	      NULL,
 	      0
@@ -385,7 +385,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestDesc_4,
 	      gText_SideQuestDoneDesc_4,
 	      gText_SideQuestMap4,
-	      OBJ_EVENT_GFX_MAN_2,
+	      OBJ_EVENT_GFX_DEVON_EMPLOYEE,
 	      OBJECT,
 	      NULL,
 	      0
@@ -415,7 +415,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestDesc_7,
 	      gText_SideQuestDoneDesc_7,
 	      gText_SideQuestMap7,
-	      OBJ_EVENT_GFX_FISHERMAN,
+	      OBJ_EVENT_GFX_PAST_FISHERMAN,
 	      OBJECT,
 	      NULL,
 	      0
@@ -425,7 +425,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestDesc_8,
 	      gText_SideQuestDoneDesc_8,
 	      gText_SideQuestMap8,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_MAN_2,
 	      OBJECT,
 	      NULL,
 	      0

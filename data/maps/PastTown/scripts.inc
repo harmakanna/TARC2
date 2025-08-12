@@ -251,6 +251,170 @@ PastTown_EventScript_FishermanQuestComplete::
 	release
 	end
 
+PastTown_EventScript_Scientist::
+	lock
+	goto_if_unset FLAG_SYS_MAIN_GAME_START, PastTown_EventScript_ScientistPregame
+	call Script_GetNPCFacingDirection
+	returnqueststate QUEST_EUREKA
+	switch VAR_RESULT
+	case 1, PastTown_EventScript_ScientistQuestInitiate
+	case 2, PastTown_EventScript_ScientistQuestActive
+	case 4, PastTown_EventScript_ScientistQuestComplete
+	releaseall
+	end
+
+PastTown_EventScript_ScientistPregame::
+	faceplayer
+	msgbox PastTown_Text_ScientistPregame, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+PastTown_EventScript_ScientistQuestInitiate::
+	speakername Name_Past_Scientist
+	msgbox PastTown_Text_ScientistThisWontDo, MSGBOX_DEFAULT
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_WhatSeemsToBeTheProblem
+	closemessage
+	playse SE_PIN
+	applymovement LOCALID_PAST_SCIENTIST, Common_Movement_FaceRightExclamationMark
+	waitmovement 0
+	speak LOCALID_PAST_SCIENTIST, VAR_0x8005, Name_Past_Scientist, PastTown_Text_ScientistAhYouPassedByHere
+	closemessage
+	fadescreen FADE_TO_BLACK
+	delay 100
+	fadescreen FADE_FROM_WHITE
+	speakername Name_Looker
+	msgbox Looker_Text_Asleep, MSGBOX_DEFAULT
+	speak LOCALID_PAST_SCIENTIST, VAR_0x8005, Name_Past_Scientist, PastTown_Text_ScientistAndThatsWhy
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_OfCourse
+	speak LOCALID_PAST_SCIENTIST, VAR_0x8005, Name_Past_Scientist, PastTown_Text_ScientistWhatIAmAsking
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_ConsiderItDone
+	speak LOCALID_PAST_SCIENTIST, VAR_0x8005, Name_Past_Scientist, PastTown_Text_ScientistWonderful
+	closemessage
+	startquest QUEST_EUREKA
+	closemessage
+	applymovement LOCALID_PAST_SCIENTIST, Common_Movement_FaceDown
+	release
+	end
+
+PastTown_EventScript_ScientistQuestActive::
+	speak LOCALID_PAST_SCIENTIST, VAR_0x8005, Name_Past_Scientist, PastTown_Text_ScientistHaveYouFound
+	checkitem ITEM_CELL_BATTERY
+	goto_if_eq VAR_RESULT, TRUE, PastTown_EventScript_ScientistQuestReward
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_NotYet
+	speak LOCALID_PAST_SCIENTIST, VAR_0x8005, Name_Past_Scientist, PastTown_Text_ScientistUnfortunate
+	closemessage
+	applymovement LOCALID_PAST_SCIENTIST, Common_Movement_FaceDown
+	release
+	end
+
+PastTown_EventScript_ScientistQuestReward::
+	playse SE_PIN
+	applymovement LOCALID_PAST_SCIENTIST, Common_Movement_ExclamationMark
+	waitmovement 0
+	speak LOCALID_PAST_SCIENTIST, VAR_0x8005, Name_Past_Scientist, PastTown_Text_ScientistGiveToMe
+	speak LOCALID_PLAYER, VAR_0x8005, Name_Looker, Looker_Text_HereYouGo
+	removeitem ITEM_CELL_BATTERY, 1
+	speakername NULL
+	msgbox PastTown_Text_LookerHandedOverTheBattery, MSGBOX_DEFAULT
+	speak LOCALID_PAST_SCIENTIST, VAR_0x8005, Name_Past_Scientist, PastTown_Text_ScientistReward
+	multichoice 0, 6, MULTI_SCIENTIST_GIVEMON, TRUE
+	goto_if_eq VAR_RESULT, 0, PastTown_EventScript_ScientistGiveGalvantula
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_ScientistGiveProbopass
+	end
+
+PastTown_EventScript_ScientistQuestFinish::
+	applymovement LOCALID_PAST_SCIENTIST, Common_Movement_FaceDown
+	completequest QUEST_EUREKA
+	closemessage
+	release
+	end
+
+PastTown_EventScript_ScientistQuestComplete::
+	faceplayer
+	speakername Name_Past_Scientist
+	msgbox PastTown_Text_ScientistComplete, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PAST_SCIENTIST, Common_Movement_FaceUp
+	release
+	end
+
+PastTown_Text_ScientistThisWontDo:
+	.string "No… No…\p"
+	.string "This won't do…\n"
+	.string "This won't do…$"
+
+PastTown_Text_ScientistAhYouPassedByHere:
+	.string "Ah, you're the fellow who passed\n"
+	.string "out at the entrance of town.\p"
+	.string "My name is Sir Bartoz II.\p"
+	.string "I hope you're well. Perhaps you might\n"
+	.string "help with my conundrum?\p"
+	.string "You see, we had been herding Wooloo in\n"
+	.string "this community for quite a while.\p"
+	.string "Rather fine sheep, I would say.\p"
+	.string "However, some weeks ago, a shephard\n"
+	.string "introduced us to a new kind of sheep -\l"
+	.string "one she called Mareep.\p"
+	.string "Now, this Mareep is rather peculiar…$"
+
+PastTown_Text_ScientistAndThatsWhy:
+	.string "…And that's why I come to you now,\n"
+	.string "sir…\p"
+	.string "Hey, have you been listening?$"
+
+PastTown_Text_ScientistWhatIAmAsking:
+	.string "Ah, fantastic.\p"
+	.string "Following my discovery that static\n"
+	.string "is generated from rubbing together\l"
+	.string "Mareep wool, I wish to store its\l"
+	.string "power and use it to develop the city\l"
+	.string "to the next level.\p"
+	.string "Could you please find me such an\n"
+	.string "item?$"
+
+PastTown_Text_ScientistWonderful:
+	.string "Wonderful! I look forward to seeing\n"
+	.string "what you bring to me!$"
+
+PastTown_Text_ScientistHaveYouFound:
+	.string "Sir Looker, have you found the device\n"
+	.string "I was asking for?\p"
+	.string "I need some sort of item which can\n"
+	.string "store a Mareep's static charge…$"
+
+PastTown_Text_ScientistUnfortunate:
+	.string "Unfortunate. Please let me know once\n"
+	.string "you have received such an item.$"
+
+PastTown_Text_ScientistGiveToMe:
+	.string "Yes! That looks like the item!\p"
+	.string "Please, give it to me!$"
+
+PastTown_Text_LookerHandedOverTheBattery:
+	.string "Looker handed the battery over to\n"
+	.string "Bartoz.$"
+
+PastTown_Text_ScientistReward:
+	.string "Eureka! This is precisely the item\n"
+	.string "I was looking for!\p"
+	.string "What did you call this contraption?\n"
+	.string "A battery?\p"
+	.string "Incredible!\p"
+	.string "Now we can use Mareep's wool to power\n"
+	.string "our mills!\p"
+	.string "No more need for all this wind energy!\p"
+	.string "I had researched these other two\n"
+	.string "Pokémon to no success prior.\p"
+	.string "Perhaps one might assist you on your\n"
+	.string "quest to save the future?\p"
+	.string "Which would you prefer?$"
+	
+PastTown_Text_ScientistComplete:
+	.string "This charged battery holds the key\n"
+	.string "to the development of this city!\p"
+	.string "Thank you, Sir Looker!$"
+
 PastTown_Text_LassHeyNoFair:
 	.string "What sorcery was that!?\p"
 	.string "I have never seen a battler with\n"
@@ -348,3 +512,10 @@ PastTown_Text_FishermanComplete:
 PastTown_Text_FishermanPregame:
 	.string "Grrr…\p"
 	.string "Nothing's biting…$"
+
+PastTown_Text_ScientistPregame:
+	.string "Huh? You seem to be new here…\p"
+	.string "Are you, perchance, another traveler\n"
+	.string "from the…\p"
+	.string "No… Impossible…\p"
+	.string "We never have this many at once…$"
