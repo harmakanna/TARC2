@@ -67,7 +67,7 @@ PastTown_Port_ManiacTrigger2::
 	waitmessage
 	delay 80
 	closemessage
-	applymovement LOCALID_PASTTOWN_PORT_MANIAC, PastTown_Port_Movement_PokemaniacToPlayer1
+	applymovement LOCALID_PASTTOWN_PORT_MANIAC, PastTown_Port_Movement_PokemaniacToPlayer2
 	waitmovement 0
 	setobjectxyperm LOCALID_PASTTOWN_PORT_MANIAC, 19, 19
 	goto PastTown_Port_EventScript_TriggerPokemaniacFight
@@ -83,7 +83,7 @@ PastTown_Port_ManiacTrigger3::
 	waitmessage
 	delay 80
 	closemessage
-	applymovement LOCALID_PASTTOWN_PORT_MANIAC, PastTown_Port_Movement_PokemaniacToPlayer1
+	applymovement LOCALID_PASTTOWN_PORT_MANIAC, PastTown_Port_Movement_PokemaniacToPlayer3
 	waitmovement 0
 	setobjectxyperm LOCALID_PASTTOWN_PORT_MANIAC, 20, 19
 	goto PastTown_Port_EventScript_TriggerPokemaniacFight
@@ -99,7 +99,7 @@ PastTown_Port_ManiacTrigger4::
 	waitmessage
 	delay 80
 	closemessage
-	applymovement LOCALID_PASTTOWN_PORT_MANIAC, PastTown_Port_Movement_PokemaniacToPlayer1
+	applymovement LOCALID_PASTTOWN_PORT_MANIAC, PastTown_Port_Movement_PokemaniacToPlayer4
 	waitmovement 0
 	setobjectxyperm LOCALID_PASTTOWN_PORT_MANIAC, 21, 19
 	goto PastTown_Port_EventScript_TriggerPokemaniacFight
@@ -136,6 +136,7 @@ PastTown_Port_EventScript_TriggerPokemaniacFight::
 	speakername Name_Past_Maniac
 	msgbox PastTown_Port_Text_ManiacOhFine, MSGBOX_DEFAULT
 	closemessage
+	setvar VAR_MANIAC_TRIGGER, 2
 	releaseall
 	end
 
@@ -294,10 +295,9 @@ PastTown_Port_Movemenet_PokemaniacToWing4:
 
 
 PastTown_Port_EventScript_FinishFossilSelection::
+	delay 40
 	speakername Name_Looker
 	msgbox PastTown_Port_Text_LookerFossilRevive, MSGBOX_DEFAULT
-	closemessage
-	delay 60
 	startquest QUEST_FORGOTTEN_TO_TIME
 	closemessage
 	releaseall
@@ -347,8 +347,8 @@ PastTown_Port_Text_ManiacDoNotApproachThoseFossils:
 	.string "I have been waiting months for new\n"
 	.string "fossils to appear on the shores of\l"
 	.string "this river delta bay!\p"
-	.string "I arrived first, so I claim those\n"
-	.string "two fossils, even if I must battle for!$"
+	.string "I arrived first, so I claim those two\n"
+	.string "fossils, even if I must battle for them!$"
 
 PastTown_Port_Text_EverettDefeated:
 	.string "No…\n"
@@ -361,8 +361,8 @@ PastTown_Port_Text_ManiacOhFine:
 
 PastTown_Port_Text_ManiacLookingForFossils:
 	.string "Oh river delta…\p"
-	.string "When will you bestow upon me\n"
-	.string "the gift of a fossil?\p"
+	.string "When will you bestow upon methe gift\n"
+	.string "of a fossil?\p"
 	.string "I have strolled your shores for months\n"
 	.string "with no reward…$"
 
@@ -394,10 +394,10 @@ PastTown_Port_Text_ManiacChoseWingFossil:
 	.string "Truly, it was the better fossil!$"
 
 PastTown_Port_Text_TakeTuskFossil:
-	.string "Looker took the eroded tooth!$"
+	.string "Will you take the eroded tooth?$"
 
 PastTown_Port_Text_TakeWingFossil:
-	.string "Looker took the wing imprint!$"
+	.string "Will you take the wing imprint?$"
 
 PastTown_Port_Text_LeftTuskFossilAlone:
 	.string "Looker left the eroded tooth alone.$"

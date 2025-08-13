@@ -134,7 +134,6 @@ Present_CityHall_1F_EventScript_PostStormDiscussion::
 	setflag FLAG_HIDE_MAP_NAME_POPUP
 	setfollowernpc LOCALID_CITYHALL_1F_ANABEL, FNPC_NONE, Present_CityHall_1F_EventScript_AnabelFollower
 	special RemoveCameraObject
-	delay 40
 	startquest QUEST_SAVE_ESTELLA
 	releaseall
 	end

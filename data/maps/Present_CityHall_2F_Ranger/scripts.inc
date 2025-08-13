@@ -116,7 +116,7 @@ Present_CityHall_2F_Ranger_EventScript_ScientistChoseTusk::
 	closemessage
 	fadescreen FADE_TO_BLACK
 	delay 80
-	fadescreen FADE_TO_WHITE
+	fadescreen FADE_FROM_BLACK
 	delay 10
 	speakername Name_Present_FossilScientist
 	msgbox Present_CityHall_2F_Ranger_Text_FossilScientistIveDoneItTusk, MSGBOX_DEFAULT
@@ -138,7 +138,7 @@ Present_CityHall_2F_Ranger_EventScript_ScientistChoseWing::
 	closemessage
 	fadescreen FADE_TO_BLACK
 	delay 80
-	fadescreen FADE_TO_WHITE
+	fadescreen FADE_FROM_BLACK
 	delay 10
 	speakername Name_Present_FossilScientist
 	msgbox Present_CityHall_2F_Ranger_Text_FossilScientistIveDoneItWing, MSGBOX_DEFAULT
@@ -173,7 +173,7 @@ Present_CityHall_2F_Ranger_Text_FossilScientistIveDoneItTusk:
 	.string "… … …\p"
 	.string "… … …\n"
 	.string "… … …\p"
-	.string "Oh, you can keep the Yanmega.\p"
+	.string "Oh, you can keep the Mamoswine.\p"
 	.string "I'm not a Pokémon trainer, that thing\n"
 	.string "would impale me!$"
 
@@ -193,13 +193,13 @@ Present_CityHall_2F_Ranger_Text_FossilScientistIveDoneItWing:
 
 Present_CityHall_2F_Ranger_Text_ScientistOhATusk:
 	.string "Ooo! Ooo!\p"
-	.string "Is that an eroded tusk you have there?\p"
+	.string "Is that an eroded tusk you have\p"
 	.string "Give it here! Let me show you something\n"
 	.string "that will blow your mind!$"
 
 Present_CityHall_2F_Ranger_Text_ScientistOhAWing:
 	.string "Ooo! Ooo!\p"
-	.string "Is that a wing imprint you have there?\p"
+	.string "Is that a wing imprint you have\p"
 	.string "Give it here! Let me show you something\n"
 	.string "that will blow your mind!$"
 

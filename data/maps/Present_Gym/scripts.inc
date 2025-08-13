@@ -63,7 +63,6 @@ Present_Gym_EventScript_GuyIntroducesQuest::
 	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_Gym_Text_LookerSoSheWantsAChangeOfPace
 	speak LOCALID_GYM_GUY, DIR_SOUTH, Name_Gym_Guy, Present_Gym_Text_GymGuyGreatJustKnow
 	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_Gym_Text_LookerSure
-	closemessage
 	startquest QUEST_DEFEAT_PHOEBE
 	applymovement LOCALID_GYM_GUY, Present_Gym_Movement_GymGuyWalksBackToStartingPosition
 	waitmovement 0

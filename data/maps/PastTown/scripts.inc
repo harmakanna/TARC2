@@ -219,7 +219,6 @@ PastTown_EventScript_FishermanQuestInitiate::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_IdBeHappyToHelp
 	speak LOCALID_FISHERMAN, VAR_0x8005, Name_Past_Fisherman, PastTown_Text_FishermanGreatWhere
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_LetMeThinkAboutThat
-	closemessage
 	startquest QUEST_HELP_FISHERMAN
 	closemessage
 	applymovement LOCALID_FISHERMAN, Common_Movement_FaceUp
@@ -259,7 +258,8 @@ PastTown_EventScript_FishermanQuestComplete::
 	speakername Name_Past_Fisherman
 	msgbox PastTown_Text_FishermanComplete, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_FISHERMAN, Common_Movement_FaceUp
+	applymovement LOCALID_FISHERMAN, Common_Movement_FaceDown
+	waitmovement 0
 	release
 	end
 
@@ -306,7 +306,6 @@ PastTown_EventScript_ScientistQuestInitiate::
 	speak LOCALID_PAST_SCIENTIST, VAR_0x8005, Name_Past_Scientist, PastTown_Text_ScientistWhatIAmAsking
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_ConsiderItDone
 	speak LOCALID_PAST_SCIENTIST, VAR_0x8005, Name_Past_Scientist, PastTown_Text_ScientistWonderful
-	closemessage
 	startquest QUEST_EUREKA
 	closemessage
 	applymovement LOCALID_PAST_SCIENTIST, Common_Movement_FaceDown

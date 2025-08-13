@@ -151,10 +151,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MUDSDALE)",
-      "x": 33,
-      "y": 36,
+      "x": 31,
+      "y": 38,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",

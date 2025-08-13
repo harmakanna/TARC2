@@ -1093,16 +1093,16 @@ PresentTown_Text_FishermanDefeat:
 PresentTown_Text_FishermanPostBattle:
 	.string "Fine, I'll tell…\p"
 	.string "My grandpappy's great-grandpappy Tee\n"
-	.string "passed down to me his knowledge of this\l"
-	.string "phenomenal fishing spot.\p"
+	.string "passed down to me his knowledge of\l"
+	.string "this phenomenal fishing spot.\p"
 	.string "Legend has it that a great Wailord\n"
 	.string "passed away in this bay before the\l"
 	.string "founding of Porta Bella.\p"
 	.string "This brought schools of Pokémon to the\n"
 	.string "mouth of this river, which have been\l"
 	.string "breeding here ever since.\p"
-	.string "When it comes to fishing spots, the mouth\n"
-	.string "of the river just can't be beat!$"
+	.string "When it comes to fishing spots, the\n"
+	.string "mouth of the river just can't be beat!$"
 
 PresentTown_Text_FishermanPostQuest:
 	.string "When it comes to fishing spots, the mouth\n"
