@@ -5,8 +5,15 @@ PastTown_MapScripts::
 	.byte 0
 
 PastTown_OnTransition:
+	questmenu QUEST_MENU_CHECK_COMPLETE, QUEST_HELP_FISHERMAN
+	call_if_eq VAR_RESULT, TRUE, PastTown_EventScript_FishermanPlacement
 	call_if_eq VAR_CUTSCENE_STATE, 9, PastTown_EventScript_LassPlacement
 	end
+
+PastTown_EventScript_FishermanPlacement::
+	setobjectxyperm LOCALID_FISHERMAN, 15, 32
+	setobjectmovementtype LOCALID_FISHERMAN, MOVEMENT_TYPE_FACE_DOWN
+	return
 
 PastTown_EventScript_LassPlacement::
 	setobjectxyperm LOCALID_PASTTOWN_LASS, 46, 9
@@ -236,9 +243,14 @@ PastTown_EventScript_FishermanQuestReward::
 	end
 
 PastTown_EventScript_FishermanQuestFinish::
-	applymovement LOCALID_FISHERMAN, Common_Movement_FaceUp
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_FISHERMAN
+	setobjectxyperm LOCALID_FISHERMAN, 15, 32
+	setobjectmovementtype LOCALID_FISHERMAN, MOVEMENT_TYPE_FACE_DOWN
+	addobject LOCALID_FISHERMAN
+	delay 80
+	fadescreen FADE_FROM_BLACK
 	completequest QUEST_HELP_FISHERMAN
-	closemessage
 	release
 	end
 
@@ -334,7 +346,6 @@ PastTown_EventScript_ScientistQuestFinish::
 	applymovement LOCALID_PAST_SCIENTIST, Common_Movement_FaceDown
 	waitmovement 0
 	completequest QUEST_EUREKA
-	closemessage
 	release
 	end
 
@@ -517,12 +528,12 @@ PastTown_Text_FishermanReward:
 	.string "mouth of the river than the riverbank?\p"
 	.string "Thank you, stranger.\p"
 	.string "Here, take one of these Pokémon.\p"
-	.string "I have no taste for poisonous marine\n"
-	.string "life, anyways.$"
+	.string "This spot yeilds nothing but poisonous\n"
+	.string "marine life…$"
 
 PastTown_Text_FishermanComplete:
-	.string "Thanks for the heads up!\p"
-	.string "Now I need to make a fishing rod…$"
+	.string "Whoa, this fishing spot is incredible!\p"
+	.string "Thank you!$"
 
 PastTown_Text_FishermanPregame:
 	.string "Grrr…\p"

@@ -288,6 +288,22 @@
       "elevation": 0,
       "dest_map": "MAP_PAST_TOWN_HALL",
       "dest_warp_id": "Past_TownHall_Exit_1"
+    },
+    {
+      "warp_id": "PASTTOWN_PORT_ENTRANCE_1",
+      "x": 32,
+      "y": 39,
+      "elevation": 0,
+      "dest_map": "MAP_PAST_TOWN_PORT",
+      "dest_warp_id": "PASTTOWN_PORT_EXIT_1"
+    },
+    {
+      "warp_id": "PASTTOWN_PORT_ENTRANCE_2",
+      "x": 33,
+      "y": 39,
+      "elevation": 0,
+      "dest_map": "MAP_PAST_TOWN_PORT",
+      "dest_warp_id": "PASTTOWN_PORT_EXIT_2"
     }
   ],
   "coord_events": [

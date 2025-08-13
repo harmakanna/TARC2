@@ -310,6 +310,9 @@ const u16 gTrainerPalette_LassNew[] = INCBIN_U16("graphics/trainers/front_pics/l
 const u32 gTrainerFrontPic_YoungsterNew[] = INCBIN_U32("graphics/trainers/front_pics/youngster_new.4bpp.lz");
 const u16 gTrainerPalette_YoungsterNew[] = INCBIN_U16("graphics/trainers/front_pics/youngster_new.gbapal");
 
+const u32 gTrainerFrontPic_Scientist[] = INCBIN_U32("graphics/trainers/front_pics/scientist.4bpp.lz");
+const u16 gTrainerPalette_Scientist[] = INCBIN_U16("graphics/trainers/front_pics/scientist.gbapal");
+
 const u32 gTrainerFrontPic_TornAndThund[] = INCBIN_U32("graphics/trainers/front_pics/torn_and_thund.4bpp.lz");
 const u16 gTrainerPalette_TornAndThund[] = INCBIN_U16("graphics/trainers/front_pics/torn_and_thund.gbapal");
 
@@ -460,6 +463,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_LISIA, gTrainerFrontPic_Lisia, gTrainerPalette_Lisia),
     TRAINER_SPRITE(TRAINER_PIC_LASS_NEW, gTrainerFrontPic_LassNew, gTrainerPalette_LassNew),
     TRAINER_SPRITE(TRAINER_PIC_YOUNGSTER_NEW, gTrainerFrontPic_YoungsterNew, gTrainerPalette_YoungsterNew),
+    TRAINER_SPRITE(TRAINER_PIC_SCIENTIST, gTrainerFrontPic_Scientist, gTrainerPalette_Scientist),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =

@@ -382,6 +382,70 @@ Present_AquaCorpHQ_EventScript_ReceivedHuntailFanfare::
 	bufferspeciesname STR_VAR_1, SPECIES_HUNTAIL
 	return
 
+Present_CityHall_2F_Ranger_EventScript_FossilScientistGiveMamoswine::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MAMOSWINE
+	givemonwithot OT_LOOKER_MAMOSWINE
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_CityHall_2F_Ranger_EventScript_ReceiveMamoswineParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_CityHall_2F_Ranger_EventScript_ReceiveMamoswinePC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+Present_CityHall_2F_Ranger_EventScript_ReceiveMamoswineParty::
+	call Present_CityHall_2F_Ranger_EventScript_ReceivedMamoswineFanfare
+	goto Present_CityHall_2F_Ranger_EventScript_FossilQuestFinish
+	end
+	
+Present_CityHall_2F_Ranger_EventScript_ReceiveMamoswinePC::
+	call Present_CityHall_2F_Ranger_EventScript_ReceivedMamoswineFanfare
+	call Common_EventScript_TransferredToPC
+	goto Present_CityHall_2F_Ranger_EventScript_FossilQuestFinish
+	end
+
+Present_CityHall_2F_Ranger_EventScript_ReceivedMamoswineFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_MAMOSWINE
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox Present_CityHall_2F_Ranger_Text_YouReceivedMamoswine, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_MAMOSWINE
+	return
+
+Present_CityHall_2F_Ranger_EventScript_FossilScientistGiveYanmega::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_YANMEGA
+	givemonwithot OT_LOOKER_YANMEGA
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_CityHall_2F_Ranger_EventScript_ReceiveYanmegaParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_CityHall_2F_Ranger_EventScript_ReceiveYanmegaPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+Present_CityHall_2F_Ranger_EventScript_ReceiveYanmegaParty::
+	call Present_CityHall_2F_Ranger_EventScript_ReceivedYanmegaFanfare
+	goto Present_CityHall_2F_Ranger_EventScript_FossilQuestFinish
+	end
+	
+Present_CityHall_2F_Ranger_EventScript_ReceiveYanmegaPC::
+	call Present_CityHall_2F_Ranger_EventScript_ReceivedYanmegaFanfare
+	call Common_EventScript_TransferredToPC
+	goto Present_CityHall_2F_Ranger_EventScript_FossilQuestFinish
+	end
+
+Present_CityHall_2F_Ranger_EventScript_ReceivedYanmegaFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_YANMEGA
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox Present_CityHall_2F_Ranger_Text_YouReceivedYanmega, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_YANMEGA
+	return
+
+Present_CityHall_2F_Ranger_Text_YouReceivedMamoswine:
+	.string "You revived a Mamoswine!$"
+
+Present_CityHall_2F_Ranger_Text_YouReceivedYanmega:
+	.string "You revived a Yanmega!$"
+
 Present_AquaCorp_Text_YouReceivedGorebyss:
 	.string "Gorb joined your party!$"
 

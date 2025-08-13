@@ -67,8 +67,11 @@ Name_Tornadus:
 Name_Thundurus:
     .string "Thundurus$"
 
-Name_Scientist:
+Name_Present_FossilScientist:
     .string "Scientist$"
+
+Name_Past_Maniac:
+    .string "Everett$"
 
 Name_Lass:
     .string "Marie$"

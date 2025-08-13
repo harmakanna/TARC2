@@ -264,11 +264,11 @@ static const struct InGameOT sIngameOTs[] =
         .isNicknamed = TRUE,
         .nickname = _("Flapster"),
     },
-    [OT_JANE_YANMEGA] =
+    [OT_LOOKER_YANMEGA] =
     {
         .species = SPECIES_YANMEGA,
         .level = 50,
-        .heldItem = ITEM_EARTH_PLATE,
+        .heldItem = ITEM_SKY_PLATE,
         .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
         .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
         .moves = {MOVE_SURF, MOVE_PSYCHIC, MOVE_DRAINING_KISS, MOVE_PROTECT},
@@ -276,18 +276,18 @@ static const struct InGameOT sIngameOTs[] =
         .nature = NATURE_HARDY,
         .abilityNum = 0,
         .gender = MON_FEMALE,
-        .otId = 42784,
-        .otName = _("Jane"),
-        .otGender = FEMALE,
+        .otId = OT_ID_PLAYER_ID,
+        .otName = _("Looker"),
+        .otGender = MALE,
         .isShiny = FALSE,
-        .isNicknamed = TRUE,
-        .nickname = _("Grace"),
+        .isNicknamed = FALSE,
+        .nickname = _(""),
     },
-    [OT_JANE_MAMOSWINE] =
+    [OT_LOOKER_MAMOSWINE] =
     {
         .species = SPECIES_MAMOSWINE,
         .level = 50,
-        .heldItem = ITEM_SKY_PLATE,
+        .heldItem = ITEM_EARTH_PLATE,
         .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
         .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
         .moves = {MOVE_STOMPING_TANTRUM, MOVE_ICICLE_CRASH, MOVE_ROCK_SLIDE, MOVE_PROTECT},
@@ -295,12 +295,12 @@ static const struct InGameOT sIngameOTs[] =
         .nature = NATURE_HARDY,
         .abilityNum = 0,
         .gender = MON_MALE,
-        .otId = 42784,
-        .otName = _("Jane"),
-        .otGender = FEMALE,
+        .otId = OT_ID_PLAYER_ID,
+        .otName = _("Looker"),
+        .otGender = MALE,
         .isShiny = FALSE,
-        .isNicknamed = TRUE,
-        .nickname = _("Hubert"),
+        .isNicknamed = FALSE,
+        .nickname = _(""),
     },
     [OT_MIKEY_DEDENNE] =
     {

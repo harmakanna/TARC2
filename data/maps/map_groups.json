@@ -54,7 +54,8 @@
     "ShrineOfProsperityPast",
     "CutsceneForestPast",
     "CutsceneMyth",
-    "CutsceneTown"
+    "CutsceneTown",
+    "PastTown_Port"
   ],
   "gMapGroup_IndoorLookerPresent": [
     "Present_School",

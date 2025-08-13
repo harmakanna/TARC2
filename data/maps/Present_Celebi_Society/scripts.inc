@@ -34,7 +34,6 @@ Present_CelebiSociety_PostSaveEstella::
 	applymovement LOCALID_CELEBISOCIETY_GRANDMA, Present_CelebiSociety_Movement_GrandmaWalkToChair
 	waitmovement 0
 	setobjectxyperm LOCALID_CELEBISOCIETY_GRANDMA, 8, 5
-	closemessage
 	completequest QUEST_SAVE_ESTELLA
 	setvar VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1
 	clearflag FLAG_ENTER_CELEBI_SOCIETY_FROM_QUEST

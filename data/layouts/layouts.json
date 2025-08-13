@@ -4425,7 +4425,7 @@
       "id": "LAYOUT_PAST_TOWN",
       "name": "PastTown_Layout",
       "width": 57,
-      "height": 42,
+      "height": 46,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_SmallTownWithLab",
       "border_filepath": "data/layouts/PastTown/border.bin",
@@ -4780,6 +4780,16 @@
       "secondary_tileset": "gTileset_BrickCafe",
       "border_filepath": "data/layouts/Present_Cafe/border.bin",
       "blockdata_filepath": "data/layouts/Present_Cafe/map.bin"
+    },
+    {
+      "id": "LAYOUT_PAST_TOWN_PORT",
+      "name": "PastTown_Port_Layout",
+      "width": 30,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SmallTownWithLab",
+      "border_filepath": "data/layouts/PastTown_Port/border.bin",
+      "blockdata_filepath": "data/layouts/PastTown_Port/map.bin"
     }
   ]
 }

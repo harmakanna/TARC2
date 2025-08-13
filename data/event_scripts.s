@@ -1241,3 +1241,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/PresentTown_Port/scripts.inc"
 
 	.include "data/maps/Present_Cafe/scripts.inc"
+
+	.include "data/maps/PastTown_Port/scripts.inc"

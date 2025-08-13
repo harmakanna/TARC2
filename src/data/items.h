@@ -60,9 +60,9 @@ static const u8 sShardsDesc[]         = _("A shard from an\n"
                                           "ancient item. Can\n"
                                           "be sold cheaply.");
 
-static const u8 sRootFossilDesc[]     = _("A fossil of an\n"
-                                          "ancient, seafloor-\n"
-                                          "dwelling Pokémon.");
+static const u8 sRootFossilDesc[]     = _("A fossilized imprint of\n"
+                                          "a long, transluscent\n"
+                                          "wing."); //Changed to Wing Fossil
 
 static const u8 sFossilizedFishDesc[] = _("A fossil of an\n"
                                           "ancient, sea-\n"
@@ -3086,7 +3086,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_ROOT_FOSSIL] =
     {
-        .name = _("Root Fossil"),
+        .name = _("Wing Imprint"),
         .description = sRootFossilDesc,
         #if I_KEY_FOSSILS >= GEN_4
             .price = (I_PRICE >= GEN_7) ? 7000: 1000,
@@ -3105,8 +3105,11 @@ const struct Item gItemsInfo[] =
 
     [ITEM_CLAW_FOSSIL] =
     {
-        .name = _("Claw Fossil"),
-        .description = sRootFossilDesc,
+        .name = _("Eroded Tooth"),
+        .description = COMPOUND_STRING(
+            "A crooked tusk chipped\n"
+            "at for centuries by\n"
+            "the river's flow"),
         #if I_KEY_FOSSILS >= GEN_4
             .price = (I_PRICE >= GEN_7) ? 7000: 1000,
             .pocket = POCKET_ITEMS,

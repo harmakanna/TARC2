@@ -80,6 +80,150 @@ Present_CityHall_2F_Ranger_EventScript_HeadRangerGiveMoreSafariBalls::
 	releaseall
 	end
 
+Present_CityHall_2F_Ranger_EventScript_Scientist::
+	lock
+	faceplayer
+	returnqueststate QUEST_FORGOTTEN_TO_TIME
+	switch VAR_RESULT
+	case 1, Present_CityHall_2F_Ranger_EventScript_ScientistQuestInactive
+	case 2, Present_CityHall_2F_Ranger_EventScript_ScientistQuestActive
+	case 4, Present_CityHall_2F_Ranger_EventScript_ScientistQuestComplete
+	end
+
+Present_CityHall_2F_Ranger_EventScript_ScientistQuestInactive::
+	speakername Name_Present_FossilScientist
+	msgbox Present_CityHall_2F_Ranger_Text_ScientistIWishThoseFossils, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Present_CityHall_2F_Ranger_EventScript_ScientistQuestActive::
+	goto_if_set FLAG_CHOSE_TUSK_FOSSIL, Present_CityHall_2F_Ranger_EventScript_ScientistChoseTusk
+	goto_if_set FLAG_CHOSE_WING_FOSSIL, Present_CityHall_2F_Ranger_EventScript_ScientistChoseWing
+	release
+	end
+
+Present_CityHall_2F_Ranger_EventScript_ScientistChoseTusk::
+	speakername Name_Present_FossilScientist
+	msgbox Present_CityHall_2F_Ranger_Text_ScientistIWishWing, MSGBOX_DEFAULT
+	closemessage
+	playse SE_PIN
+	applymovement LOCALID_CITYHALL_SCIENTIST, Common_Movement_ExclamationMark
+	waitmovement 0
+	delay 50
+	speakername Name_Present_FossilScientist
+	msgbox Present_CityHall_2F_Ranger_Text_ScientistOhATusk, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	delay 80
+	fadescreen FADE_TO_WHITE
+	delay 10
+	speakername Name_Present_FossilScientist
+	msgbox Present_CityHall_2F_Ranger_Text_FossilScientistIveDoneItTusk, MSGBOX_DEFAULT
+	goto Present_CityHall_2F_Ranger_EventScript_FossilScientistGiveMamoswine
+	release
+	end
+
+
+Present_CityHall_2F_Ranger_EventScript_ScientistChoseWing::
+	speakername Name_Present_FossilScientist
+	msgbox Present_CityHall_2F_Ranger_Text_ScientistIWishTusk, MSGBOX_DEFAULT
+	closemessage
+	playse SE_PIN
+	applymovement LOCALID_CITYHALL_SCIENTIST, Common_Movement_ExclamationMark
+	waitmovement 0
+	delay 50
+	speakername Name_Present_FossilScientist
+	msgbox Present_CityHall_2F_Ranger_Text_ScientistOhAWing, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	delay 80
+	fadescreen FADE_TO_WHITE
+	delay 10
+	speakername Name_Present_FossilScientist
+	msgbox Present_CityHall_2F_Ranger_Text_FossilScientistIveDoneItWing, MSGBOX_DEFAULT
+	goto Present_CityHall_2F_Ranger_EventScript_FossilScientistGiveYanmega
+	release
+	end
+
+Present_CityHall_2F_Ranger_EventScript_FossilQuestFinish::
+	completequest QUEST_FORGOTTEN_TO_TIME
+	release
+	end
+
+Present_CityHall_2F_Ranger_EventScript_ScientistQuestComplete::
+	msgbox Present_CityHall_2F_Ranger_Text_ScientistThankYou, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Present_CityHall_2F_Ranger_Text_ScientistThankYou:
+	.string "Thank you for giving me the chance\n"
+	.string "to revive a Pokémon!\p"
+	.string "Now if only I could revive that\n"
+	.string "other fossil on display…$"
+	
+Present_CityHall_2F_Ranger_Text_FossilScientistIveDoneItTusk:
+	.string "Ahahahahahaha!\p"
+	.string "I've done it!\p"
+	.string "I have successfully revived a Pokémon\n"
+	.string "from its remains!\p"
+	.string "Thank you sir! I can finally put to rest\n"
+	.string "my many theories!\p"
+	.string "… … …\p"
+	.string "… … …\n"
+	.string "… … …\p"
+	.string "Oh, you can keep the Yanmega.\p"
+	.string "I'm not a Pokémon trainer, that thing\n"
+	.string "would impale me!$"
+
+Present_CityHall_2F_Ranger_Text_FossilScientistIveDoneItWing:
+	.string "Ahahahahahaha!\p"
+	.string "I've done it!\p"
+	.string "I have successfully revived a Pokémon\n"
+	.string "from its remains!\p"
+	.string "Thank you sir! I can finally put to rest\n"
+	.string "my many theories!\p"
+	.string "… … …\p"
+	.string "… … …\n"
+	.string "… … …\p"
+	.string "Oh, you can keep the Yanmega.\p"
+	.string "I'm not a Pokémon trainer, that thing\n"
+	.string "would bite my head off!$"
+
+Present_CityHall_2F_Ranger_Text_ScientistOhATusk:
+	.string "Ooo! Ooo!\p"
+	.string "Is that an eroded tusk you have there?\p"
+	.string "Give it here! Let me show you something\n"
+	.string "that will blow your mind!$"
+
+Present_CityHall_2F_Ranger_Text_ScientistOhAWing:
+	.string "Ooo! Ooo!\p"
+	.string "Is that a wing imprint you have there?\p"
+	.string "Give it here! Let me show you something\n"
+	.string "that will blow your mind!$"
+
+Present_CityHall_2F_Ranger_Text_ScientistIWishWing:
+	.string "Oh…\p"
+	.string "I wish I could study that wing fossil,\n"
+	.string "but the mayor says it's a priceless\l"
+	.string "treasure…\p"
+	.string "If only I could have it for myself…$"
+
+Present_CityHall_2F_Ranger_Text_ScientistIWishTusk:
+	.string "Oh…\p"
+	.string "I wish I could study that tusk fossil,\n"
+	.string "but the mayor says it's a priceless\l"
+	.string "treasure…\p"
+	.string "If only I could have it for myself…$"
+
+Present_CityHall_2F_Ranger_Text_ScientistIWishThoseFossils:
+	.string "Oh…\p"
+	.string "I wish I could study those two fossils,\n"
+	.string "but the mayor says they're priceless\l"
+	.string "treasures…\p"
+	.string "If only I could have one for myself…$"
+	
 Present_CityHall_2F_Ranger_Text_LookerImBack:
 	.string "Looker: I've arrived back.\p"
 	.string "Not only was Tornadus there, as you\n"

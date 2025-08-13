@@ -520,13 +520,13 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
-	side_quest( // 17 QUEST_THE_BEST_TIME - Plant a tree in the past?
-	      gText_SideQuestName_18,
+	side_quest( // 17 QUEST_FORGOTTEN_TO_TIME - Revive Fossils
+		  gText_SideQuestName_18,
 	      gText_SideQuestDesc_18,
 	      gText_SideQuestDoneDesc_18,
 	      gText_SideQuestMap18,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      ITEM_FOSSILIZED_FISH,
+	      ITEM,
 	      NULL,
 	      0
 	),

@@ -201,6 +201,49 @@ Present_CityHall_1F_EventScript_AnabelLockedDoors::
     msgbox Present_CityHall_1F_Text_AnabelFollowerItSeemsEverybody, MSGBOX_NPC
     end
 
+Present_CityHall_1F_EventScript_TuskFossilDisplay::
+	lock
+	goto_if_set FLAG_CHOSE_TUSK_FOSSIL, Present_CityHall_1F_EventScript_EmptyDisplay
+	showmonpic SPECIES_SQUIRTLE, 10, 3
+	msgbox Present_CityHall_1F_Text_TuskFossilDisplay, MSGBOX_SIGN
+	closemessage
+	hidemonpic
+	release
+	end
+	
+Present_CityHall_1F_EventScript_WingFossilDisplay::
+	lock
+	goto_if_set FLAG_CHOSE_WING_FOSSIL, Present_CityHall_1F_EventScript_EmptyDisplay
+	showmonpic SPECIES_CHARMANDER, 10, 3
+	msgbox Present_CityHall_1F_Text_WingFossilDisplay, MSGBOX_SIGN
+	closemessage
+	hidemonpic
+	release
+	end
+
+Present_CityHall_1F_EventScript_EmptyDisplay::
+	msgbox Present_CityHall_1F_Text_EmptyDisplay, MSGBOX_SIGN
+	closemessage
+	release
+	end
+
+Present_CityHall_1F_Text_TuskFossilDisplay:
+	.string "A regal-looking tusk eroded over\n"
+	.string "hundreds of years.\p"
+	.string "Thought to belong to a species\n"
+	.string "related to pigs.$"
+
+Present_CityHall_1F_Text_WingFossilDisplay:
+	.string "A translucent-looking wing imprint\n"
+	.string "fossilized in sediment.\p"
+	.string "Thought to belong to a species\n"
+	.string "related to damselflies.$"
+
+Present_CityHall_1F_Text_EmptyDisplay:
+	.string "An empty display.\p"
+	.string "City Hall kindly accepts all\n"
+	.string "donations of fossils.$"
+
 Present_CityHall_1F_Text_MayorStaySafe:
 	.string "Oh heavens!\n"
 	.string "Stay safe out there you two!\p"
