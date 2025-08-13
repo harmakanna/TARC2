@@ -147,6 +147,9 @@ $(OBJEVENTGFXDIR)/people/lass_new.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/youngster_new.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/emma.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 $(OBJEVENTGFXDIR)/people/may/walking.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 

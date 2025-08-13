@@ -430,6 +430,9 @@ const u16 gObjectEventPal_LassNew[] = INCBIN_U16("graphics/object_events/palette
 const u32 gObjectEventPic_YoungsterNew[] = INCBIN_U32("graphics/object_events/pics/people/youngster_new.4bpp");
 const u16 gObjectEventPal_YoungsterNew[] = INCBIN_U16("graphics/object_events/palettes/youngster_new.gbapal");
 
+const u32 gObjectEventPic_Emma[] = INCBIN_U32("graphics/object_events/pics/people/emma.4bpp");
+const u16 gObjectEventPal_Emma[] = INCBIN_U16("graphics/object_events/palettes/emma.gbapal");
+
 const u16 gObjectEventPal_HexManiac[] = INCBIN_U16("graphics/object_events/palettes/hex_maniac.gbapal");
 
 #if OW_FOLLOWERS_POKEBALLS
