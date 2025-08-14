@@ -543,6 +543,7 @@ gSongTable::
 	song mus_dp_gym, 0, 0
 	song mus_dp_twinleaf_day, 0, 0
 	song mus_dp_lake_caverns, 0, 0
+	song mus_dp_canalave_day, 0, 0
 	song mus_pl_looker, 0, 0
 	song mus_bw_vs_legendary, 0, 0
 

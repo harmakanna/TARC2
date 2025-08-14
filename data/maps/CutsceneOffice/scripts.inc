@@ -48,7 +48,9 @@ CutsceneOffice_EventScript_Scene::
 	playse SE_EXIT
 	applymovement LOCALID_OFFICE_ANABEL, CutsceneOffice_Movement_AnabelEntersScene
 	speakername Name_Anabel
-	msgbox CutsceneOffice_Text_AnabelLooker, MSGBOX_DEFAULT
+	message CutsceneOffice_Text_AnabelLooker
+	waitmessage
+	delay 60
 	closemessage
 	playbgm MUS_PL_LOOKER, FALSE
 	playse SE_PIN
@@ -59,7 +61,7 @@ CutsceneOffice_EventScript_Scene::
 	message CutsceneOffice_Text_LookerAhh
 	playse SE_BIKE_HOP
 	waitse
-	playse SE_EFFECTIVE
+	playse SE_BREAKABLE_DOOR
 	waitmessage
 	delay 10
 	closemessage

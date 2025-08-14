@@ -129,7 +129,7 @@ ShrineOfPeacePast_EventScript_EnableInclementWeather::
 
 ShrineOfPeacePast_EventScript_HandlePresentGenieSpawns::
 	clearflag FLAG_SYS_WEATHER_CTRL
-	setflag FLAG_SYS_DISABLE_ENCOUNTERS
+	@setflag FLAG_SYS_DISABLE_ENCOUNTERS
 	setflag FLAG_HIDE_CITY_TORNADUS
 	setflag FLAG_HIDE_CITY_THUNDURUS
 	randompercentage 4
@@ -152,7 +152,7 @@ ShrineOfPeacePast_EventScript_TrySpawnThundurus::
 
 ShrineOfPeacePast_EventScript_SpawnTornadus::
 	setflag FLAG_SYS_WEATHER_CTRL
-	clearflag FLAG_SYS_DISABLE_ENCOUNTERS
+	@clearflag FLAG_SYS_DISABLE_ENCOUNTERS
 	setflag FLAG_HIDE_OUTSIDE_NPCS
 	clearflag FLAG_HIDE_INSIDE_OUTSIDE_NPCS
 	clearflag FLAG_HIDE_CITY_TORNADUS
@@ -160,7 +160,7 @@ ShrineOfPeacePast_EventScript_SpawnTornadus::
 
 ShrineOfPeacePast_EventScript_SpawnThundurus::
 	setflag FLAG_SYS_WEATHER_CTRL
-	clearflag FLAG_SYS_DISABLE_ENCOUNTERS
+	@clearflag FLAG_SYS_DISABLE_ENCOUNTERS
 	setflag FLAG_HIDE_OUTSIDE_NPCS
 	clearflag FLAG_HIDE_INSIDE_OUTSIDE_NPCS
 	clearflag FLAG_HIDE_CITY_THUNDURUS

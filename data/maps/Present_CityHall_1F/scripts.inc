@@ -130,7 +130,6 @@ Present_CityHall_1F_EventScript_PostStormDiscussion::
 	waitmovement 0
 	clearflag FLAG_SYS_SPAWN_INVISIBLE
 	setvar VAR_CUTSCENE_STATE, 4
-	setflag FLAG_SYS_DISABLE_ENCOUNTERS
 	setflag FLAG_HIDE_MAP_NAME_POPUP
 	setfollowernpc LOCALID_CITYHALL_1F_ANABEL, FNPC_NONE, Present_CityHall_1F_EventScript_AnabelFollower
 	special RemoveCameraObject

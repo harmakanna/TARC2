@@ -10,7 +10,7 @@ CutsceneTown_Event::
 	lockall
 	special SpawnCameraObject
 	delay 100
-	playbgm MUS_DP_TWINLEAF_DAY, FALSE
+	playbgm MUS_DP_CANALAVE_DAY, FALSE
 	applymovement LOCALID_CAMERA, MythTown_Movement_PositionCameraToFirstShot
 	waitmovement 0
 	delay 80
@@ -68,9 +68,7 @@ CutsceneTown_Event::
 	delay 80
 	applymovement LOCALID_TOWNMYTH_KECLEON, Myth_Movement_KecleonEscapeToForest
 	waitmovement 0
-	fadenewbgm MUS_NONE
 	delay 100
-	playbgm MUS_NONE, TRUE
 	fadescreen FADE_TO_BLACK
 	delay 80
 	message Myth_Text_NowLandorus
@@ -78,7 +76,9 @@ CutsceneTown_Event::
 	delay 150
 	message Myth_Text_NowCelebi
 	waitmessage
+	fadenewbgm MUS_NONE
 	delay 150
+	playbgm MUS_NONE, TRUE
 	closemessage
 	delay 80
 	clearflag FLAG_SYS_SPAWN_INVISIBLE

@@ -1036,8 +1036,9 @@ MUS_DP_POKE_CENTER_NIGHT         = 1A 02
 MUS_DP_GYM                       = 1B 02
 MUS_DP_TWINLEAF_DAY              = 1C 02
 MUS_DP_LAKE_CAVERNS              = 1D 02
-MUS_PL_LOOKER                    = 1E 02
-MUS_BW_VS_LEGENDARY              = 1F 02
+MUS_DP_CANALAVE_DAY              = 1E 02
+MUS_PL_LOOKER                    = 1F 02
+MUS_BW_VS_LEGENDARY              = 20 02
 
 A_BUTTON = F8 00
 B_BUTTON = F8 01
