@@ -225,21 +225,45 @@ Present_CityHall_1F_EventScript_EmptyDisplay::
 	release
 	end
 
+Present_CityHall_1F_EventScript_EmployeeStairs::
+	msgbox Present_CityHall_1F_Text_EmployeeStairs, MSGBOX_NPC 
+	end
+
+Present_CityHall_1F_EventScript_EmployeeCounter::
+	lock
+	speak LOCALID_CITYHALL_1F_COUNTEREMPLOYEE, DIR_SOUTH, NULL, Present_CityHall_1F_Text_EmployeeCounter
+	closemessage
+	release
+	end
+
+Present_CityHall_1F_Text_EmployeeCounter:
+	.string "Welcome to Porta Bella City, the\n"
+	.string "city of progress!\p"
+	.string "I hope you enjoy your time here!$"
+
+Present_CityHall_1F_Text_EmployeeStairs:
+	.string "I'm sorry.\p"
+	.string "The mayor is currently busy with\n"
+	.string "official responsibilities.\p"
+	.string "Please come back later.$"
+
 Present_CityHall_1F_Text_TuskFossilDisplay:
 	.string "A regal-looking tusk eroded over\n"
 	.string "hundreds of years.\p"
 	.string "Thought to belong to a species\n"
-	.string "related to pigs.$"
+	.string "related to pigs.\p"
+	.string "Generously donated by Everett.$"
 
 Present_CityHall_1F_Text_WingFossilDisplay:
 	.string "A translucent-looking wing imprint\n"
 	.string "fossilized in sediment.\p"
 	.string "Thought to belong to a species\n"
-	.string "related to damselflies.$"
+	.string "related to dragonflies.\p"
+	.string "Generously donated by Everett.$"
 
 Present_CityHall_1F_Text_EmptyDisplay:
 	.string "An empty display.\p"
-	.string "City Hall kindly accepts all\n"
+	.string "City Hall will kindly accept all\n"
 	.string "donations of fossils.$"
 
 Present_CityHall_1F_Text_MayorStaySafe:

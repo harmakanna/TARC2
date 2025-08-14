@@ -17,17 +17,34 @@ ShrineOfPeacePresent_EventScript_CelebiEncounterSetup::
 ShrineOfPeacePresent_OnFrame:
     map_script_2 VAR_CUTSCENE_STATE, 5, ShrineOfPeacePresent_EventScript_CelebiEncounter
 	map_script_2 VAR_CUTSCENE_STATE, 12, ShrineOfPeacePresent_EventScript_MainGameStart
+	map_script_2 VAR_CATCH_GENIES_QUEST, 1, ShrineOfPeacePresent_EventScript_StartGeniesQuest
     .2byte 0
 
+ShrineOfPeacePresent_EventScript_StartGeniesQuest::
+	lock
+	delay 60
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
+	delay 80
+	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
+	delay 80
+	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft2
+	delay 120
+	speakername Name_Looker
+	msgbox ShrineOfPeacePresent_Text_LookerStartGeniesQuest
+	startquest QUEST_CATCH_GENIES
+	setvar VAR_CATCH_GENIES_QUEST, 2
+	release
+	end
+
 ShrineOfPeacePresent_EventScript_MainGameStart::
-	lockall
+	lock
 	delay 60
 	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
 	waitmovement 0
 	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, ShrineOfPeacePresent_Text_MainGameStart
 	startquest QUEST_INTERROGATE_MATT
 	setvar VAR_CUTSCENE_STATE, 13
-	releaseall
+	release
 	end
 
 ShrineOfPeacePresent_EventScript_CelebiEncounter::
@@ -518,3 +535,9 @@ ShrineOfPeacePresent_Text_AnabelShoutsLooker:
 ShrineOfPeacePresent_Text_LookerAnabel:
 	.string "What?\p"
 	.string "Anabel…?$"	
+
+ShrineOfPeacePresent_Text_LookerStartGeniesQuest:
+	.string "Huh…?\p"
+	.string "I thought I quelled the spirits\n"
+	.string "already…\p"
+	.string "Why is it back to storming…?$"

@@ -43,11 +43,12 @@
       "flag": "FLAG_HIDE_CITYHALL_1F_MAYOR"
     },
     {
+      "local_id": "LOCALID_CITYHALL_1F_COUNTEREMPLOYEE",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
       "x": 7,
       "y": 3,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -70,6 +71,7 @@
       "flag": "FLAG_HIDE_CITYHALL_1F_CONCERNED_DAD"
     },
     {
+      "local_id": "LOCALID_GENTLEMAN",
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
       "x": 16,
       "y": 7,
@@ -79,7 +81,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "InsideOutside_EventScript_Gentleman",
       "flag": "FLAG_HIDE_INSIDE_OUTSIDE_NPCS"
     },
     {
@@ -94,6 +96,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_HIDE_INSIDE_OUTSIDE_NPCS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_DEVON_EMPLOYEE",
+      "x": 15,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Present_CityHall_1F_EventScript_EmployeeStairs",
+      "flag": "FLAG_HIDE_CITYHALL_1F_EMPLOYEE"
     }
   ],
   "warp_events": [
@@ -147,6 +162,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Present_CityHall_1F_EventScript_WingFossilDisplay"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Present_CityHall_1F_EventScript_EmployeeCounter"
     }
   ]
 }

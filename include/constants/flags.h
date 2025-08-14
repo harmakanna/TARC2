@@ -670,9 +670,9 @@
 #define FLAG_CHOSE_WING_FOSSIL  0x26F // Unused Flag
 #define FLAG_HIDE_CITYHALL_2F_OFFICE_MAYOR  0x270 // Unused Flag
 #define FLAG_HIDE_CITYHALL_2F_OFFICE_ANABEL  0x271 // Unused Flag
-#define FLAG_UNUSED_0x272  0x272 // Unused Flag
-#define FLAG_UNUSED_0x273  0x273 // Unused Flag
-#define FLAG_UNUSED_0x274  0x274 // Unused Flag
+#define FLAG_HIDE_TORNADUS_NPCS  0x272 // Unused Flag
+#define FLAG_HIDE_CITYHALL_1F_EMPLOYEE  0x273 // Unused Flag
+#define FLAG_SPOKE_TO_ANGRY_MAN_POST_AQUACORP  0x274 // Unused Flag
 #define FLAG_UNUSED_0x275  0x275 // Unused Flag
 #define FLAG_UNUSED_0x276  0x276 // Unused Flag
 #define FLAG_UNUSED_0x277  0x277 // Unused Flag

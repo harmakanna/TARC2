@@ -178,9 +178,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_HIDE_OUTSIDE_NPCS"
+      "flag": "FLAG_HIDE_TORNADUS_NPCS"
     },
     {
+      "local_id": "LOCALID_ANGRY_MAN",
       "graphics_id": "OBJ_EVENT_GFX_MAN_5",
       "x": 13,
       "y": 28,
@@ -190,10 +191,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "InsideOutside_EventScript_AngryMan",
       "flag": "FLAG_HIDE_OUTSIDE_NPCS"
     },
     {
+      "local_id": "LOCALID_GENTLEMAN",
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
       "x": 42,
       "y": 30,
@@ -203,7 +205,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "InsideOutside_EventScript_Gentleman",
       "flag": "FLAG_HIDE_OUTSIDE_NPCS"
     },
     {
@@ -230,7 +232,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_HIDE_OUTSIDE_NPCS"
+      "flag": "FLAG_HIDE_TORNADUS_NPCS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_RUNNING_TRIATHLETE_F",

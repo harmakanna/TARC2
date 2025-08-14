@@ -132,7 +132,7 @@ ShrineOfPeacePast_EventScript_HandlePresentGenieSpawns::
 	@setflag FLAG_SYS_DISABLE_ENCOUNTERS
 	setflag FLAG_HIDE_CITY_TORNADUS
 	setflag FLAG_HIDE_CITY_THUNDURUS
-	randompercentage 4
+	randompercentage 10
 	call_if_eq VAR_RESULT, TRUE, ShrineOfPeacePast_EventScript_TrySpawnPresentGenies
 	return
 
@@ -154,19 +154,29 @@ ShrineOfPeacePast_EventScript_SpawnTornadus::
 	setflag FLAG_SYS_WEATHER_CTRL
 	@clearflag FLAG_SYS_DISABLE_ENCOUNTERS
 	setflag FLAG_HIDE_OUTSIDE_NPCS
+	setflag FLAG_HIDE_TORNADUS_NPCS
 	clearflag FLAG_HIDE_INSIDE_OUTSIDE_NPCS
 	clearflag FLAG_HIDE_CITY_TORNADUS
+	call ShrineOfPeacePast_EventScript_EndSpawnGenie
 	return
 
 ShrineOfPeacePast_EventScript_SpawnThundurus::
 	setflag FLAG_SYS_WEATHER_CTRL
 	@clearflag FLAG_SYS_DISABLE_ENCOUNTERS
 	setflag FLAG_HIDE_OUTSIDE_NPCS
+	setflag FLAG_HIDE_TORNADUS_NPCS
 	clearflag FLAG_HIDE_INSIDE_OUTSIDE_NPCS
 	clearflag FLAG_HIDE_CITY_THUNDURUS
+	call ShrineOfPeacePast_EventScript_EndSpawnGenie
 	return
 
 ShrineOfPeacePast_EventScript_EndSpawnGenie::
+	returnqueststate QUEST_CATCH_GENIES
+	call_if_eq VAR_RESULT, 1, ShrineOfPeacePast_EventScript_PrepareGenieQuest
+	return
+
+ShrineOfPeacePast_EventScript_PrepareGenieQuest::
+	setvar VAR_CATCH_GENIES_QUEST, 1
 	return
 
 ShrineOfPeacePast_EventScript_CelebiWarp::

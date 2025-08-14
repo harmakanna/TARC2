@@ -45,7 +45,7 @@
 #define QUEST_27        26
 #define QUEST_I_MADE_THIS        27 // Defeat the devs!
 #define QUEST_PARADOXICAL        28 // Defeat yourself!
-#define QUEST_CATCH_GENIES        29 // Catch the genies
+#define QUEST_CATCH_GENIES        29 // Catch the genies - Done
 #define QUEST_COUNT     (QUEST_CATCH_GENIES + 1)
 
 #define SUB_QUEST_DEFEAT_GENIES 0

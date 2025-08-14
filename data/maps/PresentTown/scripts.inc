@@ -1,8 +1,9 @@
 PresentTown_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, PresentTown_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, PresentTown_OnTransition
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, PresentTown_OnFrame
 	map_script MAP_SCRIPT_ON_RESUME, PresentTown_OnResume
+@	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, PresentTown_OnWarp
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, PresentTown_OnFrame
 	.byte 0
 	
 @ Comment out FLAG_SYS_MAIN_GAME_START_SCRIPT_DEBUG line to test intro
@@ -27,6 +28,7 @@ PresentTown_EventScript_DebugMainGameStart::
 	setflag FLAG_TALKED_TO_MATT_OUTSIDE
 	setflag FLAG_MET_CELEBI
 	setflag FLAG_HIDE_OUTSIDE_NPCS
+	setflag FLAG_HIDE_TORNADUS_NPCS
 	clearflag FLAG_HIDE_INSIDE_OUTSIDE_NPCS
 	clearflag FLAG_HIDE_SHRINE_PROSPERITY_RANGER
 	setflag FLAG_HIDE_MATT_OUTSIDE
@@ -41,6 +43,7 @@ PresentTown_EventScript_DebugMainGameStart::
 	setflag FLAG_HIDE_PAST_TOWN_HALL_ESTELLA
 	setflag FLAG_FOUGHT_LASS
 	setflag FLAG_HIDE_SHRINE_PROSPERITY_PAST_ANABEL
+	setflag FLAG_HIDE_CITYHALL_1F_EMPLOYEE
 	clearflag FLAG_HIDE_SHRINE_PEACE_CELEBI
 	clearflag FLAG_HIDE_CITYHALL_2F_RANGER_HEADRANGER
 	givemonwithot OT_LOOKER_GROWLITHE
@@ -66,9 +69,14 @@ PresentTown_EventScript_LockCityDoors::
 
 PresentTown_OnTransition:
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetStormWeather
+	call_if_unset FLAG_SYS_WEATHER_CTRL, PresentTown_EventScript_ClearTornadusNPCFlag
 	call_if_set FLAG_TALKED_TO_MATT_OUTSIDE, PresentTown_EventScript_AquaMemberFPositioning
 	@call_if_eq VAR_PORTO_BELLA_CITY_STATE, 1, PresentTown_EventScript_PrepareAnabelForCutscene
 	end
+
+PresentTown_EventScript_ClearTornadusNPCFlag::
+	clearflag FLAG_HIDE_TORNADUS_NPCS
+	return
 
 PresentTown_EventScript_AquaMemberFPositioning::
 	setobjectxyperm LOCALID_PRESENTTOWN_GRUNT, 15, 35
@@ -81,7 +89,18 @@ PresentTown_EventScript_PrepareAnabelForCutscene::
 	
 PresentTown_OnFrame:
 	map_script_2 VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1, PresentTown_EventScript_LookerThinkingScenes
+	map_script_2 VAR_CATCH_GENIES_QUEST, 4, PresentTown_EventScript_FinishGeniesQuest
 	.2byte 0
+
+PresentTown_EventScript_FinishGeniesQuest::
+	lock
+	delay 30
+	speakername Name_Looker
+	msgbox PresentTown_Text_LookerTheSpiritsAreCaught, MSGBOX_DEFAULT
+	completequest QUEST_CATCH_GENIES
+	addvar VAR_CATCH_GENIES_QUEST, 1
+	release
+	end
 
 PresentTown_EventScript_LookerThinkingScenes::
 	call_if_set FLAG_PLAY_LOOKER_AQUA_ON_TRANSITION, PresentTown_EventScript_LookerThinkingAqua
@@ -168,6 +187,7 @@ PresentTown_EventScript_RemoveTornadus::
 	doweather
 	call Common_EventScript_MoveInsideNPCsOutside
 	removeobject LOCALID_CITY_TORNADUS
+	addvar VAR_CATCH_GENIES_QUEST, 1
 	return
 
 PresentTown_EventScript_StartStorm1::
@@ -251,9 +271,11 @@ PresentTown_EventScript_StartStorm::
 	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	setflag FLAG_LOCK_CITY_DOORS
 	setflag FLAG_HIDE_OUTSIDE_NPCS
+	setflag FLAG_HIDE_TORNADUS_NPCS
 	setflag FLAG_HIDE_AQUA_GRUNT_OUTSIDE
 	setflag FLAG_HIDE_ANABEL_PRESENTTOWN
 	setflag FLAG_HIDE_CITYHALL_2F_RANGER_HEADRANGER
+	setflag FLAG_HIDE_CITYHALL_1F_EMPLOYEE
 	clearflag FLAG_HIDE_INSIDE_OUTSIDE_NPCS
 	clearflag FLAG_HIDE_SHRINE_PEACE_RANGER
 	clearflag FLAG_HIDE_SHRINE_PROSPERITY_RANGER
@@ -1119,3 +1141,10 @@ PresentTown_Text_LookerNowWillYouTellMeFishing:
 PresentTown_Text_FishermanYouWontLearnMySecrets:
 	.string "Heh! I won't tell you any of my fishing\n"
 	.string "secrets until you beat me in a battle!$"
+
+PresentTown_Text_LookerTheSpiritsAreCaught:
+	.string "There we go…\p"
+	.string "I will keep the spirits contained for\n"
+	.string "the duration of my stay…\p"
+	.string "This should prevent them from causing\n"
+	.string "any more havoc to the city…$"

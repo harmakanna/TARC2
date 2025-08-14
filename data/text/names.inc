@@ -97,3 +97,11 @@ Name_Magikarp_Man:
 Name_Emma:
     .string "Emma$"
     
+Name_Gentleman:
+    .string "Gentleman$"
+
+Name_Angry_Man:
+    .string "Angry Man$"
+
+Name_Calm_Man:
+    .string "Calm Man$"

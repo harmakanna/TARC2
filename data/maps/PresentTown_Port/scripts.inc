@@ -20,6 +20,7 @@ PresentTown_Port_EventScript_RemoveThundurus::
 	doweather
 	call Common_EventScript_MoveInsideNPCsOutside
 	removeobject LOCALID_CITY_THUNDURUS
+	addvar VAR_CATCH_GENIES_QUEST, 1
 	return
 
 PresentTown_Port_OnTransition:
@@ -35,7 +36,18 @@ PresentTown_Port_SetUpArrival::
 
 PresentTown_Port_OnFrame:
 	map_script_2 VAR_CUTSCENE_STATE, 0, PresentTown_Port_EventScript_Arrival
+	map_script_2 VAR_CATCH_GENIES_QUEST, 4, PresentTown_Port_EventScript_FinishGeniesQuest
 	.2byte 0
+
+PresentTown_Port_EventScript_FinishGeniesQuest::
+	lock
+	delay 30
+	speakername Name_Looker
+	msgbox PresentTown_Text_LookerTheSpiritsAreCaught, MSGBOX_DEFAULT
+	completequest QUEST_CATCH_GENIES
+	addvar VAR_CATCH_GENIES_QUEST, 1
+	release
+	end
 
 PresentTown_Port_EventScript_Arrival::
 	lockall
