@@ -440,6 +440,70 @@ Present_CityHall_2F_Ranger_EventScript_ReceivedYanmegaFanfare::
 	bufferspeciesname STR_VAR_1, SPECIES_YANMEGA
 	return
 
+Present_Cafe_EventScript_EmmaGiveGumshoos::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GUMSHOOS
+	givemonwithot OT_EMMA_GUMSHOOS
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Cafe_EventScript_ReceiveGumshoosParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Cafe_EventScript_ReceiveGumshoosPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+Present_Cafe_EventScript_ReceiveGumshoosParty::
+	call Present_Cafe_EventScript_ReceivedGumshoosFanfare
+	goto Present_Cafe_EventScript_EmmaFinishQuest
+	end
+	
+Present_Cafe_EventScript_ReceiveGumshoosPC::
+	call Present_Cafe_EventScript_ReceivedGumshoosFanfare
+	call Common_EventScript_TransferredToPC
+	goto Present_Cafe_EventScript_EmmaFinishQuest
+	end
+
+Present_Cafe_EventScript_ReceivedGumshoosFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_GUMSHOOS
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox Present_Cafe_Text_YouReceivedGumshoos, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_GUMSHOOS
+	return
+
+Present_Cafe_EventScript_EmmaGiveMeowstic::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MEOWSTIC
+	givemonwithot OT_EMMA_MEOWSTIC
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Cafe_EventScript_ReceiveMeowsticParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Cafe_EventScript_ReceiveMeowsticPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+Present_Cafe_EventScript_ReceiveMeowsticParty::
+	call Present_Cafe_EventScript_ReceivedMeowsticFanfare
+	goto Present_Cafe_EventScript_EmmaFinishQuest
+	end
+	
+Present_Cafe_EventScript_ReceiveMeowsticPC::
+	call Present_Cafe_EventScript_ReceivedMeowsticFanfare
+	call Common_EventScript_TransferredToPC
+	goto Present_Cafe_EventScript_EmmaFinishQuest
+	end
+
+Present_Cafe_EventScript_ReceivedMeowsticFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_MEOWSTIC
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox Present_Cafe_Text_YouReceivedMeowstic, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_MEOWSTIC
+	return
+
+Present_Cafe_Text_YouReceivedGumshoos:
+	.string "Emma gave you her Gumshoos!$"
+
+Present_Cafe_Text_YouReceivedMeowstic:
+	.string "Emma gave you her Meowstic!$"
+
 Present_CityHall_2F_Ranger_Text_YouReceivedMamoswine:
 	.string "You revived a Mamoswine!$"
 

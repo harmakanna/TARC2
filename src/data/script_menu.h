@@ -1,20 +1,23 @@
 // multichoice lists
 static const struct MenuAction MultichoiceList_SpeakWithEmma1[] = 
 {
-    {COMPOUND_STRING("Dusknoir")},
-    {COMPOUND_STRING("Sableye")},
+    {COMPOUND_STRING("Oui")},
+    {COMPOUND_STRING("Bien, merçi")},
+    {COMPOUND_STRING("Pas bien")},
 };
 
 static const struct MenuAction MultichoiceList_SpeakWithEmma2[] = 
 {
-    {COMPOUND_STRING("Dusknoir")},
-    {COMPOUND_STRING("Sableye")},
+    {COMPOUND_STRING("Mon nom est Looker")},
+    {COMPOUND_STRING("Je suis Looker")},
+    {COMPOUND_STRING("Je m'appelle Looker")},
 };
 
 static const struct MenuAction MultichoiceList_SpeakWithEmma3[] = 
 {
-    {COMPOUND_STRING("Dusknoir")},
-    {COMPOUND_STRING("Sableye")},
+    {COMPOUND_STRING("Sure")},
+    {COMPOUND_STRING("Je ne veux pas")},
+    {COMPOUND_STRING("Bien sûr")},
 };
 
 static const struct MenuAction MultichoiceList_EmmaGiveMon[] =
@@ -854,7 +857,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_SPEAK_WITH_EMMA_1]          = MULTICHOICE(MultichoiceList_SpeakWithEmma1),
     [MULTI_SPEAK_WITH_EMMA_2]          = MULTICHOICE(MultichoiceList_SpeakWithEmma2),
     [MULTI_SPEAK_WITH_EMMA_3]          = MULTICHOICE(MultichoiceList_SpeakWithEmma3),
-    [MULTI_EMMA_GIVEMON]             = MULTICHOICE(MultichoiceList_EmmaGiveMon),
+    [MULTI_EMMA_GIVEMON]               = MULTICHOICE(MultichoiceList_EmmaGiveMon),
     [MULTI_PHOEBE_GIVEMON]             = MULTICHOICE(MultichoiceList_PhoebeGiveMon),
     [MULTI_MATT_GIVEMON]               = MULTICHOICE(MultichoiceList_MattGiveMon),
     [MULTI_BLUE_GIVEMON]               = MULTICHOICE(MultichoiceList_BlueGiveMon),

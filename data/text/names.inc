@@ -93,3 +93,7 @@ Name_Right_Gameboy_Kid:
 
 Name_Magikarp_Man:
     .string "Shady Man$"
+
+Name_Emma:
+    .string "Emma$"
+    

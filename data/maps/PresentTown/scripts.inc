@@ -261,7 +261,6 @@ PresentTown_EventScript_StartStorm::
 	clearflag FLAG_HIDE_ANABEL_CITYHALL
 	setvar VAR_PORTO_BELLA_CITY_STATE, 2
 	setvar VAR_CUTSCENE_STATE, 3
-	fwdtime 13, 30
 	warp MAP_PRESENT_CITY_HALL_1F, 8, 8
 	waitstate
 	releaseall
