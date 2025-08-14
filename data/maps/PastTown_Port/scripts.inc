@@ -1,6 +1,46 @@
 PastTown_Port_MapScripts::
+	@map_script MAP_SCRIPT_ON_FRAME_TABLE, PastTown_Port_OnFrame
+	map_script MAP_SCRIPT_ON_TRANSITION, PastTown_Port_OnTransition
 	.byte 0
 
+PastTown_Port_OnFrame:
+	.2byte 0
+
+PastTown_Port_OnTransition:
+	returnqueststate QUEST_SENTIMENTAL
+	call_if_eq VAR_RESULT, 2, PastTown_Port_EventScript_ResetHeartScaleSparkle
+	end
+
+PastTown_Port_EventScript_ResetHeartScaleSparkle::
+	setvar VAR_HEART_SCALE_SPARKLE, 1
+	return
+
+PastTown_Port_EventScript_DoHeartScaleSparkle::
+	lockall
+	playse SE_PIN
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDownQuestionMark
+	delay 50
+	msgbox Looker_Text_WhatsThat, MSGBOX_DEFAULT
+	closemessage
+	delay 10
+	dofieldeffectsparkle 12, 17, 0
+	waitfieldeffect FLDEFF_SPARKLE
+	delay 20
+	setvar VAR_HEART_SCALE_SPARKLE, 2
+	releaseall
+	end
+
+PastTown_Port_EventScript_HiddenHeartScale::
+	goto_if_eq VAR_HEART_SCALE_SPARKLE, 2, PastTown_Port_EventScript_GiveHeartScale
+	end
+
+PastTown_Port_EventScript_GiveHeartScale::
+	lock
+	giveitem ITEM_HEART_SCALE
+	questmenu QUEST_MENU_SET_REWARD, QUEST_SENTIMENTAL
+	closemessage
+	release
+	end
 
 PastTown_Port_EventScript_WingFossil::
 	lockall

@@ -3,6 +3,7 @@ Present_Cafe_MapScripts::
 
 Present_Cafe_EventScript_Emma::
 	lock
+	goto_if_unset FLAG_SYS_MAIN_GAME_START, Present_Cafe_EventScript_EmmaPreGame
 	returnqueststate QUEST_BONJOUR_EMMA
 	goto_if_eq VAR_RESULT, 4, Present_Cafe_EventScript_EmmaPostQuest
 	call Script_GetNPCFacingDirection
@@ -34,6 +35,12 @@ Present_Cafe_EventScript_Emma::
 	switch VAR_RESULT
 	goto_if_eq VAR_RESULT, 0, Present_Cafe_EventScript_EmmaGiveGumshoos
 	goto_if_eq VAR_RESULT, 1, Present_Cafe_EventScript_EmmaGiveMeowstic
+	release
+	end
+
+Present_Cafe_EventScript_EmmaPreGame::
+	msgbox Present_Cafe_Text_EmmaCoffeeDelicious, MSGBOX_DEFAULT
+	closemessage
 	release
 	end
 
@@ -170,3 +177,7 @@ Present_Cafe_Text_EmmaPostQuest:
 
 Present_Cafe_Text_LookerWrongAnswer:
 	.string "(Drat, wrong response…)$"
+
+Present_Cafe_Text_EmmaCoffeeDelicious:
+	.string "Ahhhh…\p"
+	.string "Ce café est délicieux…$"

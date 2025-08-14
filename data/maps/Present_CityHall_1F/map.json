@@ -71,7 +71,7 @@
       "flag": "FLAG_HIDE_CITYHALL_1F_CONCERNED_DAD"
     },
     {
-      "local_id": "LOCALID_GENTLEMAN",
+      "local_id": "LOCALID_INSIDE_GENTLEMAN",
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
       "x": 16,
       "y": 7,
@@ -81,7 +81,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "InsideOutside_EventScript_Gentleman",
+      "script": "InsideOutside_EventScript_GentlemanInside",
       "flag": "FLAG_HIDE_INSIDE_OUTSIDE_NPCS"
     },
     {

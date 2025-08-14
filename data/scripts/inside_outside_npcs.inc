@@ -9,15 +9,35 @@ Common_EventScript_MoveInsideNPCsOutside::
     setflag FLAG_HIDE_TORNADUS_NPCS
     return
 
+InsideOutside_EventScript_GentlemanInside::
+    setvar VAR_TEMP_1, LOCALID_INSIDE_GENTLEMAN
+    goto InsideOutside_EventScript_Gentleman
+    end
+
+InsideOutside_EventScript_GentlemanOutside::
+    setvar VAR_TEMP_1, LOCALID_OUTSIDE_GENTLEMAN
+    goto InsideOutside_EventScript_Gentleman
+    end
+
+InsideOutside_EventScript_AngryManInside::
+    setvar VAR_TEMP_1, LOCALID_INSIDE_ANGRY_MAN
+    goto InsideOutside_EventScript_AngryMan
+    end
+
+InsideOutside_EventScript_AngryManOutside::
+    setvar VAR_TEMP_1, LOCALID_OUTSIDE_ANGRY_MAN
+    goto InsideOutside_EventScript_AngryMan
+    end
+
 InsideOutside_EventScript_Gentleman::
     lock
     faceplayer
     call Script_GetNPCFacingDirection
-    speak LOCALID_GENTLEMAN, VAR_0x8005, Name_Gentleman, InsideOutside_Text_GentlemanNiceHavingMoney
+    speak VAR_TEMP_1, VAR_0x8005, Name_Gentleman, InsideOutside_Text_GentlemanNiceHavingMoney
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerTextIndeedItIs
-    speak LOCALID_GENTLEMAN, VAR_0x8005, Name_Gentleman, InsideOutside_Text_GentlemanIndeed
+    speak VAR_TEMP_1, VAR_0x8005, Name_Gentleman, InsideOutside_Text_GentlemanIndeed
     closemessage
-    applymovement LOCALID_GENTLEMAN, Common_Movement_FaceOriginalDirection
+    applymovement VAR_TEMP_1, Common_Movement_FaceOriginalDirection
     waitmovement 0
     release
     end
@@ -27,7 +47,7 @@ InsideOutside_EventScript_AngryMan::
     faceplayer
     goto_if_set FLAG_SPOKE_TO_ANGRY_MAN_POST_AQUACORP, InsideOutside_EventScript_CalmMan
     call Script_GetNPCFacingDirection
-    speak LOCALID_ANGRY_MAN, VAR_0x8005, Name_Angry_Man, InsideOutside_Text_AngryManAngry
+    speak VAR_TEMP_1, VAR_0x8005, Name_Angry_Man, InsideOutside_Text_AngryManAngry
     checkspecies SPECIES_GOREBYSS
     goto_if_eq VAR_RESULT, TRUE, InsideOutside_EventScript_AngryManActually
     checkspecies SPECIES_HUNTAIL
@@ -49,10 +69,10 @@ InsideOutside_EventScript_AngryManActually::
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerActuallyChowder
     closemessage
     playse SE_PIN
-    applymovement LOCALID_ANGRY_MAN, Common_Movement_ExclamationMark
+    applymovement VAR_TEMP_1, Common_Movement_ExclamationMark
     waitmovement 0
     delay 50
-    speak LOCALID_ANGRY_MAN, VAR_0x8005, Name_Angry_Man, InsideOutside_Text_AngryManReally
+    speak VAR_TEMP_1, VAR_0x8005, Name_Angry_Man, InsideOutside_Text_AngryManReally
     closemessage
     setflag FLAG_SPOKE_TO_ANGRY_MAN_POST_AQUACORP
     release

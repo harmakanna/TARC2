@@ -16,6 +16,9 @@ Looker_Text_Understood:
 Looker_Text_IdBeHappyToHelp:
     .string "I'd be happy to help.$"
 
+Looker_Text_ICanCertainlyTry:
+    .string "I can certainly try.$"
+
 Looker_Text_ConsiderItDone:
     .string "Consider it done.$"
     
@@ -64,6 +67,16 @@ Looker_Text_HereYouGo:
 
 Looker_Text_NotYet:
     .string "Not yet.$"
+
+Looker_Text_IFoundWhatYoureLookingFor:
+    .string "I found what you're looking for.$"
+
+Looker_Text_AllInADaysWork:
+    .string "All in a day's work.$"
+    
+Looker_Text_WhatsThat:
+    .string "Huh?\p"
+    .string "What's that?$"
 
 Looker_Text_Unlucky:
     .string "Unlucky.$"

@@ -181,7 +181,7 @@
       "flag": "FLAG_HIDE_TORNADUS_NPCS"
     },
     {
-      "local_id": "LOCALID_ANGRY_MAN",
+      "local_id": "LOCALID_OUTSIDE_ANGRY_MAN",
       "graphics_id": "OBJ_EVENT_GFX_MAN_5",
       "x": 13,
       "y": 28,
@@ -191,11 +191,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "InsideOutside_EventScript_AngryMan",
+      "script": "InsideOutside_EventScript_AngryManOutside",
       "flag": "FLAG_HIDE_OUTSIDE_NPCS"
     },
     {
-      "local_id": "LOCALID_GENTLEMAN",
+      "local_id": "LOCALID_OUTSIDE_GENTLEMAN",
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
       "x": 42,
       "y": 30,
@@ -205,7 +205,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "InsideOutside_EventScript_Gentleman",
+      "script": "InsideOutside_EventScript_GentlemanOutside",
       "flag": "FLAG_HIDE_OUTSIDE_NPCS"
     },
     {
@@ -350,6 +350,45 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_HIDE_OUTSIDE_NPCS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LUVDISC)",
+      "x": 43,
+      "y": 43,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_PRESENT_LUVDISCS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LUVDISC)",
+      "x": 25,
+      "y": 41,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_PRESENT_LUVDISCS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LUVDISC)",
+      "x": 6,
+      "y": 42,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_PRESENT_LUVDISCS"
     }
   ],
   "warp_events": [

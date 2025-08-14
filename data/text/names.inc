@@ -105,3 +105,6 @@ Name_Angry_Man:
 
 Name_Calm_Man:
     .string "Calm Man$"
+
+Name_Sentimental_Woman:
+    .string "Melissa$"

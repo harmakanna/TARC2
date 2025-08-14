@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "local_id": "LOCALID_ANGRY_MAN",
+      "local_id": "LOCALID_INSIDE_ANGRY_MAN",
       "graphics_id": "OBJ_EVENT_GFX_MAN_5",
       "x": 8,
       "y": 4,
@@ -25,7 +25,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "InsideOutside_EventScript_AngryMan",
+      "script": "InsideOutside_EventScript_AngryManInside",
       "flag": "FLAG_HIDE_INSIDE_OUTSIDE_NPCS"
     }
   ],

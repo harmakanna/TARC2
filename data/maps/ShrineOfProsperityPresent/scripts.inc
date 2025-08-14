@@ -42,6 +42,7 @@ ShrineOfProsperityPresent_EventScript_StartGenieFight::
 	special BattleSetup_StartLegendaryBattleDouble
 	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	setobjectmovementtype LOCALID_SHRINE_THUNDURUS, MOVEMENT_TYPE_WALK_IN_PLACE_UP
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, ShrineOfProsperityPresent_EventScript_DefeatedGenies
 	setflag FLAG_HIDE_SHRINE_THUNDURUS
