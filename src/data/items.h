@@ -1895,16 +1895,17 @@ const struct Item gItemsInfo[] =
 
     [ITEM_SERIOUS_MINT] =
     {
-        .name = _("Serious Mint"),
+        .name = _("Tasty Mint"),
         .price = (I_PRICE >= GEN_9) ? 20000 : 20,
         .description = COMPOUND_STRING(
-            "Can be smelled. It\n"
-            "makes each stat\n"
-            "grow equally."),
-        .pocket = POCKET_ITEMS,
+            "Smells like honey. A\n"
+            "delicacy which grows\n"
+            "once in 100 years."),
+        .pocket = POCKET_KEY_ITEMS,
+        .importance = 1,
         .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_Mint,
-        .secondaryId = NATURE_SERIOUS,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
         .flingPower = 10,
         .iconPic = gItemIcon_Mint,
         .iconPalette = gItemIconPalette_YellowMint,

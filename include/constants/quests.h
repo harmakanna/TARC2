@@ -29,7 +29,7 @@
 #define QUEST_FARMLAND_INVASION_2        10 // Clear out the second wave of pest Pokemon
 #define QUEST_FARMLAND_INVASION_3        11 // Clear out the third wave of pest Pokemon
 #define QUEST_FOREVER_FAITHFUL        12 // Defeat the hypnotized boyfriend
-#define QUEST_SENTIMENTAL        13 // Find a heart scale in the past and bring it to the present - Complete
+#define QUEST_SENTIMENTAL        13 // Find a heart scale in the past and bring it to the present - Done
 #define QUEST_FIND_TASTY_MINT        14 // Find a tasty mint in the present and bring it back to the past
 #define QUEST_SENT_TO_THE_FARM        15 // Find modern medicine for the ailing cows
 #define QUEST_HOMEGROWN_REMEDIES        16 // Find herbal remedies lost to time for the ailing old man

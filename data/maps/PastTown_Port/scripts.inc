@@ -37,6 +37,7 @@ PastTown_Port_EventScript_HiddenHeartScale::
 PastTown_Port_EventScript_GiveHeartScale::
 	lock
 	giveitem ITEM_HEART_SCALE
+	setvar VAR_HEART_SCALE_SPARKLE, 3
 	questmenu QUEST_MENU_SET_REWARD, QUEST_SENTIMENTAL
 	closemessage
 	release
@@ -207,7 +208,7 @@ PastTown_Port_Movemenet_PokemaniacToTusk1:
 
 PastTown_Port_EventScript_PokemaniacMovesToTusk2::
 	call_if_eq VAR_0x8001, 16, PastTown_Port_EventScript_PokemaniacMovesToTuskFromTop
-	call_if_eq VAR_0x8001, 19, PastTown_Port_EventScript_PokemaniacMovesToTuskFromLow
+	call_if_eq VAR_0x8001, 18, PastTown_Port_EventScript_PokemaniacMovesToTuskFromLow
 	return
 
 PastTown_Port_EventScript_PokemaniacMovesToTuskFromTop::
@@ -286,7 +287,7 @@ PastTown_Port_Movemenet_PokemaniacToWing1:
 
 PastTown_Port_EventScript_PokemaniacMovesToWing2::
 	call_if_eq VAR_0x8001, 16, PastTown_Port_EventScript_PokemaniacMovesToWingFromTop
-	call_if_eq VAR_0x8001, 19, PastTown_Port_EventScript_PokemaniacMovesToWingFromLow
+	call_if_eq VAR_0x8001, 18, PastTown_Port_EventScript_PokemaniacMovesToWingFromLow
 	return
 
 PastTown_Port_EventScript_PokemaniacMovesToWingFromTop::
@@ -340,12 +341,14 @@ PastTown_Port_EventScript_FinishFossilSelection::
 	msgbox PastTown_Port_Text_LookerFossilRevive, MSGBOX_DEFAULT
 	startquest QUEST_FORGOTTEN_TO_TIME
 	closemessage
+	setvar VAR_MANIAC_TRIGGER, 3
 	releaseall
 	end
 	
 PastTown_Port_EventScript_Pokemaniac::
 	lock
 	faceplayer
+	goto_if_eq VAR_MANIAC_TRIGGER, 2, PastTown_Port_EventScript_PokemaniacSad
 	goto_if_set FLAG_CHOSE_TUSK_FOSSIL, PastTown_Port_EventScript_PokemaniacChoseTuskFossil
 	goto_if_set FLAG_CHOSE_WING_FOSSIL, PastTown_Port_EventScript_PokemaniacChoseWingFossil
 	goto_if_set FLAG_SYS_MAIN_GAME_START, PastTown_Port_EventScript_PokemaniacOhFossils
@@ -354,6 +357,13 @@ PastTown_Port_EventScript_Pokemaniac::
 	release
 	end
 
+PastTown_Port_EventScript_PokemaniacSad:
+	speakername Name_Past_Maniac
+	msgbox PastTown_Port_Text_ManiacOhFine, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+	
 PastTown_Port_EventScript_PokemaniacOhFossils::
 	speakername Name_Past_Maniac
 	msgbox PastTown_Port_Text_ManiacOhFossils, MSGBOX_DEFAULT
@@ -401,7 +411,7 @@ PastTown_Port_Text_ManiacOhFine:
 
 PastTown_Port_Text_ManiacLookingForFossils:
 	.string "Oh river delta…\p"
-	.string "When will you bestow upon methe gift\n"
+	.string "When will you bestow upon me the gift\n"
 	.string "of a fossil?\p"
 	.string "I have strolled your shores for months\n"
 	.string "with no reward…$"
