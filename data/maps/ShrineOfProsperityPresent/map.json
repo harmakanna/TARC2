@@ -98,5 +98,14 @@
       "script": "ShrineOfProsperityPresent_EventScript_GeniePan"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 14,
+      "y": 8,
+      "elevation": 0,
+      "item": "ITEM_SERIOUS_MINT",
+      "flag": "FLAG_HIDDEN_ITEM_SHRINE_PROSPERITY_PRESENT_TASTY_MINT"
+    }
+  ]
 }

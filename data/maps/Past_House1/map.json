@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_SAD_GIRL",
-      "graphics_id": "OBJ_EVENT_GFX_FAIRY_TALE_GIRL",
+      "graphics_id": "OBJ_EVENT_GFX_PAST_GIRL",
       "x": 5,
       "y": 4,
       "elevation": 0,
