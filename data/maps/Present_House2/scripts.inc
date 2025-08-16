@@ -31,6 +31,7 @@ Present_House2_EventScript_SentimentalWomanHappyReward::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_SoHeresTheThing
 	speak LOCALID_SENTIMENTAL_WOMAN, VAR_0x8005, Name_Sentimental_Woman, Present_House2_Text_SentimentalWomanHappyReward
 	closemessage
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_SENTIMENTAL, SUB_QUEST_SAVE_THE_LUVDISCS
 	completequest QUEST_SENTIMENTAL
 	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	release
@@ -68,6 +69,7 @@ Present_House2_EventScript_SentimentalWomanReward::
 	speak LOCALID_SENTIMENTAL_WOMAN, VAR_0x8005, Name_Sentimental_Woman, Present_House2_Text_SentimentalWomanThisMeansSoMuch
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_House2_Text_LookerIShouldntTellHerWhere
 	completequest QUEST_SENTIMENTAL
+	clearflag FLAG_SAVE_THE_LUVDISCS
 	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	release
 	end

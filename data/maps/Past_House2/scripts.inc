@@ -409,8 +409,9 @@ Past_House2_EventScript_MovePurrloin::
 Past_House2_EventScript_SleepingMama::
 	lock
 	faceplayer
+	goto_if_set FLAG_SWEET_TOOTH_WENT_CRAZY, Past_House2_EventScript_SleepingMamaLater
 	returnqueststate QUEST_FIND_TASTY_MINT
-	goto_if_eq VAR_RESULT, 4, Past_House2_EventScript_MamaThankYou
+	goto_if_eq VAR_RESULT, 4, Past_House2_EventScript_SleepingMamaThankYou
 	msgbox Past_House2_Text_MamaTryingToSleep, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_SLEEPY_MAMA, Common_Movement_FaceRight
@@ -426,7 +427,7 @@ Past_House2_EventScript_SleepingMamaLater::
 	release
 	end
 
-Past_House2_EventScript_MamaThankYou::
+Past_House2_EventScript_SleepingMamaThankYou::
 	msgbox Past_House2_Text_MamaThankYou, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_SLEEPY_MAMA, Common_Movement_FaceRight
