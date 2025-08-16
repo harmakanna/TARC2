@@ -4,7 +4,15 @@ Present_Concerned_Family_House_MapScripts::
 
 Present_Concerned_Family_House_OnTransition:
 	call_if_set FLAG_SYS_WEATHER_CTRL, Present_Concerned_Family_House_EventScript_ForcePlayMusic
+	call_if_unset FLAG_SYS_MAIN_GAME_START, Present_Concerned_Family_House_EventScript_PositionNPCs
 	end
+
+Present_Concerned_Family_House_EventScript_PositionNPCs::
+	setobjectxyperm LOCALID_CONCERNEDFAMILY_MOM, 8, 4
+	setobjectmovementtype LOCALID_CONCERNEDFAMILY_MOM, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectxyperm LOCALID_CONCERNEDFAMILY_GRANDMA, 2, 4
+	setobjectxyperm LOCALID_CONCERNEDFAMILY_ESTELLA, 4, 4
+	return
 
 Present_Concerned_Family_House_EventScript_ForcePlayMusic::
 	playbgm MUS_DP_SUNYSHORE_DAY, FALSE
@@ -20,19 +28,32 @@ Present_ConcernedFamilyHouse_EventScript_LookerINeedToThink::
 	end
 
 Present_ConcernedFamilyHouse_EventScript_Mom::
+	goto_if_unset FLAG_SYS_MAIN_GAME_START, Present_ConcernedFamilyHouse_EventScript_MomPregame
 	msgbox Present_ConcernedFamilyHouse_Text_MomMyBaby, MSGBOX_NPC
+	end
+
+Present_ConcernedFamilyHouse_EventScript_MomPregame::
+	msgbox Present_ConcernedFamilyHouse_Text_MomPregame, MSGBOX_NPC
 	end
 
 Present_ConcernedFamilyHouse_EventScript_Dad::
 	lock
 	faceplayer
+	goto_if_unset FLAG_SYS_MAIN_GAME_START, Present_ConcernedFamilyHouse_EventScript_DadPregame
 	returnqueststate QUEST_SAVE_ESTELLA
 	switch VAR_RESULT
 	case 3, Present_ConcernedFamilyHouse_EventScript_DadRewardQuest
 	case 4, Present_ConcernedFamilyHouse_EventScript_DadCompletedQuest
 	end
 
+Present_ConcernedFamilyHouse_EventScript_DadPregame::
+	msgbox Present_ConcernedFamilyHouse_Text_DadThatOldWoman, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+	
 Present_ConcernedFamilyHouse_EventScript_DadRewardQuest::
+	lockall
 	setflag FLAG_SYS_DISAPPEAR_QUESTS
 	call Script_GetNPCFacingDirection
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_ConcernedFamilyHouse_Text_LookerDaughterBackHomeSafe
@@ -103,11 +124,76 @@ Present_ConcernedFamilyHouse_EventScript_DadCompletedQuest::
 	end
 
 Present_ConcernedFamilyHouse_EventScript_Estella::
-	msgbox Present_ConcernedFamilyHouse_Text_EstellaDidntBelieveMe, MSGBOX_NPC
+	lock
+	goto_if_unset FLAG_SYS_MAIN_GAME_START, Present_ConcernedFamilyHouse_EventScript_EstellaPregame
+	faceplayer
+	msgbox Present_ConcernedFamilyHouse_Text_EstellaDidntBelieveMe, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Present_ConcernedFamilyHouse_EventScript_EstellaPregame::
+	msgbox Present_ConcernedFamilyHouse_Text_EstellaPregame, MSGBOX_DEFAULT
+	closemessage
+	release
 	end
 
 Present_ConcernedFamilyHouse_EventScript_Grandma::
+	goto_if_unset FLAG_SYS_MAIN_GAME_START, Present_ConcernedFamilyHouse_EventScript_GrandmaPregame
+	msgbox Present_ConcernedFamilyHouse_Text_Grandma, MSGBOX_NPC
 	end
+
+Present_ConcernedFamilyHouse_EventScript_GrandmaPregame::
+	lock
+	msgbox Present_ConcernedFamilyHouse_Text_GrandmaPregame, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Present_ConcernedFamilyHouse_Text_MomPregame:
+	.string "My mother-in-law worries me sick with the\n"
+	.string "bad ideas she gives our baby…\p"
+	.string "I've half a mind to send her back home to\n"
+	.string "Hoenn on the next cruise out!$"
+	
+Present_ConcernedFamilyHouse_Text_EstellaPregame:
+	.string "um, um, um!\p"
+	.string "so the spirits who were here were bad but\n"
+	.string "then there's good spirits in the forest who\l"
+	.string "helped us?\p"
+	.string "so the forest spirits are friendly and can\n"
+	.string "help us if we're in trouble?$"
+
+Present_ConcernedFamilyHouse_Text_Grandma:
+	.string "Ohohoho…\p"
+	.string "If what my granddaughter says is true,\n"
+	.string "you truly met Celebi!\p"
+	.string "Please, when we have the time, we must\n"
+	.string "talk more of your experiences in the\l"
+	.string "forest!$"
+
+Present_ConcernedFamilyHouse_Text_GrandmaPregame:
+	.string "Long ago, this city was nothing but\n"
+	.string "a stormy wasteland ruled by two spirits.\p"
+	.string "These spirits were locked in an endless\n"
+	.string "battle.\p"
+	.string "Then, one day, their fighting suddenly\n"
+	.string "stopped.\p"
+	.string "I don't remember the details, but what I\n"
+	.string "do remember is that, if there's ever any\l"
+	.string "trouble in the city, we must go settle\l"
+	.string "things at the Shrines of Peace and\l"
+	.string "Prosperity in the forest…$"
+
+Present_ConcernedFamilyHouse_Text_DadThatOldWoman:
+	.string "Harumph…\p"
+	.string "My kooky old mother's tall tales have\n"
+	.string "absolutely enamored my sweet little\l"
+	.string "girl…\p"
+	.string "I say, there's no value in all this\n"
+	.string "hoo-ha about angry spirits and those\l"
+	.string "abandoned shrines in the woods!\p"
+	.string "We live in the city of progress!$"
 
 Present_ConcernedFamilyHouse_Text_LookerDaughterBackHomeSafe:
 	.string "I see your daughter has made it\n"

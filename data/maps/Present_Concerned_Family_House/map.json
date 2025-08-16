@@ -15,6 +15,7 @@
   "connections": null,
   "object_events": [
     {
+      "local_id": "LOCALID_CONCERNEDFAMILY_MOM",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
       "x": 5,
       "y": 4,
@@ -43,6 +44,7 @@
       "quest_id": 0
     },
     {
+      "local_id": "LOCALID_CONCERNEDFAMILY_ESTELLA",
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
       "x": 11,
       "y": 3,
