@@ -1,8 +1,17 @@
 PastTown_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, PastTown_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, PastTown_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, PastTown_OnFrame
 	map_script MAP_SCRIPT_ON_RESUME, PastTown_OnResume
 	.byte 0
+
+PastTown_OnLoad:
+	call_if_unset FLAG_SWEET_TOOTH_WENT_CRAZY, PastTown_EventScript_CloseSweetToothHole
+	end
+
+PastTown_EventScript_CloseSweetToothHole::
+	setmetatile 15, 26, METATILE_SmallTownWithLab_Past_FixedRoof, TRUE
+	return
 
 PastTown_OnTransition:
 	questmenu QUEST_MENU_CHECK_COMPLETE, QUEST_HELP_FISHERMAN

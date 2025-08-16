@@ -16,6 +16,17 @@ ShrineOfProsperityPresent_OnResume:
 	special HealPlayerParty
 	end
 	
+ShrineOfProsperityPresent_EventScript_TastyMint::
+	goto_if_set FLAG_HIDDEN_ITEM_SHRINE_PROSPERITY_PRESENT_TASTY_MINT, Common_EventScript_End
+	lock
+	giveitem ITEM_SERIOUS_MINT, 1
+	closemessage
+	setflag FLAG_HIDDEN_ITEM_SHRINE_PROSPERITY_PRESENT_TASTY_MINT
+	questmenu QUEST_MENU_CHECK_ACTIVE, QUEST_FIND_TASTY_MINT
+	call_if_eq VAR_RESULT, TRUE, Past_House2_EventScript_SetTastyMintReward
+	release
+	end
+
 ShrineOfProsperityPresent_EventScript_StartGenieFight::
 	lockall
 	faceplayer

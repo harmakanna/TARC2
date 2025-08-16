@@ -50,8 +50,7 @@ CutsceneOffice_EventScript_Scene::
 	speakername Name_Anabel
 	message CutsceneOffice_Text_AnabelLooker
 	waitmessage
-	delay 60
-	closemessage
+	delay 10
 	playbgm MUS_PL_LOOKER, FALSE
 	playse SE_PIN
 	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
@@ -61,7 +60,7 @@ CutsceneOffice_EventScript_Scene::
 	message CutsceneOffice_Text_LookerAhh
 	playse SE_BIKE_HOP
 	waitse
-	playse SE_BREAKABLE_DOOR
+	playse SE_EFFECTIVE
 	waitmessage
 	delay 10
 	closemessage

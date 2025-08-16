@@ -1064,6 +1064,9 @@ EventScript_SelectWithoutRegisteredItem::
 Common_EventScript_NopReturn::
 	return
 
+Common_EventScript_End::
+	end
+	
 @ Unused
 EventScript_CableClub_SetVarResult1::
 	setvar VAR_RESULT, 1

@@ -1898,8 +1898,8 @@ const struct Item gItemsInfo[] =
         .name = _("Tasty Mint"),
         .price = (I_PRICE >= GEN_9) ? 20000 : 20,
         .description = COMPOUND_STRING(
-            "Smells like honey. A\n"
-            "delicacy which grows\n"
+            "Smells like honey.\n"
+            "A sweet which grows\n"
             "once in 100 years."),
         .pocket = POCKET_KEY_ITEMS,
         .importance = 1,

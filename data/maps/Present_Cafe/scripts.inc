@@ -1,5 +1,15 @@
 Present_Cafe_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, PresentCafe_OnTransition
 	.byte 0
+
+PresentCafe_OnTransition:
+	call_if_set FLAG_SWEET_TOOTH_WENT_CRAZY, PresentCafe_EventScript_PlaceCook
+	end
+
+PresentCafe_EventScript_PlaceCook::
+	setobjectxyperm LOCALID_CAFE_COOK, 9, 5
+	setobjectmovementtype LOCALID_CAFE_COOK, MOVEMENT_TYPE_FACE_RIGHT
+	return
 
 Present_Cafe_EventScript_Emma::
 	lock
@@ -46,8 +56,16 @@ Present_Cafe_EventScript_EmmaPreGame::
 
 Present_Cafe_EventScript_EmmaPostQuest::
 	faceplayer
+	goto_if_unset FLAG_HIDE_PRESENT_LUVDISCS, Present_Cafe_EventScript_EmmaLovesLuvdiscs
 	speakername Name_Emma
 	msgbox Present_Cafe_Text_EmmaPostQuest, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Present_Cafe_EventScript_EmmaLovesLuvdiscs::
+	speakername Name_Emma
+	msgbox Present_Cafe_Text_EmmaLovesLuvdiscs, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
@@ -100,6 +118,119 @@ Present_Cafe_EventScript_EmmaFinishQuest::
 	completequest QUEST_BONJOUR_EMMA
 	release
 	end
+
+Present_Cafe_EventScript_SweetTooth::
+	lock
+	goto_if_unset FLAG_TALKED_TO_PRESENT_SWEET_TOOTH, Present_Cafe_EventScript_SweetToothThankYou
+	speak LOCALID_PRESENT_SWEET_TOOTH, DIR_WEST, Name_Sweet_Tooth, Present_Cafe_Text_SweetToothOneRareCandy
+	speak LOCALID_CAFE_COOK, DIR_EAST, Name_Cook, Present_Cafe_Text_CookSoMany
+	closemessage
+	special SpawnCameraObject
+	fadenewbgm MUS_NONE
+	call_if_eq VAR_FACING, DIR_WEST, Present_Cafe_EventScript_PanCameraLeft
+	call_if_eq VAR_FACING, DIR_NORTH, Present_Cafe_EventScript_PanCameraUp
+	delay 90
+	speak LOCALID_PRESENT_SWEET_TOOTH, DIR_WEST, Name_Sweet_Tooth, Present_Cafe_Text_SweetToothOoo
+	speak LOCALID_CAFE_COOK, DIR_EAST, Name_Cook, Present_Cafe_Text_CookGivesIn
+	playbgm MUS_DP_SUNYSHORE_DAY, TRUE
+	speak LOCALID_PRESENT_SWEET_TOOTH, DIR_WEST, Name_Sweet_Tooth, Present_Cafe_Text_SweetToothYay
+	call_if_eq VAR_FACING, DIR_WEST, Present_Cafe_EventScript_PanCameraRight
+	call_if_eq VAR_FACING, DIR_NORTH, Present_Cafe_EventScript_PanCameraDown
+	special RemoveCameraObject
+	closemessage
+	release
+	end
+
+Present_Cafe_EventScript_PanCameraUp::
+	applymovement LOCALID_CAMERA, Common_Movement_WalkUp
+	waitmovement 0
+	return
+
+Present_Cafe_EventScript_PanCameraDown::
+	applymovement LOCALID_CAMERA, Common_Movement_WalkDown
+	waitmovement 0
+	return
+	
+Present_Cafe_EventScript_PanCameraLeft::
+	applymovement LOCALID_CAMERA, Common_Movement_WalkLeft
+	waitmovement 0
+	return
+	
+Present_Cafe_EventScript_PanCameraRight::
+	applymovement LOCALID_CAMERA, Common_Movement_WalkRight
+	waitmovement 0
+	return
+
+Present_Cafe_EventScript_SweetToothThankYou::
+	faceplayer
+	playse SE_PIN
+	applymovement LOCALID_PRESENT_SWEET_TOOTH, Common_Movement_ExclamationMark
+	waitmovement 0
+	delay 50
+	call Script_GetNPCFacingDirection
+	speak LOCALID_PRESENT_SWEET_TOOTH, VAR_0x8005, Name_Sweet_Tooth, Present_Cafe_Text_SweetToothThankYou
+	speakername NULL
+	giveitem ITEM_LIFE_ORB, 1
+	closemessage
+	applymovement LOCALID_PRESENT_SWEET_TOOTH, Common_Movement_FaceLeft
+	waitmovement 0
+	setflag FLAG_TALKED_TO_PRESENT_SWEET_TOOTH
+	release
+	end
+
+Present_Cafe_EventScript_Cook::
+	lock
+	faceplayer
+	speakername Name_Cook
+	msgbox Present_Cafe_Text_Cook, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_CAFE_COOK, Common_Movement_FaceRight
+	waitmovement
+	release
+	end
+
+Present_Cafe_Text_SweetToothThankYou:
+	.string "hi mister!!!!!!\p"
+	.string "thank you so so so much!!!!!!\p"
+	.string "i dont have much, but you can have\n"
+	.string "this thing!!!!!!$"
+
+Present_Cafe_Text_SweetToothOneRareCandy:
+	.string "hi mister!!!!!\p"
+	.string "i will have\p"
+	.string "ONE\p"
+	.string "rare candy please!!!!!$"
+
+Present_Cafe_Text_CookSoMany:
+	.string "But you've already had so many…$"
+
+Present_Cafe_Text_SweetToothOoo:
+	.string "… … …\n"
+	.string "… … …\p"
+	.string "… … …\n"
+	.string "… … …\p"
+	.string "… … …\n"
+	.string "… … …\p"
+	.string "…oooOOoOOooOoooo…$"
+
+Present_Cafe_Text_CookGivesIn:
+	.string "Oof… Fine…\p"
+	.string "You can have another…$"
+
+Present_Cafe_Text_SweetToothYay:
+	.string "yayy$"
+
+Present_Cafe_Text_Cook:
+	.string "Oh lord please help me…\p"
+	.string "This girl came in and started demanding\n"
+	.string "candies…\p"
+	.string "I've never even seen her before…$"
+
+Present_Cafe_Text_EmmaLovesLuvdiscs:
+	.string "Aaaaaaaa!\p"
+	.string "J'adore les Luvdiscs dans la\n"
+	.string "baie!\p"
+	.string "Elles sont si jolis…$"
 
 Present_Cafe_Text_EmmaBonjour:
 	.string "Bonjour!$"

@@ -37,6 +37,9 @@ Looker_Text_AlrightFine:
 Looker_Text_SoHeresTheThing:
     .string "So here's the thing…$"
     
+Looker_Text_ThisSeemsSerious:
+    .string "This seems like a serious problem.$"
+    
 Looker_Text_INeedYourHelp:
     .string "I need your help.$"
 
@@ -84,9 +87,18 @@ Looker_Text_Unlucky:
 Looker_Text_ThankYou:
     .string "Thank you.$"
     
+Looker_Text_Sure:
+    .string "Sure…$"
+
 Looker_Text_Asleep:
     .string "Zzz…$"
 
+Looker_Text_Uhh:
+    .string "Uhh…$"
+    
 Looker_Text_Dots:
     .string "…$"
 
+Looker_Text_DotsLong:
+    .string "… … …\n"
+    .string "… … …$"

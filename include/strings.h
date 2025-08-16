@@ -2528,6 +2528,14 @@ extern const u8 gText_SubQuestCatchTheGenies_Name2[];
 extern const u8 gText_SubQuestCatchTheGenies_Desc2[];
 extern const u8 gText_SubQuestCatchTheGenies_Map[];
 
+extern const u8 gText_SubQuestSaveTheLuvdiscs_Name[];
+extern const u8 gText_SubQuestSaveTheLuvdiscs_Desc[];
+extern const u8 gText_SubQuestSaveTheLuvdiscs_Map[];
+
+extern const u8 gText_SubQuestAWholeNewWorld_Name[];
+extern const u8 gText_SubQuestAWholeNewWorld_Desc[];
+extern const u8 gText_SubQuestAWholeNewWorld_Map[];
+
 // Berry Blender
 extern const u8 gText_SavingDontTurnOff2[];
 extern const u8 gText_BlenderMaxSpeedRecord[];

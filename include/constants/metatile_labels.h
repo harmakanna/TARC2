@@ -724,6 +724,9 @@
 #define METATILE_Slateport_Door             0x2DC
 #define METATILE_Slateport_Door_BattleTent  0x393
 
+// gTileset_SmallTownWithLab
+#define METATILE_SmallTownWithLab_Past_FixedRoof  0x247
+
 // gTileset_Sootopolis
 #define METATILE_Sootopolis_Door             0x21E
 #define METATILE_Sootopolis_Door_Closed      0x248
@@ -784,6 +787,12 @@
 // gTileset_Underwater
 #define METATILE_Underwater_FloorShadow  0x228
 #define METATILE_Underwater_RockWall     0x21E
+
+// gTileset_lozinterior
+#define METATILE_lozinterior_HighWallBroken   0x261
+#define METATILE_lozinterior_LoZ_Wall_Bottom  0x22A
+#define METATILE_lozinterior_LoZ_Wall_Top     0x222
+#define METATILE_lozinterior_LowWallBroken    0x269
 
 // Other
 #define METATILE_PortoBellaCity_Door_Slide         0x2B5

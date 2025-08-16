@@ -172,6 +172,11 @@ Common_Movement_WalkFastUp2::
 	walk_fast_up
 	step_end
 
+Common_Movement_WalkFastRight::
+	walk_fast_right
+	face_left
+	step_end
+
 Common_Movement_SetVisible::
 	set_visible
 	step_end

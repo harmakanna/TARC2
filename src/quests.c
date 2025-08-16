@@ -340,6 +340,34 @@ static const struct SubQuest sSubQuestsCatchTheGenies[QUEST_CATCH_GENIES_SUB_COU
 	),
 };
 
+static const struct SubQuest sSubQuestsSaveTheLuvdiscs[QUEST_SENTIMENTAL_SUB_COUNT] =
+{
+	sub_quest(
+	      0,
+	      gText_SubQuestSaveTheLuvdiscs_Name,
+	      gText_SubQuestSaveTheLuvdiscs_Desc,
+	      gText_SubQuestSaveTheLuvdiscs_Map,
+	      OBJ_EVENT_GFX_SPECIES(LUVDISC),
+	      OBJECT,
+	      sText_Found
+	),
+	
+};
+
+static const struct SubQuest sSubQuestsAWholeNewWorld[QUEST_WITH_MUCH_GRATITUDE_SUB_COUNT] =
+{
+	sub_quest(
+	      0,
+	      gText_SubQuestAWholeNewWorld_Name,
+	      gText_SubQuestAWholeNewWorld_Desc,
+	      gText_SubQuestAWholeNewWorld_Map,
+	      OBJ_EVENT_GFX_FAIRY_TALE_GIRL,
+	      OBJECT,
+	      sText_Found
+	),
+	
+};
+
 ////////////////////////END SUBQUEST CUSTOMIZATION/////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -485,17 +513,17 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestDesc_14,
 	      gText_SideQuestDoneDesc_14,
 	      gText_SideQuestMap14,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
+	      ITEM_HEART_SCALE,
+	      ITEM,
+	      sSubQuestsSaveTheLuvdiscs,
+	      QUEST_SENTIMENTAL_SUB_COUNT
 	),
 	side_quest( // 14 QUEST_FIND_TASTY_MINT - Find a tasty mint!
 	      gText_SideQuestName_15,
 	      gText_SideQuestDesc_15,
 	      gText_SideQuestDoneDesc_15,
 	      gText_SideQuestMap15,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_FAIRY_TALE_GIRL,
 	      OBJECT,
 	      NULL,
 	      0
@@ -535,10 +563,10 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestDesc_19,
 	      gText_SideQuestDoneDesc_19,
 	      gText_SideQuestMap19,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_LITTLE_GIRL,
 	      OBJECT,
-	      NULL,
-	      0
+	      sSubQuestsAWholeNewWorld,
+	      QUEST_WITH_MUCH_GRATITUDE_SUB_COUNT
 	),
 	side_quest(
 	      gText_SideQuestName_20,
@@ -1798,8 +1826,16 @@ void GenerateQuestLocation(s32 questId)
 	}
 	else
 	{
-		StringCopy(gStringVar2,
+		if ((questId == 13 || questId == 18)
+			&& IsSubquestCompletedState(questId) == FALSE)
+		{
+			StringCopy(gStringVar2, sText_Empty);
+		}
+		else
+		{
+			StringCopy(gStringVar2,
 		           sSideQuests[sStateDataPtr->parentQuest].subquests[questId].map);
+		}
 	}
 
 	StringExpandPlaceholders(gStringVar4, sText_ShowLocation);

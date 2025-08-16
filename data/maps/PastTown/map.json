@@ -304,6 +304,14 @@
       "elevation": 0,
       "dest_map": "MAP_PAST_TOWN_PORT",
       "dest_warp_id": "PASTTOWN_PORT_EXIT_2"
+    },
+    {
+      "warp_id": "Past_House2_Entrance_Hole",
+      "x": 15,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_PAST_HOUSE2",
+      "dest_warp_id": "Past_House2_Exit_Hole"
     }
   ],
   "coord_events": [

@@ -91,6 +91,9 @@ Name_Left_Gameboy_Kid:
 Name_Right_Gameboy_Kid:
     .string "Gameboy Kid R$"
 
+Name_Cook:
+    .string "Resigned Cook$"
+    
 Name_Magikarp_Man:
     .string "Shady Man$"
 
@@ -108,3 +111,6 @@ Name_Calm_Man:
 
 Name_Sentimental_Woman:
     .string "Melissa$"
+
+Name_Sweet_Tooth:
+    .string "Berryjammy$"

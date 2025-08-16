@@ -681,9 +681,9 @@
 #define FLAG_HIDE_TINY_BOAT  0x27A // Unused Flag
 #define FLAG_HIDDEN_ITEM_SHRINE_PROSPERITY_PRESENT_TASTY_MINT  0x27B // Unused Flag
 #define FLAG_SWEET_TOOTH_WENT_CRAZY  0x27C // Unused Flag
-#define FLAG_UNUSED_0x27D  0x27D // Unused Flag
-#define FLAG_UNUSED_0x27E  0x27E // Unused Flag
-#define FLAG_UNUSED_0x27F  0x27F // Unused Flag
+#define FLAG_HIDE_PAST_SWEET_TOOTH  0x27D // Unused Flag
+#define FLAG_HIDE_PRESENT_SWEET_TOOTH  0x27E // Unused Flag
+#define FLAG_TALKED_TO_PRESENT_SWEET_TOOTH  0x27F // Unused Flag
 #define FLAG_UNUSED_0x280  0x280 // Unused Flag
 #define FLAG_UNUSED_0x281  0x281 // Unused Flag
 #define FLAG_UNUSED_0x282  0x282 // Unused Flag
