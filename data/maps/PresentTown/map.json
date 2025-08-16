@@ -310,7 +310,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_HIDE_OUTSIDE_NPCS"
+      "flag": "FLAG_HIDE_OUTSIDE_IDOLS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_IDOL",
@@ -323,7 +323,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_HIDE_OUTSIDE_NPCS"
+      "flag": "FLAG_HIDE_OUTSIDE_IDOLS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LISIA",
@@ -336,7 +336,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_HIDE_OUTSIDE_NPCS"
+      "flag": "FLAG_HIDE_OUTSIDE_IDOLS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BW_ACE_TRAINER_F",

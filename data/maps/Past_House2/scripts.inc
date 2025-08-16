@@ -32,6 +32,7 @@ Past_House2_EventScript_SweetToothPreGame::
 	end
 
 Past_House2_EventScript_SweetToothGirlActivate::
+	setflag FLAG_SYS_DISAPPEAR_QUESTS
 	speak LOCALID_SWEET_TOOTH, VAR_0x8005, Name_Sweet_Tooth, Past_House2_Text_SweetToothManIWantATastyMint
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_ThisSeemsSerious
 	speak LOCALID_SWEET_TOOTH, VAR_0x8005, Name_Sweet_Tooth, Past_House2_Text_SweetToothIKnowRight
@@ -40,6 +41,7 @@ Past_House2_EventScript_SweetToothGirlActivate::
 	startquest QUEST_FIND_TASTY_MINT
 	checkitem ITEM_SERIOUS_MINT
 	call_if_eq VAR_RESULT, TRUE, Past_House2_EventScript_SetTastyMintReward
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	releaseall
 	end
 	
@@ -54,6 +56,7 @@ Past_House2_EventScript_SweetToothGirlActive::
 	end
 
 Past_House2_EventScript_SweetToothGirlReward::
+	setflag FLAG_SYS_DISAPPEAR_QUESTS
 	speak LOCALID_SWEET_TOOTH, VAR_0x8005, Name_Sweet_Tooth, Past_House2_Text_SweetToothGimme
 	playbgm MUS_NONE, TRUE
 	removeitem ITEM_SERIOUS_MINT, 1
@@ -95,6 +98,7 @@ Past_House2_EventScript_SweetToothGirlReward::
 	waitmessage
 	waitfanfare
 	completequest QUEST_FIND_TASTY_MINT
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	releaseall
 	end
 

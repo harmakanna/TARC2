@@ -132,7 +132,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_HIDE_INSIDE_OUTSIDE_NPCS"
+      "flag": "FLAG_HIDE_CAFE_IDOL_LISIA"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_IDOL",
@@ -145,7 +145,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_HIDE_INSIDE_OUTSIDE_NPCS"
+      "flag": "FLAG_HIDE_CAFE_IDOL_LEFT"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_IDOL",
@@ -158,7 +158,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_HIDE_INSIDE_OUTSIDE_NPCS"
+      "flag": "FLAG_HIDE_CAFE_IDOL_RIGHT"
     },
     {
       "local_id": "LOCALID_PRESENT_SWEET_TOOTH",

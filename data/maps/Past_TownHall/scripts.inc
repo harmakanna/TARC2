@@ -118,6 +118,41 @@ Past_TownHall_EventScript_LookerWakesUp::
 Past_TownHall_EventScript_Camilla::
 	lock
 	faceplayer
+	goto_if_unset FLAG_SYS_MAIN_GAME_START, Past_TownHall_EventScript_CamillaPreGame
+	checkitem ITEM_RARE_CANDY
+	goto_if_eq VAR_RESULT, TRUE, Past_TownHall_EventScript_CamillaAcceptEstellaCandy
+	returnqueststate QUEST_WITH_MUCH_GRATITUDE
+	goto_if_eq VAR_RESULT, 3, Past_TownHall_EventScript_CamillaCantWaitToDigIn
+	speakername Name_Camilla
+	msgbox Past_TownHall_Text_CamillaPleaseLetMeKnow, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Past_TownHall_EventScript_CamillaAcceptEstellaCandy::
+	playse SE_PIN
+	applymovement LOCALID_TOWNHALL_CAMILLA, Common_Movement_ExclamationMark
+	waitmovement 0
+	delay 50
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Past_TownHall_Text_LookerAGiftForYou
+	removeitem ITEM_RARE_CANDY
+	speakername NULL
+	msgbox Past_TownHall_Text_LookerHandedOverTheRareCandy, MSGBOX_DEFAULT
+	speak LOCALID_TOWNHALL_CAMILLA, VAR_0x8005, Name_Camilla, Past_TownHall_Text_CamillaWhyAGift
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_WillDo
+	questmenu QUEST_MENU_SET_REWARD, QUEST_WITH_MUCH_GRATITUDE
+	closemessage
+	release
+	end
+
+Past_TownHall_EventScript_CamillaCantWaitToDigIn::
+	speakername Name_Camilla
+	msgbox Past_TownHall_Text_CamillaICantWaitToDigIn, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+	
+Past_TownHall_EventScript_CamillaPreGame::
 	speakername Name_Camilla
 	msgbox Past_TownHall_Text_CamillaIWillLookAfterHer, MSGBOX_DEFAULT
 	closemessage
@@ -134,8 +169,36 @@ Past_TownHall_EventScript_Happiny::
 	msgbox Past_TownHall_Text_Happiny, MSGBOX_NPC
 	end
 
+Past_TownHall_Text_CamillaPleaseLetMeKnow:
+	.string "Please, should you ever need help in\n"
+	.string "our era, let me know!$"
+
+Past_TownHall_Text_LookerAGiftForYou:
+	.string "Camilla!\p"
+	.string "I have a gift for you from Estella.$"
+
+Past_TownHall_Text_CamillaWhyAGift:
+	.string "Oh wow! A box of candies!\p"
+	.string "Sweets like these are exceedingly rare\n"
+	.string "and sought-after, but I suppose their\l"
+	.string "abundance in your time makes sense.\p"
+	.string "Please, give Estella my regards!$"
+
+Past_TownHall_Text_CamillaICantWaitToDigIn:
+	.string "I look forward to digging into these\n"
+	.string "wonderful-smelling candies!\p"
+	.string "Please, give Estella my thanks!$"
+
+Past_TownHall_Text_LookerIndeedFromEstella:
+	.string "Indeed. These sweets are a thank-you\n"
+	.string "gift from Estella.$"
+
 Past_TownHall_Text_Happiny:
 	.string "Happi happiii!$"
+
+Past_TownHall_Text_LookerHandedOverTheRareCandy:
+	.string "Looker handed over Estella's gift\n"
+	.string "to Camilla!$"
 
 Past_TownHall_Text_Estella:
 	.string "um, um!\p"

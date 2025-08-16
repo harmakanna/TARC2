@@ -140,13 +140,16 @@ Present_ConcernedFamilyHouse_EventScript_Estella::
 	end
 
 Present_ConcernedFamilyHouse_EventScript_EstellaActivate::
+	setflag FLAG_SYS_DISAPPEAR_QUESTS
 	speak LOCALID_CONCERNEDFAMILY_ESTELLA, VAR_0x8005, Name_Estella, Present_ConcernedFamilyHouse_Text_EstellaHi
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_ConcernedFamilyHouse_Text_LookerHiEstella
 	speak LOCALID_CONCERNEDFAMILY_ESTELLA, VAR_0x8005, Name_Estella, Present_ConcernedFamilyHouse_Text_EstellaFamilyWontLetMe
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_SureICan
 	speak LOCALID_CONCERNEDFAMILY_ESTELLA, VAR_0x8005, Name_Estella, Present_ConcernedFamilyHouse_Text_EstellaThankYouLooker
+	speakername NULL
 	giveitem ITEM_RARE_CANDY
 	startquest QUEST_WITH_MUCH_GRATITUDE
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	release
 	end
 
@@ -158,11 +161,13 @@ Present_ConcernedFamilyHouse_EventScript_EstellaActive::
 	end
 
 Present_ConcernedFamilyHouse_EventScript_EstellaReward::
+	setflag FLAG_SYS_DISAPPEAR_QUESTS
 	speak LOCALID_CONCERNEDFAMILY_ESTELLA, VAR_0x8005, Name_Estella, Present_ConcernedFamilyHouse_Text_EstellaDidYouBring
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_OfCourse
 	speak LOCALID_CONCERNEDFAMILY_ESTELLA, VAR_0x8005, Name_Estella, Present_ConcernedFamilyHouse_Text_EstellaHereHaveThis
 	completequest QUEST_WITH_MUCH_GRATITUDE
 	setflag FLAG_SWEET_TOOTH_WENT_CRAZY_REWARD
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	release
 	end
 

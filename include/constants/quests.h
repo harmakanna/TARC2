@@ -34,7 +34,7 @@
 #define QUEST_SENT_TO_THE_FARM        15 // Find modern medicine for the ailing cows
 #define QUEST_HOMEGROWN_REMEDIES        16 // Find herbal remedies lost to time for the ailing old man
 #define QUEST_FORGOTTEN_TO_TIME        17 // Revive fossils - Done
-#define QUEST_WITH_MUCH_GRATITUDE        18 // Send a thank you gift to Camilla from Estella
+#define QUEST_WITH_MUCH_GRATITUDE        18 // Send a thank you gift to Camilla from Estella - Done
 #define QUEST_20        19
 #define QUEST_21        20
 #define QUEST_22        21

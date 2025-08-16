@@ -36,6 +36,12 @@ Looker_Text_OfCourseICanHelp:
     
 Looker_Text_SureICan:
     .string "Sure, I can!$"
+
+Looker_Text_Indeed:
+    .string "Indeed.$"
+
+Looker_Text_WillDo:
+    .string "Will do.$"
     
 Looker_Text_AlrightFine:
     .string "Alright, fine.$"
