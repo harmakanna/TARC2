@@ -132,8 +132,8 @@ Present_House2_Text_SentimentalWomanThisMeansSoMuch:
 
 Present_House2_Text_LookerIShouldntTellHerWhere:
 	.string "All in a day's work.\p"
-	.string "(I suppose I shouldn't tell her)\n"
-	.string "(where exactly I got this…)$"
+	.string "(I suppose I shouldn't tell her\n"
+	.string "where exactly I got this…)$"
 
 Present_House2_Text_SentimentalWomanMaybeYouKnow:
 	.string "Oh sir, my husband proposed to me\n"

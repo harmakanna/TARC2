@@ -31,6 +31,12 @@ Looker_Text_AnotherProblemSolved:
 Looker_Text_OfCourse:
     .string "Of course.$"
 
+Looker_Text_OfCourseICanHelp:
+    .string "Of course I can help.$"
+    
+Looker_Text_SureICan:
+    .string "Sure, I can!$"
+    
 Looker_Text_AlrightFine:
     .string "Alright, fine.$"
 

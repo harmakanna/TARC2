@@ -127,8 +127,61 @@ Present_ConcernedFamilyHouse_EventScript_Estella::
 	lock
 	goto_if_unset FLAG_SYS_MAIN_GAME_START, Present_ConcernedFamilyHouse_EventScript_EstellaPregame
 	faceplayer
+	call Script_GetNPCFacingDirection
+	returnqueststate QUEST_WITH_MUCH_GRATITUDE
+	switch VAR_RESULT
+	case 1, Present_ConcernedFamilyHouse_EventScript_EstellaActivate
+	case 2, Present_ConcernedFamilyHouse_EventScript_EstellaActive
+	case 3, Present_ConcernedFamilyHouse_EventScript_EstellaReward
+	case 4, Present_ConcernedFamilyHouse_EventScript_EstellaComplete
 	msgbox Present_ConcernedFamilyHouse_Text_EstellaDidntBelieveMe, MSGBOX_DEFAULT
 	closemessage
+	release
+	end
+
+Present_ConcernedFamilyHouse_EventScript_EstellaActivate::
+	speak LOCALID_CONCERNEDFAMILY_ESTELLA, VAR_0x8005, Name_Estella, Present_ConcernedFamilyHouse_Text_EstellaHi
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_ConcernedFamilyHouse_Text_LookerHiEstella
+	speak LOCALID_CONCERNEDFAMILY_ESTELLA, VAR_0x8005, Name_Estella, Present_ConcernedFamilyHouse_Text_EstellaFamilyWontLetMe
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_SureICan
+	speak LOCALID_CONCERNEDFAMILY_ESTELLA, VAR_0x8005, Name_Estella, Present_ConcernedFamilyHouse_Text_EstellaThankYouLooker
+	giveitem ITEM_RARE_CANDY
+	startquest QUEST_WITH_MUCH_GRATITUDE
+	release
+	end
+
+Present_ConcernedFamilyHouse_EventScript_EstellaActive::
+	speakername Name_Estella
+	msgbox Present_ConcernedFamilyHouse_Text_EstellaIHopeSheLikesThem, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Present_ConcernedFamilyHouse_EventScript_EstellaReward::
+	speak LOCALID_CONCERNEDFAMILY_ESTELLA, VAR_0x8005, Name_Estella, Present_ConcernedFamilyHouse_Text_EstellaDidYouBring
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_OfCourse
+	speak LOCALID_CONCERNEDFAMILY_ESTELLA, VAR_0x8005, Name_Estella, Present_ConcernedFamilyHouse_Text_EstellaHereHaveThis
+	completequest QUEST_WITH_MUCH_GRATITUDE
+	setflag FLAG_SWEET_TOOTH_WENT_CRAZY_REWARD
+	release
+	end
+
+Present_ConcernedFamilyHouse_EventScript_EstellaComplete::
+	goto_if_unset FLAG_SWEET_TOOTH_WENT_CRAZY_REWARD, Present_ConcernedFamilyHouse_EventScript_EstellaSecretReward
+	speakername Name_Estella
+	msgbox Present_ConcernedFamilyHouse_Text_EstellaDidntBelieveMe, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Present_ConcernedFamilyHouse_EventScript_EstellaSecretReward::
+	speak LOCALID_CONCERNEDFAMILY_ESTELLA, VAR_0x8005, Name_Estella, Present_ConcernedFamilyHouse_Text_EstellaDidYouBring
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_OfCourse
+	playse SE_SELECT
+	msgbox Present_ConcernedFamilyHouse_Text_LookerIShouldntTellEstella, MSGBOX_DEFAULT
+	speak LOCALID_CONCERNEDFAMILY_ESTELLA, VAR_0x8005, Name_Estella, Present_ConcernedFamilyHouse_Text_EstellaHereHaveThis
+	closemessage
+	setflag FLAG_SWEET_TOOTH_WENT_CRAZY_REWARD
 	release
 	end
 
@@ -140,6 +193,7 @@ Present_ConcernedFamilyHouse_EventScript_EstellaPregame::
 
 Present_ConcernedFamilyHouse_EventScript_Grandma::
 	goto_if_unset FLAG_SYS_MAIN_GAME_START, Present_ConcernedFamilyHouse_EventScript_GrandmaPregame
+	speakername Name_Grandma
 	msgbox Present_ConcernedFamilyHouse_Text_Grandma, MSGBOX_NPC
 	end
 
@@ -150,12 +204,49 @@ Present_ConcernedFamilyHouse_EventScript_GrandmaPregame::
 	release
 	end
 
+Present_ConcernedFamilyHouse_Text_EstellaDidYouBring:
+	.string "hi mr looker! did camilla get like the\n"
+	.string "candy gift i got her?$"
+
+Present_ConcernedFamilyHouse_Text_EstellaHereHaveThis:
+	.string "yahoo! thank you sooo much mr looker!\p"
+	.string "heres a little thank you for you too!$"
+
+Present_ConcernedFamilyHouse_Text_EstellaIHopeSheLikesThem:
+	.string "i hope she likes the candies…$"
+
+Present_ConcernedFamilyHouse_Text_EstellaHi:
+	.string "hi mr looker!$"
+
+Present_ConcernedFamilyHouse_Text_LookerHiEstella:
+	.string "Hi, Estella. Was your trip home okay?$"
+
+Present_ConcernedFamilyHouse_Text_EstellaFamilyWontLetMe:
+	.string "it was okay! but now my mom and dad wont\n"
+	.string "let me leave the house…\p"
+	.string "they dont trust me…\p"
+	.string "but i gotta see camilla again!\p"
+	.string "i got a thank you gift for her!\p"
+	.string "… … …\n"
+	.string "… … …\p"
+	.string "WAIT!!!\p"
+	.string "can you bring it to her please\p"
+	.string "itd make me really happy!$"
+
+Present_ConcernedFamilyHouse_Text_EstellaThankYouLooker:
+	.string "yahoo!\p"
+	.string "thanks mr looker! heres the gift$"
+
+Present_ConcernedFamilyHouse_Text_LookerIShouldntTellEstella:
+	.string "(I should probably keep it a secret that\n"
+	.string "the candy never reached Camilla…)$"
+
 Present_ConcernedFamilyHouse_Text_MomPregame:
 	.string "My mother-in-law worries me sick with the\n"
 	.string "bad ideas she gives our baby…\p"
 	.string "I've half a mind to send her back home to\n"
 	.string "Hoenn on the next cruise out!$"
-	
+
 Present_ConcernedFamilyHouse_Text_EstellaPregame:
 	.string "um, um, um!\p"
 	.string "so the spirits who were here were bad but\n"

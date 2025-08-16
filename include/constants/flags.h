@@ -684,7 +684,7 @@
 #define FLAG_HIDE_PAST_SWEET_TOOTH  0x27D // Unused Flag
 #define FLAG_HIDE_PRESENT_SWEET_TOOTH  0x27E // Unused Flag
 #define FLAG_TALKED_TO_PRESENT_SWEET_TOOTH  0x27F // Unused Flag
-#define FLAG_UNUSED_0x280  0x280 // Unused Flag
+#define FLAG_SWEET_TOOTH_WENT_CRAZY_REWARD  0x280 // Unused Flag
 #define FLAG_UNUSED_0x281  0x281 // Unused Flag
 #define FLAG_UNUSED_0x282  0x282 // Unused Flag
 #define FLAG_UNUSED_0x283  0x283 // Unused Flag
