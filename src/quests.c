@@ -1826,8 +1826,8 @@ void GenerateQuestLocation(s32 questId)
 	}
 	else
 	{
-		if ((questId == 13 || questId == 18)
-			&& IsSubquestCompletedState(sSideQuests[sStateDataPtr->parentQuest].subquests[questId].id) == FALSE)
+		if ((sStateDataPtr->parentQuest == 13 || sStateDataPtr->parentQuest == 18)
+			&& IsSubquestCompletedState(questId) == FALSE)
 		{
 			StringCopy(gStringVar2, sText_Empty);
 		}

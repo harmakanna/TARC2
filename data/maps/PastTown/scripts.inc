@@ -10,7 +10,7 @@ PastTown_OnLoad:
 	end
 
 PastTown_EventScript_CloseSweetToothHole::
-	setmetatile 15, 26, METATILE_SmallTownWithLab_Past_FixedRoof, TRUE
+	setmetatile 15, 26, METATILE_SmallTownWithLab_Past_FixedRoof, FALSE
 	return
 
 PastTown_OnTransition:

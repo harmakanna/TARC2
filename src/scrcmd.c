@@ -1675,6 +1675,7 @@ bool8 ScrCmd_releaseall(struct ScriptContext *ctx)
     ObjectEventClearHeldMovementIfFinished(&gObjectEvents[playerObjectId]);
     ScriptMovement_UnfreezeObjectEvents();
     UnfreezeObjectEvents();
+    RefreshQuestIcons();
     gMsgBoxIsCancelable = FALSE;
     return FALSE;
 }
@@ -1696,6 +1697,7 @@ bool8 ScrCmd_release(struct ScriptContext *ctx)
     ObjectEventClearHeldMovementIfFinished(&gObjectEvents[playerObjectId]);
     ScriptMovement_UnfreezeObjectEvents();
     UnfreezeObjectEvents();
+    RefreshQuestIcons();
     gMsgBoxIsCancelable = FALSE;
     return FALSE;
 }
@@ -1713,6 +1715,7 @@ bool8 ScrCmd_speak(struct ScriptContext *ctx)
     u32 direction = VarGet(ScriptReadWord(ctx));
     const u8 *name = (const u8 *)ScriptReadWord(ctx);
     const u8 *msg = (const u8 *)ScriptReadWord(ctx);
+    gTextFlags.autoScroll = FALSE;
     //struct ObjectEvent *objEvent;
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
@@ -1745,12 +1748,14 @@ bool8 ScrCmd_speak(struct ScriptContext *ctx)
     if (msg == NULL)
         msg = (const u8 *)ctx->data[0];
     ShowFieldMessage(msg);
-
+    
     return FALSE;
 }
 
 bool8 ScrCmd_message(struct ScriptContext *ctx)
 {
+    gTextFlags.autoScroll = FALSE;
+
     const u8 *msg = (const u8 *)ScriptReadWord(ctx);
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
