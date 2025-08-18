@@ -1829,7 +1829,7 @@ void GenerateQuestLocation(s32 questId)
 		if ((sStateDataPtr->parentQuest == 13 || sStateDataPtr->parentQuest == 18)
 			&& IsSubquestCompletedState(questId) == FALSE)
 		{
-			StringCopy(gStringVar2, sText_Empty);
+			StringCopy(gStringVar2, gText_ThreeQuestionMarks);
 		}
 		else
 		{
@@ -1860,7 +1860,8 @@ void GenerateQuestFlavorText(s32 questId)
 		}
 		if (IsQuestRewardState(questId) == TRUE)
 		{
-			StringCopy(gStringVar1, sText_ReturnRecieveReward);
+			UpdateQuestFlavorText(questId);
+			//StringCopy(gStringVar1, sText_ReturnRecieveReward);
 		}
 		if (IsQuestCompletedState(questId) == TRUE)
 		{
@@ -2671,8 +2672,8 @@ void HandleQuestIconForSingleObjectEvent(struct ObjectEvent *objectEvent, u32 ob
 	}
 
 	// Handle quests which rely on other quests as a prerequisite
-	if ((questId == 10 && !IsQuestCompletedState(QUEST_FARMLAND_INVASION_1)) //Invasion 2 does not occur until Invasion 1 is complete
-		|| (questId == 11 && !IsQuestCompletedState(QUEST_FARMLAND_INVASION_2))) //Invasion 3 does not occur until Invasion 2 is complete
+	if ((questId == QUEST_FARMLAND_INVASION_2 && !IsQuestCompletedState(QUEST_FARMLAND_INVASION_1)) //Invasion 2 does not occur until Invasion 1 is complete
+		|| (questId == QUEST_FARMLAND_INVASION_3 && !IsQuestCompletedState(QUEST_FARMLAND_INVASION_2))) //Invasion 3 does not occur until Invasion 2 is complete
 	{
 		ResetQuestIconOnObject(objectEvent);
 		return;

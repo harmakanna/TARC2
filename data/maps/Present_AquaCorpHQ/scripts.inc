@@ -519,6 +519,20 @@ Present_AquaCorpHQ_Movement_MonWalkToPlayer:
 	walk_left
 	step_end
 
+Present_AquaCorpHQ_EventScript_Krabby::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_KRABBY, CRY_MODE_NORMAL
+	msgbox Present_AquaCorpHQ_Text_Krabby, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	release
+	end
+
+Present_AquaCorpHQ_Text_Krabby:
+	.string "Blblblblblblbl!$"
+	
 Present_AquaCorpHQ_Text_LookerMatt:
 	.string "Aqua Admin Matt.$"
 

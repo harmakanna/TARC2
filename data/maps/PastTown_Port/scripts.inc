@@ -36,6 +36,7 @@ PastTown_Port_EventScript_HiddenHeartScale::
 
 PastTown_Port_EventScript_GiveHeartScale::
 	lock
+	waitse
 	giveitem ITEM_HEART_SCALE
 	setvar VAR_HEART_SCALE_SPARKLE, 3
 	questmenu QUEST_MENU_SET_REWARD, QUEST_SENTIMENTAL

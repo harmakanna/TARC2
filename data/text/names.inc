@@ -129,3 +129,6 @@ Name_Sick_Man:
 
 Name_Well_Man:
     .string "Frail Man$"
+
+Name_Nurse:
+    .string "Nurse$"

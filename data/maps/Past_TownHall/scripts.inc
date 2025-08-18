@@ -194,8 +194,14 @@ Past_TownHall_EventScript_Estella::
 	end
 
 Past_TownHall_EventScript_Happiny::
+	lock
+	faceplayer
+	waitse
 	playmoncry SPECIES_HAPPINY, CRY_MODE_NORMAL
-	msgbox Past_TownHall_Text_Happiny, MSGBOX_NPC
+	msgbox Past_TownHall_Text_Happiny, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	release
 	end
 
 Past_TownHall_Text_CamillaPleaseLetMeKnow:

@@ -439,6 +439,48 @@ Past_House2_EventScript_SleepingMamaThankYou::
 	release
 	end
 
+Past_House2_EventScript_Skitty::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_SKITTY, CRY_MODE_NORMAL
+	msgbox Past_House2_Text_Skitty, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	release
+	end
+
+Past_House2_EventScript_Sprigatito::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_SPRIGATITO, CRY_MODE_NORMAL
+	msgbox Past_House2_Text_Sprigatito, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	release
+	end
+
+Past_House2_EventScript_Purrloin::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_PURRLOIN, CRY_MODE_NORMAL
+	msgbox Past_House2_Text_Purrloin, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	release
+	end
+
+Past_House2_Text_Purrloin:
+	.string "Prrrrr! Rrrrrrr!$"
+	
+Past_House2_Text_Sprigatito:
+	.string "Ma-ah!$"
+
+Past_House2_Text_Skitty:
+	.string "Myaa!$"
+
 Past_House2_Text_SweetToothYayThanks:
 	.string "yay thanks$"
 

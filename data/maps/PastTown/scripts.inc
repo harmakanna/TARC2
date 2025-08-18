@@ -1048,7 +1048,46 @@ PastTown_EventScript_Pests1QuestSetReward::
 PastTown_EventScript_Pests2QuestSetReward::
 	questmenu QUEST_MENU_SET_REWARD, QUEST_FARMLAND_INVASION_2
 	return
-	
+
+PastTown_EventScript_Wooloo::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_WOOLOO, CRY_MODE_NORMAL
+	msgbox PastTown_Text_Wooloo, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+PastTown_EventScript_Mareep::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_MAREEP, CRY_MODE_NORMAL
+	msgbox PastTown_Text_Mareep, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+PastTown_EventScript_Mudsdale::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_MUDSDALE, CRY_MODE_NORMAL
+	msgbox PastTown_Text_Mudsdale, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
 PastTown_Text_ForemanFarmInvasionDagNabbit:
 	.string "DAGNABBIT!\p"
 	.string "A raid of this level is absolutely\n"
@@ -1506,3 +1545,12 @@ PastTown_Text_Hydrapple:
 
 PastTown_Text_HydrappleFight:
 	.string "Hssssss!$"
+
+PastTown_Text_Wooloo:
+	.string "Baaa!$"
+
+PastTown_Text_Mareep:
+	.string "Maaa!$"
+
+PastTown_Text_Mudsdale:
+	.string "Nyehehehehehe!$"

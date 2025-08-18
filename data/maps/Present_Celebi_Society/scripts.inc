@@ -128,4 +128,4 @@ Present_CelebiSociety_Text_GrandmaOfCourseDearie:
 	.string "I will gladly share what I've learned.$"
 
 Present_CelebiSociety_Text_Eldegoss:
-	.string "Ellllllldegoss!$"
+	.string "Fwooooooo!$"

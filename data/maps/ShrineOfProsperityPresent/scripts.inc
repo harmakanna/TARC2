@@ -19,6 +19,7 @@ ShrineOfProsperityPresent_OnResume:
 ShrineOfProsperityPresent_EventScript_TastyMint::
 	goto_if_set FLAG_HIDDEN_ITEM_SHRINE_PROSPERITY_PRESENT_TASTY_MINT, Common_EventScript_End
 	lock
+	waitse
 	giveitem ITEM_SERIOUS_MINT, 1
 	closemessage
 	setflag FLAG_HIDDEN_ITEM_SHRINE_PROSPERITY_PRESENT_TASTY_MINT
