@@ -708,7 +708,7 @@
 #define FLAG_HIDE_PAST_SAD_GIRL_OUTSIDE  0x295 // Unused Flag
 #define FLAG_HIDE_TAUROS  0x296 // Unused Flag
 #define FLAG_HIDE_MILTANK  0x297 // Unused Flag
-#define FLAG_UNUSED_0x298  0x298 // Unused Flag
+#define FLAG_HIDE_WHITE_HERB  0x298 // Unused Flag
 #define FLAG_UNUSED_0x299  0x299 // Unused Flag
 #define FLAG_UNUSED_0x29A  0x29A // Unused Flag
 #define FLAG_UNUSED_0x29B  0x29B // Unused Flag

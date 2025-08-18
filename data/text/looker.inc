@@ -75,6 +75,9 @@ Looker_Text_IHaveTheInformation:
     .string "I have the information you are looking\n"
     .string "for.$"
 
+Looker_Text_WhatsWrong:
+    .string "What's wrong?$"
+
 Looker_Text_LetMeThinkAboutThat:
     .string "Let me think about that.$"
 

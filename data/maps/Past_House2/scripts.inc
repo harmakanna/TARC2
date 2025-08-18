@@ -93,6 +93,10 @@ Past_House2_EventScript_SweetToothGirlReward::
 	special RemoveCameraObject
 	speak LOCALID_SWEET_TOOTH, VAR_0x8005, Name_Sweet_Tooth, Past_House2_Text_SweetToothThatWasGood
 	speakername NULL
+	additem ITEM_TIMID_MINT, 1
+	additem ITEM_JOLLY_MINT, 1
+	additem ITEM_MODEST_MINT, 1
+	additem ITEM_ADAMANT_MINT, 1
 	playfanfare MUS_OBTAIN_ITEM
 	message Past_House2_Text_LookerReceivedMints
 	waitmessage
@@ -588,5 +592,5 @@ Past_House2_Text_MamaWhy:
 	.string "I can fix that tomorrow…$"
 
 Past_House2_Text_LookerReceivedMints:
-	.string "Looker recieved five Adamant, Modest,\n"
-	.string "Jolly, and Timid Mints each!$"
+	.string "Looker recieved one Adamant, Modest,\n"
+	.string "Jolly, and Timid Mint each!$"

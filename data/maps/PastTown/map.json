@@ -365,7 +365,7 @@
       "quest_id": 11
     },
     {
-      "local_id": "LOCALID_PAST_SAD_GIRL_INSIDE",
+      "local_id": "LOCALID_PAST_SAD_GIRL_OUTSIDE",
       "graphics_id": "OBJ_EVENT_GFX_PAST_GIRL",
       "x": 9,
       "y": 22,

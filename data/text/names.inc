@@ -116,19 +116,22 @@ Name_Sweet_Tooth:
     .string "Berryjammy$"
 
 Name_Foreman:
-    .string "Foreman$"
+    .string "Foreman Brown$"
 
 Name_Carrot_Farmer:
-    .string "Carrot Farmer$"
+    .string "Iris$"
 
 Name_Cabbage_Farmer:
-    .string "Cabbage Farmer$"
+    .string "Damian$"
 
 Name_Sick_Man:
-    .string "Ailing Man$"
+    .string "Aesop$"
 
 Name_Well_Man:
-    .string "Frail Man$"
+    .string "Aesop$"
 
 Name_Nurse:
-    .string "Nurse$"
+    .string "{PKMN} Nurse$"
+
+Name_Farmgirl:
+    .string "Alice$"

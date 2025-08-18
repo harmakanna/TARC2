@@ -68,6 +68,12 @@ static const struct MenuAction MultichoiceList_ForemanGiveMon[] =
     {COMPOUND_STRING("Shiinotic")},
 };
 
+static const struct MenuAction MultichoiceList_FarmGirlGiveMon[] =
+{
+    {COMPOUND_STRING("Tauros")},
+    {COMPOUND_STRING("Miltank")},
+};
+
 static const struct MenuAction MultichoiceList_BrineyOnDewford[] =
 {
     {COMPOUND_STRING("PETALBURG")},
@@ -871,6 +877,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_FISHERMAN_GIVEMON]          = MULTICHOICE(MultichoiceList_FishermanGiveMon),
     [MULTI_SCIENTIST_GIVEMON]          = MULTICHOICE(MultichoiceList_ScientistGiveMon),
     [MULTI_FOREMAN_GIVEMON]            = MULTICHOICE(MultichoiceList_ForemanGiveMon),
+    [MULTI_FARMGIRL_GIVEMON]           = MULTICHOICE(MultichoiceList_FarmGirlGiveMon),
     [MULTI_BRINEY_ON_DEWFORD]          = MULTICHOICE(MultichoiceList_BrineyOnDewford),
     [MULTI_PC]                         = MULTICHOICE(MultichoiceList_Exit),
     [MULTI_ENTERINFO]                  = MULTICHOICE(MultichoiceList_EnterInfo),
