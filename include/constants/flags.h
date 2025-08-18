@@ -703,7 +703,7 @@
 #define FLAG_HIDE_PEST_3_3  0x290 // Unused Flag
 #define FLAG_HIDE_PEST_3_4  0x291 // Unused Flag
 #define FLAG_HIDE_PEST_3_5  0x292 // Unused Flag
-#define FLAG_UNUSED_0x293  0x293 // Unused Flag
+#define FLAG_HIDE_PEST_3_6  0x293 // Unused Flag
 #define FLAG_UNUSED_0x294  0x294 // Unused Flag
 #define FLAG_UNUSED_0x295  0x295 // Unused Flag
 #define FLAG_UNUSED_0x296  0x296 // Unused Flag
@@ -1508,11 +1508,11 @@
 #define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x84)
 
 #define FLAG_FORCE_LOAD_OFFSCREEN_OBJEV             (SYSTEM_FLAGS + 0x85) // Unused Flag
-#define FLAG_UNUSED_0x8E6                           (SYSTEM_FLAGS + 0x86) // Unused Flag
-#define FLAG_UNUSED_0x8E7                           (SYSTEM_FLAGS + 0x87) // Unused Flag
-#define FLAG_UNUSED_0x8E8                           (SYSTEM_FLAGS + 0x88) // Unused Flag
-#define FLAG_UNUSED_0x8E9                           (SYSTEM_FLAGS + 0x89) // Unused Flag
-#define FLAG_UNUSED_0x8EA                           (SYSTEM_FLAGS + 0x8A) // Unused Flag
+#define FLAG_SYS_DISABLE_CATCHING                   (SYSTEM_FLAGS + 0x86) // Unused Flag
+#define FLAG_SYS_DISABLE_BAG                        (SYSTEM_FLAGS + 0x87) // Unused Flag
+#define FLAG_SYS_DISABLE_RUNNING                    (SYSTEM_FLAGS + 0x88) // Unused Flag
+#define FLAG_SYS_INVERSE_BATTLE                     (SYSTEM_FLAGS + 0x89) // Unused Flag
+#define FLAG_SYS_SMART_WILD_BATTLES                 (SYSTEM_FLAGS + 0x8A) // Unused Flag
 #define FLAG_UNUSED_0x8EB                           (SYSTEM_FLAGS + 0x8B) // Unused Flag
 #define FLAG_UNUSED_0x8EC                           (SYSTEM_FLAGS + 0x8C) // Unused Flag
 #define FLAG_UNUSED_0x8ED                           (SYSTEM_FLAGS + 0x8D) // Unused Flag

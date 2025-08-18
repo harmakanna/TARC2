@@ -340,7 +340,7 @@ static const struct InGameOT sIngameOTs[] =
         .isNicknamed = TRUE,
         .nickname = _("Dr. Round"),
     },
-    [OT_EDUARDO_BRELOOM] =
+    [OT_LOOKER_BRELOOM] =
     {
         .species = SPECIES_BRELOOM,
         .level = 50,
@@ -352,14 +352,14 @@ static const struct InGameOT sIngameOTs[] =
         .nature = NATURE_HARDY,
         .abilityNum = 0,
         .gender = MON_MALE,
-        .otId = 42784,
-        .otName = _("Eduardo"),
+        .otId = OT_ID_PLAYER_ID,
+        .otName = _("Looker"),
         .otGender = MALE,
         .isShiny = FALSE,
-        .isNicknamed = TRUE,
-        .nickname = _("Nappy"),
+        .isNicknamed = FALSE,
+        .nickname = _(""),
     },
-    [OT_EDUARDO_SHIINOTIC] =
+    [OT_LOOKER_SHIINOTIC] =
     {
         .species = SPECIES_SHIINOTIC,
         .level = 50,
@@ -371,12 +371,12 @@ static const struct InGameOT sIngameOTs[] =
         .nature = NATURE_HARDY,
         .abilityNum = 0,
         .gender = MON_MALE,
-        .otId = 42784,
-        .otName = _("Eduardo"),
+        .otId = OT_ID_PLAYER_ID,
+        .otName = _("Looker"),
         .otGender = MALE,
         .isShiny = FALSE,
-        .isNicknamed = TRUE,
-        .nickname = _("Nappy"),
+        .isNicknamed = FALSE,
+        .nickname = _(""),
     },
     [OT_TEE_OVERQWIL] =
     {

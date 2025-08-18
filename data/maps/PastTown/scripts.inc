@@ -16,8 +16,41 @@ PastTown_EventScript_CloseSweetToothHole::
 PastTown_OnTransition:
 	questmenu QUEST_MENU_CHECK_COMPLETE, QUEST_HELP_FISHERMAN
 	call_if_eq VAR_RESULT, TRUE, PastTown_EventScript_FishermanPlacement
+	questmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FARMLAND_INVASION_3
+	call_if_eq VAR_RESULT, FALSE, PastTown_EventScript_HandleFarmPlacements
 	call_if_eq VAR_CUTSCENE_STATE, 9, PastTown_EventScript_LassPlacement
 	end
+
+PastTown_EventScript_HandleFarmPlacements::
+	questmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FARMLAND_INVASION_2
+	call_if_eq VAR_RESULT, TRUE, PastTown_EventScript_HandleFarmQuest3Placements
+	questmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FARMLAND_INVASION_1
+	call_if_eq VAR_RESULT, TRUE, PastTown_EventScript_HandleFarmQuest2Placements
+	call_if_eq VAR_RESULT, FALSE, PastTown_EventScript_HandleFarmQuest1Placements
+	return
+
+PastTown_EventScript_HandleFarmQuest3Placements::
+	setobjectxyperm LOCALID_PAST_FOREMAN, 33, 27
+	setobjectxyperm LOCALID_PAST_CARROTFARMER, 38, 24
+	setobjectxyperm LOCALID_PAST_CABBAGEFARMER, 39, 24
+	setobjectmovementtype LOCALID_PAST_FOREMAN, MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT
+	setobjectmovementtype LOCALID_PAST_CARROTFARMER, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectmovementtype LOCALID_PAST_CABBAGEFARMER, MOVEMENT_TYPE_FACE_LEFT
+	return
+
+PastTown_EventScript_HandleFarmQuest2Placements::
+	setobjectxyperm LOCALID_PAST_CABBAGEFARMER, 39, 27
+	setobjectmovementtype LOCALID_PAST_CABBAGEFARMER, MOVEMENT_TYPE_FACE_DOWN
+	return
+
+PastTown_EventScript_HandleFarmQuest1Placements::
+	call_if_set FLAG_SYS_MAIN_GAME_START, PastTown_EventScript_HandleFarmQuest1PlacementsStart
+	return
+
+PastTown_EventScript_HandleFarmQuest1PlacementsStart::
+	setobjectxyperm LOCALID_PAST_CARROTFARMER, 31, 27
+	setobjectmovementtype LOCALID_PAST_CARROTFARMER, MOVEMENT_TYPE_FACE_DOWN
+	return
 
 PastTown_EventScript_FishermanPlacement::
 	setobjectxyperm LOCALID_FISHERMAN, 15, 32
@@ -68,6 +101,7 @@ PastTown_EventScript_LookerEnters::
 PastTown_OnResume:
 	special HealPlayerParty
 	end
+
 
 PastTown_EventScript_Lass::
 	lock
@@ -367,6 +401,884 @@ PastTown_EventScript_ScientistQuestComplete::
 	release
 	end
 
+PastTown_EventScript_Foreman::
+	lock
+	faceplayer
+	call Script_GetNPCFacingDirection
+	goto_if_unset FLAG_SYS_MAIN_GAME_START, PastTown_EventScript_ForemanPregame
+	returnqueststate QUEST_FARMLAND_INVASION_1
+	goto_if_lt VAR_RESULT, 3, PastTown_EventScript_ForemanCarrotFarmInvasion
+	goto_if_eq VAR_RESULT, 3, PastTown_EventScript_ForemanCarrotFarmInvasionReward
+	returnqueststate QUEST_FARMLAND_INVASION_2
+	goto_if_lt VAR_RESULT, 3, PastTown_EventScript_ForemanCabbageFarmInvasion
+	goto_if_eq VAR_RESULT, 3, PastTown_EventScript_ForemanCabbageFarmInvasionReward
+	returnqueststate QUEST_FARMLAND_INVASION_3
+	switch VAR_RESULT
+	case 1, PastTown_EventScript_ForemanPests3QuestActivate
+	case 2, PastTown_EventScript_ForemanPests3QuestActive
+	case 3, PastTown_EventScript_ForemanPests3QuestReward
+	closemessage
+	release
+	end
+
+PastTown_EventScript_ForemanCarrotFarmInvasion::
+	msgbox PastTown_Text_ForemanCarrotFarmInvasion, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PAST_FOREMAN, Common_Movement_FaceDown
+	waitmovement 0
+	release
+	end
+
+PastTown_EventScript_ForemanCarrotFarmInvasionReward::
+	speakername Name_Foreman
+	msgbox PastTown_Text_ForemanCarrotFarmInvasionReward
+	closemessage
+	applymovement LOCALID_PAST_FOREMAN, Common_Movement_FaceDown
+	waitmovement 0
+	release
+	end
+	
+PastTown_EventScript_ForemanCabbageFarmInvasion::
+	msgbox PastTown_Text_ForemanCabbageFarmInvasion, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PAST_FOREMAN, Common_Movement_FaceDown
+	waitmovement 0
+	release
+	end
+
+PastTown_EventScript_ForemanCabbageFarmInvasionReward::
+	speakername Name_Foreman
+	msgbox PastTown_Text_ForemanCabbageFarmInvasionReward
+	closemessage
+	applymovement LOCALID_PAST_FOREMAN, Common_Movement_FaceDown
+	waitmovement 0
+	release
+	end
+
+PastTown_EventScript_ForemanPests3QuestActivate::
+	setflag FLAG_SYS_DISAPPEAR_QUESTS
+	speak LOCALID_PAST_FOREMAN, VAR_0x8005, Name_Foreman, PastTown_Text_ForemanFarmInvasionDagNabbit
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_ThisSeemsSerious
+	speak LOCALID_PAST_FOREMAN, VAR_0x8005, Name_Foreman, PastTown_Text_ForemanFarmInvasionWeCantDoThisAlone
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_IWillHandleThis
+	speak LOCALID_PAST_FOREMAN, VAR_0x8005, Name_Foreman, PastTown_Text_ForemanFarmInvasionForeverInYourDebt
+	applymovement LOCALID_PAST_FOREMAN, Common_Movement_FaceDown
+	waitmovement 0
+	startquest QUEST_FARMLAND_INVASION_3
+	setvar VAR_PEST_CONTROL_COUNT, 0
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
+	release
+	end
+
+PastTown_EventScript_ForemanPests3QuestActive::
+	msgbox PastTown_Text_ForemanFarmInvasionActive, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PAST_FOREMAN, Common_Movement_FaceDown
+	waitmovement 0
+	release
+	end
+
+PastTown_EventScript_ForemanPests3QuestReward::
+	setflag FLAG_SYS_DISAPPEAR_QUESTS
+	speak LOCALID_PAST_FOREMAN, VAR_0x8005, Name_Foreman, PastTown_Text_ForemanFarmInvasionThankYou
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_GladICouldHelp
+	speak LOCALID_PAST_FOREMAN, VAR_0x8005, Name_Foreman, PastTown_Text_ForemanFarmInvasionGivePokemon
+	multichoice 0, 6, MULTI_FOREMAN_GIVEMON, TRUE
+	goto_if_eq VAR_RESULT, 0, PastTown_EventScript_ForemanGiveBreloom
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_ForemanGiveShiinotic
+	release
+	end
+
+PastTown_EventScript_ForemanQuestFinish::
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_PAST_CARROTFARMER
+	removeobject LOCALID_PAST_CABBAGEFARMER
+	setobjectxyperm LOCALID_PAST_CARROTFARMER, 31, 30
+	setobjectxyperm LOCALID_PAST_CABBAGEFARMER, 39, 30
+	setobjectmovementtype LOCALID_PAST_CARROTFARMER, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT
+	setobjectmovementtype LOCALID_PAST_CABBAGEFARMER, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT
+	addobject LOCALID_PAST_CARROTFARMER
+	addobject LOCALID_PAST_CABBAGEFARMER
+	fadescreen FADE_FROM_BLACK
+	completequest QUEST_FARMLAND_INVASION_3
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
+	release
+	end
+
+PastTown_EventScript_CarrotFarmer::
+	lock
+	call Script_GetNPCFacingDirection
+	goto_if_unset FLAG_SYS_MAIN_GAME_START, PastTown_EventScript_CarrotFarmerPregame
+	returnqueststate QUEST_FARMLAND_INVASION_1
+	switch VAR_RESULT
+	case 1, PastTown_EventScript_CarrotFarmerPests1QuestActivate
+	case 2, PastTown_EventScript_CarrotFarmerPests1QuestActive
+	case 3, PastTown_EventScript_CarrotFarmerPests1QuestReward
+	returnqueststate QUEST_FARMLAND_INVASION_2
+	goto_if_lt VAR_RESULT, 3, PastTown_EventScript_CarrotFarmerPostQuest1
+	goto_if_lt VAR_RESULT, 3, PastTown_EventScript_CarrotFarmerPostQuest1Quest2Reward
+	returnqueststate QUEST_FARMLAND_INVASION_3
+	goto_if_lt VAR_RESULT, 3, PastTown_EventScript_FarmersPests3
+	goto_if_eq VAR_RESULT, 3, PastTown_EventScript_CarrotFarmerPests3Reward
+	faceplayer
+	msgbox PastTown_Text_CarrotFarmerPostQuest, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+PastTown_EventScript_CarrotFarmerPests1QuestActivate::
+	setflag FLAG_SYS_DISAPPEAR_QUESTS
+	speak LOCALID_PAST_CARROTFARMER, DIR_SOUTH, Name_Carrot_Farmer, PastTown_Text_CarrotFarmerMyCarrots
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_WhatSeemsToBeTheProblem
+	faceplayer
+	playse SE_PIN
+	applymovement LOCALID_PAST_CARROTFARMER, Common_Movement_ExclamationMark
+	waitmovement 0
+	delay 50
+	speak LOCALID_PAST_CARROTFARMER, VAR_0x8005, Name_Carrot_Farmer, PastTown_Text_CarrotFarmerYouSeemStrong
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_LeaveItToMe
+	startquest QUEST_FARMLAND_INVASION_1
+	setvar VAR_PEST_CONTROL_COUNT, 0
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
+	release
+	end
+
+PastTown_EventScript_CarrotFarmerPests1QuestActive::
+	faceplayer
+	msgbox PastTown_Text_CarrotFarmerMyPoorCarrots, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+PastTown_EventScript_CarrotFarmerPests1QuestReward::
+	setflag FLAG_SYS_DISAPPEAR_QUESTS
+	speak LOCALID_PAST_CARROTFARMER, VAR_0x8005, Name_Carrot_Farmer, PastTown_Text_CarrotFarmerMySweetCarrots
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_AllInADaysWork
+	speak LOCALID_PAST_CARROTFARMER, VAR_0x8005, Name_Carrot_Farmer, PastTown_Text_CarrotFarmerThankYouQuest1
+	speakername NULL
+	additem ITEM_SALAC_BERRY, 1
+	additem ITEM_LIECHI_BERRY, 1
+	additem ITEM_PETAYA_BERRY, 1
+	playfanfare MUS_OBTAIN_ITEM
+	message PastTown_Text_ObtainedBerries
+	waitmessage
+	waitfanfare
+	completequest QUEST_FARMLAND_INVASION_1
+	fadescreen FADE_TO_BLACK
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
+	removeobject LOCALID_PAST_CARROTFARMER
+	removeobject LOCALID_PAST_CABBAGEFARMER
+	clearflag FLAG_HIDE_PEST_2_1
+	clearflag FLAG_HIDE_PEST_2_2
+	clearflag FLAG_HIDE_PEST_2_3
+	setobjectxyperm LOCALID_PAST_CARROTFARMER, 31, 30
+	setobjectxyperm LOCALID_PAST_CABBAGEFARMER, 39, 27
+	setobjectmovementtype LOCALID_PAST_CARROTFARMER, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT
+	setobjectmovementtype LOCALID_PAST_CABBAGEFARMER, MOVEMENT_TYPE_FACE_DOWN
+	addobject LOCALID_PAST_CARROTFARMER
+	addobject LOCALID_PAST_CABBAGEFARMER
+	addobject LOCALID_PEST_2_1
+	addobject LOCALID_PEST_2_2
+	addobject LOCALID_PEST_2_3
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+
+PastTown_EventScript_CabbageFarmer::
+	lock
+	goto_if_unset FLAG_SYS_MAIN_GAME_START, PastTown_EventScript_CabbageFarmerPregame
+	call Script_GetNPCFacingDirection
+	returnqueststate QUEST_FARMLAND_INVASION_1
+	goto_if_lt VAR_RESULT, 3, PastTown_EventScript_CabbageFarmerPreQuest2
+	goto_if_eq VAR_RESULT, 3, PastTown_EventScript_CabbageFarmerPreQuest2Quest1Reward
+	returnqueststate QUEST_FARMLAND_INVASION_2
+	switch VAR_RESULT
+	case 1, PastTown_EventScript_CabbageFarmerPests2QuestActivate
+	case 2, PastTown_EventScript_CabbageFarmerPests2QuestActive
+	case 3, PastTown_EventScript_CabbageFarmerPests2QuestReward
+	returnqueststate QUEST_FARMLAND_INVASION_3
+	goto_if_lt VAR_RESULT, 4, PastTown_EventScript_FarmersPests3
+	goto_if_eq VAR_RESULT, 3, PastTown_EventScript_CabbageFarmerPests3Reward
+	faceplayer
+	msgbox PastTown_Text_CabbageFarmerPostQuest, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+PastTown_EventScript_CabbageFarmerPests2QuestActivate::
+	setflag FLAG_SYS_DISAPPEAR_QUESTS
+	speak LOCALID_PAST_CABBAGEFARMER, DIR_SOUTH, Name_Cabbage_Farmer, PastTown_Text_CabbageFarmerMyCabbages
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_IsSomethingWrong
+	speak LOCALID_PAST_CABBAGEFARMER, VAR_0x8005, Name_Cabbage_Farmer, PastTown_Text_CabbageFarmerYesSomethingIsWrong
+	speak LOCALID_PLAYER VAR_FACING, Name_Looker, Looker_Text_ConsiderItDone
+	speak LOCALID_PAST_CABBAGEFARMER, VAR_0x8005, Name_Cabbage_Farmer, PastTown_Text_CabbageFarmerAppreciated
+	startquest QUEST_FARMLAND_INVASION_2
+	setvar VAR_PEST_CONTROL_COUNT, 0
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
+	release
+	end
+
+PastTown_EventScript_CabbageFarmerPests2QuestActive::
+	faceplayer
+	msgbox PastTown_Text_CabbageFarmerMyPoorCabbages, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+PastTown_EventScript_CabbageFarmerPests2QuestReward::
+	setflag FLAG_SYS_DISAPPEAR_QUESTS
+	speak LOCALID_PAST_CABBAGEFARMER, VAR_0x8005, Name_Cabbage_Farmer, PastTown_Text_CabbageFarmerTheBugs
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_GladICouldHelp
+	speak LOCALID_PAST_CABBAGEFARMER, VAR_0x8005, Name_Cabbage_Farmer, PastTown_Text_CabbageFarmerThankYou
+	speakername NULL
+	giveitem ITEM_TM_DRAGON_CLAW @ Replaced Dragon Claw with U-Turn
+	completequest QUEST_FARMLAND_INVASION_2
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_PAST_CARROTFARMER
+	removeobject LOCALID_PAST_CABBAGEFARMER
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
+	clearflag FLAG_HIDE_PEST_3_1
+	clearflag FLAG_HIDE_PEST_3_2
+	clearflag FLAG_HIDE_PEST_3_3
+	clearflag FLAG_HIDE_PEST_3_4
+	clearflag FLAG_HIDE_PEST_3_5
+	clearflag FLAG_HIDE_PEST_3_6
+	setobjectxyperm LOCALID_PAST_CARROTFARMER, 38, 24
+	setobjectxyperm LOCALID_PAST_CABBAGEFARMER, 39, 24
+	setobjectmovementtype LOCALID_PAST_CARROTFARMER, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectmovementtype LOCALID_PAST_CABBAGEFARMER, MOVEMENT_TYPE_FACE_LEFT
+	addobject LOCALID_PAST_CARROTFARMER
+	addobject LOCALID_PAST_CABBAGEFARMER
+	addobject LOCALID_PEST_3_1
+	addobject LOCALID_PEST_3_2
+	addobject LOCALID_PEST_3_3
+	addobject LOCALID_PEST_3_4
+	addobject LOCALID_PEST_3_5
+	addobject LOCALID_PEST_3_6
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+
+PastTown_EventScript_FarmersPests3::
+	speak LOCALID_PAST_CARROTFARMER, DIR_EAST, Name_Carrot_Farmer, PastTown_Text_CarrotFarmerQuest3
+	speak LOCALID_PAST_CABBAGEFARMER, DIR_WEST, Name_Cabbage_Farmer, PastTown_Text_CabbageFarmerQuest3
+	speak LOCALID_PAST_CARROTFARMER, DIR_EAST, Name_Carrot_Farmer, PastTown_Text_CarrotFarmerQuest3IDontKnow
+	speak LOCALID_PAST_CABBAGEFARMER, DIR_WEST, Name_Cabbage_Farmer, PastTown_Text_CabbageFarmerQuest3Landorus
+	closemessage
+	release
+	end
+	
+PastTown_EventScript_CarrotFarmerPests3Reward::
+	msgbox PastTown_Text_CarrotFarmerQuest3Reward, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+	
+PastTown_EventScript_CabbageFarmerPests3Reward::
+	msgbox PastTown_Text_CabbageFarmerQuest3Reward, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+	
+PastTown_EventScript_CabbageFarmerPreQuest2::
+	faceplayer
+	speakername Name_Cabbage_Farmer
+	msgbox PastTown_Text_CabbageFarmerPreQuest2, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+PastTown_EventScript_CabbageFarmerPreQuest2Quest1Reward::
+	faceplayer
+	speakername Name_Cabbage_Farmer
+	msgbox PastTown_Text_CabbageFarmerPreQuest2Quest1Reward, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+PastTown_EventScript_CarrotFarmerPostQuest1::
+	faceplayer
+	speakername Name_Carrot_Farmer
+	msgbox PastTown_Text_CarrotFarmerPostQuest1, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+PastTown_EventScript_CarrotFarmerPostQuest1Quest2Reward::
+	faceplayer
+	speakername Name_Carrot_Farmer
+	msgbox PastTown_Text_CarrotFarmerPostQuest1Quest2Reward, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+PastTown_EventScript_ForemanPregame::
+	msgbox PastTown_Text_ForemanPregame, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PAST_FOREMAN, Common_Movement_FaceDown
+	waitmovement 0
+	release
+	end
+	
+PastTown_EventScript_CarrotFarmerPregame::
+	faceplayer
+	msgbox PastTown_Text_CarrotFarmerPregame, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+PastTown_EventScript_CabbageFarmerPregame::
+	faceplayer
+	msgbox PastTown_Text_CabbageFarmerPregame, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+PastTown_EventScript_Bunnelby::
+	lock
+	faceplayer
+	playmoncry SPECIES_BUNNELBY, TRUE
+	message PastTown_Text_Bunnelby
+	waitmessage
+	waitmoncry
+	getpartysize
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
+	setflag FLAG_SYS_NO_WHITEOUT
+	setflag FLAG_SYS_DISABLE_CATCHING
+	createmon 1, 0, SPECIES_BUNNELBY, 48, ITEM_ORAN_BERRY, 0, NATURE_TIMID, 2
+	createmon 1, 1, SPECIES_DIGGERSBY, 49, ITEM_ORAN_BERRY, 0, NATURE_BRAVE, 2
+	setwilddoubleflag
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_CompletePestsBattle
+	clearflag FLAG_SYS_NO_WHITEOUT
+	clearflag FLAG_SYS_DISABLE_CATCHING
+	release
+	end
+
+PastTown_EventScript_Buneary::
+	lock
+	faceplayer
+	playmoncry SPECIES_BUNEARY, TRUE
+	message PastTown_Text_Buneary
+	waitmessage
+	waitmoncry
+	getpartysize
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
+	setflag FLAG_SYS_NO_WHITEOUT
+	setflag FLAG_SYS_DISABLE_CATCHING
+	createmon 1, 0, SPECIES_LOPUNNY, 49, ITEM_ORAN_BERRY, 0, NATURE_JOLLY, 2
+	createmon 1, 1, SPECIES_BUNEARY, 48, ITEM_ORAN_BERRY, 0, NATURE_NAIVE, 2
+	setwilddoubleflag
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_CompletePestsBattle
+	clearflag FLAG_SYS_NO_WHITEOUT
+	clearflag FLAG_SYS_DISABLE_CATCHING
+	release
+	end
+
+PastTown_EventScript_Minun::
+	lock
+	faceplayer
+	playmoncry SPECIES_MINUN, TRUE
+	message PastTown_Text_Minun
+	waitmessage
+	waitmoncry
+	getpartysize
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
+	setflag FLAG_SYS_NO_WHITEOUT
+	setflag FLAG_SYS_DISABLE_CATCHING
+	createmon 1, 0, SPECIES_MINUN, 49, ITEM_ORAN_BERRY, 0, NATURE_MODEST, 0
+	createmon 1, 1, SPECIES_PLUSLE, 49, ITEM_ORAN_BERRY, 0, NATURE_TIMID, 0
+	setwilddoubleflag
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_CompletePestsBattle
+	clearflag FLAG_SYS_NO_WHITEOUT
+	clearflag FLAG_SYS_DISABLE_CATCHING
+	release
+	end
+
+PastTown_EventScript_Leavanny::
+	lock
+	faceplayer
+	playmoncry SPECIES_LEAVANNY, TRUE
+	message PastTown_Text_Leavanny
+	waitmessage
+	waitmoncry
+	getpartysize
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
+	setflag FLAG_SYS_NO_WHITEOUT
+	setflag FLAG_SYS_DISABLE_CATCHING
+	createmon 1, 0, SPECIES_LEAVANNY, 51, ITEM_SITRUS_BERRY, 0, NATURE_HASTY, 2
+	createmon 1, 1, SPECIES_SWADLOON, 50, ITEM_SITRUS_BERRY, 0, NATURE_RELAXED, 2
+	setwilddoubleflag
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_CompletePestsBattle
+	clearflag FLAG_SYS_NO_WHITEOUT
+	clearflag FLAG_SYS_DISABLE_CATCHING
+	release
+	end
+
+PastTown_EventScript_Kricketune::
+	lock
+	faceplayer
+	playmoncry SPECIES_KRICKETUNE, TRUE
+	message PastTown_Text_Kricketune
+	waitmessage
+	waitmoncry
+	getpartysize
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
+	setflag FLAG_SYS_NO_WHITEOUT
+	setflag FLAG_SYS_DISABLE_CATCHING
+	createmon 1, 0, SPECIES_KRICKETUNE, 50, ITEM_SITRUS_BERRY, 0, NATURE_QUIRKY, 0
+	createmon 1, 1, SPECIES_KRICKETUNE, 50, ITEM_SITRUS_BERRY, 0, NATURE_QUIRKY, 2
+	setwilddoubleflag
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_CompletePestsBattle
+	clearflag FLAG_SYS_NO_WHITEOUT
+	clearflag FLAG_SYS_DISABLE_CATCHING
+	release
+	end
+
+PastTown_EventScript_Flapple::
+	lock
+	faceplayer
+	playmoncry SPECIES_FLAPPLE, TRUE
+	message PastTown_Text_Flapple
+	waitmessage
+	waitmoncry
+	getpartysize
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
+	setflag FLAG_SYS_NO_WHITEOUT
+	setflag FLAG_SYS_DISABLE_CATCHING
+	createmon 1, 0, SPECIES_FLAPPLE, 51, ITEM_SITRUS_BERRY, 0, NATURE_NAUGHTY, 1
+	createmon 1, 1, SPECIES_APPLETUN, 51, ITEM_SITRUS_BERRY, 0, NATURE_LAX, 0
+	setwilddoubleflag
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_CompletePestsBattle
+	clearflag FLAG_SYS_NO_WHITEOUT
+	clearflag FLAG_SYS_DISABLE_CATCHING
+	release
+	end
+
+PastTown_EventScript_Breloom::
+	lock
+	faceplayer
+	playmoncry SPECIES_BRELOOM, TRUE
+	message PastTown_Text_Breloom
+	waitmessage
+	waitmoncry
+	getpartysize
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
+	setflag FLAG_SYS_NO_WHITEOUT
+	setflag FLAG_SYS_DISABLE_CATCHING
+	createmon 1, 0, SPECIES_BRELOOM, 53, ITEM_SALAC_BERRY, 0, NATURE_ADAMANT, 0
+	createmon 1, 1, SPECIES_SHROOMISH, 53, ITEM_SALAC_BERRY, 0, NATURE_LAX, 2
+	setwilddoubleflag
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_CompletePestsBattle
+	clearflag FLAG_SYS_NO_WHITEOUT
+	clearflag FLAG_SYS_DISABLE_CATCHING
+	release
+	end
+
+PastTown_EventScript_Amoonguss::
+	lock
+	faceplayer
+	playmoncry SPECIES_AMOONGUSS, TRUE
+	message PastTown_Text_Amoonguss
+	waitmessage
+	waitmoncry
+	getpartysize
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
+	setflag FLAG_SYS_NO_WHITEOUT
+	setflag FLAG_SYS_DISABLE_CATCHING
+	createmon 1, 0, SPECIES_AMOONGUSS, 53, ITEM_BLACK_SLUDGE, 0, NATURE_SASSY, 0
+	createmon 1, 1, SPECIES_FOONGUS, 53, ITEM_STICKY_BARB, 0, NATURE_SASSY, 0
+	setwilddoubleflag
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_CompletePestsBattle
+	clearflag FLAG_SYS_NO_WHITEOUT
+	clearflag FLAG_SYS_DISABLE_CATCHING
+	release
+	end
+
+PastTown_EventScript_Shiinotic::
+	lock
+	faceplayer
+	playmoncry SPECIES_SHIINOTIC, TRUE
+	message PastTown_Text_Shiinotic
+	waitmessage
+	waitmoncry
+	getpartysize
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
+	setflag FLAG_SYS_NO_WHITEOUT
+	setflag FLAG_SYS_DISABLE_CATCHING
+	createmon 1, 0, SPECIES_MORELULL, 53, ITEM_ROWAP_BERRY, 0, NATURE_SASSY, 1
+	createmon 1, 1, SPECIES_SHIINOTIC, 53, ITEM_PETAYA_BERRY, 0, NATURE_SASSY, 0
+	setwilddoubleflag
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_CompletePestsBattle
+	clearflag FLAG_SYS_NO_WHITEOUT
+	clearflag FLAG_SYS_DISABLE_CATCHING
+	release
+	end
+	
+PastTown_EventScript_Toedscruel::
+	lock
+	faceplayer
+	playmoncry SPECIES_TOEDSCRUEL, TRUE
+	message PastTown_Text_Toedscruel
+	waitmessage
+	waitmoncry
+	getpartysize
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
+	setflag FLAG_SYS_NO_WHITEOUT
+	setflag FLAG_SYS_DISABLE_CATCHING
+	createmon 1, 0, SPECIES_TOEDSCRUEL, 53, ITEM_LIECHI_BERRY, 0, NATURE_SASSY, 0
+	createmon 1, 1, SPECIES_TOEDSCOOL, 53, ITEM_JABOCA_BERRY, 0, NATURE_SASSY, 0
+	setwilddoubleflag
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_CompletePestsBattle
+	clearflag FLAG_SYS_NO_WHITEOUT
+	clearflag FLAG_SYS_DISABLE_CATCHING
+	release
+	end
+	
+PastTown_EventScript_Parasect::
+	lock
+	faceplayer
+	playmoncry SPECIES_PARASECT, TRUE
+	message PastTown_Text_Parasect
+	waitmessage
+	waitmoncry
+	getpartysize
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
+	setflag FLAG_SYS_NO_WHITEOUT
+	setflag FLAG_SYS_DISABLE_CATCHING
+	createmon 1, 0, SPECIES_PARASECT, 53, ITEM_OCCA_BERRY, 0, NATURE_SASSY, 0
+	createmon 1, 1, SPECIES_PARAS, 53, ITEM_OCCA_BERRY, 0, NATURE_SASSY, 0
+	setwilddoubleflag
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_CompletePestsBattle
+	clearflag FLAG_SYS_NO_WHITEOUT
+	clearflag FLAG_SYS_DISABLE_CATCHING
+	release
+	end
+
+PastTown_EventScript_Hydrapple::
+	lock
+	faceplayer
+	goto_if_lt VAR_PEST_CONTROL_COUNT, 5, PastTown_EventScript_HydrappleWait
+	playmoncry SPECIES_HYDRAPPLE, TRUE
+	message PastTown_Text_HydrappleFight
+	waitmessage
+	waitmoncry
+	getpartysize
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
+	setflag FLAG_SYS_NO_WHITEOUT
+	setflag FLAG_SYS_DISABLE_CATCHING
+	setflag FLAG_SYS_SMART_WILD_BATTLES
+	createmon 1, 0, SPECIES_HYDRAPPLE, 60, ITEM_OCCA_BERRY, 0, NATURE_SASSY, 0
+	createmon 1, 1, SPECIES_DIPPLIN, 58, ITEM_OCCA_BERRY, 0, NATURE_SASSY, 0
+	setwilddoubleflag
+	dowildbattle
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_CompleteHydrappleBattle
+	msgbox PastTown_Text_Hydrapple, MSGBOX_DEFAULT
+	closemessage
+	clearflag FLAG_SYS_NO_WHITEOUT
+	clearflag FLAG_SYS_DISABLE_CATCHING
+	clearflag FLAG_SYS_SMART_WILD_BATTLES
+	release
+	end
+
+PastTown_EventScript_HydrappleWait::
+	playmoncry SPECIES_HYDRAPPLE, FALSE
+	msgbox PastTown_Text_Hydrapple, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	release
+	end
+
+PastTown_EventScript_CompleteHydrappleBattle::
+	clearflag FLAG_SYS_NO_WHITEOUT
+	clearflag FLAG_SYS_DISABLE_CATCHING
+	clearflag FLAG_SYS_SMART_WILD_BATTLES
+	questmenu QUEST_MENU_SET_REWARD, QUEST_FARMLAND_INVASION_3
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+PastTown_EventScript_NotEnoughPokemon::
+	speakername Name_Looker
+	msgbox Looker_Text_IThinkINeedTwoPokemon, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+PastTown_EventScript_CompletePestsBattle::
+	clearflag FLAG_SYS_NO_WHITEOUT
+	clearflag FLAG_SYS_DISABLE_CATCHING
+	addvar VAR_PEST_CONTROL_COUNT, 1
+	call_if_eq VAR_PEST_CONTROL_COUNT, 3, PastTown_EventScript_PestsQuestSetReward
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+PastTown_EventScript_PestsQuestSetReward::
+	questmenu QUEST_MENU_CHECK_ACTIVE, QUEST_FARMLAND_INVASION_1
+	call_if_eq VAR_RESULT, 2, PastTown_EventScript_Pests1QuestSetReward
+	questmenu QUEST_MENU_CHECK_ACTIVE, QUEST_FARMLAND_INVASION_2
+	call_if_eq VAR_RESULT, 2, PastTown_EventScript_Pests2QuestSetReward
+	return
+
+PastTown_EventScript_Pests1QuestSetReward::
+	questmenu QUEST_MENU_SET_REWARD, QUEST_FARMLAND_INVASION_1
+	return
+	
+PastTown_EventScript_Pests2QuestSetReward::
+	questmenu QUEST_MENU_SET_REWARD, QUEST_FARMLAND_INVASION_2
+	return
+	
+PastTown_Text_ForemanFarmInvasionDagNabbit:
+	.string "DAGNABBIT!\p"
+	.string "A raid of this level is absolutely\n"
+	.string "unprecedented!\p"
+	.string "Never before have this many pests\n"
+	.string "decided to invade our farms at once!$"
+
+PastTown_Text_ForemanFarmInvasionWeCantDoThisAlone:
+	.string "Good sir, we cannot deal with this\n"
+	.string "invasion on our own.\p"
+	.string "We do not have the trainers.\p"
+	.string "We do not have the resources.\p"
+	.string "Please, one more time, if you could,\n"
+	.string "we desperately need your help.$"
+
+PastTown_Text_ForemanFarmInvasionForeverInYourDebt:
+	.string "We shall forever be in your debt if\n"
+	.string "you can clear out our farm of these\l"
+	.string "festering mushroom Pokémon.$"
+
+PastTown_Text_ForemanFarmInvasionActive:
+	.string "I fear for the future if the wild\n"
+	.string "Pokémon here are bold enough to\l"
+	.string "attack our settlement's farms…\p"
+	.string "We need a solution…$"
+
+PastTown_Text_ForemanFarmInvasionThankYou:
+	.string "We are so incredibly grateful to you,\n"
+	.string "kind sir.\p"
+	.string "Thank you.\p"
+	.string "We do not foresee another infestation\n"
+	.string "like this one coming for the rest of\l"
+	.string "the season.$"
+
+PastTown_Text_ForemanFarmInvasionGivePokemon:
+	.string "Oh? It seems a couple of the pests\n"
+	.string "have yet to skedaddle.\p"
+	.string "We can't have them on the farm…\p"
+	.string "Perhaps you could take one of them?$"
+
+PastTown_Text_ForemanGuardDog:
+	.string "We should procure a guard dog before\n"
+	.string "the new year begins.\p"
+	.string "Tell me, sir. Do you think Stoutland\n"
+	.string "or Mabosstiff would be a better choice?$"
+
+PastTown_Text_ForemanCarrotFarmInvasion:
+	.string "Those pesky rabbits! I thought we\n"
+	.string "had driven them off earlier this\l"
+	.string "season!\p"
+	.string "You look tough, could you please\n"
+	.string "take care of them?$"
+
+PastTown_Text_ForemanCarrotFarmInvasionReward:
+	.string "Ah, that you sir for clearing out those\n"
+	.string "silly rabbits!\p"
+	.string "Very few trainers of your caliber live in\n"
+	.string "our town, so we rely on outside help for\l"
+	.string "swarms like this.\p"
+	.string "'Tis a rather unreliable system… Perhaps\n"
+	.string "we should explore alternatives?$"
+
+PastTown_Text_ForemanCabbageFarmInvasion:
+	.string "And now this is happening to our\n"
+	.string "fine cabbages!\p"
+	.string "What happened to all the predator bugs\n"
+	.string "who normally feed on these pests?$"
+
+PastTown_Text_ForemanCabbageFarmInvasionReward:
+	.string "The predator bugs must be in a bust\n"
+	.string "cycle at the moment…\p"
+	.string "Normally we see these prey insects kept\n"
+	.string "in check by local Pinsir and Scolipede…\p"
+	.string "Perhaps a Pokémon of our own to guard our\n"
+	.string "farms may be in our future?$"
+
+PastTown_Text_CarrotFarmerQuest3:
+	.string "Shoot…\p"
+	.string "The whole harvest will be lost if\n"
+	.string "nothing is done…$"
+	
+PastTown_Text_CabbageFarmerQuest3:
+	.string "This is disastrous…\p"
+	.string "Can the village survive the winter\n"
+	.string "season without any produce?$"
+	
+PastTown_Text_CarrotFarmerQuest3IDontKnow:
+	.string "I do not think so…$"
+
+PastTown_Text_CabbageFarmerQuest3Landorus:
+	.string "O great Landorus, please save our\n"
+	.string "crops!$"
+
+PastTown_Text_CarrotFarmerQuest3Reward:
+	.string "My carrots… They're safe at last…$"
+
+PastTown_Text_CabbageFarmerQuest3Reward:
+	.string "My cabbages will survive!\n"
+	.string "Oh thank Landorus!$"
+
+PastTown_Text_CarrotFarmerPostQuest1:
+	.string "Haha!\p"
+	.string "That dingbat cabbage farmer laughed\n"
+	.string "while my poor carrots were razed.\p"
+	.string "But it will be me who has the last\n"
+	.string "laugh when his weak, stupid produce\l"
+	.string "is destroyed by bugs!$"
+
+PastTown_Text_CarrotFarmerPostQuest1Quest2Reward:
+	.string "Hmm…\p"
+	.string "I SUPPOSE it is a good thing the cabbages\n"
+	.string "were saved…\p"
+	.string "What else are we supposed to jar ahead\n"
+	.string "of the upcoming cold season?$"
+
+PastTown_Text_CabbageFarmerPreQuest2:
+	.string "Heh!\p"
+	.string "That silly carrot farmer's crops are\n"
+	.string "being ravaged by rabbits!\p"
+	.string "Serves them right for their hatred of\n"
+	.string "the mighty cabbage…$"
+
+PastTown_Text_CabbageFarmerPreQuest2Quest1Reward:
+	.string "Ahh…\p"
+	.string "I submit to the idea it would have been\n"
+	.string "disastrous to lose our yield of carrots…\p"
+	.string "Baby carrots are the only vegetable my\n"
+	.string "children will even look at…$"
+
+PastTown_Text_ForemanPregame:
+	.string "My farmhands are always fighting over\n"
+	.string "the silliest things…\p"
+	.string "I appreciate their dedication to their\n"
+	.string "work, but they cannot cooperate for the\l"
+	.string "life of them…$"
+
+PastTown_Text_CarrotFarmerPregame:
+	.string "Hmph…\p"
+	.string "That other farmer has no appreciation\n"
+	.string "for the value of carrots!\p"
+	.string "They are vital to a person's eyesight\n"
+	.string "and are superb for snacking!\p"
+	.string "Much better than those bitter cabbages…$"
+
+PastTown_Text_CabbageFarmerPregame:
+	.string "Grr…\p"
+	.string "That farmer over there has no respect\n"
+	.string "for the mighty cabbage!\p"
+	.string "Cabbages are chock-full of nutrients\n"
+	.string "and sustain our whole diet!\p"
+	.string "Much more valuable than those piddly\n"
+	.string "little carrots…$"
+
+PastTown_Text_CarrotFarmerMyCarrots:
+	.string "No! My carrots!\p"
+	.string "Rabbits are eating my darling carrots!$"
+
+PastTown_Text_CarrotFarmerYouSeemStrong:
+	.string "Oh, sir!\p"
+	.string "The most horrid thing in the world is\n"
+	.string "the problem!\p"
+	.string "My sweet, sweet carrots are being\n"
+	.string "gobbled alive by a group of dirty\l"
+	.string "rodents!\p"
+	.string "You look like a trainer, could you please\n"
+	.string "clear out my poor carrot farm?$"
+
+PastTown_Text_CarrotFarmerMyPoorCarrots:
+	.string "My poor carrots…\p"
+	.string "Raised from nothing but tiny seeds…\p"
+	.string "Now food for worthless pests…$"
+
+PastTown_Text_CarrotFarmerMySweetCarrots:
+	.string "My carrots!\p"
+	.string "Oh, my sweet carrots are saved!$"
+
+PastTown_Text_CarrotFarmerThankYouQuest1:
+	.string "Please accept my deepest gratitude, sir!\p"
+	.string "These berries are rare. I hoped to turn\n"
+	.string "them into juice, but they are superb in\l"
+	.string "battles as well!$"
+
+PastTown_Text_ObtainedBerries:
+	.string "Looker obtained one Salac, Petaya, and\n"
+	.string "Liechi Berry each!$"
+
+PastTown_Text_CabbageFarmerMyCabbages:
+	.string "MY CABBAGES!$"
+
+PastTown_Text_CabbageFarmerYesSomethingIsWrong:
+	.string "Of course something is wrong!\p"
+	.string "Can you see with your eyes what is\n"
+	.string "going on in my farm?\p"
+	.string "My voluminous, leafy babies are getting\n"
+	.string "turned into a bug buffet!\p"
+	.string "Sir, I saw how deftly you handled the\n"
+	.string "invasion of that carrot patch.\p"
+	.string "Could you please help my poor cabbages?$"
+
+PastTown_Text_CabbageFarmerAppreciated:
+	.string "Oh sir, your generosity is greatly\n"
+	.string "appreciated!\p"
+	.string "Please, show those bugs my wrath!$"
+
+PastTown_Text_CabbageFarmerTheBugs:
+	.string "The bugs! The bugs have been driven\n"
+	.string "away!\p"
+	.string "Thank you, kind sir! My cabbages are sure\n"
+	.string "to reach maturity now!$"
+
+PastTown_Text_CabbageFarmerThankYou:
+	.string "I committed the way those bugs scuttled\n"
+	.string "off to memory.\p"
+	.string "Perhaps your Pokémon could learn a thing\n"
+	.string "or two from their nimble technique?$"
+
+PastTown_Text_CabbageFarmerMyPoorCabbages:
+	.string "My cabbages!\p"
+	.string "My poor, crying cabbages!$"
+
+PastTown_Text_CarrotFarmerPostQuest:
+	.string "Sure, carrots may be the best food\n"
+	.string "around, but at least cabbages keep us\l"
+	.string "full through the winter…$"
+
+PastTown_Text_CabbageFarmerPostQuest:
+	.string "Cabbages may be the superior vegetable,\n"
+	.string "but I concede that carrots are an\l"
+	.string "important staple in our diet…$"
+
 PastTown_Text_ScientistThisWontDo:
 	.string "No… No…\p"
 	.string "This won't do…\n"
@@ -389,7 +1301,7 @@ PastTown_Text_ScientistAhYouPassedByHere:
 PastTown_Text_ScientistAndThatsWhy:
 	.string "…And that's why I come to you now,\n"
 	.string "sir…\p"
-	.string "Hey, have you been listening?$"
+	.string "Wait, have you been listening?$"
 
 PastTown_Text_LookerHuhWha:
 	.string "… … …\n"
@@ -553,3 +1465,44 @@ PastTown_Text_ScientistPregame:
 	.string "from the…\p"
 	.string "No… Impossible…\p"
 	.string "We never have this many at once…$"
+
+PastTown_Text_Bunnelby:
+	.string "Bun?$"
+
+PastTown_Text_Buneary:
+	.string "Nrrr!$"
+
+PastTown_Text_Minun:
+	.string "Mraaa!$"
+
+PastTown_Text_Leavanny:
+	.string "Vaaaaaaan!"
+
+PastTown_Text_Kricketune:
+	.string "Delelelelele!$"
+
+PastTown_Text_Flapple:
+	.string "(flapping noises)$"
+
+PastTown_Text_Parasect:
+	.string "Ssssssec…$"
+
+PastTown_Text_Breloom:
+	.string "Raaaaa?$"
+
+PastTown_Text_Amoonguss:
+	.string "Moooooooo!$"
+
+PastTown_Text_Shiinotic:
+	.string "Shshshshshsh…$"
+
+PastTown_Text_Toedscruel:
+	.string "Ooooooooo…$"
+
+PastTown_Text_Hydrapple:
+	.string "Ssssssss…\p"
+	.string "(Hydrapple is watching\n"
+	.string "carefully…)$"
+
+PastTown_Text_HydrappleFight:
+	.string "Hssssss!$"

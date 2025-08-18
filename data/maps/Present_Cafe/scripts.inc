@@ -36,7 +36,7 @@ Present_Cafe_EventScript_Emma::
 	speak LOCALID_CAFE_EMMA, VAR_0x8005, Name_Emma, Present_Cafe_Text_EmmaEnchantee
 	speakername Name_Looker
 	msgbox Present_Cafe_Text_LookerHuh, MSGBOX_DEFAULT
-	multichoice 0, 6, MULTI_SPEAK_WITH_EMMA_3, TRUE
+	multichoice 0, 3, MULTI_SPEAK_WITH_EMMA_3, TRUE
 	goto_if_eq VAR_RESULT, 0, Present_Cafe_EventScript_EmmaDontKnowFrench_3_1
 	goto_if_eq VAR_RESULT, 1, Present_Cafe_EventScript_EmmaSad
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Cafe_Text_LookerJePeux

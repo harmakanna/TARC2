@@ -498,6 +498,71 @@ Present_Cafe_EventScript_ReceivedMeowsticFanfare::
 	bufferspeciesname STR_VAR_1, SPECIES_MEOWSTIC
 	return
 
+
+PastTown_EventScript_ForemanGiveBreloom::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BRELOOM
+	givemonwithot OT_LOOKER_BRELOOM
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PastTown_EventScript_ReceiveBreloomParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PastTown_EventScript_ReceiveBreloomPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+PastTown_EventScript_ReceiveBreloomParty::
+	call PastTown_EventScript_ReceivedBreloomFanfare
+	goto PastTown_EventScript_ForemanQuestFinish
+	end
+	
+PastTown_EventScript_ReceiveBreloomPC::
+	call PastTown_EventScript_ReceivedBreloomFanfare
+	call Common_EventScript_TransferredToPC
+	goto PastTown_EventScript_ForemanQuestFinish
+	end
+
+PastTown_EventScript_ReceivedBreloomFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_BRELOOM
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox PastTown_Text_YouReceivedBreloom, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_BRELOOM
+	return
+
+PastTown_EventScript_ForemanGiveShiinotic::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SHIINOTIC
+	givemonwithot OT_LOOKER_SHIINOTIC
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PastTown_EventScript_ReceiveShiinoticParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PastTown_EventScript_ReceiveShiinoticPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+PastTown_EventScript_ReceiveShiinoticParty::
+	call PastTown_EventScript_ReceivedShiinoticFanfare
+	goto PastTown_EventScript_ForemanQuestFinish
+	end
+	
+PastTown_EventScript_ReceiveShiinoticPC::
+	call PastTown_EventScript_ReceivedShiinoticFanfare
+	call Common_EventScript_TransferredToPC
+	goto PastTown_EventScript_ForemanQuestFinish
+	end
+
+PastTown_EventScript_ReceivedShiinoticFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_SHIINOTIC
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox PastTown_Text_YouReceivedShiinotic, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_SHIINOTIC
+	return
+
+PastTown_Text_YouReceivedBreloom:
+	.string "Looker received a Breloom!$"
+
+PastTown_Text_YouReceivedShiinotic:
+	.string "Looker received a Shiinotic!$"
+	
 Present_Cafe_Text_YouReceivedGumshoos:
 	.string "Emma gave you her Gumshoos!$"
 

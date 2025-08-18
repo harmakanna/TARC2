@@ -2835,6 +2835,8 @@ static void RemoveObjectEventIfOutsideView(struct ObjectEvent *objectEvent)
     if (objectEvent->initialCoords.x >= left && objectEvent->initialCoords.x <= right
      && objectEvent->initialCoords.y >= top && objectEvent->initialCoords.y <= bottom)
         return;
+    if (objectEvent->graphicsId == OBJ_EVENT_GFX_SS_TIDAL) // SS Tidal can never get unloaded
+        return;
     RemoveObjectEvent(objectEvent);
 }
 

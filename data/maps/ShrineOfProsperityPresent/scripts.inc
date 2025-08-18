@@ -48,11 +48,13 @@ ShrineOfProsperityPresent_EventScript_StartGenieFight::
 	playmoncry SPECIES_THUNDURUS, CRY_MODE_ENCOUNTER
 	waitmoncry
 	waitmessage
+	setflag FLAG_SYS_SMART_WILD_BATTLES
 	setwildbattle SPECIES_TORNADUS, 5, ITEM_NONE, SPECIES_THUNDURUS, 5, ITEM_NONE
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattleDouble
 	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	clearflag FLAG_SYS_SMART_WILD_BATTLES
 	setobjectmovementtype LOCALID_SHRINE_THUNDURUS, MOVEMENT_TYPE_WALK_IN_PLACE_UP
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, ShrineOfProsperityPresent_EventScript_DefeatedGenies

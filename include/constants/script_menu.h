@@ -133,6 +133,7 @@
 #define MULTI_FISHERMAN_GIVEMON            122
 #define MULTI_SCIENTIST_GIVEMON            123
 #define MULTI_EMMA_GIVEMON                 124
+#define MULTI_FOREMAN_GIVEMON              125
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0

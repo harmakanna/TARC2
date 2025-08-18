@@ -22,6 +22,9 @@ Looker_Text_ICanCertainlyTry:
 Looker_Text_ConsiderItDone:
     .string "Consider it done.$"
     
+Looker_Text_IWillHandleThis:
+    .string "I will handle this posthaste.$"
+
 Looker_Text_GladICouldHelp:
     .string "Glad I could help.$"
 
@@ -43,6 +46,12 @@ Looker_Text_Indeed:
 Looker_Text_WillDo:
     .string "Will do.$"
     
+Looker_Text_LeaveItToMe:
+    .string "Leave it to me.$"
+    
+Looker_Text_IWillAlwaysHelp:
+    .string "Mission complete.$"
+
 Looker_Text_AlrightFine:
     .string "Alright, fine.$"
 
@@ -114,3 +123,7 @@ Looker_Text_Dots:
 Looker_Text_DotsLong:
     .string "… … …\n"
     .string "… … …$"
+
+Looker_Text_IThinkINeedTwoPokemon:
+    .string "Hmm…\n"
+    .string "I think I need two Pokémon for this…$"

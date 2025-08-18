@@ -2670,6 +2670,14 @@ void HandleQuestIconForSingleObjectEvent(struct ObjectEvent *objectEvent, u32 ob
 		return;
 	}
 
+	// Handle quests which rely on other quests as a prerequisite
+	if ((questId == 10 && !IsQuestCompletedState(QUEST_FARMLAND_INVASION_1)) //Invasion 2 does not occur until Invasion 1 is complete
+		|| (questId == 11 && !IsQuestCompletedState(QUEST_FARMLAND_INVASION_2))) //Invasion 3 does not occur until Invasion 2 is complete
+	{
+		ResetQuestIconOnObject(objectEvent);
+		return;
+	}
+
 	// Already has icon? Do nothing
 	if (objectEvent->hasQuestIcon == TRUE)//(ObjectEventAlreadyHasQuest(objectEvent->hasQuestIcon))
         return;

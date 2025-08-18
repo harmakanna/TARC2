@@ -114,3 +114,12 @@ Name_Sentimental_Woman:
 
 Name_Sweet_Tooth:
     .string "Berryjammy$"
+
+Name_Foreman:
+    .string "Foreman$"
+
+Name_Carrot_Farmer:
+    .string "Carrot Farmer$"
+
+Name_Cabbage_Farmer:
+    .string "Cabbage Farmer$"
