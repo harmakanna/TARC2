@@ -15,6 +15,7 @@
   "connections": null,
   "object_events": [
     {
+      "local_id": "LOCALID_TAUROS",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(TAUROS)",
       "x": 38,
       "y": 17,
@@ -25,9 +26,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_HIDE_TAUROS"
     },
     {
+      "local_id": "LOCALID_MILTANK",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MILTANK)",
       "x": 9,
       "y": 24,
@@ -38,7 +40,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_HIDE_MILTANK"
     },
     {
       "local_id": "LOCALID_PASTTOWN_LASS",
@@ -635,5 +637,22 @@
       "script": "PastTown_EventScript_LassWalkRight"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 32,
+      "y": 24,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "PastTown_EventScript_TownHallSign"
+    },
+    {
+      "type": "sign",
+      "x": 48,
+      "y": 16,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "PastTown_EventScript_TrainerTips"
+    }
+  ]
 }

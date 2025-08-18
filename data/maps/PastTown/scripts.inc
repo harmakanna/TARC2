@@ -7,10 +7,18 @@ PastTown_MapScripts::
 
 PastTown_OnLoad:
 	call_if_unset FLAG_SWEET_TOOTH_WENT_CRAZY, PastTown_EventScript_CloseSweetToothHole
+	call_if_unset FLAG_HIDE_PAST_SAD_GIRL_OUTSIDE, PastTown_EventScript_SetUpSadGirlFight
 	end
 
 PastTown_EventScript_CloseSweetToothHole::
 	setmetatile 15, 26, METATILE_SmallTownWithLab_Past_FixedRoof, FALSE
+	return
+
+PastTown_EventScript_SetUpSadGirlFight::
+	setobjectxyperm LOCALID_MILTANK, 8, 21
+	setobjectxyperm LOCALID_TAUROS, 10, 21
+	setobjectmovementtype LOCALID_MILTANK, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
+	setobjectmovementtype LOCALID_TAUROS, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
 	return
 
 PastTown_OnTransition:
@@ -102,7 +110,14 @@ PastTown_OnResume:
 	special HealPlayerParty
 	end
 
+PastTown_EventScript_TownHallSign::
+	msgbox PastTown_Text_TownHallSign, MSGBOX_SIGN
+	end
 
+PastTown_EventScript_TrainerTips::
+	msgbox PastTown_Text_TrainerTips, MSGBOX_SIGN
+	end
+	
 PastTown_EventScript_Lass::
 	lock
 	faceplayer
@@ -1559,3 +1574,17 @@ PastTown_Text_Mareep:
 
 PastTown_Text_Mudsdale:
 	.string "Nyehehehehehe!$"
+
+PastTown_Text_TownHallSign:
+	.string "Porta Bella Town Hall\p"
+	.string "Open to all weary travelers or those\n"
+	.string "looking for a drink!$"
+	
+PastTown_Text_TrainerTips:
+	.string "Trainer Tips:\p"
+	.string "Celebi's time travel powers have\n"
+	.string "rubbed off on Looker, so now he can\l"
+	.string "see the future!\p"
+	.string "In battle, press L to see the next turn\n"
+	.string "of the opponent's left Pokémon, and R to\l"
+	.string "see the turn of the right Pokémon!$"
