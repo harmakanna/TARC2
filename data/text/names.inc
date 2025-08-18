@@ -123,3 +123,9 @@ Name_Carrot_Farmer:
 
 Name_Cabbage_Farmer:
     .string "Cabbage Farmer$"
+
+Name_Sick_Man:
+    .string "Ailing Man$"
+
+Name_Well_Man:
+    .string "Frail Man$"

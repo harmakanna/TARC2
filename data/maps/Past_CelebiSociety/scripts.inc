@@ -6,6 +6,8 @@ Past_CelebiSociety_EventScript_CouncilWoman::
 	faceplayer
 	goto_if_unset FLAG_SYS_MAIN_GAME_START, Past_CelebiSociety_EventScript_CouncilWomanPreGame
 	goto_if_set FLAG_SAVE_THE_LUVDISCS, Past_CelebiSociety_EventScript_CouncilWomanSaveLuvdiscs
+	returnqueststate QUEST_HOMEGROWN_REMEDIES
+	goto_if_eq VAR_RESULT, 2, Past_CelebiSociety_EventScript_CouncilWomanSeeCamilla
 	msgbox Past_CelebiSociety_Text_CouncilWomanAhAnotherTimeTraveler, MSGBOX_DEFAULT
 	closemessage
 	release
@@ -25,6 +27,12 @@ Past_CelebiSociety_EventScript_CouncilWomanSaveLuvdiscs::
 	clearflag FLAG_HIDE_PRESENT_LUVDISCS
 	clearflag FLAG_HIDE_PRESENT_HOUSE2_MISSINGMAN
 	clearflag FLAG_HIDE_TINY_BOAT
+	release
+	end
+
+Past_CelebiSociety_EventScript_CouncilWomanSeeCamilla::
+	msgbox Past_CelebiSociety_Text_CouncilWomanSeeCamilla, MSGBOX_DEFAULT
+	closemessage
 	release
 	end
 
@@ -48,3 +56,9 @@ Past_CelebiSociety_Text_CouncilWomanSaveLuvdiscs:
 	.string "That sounds horrid!\p"
 	.string "Thank you for informing me, I will\n"
 	.string "ensure such a thing never happens!$"
+
+Past_CelebiSociety_Text_CouncilWomanSeeCamilla:
+	.string "Ah, a medicinal herb? That sounds like\n"
+	.string "the bitter root, the Revival Herb!\p"
+	.string "Camilla should have one for you.$"
+	

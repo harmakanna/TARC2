@@ -13,6 +13,10 @@ Looker_Text_HowCanIHelp:
 Looker_Text_Understood:
     .string "Understood.$"
 
+Looker_Text_ThereHasToBeSomething:
+    .string "There has to be something I can\n"
+    .string "do to help.$"
+
 Looker_Text_IdBeHappyToHelp:
     .string "I'd be happy to help.$"
 
@@ -70,12 +74,6 @@ Looker_Text_Hmm:
 Looker_Text_IHaveTheInformation:
     .string "I have the information you are looking\n"
     .string "for.$"
-
-Looker_Text_SorryImBusy:
-    .string "Sorry, I am busy.$"
-
-Looker_Text_ICantHelpRightNow:
-    .string "I can't help right now.$"
 
 Looker_Text_LetMeThinkAboutThat:
     .string "Let me think about that.$"

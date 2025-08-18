@@ -119,8 +119,12 @@ Past_TownHall_EventScript_Camilla::
 	lock
 	faceplayer
 	goto_if_unset FLAG_SYS_MAIN_GAME_START, Past_TownHall_EventScript_CamillaPreGame
+	returnqueststate QUEST_HOMEGROWN_REMEDIES
+	goto_if_eq VAR_RESULT, 2, Past_TownHall_EventScript_CamillaGiveRevivalHerb
 	checkitem ITEM_RARE_CANDY
 	goto_if_eq VAR_RESULT, TRUE, Past_TownHall_EventScript_CamillaAcceptEstellaCandy
+	returnqueststate QUEST_SENT_TO_THE_FARM
+	goto_if_eq VAR_RESULT, 2, Past_TownHall_EventScript_CamillaCannotHealBulls
 	returnqueststate QUEST_WITH_MUCH_GRATITUDE
 	goto_if_eq VAR_RESULT, 3, Past_TownHall_EventScript_CamillaCantWaitToDigIn
 	speakername Name_Camilla
@@ -129,7 +133,22 @@ Past_TownHall_EventScript_Camilla::
 	release
 	end
 
+Past_TownHall_EventScript_CamillaGiveRevivalHerb::
+	call Script_GetNPCFacingDirection
+	speak LOCALID_TOWNHALL_CAMILLA, VAR_0x8005, Name_Camilla, Past_TownHall_Text_CamillaWhatIsIt
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_SoHeresTheThing
+	speak LOCALID_TOWNHALL_CAMILLA, VAR_0x8005, Name_Camilla, Past_TownHall_Text_CamillaOhHereYouGo
+	speakername NULL
+	giveitem ITEM_REVIVAL_HERB
+	questmenu QUEST_MENU_SET_REWARD, QUEST_HOMEGROWN_REMEDIES
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_ThankYou
+	speak LOCALID_TOWNHALL_CAMILLA, VAR_0x8005, Name_Camilla, Past_TownHall_Text_CamillaOfCourse
+	closemessage
+	release
+	end
+
 Past_TownHall_EventScript_CamillaAcceptEstellaCandy::
+	call Script_GetNPCFacingDirection
 	playse SE_PIN
 	applymovement LOCALID_TOWNHALL_CAMILLA, Common_Movement_ExclamationMark
 	waitmovement 0
@@ -141,6 +160,16 @@ Past_TownHall_EventScript_CamillaAcceptEstellaCandy::
 	speak LOCALID_TOWNHALL_CAMILLA, VAR_0x8005, Name_Camilla, Past_TownHall_Text_CamillaWhyAGift
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_WillDo
 	questmenu QUEST_MENU_SET_REWARD, QUEST_WITH_MUCH_GRATITUDE
+	closemessage
+	release
+	end
+
+Past_TownHall_EventScript_CamillaCannotHealBulls::
+	call Script_GetNPCFacingDirection
+	speak LOCALID_TOWNHALL_CAMILLA, VAR_0x8005, Name_Camilla, Past_TownHall_Text_CamillaWhatIsIt
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_SoHeresTheThing
+	speak LOCALID_TOWNHALL_CAMILLA, VAR_0x8005, Name_Camilla, Past_TownHall_CamillaICannotHelp
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_Hmm
 	closemessage
 	release
 	end
@@ -301,3 +330,27 @@ Past_TownHall_Text_LookerUgh:
 Past_TownHall_Text_Dots:
 	.string "… … …\n"
 	.string "… … …$"
+
+Past_TownHall_Text_CamillaWhatIsIt:
+	.string "Oh? Looker?\p"
+	.string "What brings you here?$"
+
+Past_TownHall_Text_CamillaOhHereYouGo:
+	.string "Oh, is that it?\p"
+	.string "Here you are. These roots are used in\n"
+	.string "our tea to promote vitality among our\l"
+	.string "oldest residents.\p"
+	.string "If the man is feeling as bad as you say\n"
+	.string "he is, however, it might be best for him\l"
+	.string "to eat it raw.$"
+
+Past_TownHall_CamillaICannotHelp:
+	.string "Oh, our poor Tauros and Miltank…\n"
+	.string "I am sorry, but I cannot help them.\p"
+	.string "I have tried everything I have, but their\n"
+	.string "condition just is not improving…\p"
+	.string "Perhaps the remedy for what they are ailing\n"
+	.string "from does not exist in our time?$"
+
+Past_TownHall_Text_CamillaOfCourse:
+	.string "Of course! I am always happy to help.$"

@@ -32,7 +32,7 @@
 #define QUEST_SENTIMENTAL        13 // Find a heart scale in the past and bring it to the present - Done
 #define QUEST_FIND_TASTY_MINT        14 // Find a tasty mint in the present and bring it back to the past - Done
 #define QUEST_SENT_TO_THE_FARM        15 // Find modern medicine for the ailing cows
-#define QUEST_HOMEGROWN_REMEDIES        16 // Find herbal remedies lost to time for the ailing old man
+#define QUEST_HOMEGROWN_REMEDIES        16 // Find herbal remedies lost to time for the ailing old man - Done, needs testing
 #define QUEST_FORGOTTEN_TO_TIME        17 // Revive fossils - Done
 #define QUEST_WITH_MUCH_GRATITUDE        18 // Send a thank you gift to Camilla from Estella - Done
 #define QUEST_20        19

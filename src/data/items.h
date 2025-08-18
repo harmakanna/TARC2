@@ -904,13 +904,13 @@ const struct Item gItemsInfo[] =
         .price = 2800,
         .description = COMPOUND_STRING(
             "A very bitter herb\n"
-            "that revives a\n"
-            "fainted Pokémon."),
-        .pocket = POCKET_ITEMS,
+            "that heals any\n"
+            "ailment."),
+        .pocket = POCKET_KEY_ITEMS,
+        .importance = 1,
         .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_REVIVE,
-        .effect = gItemEffect_RevivalHerb,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = 0,
         .flingPower = 30,
         .iconPic = gItemIcon_RevivalHerb,
         .iconPalette = gItemIconPalette_RevivalHerb,
