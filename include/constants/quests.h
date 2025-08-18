@@ -35,15 +35,15 @@
 #define QUEST_HOMEGROWN_REMEDIES        16 // Find herbal remedies lost to time for the ailing old man - Done, needs testing
 #define QUEST_FORGOTTEN_TO_TIME        17 // Revive fossils - Done
 #define QUEST_WITH_MUCH_GRATITUDE        18 // Send a thank you gift to Camilla from Estella - Done
-#define QUEST_20        19
-#define QUEST_21        20
+#define QUEST_INVERSE        19 // Teach the student about type matchups through an inverse battle!
+#define QUEST_LUXRAY        20 // Prove Luxray isn't a dark type!
 #define QUEST_22        21
 #define QUEST_23        22
 #define QUEST_24        23
 #define QUEST_25        24
 #define QUEST_26        25
 #define QUEST_27        26
-#define QUEST_I_MADE_THIS        27 // Defeat the devs!
+#define QUEST_THE_WOMAN_THE_MYTH_THE_LEGEND        27 // Defeat Cynthia!
 #define QUEST_PARADOXICAL        28 // Defeat yourself!
 #define QUEST_CATCH_GENIES        29 // Catch the genies - Done
 #define QUEST_COUNT     (QUEST_CATCH_GENIES + 1)

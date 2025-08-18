@@ -1049,6 +1049,11 @@ PastTown_EventScript_Pests2QuestSetReward::
 	questmenu QUEST_MENU_SET_REWARD, QUEST_FARMLAND_INVASION_2
 	return
 
+PastTown_EventScript_SadGirl::
+	lock
+	release
+	end
+	
 PastTown_EventScript_Wooloo::
 	lock
 	faceplayer

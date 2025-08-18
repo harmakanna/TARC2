@@ -361,6 +361,21 @@
       "script": "PastTown_EventScript_Foreman",
       "flag": "0",
       "quest_id": 11
+    },
+    {
+      "local_id": "LOCALID_PAST_SAD_GIRL_INSIDE",
+      "graphics_id": "OBJ_EVENT_GFX_PAST_GIRL",
+      "x": 9,
+      "y": 22,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_QUEST_GIVER",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_EventScript_SadGirl",
+      "flag": "FLAG_HIDE_PAST_SAD_GIRL_OUTSIDE",
+      "quest_id": 15
     }
   ],
   "warp_events": [

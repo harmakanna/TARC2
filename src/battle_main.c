@@ -370,6 +370,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_PIKE_QUEEN] = { _("PIKE QUEEN") },
     [TRAINER_CLASS_PYRAMID_KING] = { _("PYRAMID KING") },
     [TRAINER_CLASS_SCIENTIST] = { _("Scientist") },
+    [TRAINER_CLASS_FARMGIRL] = { _("Farm Girl") },
     [TRAINER_CLASS_RS_PROTAG] = { _("{PKMN} Trainer") },
 };
 

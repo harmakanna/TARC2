@@ -704,8 +704,8 @@
 #define FLAG_HIDE_PEST_3_4  0x291 // Unused Flag
 #define FLAG_HIDE_PEST_3_5  0x292 // Unused Flag
 #define FLAG_HIDE_PEST_3_6  0x293 // Unused Flag
-#define FLAG_UNUSED_0x294  0x294 // Unused Flag
-#define FLAG_UNUSED_0x295  0x295 // Unused Flag
+#define FLAG_HIDE_PAST_SAD_GIRL_INSIDE  0x294 // Unused Flag
+#define FLAG_HIDE_PAST_SAD_GIRL_OUTSIDE  0x295 // Unused Flag
 #define FLAG_UNUSED_0x296  0x296 // Unused Flag
 #define FLAG_UNUSED_0x297  0x297 // Unused Flag
 #define FLAG_UNUSED_0x298  0x298 // Unused Flag
