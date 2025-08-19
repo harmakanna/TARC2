@@ -66,14 +66,14 @@ Present_PokemonCenter_Text_Zangoose:
 
 Present_PokemonCenter_Text_NurseWelcome:
 	.string "Hello! Welcome to the Pokémon Center!\p"
-	.string "Please let me know if there is anything I\n"
-	.string "can do to help you!$"
+	.string "Please let me know if there is anything\n"
+	.string "I can do to help you!$"
 
 Present_PokemonCenter_Text_NurseTryThis:
-	.string "Oh, there's a Tauros and Miltank you know\n"
-	.string "who are sick and can't feel better?\p"
-	.string "Try this. These Full Restores should help\n"
-	.string "any Pokémon feel chipper and active again!$"
+	.string "Oh, there's a Tauros and Miltank who are\n"
+	.string "feeling terribly sick?\p"
+	.string "Try this. These Full Restores can help\n"
+	.string "any Pokémon feel chipper and active!$"
 	
 Present_PokemonCenter_Text_NurseWeHopeToSeeYouAgain:
 	.string "My pleasure! We hope your Pokémon start\n"
@@ -81,10 +81,11 @@ Present_PokemonCenter_Text_NurseWeHopeToSeeYouAgain:
 	
 Present_PokemonCenter_Text_NurseStorm:
 	.string "Hello! Welcome to the Pokémon Center!\p"
-	.string "While the storm is raging on outside, feel\n"
-	.string "free to use this Pokémon Center as a refuge!\p"
-	.string "There have been reports that Pokémon are\n"
-	.string "running wild outside!$"
+	.string "While the storm is raging on outside,\n"
+	.string "our Center will accept anyone looking\n"
+	.string "for refuge!\p"
+	.string "There have been reports that Pokémon\n"
+	.string "are running wild outside, after all!$"
 
 Present_PokemonCenter_Text_NurseHealthy:
 	.string "Hello! Welcome to the Pokémon Center!\p"

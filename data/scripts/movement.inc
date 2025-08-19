@@ -23,6 +23,10 @@ Common_Movement_FaceAwayPlayer:
 	face_away_player
 	step_end
 
+Common_Movement_HeartEmote:
+	emote_heart
+	step_end
+	
 Common_Movement_FaceOriginalDirection:
 	face_original_direction
 	step_end

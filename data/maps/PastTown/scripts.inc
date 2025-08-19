@@ -1095,25 +1095,161 @@ PastTown_EventScript_Pests2QuestSetReward::
 	return
 
 PastTown_EventScript_SadGirl::
-	lock
+	lockall
 	faceplayer
+	call Script_GetNPCFacingDirection
+	goto_if_set FLAG_SAD_GIRL_GAVE_POTIONS, PastTown_EventScript_SadGirlRematch
 	call_if_eq VAR_FACING, DIR_SOUTH, PastTown_EventScript_SadGirlGiveMonsPotionsFromBelow
 	call_if_ne VAR_FACING, DIR_SOUTH, PastTown_EventScript_SadGirlGiveMonsPotions
 	setflag FLAG_SAD_GIRL_GAVE_POTIONS
-	goto PastTown_EventScript_SadGirlPostBattle
+	speak LOCALID_PAST_SAD_GIRL_OUTSIDE, VAR_0x8005, Name_Farmgirl, PastTown_Text_SadGirlIThinkTheyWantToFight
+	playse SE_SELECT
+	msgbox PastTown_Text_SadGirlAreYouReady, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, PastTown_EventScript_SadGirlEndDialogue
+	setflag FLAG_SYS_NO_WHITEOUT
+	speak LOCALID_PAST_SAD_GIRL_OUTSIDE, VAR_0x8005, Name_Farmgirl, PastTown_Text_SadGirlHereWeCome
+	trainerbattle_no_intro TRAINER_ALICE, PastTown_Text_SadGirlDefeated
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_SadGirlPostBattle
+	speak LOCALID_PAST_SAD_GIRL_OUTSIDE, VAR_0x8005, Name_Farmgirl, PastTown_Text_SadGirlThatWasFunWin
+	closemessage
+	clearflag FLAG_SYS_NO_WHITEOUT
+	releaseall
 	end
 
 PastTown_EventScript_SadGirlRematch::
-	goto PastTown_EventScript_SadGirlPostBattle
+	speakername Name_Farmgirl
+	msgbox PastTown_Text_SadGirlAreYouReady, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, PastTown_EventScript_SadGirlEndDialogue
+	speak LOCALID_PAST_SAD_GIRL_OUTSIDE, VAR_0x8005, Name_Farmgirl, PastTown_Text_SadGirlHereWeCome
+	setflag FLAG_SYS_NO_WHITEOUT
+	trainerbattle_no_intro TRAINER_ALICE, PastTown_Text_SadGirlDefeated
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_SadGirlPostBattle
+	speak LOCALID_PAST_SAD_GIRL_OUTSIDE, VAR_0x8005, Name_Farmgirl, PastTown_Text_SadGirlThatWasFunWin
+	closemessage
+	clearflag FLAG_SYS_NO_WHITEOUT
+	releaseall
 	end
 
+PastTown_EventScript_SadGirlEndDialogue::
+	speak LOCALID_PAST_SAD_GIRL_OUTSIDE, VAR_0x8005, Name_Farmgirl, PastTown_Text_SadGirlOhOkay
+	closemessage
+	releaseall
+	end
+	
 PastTown_EventScript_SadGirlGiveMonsPotionsFromBelow::
+	applymovement LOCALID_PAST_SAD_GIRL_OUTSIDE, PastTown_Movement_SadGirlGiveMiltankPotionFromBelow
+	waitmovement 0
+	applymovement LOCALID_MILTANK, Common_Movement_FaceRight
+	waitmovement 0
+	delay 10
+	playse SE_REPEL
+	waitse
+	delay 10
+	playse SE_PIN
+	applymovement LOCALID_MILTANK, Common_Movement_HeartEmote
+	waitse
+	playmoncry SPECIES_MILTANK, CRY_MODE_NORMAL
+	delay 50
+	waitmoncry
+	delay 10
+	applymovement LOCALID_PAST_SAD_GIRL_OUTSIDE, PastTown_Movement_SadGirlGiveTaurosPotionFromBelow
+	waitmovement 0
+	applymovement LOCALID_TAUROS, Common_Movement_FaceLeft
+	waitmovement
+	delay 10
+	playse SE_REPEL
+	waitse
+	delay 10
+	playse SE_PIN
+	applymovement LOCALID_TAUROS, Common_Movement_HeartEmote
+	waitse
+	playmoncry SPECIES_TAUROS, CRY_MODE_NORMAL
+	delay 50
+	waitmoncry
+	delay 10
+	speak LOCALID_PAST_SAD_GIRL_OUTSIDE, DIR_WEST, Name_Farmgirl, PastTown_Text_SadGirlFeelingBetter
+	applymovement LOCALID_PAST_SAD_GIRL_OUTSIDE, PastTown_Movement_SadGirlReturnToLooker
+	waitmovement 0
+	applymovement LOCALID_MILTANK, Common_Movement_FaceRight
+	applymovement LOCALID_TAUROS, Common_Movement_FaceLeft
+	speak LOCALID_PAST_SAD_GIRL_OUTSIDE, VAR_0x8005, Name_Farmgirl, PastTown_Text_SadGirlMiracle
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_AllInADaysWork
+	playse SE_PIN
+	applymovement LOCALID_PAST_SAD_GIRL_OUTSIDE, Common_Movement_FaceLeftQuestionMark
+	waitmovement 0
+	delay 50
 	return
 
+PastTown_Movement_SadGirlGiveMiltankPotionFromBelow:
+	walk_left
+	face_up
+	step_end
+
+PastTown_Movement_SadGirlGiveTaurosPotionFromBelow:
+	walk_right
+	walk_right
+	face_up
+	step_end
+
+PastTown_Movement_SadGirlReturnToLooker:
+	walk_left
+	face_up
+	step_end
+
 PastTown_EventScript_SadGirlGiveMonsPotions::
+	applymovement LOCALID_PAST_SAD_GIRL_OUTSIDE, PastTown_Movement_SadGirlGiveMiltankPotion
+	waitmovement 0
+	applymovement LOCALID_MILTANK, Common_Movement_FaceRight
+	waitmovement 0
+	delay 10
+	playse SE_REPEL
+	waitse
+	delay 10
+	playse SE_PIN
+	applymovement LOCALID_MILTANK, Common_Movement_HeartEmote
+	waitse
+	playmoncry SPECIES_MILTANK, CRY_MODE_NORMAL
+	delay 50
+	waitmoncry
+	delay 10
+	applymovement LOCALID_PAST_SAD_GIRL_OUTSIDE, Common_Movement_FaceRight
+	waitmovement 0
+	applymovement LOCALID_TAUROS, Common_Movement_FaceLeft
+	waitmovement
+	delay 10
+	playse SE_REPEL
+	waitse
+	delay 10
+	playse SE_PIN
+	applymovement LOCALID_TAUROS, Common_Movement_HeartEmote
+	waitse
+	playmoncry SPECIES_TAUROS, CRY_MODE_NORMAL
+	delay 50
+	waitmoncry
+	delay 10
+	speak LOCALID_PAST_SAD_GIRL_OUTSIDE, DIR_WEST, Name_Farmgirl, PastTown_Text_SadGirlFeelingBetter
+	applymovement LOCALID_MILTANK, Common_Movement_FaceDown
+	applymovement LOCALID_TAUROS, Common_Movement_FaceDown
+	applymovement LOCALID_PAST_SAD_GIRL_OUTSIDE, Common_Movement_WalkDown
+	waitmovement 0
+	speak LOCALID_PAST_SAD_GIRL_OUTSIDE, VAR_0x8005, Name_Farmgirl, PastTown_Text_SadGirlMiracle
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_AllInADaysWork
+	playse SE_PIN
+	applymovement LOCALID_PAST_SAD_GIRL_OUTSIDE, Common_Movement_FaceUpQuestionMark
+	waitmovement 0
+	delay 50
 	return
-	
+
+PastTown_Movement_SadGirlGiveMiltankPotion:
+	walk_up
+	face_left
+	step_end
+
 PastTown_EventScript_SadGirlPostBattle::	
+	clearflag FLAG_SYS_NO_WHITEOUT
+	speak LOCALID_PAST_SAD_GIRL_OUTSIDE, VAR_0x8005, Name_Farmgirl, PastTown_Text_SadGirlAww
 	multichoice 0, 6, MULTI_FARMGIRL_GIVEMON, TRUE
 	goto_if_eq VAR_RESULT, 0, PastTown_EventScript_SadGirlGiveTauros
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_SadGirlGiveMiltank
@@ -1122,6 +1258,7 @@ PastTown_EventScript_SadGirlPostBattle::
 	
 PastTown_EventScript_SadGirlQuestFinish::
 	fadescreen FADE_TO_BLACK
+	closemessage
 	removeobject LOCALID_PAST_SAD_GIRL_OUTSIDE
 	removeobject VAR_TEMP_1 @The mon you receive
 	removeobject VAR_TEMP_2 @The mon you do not receive
@@ -1132,6 +1269,7 @@ PastTown_EventScript_SadGirlQuestFinish::
 	addobject VAR_TEMP_2
 	fadescreen FADE_FROM_BLACK
 	completequest QUEST_SENT_TO_THE_FARM
+	clearflag FLAG_HIDE_PAST_SAD_GIRL_INSIDE
 	release
 	end
 
@@ -1636,7 +1774,7 @@ PastTown_Text_Wooloo:
 	.string "Baaa!$"
 
 PastTown_Text_Mareep:
-	.string "Maaa!$"
+	.string "Maraaa!$"
 
 PastTown_Text_Mudsdale:
 	.string "Nyehehehehehe!$"
@@ -1654,3 +1792,50 @@ PastTown_Text_TrainerTips:
 	.string "In battle, press L to see the next turn\n"
 	.string "of the opponent's left Pokémon, and R to\l"
 	.string "see the turn of the right Pokémon!$"
+
+PastTown_Text_SadGirlIThinkTheyWantToFight:
+	.string "Oh? I think Torin and Moomoo want to\n"
+	.string "battle you!$"
+
+PastTown_Text_SadGirlAreYouReady:
+	.string "Mister, would you be interested in a\n"
+	.string "fun, recreational battle?$"
+
+PastTown_Text_SadGirlHereWeCome:
+	.string "All right! Get ready, sir!$"
+
+PastTown_Text_SadGirlOhOkay:
+	.string "Oh. Okay…\p"
+	.string "Well, if you decide later that you want to\n"
+	.string "fight, then let me know…$"
+
+PastTown_Text_SadGirlDefeated:
+	.string "…I think they're going to be alright…!$"
+	.string "…Snivel…$"
+
+PastTown_Text_SadGirlThatWasFunWin:
+	.string "Yippee! That was fun!\p"
+	.string "Mister, if you will, I would love to take\n"
+	.string "part in another battle!$"
+
+PastTown_Text_SadGirlFeelingBetter:
+	.string "Whoa! You two are already looking much\n"
+	.string "happier now!$"
+
+PastTown_Text_SadGirlMiracle:
+	.string "It's a miracle! Almost in an instant,\n"
+	.string "Torin and Moomoo are feeling better!\p"
+	.string "Thank you, sir!$"
+
+PastTown_Text_SadGirlAww:
+	.string "Aww! I thought I had that!\p"
+	.string "Still, it feels as if Torin and Moomoo\n"
+	.string "are back to full power!\p"
+	.string "I think they would do well to go with you,\n"
+	.string "by the way!\p"
+	.string "Having just come back to full health, they\n"
+	.string "will need extra work to regain their strength!\p"
+	.string "I think we can provide that hard work for one,\n"
+	.string "but we don't have enough.\p"
+	.string "As such, you can take the other briefly!\n"
+	.string "Who would you want to come with you?$"

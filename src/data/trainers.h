@@ -1437,7 +1437,7 @@ F_TRAINER_FEMALE |
     [DIFFICULTY_NORMAL][TRAINER_DAISY] =
     {
 #line 639
-        .trainerName = _("DAISY"),
+        .trainerName = _("Daisy"),
 #line 640
         .trainerClass = TRAINER_CLASS_AROMA_LADY,
 #line 641
@@ -1448,7 +1448,7 @@ F_TRAINER_FEMALE |
 #line 643
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
 #line 644
-        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+        .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 645
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 2,
@@ -20454,7 +20454,7 @@ F_TRAINER_FEMALE |
     [DIFFICULTY_NORMAL][TRAINER_ALICE] =
     {
 #line 8212
-        .trainerName = _("ALICE"),
+        .trainerName = _("Alice"),
 #line 8213
         .trainerClass = TRAINER_CLASS_FARMGIRL,
 #line 8214
