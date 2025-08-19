@@ -416,7 +416,7 @@ static const struct InGameOT sIngameOTs[] =
         .isNicknamed = TRUE,
         .nickname = _("Swimminson"),
     },
-    [OT_DAMIAN_TAUROS] =
+    [OT_ALICE_TAUROS] =
     {
         .species = SPECIES_TAUROS,
         .level = 50,
@@ -428,14 +428,14 @@ static const struct InGameOT sIngameOTs[] =
         .nature = NATURE_HARDY,
         .abilityNum = 0,
         .gender = MON_MALE,
-        .otId = 42784,
-        .otName = _("Damian"),
+        .otId = 87783,
+        .otName = _("Alice"),
         .otGender = MALE,
         .isShiny = FALSE,
         .isNicknamed = TRUE,
-        .nickname = _("Biggie Bag"),
+        .nickname = _("Torin"),
     },
-    [OT_DAMIAN_MILTANK] =
+    [OT_ALICE_MILTANK] =
     {
         .species = SPECIES_MILTANK,
         .level = 50,
@@ -447,12 +447,12 @@ static const struct InGameOT sIngameOTs[] =
         .nature = NATURE_HARDY,
         .abilityNum = 0,
         .gender = MON_FEMALE,
-        .otId = 42784,
-        .otName = _("Damian"),
+        .otId = 87783,
+        .otName = _("Alice"),
         .otGender = MALE,
         .isShiny = FALSE,
         .isNicknamed = TRUE,
-        .nickname = _("Hapi"),
+        .nickname = _("Moomoo"),
     },
     [OT_BARTOZ_GALVANTULA] =
     {

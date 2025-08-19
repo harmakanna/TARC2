@@ -8210,23 +8210,27 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ALICE ===
 Name: ALICE
-Class: Swimmer F
-Pic: Swimmer F
+Class: Farmgirl
+Pic: Farmgirl
 Gender: Female
-Music: Swimmer
-Double Battle: No
+Music: Female
+Double Battle: Yes
 AI: Check Bad Move
 
-Goldeen
-Level: 24
+Tauros
+Level: 5
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Miltank
+Level: 5
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Alcremie
+Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Wingull
-Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Goldeen
-Level: 24
+Mudsdale
+Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_JENNY_1 ===

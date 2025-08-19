@@ -334,7 +334,7 @@ Present_CityHall_2F_Ranger_Text_HeadRangerActive:
 	.string "I gave the ranger stationed there a\n"
 	.string "call that you're going to help us,\l"
 	.string "so you shouldn't have issues getting\l"
-	.string "getting through to there now.$"
+	.string "through to there now.$"
 
 Present_CityHall_2F_Ranger_Text_HeadRangerDang:
 	.string "Wait, you're telling me\n"
@@ -363,10 +363,6 @@ Present_CityHall_2F_Ranger_Text_HeadRangerReward:
 	.string "rampant on the ecosystem if unchecked.\p"
 	.string "But to think there would be one\n"
 	.string "strong enough to capture a legend…\p"
-	.string "… … …\n"
-	.string "… … …\p"
-	.string "… … …\n"
-	.string "… … …\p"
 	.string "Anyways, I think we can trust you\n"
 	.string "to not go crazy yourself.\p"
 	.string "We don't have much to give, but I hope\n"

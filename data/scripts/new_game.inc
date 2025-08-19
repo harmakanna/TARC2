@@ -157,6 +157,7 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_PEST_3_3
 	setflag FLAG_HIDE_PEST_3_4
 	setflag FLAG_HIDE_PEST_3_5
+	setflag FLAG_HIDE_PEST_3_6
 	setflag FLAG_HIDE_CAFE_IDOL_LEFT
 	setflag FLAG_HIDE_CAFE_IDOL_RIGHT
 	setflag FLAG_HIDE_CAFE_IDOL_LISIA

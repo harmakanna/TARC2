@@ -747,11 +747,7 @@ Present_AquaCorpHQ_Text_LookerSorry:
 	.string "Sorry…$"
 
 Present_AquaCorpHQ_Text_ShellyLookerComeHere:
-	.string "… … …\n"
-	.string "… … …\p"
-	.string "… … …\n"
-	.string "… … …\p"
-	.string "Sigh… … …\p"
+	.string "Sigh…\p"
 	.string "Mr. Looker, come here. I can explain\n"
 	.string "everything.$"
 	
@@ -787,7 +783,7 @@ Present_AquaCorpHQ_Text_SarahIllPrepareTheDeepSea:
 	.string "items!$"
 
 Present_AquaCorpHQ_Text_ShellyLookerComeSeeClamperl:
-	.string "Follow me, Looker. This is gonnna\n"
+	.string "Follow me, Looker. This is gonna\n"
 	.string "be exciting!$"
 
 Present_AquaCorpHQ_Text_ShellyThisClamperl:
@@ -850,9 +846,7 @@ Present_AquaCorpHQ_Text_ShellyImGladToHear:
 	.string "I guess.$"
 
 Present_AquaCorpHQ_Text_MattImSorry:
-	.string "… … …\n"
-	.string "… … …\p"
-	.string "…I'm sorry for before.\p"
+	.string "…I'm sorry for before.\n"
 	.string "Old habits die hard.$"
 
 Present_AquaCorpHQ_Text_LookerApologyAcceptedImSorry:

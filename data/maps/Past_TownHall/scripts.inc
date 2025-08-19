@@ -161,6 +161,7 @@ Past_TownHall_EventScript_CamillaAcceptEstellaCandy::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_WillDo
 	questmenu QUEST_MENU_SET_REWARD, QUEST_WITH_MUCH_GRATITUDE
 	closemessage
+	removeitem ITEM_RARE_CANDY
 	release
 	end
 

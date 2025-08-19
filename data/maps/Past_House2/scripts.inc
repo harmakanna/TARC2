@@ -251,6 +251,7 @@ Past_House2_EventScript_SweetToothGirlGoesCrazy:
 	playbgm MUS_DP_ETERNA_NIGHT, TRUE
 	setflag FLAG_SWEET_TOOTH_WENT_CRAZY
 	clearflag FLAG_HIDE_PRESENT_SWEET_TOOTH
+	removeitem ITEM_RARE_CANDY
 	closemessage
 	releaseall
 	end

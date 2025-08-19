@@ -291,6 +291,7 @@ PastTown_EventScript_FishermanQuestActive::
 	end
 
 PastTown_EventScript_FishermanQuestReward::
+	setflag FLAG_SYS_DISAPPEAR_QUESTS
 	speak LOCALID_FISHERMAN, VAR_0x8005, Name_Past_Fisherman, PastTown_Text_FishermanRubbish
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_SoHeresTheThing
 	speak LOCALID_FISHERMAN, VAR_0x8005, Name_Past_Fisherman, PastTown_Text_FishermanReward
@@ -305,9 +306,11 @@ PastTown_EventScript_FishermanQuestFinish::
 	setobjectxyperm LOCALID_FISHERMAN, 15, 32
 	setobjectmovementtype LOCALID_FISHERMAN, MOVEMENT_TYPE_FACE_DOWN
 	addobject LOCALID_FISHERMAN
+	closemessage
 	delay 80
 	fadescreen FADE_FROM_BLACK
 	completequest QUEST_HELP_FISHERMAN
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	release
 	end
 
@@ -756,6 +759,8 @@ PastTown_EventScript_Bunnelby::
 	message PastTown_Text_Bunnelby
 	waitmessage
 	waitmoncry
+	returnqueststate QUEST_FARMLAND_INVASION_1
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_EndPestPokemonPreQuest
 	getpartysize
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
@@ -778,6 +783,8 @@ PastTown_EventScript_Buneary::
 	message PastTown_Text_Buneary
 	waitmessage
 	waitmoncry
+	returnqueststate QUEST_FARMLAND_INVASION_1
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_EndPestPokemonPreQuest
 	getpartysize
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
@@ -800,6 +807,8 @@ PastTown_EventScript_Minun::
 	message PastTown_Text_Minun
 	waitmessage
 	waitmoncry
+	returnqueststate QUEST_FARMLAND_INVASION_1
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_EndPestPokemonPreQuest
 	getpartysize
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
@@ -822,6 +831,8 @@ PastTown_EventScript_Leavanny::
 	message PastTown_Text_Leavanny
 	waitmessage
 	waitmoncry
+	returnqueststate QUEST_FARMLAND_INVASION_2
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_EndPestPokemonPreQuest
 	getpartysize
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
@@ -844,6 +855,8 @@ PastTown_EventScript_Kricketune::
 	message PastTown_Text_Kricketune
 	waitmessage
 	waitmoncry
+	returnqueststate QUEST_FARMLAND_INVASION_2
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_EndPestPokemonPreQuest
 	getpartysize
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
@@ -866,6 +879,8 @@ PastTown_EventScript_Flapple::
 	message PastTown_Text_Flapple
 	waitmessage
 	waitmoncry
+	returnqueststate QUEST_FARMLAND_INVASION_2
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_EndPestPokemonPreQuest
 	getpartysize
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
@@ -888,6 +903,8 @@ PastTown_EventScript_Breloom::
 	message PastTown_Text_Breloom
 	waitmessage
 	waitmoncry
+	returnqueststate QUEST_FARMLAND_INVASION_3
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_EndPestPokemonPreQuest
 	getpartysize
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
@@ -910,6 +927,8 @@ PastTown_EventScript_Amoonguss::
 	message PastTown_Text_Amoonguss
 	waitmessage
 	waitmoncry
+	returnqueststate QUEST_FARMLAND_INVASION_3
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_EndPestPokemonPreQuest
 	getpartysize
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
@@ -932,6 +951,8 @@ PastTown_EventScript_Shiinotic::
 	message PastTown_Text_Shiinotic
 	waitmessage
 	waitmoncry
+	returnqueststate QUEST_FARMLAND_INVASION_3
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_EndPestPokemonPreQuest
 	getpartysize
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
@@ -954,6 +975,8 @@ PastTown_EventScript_Toedscruel::
 	message PastTown_Text_Toedscruel
 	waitmessage
 	waitmoncry
+	returnqueststate QUEST_FARMLAND_INVASION_3
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_EndPestPokemonPreQuest
 	getpartysize
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
@@ -976,6 +999,8 @@ PastTown_EventScript_Parasect::
 	message PastTown_Text_Parasect
 	waitmessage
 	waitmoncry
+	returnqueststate QUEST_FARMLAND_INVASION_3
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_EndPestPokemonPreQuest
 	getpartysize
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
@@ -1041,6 +1066,11 @@ PastTown_EventScript_NotEnoughPokemon::
 	release
 	end
 
+PastTown_EventScript_EndPestPokemonPreQuest:
+	closemessage
+	release
+	end
+	
 PastTown_EventScript_CompletePestsBattle::
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_SYS_DISABLE_CATCHING
@@ -1066,9 +1096,45 @@ PastTown_EventScript_Pests2QuestSetReward::
 
 PastTown_EventScript_SadGirl::
 	lock
+	faceplayer
+	call_if_eq VAR_FACING, DIR_SOUTH, PastTown_EventScript_SadGirlGiveMonsPotionsFromBelow
+	call_if_ne VAR_FACING, DIR_SOUTH, PastTown_EventScript_SadGirlGiveMonsPotions
+	setflag FLAG_SAD_GIRL_GAVE_POTIONS
+	goto PastTown_EventScript_SadGirlPostBattle
+	end
+
+PastTown_EventScript_SadGirlRematch::
+	goto PastTown_EventScript_SadGirlPostBattle
+	end
+
+PastTown_EventScript_SadGirlGiveMonsPotionsFromBelow::
+	return
+
+PastTown_EventScript_SadGirlGiveMonsPotions::
+	return
+	
+PastTown_EventScript_SadGirlPostBattle::	
+	multichoice 0, 6, MULTI_FARMGIRL_GIVEMON, TRUE
+	goto_if_eq VAR_RESULT, 0, PastTown_EventScript_SadGirlGiveTauros
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_SadGirlGiveMiltank
 	release
 	end
 	
+PastTown_EventScript_SadGirlQuestFinish::
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_PAST_SAD_GIRL_OUTSIDE
+	removeobject VAR_TEMP_1 @The mon you receive
+	removeobject VAR_TEMP_2 @The mon you do not receive
+	setobjectxyperm LOCALID_MILTANK, 9, 24
+	setobjectxyperm LOCALID_TAUROS, 38, 17
+	setobjectmovementtype LOCALID_MILTANK, MOVEMENT_TYPE_WANDER_AROUND
+	setobjectmovementtype LOCALID_TAUROS, MOVEMENT_TYPE_WANDER_AROUND
+	addobject VAR_TEMP_2
+	fadescreen FADE_FROM_BLACK
+	completequest QUEST_SENT_TO_THE_FARM
+	release
+	end
+
 PastTown_EventScript_Wooloo::
 	lock
 	faceplayer
@@ -1241,8 +1307,8 @@ PastTown_Text_ForemanPregame:
 	.string "My farmhands are always fighting over\n"
 	.string "the silliest things…\p"
 	.string "I appreciate their dedication to their\n"
-	.string "work, but they cannot cooperate for the\l"
-	.string "life of them…$"
+	.string "work, but they cannot cooperate for\l"
+	.string "the life of them…$"
 
 PastTown_Text_CarrotFarmerPregame:
 	.string "Hmph…\p"

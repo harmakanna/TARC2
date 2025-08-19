@@ -255,10 +255,10 @@ Present_ConcernedFamilyHouse_Text_MomPregame:
 Present_ConcernedFamilyHouse_Text_EstellaPregame:
 	.string "um, um, um!\p"
 	.string "so the spirits who were here were bad but\n"
-	.string "then there's good spirits in the forest who\l"
-	.string "helped us?\p"
-	.string "so the forest spirits are friendly and can\n"
-	.string "help us if we're in trouble?$"
+	.string "then there's good spirits in the forest\l"
+	.string "who helped us?\p"
+	.string "so the forest spirits are friendly and\n"
+	.string "who help us if we're in trouble?$"
 
 Present_ConcernedFamilyHouse_Text_Grandma:
 	.string "Ohohoho…\p"

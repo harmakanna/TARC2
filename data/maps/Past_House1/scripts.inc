@@ -47,6 +47,7 @@ Past_House1_EventScript_SadGirlQuestReward::
 	playse SE_EXIT
 	waitse
 	removeobject LOCALID_PAST_SAD_GIRL_INSIDE
+	clearflag FLAG_HIDE_PAST_SAD_GIRL_OUTSIDE
 	release
 	end
 
