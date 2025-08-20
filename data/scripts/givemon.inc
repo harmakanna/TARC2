@@ -569,7 +569,7 @@ PastTown_EventScript_SadGirlGiveTauros::
 
 PastTown_EventScript_ReceiveTaurosParty::
 	call PastTown_EventScript_ReceivedTaurosFanfare
-	goto PastTown_EventScript_ForemanQuestFinish
+	goto PastTown_EventScript_SadGirlQuestFinish
 	end
 	
 PastTown_EventScript_ReceiveTaurosPC::
@@ -600,7 +600,7 @@ PastTown_EventScript_SadGirlGiveMiltank::
 
 PastTown_EventScript_ReceiveMiltankParty::
 	call PastTown_EventScript_ReceivedMiltankFanfare
-	goto PastTown_EventScript_ForemanQuestFinish
+	goto PastTown_EventScript_SadGirlQuestFinish
 	end
 	
 PastTown_EventScript_ReceiveMiltankPC::

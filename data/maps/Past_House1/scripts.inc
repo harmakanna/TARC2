@@ -3,6 +3,7 @@ Past_House1_MapScripts::
 
 Past_House1_EventScript_SadGirl::
 	lock
+	goto_if_unset FLAG_SYS_MAIN_GAME_START, Past_House1_EventScript_SadGirlPregame
 	call Script_GetNPCFacingDirection
 	returnqueststate QUEST_SENT_TO_THE_FARM
 	switch VAR_RESULT
@@ -13,6 +14,12 @@ Past_House1_EventScript_SadGirl::
 	release
 	end
 
+Past_House1_EventScript_SadGirlPregame::
+	msgbox Past_House1_Text_SadGirlWaaa, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+	
 Past_House1_EventScript_SadGirlQuestActivate::
 	setflag FLAG_SYS_DISAPPEAR_QUESTS
 	speak LOCALID_PAST_SAD_GIRL_INSIDE, DIR_WEST, Name_Farmgirl, Past_House1_Text_SadGirlWaaa

@@ -17,8 +17,8 @@
     {
       "local_id": "LOCALID_TAUROS",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(TAUROS)",
-      "x": 38,
-      "y": 17,
+      "x": 21,
+      "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -100,23 +100,24 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_WOOLOO_2",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(WOOLOO)",
-      "x": 27,
-      "y": 34,
+      "x": 24,
+      "y": 16,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PastTown_EventScript_Wooloo",
-      "flag": "0"
+      "flag": "FLAG_HIDE_WOOLOO"
     },
     {
       "local_id": "LOCALID_FISHERMAN",
       "graphics_id": "OBJ_EVENT_GFX_PAST_FISHERMAN",
-      "x": 32,
-      "y": 18,
+      "x": 37,
+      "y": 16,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -128,6 +129,7 @@
       "quest_id": 6
     },
     {
+      "local_id": "LOCALID_WOOLOO_3",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(WOOLOO)",
       "x": 27,
       "y": 22,
@@ -138,7 +140,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PastTown_EventScript_Wooloo",
-      "flag": "0"
+      "flag": "FLAG_HIDE_WOOLOO"
     },
     {
       "local_id": "LOCALID_PAST_SCIENTIST",
@@ -157,10 +159,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MUDSDALE)",
-      "x": 31,
-      "y": 38,
+      "x": 14,
+      "y": 32,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -169,17 +171,18 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_WOOLOO_1",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(WOOLOO)",
-      "x": 29,
-      "y": 19,
+      "x": 27,
+      "y": 34,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_UP",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PastTown_EventScript_Wooloo",
-      "flag": "0"
+      "flag": "FLAG_HIDE_WOOLOO"
     },
     {
       "local_id": "LOCALID_PEST_1_1",
