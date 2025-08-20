@@ -112,6 +112,11 @@ EventScript_ResetAllBerries::
 	setberrytree BERRY_TREE_ROUTE_130_LIECHI, ITEM_TO_BERRY(ITEM_LIECHI_BERRY), BERRY_STAGE_BERRIES
 	return
 
+EventScript_SetCulprit:
+	random 5
+	copyvar VAR_CHOOSE_CULPRIT, VAR_RESULT
+	return
+
 EventScript_ResetAllMapFlags::
 	setflag FLAG_SYS_PREVENT_MAP_FADE
 	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
@@ -325,4 +330,5 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_SKY_PILLAR_WALLACE
 	setflag FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL
 	call EventScript_ResetAllBerries
+	call EventScript_SetCulprit
 	end

@@ -25,7 +25,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PastTown_EventScript_Tauros",
       "flag": "FLAG_HIDE_TAUROS"
     },
     {
@@ -39,7 +39,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PastTown_EventScript_Miltank",
       "flag": "FLAG_HIDE_MILTANK"
     },
     {

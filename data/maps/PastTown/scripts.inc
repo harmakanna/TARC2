@@ -1322,6 +1322,46 @@ PastTown_EventScript_ReaddMiltank::
 	addobject LOCALID_MILTANK
 	return
 
+PastTown_EventScript_Miltank::
+	lock
+	faceplayer
+	waitse
+	goto_if_set FLAG_SAD_GIRL_GAVE_POTIONS, PastTown_EventScript_MiltankHealthy
+	playmoncry SPECIES_MILTANK, CRY_MODE_NORMAL
+	msgbox PastTown_Text_MiltankSick, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	release
+	end
+
+PastTown_EventScript_MiltankHealthy::
+	playmoncry SPECIES_MILTANK, CRY_MODE_NORMAL
+	msgbox PastTown_Text_MiltankHealthy, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	release
+	end
+
+PastTown_EventScript_Tauros::
+	lock
+	faceplayer
+	waitse
+	goto_if_set FLAG_SAD_GIRL_GAVE_POTIONS, PastTown_EventScript_TaurosHealthy
+	playmoncry SPECIES_TAUROS, CRY_MODE_NORMAL
+	msgbox PastTown_Text_TaurosSick, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	release
+	end
+
+PastTown_EventScript_TaurosHealthy::
+	playmoncry SPECIES_TAUROS, CRY_MODE_NORMAL
+	msgbox PastTown_Text_TaurosHealthy, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	release
+	end
+
 PastTown_EventScript_Wooloo::
 	lock
 	faceplayer
@@ -1826,6 +1866,18 @@ PastTown_Text_Mareep:
 
 PastTown_Text_Mudsdale:
 	.string "Nyehehehehehe!$"
+
+PastTown_Text_TaurosSick:
+	.string "…Mmm…$"
+
+PastTown_Text_TaurosHealthy:
+	.string "Moooooo!$"
+	
+PastTown_Text_MiltankSick:
+	.string "…Muh…$"
+
+PastTown_Text_MiltankHealthy:
+	.string "Muuuuuuh!$"
 
 PastTown_Text_TownHallSign:
 	.string "Porta Bella Town Hall\p"
