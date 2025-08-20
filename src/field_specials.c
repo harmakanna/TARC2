@@ -49,6 +49,7 @@
 #include "tv.h"
 #include "wallclock.h"
 #include "window.h"
+#include "constants/abilities.h"
 #include "constants/battle_frontier.h"
 #include "constants/battle_pyramid.h"
 #include "constants/battle_tower.h"
@@ -4373,4 +4374,16 @@ void GetCodeFeedback(void)
         gSpecialVar_Result = 1;
     else
         gSpecialVar_Result = 0;
+}
+
+void SwitchMonAbility(void)
+{
+    u16 species = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES, NULL);
+    u8 currentAbilityNum = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ABILITY_NUM, NULL);
+
+    if (gSpeciesInfo[species].abilities[1] != 0 && gSpeciesInfo[species].abilities[0] != gSpeciesInfo[species].abilities[1])
+    {
+        u8 newAbilityNum = !currentAbilityNum;
+        SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ABILITY_NUM, &newAbilityNum);
+    }
 }
