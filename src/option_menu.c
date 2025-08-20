@@ -1,4 +1,5 @@
 #include "global.h"
+#include "event_data.h"
 #include "option_menu.h"
 #include "bg.h"
 #include "gpu_regs.h"
@@ -15,6 +16,8 @@
 #include "window.h"
 #include "gba/m4a_internal.h"
 #include "constants/rgb.h"
+#include "difficulty.h"
+#include "constants/difficulty.h"
 
 #define tMenuSelection data[0]
 #define tTextSpeed data[1]
@@ -26,9 +29,9 @@
 
 enum
 {
+    MENUITEM_BATTLESTYLE,
     MENUITEM_TEXTSPEED,
     MENUITEM_BATTLESCENE,
-    MENUITEM_BATTLESTYLE,
     MENUITEM_SOUND,
     MENUITEM_BUTTONMODE,
     MENUITEM_FRAMETYPE,
@@ -42,9 +45,9 @@ enum
     WIN_OPTIONS
 };
 
+#define YPOS_BATTLESTYLE  (MENUITEM_BATTLESTYLE * 16)
 #define YPOS_TEXTSPEED    (MENUITEM_TEXTSPEED * 16)
 #define YPOS_BATTLESCENE  (MENUITEM_BATTLESCENE * 16)
-#define YPOS_BATTLESTYLE  (MENUITEM_BATTLESTYLE * 16)
 #define YPOS_SOUND        (MENUITEM_SOUND * 16)
 #define YPOS_BUTTONMODE   (MENUITEM_BUTTONMODE * 16)
 #define YPOS_FRAMETYPE    (MENUITEM_FRAMETYPE * 16)
@@ -357,6 +360,7 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsButtonMode = gTasks[taskId].tButtonMode;
     gSaveBlock2Ptr->optionsWindowFrameType = gTasks[taskId].tWindowFrameType;
 
+    VarSet(B_VAR_DIFFICULTY, gSaveBlock2Ptr->optionsBattleStyle);
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
 }
@@ -466,10 +470,17 @@ static void BattleScene_DrawChoices(u8 selection)
 
 static u8 BattleStyle_ProcessInput(u8 selection)
 {
-    if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT))
+    if (JOY_NEW(DPAD_LEFT))
     {
-        selection ^= 1;
+        if (selection != 0)
+			selection--;
         sArrowPressed = TRUE;
+    }
+    if (JOY_NEW(DPAD_RIGHT))
+    {
+	if (selection < DIFFICULTY_HARD)
+		selection++;
+	sArrowPressed = TRUE;
     }
 
     return selection;
@@ -477,14 +488,45 @@ static u8 BattleStyle_ProcessInput(u8 selection)
 
 static void BattleStyle_DrawChoices(u8 selection)
 {
-    u8 styles[2];
+    // u8 styles[2];
+
+    // styles[0] = 0;
+    // styles[1] = 0;
+    // styles[selection] = 1;
+
+    // DrawOptionMenuChoice(gText_BattleStyleShift, 104, YPOS_BATTLESTYLE, styles[0]);
+    // DrawOptionMenuChoice(gText_BattleStyleSet, GetStringRightAlignXOffset(FONT_NORMAL, gText_BattleStyleSet, 198), YPOS_BATTLESTYLE, styles[1]);
+    // switch (selection)
+	// {
+	// 	case 0:
+	// 		DrawOptionMenuChoice(gText_BattleStyleEasy, 132, YPOS_BATTLESTYLE, 1);
+	// 		break;
+	// 	case 1:
+	// 		DrawOptionMenuChoice(gText_BattleStyleNormal, 132, YPOS_BATTLESTYLE, 1);
+	// 		break;
+	// 	case 2:
+	// 		DrawOptionMenuChoice(gText_BattleStyleHard, 132, YPOS_BATTLESTYLE, 1);
+	// 		break;
+	// }
+    u8 styles[3];
+    s32 widthEasy, widthNormal, widthHard, xMid;
 
     styles[0] = 0;
     styles[1] = 0;
+    styles[2] = 0;
     styles[selection] = 1;
 
-    DrawOptionMenuChoice(gText_BattleStyleShift, 104, YPOS_BATTLESTYLE, styles[0]);
-    DrawOptionMenuChoice(gText_BattleStyleSet, GetStringRightAlignXOffset(FONT_NORMAL, gText_BattleStyleSet, 198), YPOS_BATTLESTYLE, styles[1]);
+    DrawOptionMenuChoice(gText_BattleStyleEasy, 104, YPOS_BATTLESTYLE, styles[0]);
+
+    widthEasy = GetStringWidth(FONT_NORMAL, gText_BattleStyleEasy, 0);
+    widthNormal = GetStringWidth(FONT_NORMAL, gText_BattleStyleNormal, 0);
+    widthHard = GetStringWidth(FONT_NORMAL, gText_BattleStyleHard, 0);
+
+    widthNormal -= 94;
+    xMid = (widthEasy - widthNormal - widthHard) / 2 + 104;
+    DrawOptionMenuChoice(gText_BattleStyleNormal, xMid, YPOS_BATTLESTYLE, styles[1]);
+
+    DrawOptionMenuChoice(gText_BattleStyleHard, GetStringRightAlignXOffset(FONT_NORMAL, gText_BattleStyleHard, 198), YPOS_BATTLESTYLE, styles[2]);
 }
 
 static u8 Sound_ProcessInput(u8 selection)
