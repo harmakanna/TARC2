@@ -272,7 +272,7 @@ static const struct SubQuest sSubQuestsInvestigateProsperity[QUEST_INVESTIGATE_P
 static const struct SubQuest sSubQuestsFindTheCulprit[QUEST_FIND_THE_CULPRIT_SUB_COUNT] =
 {
 	sub_quest(
-	      0,
+	      1,
 	      gText_SubQuestFindTheCulprit_Name1,
 	      gText_SubQuestFindTheCulprit_Desc1,
 	      gText_SubQuestFindTheCulprit_Map1,
@@ -281,7 +281,7 @@ static const struct SubQuest sSubQuestsFindTheCulprit[QUEST_FIND_THE_CULPRIT_SUB
 	      sText_Found
 	),
 	sub_quest(
-	      0,
+	      2,
 	      gText_SubQuestFindTheCulprit_Name2,
 	      gText_SubQuestFindTheCulprit_Desc2,
 	      gText_SubQuestFindTheCulprit_Map2,
@@ -290,7 +290,7 @@ static const struct SubQuest sSubQuestsFindTheCulprit[QUEST_FIND_THE_CULPRIT_SUB
 	      sText_Found
 	),
 	sub_quest(
-	      0,
+	      3,
 	      gText_SubQuestFindTheCulprit_Name3,
 	      gText_SubQuestFindTheCulprit_Desc3,
 	      gText_SubQuestFindTheCulprit_Map3,
@@ -299,7 +299,7 @@ static const struct SubQuest sSubQuestsFindTheCulprit[QUEST_FIND_THE_CULPRIT_SUB
 	      sText_Found
 	),
 	sub_quest(
-	      0,
+	      4,
 	      gText_SubQuestFindTheCulprit_Name4,
 	      gText_SubQuestFindTheCulprit_Desc4,
 	      gText_SubQuestFindTheCulprit_Map4,
@@ -308,7 +308,7 @@ static const struct SubQuest sSubQuestsFindTheCulprit[QUEST_FIND_THE_CULPRIT_SUB
 	      sText_Found
 	),
 	sub_quest(
-	      0,
+	      5,
 	      gText_SubQuestFindTheCulprit_Name5,
 	      gText_SubQuestFindTheCulprit_Desc5,
 	      gText_SubQuestFindTheCulprit_Map5,
@@ -321,7 +321,7 @@ static const struct SubQuest sSubQuestsFindTheCulprit[QUEST_FIND_THE_CULPRIT_SUB
 static const struct SubQuest sSubQuestsCatchTheGenies[QUEST_CATCH_GENIES_SUB_COUNT] =
 {
 	sub_quest(
-	      0,
+	      6,
 	      gText_SubQuestCatchTheGenies_Name1,
 	      gText_SubQuestCatchTheGenies_Desc1,
 	      gText_SubQuestCatchTheGenies_Map,
@@ -330,7 +330,7 @@ static const struct SubQuest sSubQuestsCatchTheGenies[QUEST_CATCH_GENIES_SUB_COU
 	      sText_Found
 	),
 	sub_quest(
-	      0,
+	      7,
 	      gText_SubQuestCatchTheGenies_Name2,
 	      gText_SubQuestCatchTheGenies_Desc2,
 	      gText_SubQuestCatchTheGenies_Map,
@@ -343,7 +343,7 @@ static const struct SubQuest sSubQuestsCatchTheGenies[QUEST_CATCH_GENIES_SUB_COU
 static const struct SubQuest sSubQuestsSaveTheLuvdiscs[QUEST_SENTIMENTAL_SUB_COUNT] =
 {
 	sub_quest(
-	      0,
+	      8,
 	      gText_SubQuestSaveTheLuvdiscs_Name,
 	      gText_SubQuestSaveTheLuvdiscs_Desc,
 	      gText_SubQuestSaveTheLuvdiscs_Map,
@@ -357,7 +357,7 @@ static const struct SubQuest sSubQuestsSaveTheLuvdiscs[QUEST_SENTIMENTAL_SUB_COU
 static const struct SubQuest sSubQuestsAWholeNewWorld[QUEST_WITH_MUCH_GRATITUDE_SUB_COUNT] =
 {
 	sub_quest(
-	      0,
+	      9,
 	      gText_SubQuestAWholeNewWorld_Name,
 	      gText_SubQuestAWholeNewWorld_Desc,
 	      gText_SubQuestAWholeNewWorld_Map,
@@ -2646,6 +2646,7 @@ void HandleQuestIconForSingleObjectEvent(struct ObjectEvent *objectEvent, u32 ob
     u32 localId = objectEvent->localId;
     u32 mapNum = objectEvent->mapNum;
     u32 mapGroup = objectEvent->mapGroup;
+	u32 graphicsId = objectEvent->graphicsId;
 	u32 questId;
 
     const struct ObjectEventTemplate *obj = GetObjectEventTemplateByLocalIdAndMap(localId, mapNum, mapGroup);
@@ -2661,6 +2662,61 @@ void HandleQuestIconForSingleObjectEvent(struct ObjectEvent *objectEvent, u32 ob
 	
 	if (obj->trainerType != TRAINER_TYPE_QUEST_GIVER)
         return;
+
+	// Add icon to Subquest NPCs of "Find the Culprit!"
+	if ((!objectEvent->hasQuestIcon
+		&& !FlagGet(FLAG_SYS_DISAPPEAR_QUESTS))
+		&& questId == QUEST_FIND_THE_CULPRIT)
+	{
+		switch (graphicsId)
+		{	
+			case OBJ_EVENT_GFX_BLUE:
+				if(!IsSubquestCompletedState(SUB_QUEST_DEFEAT_BLUE) && IsQuestActiveState(questId))
+				{
+					SpawnQuestIconForObject(objectEvent, objectEventId);
+					return;
+				}
+				else
+					return;
+				break;	
+			case OBJ_EVENT_GFX_LINK_RS_MAY:
+				if(!IsSubquestCompletedState(SUB_QUEST_DEFEAT_MAY) && IsQuestActiveState(questId))
+				{
+					SpawnQuestIconForObject(objectEvent, objectEventId);
+					return;
+				}
+				else
+					return;
+				break;	
+			case OBJ_EVENT_GFX_LEAF:
+				if(!IsSubquestCompletedState(SUB_QUEST_DEFEAT_LEAF) && IsQuestActiveState(questId))
+				{
+					SpawnQuestIconForObject(objectEvent, objectEventId);
+					return;
+				}
+				else
+					return;
+				break;	
+			case OBJ_EVENT_GFX_BW_ACE_TRAINER_F:
+				if(!IsSubquestCompletedState(SUB_QUEST_DEFEAT_COOLTRAINER) && IsQuestActiveState(questId))
+				{
+					SpawnQuestIconForObject(objectEvent, objectEventId);
+					return;
+				}
+				else
+					return;
+				break;	
+			case OBJ_EVENT_GFX_YOUNGSTER_NEW:
+				if(!IsSubquestCompletedState(SUB_QUEST_DEFEAT_YOUNGSTER) && IsQuestActiveState(questId))
+				{
+					SpawnQuestIconForObject(objectEvent, objectEventId);
+					return;
+				}
+				else
+					return;
+				break;	
+		}
+	}
 
 	// Remove icon if quest is completed
 	if ((IsQuestCompletedState(questId)
@@ -2688,6 +2744,7 @@ void HandleQuestIconForSingleObjectEvent(struct ObjectEvent *objectEvent, u32 ob
 	// Add icon to NPCs who have quests
 	if (!objectEvent->hasQuestIcon /*&& !FieldEffectActiveListContains(FLDEFF_QUEST_ICON)*/ && !FlagGet(FLAG_SYS_DISAPPEAR_QUESTS))
 		SpawnQuestIconForObject(objectEvent, objectEventId);
+
 
 }
 

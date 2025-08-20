@@ -144,7 +144,7 @@ PresentTown_EventScript_LookerThinkingIGotIt::
 	playse SE_PIN
 	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 	waitmovement 0
-	delay 60
+	delay 50
 	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, PresentTown_Text_LookerIGotIt
 	startquest QUEST_FIND_THE_CULPRIT
 	return
