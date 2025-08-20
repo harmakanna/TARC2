@@ -168,6 +168,8 @@ Present_AquaCorpHQ_EventScript_AquaGauntlet::
 	speak LOCALID_AQUACORP_GEOFF, DIR_EAST, Name_Unknown, Present_AquaCorpHQ_Text_GeoffIntro
 	savebgm MUS_DUMMY
 	trainerbattle_no_intro TRAINER_GRUNT_AQUA_HIDEOUT_1, Present_AquaCorpHQ_Text_GeoffDefeat
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_AquaCorpHQ_EventScript_KickLookerOut
 	goto Present_AquaCorpHQ_EventScript_AquaGauntletSecondTrainer
 	end
 
@@ -178,6 +180,8 @@ Present_AquaCorpHQ_EventScript_AquaGauntletSecondTrainer::
 	speak LOCALID_AQUACORP_SARAH, DIR_WEST, Name_Unknown, Present_AquaCorpHQ_Text_SarahIntro
 	savebgm MUS_DUMMY
 	trainerbattle_no_intro TRAINER_GRUNT_AQUA_HIDEOUT_2, Present_AquaCorpHQ_Text_SarahDefeat
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_AquaCorpHQ_EventScript_KickLookerOut
 	goto Present_AquaCorpHQ_EventScript_AquaGauntletThirdTrainer
 	end
 
@@ -193,6 +197,8 @@ Present_AquaCorpHQ_EventScript_AquaGauntletThirdTrainer::
 	speak LOCALID_AQUACORP_SHELDON, DIR_SOUTH, Name_Unknown, Present_AquaCorpHQ_Text_SheldonIntro
 	savebgm MUS_DUMMY
 	trainerbattle_no_intro TRAINER_GRUNT_AQUA_HIDEOUT_3, Present_AquaCorpHQ_Text_SheldonDefeat
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_AquaCorpHQ_EventScript_KickLookerOut
 	goto Present_AquaCorpHQ_EventScript_AquaGauntletMatt
 	end
 
@@ -208,6 +214,8 @@ Present_AquaCorpHQ_EventScript_AquaGauntletMatt::
 	msgbox Present_AquaCorpHQ_Text_SheldonOw, MSGBOX_DEFAULT
 	speak LOCALID_AQUACORP_MATT, DIR_SOUTH, Name_Matt, Present_AquaCorpHQ_Text_MattGottaDoItYourself
 	trainerbattle_no_intro TRAINER_MATT, Present_AquaCorpHQ_Text_MattDefeat
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_AquaCorpHQ_EventScript_KickLookerOut
 	goto Present_AquaCorpHQ_EventScript_AquaGauntletMattDefeated
 	end
 
@@ -518,6 +526,17 @@ Present_AquaCorpHQ_Movement_MonWalkToPlayer:
 	walk_down
 	walk_left
 	step_end
+
+Present_AquaCorpHQ_EventScript_KickLookerOut::
+	speak LOCALID_AQUACORP_MATT, DIR_SOUTH, Name_Matt, Present_AquaCorpHQ_Text_MattTakeThat
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	speakername Name_Looker
+	msgbox Present_AquaCorpHQ_Text_LookerThisIsBad
+	closemessage
+	warp MAP_PRESENT_TOWN, 15, 35
+	waitstate
+	releaseall
+	end
 
 Present_AquaCorpHQ_EventScript_Krabby::
 	lock
@@ -894,3 +913,10 @@ Present_AquaCorpHQ_Text_EvolvedGorebyss:
 
 Present_AquaCorpHQ_Text_EvolvedHuntail:
 	.string "Chowder evolved into Huntail!$"
+
+Present_AquaCorpHQ_Text_MattTakeThat:
+	.string "Take that, loser!$"
+
+Present_AquaCorpHQ_Text_LookerThisIsBad:
+	.string "(Shoot, this is bad…\n"
+	.string "I need to regroup…)$"
