@@ -195,7 +195,7 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
 #if B_WHITEOUT_MONEY >= GEN_4
     [STRINGID_PLAYERWHITEOUT2]                      = COMPOUND_STRING("You panicked and dropped ¥{B_BUFF1}…\pYou were overwhelmed by your defeat!{PAUSE_UNTIL_PRESS}"),
 #else
-    [STRINGID_PLAYERWHITEOUT2]                      = COMPOUND_STRING("You were overwhelmed by your defeat!{PAUSE_UNTIL_PRESS}"),
+    [STRINGID_PLAYERWHITEOUT2]                      = COMPOUND_STRING("You hung your head in shame!{PAUSE_UNTIL_PRESS}"),
 #endif
     [STRINGID_PREVENTSESCAPE]                       = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} prevents escape with {B_SCR_ACTIVE_ABILITY}!\p"),
     [STRINGID_HITXTIMES]                            = COMPOUND_STRING("The Pokémon was hit {B_BUFF1} time(s)!"), //SV has dynamic plural here

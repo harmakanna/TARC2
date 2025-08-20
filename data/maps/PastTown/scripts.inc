@@ -1136,6 +1136,7 @@ PastTown_EventScript_SadGirl::
 	call Script_GetNPCFacingDirection
 	goto_if_set FLAG_SAD_GIRL_GAVE_POTIONS, PastTown_EventScript_SadGirlRematch
 	speak LOCALID_PAST_SAD_GIRL_OUTSIDE, VAR_0x8005, Name_Farmgirl, PastTown_Text_SadGirlLetsSee
+	closemessage
 	call_if_eq VAR_FACING, DIR_SOUTH, PastTown_EventScript_SadGirlGiveMonsPotionsFromBelow
 	call_if_ne VAR_FACING, DIR_SOUTH, PastTown_EventScript_SadGirlGiveMonsPotions
 	setflag FLAG_SAD_GIRL_GAVE_POTIONS
@@ -1303,12 +1304,23 @@ PastTown_EventScript_SadGirlQuestFinish::
 	setobjectxyperm LOCALID_TAUROS, 21, 18
 	setobjectmovementtype LOCALID_MILTANK, MOVEMENT_TYPE_WANDER_AROUND
 	setobjectmovementtype LOCALID_TAUROS, MOVEMENT_TYPE_WANDER_AROUND
-	addobject VAR_TEMP_2
+	call_if_eq VAR_TEMP_2, LOCALID_TAUROS, PastTown_EventScript_ReaddTauros
+	call_if_eq VAR_TEMP_2, LOCALID_MILTANK, PastTown_EventScript_ReaddMiltank
 	fadescreen FADE_FROM_BLACK
 	completequest QUEST_SENT_TO_THE_FARM
 	clearflag FLAG_HIDE_PAST_SAD_GIRL_INSIDE
 	release
 	end
+
+PastTown_EventScript_ReaddTauros::
+	clearflag FLAG_HIDE_TAUROS
+	addobject LOCALID_TAUROS
+	return
+
+PastTown_EventScript_ReaddMiltank::
+	clearflag FLAG_HIDE_MILTANK
+	addobject LOCALID_MILTANK
+	return
 
 PastTown_EventScript_Wooloo::
 	lock
@@ -1851,7 +1863,7 @@ PastTown_Text_SadGirlOhOkay:
 	.string "fight, then let me know…$"
 
 PastTown_Text_SadGirlDefeated:
-	.string "…I think they're going to be alright…!$"
+	.string "…I think they're going to be alright…!\n"
 	.string "…Snivel…$"
 
 PastTown_Text_SadGirlThatWasFunWin:
@@ -1872,11 +1884,11 @@ PastTown_Text_SadGirlAww:
 	.string "Aww! I thought I had that!\p"
 	.string "Still, it feels as if Torin and Moomoo\n"
 	.string "are back to full power!\p"
-	.string "I think they would do well to go with you,\n"
-	.string "by the way!\p"
+	.string "I think they would do well to go with\n"
+	.string "you, by the way!\p"
 	.string "Having just come back to full health,\n"
-	.string "they need to work to regain their strength!\p"
+	.string "they need work to regain their strength!\p"
 	.string "We can provide that hard work for one,\n"
 	.string "but we don't have enough for both.\p"
-	.string "As such, you can take the other briefly!\n"
+	.string "As such, feel free to take one along!\n"
 	.string "Who would you want to come with you?$"
