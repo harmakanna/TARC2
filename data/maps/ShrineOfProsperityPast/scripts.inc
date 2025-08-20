@@ -88,7 +88,7 @@ ShrineOfProsperityPast_EventScript_LandorusMyth::
 	setflag FLAG_SYS_SPAWN_INVISIBLE
 	setflag FLAG_SYS_PREVENT_MAP_FADE
 	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
-	warpsilent MAP_CUTSCENE_MYTH, 14, 14
+	warpsilent MAP_CUTSCENE_MYTH, 14, 15
 	waitstate
 	end
 
@@ -247,10 +247,10 @@ ShrineOfProsperityPast_Text_OratorMustBeTornThund:
 	.string "'Tis a frequent occurance.\p"
 	.string "As for the storm…\p"
 	.string "It can only be that the spirit of wind\n"
-	.string "and the spirit of storms are rampaging…$"
+	.string "and spirit of lightning are rampaging…$"
 
 ShrineOfProsperityPast_Text_LookerSpiritsOfWindAndStorms:
-	.string "The spirits of wind and storms?$"
+	.string "The spirits of wind and lightning?$"
 
 ShrineOfProsperityPast_Text_OratorYesTheSpirits:
 	.string "Legend has it that they once ruled the\n"

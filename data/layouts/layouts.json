@@ -4745,7 +4745,7 @@
       "id": "LAYOUT_CUTSCENE_MYTH",
       "name": "CutsceneMyth_Layout",
       "width": 57,
-      "height": 42,
+      "height": 43,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_SmallTownWithLab",
       "border_filepath": "data/layouts/CutsceneMyth/border.bin",

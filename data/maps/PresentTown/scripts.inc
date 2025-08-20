@@ -480,7 +480,6 @@ PresentTown_Movement_CameraPanToWildPokemon:
 	walk_left
 	walk_left
 	walk_left
-	walk_left
 	step_end
 
 PresentTown_EventScript_Matt::
@@ -985,7 +984,7 @@ PresentTown_Text_LookerWhatsWrong:
 	.string "issue, Anabel?$"
 
 PresentTown_Text_AnabelTakeACloserLook:
-	.string "Come take a closer look.$"
+	.string "Take a closer look.$"
 
 PresentTown_Text_LookerISeeIt:
 	.string "That's odd…\p"
@@ -1009,8 +1008,8 @@ PresentTown_Text_AnabelLookOut:
 
 PresentTown_Text_MattTalkingToGrunt:
 	.string "Hehehe…\p"
-	.string "The operation at the shrine went\n"
-	.string "off without a hitch!\p"
+	.string "These experiments are going off without\n"
+	.string "a hitch!\p"
 	.string "With these results, we can…$"
 
 PresentTown_Text_MattWhoAreYou:
@@ -1043,8 +1042,8 @@ PresentTown_Text_AquaMemberFWait:
 	.string "Wait!$"
 
 PresentTown_Text_AquaMemberFTalkingToMatt:
-	.string "So about the operation at\n"
-	.string "the east shrine…$"
+	.string "So about the experiment on\n"
+	.string "the local wildlife…$"
 
 PresentTown_Text_AquaMemberFNowHesMad:
 	.string "Now you've done it!\p"

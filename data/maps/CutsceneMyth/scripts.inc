@@ -12,6 +12,7 @@ CutsceneMyth_Event::
 	applymovement LOCALID_CAMERA, Myth_Movement_PositionCameraToFirstShot
 	waitmovement 0
 	delay 160
+	speakername NULL
 	message Myth_Text_LongAgo
 	waitmessage
 	delay 90
@@ -137,10 +138,10 @@ CutsceneMyth_Event::
 	clearflag FLAG_HIDE_MYTH_CELEBI
 	removeobject LOCALID_MYTH_TORNADUS
 	removeobject LOCALID_MYTH_THUNDURUS
-	setobjectxyperm LOCALID_MYTH_LANDORUS, 21, 17
-	setobjectxyperm LOCALID_MYTH_TORNADUS, 24, 23
-	setobjectxyperm LOCALID_MYTH_THUNDURUS, 18, 23
-	setobjectxyperm LOCALID_MYTH_CELEBI, 8, 22
+	setobjectxyperm LOCALID_MYTH_LANDORUS, 21, 18
+	setobjectxyperm LOCALID_MYTH_TORNADUS, 24, 24
+	setobjectxyperm LOCALID_MYTH_THUNDURUS, 18, 24
+	setobjectxyperm LOCALID_MYTH_CELEBI, 8, 23
 	setobjectmovementtype LOCALID_MYTH_TORNADUS, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT
 	setobjectmovementtype LOCALID_MYTH_THUNDURUS, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT
 	clearflag FLAG_HIDE_FIRST_PAN
@@ -368,6 +369,7 @@ Myth_Movement_PositionCameraToFourthShot:
 	walk_faster_up
 	walk_faster_up
 	walk_faster_up
+	walk_faster_up
 	step_end
 
 Myth_Movement_TornadusFightThundurus1:
@@ -450,8 +452,8 @@ Myth_Movement_ThundurusRetreatFromTorn2:
 
 @21 23 to 9 5
 Myth_Movement_PositionCameraToFifthShot:
-	walk_faster_up
-	walk_faster_up
+	@walk_faster_up
+	@walk_faster_up
 	walk_faster_up
 	walk_faster_up
 	walk_faster_up
@@ -522,7 +524,7 @@ Myth_Movement_PositionCameraToSixthShot:
 	walk_faster_left
 	walk_faster_left
 	walk_faster_left
-	walk_faster_down
+	@walk_faster_down
 	walk_faster_down
 	walk_faster_down
 	walk_faster_down

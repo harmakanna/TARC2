@@ -6132,5 +6132,5 @@ bool32 DidPlayerForfeitNormalTrainerBattle(void)
     if (!CanPlayerForfeitNormalTrainerBattle())
         return FALSE;
 
-    return (gBattleOutcome == B_OUTCOME_FORFEITED);
+    return (gBattleOutcome == B_OUTCOME_LOST);
 }

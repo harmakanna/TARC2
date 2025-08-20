@@ -2984,8 +2984,8 @@ static const u8 sMoveInfoWindowGfx[] = INCBIN_U8("graphics/battle_interface/move
 #endif
 
 static const u8 sMovePreviewWindowGfx[] = INCBIN_U8("graphics/battle_interface/move_preview_window.4bpp");
-static const u8 sMovePreviewWindowLGfx[] = INCBIN_U8("graphics/battle_interface/move_preview_window_r.4bpp");
-static const u8 sMovePreviewWindowRGfx[] = INCBIN_U8("graphics/battle_interface/move_preview_window_l.4bpp");
+static const u8 sMovePreviewWindowLGfx[] = INCBIN_U8("graphics/battle_interface/move_preview_window_l.4bpp");
+static const u8 sMovePreviewWindowRGfx[] = INCBIN_U8("graphics/battle_interface/move_preview_window_r.4bpp");
 
 static const struct SpriteSheet sSpriteSheet_MoveInfoWindow =
 {
