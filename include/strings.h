@@ -2504,6 +2504,38 @@ extern const u8 gText_SubQuestInvestigateProsperity_Name1[];
 extern const u8 gText_SubQuestInvestigateProsperity_Desc1[];
 extern const u8 gText_SubQuestInvestigateProsperity_Map1[];
 
+//Find the Culprit!
+extern const u8 gText_SubQuestFindTheCulprit_Name1[];
+extern const u8 gText_SubQuestFindTheCulprit_Desc1[];
+extern const u8 gText_SubQuestFindTheCulprit_Map1[];
+extern const u8 gText_SubQuestFindTheCulprit_Name2[];
+extern const u8 gText_SubQuestFindTheCulprit_Desc2[];
+extern const u8 gText_SubQuestFindTheCulprit_Map2[];
+extern const u8 gText_SubQuestFindTheCulprit_Name3[];
+extern const u8 gText_SubQuestFindTheCulprit_Desc3[];
+extern const u8 gText_SubQuestFindTheCulprit_Map3[];
+extern const u8 gText_SubQuestFindTheCulprit_Name4[];
+extern const u8 gText_SubQuestFindTheCulprit_Desc4[];
+extern const u8 gText_SubQuestFindTheCulprit_Map4[];
+extern const u8 gText_SubQuestFindTheCulprit_Name5[];
+extern const u8 gText_SubQuestFindTheCulprit_Desc5[];
+extern const u8 gText_SubQuestFindTheCulprit_Map5[];
+
+//Catch the genies
+extern const u8 gText_SubQuestCatchTheGenies_Name1[];
+extern const u8 gText_SubQuestCatchTheGenies_Desc1[];
+extern const u8 gText_SubQuestCatchTheGenies_Name2[];
+extern const u8 gText_SubQuestCatchTheGenies_Desc2[];
+extern const u8 gText_SubQuestCatchTheGenies_Map[];
+
+extern const u8 gText_SubQuestSaveTheLuvdiscs_Name[];
+extern const u8 gText_SubQuestSaveTheLuvdiscs_Desc[];
+extern const u8 gText_SubQuestSaveTheLuvdiscs_Map[];
+
+extern const u8 gText_SubQuestAWholeNewWorld_Name[];
+extern const u8 gText_SubQuestAWholeNewWorld_Desc[];
+extern const u8 gText_SubQuestAWholeNewWorld_Map[];
+
 // Berry Blender
 extern const u8 gText_SavingDontTurnOff2[];
 extern const u8 gText_BlenderMaxSpeedRecord[];

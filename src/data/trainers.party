@@ -93,21 +93,20 @@ Geodude
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_PRESENT_FISHERMAN ===
-Name: Tee
-Class: Fisherman
-Pic: Fisherman
+=== TRAINER_GRUNT_AQUA_HIDEOUT_1 ===
+Name: Geoff
+Class: Team Aqua
+Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: Yes
-AI: Check Bad Move
+AI: Basic Trainer
 
 Alomomola  
 Ability: Regenerator  
 Level: 50    
 - Flip Turn  
-- Helping Hand  
-- Heal Pulse  
+- Helping Hand
 - Protect  
 
 Palafin  
@@ -115,11 +114,9 @@ Ability: Zero to Hero
 Level: 50  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Flip Turn  
-- Iron Head  
-- Aqua Tail  
 - Ice Punch  
 
-Basculin-White-Striped @ Choice Band  
+Basculin-White-Striped @ Choice Scarf
 Ability: Rattled  
 Level: 50    
 IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
@@ -644,66 +641,66 @@ Music: Suspicious
 Double Battle: Yes
 AI: Basic Trainer
 
-Cursola @ Power Herb  
-Level: 50
+Cursola  
 Ability: Perish Body  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Curse  
 - Shadow Ball  
 - Reflect  
-- Meteor Beam  
+- Meteor Beam
 
-Houndstone @ Choice Scarf    
-Level: 50
+Houndstone @ Choice Scarf  
 Ability: Fluffy  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Last Respects  
 - Play Rough  
-- Trick   
+- Trick
 
 === TRAINER_DAISY ===
-Name: Daisy
+Name: DAISY
 Class: Battle Girl
 Pic: Battle Girl
 Gender: Female
 Music: Intense
-Double Battle: No
-AI: Check Bad Move
+Double Battle: Yes
+AI: Basic Trainer
 
 Hitmontop (M) @ Assault Vest  
-Level: 50
 Ability: Intimidate  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Fake Out  
 - Triple Kick  
 - Triple Axel  
 - Rapid Spin  
 
 Bellossom  
-Level: 50
 Ability: Healer  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Sludge Bomb  
 - Energy Ball  
 - Pollen Puff  
 - Quiver Dance  
 
 Gardevoir  
-Level: 50
 Ability: Synchronize  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Alluring Voice  
 - Psychic  
 - Aura Sphere  
 - Thunderbolt  
 
-Quaquaval  
-Level: 50
-Ability: Moxie  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Quaquaval @ Focus Sash
+Ability: Moxie   
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Acrobatics  
 - Aqua Step  
-- Knock Off  
+- Reversal  
 - Bulk Up  
 
 === TRAINER_ROSE_1 ===
@@ -2092,7 +2089,7 @@ AI: Check Bad Move
 
 Sableye
 Level: 32
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_TASHA ===
 Name: Tasha
@@ -2103,14 +2100,14 @@ Music: Suspicious
 Double Battle: Yes
 AI: Basic Trainer
 
-Froslass (F)  
+Froslass (F)   
 Level: 50
 Ability: Snow Cloak  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Ice Beam  
 - Shadow Ball  
 - Chilling Water  
-- Destiny Bond  
+- Destiny Bond
 
 Typhlosion-Hisui  
 Level: 50
@@ -2447,16 +2444,16 @@ Pic: Beauty
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Check Bad Move
+AI: Basic Trainer
 
 Mr. Rime  
-Level: 50
 Ability: Tangled Feet  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Teeter Dance  
 - Fake Out  
 - Ice Beam  
-- Protect  
+- Reflect
 
 Lilligant  
 Level: 50
@@ -2467,14 +2464,14 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Alluring Voice  
 - Quiver Dance  
 
-Oricorio-Sensu  
+Oricorio-Sensu @ Wiki Berry
 Level: 50
 Ability: Dancer  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Revelation Dance  
 - Acrobatics  
 - Feather Dance  
-- Quiver Dance  
+- U-Turn  
 
 Ludicolo  
 Level: 50
@@ -4277,11 +4274,11 @@ Music: Intense
 Double Battle: Yes
 AI: Check Bad Move
 
-Ralts
+Girafarig
 Level: 36
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Ralts
+Girafarig
 Level: 36
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -4433,12 +4430,12 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_SAMANTHA ===
 Name: Samantha
-Class: Pkmn Ranger
-Pic: Pokemon Ranger F
+Class: Psychic
+Pic: Psychic F
 Gender: Female
 Music: Intense
 Double Battle: Yes
-AI: Check Bad Move
+AI: Basic Trainer
 
 Bruxish  
 Level: 50
@@ -4799,20 +4796,59 @@ Double Battle: Yes
 AI: Basic Trainer
 Mugshot: Pink
 
-Dusclops
-Level: 5
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Punch
-- Confuse Ray
-- Curse
+Oricorio-Pa'u  
+Ability: Dancer  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Air Cutter  
+- Quiver Dance  
+- Revelation Dance  
+- Alluring Voice  
 
-Banette
-Level: 5
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Ball
-- Grudge
-- Will O Wisp
-- Feint Attack
+Marowak-Alola @ Thick Club  
+Ability: Cursed Body  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Shadow Bone  
+- Bonemerang  
+- Flame Charge  
+- Will-O-Wisp  
+
+Exeggutor @ Sitrus Berry  
+Ability: Harvest  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Leaf Storm  
+- Extrasensory  
+- Leech Seed  
+- Explosion  
+
+Mimikyu  
+Ability: Disguise  
+Level: 50  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Phantom Force  
+- Play Rough  
+- Leech Life  
+- Swords Dance  
+
+Palossand @ Choice Specs  
+Ability: Water Compaction  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Ancient Power  
+- Scorching Sands  
+- Sludge Bomb  
+- Trick  
+
+Banette @ Banettite  
+Ability: Frisk  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Shadow Claw  
+- Will-O-Wisp  
+- Skitter Smack  
+- Cotton Guard  
 
 === TRAINER_GLACIA ===
 Name: GLACIA
@@ -7247,21 +7283,69 @@ Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ALLISON ===
-Name: ALLISON
+Name: Lisia
 Class: Triathlete
 Pic: Swimming Triathlete F
 Gender: Female
 Music: Swimmer
-Double Battle: No
-AI: Check Bad Move
+Double Battle: Yes
+AI: Basic Trainer
 
-Wingull
-Level: 27
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Altaria @ Altarianite  
+Ability: Cloud Nine  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Dragon Claw  
+- Facade  
+- Dual Wingbeat  
+- Dragon Dance  
 
-Staryu
-Level: 33
-IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+Milotic @ Rocky Helmet  
+Ability: Marvel Scale  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+IVs: 0 Atk  
+- Scald  
+- Icy Wind  
+- Life Dew  
+- Dragon Cheer  
+
+Aurorus @ Focus Sash  
+Ability: Snow Warning  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+IVs: 0 Atk  
+- Aurora Veil  
+- Earth Power  
+- Blizzard  
+- Thunderbolt  
+
+Vivillon-Fancy  
+Ability: Friend Guard  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Pollen Puff  
+- Rage Powder  
+- Sleep Powder  
+- Tailwind  
+
+Glimmora  
+Ability: Toxic Debris  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Power Gem  
+- Sludge Bomb  
+- Energy Ball  
+- Spiky Shield  
+
+Terapagos  
+Ability: Tera Shift 
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Rapid Spin  
+- Flamethrower  
+- Tri Attack  
+- Body Press  
 
 === TRAINER_KATELYN_2 ===
 Name: KATELYN
@@ -10394,6 +10478,7 @@ Lombre
 Level: 28
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
+
 === TRAINER_SEBASTIAN ===
 Name: Sebastian
 Class: Pkmn Ranger
@@ -10404,42 +10489,40 @@ Double Battle: Yes
 AI: Basic Trainer
 
 Tropius @ Life Orb  
+Ability: Chlorophyll  
 Level: 50
-Ability: Chlorophyll 
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Dual Wingbeat  
 - Dragon Hammer  
 - Tailwind  
 - Leaf Storm  
 
 Kingler  
-Level: 50
 Ability: Sheer Force  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Razor Shell  
-- Hammer Arm  
+- Hone Claws  
 - Protect  
 - Rock Slide  
 
 Chatot  
-Level: 50
 Ability: Keen Eye  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Chatter  
 - Hyper Voice  
 - U-turn  
 - Feather Dance  
 
 Volcarona  
-Level: 50
-Ability: Flame Body  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Ability: Flame Body 
+Level: 50 
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Fiery Dance  
 - Bug Buzz  
 - Rage Powder  
 - Psychic  
-
-
 
 === TRAINER_JACKSON_2 ===
 Name: JACKSON
@@ -10447,38 +10530,16 @@ Class: Pkmn Ranger
 Pic: Pokemon Ranger M
 Gender: Male
 Music: Cool
-Items: Full Restore
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Force Setup First Turn
+Double Battle: Yes
+AI: Basic Trainer
 
-Tropius @ Life Orb  
-Ability: Chlorophyll  
-- Dual Wingbeat  
-- Dragon Hammer  
-- Tailwind  
-- Leaf Storm  
+Cacturne
+Level: 39
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Kingler  
-Ability: Sheer Force  
-- Razor Shell  
-- Hammer Arm  
-- Protect  
-- Rock Slide  
-
-Chatot  
-Ability: Keen Eye  
-- Chatter  
-- Hyper Voice  
-- U-turn  
-- Feather Dance  
-
-Volcarona  
-Ability: Flame Body  
-IVs: 0 Atk  
-- Fiery Dance  
-- Bug Buzz  
-- Rage Powder  
-- Psychic  
+Cacturne
+Level: 39
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_JACKSON_3 ===
 Name: JACKSON
@@ -16859,14 +16920,15 @@ Swellow
 Level: 35
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-=== TRAINER_GABRIELLE_5 ===
+=== TRAINER_TORN_AND_THUND ===
 Name: GABRIELLE
 Class: Pkmn Breeder
-Pic: Pokemon Breeder F
+Pic: Torn And Thund
 Gender: Female
 Music: Female
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Purple
 
 Delcatty
 Level: 37
@@ -16892,14 +16954,15 @@ Swellow
 Level: 37
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-=== TRAINER_THALIA_2 ===
+=== TRAINER_TORNADUS ===
 Name: THALIA
 Class: Beauty
-Pic: Beauty
+Pic: Tornadus
 Gender: Female
 Music: Female
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Purple
 
 Wailmer
 Level: 34
@@ -16909,14 +16972,15 @@ Horsea
 Level: 34
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-=== TRAINER_THALIA_3 ===
+=== TRAINER_THUNDURUS ===
 Name: THALIA
 Class: Beauty
-Pic: Beauty
+Pic: Thundurus
 Gender: Female
 Music: Female
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Purple
 
 Luvdisc
 Level: 36
@@ -16930,14 +16994,15 @@ Seadra
 Level: 36
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-=== TRAINER_THALIA_4 ===
+=== TRAINER_LANDORUS ===
 Name: THALIA
 Class: Beauty
-Pic: Beauty
+Pic: Landorus
 Gender: Female
 Music: Female
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Yellow
 
 Luvdisc
 Level: 38
@@ -16951,14 +17016,15 @@ Seadra
 Level: 38
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-=== TRAINER_THALIA_5 ===
+=== TRAINER_ENAMORUS ===
 Name: THALIA
 Class: Beauty
-Pic: Beauty
+Pic: Enamorus
 Gender: Female
 Music: Female
 Double Battle: No
 AI: Check Bad Move
+Mugshot: Pink
 
 Luvdisc
 Level: 40
@@ -17001,21 +17067,25 @@ Level: 41
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_EVERETT ===
-Name: EVERETT
-Class: Gentleman
-Pic: Gentleman
+Name: Everett
+Class: Scientist
+Pic: Scientist
 Gender: Male
-Music: Rich
-Double Battle: No
+Music: Suspicious
+Double Battle: Yes
 
 Wobbuffet
-Level: 41
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Wobbuffet
+Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MARIE ===
 Name: Marie
 Class: Lass
-Pic: Lass
+Pic: Lass New
 Gender: Female
 Music: Female
 Double Battle: Yes
@@ -17034,6 +17104,39 @@ Level: 50
 Sassy Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Scald  
+
+=== TRAINER_PRESENT_FISHERMAN ===
+Name: Trevor
+Class: Fisherman
+Pic: Fisherman
+Gender: Male
+Music: Hiker
+Double Battle: Yes
+AI: Basic Trainer
+
+Alomomola  
+Ability: Regenerator
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Flip Turn  
+- Helping Hand  
+- Protect  
+
+Palafin
+Ability: Zero to Hero  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Flip Turn  
+- Iron Head  
+- Ice Punch  
+
+Basculin-Red-Striped @ Choice Scarf  
+Ability: Adaptability  
+Level: 50
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Flip Turn  
+- Crunch  
+- Psychic Fangs  
 
 === TRAINER_RED ===
 Name: RED

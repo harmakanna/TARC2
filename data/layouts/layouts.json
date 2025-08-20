@@ -4425,7 +4425,7 @@
       "id": "LAYOUT_PAST_TOWN",
       "name": "PastTown_Layout",
       "width": 57,
-      "height": 42,
+      "height": 46,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_SmallTownWithLab",
       "border_filepath": "data/layouts/PastTown/border.bin",
@@ -4484,8 +4484,8 @@
     {
       "id": "LAYOUT_PRESENT_SCHOOL",
       "name": "Present_School_Layout",
-      "width": 16,
-      "height": 14,
+      "width": 12,
+      "height": 13,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_PokemonSchool",
       "border_filepath": "data/layouts/Present_School/border.bin",
@@ -4525,7 +4525,7 @@
       "id": "LAYOUT_PRESENT_POKEMON_CENTER",
       "name": "Present_PokemonCenter_Layout",
       "width": 14,
-      "height": 13,
+      "height": 11,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_PokemonCenter",
       "border_filepath": "data/layouts/Present_PokemonCenter/border.bin",
@@ -4654,8 +4654,8 @@
     {
       "id": "LAYOUT_PAST_HOUSE1",
       "name": "Past_House1_Layout",
-      "width": 12,
-      "height": 8,
+      "width": 11,
+      "height": 7,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_lozinterior",
       "border_filepath": "data/layouts/Past_House1/border.bin",
@@ -4684,8 +4684,8 @@
     {
       "id": "LAYOUT_PAST_CELEBI_SOCIETY",
       "name": "Past_CelebiSociety_Layout",
-      "width": 20,
-      "height": 12,
+      "width": 19,
+      "height": 10,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_lozinterior",
       "border_filepath": "data/layouts/Past_CelebiSociety/border.bin",
@@ -4730,6 +4730,66 @@
       "secondary_tileset": "gTileset_LittleOffice",
       "border_filepath": "data/layouts/CutsceneOffice/border.bin",
       "blockdata_filepath": "data/layouts/CutsceneOffice/map.bin"
+    },
+    {
+      "id": "LAYOUT_CUTSCENE_WATER",
+      "name": "CutsceneWater_Layout",
+      "width": 80,
+      "height": 12,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_PresentTown",
+      "border_filepath": "data/layouts/CutsceneWater/border.bin",
+      "blockdata_filepath": "data/layouts/CutsceneWater/map.bin"
+    },
+    {
+      "id": "LAYOUT_CUTSCENE_MYTH",
+      "name": "CutsceneMyth_Layout",
+      "width": 57,
+      "height": 42,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SmallTownWithLab",
+      "border_filepath": "data/layouts/CutsceneMyth/border.bin",
+      "blockdata_filepath": "data/layouts/CutsceneMyth/map.bin"
+    },
+    {
+      "id": "LAYOUT_CUTSCENE_TOWN",
+      "name": "CutsceneTown_Layout",
+      "width": 57,
+      "height": 42,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SmallTownWithLab",
+      "border_filepath": "data/layouts/CutsceneTown/border.bin",
+      "blockdata_filepath": "data/layouts/CutsceneTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_TOWN_PORT",
+      "name": "PresentTown_Port_Layout",
+      "width": 30,
+      "height": 21,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_PresentTown",
+      "border_filepath": "data/layouts/PresentTown_Port/border.bin",
+      "blockdata_filepath": "data/layouts/PresentTown_Port/map.bin"
+    },
+    {
+      "id": "LAYOUT_PRESENT_CAFE",
+      "name": "Present_Cafe_Layout",
+      "width": 24,
+      "height": 18,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrickCafe",
+      "border_filepath": "data/layouts/Present_Cafe/border.bin",
+      "blockdata_filepath": "data/layouts/Present_Cafe/map.bin"
+    },
+    {
+      "id": "LAYOUT_PAST_TOWN_PORT",
+      "name": "PastTown_Port_Layout",
+      "width": 30,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SmallTownWithLab",
+      "border_filepath": "data/layouts/PastTown_Port/border.bin",
+      "blockdata_filepath": "data/layouts/PastTown_Port/map.bin"
     }
   ]
 }

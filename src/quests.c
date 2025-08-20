@@ -269,6 +269,105 @@ static const struct SubQuest sSubQuestsInvestigateProsperity[QUEST_INVESTIGATE_P
 	
 };
 
+static const struct SubQuest sSubQuestsFindTheCulprit[QUEST_FIND_THE_CULPRIT_SUB_COUNT] =
+{
+	sub_quest(
+	      0,
+	      gText_SubQuestFindTheCulprit_Name1,
+	      gText_SubQuestFindTheCulprit_Desc1,
+	      gText_SubQuestFindTheCulprit_Map1,
+	      OBJ_EVENT_GFX_BLUE,
+	      OBJECT,
+	      sText_Found
+	),
+	sub_quest(
+	      0,
+	      gText_SubQuestFindTheCulprit_Name2,
+	      gText_SubQuestFindTheCulprit_Desc2,
+	      gText_SubQuestFindTheCulprit_Map2,
+	      OBJ_EVENT_GFX_LINK_RS_MAY,
+	      OBJECT,
+	      sText_Found
+	),
+	sub_quest(
+	      0,
+	      gText_SubQuestFindTheCulprit_Name3,
+	      gText_SubQuestFindTheCulprit_Desc3,
+	      gText_SubQuestFindTheCulprit_Map3,
+	      OBJ_EVENT_GFX_BW_ACE_TRAINER_F,
+	      OBJECT,
+	      sText_Found
+	),
+	sub_quest(
+	      0,
+	      gText_SubQuestFindTheCulprit_Name4,
+	      gText_SubQuestFindTheCulprit_Desc4,
+	      gText_SubQuestFindTheCulprit_Map4,
+	      OBJ_EVENT_GFX_YOUNGSTER_NEW,
+	      OBJECT,
+	      sText_Found
+	),
+	sub_quest(
+	      0,
+	      gText_SubQuestFindTheCulprit_Name5,
+	      gText_SubQuestFindTheCulprit_Desc5,
+	      gText_SubQuestFindTheCulprit_Map5,
+	      OBJ_EVENT_GFX_LEAF,
+	      OBJECT,
+	      sText_Found
+	),
+};
+
+static const struct SubQuest sSubQuestsCatchTheGenies[QUEST_CATCH_GENIES_SUB_COUNT] =
+{
+	sub_quest(
+	      0,
+	      gText_SubQuestCatchTheGenies_Name1,
+	      gText_SubQuestCatchTheGenies_Desc1,
+	      gText_SubQuestCatchTheGenies_Map,
+	      SPECIES_TORNADUS,
+	      PKMN,
+	      sText_Found
+	),
+	sub_quest(
+	      0,
+	      gText_SubQuestCatchTheGenies_Name2,
+	      gText_SubQuestCatchTheGenies_Desc2,
+	      gText_SubQuestCatchTheGenies_Map,
+	      SPECIES_THUNDURUS,
+	      PKMN,
+	      sText_Found
+	),
+};
+
+static const struct SubQuest sSubQuestsSaveTheLuvdiscs[QUEST_SENTIMENTAL_SUB_COUNT] =
+{
+	sub_quest(
+	      0,
+	      gText_SubQuestSaveTheLuvdiscs_Name,
+	      gText_SubQuestSaveTheLuvdiscs_Desc,
+	      gText_SubQuestSaveTheLuvdiscs_Map,
+	      OBJ_EVENT_GFX_SPECIES(LUVDISC),
+	      OBJECT,
+	      sText_Found
+	),
+	
+};
+
+static const struct SubQuest sSubQuestsAWholeNewWorld[QUEST_WITH_MUCH_GRATITUDE_SUB_COUNT] =
+{
+	sub_quest(
+	      0,
+	      gText_SubQuestAWholeNewWorld_Name,
+	      gText_SubQuestAWholeNewWorld_Desc,
+	      gText_SubQuestAWholeNewWorld_Map,
+	      OBJ_EVENT_GFX_FAIRY_TALE_GIRL,
+	      OBJECT,
+	      sText_Found
+	),
+	
+};
+
 ////////////////////////END SUBQUEST CUSTOMIZATION/////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -279,7 +378,7 @@ static const struct SubQuest sSubQuestsInvestigateProsperity[QUEST_INVESTIGATE_P
 #define side_quest(n, d, dd, m, s, st, sq, ns) {.name = n, .desc = d, .donedesc = dd, .map = m, .sprite = s, .spritetype = st, .subquests = sq, .numSubquests = ns}
 static const struct SideQuest sSideQuests[QUEST_COUNT] =
 {
-	side_quest(// 1 - Find Estella
+	side_quest(// 0 QUEST_SAVE_ESTELLA - Find Estella
 	      gText_SideQuestName_1,
 	      gText_SideQuestDesc_1,
 	      gText_SideQuestDoneDesc_1,
@@ -289,7 +388,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
-	side_quest(// 2 - Investigate Shrine of Prosperity
+	side_quest(// 1 QUEST_INVESTIGATE_PROSPERITY - Investigate Shrine of Prosperity
 	      gText_SideQuestName_2,
 	      gText_SideQuestDesc_2,
 	      gText_SideQuestDoneDesc_2,
@@ -299,107 +398,107 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      sSubQuestsInvestigateProsperity,
 	      QUEST_INVESTIGATE_PROSPERITY_SUB_COUNT
 	),
-	side_quest( // 3 - Defeat Matt
+	side_quest( // 2 QUEST_INTERROGATE_MATT - Defeat Matt
 	      gText_SideQuestName_3,
 	      gText_SideQuestDesc_3,
 	      gText_SideQuestDoneDesc_3,
 	      gText_SideQuestMap3,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_AQUA_ADMIN_M,
 	      OBJECT,
 	      NULL,
 	      0
 	),
-	side_quest( //4 - Defeat Gym Leader
+	side_quest( // 3 QUEST_DEFEAT_PHOEBE - Defeat Gym Leader
 	      gText_SideQuestName_4,
 	      gText_SideQuestDesc_4,
 	      gText_SideQuestDoneDesc_4,
 	      gText_SideQuestMap4,
+	      OBJ_EVENT_GFX_DEVON_EMPLOYEE,
+	      OBJECT,
+	      NULL,
+	      0
+	),
+	side_quest(// 4 QUEST_FIND_THE_CULPRIT- Which gym challenger did it?
+	      gText_SideQuestName_5,
+	      gText_SideQuestDesc_5,
+	      gText_SideQuestDoneDesc_5,
+	      gText_SideQuestMap5,
+	      OBJ_EVENT_GFX_LOOKER,
+	      OBJECT,
+	      sSubQuestsFindTheCulprit,
+	      QUEST_FIND_THE_CULPRIT_SUB_COUNT
+	),
+	side_quest( // 5 QUEST_BONJOUR_EMMA- Hello, Emma!
+	      gText_SideQuestName_6,
+	      gText_SideQuestDesc_6,
+	      gText_SideQuestDoneDesc_6,
+	      gText_SideQuestMap6,
+	      OBJ_EVENT_GFX_EMMA,
+	      OBJECT,
+	      NULL,
+	      0
+	),
+	side_quest( // 6 QUEST_HELP_FISHERMAN - Where is the best place to fish?
+	      gText_SideQuestName_7,
+	      gText_SideQuestDesc_7,
+	      gText_SideQuestDoneDesc_7,
+	      gText_SideQuestMap7,
+	      OBJ_EVENT_GFX_PAST_FISHERMAN,
+	      OBJECT,
+	      NULL,
+	      0
+	),
+	side_quest( // 7 QUEST_EUREKA - Harness the power of Mareep!
+	      gText_SideQuestName_8,
+	      gText_SideQuestDesc_8,
+	      gText_SideQuestDoneDesc_8,
+	      gText_SideQuestMap8,
 	      OBJ_EVENT_GFX_MAN_2,
 	      OBJECT,
 	      NULL,
 	      0
 	),
-	side_quest(// 5 - Which gym challenger did it?
-	      gText_SideQuestName_5,
-	      gText_SideQuestDesc_5,
-	      gText_SideQuestDoneDesc_5,
-	      gText_SideQuestMap5,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest( // 6 - Where's the best place to fish?
-	      gText_SideQuestName_6,
-	      gText_SideQuestDesc_6,
-	      gText_SideQuestDoneDesc_6,
-	      gText_SideQuestMap6,
-	      OBJ_EVENT_GFX_FISHERMAN,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_7,
-	      gText_SideQuestDesc_7,
-	      gText_SideQuestDoneDesc_7,
-	      gText_SideQuestMap7,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
-	      gText_SideQuestName_8,
-	      gText_SideQuestDesc_8,
-	      gText_SideQuestDoneDesc_8,
-	      gText_SideQuestMap8,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
-	),
-	side_quest(
+	side_quest( // 8 QUEST_GET_INTO_THE_GROOVE - Find and prepare the idols for the show!
 	      gText_SideQuestName_9,
 	      gText_SideQuestDesc_9,
 	      gText_SideQuestDoneDesc_9,
 	      gText_SideQuestMap9,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_IDOL,
 	      OBJECT,
 	      NULL,
 	      0
 	),
-	side_quest(
+	side_quest( // 9 QUEST_FARMLAND_INVASION_1 - Clear out the pests!
 	      gText_SideQuestName_10,
 	      gText_SideQuestDesc_10,
 	      gText_SideQuestDoneDesc_10,
 	      gText_SideQuestMap10,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_BREEDER_F,
 	      OBJECT,
 	      NULL,
 	      0
 	),
-	side_quest(
+	side_quest( // 10 QUEST_FARMLAND_INVASION_2 - Clear out the pests!
 	      gText_SideQuestName_11,
 	      gText_SideQuestDesc_11,
 	      gText_SideQuestDoneDesc_11,
 	      gText_SideQuestMap11,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_BREEDER_M,
 	      OBJECT,
 	      NULL,
 	      0
 	),
-	side_quest(
+	side_quest( // 11 QUEST_FARMLAND_INVASION_3 - Clear out the pests!
 	      gText_SideQuestName_12,
 	      gText_SideQuestDesc_12,
 	      gText_SideQuestDoneDesc_12,
 	      gText_SideQuestMap12,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_BUG_CATCHER,
 	      OBJECT,
 	      NULL,
 	      0
 	),
-	side_quest(
+	side_quest( // 12 QUEST_FOREVER_FAITHFUL - Defeat the hypnotized boyfriend!
 	      gText_SideQuestName_13,
 	      gText_SideQuestDesc_13,
 	      gText_SideQuestDoneDesc_13,
@@ -409,27 +508,27 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
-	side_quest(
+	side_quest( // 13 QUEST_SENTIMENTAL - Find a heart scale!
 	      gText_SideQuestName_14,
 	      gText_SideQuestDesc_14,
 	      gText_SideQuestDoneDesc_14,
 	      gText_SideQuestMap14,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
+	      ITEM_HEART_SCALE,
+	      ITEM,
+	      sSubQuestsSaveTheLuvdiscs,
+	      QUEST_SENTIMENTAL_SUB_COUNT
 	),
-	side_quest(
+	side_quest( // 14 QUEST_FIND_TASTY_MINT - Find a tasty mint!
 	      gText_SideQuestName_15,
 	      gText_SideQuestDesc_15,
 	      gText_SideQuestDoneDesc_15,
 	      gText_SideQuestMap15,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_FAIRY_TALE_GIRL,
 	      OBJECT,
 	      NULL,
 	      0
 	),
-	side_quest(
+	side_quest( // 15 QUEST_SENT_TO_THE_FARM - Find modern medicine!
 	      gText_SideQuestName_16,
 	      gText_SideQuestDesc_16,
 	      gText_SideQuestDoneDesc_16,
@@ -439,35 +538,35 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
-	side_quest(
+	side_quest( // 16 QUEST_HOMEGROWN_REMEDIES - Find herbal remedies lost to time!
 	      gText_SideQuestName_17,
 	      gText_SideQuestDesc_17,
 	      gText_SideQuestDoneDesc_17,
 	      gText_SideQuestMap17,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_EXPERT_M,
 	      OBJECT,
 	      NULL,
 	      0
 	),
-	side_quest(
-	      gText_SideQuestName_18,
+	side_quest( // 17 QUEST_FORGOTTEN_TO_TIME - Revive Fossils
+		  gText_SideQuestName_18,
 	      gText_SideQuestDesc_18,
 	      gText_SideQuestDoneDesc_18,
 	      gText_SideQuestMap18,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      ITEM_FOSSILIZED_FISH,
+	      ITEM,
 	      NULL,
 	      0
 	),
-	side_quest(
+	side_quest( // 18 QUEST_WITH_MUCH_GRATITUDE - Give Camilla a thank you gift
 	      gText_SideQuestName_19,
 	      gText_SideQuestDesc_19,
 	      gText_SideQuestDoneDesc_19,
 	      gText_SideQuestMap19,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_LITTLE_GIRL,
 	      OBJECT,
-	      NULL,
-	      0
+	      sSubQuestsAWholeNewWorld,
+	      QUEST_WITH_MUCH_GRATITUDE_SUB_COUNT
 	),
 	side_quest(
 	      gText_SideQuestName_20,
@@ -564,7 +663,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestDesc_29,
 	      gText_SideQuestDoneDesc_29,
 	      gText_SideQuestMap29,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_LOOKER,
 	      OBJECT,
 	      NULL,
 	      0
@@ -574,10 +673,10 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestDesc_30,
 	      gText_SideQuestDoneDesc_30,
 	      gText_SideQuestMap30,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_SPECIES(TORNADUS),
 	      OBJECT,
-	      NULL,
-	      0
+	      sSubQuestsCatchTheGenies,
+	      QUEST_CATCH_GENIES_SUB_COUNT
 	),
 };
 ////////////////////////END QUEST CUSTOMIZATION////////////////////////////////
@@ -1727,8 +1826,16 @@ void GenerateQuestLocation(s32 questId)
 	}
 	else
 	{
-		StringCopy(gStringVar2,
+		if ((sStateDataPtr->parentQuest == 13 || sStateDataPtr->parentQuest == 18)
+			&& IsSubquestCompletedState(questId) == FALSE)
+		{
+			StringCopy(gStringVar2, gText_ThreeQuestionMarks);
+		}
+		else
+		{
+			StringCopy(gStringVar2,
 		           sSideQuests[sStateDataPtr->parentQuest].subquests[questId].map);
+		}
 	}
 
 	StringExpandPlaceholders(gStringVar4, sText_ShowLocation);
@@ -1753,7 +1860,8 @@ void GenerateQuestFlavorText(s32 questId)
 		}
 		if (IsQuestRewardState(questId) == TRUE)
 		{
-			StringCopy(gStringVar1, sText_ReturnRecieveReward);
+			UpdateQuestFlavorText(questId);
+			//StringCopy(gStringVar1, sText_ReturnRecieveReward);
 		}
 		if (IsQuestCompletedState(questId) == TRUE)
 		{
@@ -2557,16 +2665,26 @@ void HandleQuestIconForSingleObjectEvent(struct ObjectEvent *objectEvent, u32 ob
 		|| IsQuestActiveState(questId))
 		|| FlagGet(FLAG_SYS_DISAPPEAR_QUESTS))
 	{
-		RemoveQuestIconFieldEffect(objectEvent);
+		//if (TryGetObjectEventIdByLocalIdAndMap(sprite->sLocalId, sprite->sMapNum, sprite->sMapGroup, &objEventId))
+        //	StopQuestFieldEffect(sprite, objEventId);
+		ResetQuestIconOnObject(objectEvent);
+		return;
+	}
+
+	// Handle quests which rely on other quests as a prerequisite
+	if ((questId == QUEST_FARMLAND_INVASION_2 && !IsQuestCompletedState(QUEST_FARMLAND_INVASION_1)) //Invasion 2 does not occur until Invasion 1 is complete
+		|| (questId == QUEST_FARMLAND_INVASION_3 && !IsQuestCompletedState(QUEST_FARMLAND_INVASION_2))) //Invasion 3 does not occur until Invasion 2 is complete
+	{
+		ResetQuestIconOnObject(objectEvent);
 		return;
 	}
 
 	// Already has icon? Do nothing
-	if (ObjectEventAlreadyHasQuest(objectEvent->hasQuestIcon))
+	if (objectEvent->hasQuestIcon == TRUE)//(ObjectEventAlreadyHasQuest(objectEvent->hasQuestIcon))
         return;
 
 	// Add icon to NPCs who have quests
-	if (!objectEvent->hasQuestIcon && !FieldEffectActiveListContains(FLDEFF_QUEST_ICON) && !FlagGet(FLAG_SYS_DISAPPEAR_QUESTS))
+	if (!objectEvent->hasQuestIcon /*&& !FieldEffectActiveListContains(FLDEFF_QUEST_ICON)*/ && !FlagGet(FLAG_SYS_DISAPPEAR_QUESTS))
 		SpawnQuestIconForObject(objectEvent, objectEventId);
 
 }
@@ -2577,9 +2695,12 @@ static void RemoveQuestIconFieldEffect(struct ObjectEvent *objectEvent)
 	
 	if (FieldEffectActiveListContains(FLDEFF_QUEST_ICON))
 	{
-		u8 spriteId = objectEvent->spriteId;
-		struct Sprite *sprite = &gSprites[spriteId];
-		FieldEffectStop(sprite, FLDEFF_QUEST_ICON);
+		
+		// u8 spriteId = objectEvent->spriteId;
+		// struct Sprite *sprite = &gSprites[spriteId];
+		// FieldEffectStop(sprite, FLDEFF_QUEST_ICON);
+    	// // DestroySprite(sprite);
+    	// // FieldEffectActiveListRemove(FLDEFF_QUEST_ICON);
 	}
 }
 

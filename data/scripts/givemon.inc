@@ -1,3 +1,120 @@
+PastTown_EventScript_ScientistGiveGalvantula::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GALVANTULA
+	givemonwithot OT_BARTOZ_GALVANTULA
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PastTown_EventScript_ReceiveGalvantulaParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PastTown_EventScript_ReceiveGalvantulaPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+PastTown_EventScript_ReceiveGalvantulaParty::
+	call PastTown_EventScript_ReceivedGalvantulaFanfare
+	goto PastTown_EventScript_ScientistQuestFinish
+	end
+	
+PastTown_EventScript_ReceiveGalvantulaPC::
+	call PastTown_EventScript_ReceivedGalvantulaFanfare
+	call Common_EventScript_TransferredToPC
+	goto PastTown_EventScript_ScientistQuestFinish
+	end
+
+PastTown_EventScript_ReceivedGalvantulaFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_GALVANTULA
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox PastTown_Text_YouReceivedGalvantula, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_GALVANTULA
+	return
+
+PastTown_EventScript_ScientistGiveProbopass::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PROBOPASS
+	givemonwithot OT_BARTOZ_PROBOPASS
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PastTown_EventScript_ReceiveProbopassParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PastTown_EventScript_ReceiveProbopassPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+PastTown_EventScript_ReceiveProbopassParty::
+	call PastTown_EventScript_ReceivedProbopassFanfare
+	goto PastTown_EventScript_ScientistQuestFinish
+	end
+	
+PastTown_EventScript_ReceiveProbopassPC::
+	call PastTown_EventScript_ReceivedProbopassFanfare
+	call Common_EventScript_TransferredToPC
+	goto PastTown_EventScript_ScientistQuestFinish
+	end
+
+PastTown_EventScript_ReceivedProbopassFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_PROBOPASS
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox PastTown_Text_YouReceivedProbopass, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_PROBOPASS
+	return
+
+
+PastTown_EventScript_FishermanGiveOverqwil::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_OVERQWIL
+	givemonwithot OT_TEE_OVERQWIL
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PastTown_EventScript_ReceiveOverqwilParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PastTown_EventScript_ReceiveOverqwilPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+PastTown_EventScript_ReceiveOverqwilParty::
+	call PastTown_EventScript_ReceivedOverqwilFanfare
+	goto PastTown_EventScript_FishermanQuestFinish
+	end
+	
+PastTown_EventScript_ReceiveOverqwilPC::
+	call PastTown_EventScript_ReceivedOverqwilFanfare
+	call Common_EventScript_TransferredToPC
+	goto PastTown_EventScript_FishermanQuestFinish
+	end
+
+PastTown_EventScript_ReceivedOverqwilFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_OVERQWIL
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox PastTown_Text_YouReceivedOverqwil, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_OVERQWIL
+	return
+
+PastTown_EventScript_FishermanGiveDragalge::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DRAGALGE
+	givemonwithot OT_TEE_DRAGALGE
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PastTown_EventScript_ReceiveDragalgeParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PastTown_EventScript_ReceiveDragalgePC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+PastTown_EventScript_ReceiveDragalgeParty::
+	call PastTown_EventScript_ReceivedDragalgeFanfare
+	goto PastTown_EventScript_FishermanQuestFinish
+	end
+	
+PastTown_EventScript_ReceiveDragalgePC::
+	call PastTown_EventScript_ReceivedDragalgeFanfare
+	call Common_EventScript_TransferredToPC
+	goto PastTown_EventScript_FishermanQuestFinish
+	end
+
+PastTown_EventScript_ReceivedDragalgeFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_DRAGALGE
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox PastTown_Text_YouReceivedDragalge, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_DRAGALGE
+	return
+
 Present_Gym_EventScript_PhoebeGiveDusknoir::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DUSKNOIR
     givemonwithot OT_PHOEBE_DUSKNOIR
@@ -265,6 +382,199 @@ Present_AquaCorpHQ_EventScript_ReceivedHuntailFanfare::
 	bufferspeciesname STR_VAR_1, SPECIES_HUNTAIL
 	return
 
+Present_CityHall_2F_Ranger_EventScript_FossilScientistGiveMamoswine::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MAMOSWINE
+	givemonwithot OT_LOOKER_MAMOSWINE
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_CityHall_2F_Ranger_EventScript_ReceiveMamoswineParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_CityHall_2F_Ranger_EventScript_ReceiveMamoswinePC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+Present_CityHall_2F_Ranger_EventScript_ReceiveMamoswineParty::
+	call Present_CityHall_2F_Ranger_EventScript_ReceivedMamoswineFanfare
+	goto Present_CityHall_2F_Ranger_EventScript_FossilQuestFinish
+	end
+	
+Present_CityHall_2F_Ranger_EventScript_ReceiveMamoswinePC::
+	call Present_CityHall_2F_Ranger_EventScript_ReceivedMamoswineFanfare
+	call Common_EventScript_TransferredToPC
+	goto Present_CityHall_2F_Ranger_EventScript_FossilQuestFinish
+	end
+
+Present_CityHall_2F_Ranger_EventScript_ReceivedMamoswineFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_MAMOSWINE
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox Present_CityHall_2F_Ranger_Text_YouReceivedMamoswine, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_MAMOSWINE
+	return
+
+Present_CityHall_2F_Ranger_EventScript_FossilScientistGiveYanmega::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_YANMEGA
+	givemonwithot OT_LOOKER_YANMEGA
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_CityHall_2F_Ranger_EventScript_ReceiveYanmegaParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_CityHall_2F_Ranger_EventScript_ReceiveYanmegaPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+Present_CityHall_2F_Ranger_EventScript_ReceiveYanmegaParty::
+	call Present_CityHall_2F_Ranger_EventScript_ReceivedYanmegaFanfare
+	goto Present_CityHall_2F_Ranger_EventScript_FossilQuestFinish
+	end
+	
+Present_CityHall_2F_Ranger_EventScript_ReceiveYanmegaPC::
+	call Present_CityHall_2F_Ranger_EventScript_ReceivedYanmegaFanfare
+	call Common_EventScript_TransferredToPC
+	goto Present_CityHall_2F_Ranger_EventScript_FossilQuestFinish
+	end
+
+Present_CityHall_2F_Ranger_EventScript_ReceivedYanmegaFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_YANMEGA
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox Present_CityHall_2F_Ranger_Text_YouReceivedYanmega, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_YANMEGA
+	return
+
+Present_Cafe_EventScript_EmmaGiveGumshoos::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GUMSHOOS
+	givemonwithot OT_EMMA_GUMSHOOS
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Cafe_EventScript_ReceiveGumshoosParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Cafe_EventScript_ReceiveGumshoosPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+Present_Cafe_EventScript_ReceiveGumshoosParty::
+	call Present_Cafe_EventScript_ReceivedGumshoosFanfare
+	goto Present_Cafe_EventScript_EmmaFinishQuest
+	end
+	
+Present_Cafe_EventScript_ReceiveGumshoosPC::
+	call Present_Cafe_EventScript_ReceivedGumshoosFanfare
+	call Common_EventScript_TransferredToPC
+	goto Present_Cafe_EventScript_EmmaFinishQuest
+	end
+
+Present_Cafe_EventScript_ReceivedGumshoosFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_GUMSHOOS
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox Present_Cafe_Text_YouReceivedGumshoos, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_GUMSHOOS
+	return
+
+Present_Cafe_EventScript_EmmaGiveMeowstic::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MEOWSTIC
+	givemonwithot OT_EMMA_MEOWSTIC
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Cafe_EventScript_ReceiveMeowsticParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Cafe_EventScript_ReceiveMeowsticPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+Present_Cafe_EventScript_ReceiveMeowsticParty::
+	call Present_Cafe_EventScript_ReceivedMeowsticFanfare
+	goto Present_Cafe_EventScript_EmmaFinishQuest
+	end
+	
+Present_Cafe_EventScript_ReceiveMeowsticPC::
+	call Present_Cafe_EventScript_ReceivedMeowsticFanfare
+	call Common_EventScript_TransferredToPC
+	goto Present_Cafe_EventScript_EmmaFinishQuest
+	end
+
+Present_Cafe_EventScript_ReceivedMeowsticFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_MEOWSTIC
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox Present_Cafe_Text_YouReceivedMeowstic, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_MEOWSTIC
+	return
+
+
+PastTown_EventScript_ForemanGiveBreloom::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BRELOOM
+	givemonwithot OT_LOOKER_BRELOOM
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PastTown_EventScript_ReceiveBreloomParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PastTown_EventScript_ReceiveBreloomPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+PastTown_EventScript_ReceiveBreloomParty::
+	call PastTown_EventScript_ReceivedBreloomFanfare
+	goto PastTown_EventScript_ForemanQuestFinish
+	end
+	
+PastTown_EventScript_ReceiveBreloomPC::
+	call PastTown_EventScript_ReceivedBreloomFanfare
+	call Common_EventScript_TransferredToPC
+	goto PastTown_EventScript_ForemanQuestFinish
+	end
+
+PastTown_EventScript_ReceivedBreloomFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_BRELOOM
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox PastTown_Text_YouReceivedBreloom, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_BRELOOM
+	return
+
+PastTown_EventScript_ForemanGiveShiinotic::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SHIINOTIC
+	givemonwithot OT_LOOKER_SHIINOTIC
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PastTown_EventScript_ReceiveShiinoticParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PastTown_EventScript_ReceiveShiinoticPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+PastTown_EventScript_ReceiveShiinoticParty::
+	call PastTown_EventScript_ReceivedShiinoticFanfare
+	goto PastTown_EventScript_ForemanQuestFinish
+	end
+	
+PastTown_EventScript_ReceiveShiinoticPC::
+	call PastTown_EventScript_ReceivedShiinoticFanfare
+	call Common_EventScript_TransferredToPC
+	goto PastTown_EventScript_ForemanQuestFinish
+	end
+
+PastTown_EventScript_ReceivedShiinoticFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_SHIINOTIC
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox PastTown_Text_YouReceivedShiinotic, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_SHIINOTIC
+	return
+
+PastTown_Text_YouReceivedBreloom:
+	.string "Looker received a Breloom!$"
+
+PastTown_Text_YouReceivedShiinotic:
+	.string "Looker received a Shiinotic!$"
+	
+Present_Cafe_Text_YouReceivedGumshoos:
+	.string "Emma gave you her Gumshoos!$"
+
+Present_Cafe_Text_YouReceivedMeowstic:
+	.string "Emma gave you her Meowstic!$"
+
+Present_CityHall_2F_Ranger_Text_YouReceivedMamoswine:
+	.string "You revived a Mamoswine!$"
+
+Present_CityHall_2F_Ranger_Text_YouReceivedYanmega:
+	.string "You revived a Yanmega!$"
+
 Present_AquaCorp_Text_YouReceivedGorebyss:
 	.string "Gorb joined your party!$"
 
@@ -276,3 +586,15 @@ Present_Gym_Text_YouReceivedDusknoir:
 
 Present_Gym_Text_YouReceivedSableye:
 	.string "You received a Sableye!$"
+
+PastTown_Text_YouReceivedOverqwil:
+	.string "You received an Overqwil!$"
+
+PastTown_Text_YouReceivedDragalge:
+	.string "You received a Dragalge!$"
+
+PastTown_Text_YouReceivedGalvantula:
+	.string "You received a Galvantula!$"
+
+PastTown_Text_YouReceivedProbopass:
+	.string "You received a Probopass!$"

@@ -15,6 +15,7 @@
   "connections": null,
   "object_events": [
     {
+      "local_id": "LOCALID_TAUROS",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(TAUROS)",
       "x": 38,
       "y": 17,
@@ -25,9 +26,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_HIDE_TAUROS"
     },
     {
+      "local_id": "LOCALID_MILTANK",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MILTANK)",
       "x": 9,
       "y": 24,
@@ -38,11 +40,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "FLAG_HIDE_MILTANK"
     },
     {
       "local_id": "LOCALID_PASTTOWN_LASS",
-      "graphics_id": "OBJ_EVENT_GFX_LASS",
+      "graphics_id": "OBJ_EVENT_GFX_LASS_NEW",
       "x": 47,
       "y": 14,
       "elevation": 0,
@@ -55,18 +57,327 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_PAST_CARROTFARMER",
+      "graphics_id": "OBJ_EVENT_GFX_BREEDER_F",
+      "x": 31,
+      "y": 30,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 2,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_QUEST_GIVER",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_EventScript_CarrotFarmer",
+      "flag": "0",
+      "quest_id": 9
+    },
+    {
+      "local_id": "LOCALID_PAST_CABBAGEFARMER",
+      "graphics_id": "OBJ_EVENT_GFX_BREEDER_M",
+      "x": 39,
+      "y": 30,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT",
+      "movement_range_x": 2,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_QUEST_GIVER",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_EventScript_CabbageFarmer",
+      "flag": "0",
+      "quest_id": 10
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MAREEP)",
+      "x": 24,
+      "y": 31,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_EventScript_Mareep",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(WOOLOO)",
+      "x": 27,
+      "y": 34,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_EventScript_Wooloo",
+      "flag": "0"
+    },
+    {
       "local_id": "LOCALID_FISHERMAN",
-      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
+      "graphics_id": "OBJ_EVENT_GFX_PAST_FISHERMAN",
       "x": 32,
       "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_QUEST_GIVER",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_EventScript_Fisherman",
+      "flag": "0",
+      "quest_id": 6
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(WOOLOO)",
+      "x": 27,
+      "y": 22,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "PastTown_EventScript_Past_Fisherman",
+      "script": "PastTown_EventScript_Wooloo",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_PAST_SCIENTIST",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
+      "x": 24,
+      "y": 30,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_QUEST_GIVER",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_EventScript_Scientist",
+      "flag": "0",
+      "quest_id": 7
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MUDSDALE)",
+      "x": 31,
+      "y": 38,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_EventScript_Mudsdale",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(WOOLOO)",
+      "x": 29,
+      "y": 19,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_EventScript_Wooloo",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_PEST_1_1",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(BUNNELBY)",
+      "x": 30,
+      "y": 29,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_EventScript_Bunnelby",
+      "flag": "FLAG_HIDE_PEST_1_1"
+    },
+    {
+      "local_id": "LOCALID_PEST_1_2",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MINUN)",
+      "x": 30,
+      "y": 31,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_EventScript_Minun",
+      "flag": "FLAG_HIDE_PEST_1_2"
+    },
+    {
+      "local_id": "LOCALID_PEST_1_3",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(BUNEARY)",
+      "x": 33,
+      "y": 30,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_EventScript_Buneary",
+      "flag": "FLAG_HIDE_PEST_1_3"
+    },
+    {
+      "local_id": "LOCALID_PEST_2_2",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(KRICKETUNE)",
+      "x": 40,
+      "y": 29,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_EventScript_Kricketune",
+      "flag": "FLAG_HIDE_PEST_2_2"
+    },
+    {
+      "local_id": "LOCALID_PEST_2_1",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LEAVANNY)",
+      "x": 38,
+      "y": 29,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_EventScript_Leavanny",
+      "flag": "FLAG_HIDE_PEST_2_1"
+    },
+    {
+      "local_id": "LOCALID_PEST_2_3",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(FLAPPLE)",
+      "x": 40,
+      "y": 31,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_EventScript_Flapple",
+      "flag": "FLAG_HIDE_PEST_2_3"
+    },
+    {
+      "local_id": "LOCALID_PEST_3_1",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(BRELOOM)",
+      "x": 31,
+      "y": 30,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_EventScript_Breloom",
+      "flag": "FLAG_HIDE_PEST_3_1"
+    },
+    {
+      "local_id": "LOCALID_PEST_3_3",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SHIINOTIC)",
+      "x": 38,
+      "y": 31,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_EventScript_Shiinotic",
+      "flag": "FLAG_HIDE_PEST_3_3"
+    },
+    {
+      "local_id": "LOCALID_PEST_3_2",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(AMOONGUSS)",
+      "x": 32,
+      "y": 29,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_EventScript_Amoonguss",
+      "flag": "FLAG_HIDE_PEST_3_2"
+    },
+    {
+      "local_id": "LOCALID_PEST_3_4",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TOEDSCRUEL)",
+      "x": 41,
+      "y": 30,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_EventScript_Toedscruel",
+      "flag": "FLAG_HIDE_PEST_3_4"
+    },
+    {
+      "local_id": "LOCALID_PEST_3_5",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(HYDRAPPLE)",
+      "x": 35,
+      "y": 30,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_EventScript_Hydrapple",
+      "flag": "FLAG_HIDE_PEST_3_5"
+    },
+    {
+      "local_id": "LOCALID_PEST_3_6",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PARASECT)",
+      "x": 29,
+      "y": 30,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_EventScript_Parasect",
+      "flag": "FLAG_HIDE_PEST_3_6"
+    },
+    {
+      "local_id": "LOCALID_PAST_FOREMAN",
+      "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
+      "x": 35,
+      "y": 27,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 2,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_QUEST_GIVER",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_EventScript_Foreman",
+      "flag": "0",
+      "quest_id": 11
+    },
+    {
+      "local_id": "LOCALID_PAST_SAD_GIRL_OUTSIDE",
+      "graphics_id": "OBJ_EVENT_GFX_PAST_GIRL",
+      "x": 9,
+      "y": 22,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_QUEST_GIVER",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_EventScript_SadGirl",
+      "flag": "FLAG_HIDE_PAST_SAD_GIRL_OUTSIDE",
+      "quest_id": 15
     }
   ],
   "warp_events": [
@@ -181,6 +492,30 @@
       "elevation": 0,
       "dest_map": "MAP_PAST_TOWN_HALL",
       "dest_warp_id": "Past_TownHall_Exit_1"
+    },
+    {
+      "warp_id": "PASTTOWN_PORT_ENTRANCE_1",
+      "x": 32,
+      "y": 39,
+      "elevation": 0,
+      "dest_map": "MAP_PAST_TOWN_PORT",
+      "dest_warp_id": "PASTTOWN_PORT_EXIT_1"
+    },
+    {
+      "warp_id": "PASTTOWN_PORT_ENTRANCE_2",
+      "x": 33,
+      "y": 39,
+      "elevation": 0,
+      "dest_map": "MAP_PAST_TOWN_PORT",
+      "dest_warp_id": "PASTTOWN_PORT_EXIT_2"
+    },
+    {
+      "warp_id": "Past_House2_Entrance_Hole",
+      "x": 15,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_PAST_HOUSE2",
+      "dest_warp_id": "Past_House2_Exit_Hole"
     }
   ],
   "coord_events": [
@@ -190,7 +525,7 @@
       "y": 13,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "6",
+      "var_value": "8",
       "script": "PastTown_EventScript_LookerPassOut"
     },
     {
@@ -199,7 +534,7 @@
       "y": 14,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "6",
+      "var_value": "8",
       "script": "PastTown_EventScript_LookerPassOut"
     },
     {
@@ -208,7 +543,7 @@
       "y": 15,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "6",
+      "var_value": "8",
       "script": "PastTown_EventScript_LookerPassOut"
     },
     {
@@ -217,7 +552,7 @@
       "y": 16,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "6",
+      "var_value": "8",
       "script": "PastTown_EventScript_LookerPassOut"
     },
     {
@@ -226,7 +561,7 @@
       "y": 18,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "6",
+      "var_value": "8",
       "script": "PastTown_EventScript_LookerPassOut"
     },
     {
@@ -235,7 +570,7 @@
       "y": 18,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "6",
+      "var_value": "8",
       "script": "PastTown_EventScript_LookerPassOut"
     },
     {
@@ -244,7 +579,7 @@
       "y": 18,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "6",
+      "var_value": "8",
       "script": "PastTown_EventScript_LookerPassOut"
     },
     {
@@ -253,7 +588,7 @@
       "y": 18,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "6",
+      "var_value": "8",
       "script": "PastTown_EventScript_LookerPassOut"
     },
     {
@@ -262,7 +597,7 @@
       "y": 18,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "6",
+      "var_value": "8",
       "script": "PastTown_EventScript_LookerPassOut"
     },
     {
@@ -271,7 +606,7 @@
       "y": 18,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "6",
+      "var_value": "8",
       "script": "PastTown_EventScript_LookerPassOut"
     },
     {
@@ -280,7 +615,7 @@
       "y": 9,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "7",
+      "var_value": "9",
       "script": "PastTown_EventScript_LassTurnLeft"
     },
     {
@@ -289,7 +624,7 @@
       "y": 9,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "7",
+      "var_value": "9",
       "script": "PastTown_EventScript_LassTurnRight"
     },
     {
@@ -298,9 +633,34 @@
       "y": 9,
       "elevation": 0,
       "var": "VAR_CUTSCENE_STATE",
-      "var_value": "7",
+      "var_value": "9",
       "script": "PastTown_EventScript_LassWalkRight"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 32,
+      "y": 24,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "PastTown_EventScript_TownHallSign"
+    },
+    {
+      "type": "sign",
+      "x": 48,
+      "y": 16,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "PastTown_EventScript_TrainerTips"
+    },
+    {
+      "type": "hidden_item",
+      "x": 7,
+      "y": 30,
+      "elevation": 0,
+      "item": "ITEM_WHITE_HERB",
+      "flag": "FLAG_HIDE_WHITE_HERB"
+    }
+  ]
 }

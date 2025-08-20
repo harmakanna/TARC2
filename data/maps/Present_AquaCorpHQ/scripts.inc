@@ -157,7 +157,7 @@ Present_AquaCorpHQ_EventScript_StartAquaGauntletRematch::
 	goto Present_AquaCorpHQ_EventScript_AquaGauntlet
 	end
 
-@ First grunt: TRAINER_PRESENT_FISHERMAN
+@ First grunt: TRAINER_GRUNT_AQUA_HIDEOUT_1
 Present_AquaCorpHQ_EventScript_AquaGauntlet::
 	applymovement LOCALID_AQUACORP_SHELDON, Present_AquaCorpHQ_Movement_SheldonRushLooker
 	applymovement LOCALID_AQUACORP_GEOFF, Present_AquaCorpHQ_Movement_GeoffRushLooker
@@ -167,7 +167,7 @@ Present_AquaCorpHQ_EventScript_AquaGauntlet::
 	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 	speak LOCALID_AQUACORP_GEOFF, DIR_EAST, Name_Unknown, Present_AquaCorpHQ_Text_GeoffIntro
 	savebgm MUS_DUMMY
-	trainerbattle_no_intro TRAINER_PRESENT_FISHERMAN, Present_AquaCorpHQ_Text_GeoffDefeat
+	trainerbattle_no_intro TRAINER_GRUNT_AQUA_HIDEOUT_1, Present_AquaCorpHQ_Text_GeoffDefeat
 	goto Present_AquaCorpHQ_EventScript_AquaGauntletSecondTrainer
 	end
 
@@ -312,7 +312,7 @@ Present_AquaCorpHQ_EventScript_FinishAquaGauntlet::
 	setflag FLAG_DEFEATED_MATT
 	fadescreenswapbuffers FADE_FROM_BLACK
 	completequest QUEST_INTERROGATE_MATT
-	playbgm MUS_MT_CHIMNEY, FALSE
+	playbgm MUS_DP_VEILSTONE_DAY, FALSE
 	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	setflag FLAG_PLAY_LOOKER_AQUA_ON_TRANSITION
 	releaseall
@@ -519,6 +519,20 @@ Present_AquaCorpHQ_Movement_MonWalkToPlayer:
 	walk_left
 	step_end
 
+Present_AquaCorpHQ_EventScript_Krabby::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_KRABBY, CRY_MODE_NORMAL
+	msgbox Present_AquaCorpHQ_Text_Krabby, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	release
+	end
+
+Present_AquaCorpHQ_Text_Krabby:
+	.string "Blblblblblblbl!$"
+	
 Present_AquaCorpHQ_Text_LookerMatt:
 	.string "Aqua Admin Matt.$"
 

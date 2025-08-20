@@ -98,5 +98,22 @@
       "script": "ShrineOfProsperityPresent_EventScript_GeniePan"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 3,
+      "y": 8,
+      "elevation": 0,
+      "item": "ITEM_SERIOUS_MINT",
+      "flag": "FLAG_HIDDEN_ITEM_SHRINE_PROSPERITY_PRESENT_TASTY_MINT"
+    },
+    {
+      "type": "sign",
+      "x": 14,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ShrineOfProsperityPresent_EventScript_TastyMint"
+    }
+  ]
 }

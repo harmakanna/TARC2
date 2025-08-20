@@ -5,7 +5,7 @@ ShrineOfPeacePast_MapScripts::
 	.byte 0
 
 ShrineOfPeacePast_OnTransition:
-	call_if_eq VAR_CUTSCENE_STATE, 3, ShrineOfPeacePast_EventScript_ShrineFirstWarpSetup
+	call_if_eq VAR_CUTSCENE_STATE, 5, ShrineOfPeacePast_EventScript_ShrineFirstWarpSetup
 	end
 
 ShrineOfPeacePast_EventScript_ShrineFirstWarpSetup::
@@ -13,7 +13,7 @@ ShrineOfPeacePast_EventScript_ShrineFirstWarpSetup::
 	return
 
 ShrineOfPeacePast_OnFrame:
-    map_script_2 VAR_CUTSCENE_STATE, 3, ShrineOfPeacePast_EventScript_FirstWarp
+    map_script_2 VAR_CUTSCENE_STATE, 5, ShrineOfPeacePast_EventScript_FirstWarp
     .2byte 0
 
 ShrineOfPeacePast_EventScript_FirstWarp::
@@ -29,6 +29,7 @@ ShrineOfPeacePast_EventScript_FirstWarp::
 	closemessage
 	delay 80
 	clearflag FLAG_SYS_PREVENT_MAP_FADE
+	playbgm MUS_DP_ETERNA_FOREST, FALSE
 	fadescreen FADE_FROM_BLACK
 	delay 60
 	applymovement LOCALID_PLAYER, ShrineOfPeacePast_Movement_LookerLooksAround
@@ -44,7 +45,8 @@ ShrineOfPeacePast_EventScript_FirstWarp::
 	msgbox ShrineOfPeacePast_Text_LookerAnabel, MSGBOX_DEFAULT
 	closemessage
 	clearflag FLAG_SYS_B_DASH
-	setvar VAR_CUTSCENE_STATE, 4
+	clearflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
+	setvar VAR_CUTSCENE_STATE, 6
 	releaseall
 	end
 
@@ -104,15 +106,78 @@ ShrineOfPeacePast_EventScript_Celebi::
 	msgbox ShrineOfPeacePast_Text_Celebi
 	speakername NULL
 	msgbox ShrineOfPeacePast_Text_CelebiWarp, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, ShrineOfPeacePast_EventScript_CelebiWarp
+	goto_if_eq VAR_RESULT, YES, ShrineOfPeacePast_EventScript_HandleWarpEvents
 	releaseall
 	end
 
 ShrineOfPeacePast_EventScript_CelebiFirstWarp::
 	msgbox ShrineOfPeacePast_Text_CelebiFirstWarp, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, ShrineOfPeacePast_EventScript_CelebiWarp
+	goto_if_eq VAR_RESULT, YES, ShrineOfPeacePast_EventScript_HandleWarpEvents
 	releaseall
 	end
+
+ShrineOfPeacePast_EventScript_HandleWarpEvents::
+	setrespawn HEAL_LOCATION_PRESENT
+	call_if_unset FLAG_DEFEATED_SHRINE_GENIES, ShrineOfPeacePast_EventScript_EnableInclementWeather
+	call_if_set FLAG_DEFEATED_SHRINE_GENIES, ShrineOfPeacePast_EventScript_HandlePresentGenieSpawns
+	goto ShrineOfPeacePast_EventScript_CelebiWarp
+	end
+
+ShrineOfPeacePast_EventScript_EnableInclementWeather::
+	setflag FLAG_SYS_WEATHER_CTRL
+	return
+
+ShrineOfPeacePast_EventScript_HandlePresentGenieSpawns::
+	clearflag FLAG_SYS_WEATHER_CTRL
+	@setflag FLAG_SYS_DISABLE_ENCOUNTERS
+	setflag FLAG_HIDE_CITY_TORNADUS
+	setflag FLAG_HIDE_CITY_THUNDURUS
+	randompercentage 10
+	call_if_eq VAR_RESULT, TRUE, ShrineOfPeacePast_EventScript_TrySpawnPresentGenies
+	return
+
+ShrineOfPeacePast_EventScript_TrySpawnPresentGenies::
+	randomelement SPECIES_TORNADUS, SPECIES_THUNDURUS
+	call_if_eq VAR_RESULT, SPECIES_TORNADUS, ShrineOfPeacePast_EventScript_TrySpawnTornadus
+	call_if_eq VAR_RESULT, SPECIES_THUNDURUS, ShrineOfPeacePast_EventScript_TrySpawnThundurus
+	return
+
+ShrineOfPeacePast_EventScript_TrySpawnTornadus::
+	call_if_unset FLAG_CAUGHT_TORNADUS, ShrineOfPeacePast_EventScript_SpawnTornadus
+	return
+
+ShrineOfPeacePast_EventScript_TrySpawnThundurus::
+	call_if_unset FLAG_CAUGHT_THUNDURUS, ShrineOfPeacePast_EventScript_SpawnThundurus
+	return
+
+ShrineOfPeacePast_EventScript_SpawnTornadus::
+	setflag FLAG_SYS_WEATHER_CTRL
+	@clearflag FLAG_SYS_DISABLE_ENCOUNTERS
+	setflag FLAG_HIDE_OUTSIDE_NPCS
+	setflag FLAG_HIDE_TORNADUS_NPCS
+	clearflag FLAG_HIDE_INSIDE_OUTSIDE_NPCS
+	clearflag FLAG_HIDE_CITY_TORNADUS
+	call ShrineOfPeacePast_EventScript_EndSpawnGenie
+	return
+
+ShrineOfPeacePast_EventScript_SpawnThundurus::
+	setflag FLAG_SYS_WEATHER_CTRL
+	@clearflag FLAG_SYS_DISABLE_ENCOUNTERS
+	setflag FLAG_HIDE_OUTSIDE_NPCS
+	setflag FLAG_HIDE_TORNADUS_NPCS
+	clearflag FLAG_HIDE_INSIDE_OUTSIDE_NPCS
+	clearflag FLAG_HIDE_CITY_THUNDURUS
+	call ShrineOfPeacePast_EventScript_EndSpawnGenie
+	return
+
+ShrineOfPeacePast_EventScript_EndSpawnGenie::
+	returnqueststate QUEST_CATCH_GENIES
+	call_if_eq VAR_RESULT, 1, ShrineOfPeacePast_EventScript_PrepareGenieQuest
+	return
+
+ShrineOfPeacePast_EventScript_PrepareGenieQuest::
+	setvar VAR_CATCH_GENIES_QUEST, 1
+	return
 
 ShrineOfPeacePast_EventScript_CelebiWarp::
 	setflag FLAG_WARPED_WITH_CELEBI

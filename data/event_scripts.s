@@ -1064,6 +1064,9 @@ EventScript_SelectWithoutRegisteredItem::
 Common_EventScript_NopReturn::
 	return
 
+Common_EventScript_End::
+	end
+	
 @ Unused
 EventScript_CableClub_SetVarResult1::
 	setvar VAR_RESULT, 1
@@ -1165,7 +1168,8 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/dexnav.inc"
 	.include "data/text/names.inc"
 	.include "data/scripts/givemon.inc"
-	.include "data/scripts/city_outside_npcs.inc"
+	.include "data/text/looker.inc"
+	.include "data/scripts/inside_outside_npcs.inc"
 	
 	.include "data/maps/PresentTown/scripts.inc"
 
@@ -1230,3 +1234,15 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Present_Gym/scripts.inc"
 
 	.include "data/maps/CutsceneOffice/scripts.inc"
+
+	.include "data/maps/CutsceneWater/scripts.inc"
+
+	.include "data/maps/CutsceneMyth/scripts.inc"
+
+	.include "data/maps/CutsceneTown/scripts.inc"
+
+	.include "data/maps/PresentTown_Port/scripts.inc"
+
+	.include "data/maps/Present_Cafe/scripts.inc"
+
+	.include "data/maps/PastTown_Port/scripts.inc"

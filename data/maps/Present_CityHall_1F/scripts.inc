@@ -4,13 +4,13 @@ Present_CityHall_1F_MapScripts::
 	.byte 0
 
 Present_CityHall_1F_EventScript_OnTransition:
-	call_if_eq VAR_CUTSCENE_STATE, 1, Present_CityHall_1F_EventScript_PlaceNPCsForCutscene
-	call_if_eq VAR_CUTSCENE_STATE, 2, Present_CityHall_1F_EventScript_PlaceNPCsInside
+	call_if_eq VAR_CUTSCENE_STATE, 3, Present_CityHall_1F_EventScript_PlaceNPCsForCutscene
+	call_if_eq VAR_CUTSCENE_STATE, 4, Present_CityHall_1F_EventScript_PlaceNPCsInside
 	end
 
 Present_CityHall_1F_EventScript_PlaceNPCsInside::
-	setobjectxyperm LOCALID_CITYHALL_1F_CONCERNED_DAD, 8, 7
-	setobjectxyperm LOCALID_CITYHALL_1F_MAYOR, 7, 5
+	setobjectxyperm LOCALID_CITYHALL_1F_CONCERNED_DAD, 7, 5
+	setobjectxyperm LOCALID_CITYHALL_1F_MAYOR, 8, 5
 	return
 
 Present_CityHall_1F_EventScript_PlaceNPCsForCutscene::
@@ -20,7 +20,7 @@ Present_CityHall_1F_EventScript_PlaceNPCsForCutscene::
 	return
 
 Present_CityHall_1F_EventScript_OnFrame:
-	map_script_2 VAR_CUTSCENE_STATE, 1, Present_CityHall_1F_EventScript_PostStormDiscussion
+	map_script_2 VAR_CUTSCENE_STATE, 3, Present_CityHall_1F_EventScript_PostStormDiscussion
 	.2byte 0
 
 Present_CityHall_1F_EventScript_PostStormDiscussion::
@@ -31,34 +31,44 @@ Present_CityHall_1F_EventScript_PostStormDiscussion::
 	delay 10
 	applymovement LOCALID_CITYHALL_1F_MAYOR, Present_CityHall_1F_Movement_MayorPacing1
 	playse SE_LEDGE
-	msgbox Present_CityHall_1F_Text_MayorOhDear, MSGBOX_DEFAULT
+	speakername Name_Unknown
+	message Present_CityHall_1F_Text_MayorOhDear
+	waitmessage
+	delay 80
 	closemessage
 	delay 40
 	applymovement LOCALID_CITYHALL_1F_MAYOR, Present_CityHall_1F_Movement_MayorPacing2
+	speakername Name_Unknown
+	message Present_CityHall_1F_Text_MayorOhDearOhDear
 	playse SE_LEDGE
 	waitse
 	playse SE_LEDGE
-	msgbox Present_CityHall_1F_Text_MayorOhDearOhDear, MSGBOX_DEFAULT
+	delay 80
 	closemessage
-	delay 40
+	delay 120
+	applymovement LOCALID_CITYHALL_1F_ANABEL, Common_Movement_SetVisibleFaceUp
+	applymovement LOCALID_PLAYER, Common_Movement_SetVisible
 	playse SE_EXIT
 	waitse
-	applymovement LOCALID_PLAYER, Common_Movement_SetVisible
-	applymovement LOCALID_CITYHALL_1F_ANABEL, Common_Movement_SetVisibleFaceUp
-	waitmovement 0
 	playse SE_PIN
 	applymovement LOCALID_CITYHALL_1F_MAYOR, Present_CityHall_1F_Movement_MayorStartled
 	waitmovement 0
 	delay 32
-	msgbox Present_CityHall_1F_Text_MayorOhHeavens, MSGBOX_DEFAULT
-	delay 10
+	speakername Name_Unknown
+	message Present_CityHall_1F_Text_MayorOhHeavens
+	waitmessage
+	delay 80
 	closemessage
+	playbgm MUS_PL_LOOKER, FALSE
+	delay 40
 	applymovement LOCALID_CITYHALL_1F_MAYOR, Present_CityHall_1F_Movement_MayorWalkToLooker
 	applymovement LOCALID_CITYHALL_1F_ANABEL, Common_Movement_WalkUp2
 	applymovement LOCALID_PLAYER, Common_Movement_WalkUp2
 	waitmovement 0
+	speakername Name_Unknown
 	msgbox Present_CityHall_1F_Text_MayorAreYouAlright, MSGBOX_DEFAULT
 	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_CityHall_1F_Text_LookerYoureTheMayor
+	speakername Name_Unknown
 	applymovement LOCALID_CITYHALL_1F_MAYOR, Common_Movement_WalkInPlaceFasterDown
 	msgbox Present_CityHall_1F_Text_MayorIAmTheMayor, MSGBOX_DEFAULT
 	speakername Name_Mayor
@@ -106,19 +116,32 @@ Present_CityHall_1F_EventScript_PostStormDiscussion::
 	closemessage
 	playse SE_REPEL
 	waitse
-	delay 10
-	msgbox Present_CityHall_1F_Text_LookerUsedTheRepel, MSGBOX_DEFAULT
-	delay 48
+	delay 40
+	message Present_CityHall_1F_Text_LookerUsedTheRepel
+	waitmessage
+	delay 50
+	closemessage
+	delay 30
 	speak LOCALID_CITYHALL_1F_CONCERNED_DAD, DIR_NORTH, Name_Concerned_Dad, Present_CityHall_1F_Text_DadWeLiveNear
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
 	speak LOCALID_CITYHALL_1F_ANABEL, DIR_WEST, Name_Anabel, Present_CityHall_1F_Text_AnabelLostChild
 	closemessage
+	applymovement LOCALID_CITYHALL_1F_CONCERNED_DAD, Present_CityHall_1F_Movement_DadGetOutOfWay
+	waitmovement 0
 	clearflag FLAG_SYS_SPAWN_INVISIBLE
-	setvar VAR_CUTSCENE_STATE, 2
-	setflag FLAG_SYS_DISABLE_ENCOUNTERS
+	setvar VAR_CUTSCENE_STATE, 4
+	setflag FLAG_HIDE_MAP_NAME_POPUP
 	setfollowernpc LOCALID_CITYHALL_1F_ANABEL, FNPC_NONE, Present_CityHall_1F_EventScript_AnabelFollower
+	special RemoveCameraObject
+	startquest QUEST_SAVE_ESTELLA
 	releaseall
 	end
+
+Present_CityHall_1F_Movement_DadGetOutOfWay:
+	walk_left
+	walk_up
+	walk_up
+	step_end
 
 Present_CityHall_1F_Movement_MayorPacing1:
 	jump_in_place_right
@@ -128,6 +151,7 @@ Present_CityHall_1F_Movement_MayorPacing1:
 	step_end
 
 Present_CityHall_1F_Movement_MayorPacing2:
+	jump_in_place_left
 	jump_in_place_left
 	walk_fast_left
 	walk_fast_left
@@ -174,6 +198,73 @@ Present_CityHall_1F_EventScript_AnabelLockedDoors::
 	speakername Name_Anabel
     msgbox Present_CityHall_1F_Text_AnabelFollowerItSeemsEverybody, MSGBOX_NPC
     end
+
+Present_CityHall_1F_EventScript_TuskFossilDisplay::
+	lock
+	goto_if_set FLAG_CHOSE_TUSK_FOSSIL, Present_CityHall_1F_EventScript_EmptyDisplay
+	showmonpic SPECIES_SQUIRTLE, 10, 3
+	msgbox Present_CityHall_1F_Text_TuskFossilDisplay, MSGBOX_SIGN
+	closemessage
+	hidemonpic
+	release
+	end
+	
+Present_CityHall_1F_EventScript_WingFossilDisplay::
+	lock
+	goto_if_set FLAG_CHOSE_WING_FOSSIL, Present_CityHall_1F_EventScript_EmptyDisplay
+	showmonpic SPECIES_CHARMANDER, 10, 3
+	msgbox Present_CityHall_1F_Text_WingFossilDisplay, MSGBOX_SIGN
+	closemessage
+	hidemonpic
+	release
+	end
+
+Present_CityHall_1F_EventScript_EmptyDisplay::
+	msgbox Present_CityHall_1F_Text_EmptyDisplay, MSGBOX_SIGN
+	closemessage
+	release
+	end
+
+Present_CityHall_1F_EventScript_EmployeeStairs::
+	msgbox Present_CityHall_1F_Text_EmployeeStairs, MSGBOX_NPC 
+	end
+
+Present_CityHall_1F_EventScript_EmployeeCounter::
+	lock
+	speak LOCALID_CITYHALL_1F_COUNTEREMPLOYEE, DIR_SOUTH, NULL, Present_CityHall_1F_Text_EmployeeCounter
+	closemessage
+	release
+	end
+
+Present_CityHall_1F_Text_EmployeeCounter:
+	.string "Welcome to Porta Bella City, the\n"
+	.string "city of progress!\p"
+	.string "I hope you enjoy your time here!$"
+
+Present_CityHall_1F_Text_EmployeeStairs:
+	.string "I'm sorry.\p"
+	.string "The mayor is currently busy with\n"
+	.string "official responsibilities.\p"
+	.string "Please come back later.$"
+
+Present_CityHall_1F_Text_TuskFossilDisplay:
+	.string "A regal-looking tusk eroded over\n"
+	.string "hundreds of years.\p"
+	.string "Thought to belong to a species\n"
+	.string "related to pigs.\p"
+	.string "Generously donated by Everett.$"
+
+Present_CityHall_1F_Text_WingFossilDisplay:
+	.string "A translucent-looking wing imprint\n"
+	.string "fossilized in sediment.\p"
+	.string "Thought to belong to a species\n"
+	.string "related to dragonflies.\p"
+	.string "Generously donated by Everett.$"
+
+Present_CityHall_1F_Text_EmptyDisplay:
+	.string "An empty display.\p"
+	.string "City Hall will kindly accept all\n"
+	.string "donations of fossils.$"
 
 Present_CityHall_1F_Text_MayorStaySafe:
 	.string "Oh heavens!\n"
@@ -262,8 +353,8 @@ Present_CityHall_1F_Text_DadMyDaughter:
 	.string "of the house and ran to the woods!\p"
 	.string "I swear, her old looney grandmother's\n"
 	.string "putting crazy ideas in her head about\l"
-	.string "gods and that old Shrine in the forest\l"
-	.string "and forgetting to respect nature…\p"
+	.string "spirits and those old Shrines in the\l"
+	.string "forest and forgetting our origins…\p"
 	.string "… … …\n"
 	.string "… … …\p"
 	.string "You look like a police officer, could\n"

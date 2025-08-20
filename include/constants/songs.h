@@ -578,13 +578,16 @@
 #define MUS_DP_POKE_CENTER_DAY            537
 #define MUS_DP_POKE_CENTER_NIGHT          538
 #define MUS_DP_GYM                        539
-#define DP_MUSIC_END                      MUS_DP_ETERNA_FOREST
+#define MUS_DP_TWINLEAF_DAY               540
+#define MUS_DP_LAKE_CAVERNS               541
+#define MUS_DP_CANALAVE_DAY               542
+#define DP_MUSIC_END                      MUS_DP_LAKE_CAVERNS
 
 // Platinum Music
 #define PL_MUSIC_START                    (DP_MUSIC_END + 1)
 
-#define MUS_PL_LOOKER                     540 // Looker's Theme
-#define MUS_BW_VS_LEGENDARY               541
+#define MUS_PL_LOOKER                     543 // Looker's Theme
+#define MUS_BW_VS_LEGENDARY               544
 
 #define PL_MUSIC_END                      MUS_BW_VS_LEGENDARY
 

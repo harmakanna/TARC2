@@ -1,0 +1,245 @@
+{
+  "id": "MAP_PAST_TOWN_PORT",
+  "name": "PastTown_Port",
+  "layout": "LAYOUT_PAST_TOWN_PORT",
+  "music": "MUS_DP_ETERNA_NIGHT",
+  "region_map_section": "MAPSEC_PORTO_BELLA_TOWN",
+  "requires_flash": false,
+  "weather": "WEATHER_SUNNY",
+  "map_type": "MAP_TYPE_TOWN",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LUVDISC)",
+      "x": 12,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LUVDISC)",
+      "x": 8,
+      "y": 11,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LUVDISC)",
+      "x": 9,
+      "y": 20,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LUVDISC)",
+      "x": 14,
+      "y": 22,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LUVDISC)",
+      "x": 25,
+      "y": 21,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_TUSK_FOSSIL",
+      "graphics_id": "OBJ_EVENT_GFX_FOSSIL",
+      "x": 17,
+      "y": 19,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_Port_EventScript_TuskFossil",
+      "flag": "FLAG_HIDE_TUSK_FOSSIL"
+    },
+    {
+      "local_id": "LOCALID_WING_FOSSIL",
+      "graphics_id": "OBJ_EVENT_GFX_FOSSIL",
+      "x": 21,
+      "y": 20,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_Port_EventScript_WingFossil",
+      "flag": "FLAG_HIDE_WING_FOSSIL"
+    },
+    {
+      "local_id": "LOCALID_PASTTOWN_PORT_MANIAC",
+      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
+      "x": 19,
+      "y": 16,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_LEFT_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_Port_EventScript_Pokemaniac",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "warp_id": "PASTTOWN_PORT_EXIT_1",
+      "x": 16,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_PAST_TOWN",
+      "dest_warp_id": "PASTTOWN_PORT_ENTRANCE_1"
+    },
+    {
+      "warp_id": "PASTTOWN_PORT_EXIT_2",
+      "x": 17,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_PAST_TOWN",
+      "dest_warp_id": "PASTTOWN_PORT_ENTRANCE_2"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_MANIAC_TRIGGER",
+      "var_value": "1",
+      "script": "PastTown_Port_ManiacTrigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_MANIAC_TRIGGER",
+      "var_value": "1",
+      "script": "PastTown_Port_ManiacTrigger2"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_MANIAC_TRIGGER",
+      "var_value": "1",
+      "script": "PastTown_Port_ManiacTrigger3"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_MANIAC_TRIGGER",
+      "var_value": "1",
+      "script": "PastTown_Port_ManiacTrigger4"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_HEART_SCALE_SPARKLE",
+      "var_value": "1",
+      "script": "PastTown_Port_EventScript_DoHeartScaleSparkle"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_HEART_SCALE_SPARKLE",
+      "var_value": "1",
+      "script": "PastTown_Port_EventScript_DoHeartScaleSparkle"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_HEART_SCALE_SPARKLE",
+      "var_value": "1",
+      "script": "PastTown_Port_EventScript_DoHeartScaleSparkle"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_HEART_SCALE_SPARKLE",
+      "var_value": "1",
+      "script": "PastTown_Port_EventScript_DoHeartScaleSparkle"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_HEART_SCALE_SPARKLE",
+      "var_value": "1",
+      "script": "PastTown_Port_EventScript_DoHeartScaleSparkle"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_HEART_SCALE_SPARKLE",
+      "var_value": "1",
+      "script": "PastTown_Port_EventScript_DoHeartScaleSparkle"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 17,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PastTown_Port_EventScript_HiddenHeartScale"
+    }
+  ]
+}

@@ -16,6 +16,18 @@ ShrineOfProsperityPresent_OnResume:
 	special HealPlayerParty
 	end
 	
+ShrineOfProsperityPresent_EventScript_TastyMint::
+	goto_if_set FLAG_HIDDEN_ITEM_SHRINE_PROSPERITY_PRESENT_TASTY_MINT, Common_EventScript_End
+	lock
+	waitse
+	giveitem ITEM_SERIOUS_MINT, 1
+	closemessage
+	setflag FLAG_HIDDEN_ITEM_SHRINE_PROSPERITY_PRESENT_TASTY_MINT
+	questmenu QUEST_MENU_CHECK_ACTIVE, QUEST_FIND_TASTY_MINT
+	call_if_eq VAR_RESULT, TRUE, Past_House2_EventScript_SetTastyMintReward
+	release
+	end
+
 ShrineOfProsperityPresent_EventScript_StartGenieFight::
 	lockall
 	faceplayer
@@ -37,11 +49,14 @@ ShrineOfProsperityPresent_EventScript_StartGenieFight::
 	playmoncry SPECIES_THUNDURUS, CRY_MODE_ENCOUNTER
 	waitmoncry
 	waitmessage
+	setflag FLAG_SYS_SMART_WILD_BATTLES
 	setwildbattle SPECIES_TORNADUS, 5, ITEM_NONE, SPECIES_THUNDURUS, 5, ITEM_NONE
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattleDouble
 	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	clearflag FLAG_SYS_SMART_WILD_BATTLES
+	setobjectmovementtype LOCALID_SHRINE_THUNDURUS, MOVEMENT_TYPE_WALK_IN_PLACE_UP
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, ShrineOfProsperityPresent_EventScript_DefeatedGenies
 	setflag FLAG_HIDE_SHRINE_THUNDURUS
@@ -62,6 +77,7 @@ ShrineOfProsperityPresent_EventScript_ThundurusRushE::
 
 ShrineOfProsperityPresent_EventScript_ThundurusRushW::
 	applymovement LOCALID_SHRINE_THUNDURUS, ShrineOfProsperityPresent_Movement_ThundurusRushW
+	waitmovement 0
 	setobjectmovementtype LOCALID_SHRINE_THUNDURUS, MOVEMENT_TYPE_WALK_IN_PLACE_UP
 	return
 
@@ -70,7 +86,7 @@ ShrineOfProsperityPresent_EventScript_DefeatedGenies::
 	speakername Name_Tornadus
 	msgbox ShrineOfProsperityPresent_Text_TornadusDefeat, MSGBOX_DEFAULT
 	speakername Name_Thundurus
-	msgbox ShrineOfProsperityPresent_Text_TornadusDefeat, MSGBOX_DEFAULT
+	msgbox ShrineOfProsperityPresent_Text_ThundurusDefeat, MSGBOX_DEFAULT
 	closemessage
 	call_if_eq VAR_FACING, DIR_NORTH, ShrineOfProsperityPresent_EventScript_GeniesEscapeN
 	call_if_eq VAR_FACING, DIR_EAST, ShrineOfProsperityPresent_EventScript_GeniesEscapeE
@@ -95,8 +111,9 @@ ShrineOfProsperityPresent_EventScript_DefeatedGenies::
 	closemessage
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_INVESTIGATE_PROSPERITY, SUB_QUEST_DEFEAT_GENIES
 	questmenu QUEST_MENU_SET_REWARD QUEST_INVESTIGATE_PROSPERITY
-	fwdtime 6, 30
+	setflag FLAG_SYS_DISABLE_ENCOUNTERS
 	clearflag FLAG_HIDE_OUTSIDE_NPCS
+	clearflag FLAG_HIDE_TORNADUS_NPCS
 	setflag FLAG_DEFEATED_SHRINE_GENIES
 	setflag FLAG_HIDE_INSIDE_OUTSIDE_NPCS
 	setvar VAR_QUEUE_GENIE_FIGHT, 4

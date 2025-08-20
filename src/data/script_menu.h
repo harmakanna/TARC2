@@ -1,4 +1,31 @@
 // multichoice lists
+static const struct MenuAction MultichoiceList_SpeakWithEmma1[] = 
+{
+    {COMPOUND_STRING("Oui")},
+    {COMPOUND_STRING("Bien, merçi")},
+    {COMPOUND_STRING("Pas bien")},
+};
+
+static const struct MenuAction MultichoiceList_SpeakWithEmma2[] = 
+{
+    {COMPOUND_STRING("Mon nom est Looker")},
+    {COMPOUND_STRING("Je suis Looker")},
+    {COMPOUND_STRING("Je m'appelle Looker")},
+};
+
+static const struct MenuAction MultichoiceList_SpeakWithEmma3[] = 
+{
+    {COMPOUND_STRING("Sure")},
+    {COMPOUND_STRING("Je ne veux pas")},
+    {COMPOUND_STRING("Bien sûr")},
+};
+
+static const struct MenuAction MultichoiceList_EmmaGiveMon[] =
+{
+    {COMPOUND_STRING("Argouste")},
+    {COMPOUND_STRING("Mistigrix")},
+};
+
 static const struct MenuAction MultichoiceList_PhoebeGiveMon[] =
 {
     {COMPOUND_STRING("Dusknoir")},
@@ -15,6 +42,36 @@ static const struct MenuAction MultichoiceList_BlueGiveMon[] =
 {
     {COMPOUND_STRING("Golem")},
     {COMPOUND_STRING("Machamp")},
+};
+
+static const struct MenuAction MultichoiceList_MayGiveMon[] =
+{
+    {COMPOUND_STRING("Walrein")},
+    {COMPOUND_STRING("Camerupt")},
+};
+
+static const struct MenuAction MultichoiceList_FishermanGiveMon[] =
+{
+    {COMPOUND_STRING("Overqwil")},
+    {COMPOUND_STRING("Dragalge")},
+};
+
+static const struct MenuAction MultichoiceList_ScientistGiveMon[] =
+{
+    {COMPOUND_STRING("Galvantula")},
+    {COMPOUND_STRING("Probopass")},
+};
+
+static const struct MenuAction MultichoiceList_ForemanGiveMon[] =
+{
+    {COMPOUND_STRING("Breloom")},
+    {COMPOUND_STRING("Shiinotic")},
+};
+
+static const struct MenuAction MultichoiceList_FarmGirlGiveMon[] =
+{
+    {COMPOUND_STRING("Tauros")},
+    {COMPOUND_STRING("Miltank")},
 };
 
 static const struct MenuAction MultichoiceList_BrineyOnDewford[] =
@@ -809,9 +866,18 @@ struct MultichoiceListStruct
 
 static const struct MultichoiceListStruct sMultichoiceLists[] =
 {
+    [MULTI_SPEAK_WITH_EMMA_1]          = MULTICHOICE(MultichoiceList_SpeakWithEmma1),
+    [MULTI_SPEAK_WITH_EMMA_2]          = MULTICHOICE(MultichoiceList_SpeakWithEmma2),
+    [MULTI_SPEAK_WITH_EMMA_3]          = MULTICHOICE(MultichoiceList_SpeakWithEmma3),
+    [MULTI_EMMA_GIVEMON]               = MULTICHOICE(MultichoiceList_EmmaGiveMon),
     [MULTI_PHOEBE_GIVEMON]             = MULTICHOICE(MultichoiceList_PhoebeGiveMon),
     [MULTI_MATT_GIVEMON]               = MULTICHOICE(MultichoiceList_MattGiveMon),
     [MULTI_BLUE_GIVEMON]               = MULTICHOICE(MultichoiceList_BlueGiveMon),
+    [MULTI_MAY_GIVEMON]                = MULTICHOICE(MultichoiceList_MayGiveMon),
+    [MULTI_FISHERMAN_GIVEMON]          = MULTICHOICE(MultichoiceList_FishermanGiveMon),
+    [MULTI_SCIENTIST_GIVEMON]          = MULTICHOICE(MultichoiceList_ScientistGiveMon),
+    [MULTI_FOREMAN_GIVEMON]            = MULTICHOICE(MultichoiceList_ForemanGiveMon),
+    [MULTI_FARMGIRL_GIVEMON]           = MULTICHOICE(MultichoiceList_FarmGirlGiveMon),
     [MULTI_BRINEY_ON_DEWFORD]          = MULTICHOICE(MultichoiceList_BrineyOnDewford),
     [MULTI_PC]                         = MULTICHOICE(MultichoiceList_Exit),
     [MULTI_ENTERINFO]                  = MULTICHOICE(MultichoiceList_EnterInfo),

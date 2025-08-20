@@ -1915,7 +1915,7 @@
     @ Starts the specified quest.
 	.macro startquest quest:req
 	closemessage
-	delay 30
+	delay 60
 	questmenu QUEST_MENU_SET_ACTIVE, \quest
 	questmenu QUEST_MENU_BUFFER_QUEST_NAME \quest
     bufferstring 1 gText_QuestActive
@@ -1930,7 +1930,7 @@
     @ Completes the specified quest.
 	.macro completequest quest:req
 	closemessage
-	delay 30
+	delay 60
 	questmenu QUEST_MENU_COMPLETE_QUEST, \quest
 	questmenu QUEST_MENU_BUFFER_QUEST_NAME \quest
     bufferstring 1 gText_QuestComplete

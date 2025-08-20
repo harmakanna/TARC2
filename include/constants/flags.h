@@ -98,8 +98,8 @@
 #define FLAG_RESCUED_BIRCH                       0x52
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS           0x53
 
-#define FLAG_UNUSED_0x054                    0x54  // Unused Flag
-#define FLAG_UNUSED_0x055                    0x55  // Unused Flag
+#define FLAG_HIDE_PORT_ANABEL                0x54  // Unused Flag
+#define FLAG_PURCHASED_MAGIKARP              0x55  // Unused Flag
 
 #define FLAG_HIDE_CONTEST_POKE_BALL          0x56  // Always set after new game, object it hides is added directly
 #define FLAG_MET_RIVAL_MOM                   0x57
@@ -656,59 +656,59 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 
-#define FLAG_UNUSED_0x264  0x264 // Unused Flag
-#define FLAG_UNUSED_0x265  0x265 // Unused Flag
-#define FLAG_UNUSED_0x266  0x266 // Unused Flag
-#define FLAG_UNUSED_0x267  0x267 // Unused Flag
-#define FLAG_UNUSED_0x268  0x268 // Unused Flag
-#define FLAG_UNUSED_0x269  0x269 // Unused Flag
-#define FLAG_UNUSED_0x26A  0x26A // Unused Flag
-#define FLAG_UNUSED_0x26B  0x26B // Unused Flag
-#define FLAG_UNUSED_0x26C  0x26C // Unused Flag
-#define FLAG_UNUSED_0x26D  0x26D // Unused Flag
-#define FLAG_UNUSED_0x26E  0x26E // Unused Flag
-#define FLAG_UNUSED_0x26F  0x26F // Unused Flag
-#define FLAG_UNUSED_0x270  0x270 // Unused Flag
-#define FLAG_UNUSED_0x271  0x271 // Unused Flag
-#define FLAG_UNUSED_0x272  0x272 // Unused Flag
-#define FLAG_UNUSED_0x273  0x273 // Unused Flag
-#define FLAG_UNUSED_0x274  0x274 // Unused Flag
-#define FLAG_UNUSED_0x275  0x275 // Unused Flag
-#define FLAG_UNUSED_0x276  0x276 // Unused Flag
-#define FLAG_UNUSED_0x277  0x277 // Unused Flag
-#define FLAG_UNUSED_0x278  0x278 // Unused Flag
-#define FLAG_UNUSED_0x279  0x279 // Unused Flag
-#define FLAG_UNUSED_0x27A  0x27A // Unused Flag
-#define FLAG_UNUSED_0x27B  0x27B // Unused Flag
-#define FLAG_UNUSED_0x27C  0x27C // Unused Flag
-#define FLAG_UNUSED_0x27D  0x27D // Unused Flag
-#define FLAG_UNUSED_0x27E  0x27E // Unused Flag
-#define FLAG_UNUSED_0x27F  0x27F // Unused Flag
-#define FLAG_UNUSED_0x280  0x280 // Unused Flag
-#define FLAG_UNUSED_0x281  0x281 // Unused Flag
-#define FLAG_UNUSED_0x282  0x282 // Unused Flag
-#define FLAG_UNUSED_0x283  0x283 // Unused Flag
-#define FLAG_UNUSED_0x284  0x284 // Unused Flag
-#define FLAG_UNUSED_0x285  0x285 // Unused Flag
-#define FLAG_UNUSED_0x286  0x286 // Unused Flag
-#define FLAG_UNUSED_0x287  0x287 // Unused Flag
-#define FLAG_UNUSED_0x288  0x288 // Unused Flag
-#define FLAG_UNUSED_0x289  0x289 // Unused Flag
-#define FLAG_UNUSED_0x28A  0x28A // Unused Flag
-#define FLAG_UNUSED_0x28B  0x28B // Unused Flag
-#define FLAG_UNUSED_0x28C  0x28C // Unused Flag
-#define FLAG_UNUSED_0x28D  0x28D // Unused Flag
-#define FLAG_UNUSED_0x28E  0x28E // Unused Flag
-#define FLAG_UNUSED_0x28F  0x28F // Unused Flag
-#define FLAG_UNUSED_0x290  0x290 // Unused Flag
-#define FLAG_UNUSED_0x291  0x291 // Unused Flag
-#define FLAG_UNUSED_0x292  0x292 // Unused Flag
-#define FLAG_UNUSED_0x293  0x293 // Unused Flag
-#define FLAG_UNUSED_0x294  0x294 // Unused Flag
-#define FLAG_UNUSED_0x295  0x295 // Unused Flag
-#define FLAG_UNUSED_0x296  0x296 // Unused Flag
-#define FLAG_UNUSED_0x297  0x297 // Unused Flag
-#define FLAG_UNUSED_0x298  0x298 // Unused Flag
+#define FLAG_CAUGHT_TORNADUS  0x264 // Unused Flag
+#define FLAG_CAUGHT_THUNDURUS  0x265 // Unused Flag
+#define FLAG_HIDE_CITYHALL_2F_RANGER_HEADRANGER  0x266 // Unused Flag
+#define FLAG_HIDE_MYTH_CELEBI  0x267 // Unused Flag
+#define FLAG_HIDE_FIRST_PAN    0x268 // Unused Flag
+#define FLAG_HIDE_FLAT1_2F_FAITHFUL_MAN  0x269 // Unused Flag
+#define FLAG_ASKED_FOR_BATTERY  0x26A // Unused Flag
+#define FLAG_ASKED_FOR_SECOND_BATTERY  0x26B // Unused Flag
+#define FLAG_HIDE_WING_FOSSIL  0x26C // Unused Flag
+#define FLAG_HIDE_TUSK_FOSSIL  0x26D // Unused Flag
+#define FLAG_CHOSE_TUSK_FOSSIL  0x26E // Unused Flag
+#define FLAG_CHOSE_WING_FOSSIL  0x26F // Unused Flag
+#define FLAG_HIDE_CITYHALL_2F_OFFICE_MAYOR  0x270 // Unused Flag
+#define FLAG_HIDE_CITYHALL_2F_OFFICE_ANABEL  0x271 // Unused Flag
+#define FLAG_HIDE_TORNADUS_NPCS  0x272 // Unused Flag
+#define FLAG_HIDE_CITYHALL_1F_EMPLOYEE  0x273 // Unused Flag
+#define FLAG_SPOKE_TO_ANGRY_MAN_POST_AQUACORP  0x274 // Unused Flag
+#define FLAG_HIDE_PRESENT_HOUSE2_MISSINGMAN  0x275 // Unused Flag
+#define FLAG_LEARNED_EMMA_NAME  0x276 // Unused Flag
+#define FLAG_SAVE_THE_LUVDISCS  0x277 // Unused Flag
+#define FLAG_HIDE_PRESENT_LUVDISCS  0x278 // Unused Flag
+#define FLAG_HIDE_SS_TIDAL  0x279 // Unused Flag
+#define FLAG_HIDE_TINY_BOAT  0x27A // Unused Flag
+#define FLAG_HIDDEN_ITEM_SHRINE_PROSPERITY_PRESENT_TASTY_MINT  0x27B // Unused Flag
+#define FLAG_SWEET_TOOTH_WENT_CRAZY  0x27C // Unused Flag
+#define FLAG_HIDE_PAST_SWEET_TOOTH  0x27D // Unused Flag
+#define FLAG_HIDE_PRESENT_SWEET_TOOTH  0x27E // Unused Flag
+#define FLAG_TALKED_TO_PRESENT_SWEET_TOOTH  0x27F // Unused Flag
+#define FLAG_SWEET_TOOTH_WENT_CRAZY_REWARD  0x280 // Unused Flag
+#define FLAG_HIDE_OUTSIDE_IDOLS  0x281 // Unused Flag
+#define FLAG_HIDE_CAFE_IDOL_LEFT  0x282 // Unused Flag
+#define FLAG_HIDE_CAFE_IDOL_RIGHT  0x283 // Unused Flag
+#define FLAG_HIDE_CAFE_IDOL_LISIA  0x284 // Unused Flag
+#define FLAG_HIDE_LOST_IDOL_LEFT  0x285 // Unused Flag
+#define FLAG_HIDE_LOST_IDOL_RIGHT  0x286 // Unused Flag
+#define FLAG_HIDE_LOST_IDOL_LISIA  0x287 // Unused Flag
+#define FLAG_HIDE_PEST_1_1  0x288 // Unused Flag
+#define FLAG_HIDE_PEST_1_2  0x289 // Unused Flag
+#define FLAG_HIDE_PEST_1_3  0x28A // Unused Flag
+#define FLAG_HIDE_PEST_2_1  0x28B // Unused Flag
+#define FLAG_HIDE_PEST_2_2  0x28C // Unused Flag
+#define FLAG_HIDE_PEST_2_3  0x28D // Unused Flag
+#define FLAG_HIDE_PEST_3_1  0x28E // Unused Flag
+#define FLAG_HIDE_PEST_3_2  0x28F // Unused Flag
+#define FLAG_HIDE_PEST_3_3  0x290 // Unused Flag
+#define FLAG_HIDE_PEST_3_4  0x291 // Unused Flag
+#define FLAG_HIDE_PEST_3_5  0x292 // Unused Flag
+#define FLAG_HIDE_PEST_3_6  0x293 // Unused Flag
+#define FLAG_HIDE_PAST_SAD_GIRL_INSIDE  0x294 // Unused Flag
+#define FLAG_HIDE_PAST_SAD_GIRL_OUTSIDE  0x295 // Unused Flag
+#define FLAG_HIDE_TAUROS  0x296 // Unused Flag
+#define FLAG_HIDE_MILTANK  0x297 // Unused Flag
+#define FLAG_HIDE_WHITE_HERB  0x298 // Unused Flag
 #define FLAG_UNUSED_0x299  0x299 // Unused Flag
 #define FLAG_UNUSED_0x29A  0x29A // Unused Flag
 #define FLAG_UNUSED_0x29B  0x29B // Unused Flag
@@ -1508,11 +1508,11 @@
 #define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x84)
 
 #define FLAG_FORCE_LOAD_OFFSCREEN_OBJEV             (SYSTEM_FLAGS + 0x85) // Unused Flag
-#define FLAG_UNUSED_0x8E6                           (SYSTEM_FLAGS + 0x86) // Unused Flag
-#define FLAG_UNUSED_0x8E7                           (SYSTEM_FLAGS + 0x87) // Unused Flag
-#define FLAG_UNUSED_0x8E8                           (SYSTEM_FLAGS + 0x88) // Unused Flag
-#define FLAG_UNUSED_0x8E9                           (SYSTEM_FLAGS + 0x89) // Unused Flag
-#define FLAG_UNUSED_0x8EA                           (SYSTEM_FLAGS + 0x8A) // Unused Flag
+#define FLAG_SYS_DISABLE_CATCHING                   (SYSTEM_FLAGS + 0x86) // Unused Flag
+#define FLAG_SYS_DISABLE_BAG                        (SYSTEM_FLAGS + 0x87) // Unused Flag
+#define FLAG_SYS_DISABLE_RUNNING                    (SYSTEM_FLAGS + 0x88) // Unused Flag
+#define FLAG_SYS_INVERSE_BATTLE                     (SYSTEM_FLAGS + 0x89) // Unused Flag
+#define FLAG_SYS_SMART_WILD_BATTLES                 (SYSTEM_FLAGS + 0x8A) // Unused Flag
 #define FLAG_UNUSED_0x8EB                           (SYSTEM_FLAGS + 0x8B) // Unused Flag
 #define FLAG_UNUSED_0x8EC                           (SYSTEM_FLAGS + 0x8C) // Unused Flag
 #define FLAG_UNUSED_0x8ED                           (SYSTEM_FLAGS + 0x8D) // Unused Flag

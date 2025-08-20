@@ -528,6 +528,18 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_RubySapphireMay,       OBJ_EVENT_PAL_TAG_RS_MAY},
     {gObjectEventPal_Looker,                OBJ_EVENT_PAL_TAG_LOOKER},
     {gObjectEventPal_AquaAdmin,             OBJ_EVENT_PAL_TAG_AQUA_ADMIN},
+    {gObjectEventPal_Blue,                  OBJ_EVENT_PAL_TAG_BLUE},
+    {gObjectEventPal_BWAceTrainer,          OBJ_EVENT_PAL_TAG_BW_ACE_TRAINER},
+    {gObjectEventPal_Cynthia,               OBJ_EVENT_PAL_TAG_CYNTHIA},
+    {gObjectEventPal_Daisy,                 OBJ_EVENT_PAL_TAG_DAISY},
+    {gObjectEventPal_Idol,                  OBJ_EVENT_PAL_TAG_IDOL},
+    {gObjectEventPal_Breeder,               OBJ_EVENT_PAL_TAG_BREEDER},
+    {gObjectEventPal_Lisia,                 OBJ_EVENT_PAL_TAG_LISIA},
+    {gObjectEventPal_Officer,               OBJ_EVENT_PAL_TAG_OFFICER},
+    {gObjectEventPal_LassNew,               OBJ_EVENT_PAL_TAG_LASS_NEW},
+    {gObjectEventPal_YoungsterNew,          OBJ_EVENT_PAL_TAG_YOUNGSTER_NEW},
+    {gObjectEventPal_HexManiac,             OBJ_EVENT_PAL_TAG_HEX_MANIAC},
+    {gObjectEventPal_Emma,                  OBJ_EVENT_PAL_TAG_EMMA},
 #if OW_FOLLOWERS_POKEBALLS
     {gObjectEventPal_MasterBall,            OBJ_EVENT_PAL_TAG_BALL_MASTER},
     {gObjectEventPal_UltraBall,             OBJ_EVENT_PAL_TAG_BALL_ULTRA},
@@ -2822,6 +2834,8 @@ static void RemoveObjectEventIfOutsideView(struct ObjectEvent *objectEvent)
         return;
     if (objectEvent->initialCoords.x >= left && objectEvent->initialCoords.x <= right
      && objectEvent->initialCoords.y >= top && objectEvent->initialCoords.y <= bottom)
+        return;
+    if (objectEvent->graphicsId == OBJ_EVENT_GFX_SS_TIDAL) // SS Tidal can never get unloaded
         return;
     RemoveObjectEvent(objectEvent);
 }
@@ -9478,12 +9492,14 @@ static void UpdateObjectEventOffscreen(struct ObjectEvent *objectEvent, struct S
     x2 += x;
     y2 = y;
     y2 += graphicsInfo->height;
+    //if (!FlagGet(FLAG_FORCE_LOAD_OFFSCREEN_OBJEV))
+    //{
+        if ((s16)x >= DISPLAY_WIDTH + 16 || (s16)x2 < -16)
+            objectEvent->offScreen = TRUE;
 
-    if ((s16)x >= DISPLAY_WIDTH + 16 || (s16)x2 < -16)
-        objectEvent->offScreen = TRUE;
-
-    if ((s16)y >= DISPLAY_HEIGHT + 16 || (s16)y2 < -16)
-        objectEvent->offScreen = TRUE;
+        if ((s16)y >= DISPLAY_HEIGHT + 16 || (s16)y2 < -16)
+            objectEvent->offScreen = TRUE;
+    //}
 }
 
 static void UpdateObjectEventSpriteVisibility(struct ObjectEvent *objectEvent, struct Sprite *sprite)

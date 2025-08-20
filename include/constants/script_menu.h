@@ -123,9 +123,18 @@
 #define MULTI_FALLARBOR_TENT_RULES         112
 #define MULTI_TAG_MATCH_TYPE               113
 #define MULTI_BERRY_PLOT                   114
-#define MULTI_PHOEBE_GIVEMON               115
-#define MULTI_MATT_GIVEMON                 116
-#define MULTI_BLUE_GIVEMON                 117
+#define MULTI_SPEAK_WITH_EMMA_1            115
+#define MULTI_SPEAK_WITH_EMMA_2            116
+#define MULTI_SPEAK_WITH_EMMA_3            117
+#define MULTI_PHOEBE_GIVEMON               118
+#define MULTI_MATT_GIVEMON                 119
+#define MULTI_BLUE_GIVEMON                 120
+#define MULTI_MAY_GIVEMON                  121
+#define MULTI_FISHERMAN_GIVEMON            122
+#define MULTI_SCIENTIST_GIVEMON            123
+#define MULTI_EMMA_GIVEMON                 124
+#define MULTI_FOREMAN_GIVEMON              125
+#define MULTI_FARMGIRL_GIVEMON             126
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0

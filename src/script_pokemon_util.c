@@ -62,7 +62,7 @@ static const struct InGameOT sIngameOTs[] =
         .heldItem = ITEM_SITRUS_BERRY,
         .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
         .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
-        .moves = {MOVE_FLAMETHROWER, MOVE_CRUNCH, MOVE_HELPING_HAND, MOVE_PROTECT},
+        .moves = {MOVE_FLAMETHROWER, MOVE_THUNDER_FANG, MOVE_HELPING_HAND, MOVE_PROTECT},
         .ball = BALL_CHERISH,
         .nature = NATURE_HARDY,
         .abilityNum = 0,
@@ -264,11 +264,11 @@ static const struct InGameOT sIngameOTs[] =
         .isNicknamed = TRUE,
         .nickname = _("Flapster"),
     },
-    [OT_JANE_YANMEGA] =
+    [OT_LOOKER_YANMEGA] =
     {
         .species = SPECIES_YANMEGA,
         .level = 50,
-        .heldItem = ITEM_EARTH_PLATE,
+        .heldItem = ITEM_SKY_PLATE,
         .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
         .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
         .moves = {MOVE_SURF, MOVE_PSYCHIC, MOVE_DRAINING_KISS, MOVE_PROTECT},
@@ -276,18 +276,18 @@ static const struct InGameOT sIngameOTs[] =
         .nature = NATURE_HARDY,
         .abilityNum = 0,
         .gender = MON_FEMALE,
-        .otId = 42784,
-        .otName = _("Jane"),
-        .otGender = FEMALE,
+        .otId = OT_ID_PLAYER_ID,
+        .otName = _("Looker"),
+        .otGender = MALE,
         .isShiny = FALSE,
-        .isNicknamed = TRUE,
-        .nickname = _("Grace"),
+        .isNicknamed = FALSE,
+        .nickname = _(""),
     },
-    [OT_JANE_MAMOSWINE] =
+    [OT_LOOKER_MAMOSWINE] =
     {
         .species = SPECIES_MAMOSWINE,
         .level = 50,
-        .heldItem = ITEM_SKY_PLATE,
+        .heldItem = ITEM_EARTH_PLATE,
         .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
         .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
         .moves = {MOVE_STOMPING_TANTRUM, MOVE_ICICLE_CRASH, MOVE_ROCK_SLIDE, MOVE_PROTECT},
@@ -295,12 +295,12 @@ static const struct InGameOT sIngameOTs[] =
         .nature = NATURE_HARDY,
         .abilityNum = 0,
         .gender = MON_MALE,
-        .otId = 42784,
-        .otName = _("Jane"),
-        .otGender = FEMALE,
+        .otId = OT_ID_PLAYER_ID,
+        .otName = _("Looker"),
+        .otGender = MALE,
         .isShiny = FALSE,
-        .isNicknamed = TRUE,
-        .nickname = _("Hubert"),
+        .isNicknamed = FALSE,
+        .nickname = _(""),
     },
     [OT_MIKEY_DEDENNE] =
     {
@@ -340,7 +340,7 @@ static const struct InGameOT sIngameOTs[] =
         .isNicknamed = TRUE,
         .nickname = _("Dr. Round"),
     },
-    [OT_EDUARDO_BRELOOM] =
+    [OT_LOOKER_BRELOOM] =
     {
         .species = SPECIES_BRELOOM,
         .level = 50,
@@ -352,14 +352,14 @@ static const struct InGameOT sIngameOTs[] =
         .nature = NATURE_HARDY,
         .abilityNum = 0,
         .gender = MON_MALE,
-        .otId = 42784,
-        .otName = _("Eduardo"),
+        .otId = OT_ID_PLAYER_ID,
+        .otName = _("Looker"),
         .otGender = MALE,
         .isShiny = FALSE,
-        .isNicknamed = TRUE,
-        .nickname = _("Nappy"),
+        .isNicknamed = FALSE,
+        .nickname = _(""),
     },
-    [OT_EDUARDO_SHIINOTIC] =
+    [OT_LOOKER_SHIINOTIC] =
     {
         .species = SPECIES_SHIINOTIC,
         .level = 50,
@@ -371,12 +371,12 @@ static const struct InGameOT sIngameOTs[] =
         .nature = NATURE_HARDY,
         .abilityNum = 0,
         .gender = MON_MALE,
-        .otId = 42784,
-        .otName = _("Eduardo"),
+        .otId = OT_ID_PLAYER_ID,
+        .otName = _("Looker"),
         .otGender = MALE,
         .isShiny = FALSE,
-        .isNicknamed = TRUE,
-        .nickname = _("Nappy"),
+        .isNicknamed = FALSE,
+        .nickname = _(""),
     },
     [OT_TEE_OVERQWIL] =
     {

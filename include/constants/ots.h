@@ -12,12 +12,12 @@
 #define OT_EMMA_MEOWSTIC       8
 #define OT_TONY_MISDREAVUS     9
 #define OT_TONY_MURKROW        10
-#define OT_JANE_YANMEGA        11
-#define OT_JANE_MAMOSWINE      12
+#define OT_LOOKER_YANMEGA      11
+#define OT_LOOKER_MAMOSWINE    12
 #define OT_MIKEY_DEDENNE       13
 #define OT_MIKEY_TOGEDEMARU    14
-#define OT_EDUARDO_BRELOOM     15
-#define OT_EDUARDO_SHIINOTIC   16
+#define OT_LOOKER_BRELOOM      15
+#define OT_LOOKER_SHIINOTIC    16
 #define OT_TEE_OVERQWIL        17
 #define OT_TEE_DRAGALGE        18
 #define OT_DAMIAN_TAUROS       19

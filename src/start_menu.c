@@ -189,7 +189,7 @@ static const struct WindowTemplate sWindowTemplate_PyramidPeak = {
     .baseBlock = 0x8
 };
 
-static const u8 sText_QuestMenu[] = _("QUESTS");
+static const u8 sText_QuestMenu[] = _("Quests");
 static const u8 sText_MenuDebug[] = _("DEBUG");
 
 static const struct MenuAction sStartMenuItems[] =
@@ -350,8 +350,8 @@ static void BuildNormalStartMenu(void)
     //    AddStartMenuAction(MENU_ACTION_POKENAV);
 
     //AddStartMenuAction(MENU_ACTION_PLAYER);
-    //if (FlagGet(FLAG_SYS_QUEST_MENU_GET))
-    AddStartMenuAction(MENU_ACTION_QUEST_MENU);
+    if (FlagGet(FLAG_SYS_QUEST_MENU_GET))
+        AddStartMenuAction(MENU_ACTION_QUEST_MENU);
     AddStartMenuAction(MENU_ACTION_SAVE);
     AddStartMenuAction(MENU_ACTION_OPTION);
     AddStartMenuAction(MENU_ACTION_EXIT);

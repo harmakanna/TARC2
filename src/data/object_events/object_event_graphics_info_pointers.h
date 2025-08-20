@@ -240,6 +240,21 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Looker;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AquaAdminM;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AquaAdminF;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Blue;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BWAceTrainerF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BWAceTrainerM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cynthia;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Daisy;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PastGirl;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Idol;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_FairyTaleGirl;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BreederF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BreederM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lisia;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OfficerM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LassNew;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoungsterNew;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PastFisherman;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Emma;
 
 // Begin pokemon event objects
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
@@ -501,6 +516,21 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_AQUA_ADMIN_M] =             &gObjectEventGraphicsInfo_AquaAdminM,
     [OBJ_EVENT_GFX_AQUA_ADMIN_F] =             &gObjectEventGraphicsInfo_AquaAdminF,
     [OBJ_EVENT_GFX_BLUE] =                     &gObjectEventGraphicsInfo_Blue,
+    [OBJ_EVENT_GFX_BW_ACE_TRAINER_F] =         &gObjectEventGraphicsInfo_BWAceTrainerF,
+    [OBJ_EVENT_GFX_BW_ACE_TRAINER_M] =         &gObjectEventGraphicsInfo_BWAceTrainerM,
+    [OBJ_EVENT_GFX_CYNTHIA] =                  &gObjectEventGraphicsInfo_Cynthia,
+    [OBJ_EVENT_GFX_DAISY] =                    &gObjectEventGraphicsInfo_Daisy,
+    [OBJ_EVENT_GFX_PAST_GIRL] =                &gObjectEventGraphicsInfo_PastGirl,
+    [OBJ_EVENT_GFX_IDOL] =                     &gObjectEventGraphicsInfo_Idol,
+    [OBJ_EVENT_GFX_FAIRY_TALE_GIRL] =          &gObjectEventGraphicsInfo_FairyTaleGirl,
+    [OBJ_EVENT_GFX_BREEDER_F] =                &gObjectEventGraphicsInfo_BreederF,
+    [OBJ_EVENT_GFX_BREEDER_M] =                &gObjectEventGraphicsInfo_BreederM,
+    [OBJ_EVENT_GFX_LISIA] =                    &gObjectEventGraphicsInfo_Lisia,
+    [OBJ_EVENT_GFX_OFFICER_M] =                &gObjectEventGraphicsInfo_OfficerM,
+    [OBJ_EVENT_GFX_LASS_NEW] =                 &gObjectEventGraphicsInfo_LassNew,
+    [OBJ_EVENT_GFX_YOUNGSTER_NEW] =            &gObjectEventGraphicsInfo_YoungsterNew,
+    [OBJ_EVENT_GFX_PAST_FISHERMAN] =           &gObjectEventGraphicsInfo_PastFisherman,
+    [OBJ_EVENT_GFX_EMMA] =                     &gObjectEventGraphicsInfo_Emma,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

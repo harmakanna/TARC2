@@ -20,6 +20,7 @@
 #include "gpu_regs.h"
 #include "field_camera.h"
 #include "overworld.h"
+#include "quests.h"
 
 #define DROUGHT_COLOR_INDEX(color) ((((color) >> 1) & 0xF) | (((color) >> 2) & 0xF0) | (((color) >> 3) & 0xF00))
 
@@ -737,6 +738,7 @@ void FadeScreen(u8 mode, s8 delay)
     switch (mode)
     {
     case FADE_FROM_BLACK:
+        RefreshQuestIcons();
         fadeColor = RGB_BLACK;
         fadeOut = FALSE;
         break;

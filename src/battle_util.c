@@ -1999,6 +1999,13 @@ static void CancellerObedience(u32 *effect)
             gBattlerTarget = GetBattleMoveTarget(gCalledMove, NO_TARGET_OVERRIDE);
             gHitMarker |= HITMARKER_OBEYS;
             break;
+        case DISOBEYS_METRONOME:
+            gCalledMove = MOVE_METRONOME;
+            SetAtkCancellerForCalledMove();
+            gBattlescriptCurrInstr = BattleScript_IgnoresAndUsesRandomMove;
+            gBattlerTarget = GetBattleMoveTarget(gCalledMove, NO_TARGET_OVERRIDE);
+            gHitMarker |= HITMARKER_OBEYS;
+            break;
         }
         *effect = 1;
     }
@@ -7550,25 +7557,25 @@ u8 GetAttackerObedienceForAction()
         return OBEYS;
     if (B_OBEDIENCE_MECHANICS < GEN_8 && !IsOtherTrainer(gBattleMons[gBattlerAttacker].otId, gBattleMons[gBattlerAttacker].otName))
         return OBEYS;
-    if (FlagGet(FLAG_BADGE08_GET)) // Rain Badge, ignore obedience altogether
-        return OBEYS;
+    //if (FlagGet(FLAG_BADGE08_GET)) // Rain Badge, ignore obedience altogether
+    //    return OBEYS;
 
-    obedienceLevel = 10;
+    obedienceLevel = 100;
 
-    if (FlagGet(FLAG_BADGE01_GET)) // Stone Badge
-        obedienceLevel = 20;
-    if (FlagGet(FLAG_BADGE02_GET)) // Knuckle Badge
-        obedienceLevel = 30;
-    if (FlagGet(FLAG_BADGE03_GET)) // Dynamo Badge
-        obedienceLevel = 40;
-    if (FlagGet(FLAG_BADGE04_GET)) // Heat Badge
-        obedienceLevel = 50;
-    if (FlagGet(FLAG_BADGE05_GET)) // Balance Badge
-        obedienceLevel = 60;
-    if (FlagGet(FLAG_BADGE06_GET)) // Feather Badge
-        obedienceLevel = 70;
-    if (FlagGet(FLAG_BADGE07_GET)) // Mind Badge
-        obedienceLevel = 80;
+    // if (FlagGet(FLAG_BADGE01_GET)) // Stone Badge
+    //     obedienceLevel = 20;
+    // if (FlagGet(FLAG_BADGE02_GET)) // Knuckle Badge
+    //     obedienceLevel = 30;
+    // if (FlagGet(FLAG_BADGE03_GET)) // Dynamo Badge
+    //     obedienceLevel = 40;
+    // if (FlagGet(FLAG_BADGE04_GET)) // Heat Badge
+    //     obedienceLevel = 50;
+    // if (FlagGet(FLAG_BADGE05_GET)) // Balance Badge
+    //     obedienceLevel = 60;
+    // if (FlagGet(FLAG_BADGE06_GET)) // Feather Badge
+    //     obedienceLevel = 70;
+    // if (FlagGet(FLAG_BADGE07_GET)) // Mind Badge
+    //     obedienceLevel = 80;*/
 
     if (B_OBEDIENCE_MECHANICS >= GEN_8
      && !IsOtherTrainer(gBattleMons[gBattlerAttacker].otId, gBattleMons[gBattlerAttacker].otName))
@@ -7576,13 +7583,15 @@ u8 GetAttackerObedienceForAction()
     else
         levelReferenced = gBattleMons[gBattlerAttacker].level;
 
-    if (levelReferenced <= obedienceLevel)
+    if (levelReferenced <= obedienceLevel
+        && gBattleMons[gBattlerAttacker].species != SPECIES_TORNADUS
+        && gBattleMons[gBattlerAttacker].species != SPECIES_THUNDURUS)
         return OBEYS;
 
     rnd = Random();
-    calc = (levelReferenced + obedienceLevel) * (rnd & 255) >> 8;
-    if (calc < obedienceLevel)
-        return OBEYS;
+    //calc = (levelReferenced + obedienceLevel) * (rnd & 255) >> 8;
+    //if (calc < obedienceLevel)
+    //    return OBEYS;
 
     //  Clear the Z-Move flags if the battler is disobedient as to not waste the Z-Move
     if (GetActiveGimmick(gBattlerAttacker) == GIMMICK_Z_MOVE)
@@ -7627,7 +7636,7 @@ u8 GetAttackerObedienceForAction()
         }
         calc -= obedienceLevel;
         if (calc < obedienceLevel)
-            return DISOBEYS_HITS_SELF;
+            return DISOBEYS_METRONOME;
         else
             return DISOBEYS_LOAFS;
     }
@@ -10640,8 +10649,8 @@ void TryRestoreHeldItems(void)
             u16 lostItem = gBattleStruct->itemLost[B_SIDE_PLAYER][i].originalItem;
 
             // Check if the lost item is a berry and the mon is not holding it
-            if (/*GetItemPocket(lostItem) == POCKET_BERRIES && */GetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM) != lostItem)
-                lostItem = ITEM_NONE;
+            //if (/*GetItemPocket(lostItem) == POCKET_BERRIES && */GetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM) != lostItem)
+            //    lostItem = ITEM_NONE;
 
             // Check if the lost item should be restored
             if ((lostItem != ITEM_NONE || returnNPCItems) /*&& GetItemPocket(lostItem) != POCKET_BERRIES*/)
