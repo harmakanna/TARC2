@@ -29,6 +29,19 @@ InsideOutside_EventScript_AngryManOutside::
     goto InsideOutside_EventScript_AngryMan
     end
 
+InsideOutside_EventScript_LeafInside::
+    setvar VAR_TEMP_1, LOCALID_INSIDE_LEAF
+    goto InsideOutside_EventScript_Leaf
+    end
+
+InsideOutside_EventScript_LeafOutside::
+    setvar VAR_TEMP_1, LOCALID_OUTSIDE_LEAF
+    goto InsideOutside_EventScript_Leaf
+    end
+
+InsideOutside_EventScript_Leaf:
+    end
+    
 InsideOutside_EventScript_Gentleman::
     lock
     faceplayer
