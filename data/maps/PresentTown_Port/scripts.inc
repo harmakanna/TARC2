@@ -342,6 +342,7 @@ PresentTown_Port_EventScript_Blue::
 	call Script_GetNPCFacingDirection
 	goto_if_unset FLAG_SYS_MAIN_GAME_START, PresentTown_Port_EventScript_BluePreGame
 	returnqueststate QUEST_FIND_THE_CULPRIT
+    switch VAR_RESULT
 	case 1, PresentTown_Port_EventScript_BluePreQuest
 	case 2, PresentTown_Port_EventScript_BlueQuest
 	case 4, PresentTown_Port_EventScript_BluePostQuest

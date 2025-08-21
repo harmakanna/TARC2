@@ -39,6 +39,26 @@ InsideOutside_EventScript_LeafOutside::
     goto InsideOutside_EventScript_Leaf
     end
     
+InsideOutside_EventScript_YoungsterOutside::
+    setvar VAR_TEMP_1, LOCALID_OUTSIDE_YOUNGSTER
+    goto InsideOutside_EventScript_Youngster
+    end
+
+InsideOutside_EventScript_YoungsterInside::
+    setvar VAR_TEMP_1, LOCALID_INSIDE_YOUNGSTER
+    goto InsideOutside_EventScript_Youngster
+    end
+
+InsideOutside_EventScript_AceTrainerOutside::
+    setvar VAR_TEMP_1, LOCALID_OUTSIDE_ACE_TRAINER
+    goto InsideOutside_EventScript_AceTrainer
+    end
+
+InsideOutside_EventScript_AceTrainerInside::
+    setvar VAR_TEMP_1, LOCALID_INSIDE_ACE_TRAINER
+    goto InsideOutside_EventScript_AceTrainer
+    end
+
 InsideOutside_EventScript_Gentleman::
     lock
     faceplayer
@@ -100,6 +120,7 @@ InsideOutside_EventScript_Leaf::
 	call Script_GetNPCFacingDirection
 	goto_if_unset FLAG_SYS_MAIN_GAME_START, InsideOutside_EventScript_LeafPreGame
 	returnqueststate QUEST_FIND_THE_CULPRIT
+    switch VAR_RESULT
 	case 1, InsideOutside_EventScript_LeafPreQuest
 	case 2, InsideOutside_EventScript_LeafQuest
 	case 4, InsideOutside_EventScript_LeafPostQuest
@@ -230,6 +251,22 @@ InsideOutside_EventScript_TargetTurnFaceLookerEast::
     delay 50
     return
 
+InsideOutside_EventScript_Youngster::
+	lock
+	call Script_GetNPCFacingDirection
+	goto_if_unset FLAG_SYS_MAIN_GAME_START, InsideOutside_EventScript_YoungsterPreGame
+	returnqueststate QUEST_FIND_THE_CULPRIT
+    switch VAR_RESULT
+	case 1, InsideOutside_EventScript_YoungsterPreQuest
+	case 2, InsideOutside_EventScript_YoungsterQuest
+	case 4, InsideOutside_EventScript_YoungsterPostQuest
+	release
+    end
+
+InsideOutside_EventScript_AceTrainer::
+    release
+    end
+
 InsideOutside_Text_LookerSoWhyDidYouDoIt:
     .string "So! Why did you do it?\p"
     .string "What compelled you to capture Landorus\n"
@@ -254,7 +291,7 @@ InsideOutside_Text_LookerSorryForBotheringYou:
 InsideOutside_Text_LookerIHope:
     .string "I hope you've learned your lesson! Be sure\n"
     .string "not to get into any more trouble!$"
-    
+
 InsideOutside_Text_LookerOkayThen:
     .string "Okay then…$"
 
