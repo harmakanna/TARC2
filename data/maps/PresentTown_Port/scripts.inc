@@ -382,18 +382,21 @@ PresentTown_Port_EventScript_BlueQuest::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_ComingWithMe
 	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueFine
 	goto_if_eq VAR_CHOOSE_CULPRIT, 0, PresentTown_Port_EventScript_BlueCulpritQuest
+	setflag FLAG_SYS_NO_WHITEOUT
 	trainerbattle_no_intro TRAINER_BLUE, PresentTown_Port_Text_BlueDefeated
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq B_OUTCOME_LOST, PresentTown_Port_EventScript_BlueDefeat
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, PresentTown_Port_EventScript_BlueDefeat
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_BLUE
+	clearflag FLAG_SYS_NO_WHITEOUT
 	goto PresentTown_Port_EventScript_BluePostQuest
 	release
 	end
 
 PresentTown_Port_EventScript_BlueCulpritQuest::
+	setflag FLAG_SYS_NO_WHITEOUT
 	trainerbattle_no_intro TRAINER_BLUE_CULPRIT, PresentTown_Port_Text_BlueDefeated
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq B_OUTCOME_LOST, PresentTown_Port_EventScript_BlueDefeat
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, PresentTown_Port_EventScript_BlueDefeat
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_IKnewItWasYou
 	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueIHadItTheWholeTime
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Port_Text_LookerAhARivalry
@@ -402,6 +405,7 @@ PresentTown_Port_EventScript_BlueCulpritQuest::
 	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueUghFine
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_BLUE
 	questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT
+	clearflag FLAG_SYS_NO_WHITEOUT
 	release
 	end
 
@@ -425,11 +429,12 @@ PresentTown_Port_EventScript_BlueDefeat::
 	closemessage
 	applymovement LOCALID_BLUE, Common_Movement_FaceOriginalDirection
 	waitmovement 0
+	clearflag FLAG_SYS_NO_WHITEOUT
 	release
 	end
 
 PresentTown_Port_EventScript_BluePostQuest::
-	goto_if_eq VAR_CHOOSE_CULPRIT, 0, PresentTown_Port_EventScript_BluePostQuestCulprit
+	goto_if_eq VAR_CHOOSE_CULPRIT, 0, PresentTown_Port_EventScript_BlueCulpritPostQuest
 	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueGetOffMyBack
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Port_Text_LookerSorry
 	closemessage
@@ -438,7 +443,7 @@ PresentTown_Port_EventScript_BluePostQuest::
 	release
 	end
 	
-PresentTown_Port_EventScript_BluePostQuestCulprit::
+PresentTown_Port_EventScript_BlueCulpritPostQuest::
 	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueYouHappy
 	speak LOCALID_PLAYER, VAR_0x8005, Name_Looker, PresentTown_Port_Text_LookerICanLetYouOffTheHook
 	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueUgh
