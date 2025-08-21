@@ -16440,13 +16440,13 @@ Loudred
 Level: 35
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-=== TRAINER_FERNANDO_3 ===
-Name: FERNANDO
-Class: Guitarist
-Pic: Guitarist
+=== TRAINER_BLUE ===
+Name: Blue
+Class: Rival
+Pic: Blue
 Gender: Male
-Music: Intense
-Double Battle: No
+Music: Male
+Double Battle: Yes
 AI: Check Bad Move
 
 Electrike
@@ -16461,13 +16461,13 @@ Loudred
 Level: 37
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-=== TRAINER_FERNANDO_4 ===
-Name: FERNANDO
-Class: Guitarist
-Pic: Guitarist
+=== TRAINER_BLUE_CULPRIT ===
+Name: Blue
+Class: Rival
+Pic: Blue
 Gender: Male
-Music: Intense
-Double Battle: No
+Music: Male
+Double Battle: Yes
 AI: Check Bad Move
 
 Manectric
@@ -16482,13 +16482,13 @@ Loudred
 Level: 39
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-=== TRAINER_FERNANDO_5 ===
-Name: FERNANDO
-Class: Guitarist
-Pic: Guitarist
-Gender: Male
-Music: Intense
-Double Battle: No
+=== TRAINER_MAY ===
+Name: May
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: Yes
 AI: Check Bad Move
 
 Manectric
@@ -16503,13 +16503,13 @@ Exploud
 Level: 41
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-=== TRAINER_SAWYER_2 ===
-Name: SAWYER
-Class: Hiker
-Pic: Hiker
-Gender: Male
-Music: Hiker
-Double Battle: No
+=== TRAINER_MAY_CULPRIT ===
+Name: May
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: Yes
 AI: Basic Trainer
 
 Geodude
@@ -16520,13 +16520,13 @@ Numel
 Level: 26
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-=== TRAINER_SAWYER_3 ===
-Name: SAWYER
-Class: Hiker
-Pic: Hiker
-Gender: Male
-Music: Hiker
-Double Battle: No
+=== TRAINER_LEAF ===
+Name: Leaf
+Class: Rival
+Pic: Leaf
+Gender: Female
+Music: Female
+Double Battle: Yes
 AI: Basic Trainer
 
 Machop
@@ -16541,13 +16541,13 @@ Graveler
 Level: 28
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-=== TRAINER_SAWYER_4 ===
-Name: SAWYER
-Class: Hiker
-Pic: Hiker
-Gender: Male
-Music: Hiker
-Double Battle: No
+=== TRAINER_LEAF_CULPRIT ===
+Name: Leaf
+Class: Rival
+Pic: Leaf
+Gender: Female
+Music: Female
+Double Battle: Yes
 AI: Basic Trainer
 
 Machop
@@ -16562,13 +16562,13 @@ Graveler
 Level: 30
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-=== TRAINER_SAWYER_5 ===
-Name: SAWYER
-Class: Hiker
-Pic: Hiker
-Gender: Male
-Music: Hiker
-Double Battle: No
+=== TRAINER_BW_ACE_TRAINER ===
+Name: Katerina
+Class: Cooltrainer
+Pic: BW Ace Trainer F
+Gender: Female
+Music: Female
+Double Battle: Yes
 AI: Basic Trainer
 
 Machoke
@@ -16583,13 +16583,13 @@ Golem
 Level: 33
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-=== TRAINER_GABRIELLE_2 ===
-Name: GABRIELLE
-Class: Pkmn Breeder
-Pic: Pokemon Breeder F
+=== TRAINER_BW_ACE_TRAINER_CULPRIT ===
+Name: Katerina
+Class: Cooltrainer
+Pic: BW Ace Trainer F
 Gender: Female
 Music: Female
-Double Battle: No
+Double Battle: Yes
 AI: Check Bad Move
 
 Skitty
@@ -16616,13 +16616,13 @@ Taillow
 Level: 31
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-=== TRAINER_GABRIELLE_3 ===
-Name: GABRIELLE
-Class: Pkmn Breeder
-Pic: Pokemon Breeder F
-Gender: Female
-Music: Female
-Double Battle: No
+=== TRAINER_YOUNGSTER ===
+Name: Hayden
+Class: Youngster
+Pic: Youngster New
+Gender: Male
+Music: Male
+Double Battle: Yes
 AI: Check Bad Move
 
 Skitty
@@ -16649,13 +16649,13 @@ Taillow
 Level: 33
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-=== TRAINER_GABRIELLE_4 ===
-Name: GABRIELLE
-Class: Pkmn Breeder
-Pic: Pokemon Breeder F
-Gender: Female
-Music: Female
-Double Battle: No
+=== TRAINER_YOUNGSTER_CULPRIT ===
+Name: Hayden
+Class: Youngster
+Pic: Youngster New
+Gender: Male
+Music: Male
+Double Battle: Yes
 AI: Check Bad Move
 
 Delcatty
@@ -16909,7 +16909,7 @@ Charmander
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_LEAF ===
+=== TRAINER_UNUSED ===
 Name: LEAF
 Class: Rival
 Pic: Leaf

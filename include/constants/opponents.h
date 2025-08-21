@@ -836,16 +836,16 @@
 #define TRAINER_CRISTIN_4                   830
 #define TRAINER_CRISTIN_5                   831
 #define TRAINER_FERNANDO_2                  832
-#define TRAINER_FERNANDO_3                  833
-#define TRAINER_FERNANDO_4                  834
-#define TRAINER_FERNANDO_5                  835
-#define TRAINER_SAWYER_2                    836
-#define TRAINER_SAWYER_3                    837
-#define TRAINER_SAWYER_4                    838
-#define TRAINER_SAWYER_5                    839
-#define TRAINER_GABRIELLE_2                 840
-#define TRAINER_GABRIELLE_3                 841
-#define TRAINER_GABRIELLE_4                 842
+#define TRAINER_BLUE                        833
+#define TRAINER_BLUE_CULPRIT                834
+#define TRAINER_MAY                         835
+#define TRAINER_MAY_CULPRIT                 836
+#define TRAINER_LEAF                        837
+#define TRAINER_LEAF_CULPRIT                838
+#define TRAINER_BW_ACE_TRAINER              839
+#define TRAINER_BW_ACE_TRAINER_CULPRIT      840
+#define TRAINER_YOUNGSTER                   841
+#define TRAINER_YOUNGSTER_CULPRIT           842
 #define TRAINER_TORN_AND_THUND              843
 #define TRAINER_TORNADUS                    844
 #define TRAINER_THUNDURUS                   845
@@ -857,7 +857,7 @@
 #define TRAINER_MARIE                       851
 #define TRAINER_PRESENT_FISHERMAN           852
 #define TRAINER_RED                         853
-#define TRAINER_LEAF                        854
+#define TRAINER_UNUSED                      854
 #define TRAINER_BRENDAN_PLACEHOLDER         855
 #define TRAINER_MAY_PLACEHOLDER             856
 

@@ -337,6 +337,216 @@ PresentTown_Port_EventScript_RanFromThundurus::
 	goto Common_EventScript_LegendaryFlewAway
 	end
 
+PresentTown_Port_EventScript_Blue::
+	lock
+	call Script_GetNPCFacingDirection
+	goto_if_unset FLAG_SYS_MAIN_GAME_START, PresentTown_Port_EventScript_BluePreGame
+	returnqueststate QUEST_FIND_THE_CULPRIT
+	case 1, PresentTown_Port_EventScript_BluePreQuest
+	case 2, PresentTown_Port_EventScript_BlueQuest
+	case 4, PresentTown_Port_EventScript_BluePostQuest
+	release
+	end
+
+PresentTown_Port_EventScript_BluePreGame::
+	faceplayer
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Port_Text_LookerWouldYouKnow
+	speak LOCALID_BLUE, VAR_FACING, Name_Blue, PresentTown_Port_Text_BluePreQuest
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Port_Text_LookerOhMyApologies
+	closemessage
+	applymovement LOCALID_BLUE, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+PresentTown_Port_EventScript_BluePreQuest::
+	faceplayer
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Port_Text_LookerToBluePreQuest
+	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BluePreQuest
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Port_Text_LookerOhMyApologies
+	closemessage
+	applymovement LOCALID_BLUE, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+PresentTown_Port_EventScript_BlueQuest::
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_BLUE
+	goto_if_eq VAR_RESULT, TRUE, PresentTown_Port_EventScript_BluePostQuest
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_YouAreUnderSuspicion
+	call_if_eq VAR_FACING, DIR_NORTH, PresentTown_Port_EventScript_BlueTurnFaceLookerNorth
+	call_if_ne VAR_FACING, DIR_NORTH, PresentTown_Port_EventScript_BlueTurnFaceLooker
+	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueImSorryWhat
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_IKnowYouDidIt
+	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueWhat
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_ComingWithMe
+	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueFine
+	goto_if_eq VAR_CHOOSE_CULPRIT, 0, PresentTown_Port_EventScript_BlueCulpritQuest
+	trainerbattle_no_intro TRAINER_BLUE, PresentTown_Port_Text_BlueDefeated
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq B_OUTCOME_LOST, PresentTown_Port_EventScript_BlueDefeat
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_BLUE
+	goto PresentTown_Port_EventScript_BluePostQuest
+	release
+	end
+
+PresentTown_Port_EventScript_BlueCulpritQuest::
+	trainerbattle_no_intro TRAINER_BLUE_CULPRIT, PresentTown_Port_Text_BlueDefeated
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq B_OUTCOME_LOST, PresentTown_Port_EventScript_BlueDefeat
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_IKnewItWasYou
+	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueIHadItTheWholeTime
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Port_Text_LookerAhARivalry
+	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueTakingMeToCityHall
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Port_Text_LookerSoLongAsYouRelease
+	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueUghFine
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_BLUE
+	questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT
+	release
+	end
+
+PresentTown_Port_EventScript_BlueTurnFaceLookerNorth::
+	playse SE_PIN
+	applymovement LOCALID_BLUE, Common_Movement_FaceDownQuestionMark
+	waitmovement 0
+	delay 50
+	return
+
+PresentTown_Port_EventScript_BlueTurnFaceLooker::
+	playse SE_PIN
+	applymovement LOCALID_BLUE, Common_Movement_FaceRightQuestionMark
+	waitmovement 0
+	delay 50
+	return
+
+PresentTown_Port_EventScript_BlueDefeat::
+	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueLayOffMe
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_Hmm
+	closemessage
+	applymovement LOCALID_BLUE, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+PresentTown_Port_EventScript_BluePostQuest::
+	goto_if_eq VAR_CHOOSE_CULPRIT, 0, PresentTown_Port_EventScript_BluePostQuestCulprit
+	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueGetOffMyBack
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Port_Text_LookerSorry
+	closemessage
+	applymovement LOCALID_BLUE, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+	
+PresentTown_Port_EventScript_BluePostQuestCulprit::
+	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueYouHappy
+	speak LOCALID_PLAYER, VAR_0x8005, Name_Looker, PresentTown_Port_Text_LookerICanLetYouOffTheHook
+	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueUgh
+	closemessage
+	applymovement LOCALID_BLUE, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+PresentTown_Port_Text_LookerWouldYouKnow:
+	.string "Hello, citizen!\p"
+	.string "I believe there is something evil afoot\n"
+	.string "regarding Team Aqua!\p"
+	.string "Young man, would you happen to know if\n"
+	.string "they have been causing trouble?$"
+
+PresentTown_Port_Text_BlueImSorryWhat:
+	.string "Huh? What are you blabbering about?$"
+
+PresentTown_Port_Text_BlueWhat:	
+	.string "Dude, I didn't do any of that…\p"
+	.string "Why are you so aggressive? Where the\n"
+	.string "heck did you even come from?$"
+
+PresentTown_Port_Text_BlueFine:
+	.string "Fine! If I can't convince you I didn't\n"
+	.string "screw with the wildlife here, then maybe\l"
+	.string "I should get you off my back the hard way!$"
+
+PresentTown_Port_Text_BlueDefeated:
+	.string "There, now can you get off my back!?\p"
+	.string "You're cramping my style!$"
+
+PresentTown_Port_Text_BlueLayOffMe:
+	.string "Lay off me, old man! I ain't doin'\n"
+	.string "anything wrong!$"
+
+PresentTown_Port_Text_BlueCulpritDefeated:
+	.string "Ugh…$"
+
+PresentTown_Port_Text_BlueGetOffMyBack:
+	.string "There, you see? I DON'T have Landorus!\n"
+	.string "Now get off my back, you blockhead!$"
+
+PresentTown_Port_Text_LookerSorry:
+	.string "My apologies! Please, enjoy your time in\n"
+	.string "Porta Bella!$"
+
+PresentTown_Port_Text_BlueIHadItTheWholeTime:
+	.string "Urgh… Okay… You happy?\n"
+	.string "I had Landorus the whole time…\p"
+	.string "I just wanted to try my hand at taking on\n"
+	.string "a legendary Pokémon, 'kay…?\p"
+	.string "That punk Red has been doing nothing but\n"
+	.string "one-up me since our adventure started…\p"
+	.string "I just wanted SOMETHING over him…$"
+
+PresentTown_Port_Text_LookerAhARivalry:
+	.string "Ah! A rivaly!\p"
+	.string "A compelling reason to try and capture\n"
+	.string "a strong Pokémon!\p"
+	.string "I remember the fires of my own youth…\p"
+
+PresentTown_Port_Text_BlueTakingMeToCityHall:
+	.string "So… Are you taking me to City Hall then…?$"
+
+PresentTown_Port_Text_LookerSoLongAsYouRelease:
+	.string "Hmm…\p"
+	.string "So long as you release Landorus back into\n"
+	.string "the wild, I would be willing to overlook\l"
+	.string "your transgression, just this once…$"
+
+PresentTown_Port_Text_BlueUghFine:
+	.string "Sigh… Guess that's the best I could ask\n"
+	.string "for…$"
+
+PresentTown_Port_Text_BlueYouHappy:
+	.string "You happy? I had Landorus the whole\n"
+	.string "time, okay?\p"
+	.string "I just wanted to try my hand at taking on\n"
+	.string "a legendary Pokémon, 'kay…?$"
+
+PresentTown_Port_Text_LookerICanLetYouOffTheHook:
+	.string "So long as Landorus is safe and around to\n"
+	.string "protect Porta Bella, I am happy!\p"
+	.string "I can let you off the hook, young man!\n"
+	.string "Just stay out of trouble!$"
+
+PresentTown_Port_Text_BlueUgh:
+	.string "Ugh… Fine…$"
+
+PresentTown_Port_Text_LookerToBluePreQuest:
+	.string "Hello, citizen.\n"
+	.string "I am on the hunt for a missing Landorus!\p"
+	.string "Would you happen to know anything about\n"
+	.string "the whereabouts of such a Pokémon?$"
+
+PresentTown_Port_Text_BluePreQuest:
+	.string "Uh, no? What are you, stupid?\n"
+	.string "I only arrived here yesterday…$"
+
+PresentTown_Port_Text_LookerOhMyApologies:
+	.string "Oh, my apologies! Please, carry on!$"
+
+PresentTown_Port_Text_BlueICanTakeAThundurus:
+	.string "Heh! I bet I could beat up that\n"
+	.string "Thundurus! Wanna see me try?$"
+
 PresentTown_Port_Text_MagikarpManYouSureYouDontWant:
 	.string "You suuuuuuure you don't want a\n"
 	.string "golden Magikarp?$"
@@ -407,3 +617,4 @@ PresentTown_Port_Text_AnabelMeetUpWithMe:
 
 Present_Gym_Text_YouReceivedMagikarp:
 	.string "You bought a golden Magikarp…!$"
+	

@@ -41056,19 +41056,19 @@ F_TRAINER_FEMALE |
         },
     },
 #line 16443
-    [DIFFICULTY_NORMAL][TRAINER_FERNANDO_3] =
+    [DIFFICULTY_NORMAL][TRAINER_BLUE] =
     {
 #line 16444
-        .trainerName = _("FERNANDO"),
+        .trainerName = _("Blue"),
 #line 16445
-        .trainerClass = TRAINER_CLASS_GUITARIST,
+        .trainerClass = TRAINER_CLASS_RIVAL,
 #line 16446
-        .trainerPic = TRAINER_PIC_GUITARIST,
+        .trainerPic = TRAINER_PIC_BLUE,
         .encounterMusic_gender =
 #line 16448
-            TRAINER_ENCOUNTER_MUSIC_INTENSE,
+            TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 16449
-        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+        .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 16450
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -41110,19 +41110,19 @@ F_TRAINER_FEMALE |
         },
     },
 #line 16464
-    [DIFFICULTY_NORMAL][TRAINER_FERNANDO_4] =
+    [DIFFICULTY_NORMAL][TRAINER_BLUE_CULPRIT] =
     {
 #line 16465
-        .trainerName = _("FERNANDO"),
+        .trainerName = _("Blue"),
 #line 16466
-        .trainerClass = TRAINER_CLASS_GUITARIST,
+        .trainerClass = TRAINER_CLASS_RIVAL,
 #line 16467
-        .trainerPic = TRAINER_PIC_GUITARIST,
+        .trainerPic = TRAINER_PIC_BLUE,
         .encounterMusic_gender =
 #line 16469
-            TRAINER_ENCOUNTER_MUSIC_INTENSE,
+            TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 16470
-        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+        .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 16471
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -41164,19 +41164,21 @@ F_TRAINER_FEMALE |
         },
     },
 #line 16485
-    [DIFFICULTY_NORMAL][TRAINER_FERNANDO_5] =
+    [DIFFICULTY_NORMAL][TRAINER_MAY] =
     {
 #line 16486
-        .trainerName = _("FERNANDO"),
+        .trainerName = _("May"),
 #line 16487
-        .trainerClass = TRAINER_CLASS_GUITARIST,
+        .trainerClass = TRAINER_CLASS_RIVAL,
 #line 16488
-        .trainerPic = TRAINER_PIC_GUITARIST,
+        .trainerPic = TRAINER_PIC_MAY,
         .encounterMusic_gender =
+#line 16489
+F_TRAINER_FEMALE | 
 #line 16490
-            TRAINER_ENCOUNTER_MUSIC_INTENSE,
+            TRAINER_ENCOUNTER_MUSIC_FEMALE,
 #line 16491
-        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+        .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 16492
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 3,
@@ -41218,19 +41220,21 @@ F_TRAINER_FEMALE |
         },
     },
 #line 16506
-    [DIFFICULTY_NORMAL][TRAINER_SAWYER_2] =
+    [DIFFICULTY_NORMAL][TRAINER_MAY_CULPRIT] =
     {
 #line 16507
-        .trainerName = _("SAWYER"),
+        .trainerName = _("May"),
 #line 16508
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_RIVAL,
 #line 16509
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_MAY,
         .encounterMusic_gender =
+#line 16510
+F_TRAINER_FEMALE | 
 #line 16511
-            TRAINER_ENCOUNTER_MUSIC_HIKER,
+            TRAINER_ENCOUNTER_MUSIC_FEMALE,
 #line 16512
-        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+        .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 16513
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 2,
@@ -41261,19 +41265,21 @@ F_TRAINER_FEMALE |
         },
     },
 #line 16523
-    [DIFFICULTY_NORMAL][TRAINER_SAWYER_3] =
+    [DIFFICULTY_NORMAL][TRAINER_LEAF] =
     {
 #line 16524
-        .trainerName = _("SAWYER"),
+        .trainerName = _("Leaf"),
 #line 16525
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_RIVAL,
 #line 16526
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_LEAF,
         .encounterMusic_gender =
+#line 16527
+F_TRAINER_FEMALE | 
 #line 16528
-            TRAINER_ENCOUNTER_MUSIC_HIKER,
+            TRAINER_ENCOUNTER_MUSIC_FEMALE,
 #line 16529
-        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+        .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 16530
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 3,
@@ -41315,19 +41321,21 @@ F_TRAINER_FEMALE |
         },
     },
 #line 16544
-    [DIFFICULTY_NORMAL][TRAINER_SAWYER_4] =
+    [DIFFICULTY_NORMAL][TRAINER_LEAF_CULPRIT] =
     {
 #line 16545
-        .trainerName = _("SAWYER"),
+        .trainerName = _("Leaf"),
 #line 16546
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_RIVAL,
 #line 16547
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_LEAF,
         .encounterMusic_gender =
+#line 16548
+F_TRAINER_FEMALE | 
 #line 16549
-            TRAINER_ENCOUNTER_MUSIC_HIKER,
+            TRAINER_ENCOUNTER_MUSIC_FEMALE,
 #line 16550
-        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+        .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 16551
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 3,
@@ -41369,19 +41377,21 @@ F_TRAINER_FEMALE |
         },
     },
 #line 16565
-    [DIFFICULTY_NORMAL][TRAINER_SAWYER_5] =
+    [DIFFICULTY_NORMAL][TRAINER_BW_ACE_TRAINER] =
     {
 #line 16566
-        .trainerName = _("SAWYER"),
+        .trainerName = _("Katerina"),
 #line 16567
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_COOLTRAINER,
 #line 16568
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_BW_ACE_TRAINER_F,
         .encounterMusic_gender =
+#line 16569
+F_TRAINER_FEMALE | 
 #line 16570
-            TRAINER_ENCOUNTER_MUSIC_HIKER,
+            TRAINER_ENCOUNTER_MUSIC_FEMALE,
 #line 16571
-        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+        .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 16572
         .aiFlags = AI_FLAG_BASIC_TRAINER,
         .partySize = 3,
@@ -41423,21 +41433,21 @@ F_TRAINER_FEMALE |
         },
     },
 #line 16586
-    [DIFFICULTY_NORMAL][TRAINER_GABRIELLE_2] =
+    [DIFFICULTY_NORMAL][TRAINER_BW_ACE_TRAINER_CULPRIT] =
     {
 #line 16587
-        .trainerName = _("GABRIELLE"),
+        .trainerName = _("Katerina"),
 #line 16588
-        .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
+        .trainerClass = TRAINER_CLASS_COOLTRAINER,
 #line 16589
-        .trainerPic = TRAINER_PIC_POKEMON_BREEDER_F,
+        .trainerPic = TRAINER_PIC_BW_ACE_TRAINER_F,
         .encounterMusic_gender =
 #line 16590
 F_TRAINER_FEMALE | 
 #line 16591
             TRAINER_ENCOUNTER_MUSIC_FEMALE,
 #line 16592
-        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+        .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 16593
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 6,
@@ -41512,21 +41522,19 @@ F_TRAINER_FEMALE |
         },
     },
 #line 16619
-    [DIFFICULTY_NORMAL][TRAINER_GABRIELLE_3] =
+    [DIFFICULTY_NORMAL][TRAINER_YOUNGSTER] =
     {
 #line 16620
-        .trainerName = _("GABRIELLE"),
+        .trainerName = _("Hayden"),
 #line 16621
-        .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
+        .trainerClass = TRAINER_CLASS_YOUNGSTER,
 #line 16622
-        .trainerPic = TRAINER_PIC_POKEMON_BREEDER_F,
+        .trainerPic = TRAINER_PIC_YOUNGSTER_NEW,
         .encounterMusic_gender =
-#line 16623
-F_TRAINER_FEMALE | 
 #line 16624
-            TRAINER_ENCOUNTER_MUSIC_FEMALE,
+            TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 16625
-        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+        .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 16626
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 6,
@@ -41601,21 +41609,19 @@ F_TRAINER_FEMALE |
         },
     },
 #line 16652
-    [DIFFICULTY_NORMAL][TRAINER_GABRIELLE_4] =
+    [DIFFICULTY_NORMAL][TRAINER_YOUNGSTER_CULPRIT] =
     {
 #line 16653
-        .trainerName = _("GABRIELLE"),
+        .trainerName = _("Hayden"),
 #line 16654
-        .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
+        .trainerClass = TRAINER_CLASS_YOUNGSTER,
 #line 16655
-        .trainerPic = TRAINER_PIC_POKEMON_BREEDER_F,
+        .trainerPic = TRAINER_PIC_YOUNGSTER_NEW,
         .encounterMusic_gender =
-#line 16656
-F_TRAINER_FEMALE | 
 #line 16657
-            TRAINER_ENCOUNTER_MUSIC_FEMALE,
+            TRAINER_ENCOUNTER_MUSIC_MALE,
 #line 16658
-        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+        .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 16659
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
         .partySize = 6,
@@ -42274,7 +42280,7 @@ F_TRAINER_FEMALE |
         },
     },
 #line 16912
-    [DIFFICULTY_NORMAL][TRAINER_LEAF] =
+    [DIFFICULTY_NORMAL][TRAINER_UNUSED] =
     {
 #line 16913
         .trainerName = _("LEAF"),
