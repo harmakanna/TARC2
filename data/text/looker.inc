@@ -139,6 +139,10 @@ Looker_Text_Asleep:
 Looker_Text_Uhh:
     .string "Uhh…$"
     
+Looker_Text_UhhOkay:
+    .string "Uhh…\p"
+    .string "Sure!$"
+    
 Looker_Text_Dots:
     .string "…$"
 

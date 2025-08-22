@@ -2698,7 +2698,7 @@ void HandleQuestIconForSingleObjectEvent(struct ObjectEvent *objectEvent, u32 ob
 					return;
 				break;	
 			case OBJ_EVENT_GFX_BW_ACE_TRAINER_F:
-				if(!IsSubquestCompletedState(SUB_QUEST_DEFEAT_COOLTRAINER) && IsQuestActiveState(questId))
+				if(!IsSubquestCompletedState(SUB_QUEST_DEFEAT_ACE_TRAINER) && IsQuestActiveState(questId))
 				{
 					SpawnQuestIconForObject(objectEvent, objectEventId);
 					return;

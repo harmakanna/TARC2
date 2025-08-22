@@ -404,6 +404,7 @@ PresentTown_Port_EventScript_BlueCulpritQuest::
 	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueTakingMeToCityHall
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Port_Text_LookerSoLongAsYouRelease
 	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueUghFine
+	closemessage
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_BLUE
 	questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT
 	clearflag FLAG_SYS_NO_WHITEOUT
@@ -543,7 +544,7 @@ PresentTown_Port_Text_LookerToBluePreQuest:
 	.string "the whereabouts of such a Pokémon?$"
 
 PresentTown_Port_Text_BluePreQuest:
-	.string "Uh, no? What are you, stupid?\n"
+	.string "Uh, no? I don't live here.\n"
 	.string "I only arrived here yesterday…$"
 
 PresentTown_Port_Text_LookerOhMyApologies:

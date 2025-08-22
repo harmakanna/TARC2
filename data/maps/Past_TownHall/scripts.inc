@@ -306,7 +306,7 @@ Past_TownHall_Text_LostGirl:
 	.string "when our peace and posterity--$"
 
 Past_TownHall_Text_CamillaProsperity:
-	.string "Camilla: Prosperity, not posterity!$"
+	.string "Prosperity, not posterity!$"
 
 Past_TownHall_Text_LostGirl2:
 	.string "posperity are messed with!\p"

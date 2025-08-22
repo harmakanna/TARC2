@@ -184,6 +184,7 @@ InsideOutside_EventScript_LeafCulpritQuest::
     speak VAR_TEMP_1, VAR_0x8005, Name_Leaf, InsideOutside_Text_LeafSad
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerIGuessItDoesntMatter
     speak VAR_TEMP_1, VAR_0x8005, Name_Leaf, Looker_Text_Dots
+    closemessage
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_LEAF
 	questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT
 	clearflag FLAG_SYS_NO_WHITEOUT
@@ -350,8 +351,235 @@ InsideOutside_EventScript_YoungsterCulpritPostQuest::
     end
 
 InsideOutside_EventScript_AceTrainer::
+    lock
+	call Script_GetNPCFacingDirection
+	goto_if_unset FLAG_SYS_MAIN_GAME_START, InsideOutside_EventScript_AceTrainerPreGame
+	returnqueststate QUEST_FIND_THE_CULPRIT
+    switch VAR_RESULT
+	case 1, InsideOutside_EventScript_AceTrainerPreQuest
+	case 2, InsideOutside_EventScript_AceTrainerQuest
+	case 4, InsideOutside_EventScript_AceTrainerPostQuest
     release
     end
+
+InsideOutside_EventScript_AceTrainerPreGame::
+    faceplayer
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerToAceTrainerPregame
+    speak VAR_TEMP_1, VAR_0x8005, Name_Ace_Trainer, InsideOutside_Text_AceTrainerPregame
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerISee
+    closemessage
+    release
+    end
+
+InsideOutside_EventScript_AceTrainerPreQuest::
+    faceplayer
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerToAceTrainerPrequest
+    speak VAR_TEMP_1, VAR_0x8005, Name_Ace_Trainer, InsideOutside_Text_AceTrainerPrequest
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerPleaseReport
+    closemessage
+    release
+    end
+
+InsideOutside_EventScript_AceTrainerQuest::
+    subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_ACE_TRAINER
+    goto_if_eq VAR_RESULT, TRUE, InsideOutside_EventScript_AceTrainerPostQuest
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_YouAreUnderSuspicion
+    call_if_eq VAR_FACING, DIR_NORTH, InsideOutside_EventScript_TargetTurnFaceLookerNorth
+    call_if_eq VAR_FACING, DIR_WEST, InsideOutside_EventScript_TargetTurnFaceLookerWest
+    call_if_eq VAR_FACING, DIR_SOUTH, InsideOutside_EventScript_TargetTurnFaceLookerSouth
+    call_if_eq VAR_FACING, DIR_EAST, InsideOutside_EventScript_TargetTurnFaceLookerEast
+    speak VAR_TEMP_1, VAR_0x8005, Name_Ace_Trainer, InsideOutside_Text_AceTrainerImSorryWhat
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_IKnowYouDidIt
+    speak VAR_TEMP_1, VAR_0x8005, Name_Ace_Trainer, InsideOutside_Text_AceTrainerOhBrother
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_ComingWithMe
+    speak VAR_TEMP_1, VAR_0x8005, Name_Ace_Trainer, InsideOutside_Text_AceTrainerLetsJustBattle
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_UhhOkay
+    goto_if_eq VAR_CHOOSE_CULPRIT, 3, InsideOutside_EventScript_AceTrainerCulpritQuest
+    setflag FLAG_SYS_NO_WHITEOUT
+    trainerbattle_no_intro TRAINER_BW_ACE_TRAINER, InsideOutside_Text_AceTrainerDefeated
+    specialvar VAR_RESULT, GetBattleOutcome
+    goto_if_eq VAR_RESULT, B_OUTCOME_LOST, InsideOutside_EventScript_AceTrainerDefeat
+    subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_ACE_TRAINER
+    clearflag FLAG_SYS_NO_WHITEOUT
+    goto InsideOutside_EventScript_AceTrainerPostQuest
+    release
+    end
+
+InsideOutside_EventScript_AceTrainerCulpritQuest::
+    setflag FLAG_SYS_NO_WHITEOUT
+    trainerbattle_no_intro TRAINER_BW_ACE_TRAINER_CULPRIT, InsideOutside_Text_AceTrainerCulpritDefeated
+    specialvar VAR_RESULT, GetBattleOutcome
+    goto_if_eq VAR_RESULT, B_OUTCOME_LOST, InsideOutside_EventScript_AceTrainerDefeat
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_IKnewItWasYou
+    speak VAR_TEMP_1, VAR_0x8005, Name_Ace_Trainer, InsideOutside_Text_AceTrainerYouGotLucky
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerUmUhh
+    speak VAR_TEMP_1, VAR_0x8005, Name_Ace_Trainer, InsideOutside_Text_AceTrainerWhatever
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerThatSoundsSystemic
+    speak VAR_TEMP_1, VAR_0x8005, Name_Ace_Trainer, InsideOutside_Text_AceTrainerLetsGetItOverWith
+    closemessage
+    subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_ACE_TRAINER
+    questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT
+    clearflag FLAG_SYS_NO_WHITEOUT
+    release
+    end
+
+InsideOutside_EventScript_AceTrainerDefeat::
+    speak VAR_TEMP_1, VAR_0x8005, Name_Ace_Trainer, InsideOutside_Text_AceTrainerSigh
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerUhhIllBeBack
+    closemessage
+    clearflag FLAG_SYS_NO_WHITEOUT
+    release
+    end
+
+InsideOutside_EventScript_AceTrainerPostQuest::
+    goto_if_eq VAR_CHOOSE_CULPRIT, 3, InsideOutside_EventScript_AceTrainerCulpritPostQuest
+    speak VAR_TEMP_1, VAR_0x8005, Name_Ace_Trainer, InsideOutside_Text_AceTrainerThere
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerOh
+    speak VAR_TEMP_1, VAR_0x8005, Name_Ace_Trainer, InsideOutside_Text_AceTrainerThanksForWastingMyTime
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerIThink
+    speak VAR_TEMP_1, VAR_0x8005, Name_Ace_Trainer, InsideOutside_Text_AceTrainerCoolBye
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_Dots
+    closemessage
+    release
+    end
+
+InsideOutside_EventScript_AceTrainerCulpritPostQuest::
+    speak VAR_TEMP_1, VAR_0x8005, Name_Ace_Trainer, InsideOutside_Text_AceTrainerThereCulprit
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerIHopeYouLearnedYourLesson
+    speak VAR_TEMP_1, VAR_0x8005, Name_Ace_Trainer, InsideOutside_Text_AceTrainerDontYouHaveSomeoneElse
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_Uhh
+    speak VAR_TEMP_1, VAR_0x8005, Name_Ace_Trainer, InsideOutside_Text_AceTrainerCoolBye
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_Dots
+    closemessage
+    release
+    end
+
+InsideOutside_Text_AceTrainerThereCulprit:
+    .string "There, you got me…\p"
+    .string "Gonna harass me some more?$"
+
+InsideOutside_Text_LookerIHopeYouLearnedYourLesson:
+    .string "I hope you learned your lesson, young\n"
+    .string "lady! Do not mess with nature!$"
+
+InsideOutside_Text_AceTrainerDontYouHaveSomeoneElse:
+    .string "Whatever. Don't you have someone\n"
+    .string "else to annoy?$"
+
+InsideOutside_Text_AceTrainerThere:
+    .string "There, you got me…\p"
+    .string "Oh wait! No you didn't. I didn't\n"
+    .string "catch Landorus, Einstein!$"
+
+InsideOutside_Text_LookerOh:
+    .string "Oh. Well…\p"
+    .string "Thank you for your cooperation in\n"
+    .string "this investigation?$"
+
+InsideOutside_Text_AceTrainerThanksForWastingMyTime:
+    .string "Thank YOU for wasting my time!\n"
+    .string "Don't you have someone else to annoy?$"
+
+InsideOutside_Text_LookerIThink:
+    .string "…I think…?$"
+
+InsideOutside_Text_AceTrainerCoolBye:
+    .string "Cool!\p"
+    .string "Bye!$"
+
+InsideOutside_Text_AceTrainerSigh:
+    .string "Sigh… You're an officer of the law\n"
+    .string "but you can't even beat a teenager…?\p"
+    .string "Wow…$"
+
+InsideOutside_Text_LookerUhhIllBeBack:
+    .string "Uhh…\p"
+    .string "Well…\p"
+    .string "I will be back!$"
+
+InsideOutside_Text_AceTrainerYouGotLucky:
+    .string "No, you didn't, and no, it's not…\p"
+    .string "You guessed it was me and got lucky…$"
+
+InsideOutside_Text_LookerUmUhh:
+    .string "Um… Uhh…\n"
+    .string "It's…\l"
+    .string "All in the name of safety?$"
+
+InsideOutside_Text_AceTrainerWhatever:
+    .string "Whatever… I was just trying to fill\n"
+    .string "out my Pokédex for Professor Juniper…$"
+
+InsideOutside_Text_LookerThatSoundsSystemic:
+    .string "So you caught Landorus for a Pokédex\n"
+    .string "entry?\p"
+    .string "I guess that IS common practice for aspiring\n"
+    .string "trainers…\p"
+    .string "… … …Anyways!\n"
+    .string "That's an issue for our government to solve!\p"
+    .string "So long as you release Landorus, I can\n"
+    .string "let this minor transgression go.$"
+
+InsideOutside_Text_AceTrainerLetsGetItOverWith:
+    .string "Sure, let's just get this over with…$"
+
+InsideOutside_Text_AceTrainerDefeated:
+    .string "Sigh… Are you happy now…?$"
+
+InsideOutside_Text_AceTrainerCulpritDefeated:
+    .string "Sigh… You got me…$"
+
+InsideOutside_Text_AceTrainerImSorryWhat:
+    .string "I'm sorry…\n"
+    .string "What?$"
+
+InsideOutside_Text_AceTrainerOhBrother:
+    .string "Oh brother, you're one of THOSE kinds of\n"
+    .string "investigators, huh…\p"
+    .string "Can you like… explain why you think it's\n"
+    .string "me…?$"
+
+InsideOutside_Text_AceTrainerLetsJustBattle:
+    .string "Man…\p"
+    .string "Let's just setting this with a battle…\n"
+    .string "It'll save both of us time…$"
+
+InsideOutside_Text_LookerToAceTrainerPrequest:
+    .string "Good afternoon, young lady!\p"
+    .string "I am investigating the recent disappearance\n"
+    .string "of a local legend, Landorus!\p"
+    .string "Would you happen to have any leads on its\n"
+    .string "whereabouts?$"
+
+InsideOutside_Text_AceTrainerPrequest:
+    .string "I've got nothing.$"
+
+InsideOutside_Text_LookerPleaseReport:
+    .string "Oh, okay.\p"
+    .string "Well…\p"
+    .string "Please report any suspicious activity\n"
+    .string "you may notice to City Hall!$"
+
+InsideOutside_Text_LookerToAceTrainerPregame:
+    .string "Good afternoon!\p"
+    .string "I am on the prowl for any information\n"
+    .string "regarding Team Aqua's recent activity in\n"
+    .string "Porta Bella!\p"
+    .string "Would you be able to help me in my\n"
+    .string "pursuit of knowledge?$"
+
+InsideOutside_Text_AceTrainerPregame:
+    .string "My apologies, I've not been in the city\n"
+    .string "for very long. You're going to have to\l"
+    .string "ask somebody else.$"
+
+InsideOutside_Text_LookerISee:
+    .string "I see.\p"
+    .string "Well, if you learn anything about Team\n"
+    .string "Aqua, please report that information to\l"
+    .string "City Hall!\p"
+    .string "It is imperative they do not disrupt the\n"
+    .string "peace of the region again!$"
 
 InsideOutside_Text_YoungsterImSorryPostQuest:
     .string "I'm sorry, sir…\p"
