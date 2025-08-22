@@ -64,7 +64,7 @@ InsideOutside_EventScript_Gentleman::
     faceplayer
     call Script_GetNPCFacingDirection
     speak VAR_TEMP_1, VAR_0x8005, Name_Gentleman, InsideOutside_Text_GentlemanNiceHavingMoney
-    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerTextIndeedItIs
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerIndeedItIs
     speak VAR_TEMP_1, VAR_0x8005, Name_Gentleman, InsideOutside_Text_GentlemanIndeed
     closemessage
     applymovement VAR_TEMP_1, Common_Movement_FaceOriginalDirection
@@ -263,9 +263,200 @@ InsideOutside_EventScript_Youngster::
 	release
     end
 
+InsideOutside_EventScript_YoungsterPreGame::
+    faceplayer
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerToYoungsterPregame
+    speak VAR_TEMP_1, VAR_0x8005, Name_Youngster, InsideOutside_Text_YoungsterPregame
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerIConcur
+    closemessage
+    release
+    end
+
+InsideOutside_EventScript_YoungsterPreQuest::
+    faceplayer
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerToYoungsterPrequest
+    speak VAR_TEMP_1, VAR_0x8005, Name_Youngster, InsideOutside_Text_YoungsterPrequest
+    returnqueststate QUEST_INTERROGATE_MATT
+    goto_if_eq VAR_RESULT, 4, InsideOutside_EventScript_LookerDots
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerIConcur
+    closemessage
+    release
+    end
+
+InsideOutside_EventScript_YoungsterQuest::
+    subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_YOUNGSTER
+    goto_if_eq VAR_RESULT, TRUE, InsideOutside_EventScript_YoungsterPostQuest
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_YouAreUnderSuspicion
+    call_if_eq VAR_FACING, DIR_NORTH, InsideOutside_EventScript_TargetTurnFaceLookerNorth
+    call_if_eq VAR_FACING, DIR_WEST, InsideOutside_EventScript_TargetTurnFaceLookerWest
+    call_if_eq VAR_FACING, DIR_SOUTH, InsideOutside_EventScript_TargetTurnFaceLookerSouth
+    call_if_eq VAR_FACING, DIR_EAST, InsideOutside_EventScript_TargetTurnFaceLookerEast
+    speak VAR_TEMP_1, VAR_0x8005, Name_Youngster, InsideOutside_Text_YoungsterHuh
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_IKnowYouDidIt
+    speak VAR_TEMP_1, VAR_0x8005, Name_Youngster, InsideOutside_Text_YoungsterWrongPerson
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_ComingWithMe
+    speak VAR_TEMP_1, VAR_0x8005, Name_Youngster, InsideOutside_Text_YoungsterSomebodyHelp
+    goto_if_eq VAR_CHOOSE_CULPRIT, 4, InsideOutside_EventScript_YoungsterCulpritQuest
+    setflag FLAG_SYS_NO_WHITEOUT
+    trainerbattle_no_intro TRAINER_YOUNGSTER, InsideOutside_Text_YoungsterAhh
+    specialvar VAR_RESULT, GetBattleOutcome
+    goto_if_eq VAR_RESULT, B_OUTCOME_LOST, InsideOutside_EventScript_YoungsterDefeat
+    subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_YOUNGSTER
+    clearflag FLAG_SYS_NO_WHITEOUT
+    goto InsideOutside_EventScript_YoungsterPostQuest
+    release
+    end
+
+InsideOutside_EventScript_YoungsterCulpritQuest::
+    setflag FLAG_SYS_NO_WHITEOUT
+    trainerbattle_no_intro TRAINER_YOUNGSTER_CULPRIT, InsideOutside_Text_YoungsterAhh
+    specialvar VAR_RESULT, GetBattleOutcome
+    goto_if_eq VAR_RESULT, B_OUTCOME_LOST, InsideOutside_EventScript_YoungsterDefeat
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_IKnewItWasYou
+    speak VAR_TEMP_1, VAR_0x8005, Name_Youngster, InsideOutside_Text_YoungsterImSorry
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerAhaStatus
+    speak VAR_TEMP_1, VAR_0x8005, Name_Youngster, InsideOutside_Text_YoungsterOkay
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerComeWithMe
+    closemessage
+    subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_YOUNGSTER
+    questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT
+    clearflag FLAG_SYS_NO_WHITEOUT
+    release
+    end
+
+InsideOutside_EventScript_YoungsterDefeat::
+    speak VAR_TEMP_1, VAR_0x8005, Name_Youngster, InsideOutside_Text_YoungsterWierdo
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerNotOffTheHook
+    closemessage
+    clearflag FLAG_SYS_NO_WHITEOUT
+    release
+    end
+
+InsideOutside_EventScript_YoungsterPostQuest::
+    goto_if_eq InsideOutside_EventScript_YoungsterCulpritPostQuest
+    speak VAR_TEMP_1, VAR_0x8005, Name_Youngster, InsideOutside_Text_YoungsterAhh
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerOffTheHook
+    speak VAR_TEMP_1, VAR_0x8005, Name_Youngster, InsideOutside_Text_YoungsterGetAwayFromMe
+    closemessage
+    release
+    end
+    
+InsideOutside_EventScript_YoungsterCulpritPostQuest::
+    speak VAR_TEMP_1, VAR_0x8005, Name_Youngster, InsideOutside_Text_YoungsterImSorryPostQuest
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerNoWorries
+    speak VAR_TEMP_1, VAR_0x8005, Name_Youngster, InsideOutside_Text_YoungsterUhh
+    closemessage
+    release
+    end
+
 InsideOutside_EventScript_AceTrainer::
     release
     end
+
+InsideOutside_Text_YoungsterImSorryPostQuest:
+    .string "I'm sorry, sir…\p"
+    .string "I won't try to catch legendary Pokémon\n"
+    .string "any more…$"
+
+InsideOutside_Text_LookerNoWorries:
+    .string "Not a problem, young man!\p"
+    .string "Remember, material possession will never\n"
+    .string "truly satisfy your psychological needs!$"
+    
+InsideOutside_Text_YoungsterUhh:
+    .string "Uhh… okay?$"
+
+InsideOutside_Text_YoungsterImSorry:
+    .string "Waaaaah! I'm sorry, sir!\p"
+    .string "I didn't know catching Landorus would throw\n"
+    .string "the weather out of whack!\p"
+    .string "I just wanted to show my friends at home how\n"
+    .string "cool I was by catching something really\l"
+    .string "strong…$"
+
+InsideOutside_Text_LookerAhaStatus:
+    .string "Aha! So you wanted Landorus as a status\n"
+    .string "symbol to boost your ego!\p"
+    .string "Well, I remember how much that mattered\n"
+    .string "in my younger years…\p"
+    .string "So long as you release Landorus back into\n"
+    .string "the wild, I am willing to overlook your\l"
+    .string "small transgression!$"
+
+InsideOutside_Text_YoungsterOkay:
+    .string "Okay, sir…$"
+
+InsideOutside_Text_LookerComeWithMe:
+    .string "Wonderful!\n"
+    .string "Come with me, young lad!$"
+
+InsideOutside_Text_YoungsterHuh:
+    .string "Wait, huh?\p"
+    .string "Gee sir, I think you have the wrong guy!\p"
+    .string "Isn't that Pokémon supposed to be really\n"
+    .string "powerful?\p"
+    .string "I can't catch something like that!$"
+    
+InsideOutside_Text_YoungsterWrongPerson:
+    .string "What the heck!?\p"
+    .string "Shut up, I didn't do anything bad!$"
+
+InsideOutside_Text_YoungsterSomebodyHelp:
+    .string "Aaaaaaaah! Get away from me!\n"
+    .string "Somebody, help!$"
+
+InsideOutside_Text_YoungsterAhh:
+    .string "Aaaahhhhhh!$"
+
+InsideOutside_Text_YoungsterWierdo:
+    .string "Get away from me, you freak!$"
+
+InsideOutside_Text_LookerNotOffTheHook:
+    .string "You're not off the hook yet, young\n"
+    .string "man! I will be back!$"
+
+InsideOutside_Text_LookerOffTheHook:
+    .string "Huh.\p"
+    .string "I suppose you did not catch Landorus.\p"
+    .string "You're off the hook then! My apologies for\n"
+    .string "the accusation.$"
+
+InsideOutside_Text_YoungsterGetAwayFromMe:
+    .string "Get away from me!$"
+
+InsideOutside_Text_LookerToYoungsterPrequest:
+    .string "Hello, young lad!\p"
+    .string "I am investigating the cause of a\n"
+    .string "particular Pokémon's disappearance, a\l"
+    .string "Landorus, from the local forest!\p"
+    .string "Tell me, would you happen to have any\n"
+    .string "information on the matter?$"
+
+InsideOutside_Text_YoungsterPrequest:
+    .string "No can do, sir! I haven't been here\n"
+    .string "very long!\p"
+    .string "If anything, I bet it's those evil Team\n"
+    .string "Aqua thugs messing with the wildlife\l"
+    .string "again!\p"
+    .string "They're never up to any good!$"
+    
+InsideOutside_Text_LookerToYoungsterPregame:
+    .string "Hello, citizen!\p"
+    .string "I am investigating Team Aqua for any\n"
+    .string "suspicious activity they may or may\l"
+    .string "not be partaking in!\p"
+    .string "Tell me, would you happen to have any\n"
+    .string "information on the matter?$"
+
+InsideOutside_Text_YoungsterPregame:
+    .string "Sorry, sir! I only just arrived here\n"
+    .string "the other day!\p"
+    .string "I didn't know Team Aqua set up here, I\n"
+    .string "don't trust them one bit!$"
+
+InsideOutside_Text_LookerIConcur:
+    .string "I concur! Young lad, we are of the same\n"
+    .string "mind on this!$"
 
 InsideOutside_Text_LookerSoWhyDidYouDoIt:
     .string "So! Why did you do it?\p"
@@ -275,8 +466,8 @@ InsideOutside_Text_LookerSoWhyDidYouDoIt:
 InsideOutside_Text_LookerIGuessItDoesntMatter:
     .string "…I guess it doesn't matter why!\p"
     .string "Hmm… I would be willing to overlook your\n"
-    .string "transgression if you come with me and release\l"
-    .string "Landorus back into the forest!$"
+    .string "transgression if you come with me and\l"
+    .string "release Landorus back into the forest!$"
 
 InsideOutside_Text_LookerIllTakeThatAsAYes:
     .string "… … …\n"
@@ -338,7 +529,7 @@ InsideOutside_Text_GentlemanNiceHavingMoney:
     .string "whenever we want!\p"
     .string "Sir, don't you think that's nice?$"
 
-InsideOutside_Text_LookerTextIndeedItIs:
+InsideOutside_Text_LookerIndeedItIs:
     .string "Indeed it is.$"
 
 InsideOutside_Text_GentlemanIndeed:
@@ -348,9 +539,9 @@ InsideOutside_Text_GentlemanIndeed:
 InsideOutside_Text_AngryManAngry:
     .string "This is outrageous!\p"
     .string "Team Aqua is menacing our wildlife!\p"
-    .string "Have you heard? They're even turning\n"
-    .string "the local Clamperl into Clamperl\l"
-    .string "Chowder! How despicable!$"
+    .string "Have you heard? They're turning the\n"
+    .string "local Clamperl into Clamperl Chowder!\p"
+    .string "How despicable!$"
 
 InsideOutside_Text_LookerTroubling:
     .string "That is rather troubling…$"
@@ -369,8 +560,5 @@ InsideOutside_Text_AngryManReally:
     .string "Well I'll be…$"
 
 InsideOutside_Text_AngryManCuteName:
-    .string "… … …\n"
-    .string "… … …\p"
-    .string "… … …\n"
-    .string "… … …\p"
+    .string "You know…\p"
     .string "Chowder's kind of a cute name…$"
