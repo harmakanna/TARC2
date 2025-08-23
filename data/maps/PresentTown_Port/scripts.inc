@@ -456,7 +456,9 @@ PresentTown_Port_EventScript_BlueCulpritPostQuest::
 	end
 
 PresentTown_Port_Text_LookerWouldYouKnow:
-	.string "Hello, citizen!\p"
+	.string "Hello, citizen.\p"
+	.string "My name…\n"
+	.string "Is Looker.\p"
 	.string "I believe there is something evil afoot\n"
 	.string "regarding Team Aqua!\p"
 	.string "Young man, would you happen to know if\n"

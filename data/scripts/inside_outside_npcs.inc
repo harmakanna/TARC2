@@ -561,7 +561,9 @@ InsideOutside_Text_LookerPleaseReport:
     .string "you may notice to City Hall!$"
 
 InsideOutside_Text_LookerToAceTrainerPregame:
-    .string "Good afternoon!\p"
+    .string "Good afternoon.\p"
+	.string "My name…\n"
+	.string "Is Looker!\p"
     .string "I am on the prowl for any information\n"
     .string "regarding Team Aqua's recent activity in\n"
     .string "Porta Bella!\p"
@@ -569,9 +571,7 @@ InsideOutside_Text_LookerToAceTrainerPregame:
     .string "pursuit of knowledge?$"
 
 InsideOutside_Text_AceTrainerPregame:
-    .string "My apologies, I've not been in the city\n"
-    .string "for very long. You're going to have to\l"
-    .string "ask somebody else.$"
+    .string "No.$"
 
 InsideOutside_Text_LookerISee:
     .string "I see.\p"
@@ -653,7 +653,9 @@ InsideOutside_Text_YoungsterGetAwayFromMe:
     .string "Get away from me!$"
 
 InsideOutside_Text_LookerToYoungsterPrequest:
-    .string "Hello, young lad!\p"
+    .string "Hello, young lad.\p"
+	.string "My name…\n"
+	.string "Is Looker!\p"
     .string "I am investigating the cause of a\n"
     .string "particular Pokémon's disappearance, a\l"
     .string "Landorus, from the local forest!\p"
@@ -729,7 +731,9 @@ InsideOutside_Text_LeafSad:
     .string "… :($"
 
 InsideOutside_Text_LookerWouldYouKnow:
-	.string "Hello, citizen!\p"
+	.string "Hello, citizen.\p"
+	.string "My name…\n"
+	.string "Is Looker.\p"
 	.string "I believe there is something evil afoot\n"
 	.string "regarding Team Aqua!\p"
 	.string "Young lady, would you happen to know if\n"
