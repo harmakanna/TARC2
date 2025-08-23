@@ -20,7 +20,6 @@ Optional (but still recommended) fields for trainers:
     - Music
     - Items (Some Item / Another Item / Third Item)
             (Can also be specified with ITEM_SOME_ITEM)
-    - Battle Type (Singles / Doubles, defaults to Singles)
     - AI (Ai Flag / Another Flag / Third Flag / ...
           see "constants/battle_ai.h" for all flags)
     - Mugshot (enable Mugshots during battle transition
@@ -102,28 +101,41 @@ Music: Aqua
 Double Battle: Yes
 AI: Basic Trainer
 
-Alomomola  
-Ability: Regenerator  
-Level: 50    
-- Flip Turn  
-- Helping Hand
-- Protect  
-
-Palafin  
-Ability: Zero to Hero  
+Crobat  
+Ability: Inner Focus  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Flip Turn  
-- Ice Punch  
-
-Basculin-White-Striped @ Choice Scarf
-Ability: Rattled  
-Level: 50    
 IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Flip Turn  
+- Cross Poison  
+- Dual Wingbeat  
+- U-turn  
+- Super Fang  
+
+Mightyena  
+Ability: Intimidate  
+Level: 50  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Crunch  
-- Last Respects  
-- Psychic Fangs  
+- Snarl  
+- Foul Play  
+- Play Rough  
+
+Muk  
+Ability: Poison Touch  
+Level: 50  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Gunk Shot  
+- Fire Punch  
+- Curse  
+- Disable  
+
+Wailord @ Sitrus Berry  
+Ability: Pressure  
+Level: 50  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Water Spout  
+- Scald  
+- Heavy Slam  
+- Protect   
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_2 ===
 Name: Sarah
@@ -132,15 +144,43 @@ Pic: Aqua Grunt F
 Gender: Female
 Music: Aqua
 Double Battle: Yes
-AI: Check Bad Move
+AI: Basic Trainer
 
-Zubat
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Armaldo @ Covert Cloak  
+Ability: Swift Swim  
+Level: 50  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Rain Dance  
+- X-Scissor  
+- Rock Slide  
+- Bug Bite  
 
-Carvanha
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Beartic  
+Ability: Swift Swim  
+Level: 50  
+IVs: 15 HP / 0 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Icicle Crash  
+- Play Rough  
+- Liquidation  
+- Protect  
+
+Pincurchin @ Mental Herb  
+Ability: Electric Surge  
+Level: 50  
+IVs: 15 HP / 0 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Electroweb  
+- Rising Voltage  
+- Thunder Wave  
+- Rain Dance  
+
+Grapploct  
+Ability: Limber  
+Level: 50  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Circle Throw  
+- Waterfall  
+- Octolock  
+- Sucker Punch  
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_3 ===
 Name: Sheldon
@@ -149,15 +189,43 @@ Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: Yes
-AI: Check Bad Move
+AI: Basic Trainer
 
-Corphish
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Kingler  
+Ability: Hyper Cutter  
+Level: 50  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Crabhammer  
+- Wide Guard  
+- Body Slam  
+- Agility  
 
-Corphish
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Crabominable  
+Ability: Iron Fist  
+Level: 50  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Coaching  
+- Focus Punch  
+- Ice Punch  
+- Thunder Punch  
+
+Crawdaunt  
+Ability: Hyper Cutter  
+Level: 50  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Swords Dance  
+- Aqua Jet  
+- Lash Out  
+- Razor Shell  
+
+Clawitzer @ Expert Belt  
+Ability: Mega Launcher  
+Level: 50  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Water Pulse  
+- Aura Sphere  
+- Dragon Pulse  
+- Flash Cannon   
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_4 ===
 Name: GRUNT
@@ -555,13 +623,59 @@ Double Battle: Yes
 AI: Basic Trainer
 Mugshot: Blue
 
-Mightyena
-Level: 5
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Golisopod  
+Ability: Emergency Exit  
+Level: 50  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD  
+- First Impression  
+- Brick Break  
+- Leech Life  
+- Brick Break
 
-Golbat
-Level: 5
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Qwilfish-Hisui @ Eviolite  
+Ability: Intimidate  
+Level: 50  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Aqua Tail  
+- Toxic Spikes  
+- Lash Out  
+- Poison Jab  
+
+Gyarados  
+Ability: Intimidate  
+Level: 50  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Waterfall  
+- Dragon Tail  
+- Temper Flare  
+- Dragon Dance  
+
+Dhelmise  
+Ability: Steelworker  
+Level: 50  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Anchor Shot  
+- Gyro Ball  
+- Poltergeist  
+- Pain Split  
+
+Machamp  
+Ability: Guts  
+Level: 50  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Cross Chop  
+- Darkest Lariat  
+- Thunder Punch  
+- Coaching  
+
+Sharpedo-Mega @ Sharpedonite  
+Ability: Speed Boost  
+Level: 50  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Crunch  
+- Liquidation  
+- Psychic Fangs  
+- Super Fang  
 
 === TRAINER_ZANDER ===
 Name: ZANDER
@@ -7282,7 +7396,7 @@ Staryu
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_ALLISON ===
+=== TRAINER_LISIA ===
 Name: Lisia
 Class: Triathlete
 Pic: Swimming Triathlete F
@@ -7304,7 +7418,6 @@ Milotic @ Rocky Helmet
 Ability: Marvel Scale  
 Level: 50
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-IVs: 0 Atk  
 - Scald  
 - Icy Wind  
 - Life Dew  
@@ -7314,20 +7427,19 @@ Aurorus @ Focus Sash
 Ability: Snow Warning  
 Level: 50
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-IVs: 0 Atk  
 - Aurora Veil  
 - Earth Power  
 - Blizzard  
 - Thunderbolt  
 
-Vivillon-Fancy  
+Vivillon-Marine  
 Ability: Friend Guard  
 Level: 50
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Pollen Puff  
 - Rage Powder  
 - Sleep Powder  
-- Tailwind  
+- Protect  
 
 Glimmora  
 Ability: Toxic Debris  
