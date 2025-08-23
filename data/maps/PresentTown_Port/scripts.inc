@@ -26,6 +26,7 @@ PresentTown_Port_EventScript_RemoveThundurus::
 PresentTown_Port_OnTransition:
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetStormWeather
 	call_if_eq VAR_CUTSCENE_STATE, 0, PresentTown_Port_SetUpArrival
+	call_if_eq VAR_CUTSCENE_STATE, 14, PresentTown_Port_SetUpDeparture
 	end
 
 PresentTown_Port_SetUpArrival::
@@ -34,9 +35,27 @@ PresentTown_Port_SetUpArrival::
 	setobjectxyperm LOCALID_PORT_SHIP, 3, 9
 	return
 
+PresentTown_Port_SetUpDeparture::
+	call_if_unset FLAG_HIDE_SS_TIDAL, PresentTown_Port_DepartOnShip
+	call_if_unset FLAG_HIDE_TINY_BOAT, PresentTown_Port_DepartOnBoat
+	setobjectxyperm LOCALID_PORT_ANABEL, 10, 10
+	setobjectxyperm LOCALID_PRESENT_PORT_LUVDISC, 7, 7
+	setobjectmovementtype LOCALID_PORT_ANABEL, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectmovementtype VAR_TEMP_1, MOVEMENT_TYPE_FACE_LEFT
+	return
+
+PresentTown_Port_DepartOnShip::
+	setvar VAR_TEMP_1, LOCALID_PORT_SHIP
+	return
+
+PresentTown_Port_DepartOnBoat::
+	setvar VAR_TEMP_1, LOCALID_PORT_BOAT
+	return
+	
 PresentTown_Port_OnFrame:
 	map_script_2 VAR_CUTSCENE_STATE, 0, PresentTown_Port_EventScript_Arrival
 	map_script_2 VAR_CATCH_GENIES_QUEST, 4, PresentTown_Port_EventScript_FinishGeniesQuest
+	map_script_2 VAR_CUTSCENE_STATE, 14, PresentTown_Port_EventScript_Departure
 	.2byte 0
 
 PresentTown_Port_EventScript_FinishGeniesQuest::
@@ -48,6 +67,81 @@ PresentTown_Port_EventScript_FinishGeniesQuest::
 	addvar VAR_CATCH_GENIES_QUEST, 1
 	release
 	end
+
+PresentTown_Port_EventScript_Departure::
+	lockall
+	special SpawnCameraObject
+	applymovement LOCALID_CAMERA, PresentTown_Port_Movement_PanCameraToDeparturePanStart
+	waitmovement 0
+	applymovement LOCALID_CAMERA, PresentTown_Port_Movement_PanCameraToDeparture
+	fadescreen FADE_FROM_BLACK
+	delay 60
+	applymovement LOCALID_PLAYER, PresentTown_Port_Movement_LookerWalkToShip
+	waitmovement 0
+	delay 60
+	playse SE_EXIT
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
+	applymovement LOCALID_PORT_ANABEL, PresentTown_Port_Movement_AnabelWalkOntoShip
+	waitmovement LOCALID_PLAYER
+	playse SE_EXIT
+	applymovement LOCALID_PLAYER, Common_Movement_SetInvisible
+	waitmovement LOCALID_PORT_ANABEL
+	removeobject LOCALID_PORT_ANABEL
+	waitmovement LOCALID_CAMERA
+	playse SE_SHIP
+	delay 20
+	applymovement LOCALID_PLAYER, PresentTown_Port_Movement_EndGame
+	applymovement VAR_TEMP_1, PresentTown_Port_Movement_EndGame
+	waitmovement 0
+	delay 80
+	fadescreen FADE_TO_BLACK
+	clearflag FLAG_HIDE_PORT_BLUE
+	setvar VAR_CUTSCENE_STATE, 15
+	special RemoveCameraObject
+	special GameClear
+	releaseall
+	end
+
+@ 14 10 to 22 10
+PresentTown_Port_Movement_PanCameraToDeparturePanStart::
+	walk_faster_right	
+	walk_faster_right	
+	walk_faster_right	
+	walk_faster_right	
+	walk_faster_right	
+	walk_faster_right	
+	walk_faster_right	
+	walk_faster_right	
+	@walk_faster_right	
+	@walk_faster_right	
+	@walk_faster_right	
+	step_end
+
+PresentTown_Port_Movement_LookerWalkToShip:
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+PresentTown_Port_Movement_AnabelWalkOntoShip:
+	walk_right
+	walk_up
+	step_end
+
+@ 22 10 to 11 10
+PresentTown_Port_Movement_PanCameraToDeparture:
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	step_end
 
 PresentTown_Port_EventScript_Arrival::
 	lockall
@@ -97,6 +191,20 @@ PresentTown_Port_Movement_ShipPullIntoPort:
 	walk_right
 	walk_right
 	walk_right
+	step_end
+
+PresentTown_Port_Movement_EndGame:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
 	step_end
 
 PresentTown_Port_Movement_LookerExitShip:
@@ -374,6 +482,7 @@ PresentTown_Port_EventScript_BluePreQuest::
 PresentTown_Port_EventScript_BlueQuest::
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_BLUE
 	goto_if_eq VAR_RESULT, TRUE, PresentTown_Port_EventScript_BluePostQuest
+    playbgm MUS_PL_LOOKER, TRUE
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_YouAreUnderSuspicion
 	call_if_eq VAR_FACING, DIR_NORTH, PresentTown_Port_EventScript_BlueTurnFaceLookerNorth
 	call_if_ne VAR_FACING, DIR_NORTH, PresentTown_Port_EventScript_BlueTurnFaceLooker
@@ -389,6 +498,7 @@ PresentTown_Port_EventScript_BlueQuest::
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, PresentTown_Port_EventScript_BlueDefeat
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_BLUE
 	clearflag FLAG_SYS_NO_WHITEOUT
+	fadedefaultbgm
 	goto PresentTown_Port_EventScript_BluePostQuest
 	release
 	end
@@ -408,6 +518,12 @@ PresentTown_Port_EventScript_BlueCulpritQuest::
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_BLUE
 	questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT
 	clearflag FLAG_SYS_NO_WHITEOUT
+	clearflag FLAG_HIDE_SHRINE_BLUE
+    clearflag FLAG_HIDE_SHRINE_PROSPERITY_PRESENT_ANABEL
+    setflag FLAG_SYS_PREVENT_MAP_FADE
+	setvar VAR_CUTSCENE_STATE, 14
+    warp MAP_SHRINE_OF_PROSPERITY_PRESENT, 12, 16
+	waitstate
 	release
 	end
 
@@ -429,6 +545,7 @@ PresentTown_Port_EventScript_BlueDefeat::
 	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueLayOffMe
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_Hmm
 	closemessage
+	fadedefaultbgm
 	applymovement LOCALID_BLUE, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	clearflag FLAG_SYS_NO_WHITEOUT

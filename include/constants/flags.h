@@ -718,7 +718,7 @@
 #define FLAG_HIDE_SHRINE_YOUNGSTER  0x29F // Unused Flag
 #define FLAG_HIDE_SHRINE_PROSPERITY_PRESENT_ANABEL  0x2A0 // Unused Flag
 #define FLAG_HIDE_PORT_BLUE  0x2A1 // Unused Flag
-#define FLAG_UNUSED_0x2A2  0x2A2 // Unused Flag
+#define FLAG_HIDE_SHRINE_PROSPERITY_PRESENT_LANDORUS  0x2A2 // Unused Flag
 #define FLAG_UNUSED_0x2A3  0x2A3 // Unused Flag
 #define FLAG_UNUSED_0x2A4  0x2A4 // Unused Flag
 #define FLAG_UNUSED_0x2A5  0x2A5 // Unused Flag

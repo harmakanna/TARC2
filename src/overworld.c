@@ -1176,6 +1176,8 @@ static bool16 IsInflitratedSpaceCenter(struct WarpData *warp)
 
 u16 GetLocationMusic(struct WarpData *warp)
 {
+    if (VarGet(VAR_CUTSCENE_STATE) == 14)
+        return MUS_DP_CANALAVE_DAY;
     if (NoMusicInSotopolisWithLegendaries(warp) == TRUE)
         return MUS_NONE;
     else if (ShouldLegendaryMusicPlayAtLocation(warp) == TRUE)

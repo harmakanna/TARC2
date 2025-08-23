@@ -152,6 +152,7 @@ InsideOutside_EventScript_LeafPreQuest::
 InsideOutside_EventScript_LeafQuest::
     subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_LEAF
     goto_if_eq VAR_RESULT, TRUE, InsideOutside_EventScript_LeafPostQuest
+    playbgm MUS_PL_LOOKER, TRUE
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_YouAreUnderSuspicion
     call_if_eq VAR_FACING, DIR_NORTH, InsideOutside_EventScript_TargetTurnFaceLookerNorth
     call_if_eq VAR_FACING, DIR_WEST, InsideOutside_EventScript_TargetTurnFaceLookerWest
@@ -169,6 +170,7 @@ InsideOutside_EventScript_LeafQuest::
     goto_if_eq VAR_RESULT, B_OUTCOME_LOST, InsideOutside_EventScript_LeafDefeat
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_LEAF
 	clearflag FLAG_SYS_NO_WHITEOUT
+    fadedefaultbgm
 	goto InsideOutside_EventScript_LeafPostQuest
     release
     end
@@ -188,6 +190,12 @@ InsideOutside_EventScript_LeafCulpritQuest::
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_LEAF
 	questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT
 	clearflag FLAG_SYS_NO_WHITEOUT
+    clearflag FLAG_HIDE_SHRINE_LEAF
+    clearflag FLAG_HIDE_SHRINE_PROSPERITY_PRESENT_ANABEL
+    setflag FLAG_SYS_PREVENT_MAP_FADE
+    setvar VAR_CUTSCENE_STATE, 14
+    warp MAP_SHRINE_OF_PROSPERITY_PRESENT, 12, 16
+    waitstate
     release
     end
 
@@ -195,6 +203,7 @@ InsideOutside_EventScript_LeafDefeat::
     speak VAR_TEMP_1, VAR_0x8005, Name_Leaf, Looker_Text_Dots
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerIllBeBack
     closemessage
+    fadedefaultbgm
     applymovement VAR_TEMP_1, Common_Movement_FaceOriginalDirection
     waitmovement 0
     clearflag FLAG_SYS_NO_WHITEOUT
@@ -287,6 +296,7 @@ InsideOutside_EventScript_YoungsterPreQuest::
 InsideOutside_EventScript_YoungsterQuest::
     subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_YOUNGSTER
     goto_if_eq VAR_RESULT, TRUE, InsideOutside_EventScript_YoungsterPostQuest
+    playbgm MUS_PL_LOOKER, TRUE
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_YouAreUnderSuspicion
     call_if_eq VAR_FACING, DIR_NORTH, InsideOutside_EventScript_TargetTurnFaceLookerNorth
     call_if_eq VAR_FACING, DIR_WEST, InsideOutside_EventScript_TargetTurnFaceLookerWest
@@ -304,6 +314,7 @@ InsideOutside_EventScript_YoungsterQuest::
     goto_if_eq VAR_RESULT, B_OUTCOME_LOST, InsideOutside_EventScript_YoungsterDefeat
     subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_YOUNGSTER
     clearflag FLAG_SYS_NO_WHITEOUT
+    fadedefaultbgm
     goto InsideOutside_EventScript_YoungsterPostQuest
     release
     end
@@ -322,6 +333,12 @@ InsideOutside_EventScript_YoungsterCulpritQuest::
     subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_YOUNGSTER
     questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT
     clearflag FLAG_SYS_NO_WHITEOUT
+    clearflag FLAG_HIDE_SHRINE_YOUNGSTER
+    clearflag FLAG_HIDE_SHRINE_PROSPERITY_PRESENT_ANABEL
+    setflag FLAG_SYS_PREVENT_MAP_FADE
+    setvar VAR_CUTSCENE_STATE, 14    
+    warp MAP_SHRINE_OF_PROSPERITY_PRESENT, 12, 16
+	waitstate
     release
     end
 
@@ -329,6 +346,7 @@ InsideOutside_EventScript_YoungsterDefeat::
     speak VAR_TEMP_1, VAR_0x8005, Name_Youngster, InsideOutside_Text_YoungsterWierdo
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerNotOffTheHook
     closemessage
+    fadedefaultbgm
     clearflag FLAG_SYS_NO_WHITEOUT
     release
     end
@@ -383,6 +401,7 @@ InsideOutside_EventScript_AceTrainerPreQuest::
 InsideOutside_EventScript_AceTrainerQuest::
     subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_ACE_TRAINER
     goto_if_eq VAR_RESULT, TRUE, InsideOutside_EventScript_AceTrainerPostQuest
+    playbgm MUS_PL_LOOKER, TRUE
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_YouAreUnderSuspicion
     call_if_eq VAR_FACING, DIR_NORTH, InsideOutside_EventScript_TargetTurnFaceLookerNorth
     call_if_eq VAR_FACING, DIR_WEST, InsideOutside_EventScript_TargetTurnFaceLookerWest
@@ -401,6 +420,7 @@ InsideOutside_EventScript_AceTrainerQuest::
     goto_if_eq VAR_RESULT, B_OUTCOME_LOST, InsideOutside_EventScript_AceTrainerDefeat
     subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_ACE_TRAINER
     clearflag FLAG_SYS_NO_WHITEOUT
+    fadedefaultbgm
     goto InsideOutside_EventScript_AceTrainerPostQuest
     release
     end
@@ -420,6 +440,12 @@ InsideOutside_EventScript_AceTrainerCulpritQuest::
     subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_ACE_TRAINER
     questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT
     clearflag FLAG_SYS_NO_WHITEOUT
+    clearflag FLAG_HIDE_SHRINE_ACE_TRAINER
+    clearflag FLAG_HIDE_SHRINE_PROSPERITY_PRESENT_ANABEL
+    setflag FLAG_SYS_PREVENT_MAP_FADE
+    setvar VAR_CUTSCENE_STATE, 14
+    warp MAP_SHRINE_OF_PROSPERITY_PRESENT, 12, 16
+	waitstate
     release
     end
 
@@ -427,6 +453,7 @@ InsideOutside_EventScript_AceTrainerDefeat::
     speak VAR_TEMP_1, VAR_0x8005, Name_Ace_Trainer, InsideOutside_Text_AceTrainerSigh
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerUhhIllBeBack
     closemessage
+    fadedefaultbgm
     clearflag FLAG_SYS_NO_WHITEOUT
     release
     end

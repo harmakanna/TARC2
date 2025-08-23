@@ -86,6 +86,7 @@
       "quest_id": 4
     },
     {
+      "local_id": "LOCALID_PORT_BOAT",
       "graphics_id": "OBJ_EVENT_GFX_MR_BRINEYS_BOAT",
       "x": 11,
       "y": 9,
@@ -112,6 +113,7 @@
       "flag": "FLAG_HIDE_PRESENT_LUVDISCS"
     },
     {
+      "local_id": "LOCALID_PRESENT_PORT_LUVDISC",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(LUVDISC)",
       "x": 7,
       "y": 8,

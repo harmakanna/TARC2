@@ -144,6 +144,9 @@ Common_Movement_SetVisibleFaceUp:
 	set_visible
 	step_end
 
+Common_Movement_SetInvisible:
+	set_invisible
+	step_end
 Common_Movement_Delay16:
 	delay_16
 	step_end

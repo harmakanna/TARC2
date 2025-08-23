@@ -227,6 +227,7 @@ Present_Cafe_EventScript_MayPreQuest::
 Present_Cafe_EventScript_MayQuest::
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_MAY
 	goto_if_eq VAR_RESULT, TRUE, Present_Cafe_EventScript_MayPostQuest
+    playbgm MUS_PL_LOOKER, TRUE
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_YouAreUnderSuspicion
 	setvar VAR_TEMP_1, LOCALID_CAFE_MAY
     call_if_eq VAR_FACING, DIR_NORTH, InsideOutside_EventScript_TargetTurnFaceLookerNorth
@@ -246,6 +247,7 @@ Present_Cafe_EventScript_MayQuest::
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_Cafe_EventScript_MayDefeat
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_MAY
 	clearflag FLAG_SYS_NO_WHITEOUT
+	fadedefaultbgm
 	goto Present_Cafe_EventScript_MayPostQuest
 	release
 	end
@@ -264,6 +266,12 @@ Present_Cafe_EventScript_MayCulpritQuest::
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_MAY
 	questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT
 	clearflag FLAG_SYS_NO_WHITEOUT
+	clearflag FLAG_HIDE_SHRINE_MAY
+    clearflag FLAG_HIDE_SHRINE_PROSPERITY_PRESENT_ANABEL
+    setflag FLAG_SYS_PREVENT_MAP_FADE
+	setvar VAR_CUTSCENE_STATE, 14
+    warp MAP_SHRINE_OF_PROSPERITY_PRESENT, 12, 16
+	waitstate
 	release
 	end
 
@@ -273,6 +281,7 @@ Present_Cafe_EventScript_MayDefeat::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Cafe_Text_LookerSurelyAnotherBattle
 	speak LOCALID_CAFE_MAY, VAR_0x8005, Name_May, Present_Cafe_Text_MaySure
 	closemessage
+	fadedefaultbgm
 	applymovement LOCALID_CAFE_MAY, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release
