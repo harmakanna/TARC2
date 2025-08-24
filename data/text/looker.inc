@@ -29,15 +29,15 @@ Looker_Text_ConsiderItDone:
 Looker_Text_YouAreUnderSuspicion:
     .string "Stop, in the name of the law!\p"
     .string "You are under suspicion of capturing\n"
-    .string "Landorus and, thus, disrupting the lives of\l"
+    .string "Landorus and disrupting the lives of\l"
     .string "people and Pokémon in Porta Bella alike!$"
 
 Looker_Text_IKnowYouDidIt:
     .string "Don't you play dumb with me!\p"
     .string "I know you were the one who went to the\n"
     .string "Shrine of Prosperity, caught Landorus,\l"
-    .string "and caused Tornadus and Thundurus to go\l"
-    .string "wild in his absense!$"
+    .string "and caused Tornadus and Thundurus to\l"
+    .string "go wild in his absense!$"
 
 Looker_Text_ComingWithMe:
     .string "You're coming with me to City Hall so\n"

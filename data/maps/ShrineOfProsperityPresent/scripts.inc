@@ -91,7 +91,7 @@ ShrineOfProsperityPresent_EventScript_Resolution::
 	waitmessage
 	waitfanfare
 	closemessage
-	delay 10
+	delay 80
 	applymovement VAR_TEMP_1, Common_Movement_WalkLeft
 	waitmovement 0
 	call_if_eq VAR_CHOOSE_CULPRIT, 0, ShrineOfProsperityPresent_EventScript_BlueBye
@@ -324,7 +324,7 @@ ShrineOfProsperityPresent_Movement_LandorusWalkToLooker:
 	walk_left
 	face_down
 	step_end
-	
+
 ShrineOfProsperityPresent_Movement_LandorusFlyOff:
 	walk_faster_left
 	walk_faster_left
@@ -814,10 +814,10 @@ ShrineOfProsperityPresent_Text_AnabelThatsThat:
 
 ShrineOfProsperityPresent_Text_LookerIndeed:
 	.string "Agreed.\p"
-	.string "I remember the next trip out of\n"
-	.string "the city was a few days for now.\p"
-	.string "Might as well make the most of the\n"
-	.string "rest of our time here, hmm…?$"
+	.string "I remember the next trip out of the\n"
+	.string "city was a few days for now.\p"
+	.string "Might as well make the most of the rest\n"
+	.string "of our time here, hmm…?$"
 
 ShrineOfProsperityPresent_Text_AnabelSoundsLikeAPlan:
 	.string "Sounds like a plan!\p"

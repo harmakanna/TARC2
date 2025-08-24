@@ -387,7 +387,7 @@ static bool8 InitHallOfFameScreen(void)
         if (!gPaletteFade.active)
         {
             SetMainCallback2(CB2_HallOfFame);
-            PlayBGM(MUS_HALL_OF_FAME);
+            //PlayBGM(MUS_HALL_OF_FAME);
             return FALSE;
         }
         break;
@@ -412,9 +412,9 @@ void CB2_DoHallOfFameScreen(void)
 {
     if (!InitHallOfFameScreen())
     {
-        u8 taskId = CreateTask(Task_Hof_InitMonData, 0);
+        u8 taskId = CreateTask(Task_Hof_InitTeamSaveData, 0);
         gTasks[taskId].tDontSaveData = FALSE;
-        AllocateHoFTeams();
+        //AllocateHoFTeams();
     }
 }
 
@@ -422,9 +422,9 @@ void CB2_DoHallOfFameScreenDontSaveData(void)
 {
     if (!InitHallOfFameScreen())
     {
-        u8 taskId = CreateTask(Task_Hof_InitMonData, 0);
+        u8 taskId = CreateTask(Task_Hof_InitTeamSaveData, 0);
         gTasks[taskId].tDontSaveData = TRUE;
-        AllocateHoFTeams();
+        //AllocateHoFTeams();
     }
 }
 
@@ -480,7 +480,7 @@ static void Task_Hof_InitTeamSaveData(u8 taskId)
     u16 i;
     struct HallofFameTeam *lastSavedTeam = gHoFSaveBuffer;
 
-    if (!gHasHallOfFameRecords)
+    /*if (!gHasHallOfFameRecords)
     {
         memset(gHoFSaveBuffer, 0, SECTOR_SIZE * NUM_HOF_SECTORS);
     }
@@ -506,7 +506,7 @@ static void Task_Hof_InitTeamSaveData(u8 taskId)
         }
         lastSavedTeam--;
     }
-    *lastSavedTeam = *sHofMonPtr;
+    *lastSavedTeam = *sHofMonPtr;*/
 
     DrawDialogueFrame(0, FALSE);
     AddTextPrinterParameterized2(0, FONT_NORMAL, gText_SavingDontTurnOffPower, 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
@@ -537,8 +537,16 @@ static void Task_Hof_TrySaveData(u8 taskId)
     else
     {
         PlaySE(SE_SAVE);
-        gTasks[taskId].func = Task_Hof_WaitToDisplayMon;
-        gTasks[taskId].tFrameCount = 32;
+        HideBg(0);
+        HideBg(1);
+        HideBg(3);
+        FreeAllWindowBuffers();
+        UnsetBgTilemapBuffer(1);
+        UnsetBgTilemapBuffer(3);
+        ResetBgsAndClearDma3BusyFlags(0);
+        DestroyTask(taskId);
+        FreeAllHoFMem();
+        StartCredits();
     }
 }
 

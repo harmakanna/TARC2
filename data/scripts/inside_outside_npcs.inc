@@ -152,6 +152,7 @@ InsideOutside_EventScript_LeafPreQuest::
 InsideOutside_EventScript_LeafQuest::
     subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_LEAF
     goto_if_eq VAR_RESULT, TRUE, InsideOutside_EventScript_LeafPostQuest
+    setflag FLAG_SYS_DISAPPEAR_QUESTS
     playbgm MUS_PL_LOOKER, TRUE
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_YouAreUnderSuspicion
     call_if_eq VAR_FACING, DIR_NORTH, InsideOutside_EventScript_TargetTurnFaceLookerNorth
@@ -169,6 +170,7 @@ InsideOutside_EventScript_LeafQuest::
     specialvar VAR_RESULT, GetBattleOutcome
     goto_if_eq VAR_RESULT, B_OUTCOME_LOST, InsideOutside_EventScript_LeafDefeat
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_LEAF
+    clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	clearflag FLAG_SYS_NO_WHITEOUT
     fadedefaultbgm
 	goto InsideOutside_EventScript_LeafPostQuest
@@ -189,6 +191,7 @@ InsideOutside_EventScript_LeafCulpritQuest::
     closemessage
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_LEAF
 	questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT
+    clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	clearflag FLAG_SYS_NO_WHITEOUT
     clearflag FLAG_HIDE_SHRINE_LEAF
     clearflag FLAG_HIDE_SHRINE_PROSPERITY_PRESENT_ANABEL
@@ -206,6 +209,7 @@ InsideOutside_EventScript_LeafDefeat::
     fadedefaultbgm
     applymovement VAR_TEMP_1, Common_Movement_FaceOriginalDirection
     waitmovement 0
+    clearflag FLAG_SYS_DISAPPEAR_QUESTS
     clearflag FLAG_SYS_NO_WHITEOUT
     release
     end
@@ -296,6 +300,7 @@ InsideOutside_EventScript_YoungsterPreQuest::
 InsideOutside_EventScript_YoungsterQuest::
     subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_YOUNGSTER
     goto_if_eq VAR_RESULT, TRUE, InsideOutside_EventScript_YoungsterPostQuest
+    setflag FLAG_SYS_DISAPPEAR_QUESTS
     playbgm MUS_PL_LOOKER, TRUE
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_YouAreUnderSuspicion
     call_if_eq VAR_FACING, DIR_NORTH, InsideOutside_EventScript_TargetTurnFaceLookerNorth
@@ -313,6 +318,7 @@ InsideOutside_EventScript_YoungsterQuest::
     specialvar VAR_RESULT, GetBattleOutcome
     goto_if_eq VAR_RESULT, B_OUTCOME_LOST, InsideOutside_EventScript_YoungsterDefeat
     subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_YOUNGSTER
+    clearflag FLAG_SYS_DISAPPEAR_QUESTS
     clearflag FLAG_SYS_NO_WHITEOUT
     fadedefaultbgm
     goto InsideOutside_EventScript_YoungsterPostQuest
@@ -333,6 +339,7 @@ InsideOutside_EventScript_YoungsterCulpritQuest::
     subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_YOUNGSTER
     questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT
     clearflag FLAG_SYS_NO_WHITEOUT
+    clearflag FLAG_SYS_DISAPPEAR_QUESTS
     clearflag FLAG_HIDE_SHRINE_YOUNGSTER
     clearflag FLAG_HIDE_SHRINE_PROSPERITY_PRESENT_ANABEL
     setflag FLAG_SYS_PREVENT_MAP_FADE
@@ -347,12 +354,13 @@ InsideOutside_EventScript_YoungsterDefeat::
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerNotOffTheHook
     closemessage
     fadedefaultbgm
+    clearflag FLAG_SYS_DISAPPEAR_QUESTS
     clearflag FLAG_SYS_NO_WHITEOUT
     release
     end
 
 InsideOutside_EventScript_YoungsterPostQuest::
-    goto_if_eq InsideOutside_EventScript_YoungsterCulpritPostQuest
+    goto_if_eq VAR_CHOOSE_CULPRIT, 3, InsideOutside_EventScript_YoungsterCulpritPostQuest
     speak VAR_TEMP_1, VAR_0x8005, Name_Youngster, InsideOutside_Text_YoungsterAhh
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerOffTheHook
     speak VAR_TEMP_1, VAR_0x8005, Name_Youngster, InsideOutside_Text_YoungsterGetAwayFromMe
@@ -401,6 +409,7 @@ InsideOutside_EventScript_AceTrainerPreQuest::
 InsideOutside_EventScript_AceTrainerQuest::
     subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_ACE_TRAINER
     goto_if_eq VAR_RESULT, TRUE, InsideOutside_EventScript_AceTrainerPostQuest
+    setflag FLAG_SYS_DISAPPEAR_QUESTS
     playbgm MUS_PL_LOOKER, TRUE
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_YouAreUnderSuspicion
     call_if_eq VAR_FACING, DIR_NORTH, InsideOutside_EventScript_TargetTurnFaceLookerNorth
@@ -420,6 +429,7 @@ InsideOutside_EventScript_AceTrainerQuest::
     goto_if_eq VAR_RESULT, B_OUTCOME_LOST, InsideOutside_EventScript_AceTrainerDefeat
     subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_ACE_TRAINER
     clearflag FLAG_SYS_NO_WHITEOUT
+    clearflag FLAG_SYS_DISAPPEAR_QUESTS
     fadedefaultbgm
     goto InsideOutside_EventScript_AceTrainerPostQuest
     release
@@ -442,6 +452,7 @@ InsideOutside_EventScript_AceTrainerCulpritQuest::
     clearflag FLAG_SYS_NO_WHITEOUT
     clearflag FLAG_HIDE_SHRINE_ACE_TRAINER
     clearflag FLAG_HIDE_SHRINE_PROSPERITY_PRESENT_ANABEL
+    clearflag FLAG_SYS_DISAPPEAR_QUESTS
     setflag FLAG_SYS_PREVENT_MAP_FADE
     setvar VAR_CUTSCENE_STATE, 14
     warp MAP_SHRINE_OF_PROSPERITY_PRESENT, 12, 16
@@ -454,6 +465,7 @@ InsideOutside_EventScript_AceTrainerDefeat::
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerUhhIllBeBack
     closemessage
     fadedefaultbgm
+    clearflag FLAG_SYS_DISAPPEAR_QUESTS
     clearflag FLAG_SYS_NO_WHITEOUT
     release
     end
@@ -648,8 +660,8 @@ InsideOutside_Text_LookerComeWithMe:
 InsideOutside_Text_YoungsterHuh:
     .string "Wait, huh?\p"
     .string "Gee sir, I think you have the wrong guy!\p"
-    .string "Isn't that Pokémon supposed to be really\n"
-    .string "powerful?\p"
+    .string "Isn't that Pokémon supposed to be\n"
+    .string "really powerful?\p"
     .string "I can't catch something like that!$"
     
 InsideOutside_Text_YoungsterWrongPerson:
@@ -673,8 +685,8 @@ InsideOutside_Text_LookerNotOffTheHook:
 InsideOutside_Text_LookerOffTheHook:
     .string "Huh.\p"
     .string "I suppose you did not catch Landorus.\p"
-    .string "You're off the hook then! My apologies for\n"
-    .string "the accusation.$"
+    .string "You're off the hook then! My apologies\n"
+    .string "for the accusation.$"
 
 InsideOutside_Text_YoungsterGetAwayFromMe:
     .string "Get away from me!$"

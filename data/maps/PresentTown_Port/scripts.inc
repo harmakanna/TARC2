@@ -96,9 +96,14 @@ PresentTown_Port_EventScript_Departure::
 	delay 80
 	fadescreen FADE_TO_BLACK
 	clearflag FLAG_HIDE_PORT_BLUE
+	clearflag FLAG_SYS_PREVENT_MAP_FADE
 	setvar VAR_CUTSCENE_STATE, 15
 	special RemoveCameraObject
+	delay 120
+	setrespawn HEAL_LOCATION_PRESENT
+	special SetChampionSaveWarp
 	special GameClear
+	waitstate
 	releaseall
 	end
 
@@ -482,6 +487,7 @@ PresentTown_Port_EventScript_BluePreQuest::
 PresentTown_Port_EventScript_BlueQuest::
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_BLUE
 	goto_if_eq VAR_RESULT, TRUE, PresentTown_Port_EventScript_BluePostQuest
+    setflag FLAG_SYS_DISAPPEAR_QUESTS
     playbgm MUS_PL_LOOKER, TRUE
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_YouAreUnderSuspicion
 	call_if_eq VAR_FACING, DIR_NORTH, PresentTown_Port_EventScript_BlueTurnFaceLookerNorth
@@ -497,6 +503,7 @@ PresentTown_Port_EventScript_BlueQuest::
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, PresentTown_Port_EventScript_BlueDefeat
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_BLUE
+    clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	clearflag FLAG_SYS_NO_WHITEOUT
 	fadedefaultbgm
 	goto PresentTown_Port_EventScript_BluePostQuest
@@ -505,7 +512,7 @@ PresentTown_Port_EventScript_BlueQuest::
 
 PresentTown_Port_EventScript_BlueCulpritQuest::
 	setflag FLAG_SYS_NO_WHITEOUT
-	trainerbattle_no_intro TRAINER_BLUE_CULPRIT, PresentTown_Port_Text_BlueDefeated
+	trainerbattle_no_intro TRAINER_BLUE_CULPRIT, PresentTown_Port_Text_BlueCulpritDefeated
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, PresentTown_Port_EventScript_BlueDefeat
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_IKnewItWasYou
@@ -517,6 +524,7 @@ PresentTown_Port_EventScript_BlueCulpritQuest::
 	closemessage
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_BLUE
 	questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT
+    clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_HIDE_SHRINE_BLUE
     clearflag FLAG_HIDE_SHRINE_PROSPERITY_PRESENT_ANABEL
@@ -548,6 +556,7 @@ PresentTown_Port_EventScript_BlueDefeat::
 	fadedefaultbgm
 	applymovement LOCALID_BLUE, Common_Movement_FaceOriginalDirection
 	waitmovement 0
+    clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	clearflag FLAG_SYS_NO_WHITEOUT
 	release
 	end
@@ -590,9 +599,10 @@ PresentTown_Port_Text_BlueWhat:
 	.string "heck did you even come from?$"
 
 PresentTown_Port_Text_BlueFine:
-	.string "Fine! If I can't convince you I didn't\n"
-	.string "screw with the wildlife here, then maybe\l"
-	.string "I should get you off my back the hard way!$"
+	.string "Fine!\p"
+	.string "If I can't convince you I didn't screw\n"
+	.string "with the wildlife here, then maybe I\l"
+	.string "should get you off my back the hard way!$"
 
 PresentTown_Port_Text_BlueDefeated:
 	.string "There, now can you get off my back!?\p"
@@ -616,25 +626,26 @@ PresentTown_Port_Text_LookerSorry:
 PresentTown_Port_Text_BlueIHadItTheWholeTime:
 	.string "Urgh… Okay… You happy?\n"
 	.string "I had Landorus the whole time…\p"
-	.string "I just wanted to try my hand at taking on\n"
-	.string "a legendary Pokémon, 'kay…?\p"
-	.string "That punk Red has been doing nothing but\n"
-	.string "one-up me since our adventure started…\p"
+	.string "I just wanted to try my hand at taking\n"
+	.string "on a legendary Pokémon, 'kay…?\p"
+	.string "That punk Red has done nothing but\n"
+	.string "one-up me since the beginning…\p"
 	.string "I just wanted SOMETHING over him…$"
 
 PresentTown_Port_Text_LookerAhARivalry:
 	.string "Ah! A rivaly!\p"
 	.string "A compelling reason to try and capture\n"
 	.string "a strong Pokémon!\p"
-	.string "I remember the fires of my own youth…\p"
+	.string "I remember the fires of my own youth…$\p"
 
 PresentTown_Port_Text_BlueTakingMeToCityHall:
-	.string "So… Are you taking me to City Hall then…?$"
+	.string "So… Are you taking me to City Hall\n"
+	.string "then…?$"
 
 PresentTown_Port_Text_LookerSoLongAsYouRelease:
 	.string "Hmm…\p"
-	.string "So long as you release Landorus back into\n"
-	.string "the wild, I would be willing to overlook\l"
+	.string "So long as you release Landorus into\n"
+	.string "the wild, I am willing to overlook\l"
 	.string "your transgression, just this once…$"
 
 PresentTown_Port_Text_BlueUghFine:

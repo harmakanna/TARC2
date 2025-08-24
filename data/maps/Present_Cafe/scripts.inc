@@ -227,6 +227,7 @@ Present_Cafe_EventScript_MayPreQuest::
 Present_Cafe_EventScript_MayQuest::
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_MAY
 	goto_if_eq VAR_RESULT, TRUE, Present_Cafe_EventScript_MayPostQuest
+    setflag FLAG_SYS_DISAPPEAR_QUESTS
     playbgm MUS_PL_LOOKER, TRUE
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_YouAreUnderSuspicion
 	setvar VAR_TEMP_1, LOCALID_CAFE_MAY
@@ -246,6 +247,7 @@ Present_Cafe_EventScript_MayQuest::
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_Cafe_EventScript_MayDefeat
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_MAY
+    clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	clearflag FLAG_SYS_NO_WHITEOUT
 	fadedefaultbgm
 	goto Present_Cafe_EventScript_MayPostQuest
@@ -265,6 +267,7 @@ Present_Cafe_EventScript_MayCulpritQuest::
 	closemessage
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_MAY
 	questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT
+    clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_HIDE_SHRINE_MAY
     clearflag FLAG_HIDE_SHRINE_PROSPERITY_PRESENT_ANABEL
@@ -281,6 +284,8 @@ Present_Cafe_EventScript_MayDefeat::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Cafe_Text_LookerSurelyAnotherBattle
 	speak LOCALID_CAFE_MAY, VAR_0x8005, Name_May, Present_Cafe_Text_MaySure
 	closemessage
+	clearflag FLAG_SYS_NO_WHITEOUT
+    clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	fadedefaultbgm
 	applymovement LOCALID_CAFE_MAY, Common_Movement_FaceOriginalDirection
 	waitmovement 0
@@ -301,6 +306,7 @@ Present_Cafe_EventScript_MayPostQuest::
 	end
 	
 Present_Cafe_EventScript_MayCulpritPostQuest::
+	faceplayer
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Cafe_Text_LookerAllsWellThatEndsWell
 	speak LOCALID_CAFE_MAY, VAR_0x8005, Name_May, Present_Cafe_Text_MayAgreed
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Cafe_Text_LookerIndeedTheyShould
@@ -312,10 +318,10 @@ Present_Cafe_EventScript_MayCulpritPostQuest::
 	end
 
 Present_Cafe_Text_LookerThankYouForYourCooperation:
-	.string "Anyways, thank you for your cooperation,\n"
-	.string "young miss!\p"
-	.string "I appreciate when suspects are not jumpy\n"
-	.string "and confrontational…$"
+	.string "Anyways, thank you for your\n"
+	.string "cooperation, young miss!\p"
+	.string "I appreciate when suspects are not\n"
+	.string "jumpy and confrontational…$"
 
 Present_Cafe_Text_MayNoProblem:
 	.string "No problem.\p"
@@ -394,8 +400,8 @@ Present_Cafe_Text_LookerSensible:
 
 Present_Cafe_Text_MayHuh:
 	.string "Huh? What?\n"
-	.string "I thought this was something Team Aqua\n"
-	.string "did?\p"
+	.string "I thought this was something Team\n"
+	.string "Aqua did?\p"
 	.string "Why are you accusing ME?$"
 
 Present_Cafe_Text_MayImJustConfused:
