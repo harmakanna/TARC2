@@ -82,7 +82,7 @@ Present_PokemonCenter_Text_NurseWeHopeToSeeYouAgain:
 Present_PokemonCenter_Text_NurseStorm:
 	.string "Hello! Welcome to the Pokémon Center!\p"
 	.string "While the storm is raging on outside,\n"
-	.string "our Center will accept anyone looking\n"
+	.string "our Center will accept anyone looking\l"
 	.string "for refuge!\p"
 	.string "There have been reports that Pokémon\n"
 	.string "are running wild outside, after all!$"

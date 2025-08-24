@@ -76,7 +76,7 @@ PastTown_OnFrame:
 
 PastTown_EventScript_LookerEnters::
 	lockall
-	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
+	clearflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	delay 40
 	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
 	speakername Name_Looker
@@ -226,7 +226,7 @@ PastTown_EventScript_LookerPassOut::
 	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	fadescreen FADE_TO_BLACK
 	warpsilent MAP_PAST_TOWN_HALL, 2, 2
-	delay 48
+	waitstate
 	end
 
 PastTown_Movement_LookerLookAround:
@@ -1323,7 +1323,7 @@ PastTown_EventScript_ReaddMiltank::
 	return
 
 PastTown_EventScript_Miltank::
-	lock
+lock
 	faceplayer
 	waitse
 	goto_if_set FLAG_SAD_GIRL_GAVE_POTIONS, PastTown_EventScript_MiltankHealthy
@@ -1542,7 +1542,8 @@ PastTown_Text_CarrotFarmerPregame:
 	.string "for the value of carrots!\p"
 	.string "They are vital to a person's eyesight\n"
 	.string "and are superb for snacking!\p"
-	.string "Much better than those bitter cabbages…$"
+	.string "Much better than those bitter\n"
+	.string "cabbages…$"
 
 PastTown_Text_CabbageFarmerPregame:
 	.string "Grr…\p"
@@ -1587,7 +1588,8 @@ PastTown_Text_ObtainedBerries:
 	.string "Liechi Berry each!$"
 
 PastTown_Text_CabbageFarmerMyCabbages:
-	.string "MY CABBAGES!$"
+	.string "My cabbages!\n"
+	.string "Not my cabbages!$"
 
 PastTown_Text_CabbageFarmerYesSomethingIsWrong:
 	.string "Of course something is wrong!\p"
@@ -1636,8 +1638,8 @@ PastTown_Text_ScientistThisWontDo:
 	.string "This won't do…$"
 
 PastTown_Text_ScientistAhYouPassedByHere:
-	.string "Ah, you're the fellow who passed\n"
-	.string "out at the entrance of town.\p"
+	.string "Ah, you're the fellow who passed out\n"
+	.string "at the entrance of town.\p"
 	.string "My name is Sir Bartoz II.\p"
 	.string "I hope you're well. Perhaps you might\n"
 	.string "help with my conundrum?\p"
@@ -1662,9 +1664,9 @@ PastTown_Text_LookerHuhWha:
 
 PastTown_Text_ScientistWhatIAmAsking:
 	.string "Ah, fantastic.\p"
-	.string "Following my discovery that static\n"
-	.string "is generated from rubbing together\l"
-	.string "Mareep wool, I wish to store its\l"
+	.string "Following my discovery that static is\n"
+	.string "generated from rubbing together strands\l"
+	.string "of Mareep's wool, I wish to store its\l"
 	.string "power and use it to develop the city\l"
 	.string "to the next level.\p"
 	.string "Could you please find me such an\n"
@@ -1736,12 +1738,12 @@ PastTown_Text_LassOyGeezer:
 	.string "Oy, geezer!\p"
 	.string "You must be an outsider to our\n"
 	.string "village!\p"
-	.string "Know this, there is nobody\n"
-	.string "in this village stronger than\l"
-	.string "I in Pokémon battles!\p"
-	.string "If you wish to pass through to\n"
-	.string "the Shrine of Prosperity, then\l"
-	.string "show me your strength!$"
+	.string "Know this, there is nobody in this\n"
+	.string "village stronger than I at Pokémon\l"
+	.string "battles!\p"
+	.string "If you wish to pass through to the\n"
+	.string "Shrine of Prosperity, then show me\l"
+	.string "your strength!$"
 
 PastTown_Text_LassAnotherRound:
 	.string "Are you ready for another round,\n"

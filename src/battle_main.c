@@ -404,7 +404,7 @@ static void (*const sEndTurnFuncsTable[])(void) =
     [B_OUTCOME_MON_FLED]          = HandleEndTurn_MonFled,
     [B_OUTCOME_CAUGHT]            = HandleEndTurn_FinishBattle,
     [B_OUTCOME_NO_SAFARI_BALLS]   = HandleEndTurn_FinishBattle,
-    [B_OUTCOME_FORFEITED]         = HandleEndTurn_FinishBattle,
+    [B_OUTCOME_FORFEITED]         = HandleEndTurn_BattleLost,
     [B_OUTCOME_MON_TELEPORTED]    = HandleEndTurn_FinishBattle,
 };
 
@@ -5480,7 +5480,7 @@ static void HandleEndTurn_RanFromBattle(void)
     else if (CanPlayerForfeitNormalTrainerBattle())
     {
         gBattlescriptCurrInstr = BattleScript_ForfeitBattleGaveMoney;
-        gBattleOutcome = B_OUTCOME_FORFEITED;
+        gBattleOutcome = B_OUTCOME_RAN;
     }
     else
     {
@@ -6132,5 +6132,5 @@ bool32 DidPlayerForfeitNormalTrainerBattle(void)
     if (!CanPlayerForfeitNormalTrainerBattle())
         return FALSE;
 
-    return (gBattleOutcome == B_OUTCOME_LOST);
+    return (gBattleOutcome == B_OUTCOME_FORFEITED);
 }

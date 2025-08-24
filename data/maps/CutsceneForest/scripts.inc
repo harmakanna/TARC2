@@ -78,7 +78,8 @@ CutsceneForest_EventScript_SearchForEstella::
 	delay 100
 	special ReturnCameraToPlayer
 	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
-	warp MAP_SHRINE_OF_PEACE_PRESENT, 14, 28
+	warpsilent MAP_SHRINE_OF_PEACE_PRESENT, 14, 28
+	waitstate
 	end
 
 CutsceneForest_Movement_LookAround1:
@@ -237,19 +238,18 @@ CutsceneForest_Text_LookerUnderstood:
 	.string "Understood.$"
 
 CutsceneForest_Text_RangerGreatBeSafe:
-	.string "Great. Please be safe\n"
-	.string "out there!$"
+	.string "Great. Please be safe out there!$"
 
 CutsceneForest_Text_LookerOfCourse:
 	.string "Of course.$"
 
 CutsceneForest_Text_AnabelDrat:
-	.string "Drat, there's been no\n"
-	.string "sign of her at all out here!$"
+	.string "Drat, there's been no sign of her at\n"
+	.string "all out here!$"
 
 CutsceneForest_Text_RangerSeemsLikeShesNotHere:
-	.string "She doesn't seem to be in\n"
-	.string "this neck of the woods!$"
+	.string "She doesn't seem to be in this neck\n"
+	.string "of the woods!$"
 
 CutsceneForest_Text_RangerMeetBackAtCityHall:
 	.string "Looker.\n"
@@ -259,8 +259,8 @@ CutsceneForest_Text_RangerMeetBackAtCityHall:
 	.string "other loops back to the entrance.\p"
 	.string "I'll take the loop,\n"
 	.string "you take the shrine.\p"
-	.string "Whether you find her or not, meet\n"
-	.string "me back at the Ranger's bureau in\l"
-	.string "City Hall later.\p"
-	.string "Our office is in the left wing of\n"
-	.string "the building. Got it?$"
+	.string "Whether you find her or not, meet me\n"
+	.string "back at the Ranger's bureau in City\l"
+	.string "Hall later.\p"
+	.string "Our office is in the left wing of the\n"
+	.string "building. Got it?$"

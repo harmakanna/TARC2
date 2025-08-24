@@ -214,12 +214,12 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_4",
-      "x": 46,
-      "y": 37,
+      "x": 43,
+      "y": 38,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 1,
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 1,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
@@ -824,6 +824,150 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Common_EventScript_ShowPokemonCenterSign"
+    },
+    {
+      "type": "sign",
+      "x": 24,
+      "y": 16,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "PresentTown_EventScript_EstellasHouseSign"
+    },
+    {
+      "type": "sign",
+      "x": 30,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "PresentTown_EventScript_CelebiSocietySign"
+    },
+    {
+      "type": "sign",
+      "x": 21,
+      "y": 34,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "PresentTown_EventScript_SchoolSign"
+    },
+    {
+      "type": "sign",
+      "x": 52,
+      "y": 33,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "PresentTown_EventScript_CafeSign"
+    },
+    {
+      "type": "sign",
+      "x": 46,
+      "y": 38,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "PresentTown_EventScript_TrainerTipsEVSign"
+    },
+    {
+      "type": "sign",
+      "x": 37,
+      "y": 25,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "PresentTown_EventScript_CityHallSign"
+    },
+    {
+      "type": "sign",
+      "x": 51,
+      "y": 18,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "PresentTown_EventScript_GymSign"
+    },
+    {
+      "type": "sign",
+      "x": 60,
+      "y": 26,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "PresentTown_EventScript_LockedDoor"
+    },
+    {
+      "type": "sign",
+      "x": 26,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "PresentTown_EventScript_LockedDoor"
+    },
+    {
+      "type": "sign",
+      "x": 21,
+      "y": 16,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "PresentTown_EventScript_LockedDoor"
+    },
+    {
+      "type": "sign",
+      "x": 18,
+      "y": 26,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "PresentTown_EventScript_LockedDoor"
+    },
+    {
+      "type": "sign",
+      "x": 22,
+      "y": 26,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "PresentTown_EventScript_LockedDoor"
+    },
+    {
+      "type": "sign",
+      "x": 15,
+      "y": 34,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "PresentTown_EventScript_LockedDoor"
+    },
+    {
+      "type": "sign",
+      "x": 23,
+      "y": 34,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "PresentTown_EventScript_LockedDoor"
+    },
+    {
+      "type": "sign",
+      "x": 55,
+      "y": 33,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "PresentTown_EventScript_LockedDoor"
+    },
+    {
+      "type": "sign",
+      "x": 59,
+      "y": 33,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "PresentTown_EventScript_LockedDoor"
+    },
+    {
+      "type": "sign",
+      "x": 55,
+      "y": 18,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "PresentTown_EventScript_LockedDoor"
+    },
+    {
+      "type": "sign",
+      "x": 32,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "PresentTown_EventScript_LockedDoor"
     }
   ]
 }

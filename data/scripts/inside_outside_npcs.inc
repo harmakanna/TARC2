@@ -63,9 +63,19 @@ InsideOutside_EventScript_Gentleman::
     lock
     faceplayer
     call Script_GetNPCFacingDirection
+    goto_if_eq VAR_CUTSCENE_STATE, 4, InsideOutside_EventScript_GentlemanSaveTheChild
     speak VAR_TEMP_1, VAR_0x8005, Name_Gentleman, InsideOutside_Text_GentlemanNiceHavingMoney
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerIndeedItIs
     speak VAR_TEMP_1, VAR_0x8005, Name_Gentleman, InsideOutside_Text_GentlemanIndeed
+    closemessage
+    applymovement VAR_TEMP_1, Common_Movement_FaceOriginalDirection
+    waitmovement 0
+    release
+    end
+
+InsideOutside_EventScript_GentlemanSaveTheChild::
+    speak VAR_TEMP_1, VAR_0x8005, Name_Gentleman, InsideOutside_Text_GentlemanLostChild
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_WillDo
     closemessage
     applymovement VAR_TEMP_1, Common_Movement_FaceOriginalDirection
     waitmovement 0
@@ -150,7 +160,7 @@ InsideOutside_EventScript_LeafPreQuest::
     end
 
 InsideOutside_EventScript_LeafQuest::
-    subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_LEAF
+    subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_THE_CULPRIT, 2
     goto_if_eq VAR_RESULT, TRUE, InsideOutside_EventScript_LeafPostQuest
     setflag FLAG_SYS_DISAPPEAR_QUESTS
     playbgm MUS_PL_LOOKER, TRUE
@@ -169,7 +179,8 @@ InsideOutside_EventScript_LeafQuest::
     trainerbattle_no_intro TRAINER_LEAF, Looker_Text_Dots
     specialvar VAR_RESULT, GetBattleOutcome
     goto_if_eq VAR_RESULT, B_OUTCOME_LOST, InsideOutside_EventScript_LeafDefeat
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_LEAF
+    goto_if_eq VAR_RESULT, B_OUTCOME_RAN, InsideOutside_EventScript_LeafDefeat
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, 2
     clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	clearflag FLAG_SYS_NO_WHITEOUT
     fadedefaultbgm
@@ -182,6 +193,7 @@ InsideOutside_EventScript_LeafCulpritQuest::
     trainerbattle_no_intro TRAINER_LEAF_CULPRIT, Looker_Text_Dots
     specialvar VAR_RESULT, GetBattleOutcome
     goto_if_eq VAR_RESULT, B_OUTCOME_LOST, InsideOutside_EventScript_LeafDefeat
+    goto_if_eq VAR_RESULT, B_OUTCOME_RAN, InsideOutside_EventScript_LeafDefeat
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_IKnewItWasYou
     speak VAR_TEMP_1, VAR_0x8005, Name_Leaf, Looker_Text_Dots
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerSoWhyDidYouDoIt
@@ -189,7 +201,7 @@ InsideOutside_EventScript_LeafCulpritQuest::
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerIGuessItDoesntMatter
     speak VAR_TEMP_1, VAR_0x8005, Name_Leaf, Looker_Text_Dots
     closemessage
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_LEAF
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, 2
 	questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT
     clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	clearflag FLAG_SYS_NO_WHITEOUT
@@ -268,6 +280,7 @@ InsideOutside_EventScript_TargetTurnFaceLookerEast::
 InsideOutside_EventScript_Youngster::
 	lock
 	call Script_GetNPCFacingDirection
+    goto_if_eq VAR_CUTSCENE_STATE, 4, InsideOutside_EventScript_YoungsterLostChild
 	goto_if_unset FLAG_SYS_MAIN_GAME_START, InsideOutside_EventScript_YoungsterPreGame
 	returnqueststate QUEST_FIND_THE_CULPRIT
     switch VAR_RESULT
@@ -275,6 +288,14 @@ InsideOutside_EventScript_Youngster::
 	case 2, InsideOutside_EventScript_YoungsterQuest
 	case 4, InsideOutside_EventScript_YoungsterPostQuest
 	release
+    end
+
+InsideOutside_EventScript_YoungsterLostChild::
+    faceplayer
+    speakername Name_Youngster
+    msgbox InsideOutside_Text_YoungsterThisStorm, MSGBOX_DEFAULT
+    closemessage
+    release
     end
 
 InsideOutside_EventScript_YoungsterPreGame::
@@ -298,7 +319,7 @@ InsideOutside_EventScript_YoungsterPreQuest::
     end
 
 InsideOutside_EventScript_YoungsterQuest::
-    subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_YOUNGSTER
+    subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_THE_CULPRIT, 4
     goto_if_eq VAR_RESULT, TRUE, InsideOutside_EventScript_YoungsterPostQuest
     setflag FLAG_SYS_DISAPPEAR_QUESTS
     playbgm MUS_PL_LOOKER, TRUE
@@ -317,7 +338,8 @@ InsideOutside_EventScript_YoungsterQuest::
     trainerbattle_no_intro TRAINER_YOUNGSTER, InsideOutside_Text_YoungsterAhh
     specialvar VAR_RESULT, GetBattleOutcome
     goto_if_eq VAR_RESULT, B_OUTCOME_LOST, InsideOutside_EventScript_YoungsterDefeat
-    subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_YOUNGSTER
+    goto_if_eq VAR_RESULT, B_OUTCOME_RAN, InsideOutside_EventScript_YoungsterDefeat
+    subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, 4
     clearflag FLAG_SYS_DISAPPEAR_QUESTS
     clearflag FLAG_SYS_NO_WHITEOUT
     fadedefaultbgm
@@ -330,13 +352,14 @@ InsideOutside_EventScript_YoungsterCulpritQuest::
     trainerbattle_no_intro TRAINER_YOUNGSTER_CULPRIT, InsideOutside_Text_YoungsterAhh
     specialvar VAR_RESULT, GetBattleOutcome
     goto_if_eq VAR_RESULT, B_OUTCOME_LOST, InsideOutside_EventScript_YoungsterDefeat
+    goto_if_eq VAR_RESULT, B_OUTCOME_RAN, InsideOutside_EventScript_YoungsterDefeat
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_IKnewItWasYou
     speak VAR_TEMP_1, VAR_0x8005, Name_Youngster, InsideOutside_Text_YoungsterImSorry
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerAhaStatus
     speak VAR_TEMP_1, VAR_0x8005, Name_Youngster, InsideOutside_Text_YoungsterOkay
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerComeWithMe
     closemessage
-    subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_YOUNGSTER
+    subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, 4
     questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT
     clearflag FLAG_SYS_NO_WHITEOUT
     clearflag FLAG_SYS_DISAPPEAR_QUESTS
@@ -379,12 +402,21 @@ InsideOutside_EventScript_YoungsterCulpritPostQuest::
 InsideOutside_EventScript_AceTrainer::
     lock
 	call Script_GetNPCFacingDirection
+    goto_if_eq VAR_CUTSCENE_STATE, 4, InsideOutside_EventScript_AceTrainerLostChild
 	goto_if_unset FLAG_SYS_MAIN_GAME_START, InsideOutside_EventScript_AceTrainerPreGame
 	returnqueststate QUEST_FIND_THE_CULPRIT
     switch VAR_RESULT
 	case 1, InsideOutside_EventScript_AceTrainerPreQuest
 	case 2, InsideOutside_EventScript_AceTrainerQuest
 	case 4, InsideOutside_EventScript_AceTrainerPostQuest
+    release
+    end
+
+InsideOutside_EventScript_AceTrainerLostChild::
+    faceplayer
+    speak VAR_TEMP_1, VAR_0x8005, Name_Ace_Trainer, InsideOutside_Text_AceTrainerLostChild
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_Dots
+    closemessage
     release
     end
 
@@ -407,7 +439,7 @@ InsideOutside_EventScript_AceTrainerPreQuest::
     end
 
 InsideOutside_EventScript_AceTrainerQuest::
-    subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_ACE_TRAINER
+    subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_THE_CULPRIT, 3
     goto_if_eq VAR_RESULT, TRUE, InsideOutside_EventScript_AceTrainerPostQuest
     setflag FLAG_SYS_DISAPPEAR_QUESTS
     playbgm MUS_PL_LOOKER, TRUE
@@ -427,7 +459,8 @@ InsideOutside_EventScript_AceTrainerQuest::
     trainerbattle_no_intro TRAINER_BW_ACE_TRAINER, InsideOutside_Text_AceTrainerDefeated
     specialvar VAR_RESULT, GetBattleOutcome
     goto_if_eq VAR_RESULT, B_OUTCOME_LOST, InsideOutside_EventScript_AceTrainerDefeat
-    subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_ACE_TRAINER
+    goto_if_eq VAR_RESULT, B_OUTCOME_RAN, InsideOutside_EventScript_AceTrainerDefeat
+    subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, 3
     clearflag FLAG_SYS_NO_WHITEOUT
     clearflag FLAG_SYS_DISAPPEAR_QUESTS
     fadedefaultbgm
@@ -440,6 +473,7 @@ InsideOutside_EventScript_AceTrainerCulpritQuest::
     trainerbattle_no_intro TRAINER_BW_ACE_TRAINER_CULPRIT, InsideOutside_Text_AceTrainerCulpritDefeated
     specialvar VAR_RESULT, GetBattleOutcome
     goto_if_eq VAR_RESULT, B_OUTCOME_LOST, InsideOutside_EventScript_AceTrainerDefeat
+    goto_if_eq VAR_RESULT, B_OUTCOME_RAN, InsideOutside_EventScript_AceTrainerDefeat
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_IKnewItWasYou
     speak VAR_TEMP_1, VAR_0x8005, Name_Ace_Trainer, InsideOutside_Text_AceTrainerYouGotLucky
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerUmUhh
@@ -447,7 +481,7 @@ InsideOutside_EventScript_AceTrainerCulpritQuest::
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerThatSoundsSystemic
     speak VAR_TEMP_1, VAR_0x8005, Name_Ace_Trainer, InsideOutside_Text_AceTrainerLetsGetItOverWith
     closemessage
-    subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_ACE_TRAINER
+    subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, 3
     questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT
     clearflag FLAG_SYS_NO_WHITEOUT
     clearflag FLAG_HIDE_SHRINE_ACE_TRAINER
@@ -492,6 +526,16 @@ InsideOutside_EventScript_AceTrainerCulpritPostQuest::
     closemessage
     release
     end
+
+InsideOutside_Text_YoungsterThisStorm:
+    .string "Gee, this storm came out of nowhere!\p"
+    .string "I thought it was gonna be perfect\n"
+    .string "weather for the next two weeks!\p"
+    .string "What a bummer…$"
+    
+InsideOutside_Text_AceTrainerLostChild:
+    .string "Wow, a child got lost in the forest?\p"
+    .string "Skill issue.$"
 
 InsideOutside_Text_AceTrainerThereCulprit:
     .string "There, you got me…\p"
@@ -559,6 +603,12 @@ InsideOutside_Text_LookerThatSoundsSystemic:
     .string "So long as you release Landorus, I can\n"
     .string "let this minor transgression go.$"
 
+InsideOutside_Text_GentlemanLostChild:
+    .string "Ohohoho!\p"
+    .string "I heard the commotion about the lost\n"
+    .string "child.\p"
+    .string "Good man, stay safe out there!$"
+
 InsideOutside_Text_AceTrainerLetsGetItOverWith:
     .string "Sure, let's just get this over with…$"
 
@@ -585,10 +635,10 @@ InsideOutside_Text_AceTrainerLetsJustBattle:
 
 InsideOutside_Text_LookerToAceTrainerPrequest:
     .string "Good afternoon, young lady!\p"
-    .string "I am investigating the recent disappearance\n"
+    .string "I am investigating the disappearance\n"
     .string "of a local legend, Landorus!\p"
-    .string "Would you happen to have any leads on its\n"
-    .string "whereabouts?$"
+    .string "Would you happen to have any leads on\n"
+    .string "its whereabouts?$"
 
 InsideOutside_Text_AceTrainerPrequest:
     .string "I've got nothing.$"
@@ -604,8 +654,8 @@ InsideOutside_Text_LookerToAceTrainerPregame:
 	.string "My name…\n"
 	.string "Is Looker!\p"
     .string "I am on the prowl for any information\n"
-    .string "regarding Team Aqua's recent activity in\n"
-    .string "Porta Bella!\p"
+    .string "regarding Team Aqua's recent activity\l"
+    .string "in Porta Bella!\p"
     .string "Would you be able to help me in my\n"
     .string "pursuit of knowledge?$"
 
@@ -615,8 +665,8 @@ InsideOutside_Text_AceTrainerPregame:
 InsideOutside_Text_LookerISee:
     .string "I see.\p"
     .string "Well, if you learn anything about Team\n"
-    .string "Aqua, please report that information to\l"
-    .string "City Hall!\p"
+    .string "Aqua, please report that information\l"
+    .string "to City Hall!\p"
     .string "It is imperative they do not disrupt the\n"
     .string "peace of the region again!$"
 
@@ -635,20 +685,20 @@ InsideOutside_Text_YoungsterUhh:
 
 InsideOutside_Text_YoungsterImSorry:
     .string "Waaaaah! I'm sorry, sir!\p"
-    .string "I didn't know catching Landorus would throw\n"
-    .string "the weather out of whack!\p"
-    .string "I just wanted to show my friends at home how\n"
-    .string "cool I was by catching something really\l"
-    .string "strong…$"
+    .string "I didn't know catching Landorus would\n"
+    .string "throw the weather out of whack!\p"
+    .string "I just wanted to show my friends at\n"
+    .string "home how cool I was by catching a\l"
+    .string "really strong Pokémon…$"
 
 InsideOutside_Text_LookerAhaStatus:
     .string "Aha! So you wanted Landorus as a status\n"
     .string "symbol to boost your ego!\p"
     .string "Well, I remember how much that mattered\n"
     .string "in my younger years…\p"
-    .string "So long as you release Landorus back into\n"
-    .string "the wild, I am willing to overlook your\l"
-    .string "small transgression!$"
+    .string "So long as you release Landorus back\n"
+    .string "into the wild, I am willing to overlook\l"
+    .string "your small transgression!$"
 
 InsideOutside_Text_YoungsterOkay:
     .string "Okay, sir…$"
@@ -692,9 +742,7 @@ InsideOutside_Text_YoungsterGetAwayFromMe:
     .string "Get away from me!$"
 
 InsideOutside_Text_LookerToYoungsterPrequest:
-    .string "Hello, young lad.\p"
-	.string "My name…\n"
-	.string "Is Looker!\p"
+    .string "Hello, young lad!\p"
     .string "I am investigating the cause of a\n"
     .string "particular Pokémon's disappearance, a\l"
     .string "Landorus, from the local forest!\p"
@@ -743,9 +791,10 @@ InsideOutside_Text_LookerIllTakeThatAsAYes:
     .string "I'll take that as a yes! Come with me.$"
 
 InsideOutside_Text_LookerSorryForBotheringYou:
-    .string "Uhh… I guess you are cleared of suspicion!\n"
+    .string "Uhh…\n"
+    .string "I guess you are cleared of suspicion!\p"
     .string "My apologies for bothering you.\p"
-    .string "Would you happen to have any information I\n"
+    .string "Would you happen to have any info I\n"
     .string "could use to find the culprit?$"
 
 InsideOutside_Text_LookerIHope:

@@ -38,6 +38,6 @@ Present_ConcernedFamilyHouse_Text_SonSkittyKitty:
 	.string "kitty skitty\p"
 	.string "kitty kitty\n"
 	.string "skitty skitty\p"
-	.string "thanks for getting my sister\n"
-	.string "home from the woods\p"
+	.string "thanks for getting my sister home\n"
+	.string "from the woods\p"
 	.string "MROAW!!!$"

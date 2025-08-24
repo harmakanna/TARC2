@@ -354,10 +354,10 @@ PresentTown_Port_EventScript_LookerStepAside::
 	return
 	
 PresentTown_Port_EventScript_FinishGiveMagikarp::
-	speak LOCALID_PORT_MAGIKARPMAN, VAR_0x8005, Name_Magikarp_Man, PresentTown_Port_Text_MagikarpManRememberNoTakebacks
+	@ speak LOCALID_PORT_MAGIKARPMAN, VAR_0x8005, Name_Magikarp_Man, PresentTown_Port_Text_MagikarpManRememberNoTakebacks
 	closemessage
 	hidemoneybox
-	release
+	releaseall
 	end
 
 PresentTown_Port_EventScript_MagikarpManWalkToBench::
@@ -367,7 +367,7 @@ PresentTown_Port_EventScript_MagikarpManWalkToBench::
 	return
 
 PresentTown_Port_EventScript_MagikarpMan::
-	lock
+	lockall
 	faceplayer
 	goto_if_set FLAG_PURCHASED_MAGIKARP, PresentTown_Port_EventScript_MagikarpManNoTakebacks
 	call Script_GetNPCFacingDirection
@@ -377,7 +377,8 @@ PresentTown_Port_EventScript_MagikarpMan::
 	goto_if_eq VAR_RESULT, NO, PresentTown_Port_EventScript_MagikarpManGivesMagikarpFromBench
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Port_Text_LookerNotInterested
 	closemessage
-	release
+	hidemoneybox
+	releaseall
 	end
 	
 PresentTown_Port_EventScript_MagikarpManNoTakebacks::
@@ -485,7 +486,7 @@ PresentTown_Port_EventScript_BluePreQuest::
 	end
 
 PresentTown_Port_EventScript_BlueQuest::
-	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_BLUE
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_THE_CULPRIT, 0
 	goto_if_eq VAR_RESULT, TRUE, PresentTown_Port_EventScript_BluePostQuest
     setflag FLAG_SYS_DISAPPEAR_QUESTS
     playbgm MUS_PL_LOOKER, TRUE
@@ -502,7 +503,8 @@ PresentTown_Port_EventScript_BlueQuest::
 	trainerbattle_no_intro TRAINER_BLUE, PresentTown_Port_Text_BlueDefeated
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, PresentTown_Port_EventScript_BlueDefeat
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_BLUE
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, PresentTown_Port_EventScript_BlueDefeat
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, 0
     clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	clearflag FLAG_SYS_NO_WHITEOUT
 	fadedefaultbgm
@@ -515,6 +517,7 @@ PresentTown_Port_EventScript_BlueCulpritQuest::
 	trainerbattle_no_intro TRAINER_BLUE_CULPRIT, PresentTown_Port_Text_BlueCulpritDefeated
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, PresentTown_Port_EventScript_BlueDefeat
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, PresentTown_Port_EventScript_BlueDefeat
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_IKnewItWasYou
 	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueIHadItTheWholeTime
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Port_Text_LookerAhARivalry
@@ -522,7 +525,7 @@ PresentTown_Port_EventScript_BlueCulpritQuest::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Port_Text_LookerSoLongAsYouRelease
 	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueUghFine
 	closemessage
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_BLUE
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, 0
 	questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT
     clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	clearflag FLAG_SYS_NO_WHITEOUT
@@ -573,7 +576,7 @@ PresentTown_Port_EventScript_BluePostQuest::
 	
 PresentTown_Port_EventScript_BlueCulpritPostQuest::
 	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueYouHappy
-	speak LOCALID_PLAYER, VAR_0x8005, Name_Looker, PresentTown_Port_Text_LookerICanLetYouOffTheHook
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Port_Text_LookerICanLetYouOffTheHook
 	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueUgh
 	closemessage
 	applymovement LOCALID_BLUE, Common_Movement_FaceOriginalDirection

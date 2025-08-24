@@ -186,6 +186,25 @@ ShrineOfPeacePast_EventScript_CelebiWarp::
 	releaseall
 	end
 
+ShrineOfPeacePast_EventScript_Shrine::
+	goto_if_gt VAR_CUTSCENE_STATE, 8, ShrineOfPeacePast_EventScript_Shrine2
+	speakername Name_Looker
+	msgbox ShrineOfPeacePast_Text_LookerEverythingsDifferent, MSGBOX_SIGN
+	end
+
+ShrineOfPeacePast_EventScript_Shrine2::
+	speakername Name_Looker
+	msgbox ShrineOfPeacePast_Text_LookerInThePast, MSGBOX_SIGN
+	end
+
+ShrineOfPeacePast_Text_LookerEverythingsDifferent::
+	.string "(Why does everything look so different…?\p"
+	.string "Urgh…)$"
+
+ShrineOfPeacePast_Text_LookerInThePast:
+	.string "(I guess the shrine looked a lot nicer\n"
+	.string "in the past…)$"
+	
 ShrineOfPeacePast_Text_CelebiFirstWarp:
 	.string "Celebi is looking at you\n"
 	.string "expectantly…\p"

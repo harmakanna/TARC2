@@ -246,7 +246,7 @@ Past_House2_EventScript_SweetToothGirlGoesCrazy:
 	msgbox Looker_Text_DotsLong, MSGBOX_DEFAULT
 	closemessage
 	delay 160
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_WITH_MUCH_GRATITUDE, SUB_QUEST_A_WHOLE_NEW_WORLD
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_WITH_MUCH_GRATITUDE, 0
 	completequest QUEST_WITH_MUCH_GRATITUDE
 	playbgm MUS_DP_ETERNA_NIGHT, TRUE
 	setflag FLAG_SWEET_TOOTH_WENT_CRAZY
@@ -420,8 +420,17 @@ Past_House2_EventScript_SleepingMama::
 	faceplayer
 	goto_if_set FLAG_SWEET_TOOTH_WENT_CRAZY, Past_House2_EventScript_SleepingMamaLater
 	returnqueststate QUEST_FIND_TASTY_MINT
+	goto_if_eq VAR_RESULT, 2, Past_House2_EventScript_SleepingMamaTastyMint
 	goto_if_eq VAR_RESULT, 4, Past_House2_EventScript_SleepingMamaThankYou
 	msgbox Past_House2_Text_MamaTryingToSleep, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_SLEEPY_MAMA, Common_Movement_FaceRight
+	waitmovement 0
+	release
+	end
+
+Past_House2_EventScript_SleepingMamaTastyMint::
+	msgbox Past_House2_Text_MamaTastyMint, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_SLEEPY_MAMA, Common_Movement_FaceRight
 	waitmovement 0
@@ -477,6 +486,13 @@ Past_House2_EventScript_Purrloin::
 	release
 	end
 
+Past_House2_Text_MamaTastyMint:
+	.string "The Tasty Mint…?\p"
+	.string "If it were around, you could find\n"
+	.string "it at the Shrine of Prosperity…\p"
+	.string "Sadly, it only grows once every 100\n"
+	.string "years…$"
+	
 Past_House2_Text_Purrloin:
 	.string "Prrrrr! Rrrrrrr!$"
 	

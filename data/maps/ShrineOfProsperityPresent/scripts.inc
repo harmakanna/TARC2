@@ -52,6 +52,7 @@ ShrineOfProsperityPresent_OnFrame:
 
 ShrineOfProsperityPresent_EventScript_Resolution::
 	lockall
+	clearflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	special SpawnCameraObject
 	applymovement LOCALID_CAMERA, ShrineOfProsperityPresent_Movement_PanCameraToResolutionPosition
 	waitmovement 0
@@ -128,6 +129,7 @@ ShrineOfProsperityPresent_EventScript_Resolution::
 	closemessage
 	applymovement LOCALID_PROSPERITY_PRESENT_ANABEL, ShrineOfProsperityPresent_Movement_AnabelLeave
 	applymovement LOCALID_PLAYER, ShrineOfProsperityPresent_Movement_LookerLeave
+	delay 80
 	fadescreen FADE_TO_BLACK
 	waitmovement LOCALID_PLAYER
 	delay 120
@@ -140,6 +142,7 @@ ShrineOfProsperityPresent_EventScript_Resolution::
 	setflag FLAG_HIDE_PORT_BLUE
 	setflag FLAG_HIDE_CITY_THUNDURUS
 	setflag FLAG_HIDE_CITY_TORNADUS
+	special RemoveCameraObject
 	warpsilent MAP_PRESENT_TOWN_PORT, 14, 10
 	waitstate
 	releaseall
@@ -456,7 +459,7 @@ ShrineOfProsperityPresent_EventScript_DefeatedGenies::
 	speakername Name_Looker
 	msgbox ShrineOfProsperityPresent_Text_LookerTheWeather, MSGBOX_DEFAULT
 	closemessage
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_INVESTIGATE_PROSPERITY, SUB_QUEST_DEFEAT_GENIES
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_INVESTIGATE_PROSPERITY, 0
 	questmenu QUEST_MENU_SET_REWARD QUEST_INVESTIGATE_PROSPERITY
 	setflag FLAG_SYS_DISABLE_ENCOUNTERS
 	clearflag FLAG_HIDE_OUTSIDE_NPCS
@@ -749,8 +752,8 @@ ShrineOfProsperityPresent_Text_LookerAreThosePokeballs:
 
 ShrineOfProsperityPresent_Text_LookerReportBack:
 	.string "Hmm…\p"
-	.string "The rangers will be sure to find\n"
-	.string "this interesting…$"
+	.string "The rangers will be sure to find this\n"
+	.string "interesting…$"
 
 ShrineOfProsperityPresent_Text_LookerTheWeather:
 	.string "The weather…\n"

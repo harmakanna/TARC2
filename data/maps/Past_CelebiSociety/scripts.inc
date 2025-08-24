@@ -45,8 +45,8 @@ Past_CelebiSociety_Text_CouncilWomanAhAnotherTimeTraveler:
 	.string "Ah, another time traveler.\p"
 	.string "If you ever want something changed\n"
 	.string "about the future, please let me know.\p"
-	.string "I can assure you such a thing will\n"
-	.string "not have any negative effects on the\l"
+	.string "I can assure you such a thing will not\n"
+	.string "have any negative effects on the\l"
 	.string "timeline!$"
 
 Past_CelebiSociety_Text_CouncilWomanSaveLuvdiscs:

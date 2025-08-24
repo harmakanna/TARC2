@@ -92,7 +92,6 @@ ShrineOfPeacePresent_EventScript_CelebiEncounter::
 	applymovement LOCALID_CAMERA, ShrineOfPeacePresent_Movement_PanCameraToLooker
 	waitmovement 0
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
-	playse SE_SELECT
 	speak LOCALID_SHRINE_PEACE_PRESENT_ANABEL, DIR_WEST, Name_Anabel, ShrineOfPeacePresent_Text_AnabelItsTooDangerous
 	playse SE_PIN
 	applymovement LOCALID_SHRINE_PEACE_PRESENT_ANABEL, Common_Movement_FaceDownExclamationMark
@@ -510,16 +509,14 @@ ShrineOfPeacePresent_Text_LookerLookUpAhead:
 
 ShrineOfPeacePresent_Text_AnabelItsTooDangerous:
 	.string "It's an ambush!\p"
-	.string "Looker, it's too dangerous! We can't\n"
-	.string "save Estella if we're in danger\l"
-	.string "ourselves!\p"
+	.string "Looker, it's too dangerous! We won't\n"
+	.string "save Estella like this ourselves!\p"
 	.string "We NEED to turn back!$"
 
 ShrineOfPeacePresent_Text_AnabelOhNo:
 	.string "Oh no…$"
 
 ShrineOfPeacePresent_Text_AnabelWhatNow:
-	.string "We're surrounded!\p"
 	.string "What do we do now? There's just\n"
 	.string "too many of them to fight!$"
 

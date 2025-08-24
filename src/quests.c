@@ -291,6 +291,15 @@ static const struct SubQuest sSubQuestsFindTheCulprit[QUEST_FIND_THE_CULPRIT_SUB
 	),
 	sub_quest(
 	      3,
+	      gText_SubQuestFindTheCulprit_Name5,
+	      gText_SubQuestFindTheCulprit_Desc5,
+	      gText_SubQuestFindTheCulprit_Map5,
+	      OBJ_EVENT_GFX_LEAF,
+	      OBJECT,
+	      sText_Found
+	),
+	sub_quest(
+	      4,
 	      gText_SubQuestFindTheCulprit_Name3,
 	      gText_SubQuestFindTheCulprit_Desc3,
 	      gText_SubQuestFindTheCulprit_Map3,
@@ -299,20 +308,11 @@ static const struct SubQuest sSubQuestsFindTheCulprit[QUEST_FIND_THE_CULPRIT_SUB
 	      sText_Found
 	),
 	sub_quest(
-	      4,
+	      5,
 	      gText_SubQuestFindTheCulprit_Name4,
 	      gText_SubQuestFindTheCulprit_Desc4,
 	      gText_SubQuestFindTheCulprit_Map4,
 	      OBJ_EVENT_GFX_YOUNGSTER_NEW,
-	      OBJECT,
-	      sText_Found
-	),
-	sub_quest(
-	      5,
-	      gText_SubQuestFindTheCulprit_Name5,
-	      gText_SubQuestFindTheCulprit_Desc5,
-	      gText_SubQuestFindTheCulprit_Map5,
-	      OBJ_EVENT_GFX_LEAF,
 	      OBJECT,
 	      sText_Found
 	),
@@ -388,16 +388,6 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
-	side_quest(// 1 QUEST_INVESTIGATE_PROSPERITY - Investigate Shrine of Prosperity
-	      gText_SideQuestName_2,
-	      gText_SideQuestDesc_2,
-	      gText_SideQuestDoneDesc_2,
-	      gText_SideQuestMap2,
-	      OBJ_EVENT_GFX_PICNICKER,
-	      OBJECT,
-	      sSubQuestsInvestigateProsperity,
-	      QUEST_INVESTIGATE_PROSPERITY_SUB_COUNT
-	),
 	side_quest( // 2 QUEST_INTERROGATE_MATT - Defeat Matt
 	      gText_SideQuestName_3,
 	      gText_SideQuestDesc_3,
@@ -407,6 +397,16 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      OBJECT,
 	      NULL,
 	      0
+	),
+	side_quest(// 1 QUEST_INVESTIGATE_PROSPERITY - Investigate Shrine of Prosperity
+	      gText_SideQuestName_2,
+	      gText_SideQuestDesc_2,
+	      gText_SideQuestDoneDesc_2,
+	      gText_SideQuestMap2,
+	      OBJ_EVENT_GFX_PICNICKER,
+	      OBJECT,
+	      sSubQuestsInvestigateProsperity,
+	      QUEST_INVESTIGATE_PROSPERITY_SUB_COUNT
 	),
 	side_quest( // 3 QUEST_DEFEAT_PHOEBE - Defeat Gym Leader
 	      gText_SideQuestName_4,
@@ -533,7 +533,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestDesc_16,
 	      gText_SideQuestDoneDesc_16,
 	      gText_SideQuestMap16,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_PAST_GIRL,
 	      OBJECT,
 	      NULL,
 	      0
@@ -2671,7 +2671,7 @@ void HandleQuestIconForSingleObjectEvent(struct ObjectEvent *objectEvent, u32 ob
 		switch (graphicsId)
 		{	
 			case OBJ_EVENT_GFX_BLUE:
-				if(!IsSubquestCompletedState(SUB_QUEST_DEFEAT_BLUE) && IsQuestActiveState(questId))
+				if(!QuestMenu_GetSetSubquestState(QUEST_FIND_THE_CULPRIT, FLAG_GET_COMPLETED, 0) && IsQuestActiveState(questId))
 				{
 					SpawnQuestIconForObject(objectEvent, objectEventId);
 					return;
@@ -2680,7 +2680,7 @@ void HandleQuestIconForSingleObjectEvent(struct ObjectEvent *objectEvent, u32 ob
 					return;
 				break;	
 			case OBJ_EVENT_GFX_LINK_RS_MAY:
-				if(!IsSubquestCompletedState(SUB_QUEST_DEFEAT_MAY) && IsQuestActiveState(questId))
+				if(!QuestMenu_GetSetSubquestState(QUEST_FIND_THE_CULPRIT, FLAG_GET_COMPLETED, 1) && IsQuestActiveState(questId))
 				{
 					SpawnQuestIconForObject(objectEvent, objectEventId);
 					return;
@@ -2689,7 +2689,7 @@ void HandleQuestIconForSingleObjectEvent(struct ObjectEvent *objectEvent, u32 ob
 					return;
 				break;	
 			case OBJ_EVENT_GFX_LEAF:
-				if(!IsSubquestCompletedState(SUB_QUEST_DEFEAT_LEAF) && IsQuestActiveState(questId))
+				if(!QuestMenu_GetSetSubquestState(QUEST_FIND_THE_CULPRIT, FLAG_GET_COMPLETED, 2) && IsQuestActiveState(questId))
 				{
 					SpawnQuestIconForObject(objectEvent, objectEventId);
 					return;
@@ -2698,7 +2698,7 @@ void HandleQuestIconForSingleObjectEvent(struct ObjectEvent *objectEvent, u32 ob
 					return;
 				break;	
 			case OBJ_EVENT_GFX_BW_ACE_TRAINER_F:
-				if(!IsSubquestCompletedState(SUB_QUEST_DEFEAT_ACE_TRAINER) && IsQuestActiveState(questId))
+				if(!QuestMenu_GetSetSubquestState(QUEST_FIND_THE_CULPRIT, FLAG_GET_COMPLETED, 3) && IsQuestActiveState(questId))
 				{
 					SpawnQuestIconForObject(objectEvent, objectEventId);
 					return;
@@ -2707,7 +2707,7 @@ void HandleQuestIconForSingleObjectEvent(struct ObjectEvent *objectEvent, u32 ob
 					return;
 				break;	
 			case OBJ_EVENT_GFX_YOUNGSTER_NEW:
-				if(!IsSubquestCompletedState(SUB_QUEST_DEFEAT_YOUNGSTER) && IsQuestActiveState(questId))
+				if(!QuestMenu_GetSetSubquestState(QUEST_FIND_THE_CULPRIT, FLAG_GET_COMPLETED, 4) && IsQuestActiveState(questId))
 				{
 					SpawnQuestIconForObject(objectEvent, objectEventId);
 					return;

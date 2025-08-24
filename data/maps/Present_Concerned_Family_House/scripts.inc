@@ -292,18 +292,18 @@ Present_ConcernedFamilyHouse_Text_DadThatOldWoman:
 	.string "We live in the city of progress!$"
 
 Present_ConcernedFamilyHouse_Text_LookerDaughterBackHomeSafe:
-	.string "I see your daughter has made it\n"
-	.string "home. I presume she came with Anabel?$"
+	.string "I see your daughter has made it home.\n"
+	.string "I presume she came with Anabel?$"
 
 Present_ConcernedFamilyHouse_Text_DadThankYou:
 	.string "Oh yes, thank you Looker!\p"
 	.string "When she came home, we gave her a\n"
-	.string "stern talking-to about going out\l"
-	.string "to the forest on her own.\p"
-	.string "Though I felt it went in one ear\n"
-	.string "and out the other…\p"
-	.string "Regardless, please take this as\n"
-	.string "a token of our appreciation!$"
+	.string "stern talking-to about going out to\l"
+	.string "the forest on her own.\p"
+	.string "Though I felt it went in one ear and\n"
+	.string "out the other…\p"
+	.string "Regardless, please take this as a\n"
+	.string "token of our appreciation!$"
 
 Present_ConcernedFamilyHouse_Text_DadKeepingMyEye:
 	.string "I'm keeping my eye on my mother…\p"
@@ -334,14 +334,14 @@ Present_ConcernedFamilyHouse_Text_DadWillYouQuitIt:
 
 Present_ConcernedFamilyHouse_Text_GrandmaSigh:
 	.string "Mmmmmm…\p"
-	.string "This isn't a good place to talk\n"
-	.string "about this…\p"
+	.string "This isn't a good place to talk about\n"
+	.string "this…\p"
 	.string "Here, follow me.$"
 
 Present_ConcernedFamilyHouse_Text_MomMyBaby:
 	.string "My baby's back!\p"
-	.string "Oh, Mr. Looker, thank you so so\n"
-	.string "much for bringing her home safe!$"
+	.string "Oh, Mr. Looker, thank you so so much\n"
+	.string "for bringing her home safe!$"
 
 Present_ConcernedFamilyHouse_Text_EstellaDidntBelieveMe:
 	.string "um, um, um!\p"

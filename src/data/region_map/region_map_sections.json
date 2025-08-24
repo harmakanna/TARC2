@@ -2,7 +2,7 @@
   "map_sections": [
     {
       "id": "MAPSEC_PORTO_BELLA_CITY",
-      "name": "PORTA BELLA CITY",
+      "name": "Porta Bella City",
       "x": 0,
       "y": 0,
       "width": 1,
@@ -10,7 +10,7 @@
     },
     {
       "id": "MAPSEC_PORTO_BELLA_TOWN",
-      "name": "PORTA BELLA TOWN",
+      "name": "Porta Bella Town",
       "x": 0,
       "y": 0,
       "width": 1,
@@ -18,7 +18,7 @@
     },
     {
       "id": "MAPSEC_SHRINE_OF_PEACE",
-      "name": "SHRINE OF PEACE",
+      "name": "Shrine of Peace",
       "x": 0,
       "y": 0,
       "width": 1,
@@ -26,7 +26,7 @@
     },
     {
       "id": "MAPSEC_SHRINE_OF_PROSPERITY",
-      "name": "PROSPERITY SHRINE",
+      "name": "Prosperity Shrine",
       "x": 0,
       "y": 0,
       "width": 1,

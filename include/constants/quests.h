@@ -17,8 +17,8 @@
 // quest number defines
 #define QUEST_NONE  0xFFFF
 #define QUEST_SAVE_ESTELLA          0 //Find Estella in the past - Done
-#define QUEST_INVESTIGATE_PROSPERITY          1 // Investigate the abnormality at the Shrine of Prosperity - Done
-#define QUEST_INTERROGATE_MATT          2 // Defeat Team Aqua - Done
+#define QUEST_INTERROGATE_MATT          1 // Defeat Team Aqua - Done
+#define QUEST_INVESTIGATE_PROSPERITY          2 // Investigate the abnormality at the Shrine of Prosperity - Done
 #define QUEST_DEFEAT_PHOEBE          3 // Defeat Phoebe - Done
 #define QUEST_FIND_THE_CULPRIT          4 // Defeat the correct gym challenger
 #define QUEST_BONJOUR_EMMA          5 // Speak French to Emma - Done
@@ -52,9 +52,9 @@
 
 #define SUB_QUEST_DEFEAT_BLUE 1
 #define SUB_QUEST_DEFEAT_MAY 2
-#define SUB_QUEST_DEFEAT_ACE_TRAINER 3
-#define SUB_QUEST_DEFEAT_YOUNGSTER 4
-#define SUB_QUEST_DEFEAT_LEAF 5
+#define SUB_QUEST_DEFEAT_LEAF 3
+#define SUB_QUEST_DEFEAT_ACE_TRAINER 4
+#define SUB_QUEST_DEFEAT_YOUNGSTER 5
 
 #define SUB_QUEST_CATCH_TORNADUS 6
 #define SUB_QUEST_CATCH_THUNDURUS 7

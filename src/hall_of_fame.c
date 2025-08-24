@@ -357,33 +357,33 @@ static bool8 InitHallOfFameScreen(void)
     switch (gMain.state)
     {
     case 0:
-        SetVBlankCallback(NULL);
-        ClearVramOamPltt_LoadHofPal();
+        //SetVBlankCallback(NULL);
+        //ClearVramOamPltt_LoadHofPal();
         sHofGfxPtr = AllocZeroed(sizeof(*sHofGfxPtr));
         gMain.state = 1;
         break;
     case 1:
-        LoadHofGfx();
+        //LoadHofGfx();
         gMain.state++;
         break;
     case 2:
-        SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG1 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_ALL);
-        SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(16, 7));
-        SetGpuReg(REG_OFFSET_BLDY, 0);
-        InitHofBgs();
+        //SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG1 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_ALL);
+        //SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(16, 7));
+        //SetGpuReg(REG_OFFSET_BLDY, 0);
+        //InitHofBgs();
         sHofGfxPtr->state = 0;
         gMain.state++;
         break;
     case 3:
         if (!LoadHofBgs())
         {
-            SetVBlankCallback(VBlankCB_HallOfFame);
-            BeginNormalPaletteFade(PALETTES_ALL, 0, 0x10, 0, RGB_BLACK);
+            //SetVBlankCallback(VBlankCB_HallOfFame);
+            //BeginNormalPaletteFade(PALETTES_ALL, 0, 0x10, 0, RGB_BLACK);
             gMain.state++;
         }
         break;
     case 4:
-        UpdatePaletteFade();
+        //UpdatePaletteFade();
         if (!gPaletteFade.active)
         {
             SetMainCallback2(CB2_HallOfFame);
@@ -536,17 +536,11 @@ static void Task_Hof_TrySaveData(u8 taskId)
     }
     else
     {
+        
         PlaySE(SE_SAVE);
-        HideBg(0);
-        HideBg(1);
-        HideBg(3);
-        FreeAllWindowBuffers();
-        UnsetBgTilemapBuffer(1);
-        UnsetBgTilemapBuffer(3);
-        ResetBgsAndClearDma3BusyFlags(0);
-        DestroyTask(taskId);
-        FreeAllHoFMem();
-        StartCredits();
+        FadeOutBGM(4);
+        gTasks[taskId].func = Task_Hof_HandlePaletteOnExit;
+        gTasks[taskId].tFrameCount = 32;
     }
 }
 

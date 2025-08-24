@@ -36,6 +36,7 @@ Past_TownHall_OnFrame:
 
 Past_TownHall_EventScript_LookerWakesUp::
 	lockall
+	clearflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	delay 100
 	msgbox Past_TownHall_Text_Dots, MSGBOX_DEFAULT
 	closemessage
@@ -62,7 +63,6 @@ Past_TownHall_EventScript_LookerWakesUp::
 	msgbox Past_TownHall_Text_Dots, MSGBOX_DEFAULT
 	closemessage
 	delay 100
-	clearflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	clearflag FLAG_SYS_PREVENT_MAP_FADE
 	fadedefaultbgm
 	playbgm MUS_DP_ETERNA_NIGHT, FALSE
@@ -71,8 +71,14 @@ Past_TownHall_EventScript_LookerWakesUp::
 	speakername Name_Looker
 	msgbox Past_TownHall_Text_LookerWakingUp, MSGBOX_DEFAULT
 	speak LOCALID_TOWNHALL_ANABEL, DIR_NORTH, Name_Anabel, Past_TownHall_Text_AnabelDontSpeak
-	speak LOCALID_TOWNHALL_CAMILLA, DIR_WEST, Name_Unknown, Past_TownHall_Text_CamillaYouAreNotTheFirst
-	speak LOCALID_TOWNHALL_ANABEL, DIR_NORTH, Name_Anabel, Past_TownHall_Text_AnabelThisIsCamilla
+	speak LOCALID_TOWNHALL_CAMILLA, DIR_WEST, Name_Unknown, Past_TownHall_Text_CamillaMyName
+	speak LOCALID_PLAYER, DIR_EAST, Name_Looker, Past_TownHall_Text_LookerTheTown
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	msgbox Past_TownHall_Text_LookerWhereAreWe, MSGBOX_DEFAULT
+	speak LOCALID_TOWNHALL_ANABEL, DIR_NORTH, Name_Anabel, Past_TownHall_Text_AnabelYouSlowpoke
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	speak LOCALID_TOWNHALL_CAMILLA, DIR_WEST, Name_Camilla, Past_TownHall_Text_CamillaYouAreNotTheFirst
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
 	speak LOCALID_TOWNHALL_ESTELLA, DIR_NORTH, Name_Estella, Past_TownHall_Text_LostGirl
 	speak LOCALID_TOWNHALL_CAMILLA, DIR_SOUTH, Name_Camilla, Past_TownHall_Text_CamillaProsperity
 	speak LOCALID_TOWNHALL_ESTELLA, DIR_NORTH, Name_Estella, Past_TownHall_Text_LostGirl2
@@ -103,13 +109,15 @@ Past_TownHall_EventScript_LookerWakesUp::
 	delay 50
 	fadescreen FADE_FROM_BLACK
 	delay 60
-	speakername Name_Looker
-	msgbox Past_TownHall_Text_LookerWakingUpAgain, MSGBOX_DEFAULT
-	closemessage
+	@speakername Name_Looker
+	@msgbox Past_TownHall_Text_LookerWakingUpAgain, MSGBOX_DEFAULT
+	@closemessage
 	delay 60
 	applymovement LOCALID_PLAYER, Common_Movement_WalkRight, MSGBOX_DEFAULT
 	waitmovement 0
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	clearflag FLAG_HIDE_TAUROS
+	clearflag FLAG_HIDE_MILTANK
 	setflag FLAG_SYS_B_DASH
 	setvar VAR_CUTSCENE_STATE, 9
 	releaseall
@@ -130,6 +138,8 @@ Past_TownHall_EventScript_Camilla::
 	speakername Name_Camilla
 	msgbox Past_TownHall_Text_CamillaPleaseLetMeKnow, MSGBOX_DEFAULT
 	closemessage
+	applymovement LOCALID_TOWNHALL_CAMILLA, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	release
 	end
 
@@ -144,6 +154,8 @@ Past_TownHall_EventScript_CamillaGiveRevivalHerb::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_ThankYou
 	speak LOCALID_TOWNHALL_CAMILLA, VAR_0x8005, Name_Camilla, Past_TownHall_Text_CamillaOfCourse
 	closemessage
+	applymovement LOCALID_TOWNHALL_CAMILLA, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	release
 	end
 
@@ -161,6 +173,8 @@ Past_TownHall_EventScript_CamillaAcceptEstellaCandy::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_WillDo
 	questmenu QUEST_MENU_SET_REWARD, QUEST_WITH_MUCH_GRATITUDE
 	closemessage
+	applymovement LOCALID_TOWNHALL_CAMILLA, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	removeitem ITEM_RARE_CANDY
 	release
 	end
@@ -172,6 +186,8 @@ Past_TownHall_EventScript_CamillaCannotHealBulls::
 	speak LOCALID_TOWNHALL_CAMILLA, VAR_0x8005, Name_Camilla, Past_TownHall_CamillaICannotHelp
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_Hmm
 	closemessage
+	applymovement LOCALID_TOWNHALL_CAMILLA, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	release
 	end
 
@@ -179,6 +195,8 @@ Past_TownHall_EventScript_CamillaCantWaitToDigIn::
 	speakername Name_Camilla
 	msgbox Past_TownHall_Text_CamillaICantWaitToDigIn, MSGBOX_DEFAULT
 	closemessage
+	applymovement LOCALID_TOWNHALL_CAMILLA, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	release
 	end
 	
@@ -186,12 +204,20 @@ Past_TownHall_EventScript_CamillaPreGame::
 	speakername Name_Camilla
 	msgbox Past_TownHall_Text_CamillaIWillLookAfterHer, MSGBOX_DEFAULT
 	closemessage
+	applymovement LOCALID_TOWNHALL_CAMILLA, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	release
 	end
 
 Past_TownHall_EventScript_Estella::
+	lock
+	faceplayer
 	speakername Name_Estella
-	msgbox Past_TownHall_Text_Estella, MSGBOX_NPC
+	msgbox Past_TownHall_Text_Estella, MSGBOX_DEFAULT
+	closemessage	
+	applymovement LOCALID_TOWNHALL_ESTELLA, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
 	end
 
 Past_TownHall_EventScript_Happiny::
@@ -202,6 +228,8 @@ Past_TownHall_EventScript_Happiny::
 	msgbox Past_TownHall_Text_Happiny, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
+	applymovement LOCALID_TOWNHALL_HAPPINY, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	release
 	end
 
@@ -238,18 +266,18 @@ Past_TownHall_Text_LookerHandedOverTheRareCandy:
 
 Past_TownHall_Text_Estella:
 	.string "um, um!\p"
-	.string "i'll stay here until you're\n"
-	.string "back from the forest sir!$"
+	.string "i'll stay here until you're back from\n"
+	.string "the forest sir!$"
 
 Past_TownHall_Text_CamillaIWillLookAfterHer:
-	.string "Mr. Looker, I am glad to see you\n"
-	.string "up on your feet so soon!\p"
-	.string "Miss Anabel is waiting for you at\n"
-	.string "the Shrine of Prosperity in the\l"
-	.string "eastern wood.\p"
-	.string "Please join her in speaking with\n"
-	.string "our village elder at your earliest\l"
-	.string "convenience!\p"
+	.string "Mr. Looker, I am glad to see you up on\n"
+	.string "your feet so soon!\p"
+	.string "Miss Anabel is waiting for you at the\n"
+	.string "Shrine of Prosperity in the eastern\l"
+	.string "forest.\p"
+	.string "Please join her in speaking with the\n"
+	.string "village elder at your earliest\l"
+	.string "opportunity!\p"
 	.string "I will look after Estella in your\n"
 	.string "absense!$"
 
@@ -275,29 +303,38 @@ Past_TownHall_Text_LookerWakingUp:
 	.string "You're safe…?$"
 
 Past_TownHall_Text_AnabelDontSpeak:
-	.string "Don't worry about me,\n"
-	.string "you're a mess right now!\p"
+	.string "Don't worry about me, you're a mess\n"
+	.string "right now!\p"
 	.string "You collapsed right at the town's\n"
-	.string "entrance!\p"
-	.string "Get this - we're actually a few\n"
-	.string "hundred years in the past!$"
+	.string "entrance, you know!$"
 
-Past_TownHall_Text_CamillaYouAreNotTheFirst:
-	.string "Yes, you three are not the\n"
-	.string "first to be sent here, nor do I\l"
-	.string "believe you will be the last!\p"
-	.string "For some reason, the Spirit of\n"
-	.string "Peace has an affinity for our\l"
-	.string "particular point in history.\p"
-	.string "My name is Camilla.\n"
+Past_TownHall_Text_CamillaMyName:
+	.string "I am glad to finally see you awake!\p"
+	.string "My name is Camilla, mayor and head\n"
+	.string "doctor of Porta Bella!\p"
 	.string "Pleased to make your acquaintance!$"
 
-Past_TownHall_Text_AnabelThisIsCamilla:
-	.string "Camilla here acts as both\n"
-	.string "doctor and mayor to the city! \p"
-	.string "She and Happiny nursed me back to\n"
-	.string "full health a few days ago.$"
+Past_TownHall_Text_LookerTheTown:
+	.string "Porta Bella…?\p"
+	.string "This isn't Porta Bella…$"
 
+Past_TownHall_Text_LookerWhereAreWe:
+	.string "Anabel, where are we?$"
+
+Past_TownHall_Text_AnabelYouSlowpoke:
+	.string "Wow, you Slowpoke! You haven't figured\n"
+	.string "it out yet?\p"
+	.string "We're a few hundred years in the past!$"
+
+Past_TownHall_Text_CamillaYouAreNotTheFirst:
+	.string "Hahahaha!\p"
+	.string "You three are not the first to be sent\n"
+	.string "here, nor do I believe you will be\l"
+	.string "the last!\p"
+	.string "For some reason, the Spirit of Peace\n"
+	.string "has an affinity for our particular\l"
+	.string "point in history.$"
+	
 Past_TownHall_Text_LostGirl:
 	.string "um, um, um!\p"
 	.string "sorry for causing so much trouble,\n"
@@ -314,13 +351,13 @@ Past_TownHall_Text_LostGirl2:
 	.string "then i was attacked by strong pokémon…$"
 
 Past_TownHall_Text_AnabelCamillaToldMe:
-	.string "Camilla told me she came\n"
-	.string "a week ago today.\p"
+	.string "Camilla told me she came one week ago\n"
+	.string "today.\p"
 	.string "Kinda crazy, right?\n"
 	.string "There's more though.\p"
-	.string "Once you're feeling all rested up,\n"
-	.string "come see me at the east forest\l"
-	.string "shrine, the Shrine of Prosperity.\p"
+	.string "Once you're feeling all rested up, come\n"
+	.string "see me at the east forest shrine, the\l"
+	.string "Shrine of Prosperity.\p"
 	.string "It seems we'll learn more about why\n"
 	.string "Porta Bella is out of whack from the\l"
 	.string "village elder there.$"
@@ -354,10 +391,10 @@ Past_TownHall_Text_CamillaOhHereYouGo:
 Past_TownHall_CamillaICannotHelp:
 	.string "Oh, our poor Tauros and Miltank…\n"
 	.string "I am sorry, but I cannot help them.\p"
-	.string "I have tried everything I have, but their\n"
-	.string "condition just is not improving…\p"
-	.string "Perhaps the remedy for what they are ailing\n"
-	.string "from does not exist in our time?$"
+	.string "I have tried everything I have, but\n"
+	.string "their condition just will not improve…\p"
+	.string "Perhaps the remedy for their ailment\n"
+	.string "does not exist in our time?$"
 
 Past_TownHall_Text_CamillaOfCourse:
 	.string "Of course! I am always happy to help.$"

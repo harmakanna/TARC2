@@ -269,9 +269,8 @@ ShrineOfProsperityPast_Text_OratorStartFromBeginning:
 	.string "Let us start from the beginning, then.$"
 
 ShrineOfProsperityPast_Text_OratorThisIsALegend:
-	.string "This is a legend which spans thousands\n"
-	.string "of years, back to the founding of this\l"
-	.string "town…$"
+	.string "This is a legend which spans back to\n"
+	.string "the founding of this village…$"
 
 ShrineOfProsperityPast_Text_AnabelSoTheSpiritsAre:
 	.string "Wow…\p"

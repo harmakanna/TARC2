@@ -225,7 +225,7 @@ Present_Cafe_EventScript_MayPreQuest::
 	end
 
 Present_Cafe_EventScript_MayQuest::
-	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_MAY
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_THE_CULPRIT, 1
 	goto_if_eq VAR_RESULT, TRUE, Present_Cafe_EventScript_MayPostQuest
     setflag FLAG_SYS_DISAPPEAR_QUESTS
     playbgm MUS_PL_LOOKER, TRUE
@@ -245,8 +245,9 @@ Present_Cafe_EventScript_MayQuest::
 	setflag FLAG_SYS_NO_WHITEOUT
 	trainerbattle_no_intro TRAINER_MAY, Present_Cafe_Text_MayDefeated
 	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Present_Cafe_EventScript_MayDefeat
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_Cafe_EventScript_MayDefeat
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_MAY
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, 1
     clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	clearflag FLAG_SYS_NO_WHITEOUT
 	fadedefaultbgm
@@ -258,6 +259,7 @@ Present_Cafe_EventScript_MayCulpritQuest::
 	setflag FLAG_SYS_NO_WHITEOUT
 	trainerbattle_no_intro TRAINER_MAY_CULPRIT, Present_Cafe_Text_MayDefeated
 	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Present_Cafe_EventScript_MayDefeat
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_Cafe_EventScript_MayDefeat
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Cafe_Text_LookerIGuessThatWasFaster
 	speak LOCALID_CAFE_MAY, VAR_0x8005, Name_May, Present_Cafe_Text_MayIKnowRight
@@ -265,7 +267,7 @@ Present_Cafe_EventScript_MayCulpritQuest::
 	speak LOCALID_CAFE_MAY, VAR_0x8005, Name_May, Present_Cafe_Text_MayWellIDidntKnow
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Cafe_Text_LookerSensible
 	closemessage
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, SUB_QUEST_DEFEAT_MAY
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, 1
 	questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT
     clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	clearflag FLAG_SYS_NO_WHITEOUT
@@ -294,6 +296,7 @@ Present_Cafe_EventScript_MayDefeat::
 
 Present_Cafe_EventScript_MayPostQuest::
 	goto_if_eq VAR_CHOOSE_CULPRIT, 1, Present_Cafe_EventScript_MayCulpritPostQuest
+	faceplayer
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Cafe_Text_LookerIGuessThatWasFaster
 	speak LOCALID_CAFE_MAY, VAR_0x8005, Name_May, Present_Cafe_Text_MayIKnowRight
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Cafe_Text_LookerThankYouForYourCooperation

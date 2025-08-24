@@ -191,6 +191,7 @@ Present_CityHall_2F_Ranger_EventScript_ScientistChoseWing::
 
 Present_CityHall_2F_Ranger_EventScript_FossilQuestFinish::
 	completequest QUEST_FORGOTTEN_TO_TIME
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	release
 	end
 
@@ -236,13 +237,13 @@ Present_CityHall_2F_Ranger_Text_FossilScientistIveDoneItWing:
 
 Present_CityHall_2F_Ranger_Text_ScientistOhATusk:
 	.string "Ooo! Ooo!\p"
-	.string "Is that an eroded tusk you have\p"
+	.string "Is that an eroded tusk you have?\p"
 	.string "Give it here! Let me show you something\n"
 	.string "that will blow your mind!$"
 
 Present_CityHall_2F_Ranger_Text_ScientistOhAWing:
 	.string "Ooo! Ooo!\p"
-	.string "Is that a wing imprint you have\p"
+	.string "Is that a wing imprint you have?\p"
 	.string "Give it here! Let me show you something\n"
 	.string "that will blow your mind!$"
 
@@ -337,16 +338,16 @@ Present_CityHall_2F_Ranger_Text_HeadRangerActive:
 	.string "through to there now.$"
 
 Present_CityHall_2F_Ranger_Text_HeadRangerDang:
-	.string "Wait, you're telling me\n"
-	.string "you had to fight back both\l"
-	.string "legendaries at the same time!?\p"
+	.string "Wait, you're telling me you had to\n"
+	.string "fight back both legendaries at the\l"
+	.string "same time!?\p"
 	.string "That's insane!$"
 
 Present_CityHall_2F_Ranger_Text_LookerAllInADaysWork:
 	.string "All in a day's work.\n"
 	.string "More peculiarly…\p"
-	.string "Littered on the ground of the\n"
-	.string "Shrine were plenty of used Pokéballs…\p"
+	.string "Littered on the ground of the Shrine\n"
+	.string "were plenty of used Pokéballs…\p"
 	.string "Would you suppose anyone might have\n"
 	.string "tried to catch Landorus?$"
 
@@ -361,18 +362,18 @@ Present_CityHall_2F_Ranger_Text_HeadRangerReward:
 	.string "Adults know not to over-catch wild\n"
 	.string "Pokémon, but children can often run\l"
 	.string "rampant on the ecosystem if unchecked.\p"
-	.string "But to think there would be one\n"
-	.string "strong enough to capture a legend…\p"
-	.string "Anyways, I think we can trust you\n"
-	.string "to not go crazy yourself.\p"
+	.string "But to think there would be one strong\n"
+	.string "enough to capture a legend…\p"
+	.string "Anyways, I think we can trust you to\n"
+	.string "not go crazy yourself.\p"
 	.string "We don't have much to give, but I hope\n"
 	.string "these Safari Balls could come in handy?$" 
 
 Present_CityHall_2F_Ranger_Text_HeadRangerComplete:
-	.string "Thank you for all of your\n"
-	.string "help, Looker!\p"
-	.string "I hope those Safari Balls will\n"
-	.string "come in handy in the future.$"
+	.string "Thank you for all of your help,\n"
+	.string "Looker!\p"
+	.string "I hope those Safari Balls will come\n"
+	.string "in handy in the future.$"
 
 Present_CityHall_2F_Ranger_Text_HeadRangerBusyWithPaperwork:
 	.string "Sorry, I'm busy with too many reports\n"
