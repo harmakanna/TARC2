@@ -356,9 +356,9 @@ ShrineOfProsperityPresent_Movement_AnabelLeave:
 
 ShrineOfProsperityPresent_Movement_LookerLeave:
 	walk_left
-	walk_left
 	walk_down
 	walk_down
+	walk_right
 	walk_right
 	walk_down
 	walk_down

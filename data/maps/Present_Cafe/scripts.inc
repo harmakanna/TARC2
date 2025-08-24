@@ -379,7 +379,7 @@ Present_Cafe_Text_MayIKnowRight:
 	.string "I know, right?$"
 
 Present_Cafe_Text_LookerYouSeemResponsible:
-	.string "Anyways…\n"
+	.string "Anyways…\p"
 	.string "You seem like a responsible young\n"
 	.string "lady, so why did you catch Landorus and\l"
 	.string "throw the city into disarray?$"
