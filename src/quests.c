@@ -233,7 +233,7 @@ static const u8 sText_Active[] = _("Active");
 static const u8 sText_Reward[] = _("Reward");
 static const u8 sText_Complete[] = _("Done");
 static const u8 sText_ShowLocation[] =
-      _("Location: {STR_VAR_2}");
+      _("{STR_VAR_2}");
 static const u8 sText_StartForMore[] =
       _("Start for more details.");
 static const u8 sText_ReturnRecieveReward[] =
@@ -1843,7 +1843,7 @@ void GenerateQuestLocation(s32 questId)
 void PrintQuestLocation(s32 questId)
 {
 	FillWindowPixelBuffer(1, 0);
-	QuestMenu_AddTextPrinterParameterized(1, 2, gStringVar4, 2, 3, 2, 0, 0,
+	QuestMenu_AddTextPrinterParameterized(1, 2, gStringVar4, 42, 5, 2, 0, 0,
 	                                      4);
 }
 void GenerateQuestFlavorText(s32 questId)
@@ -1889,7 +1889,7 @@ void UpdateQuestFlavorText(s32 questId)
 }
 void PrintQuestFlavorText(s32 questId)
 {
-	QuestMenu_AddTextPrinterParameterized(1, 2, gStringVar3, 40, 19, 5, 0, 0,
+	QuestMenu_AddTextPrinterParameterized(1, 2, gStringVar3, 42, 19, 5, 0, 0,
 	                                      4);
 }
 
@@ -1995,6 +1995,7 @@ void DetermineSpriteType(s32 questId)
 	QuestMenu_DestroySprite(sStateDataPtr->spriteIconSlot ^ 1);
 	sStateDataPtr->spriteIconSlot ^= 1;
 }
+
 static void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType)
 {
 	u8 *ptr = &sItemMenuIconSpriteIds[10];
@@ -2008,15 +2009,15 @@ static void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType)
 		switch (spriteType)
 		{
 			case OBJECT:
-				spriteId = CreateObjectGraphicsSprite(itemId, SpriteCallbackDummy, 20,
-				                                      132, 0);
+				spriteId = CreateObjectGraphicsSprite(itemId, SpriteCallbackDummy, 24,
+				                                      129, 0);
 				break;
 			case ITEM:
 				spriteId = AddItemIconSprite(102 + idx, 102 + idx, itemId);
 				break;
 			case PKMN:
 				LoadMonIconPalettes();
-				spriteId = CreateMonIcon(itemId, SpriteCallbackDummy, 20, 132, 0, 1);
+				spriteId = CreateMonIcon(itemId, SpriteCallbackDummy, 24, 129, 0, 1);
 				break;
 			default:
 				spriteId = SPRITE_NONE;
@@ -2034,8 +2035,8 @@ static void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType)
 
 			if (spriteType == ITEM)
 			{
-				gSprites[spriteId].x2 = 24;
-				gSprites[spriteId].y2 = 140;
+				gSprites[spriteId].x2 = 28;
+				gSprites[spriteId].y2 = 137;
 			}
 		}
 	}
@@ -2248,17 +2249,17 @@ static void GenerateMenuContext(void)
 static void PrintNumQuests(void)
 {
 	StringExpandPlaceholders(gStringVar4, sText_QuestNumberDisplay);
-	QuestMenu_AddTextPrinterParameterized(2, 0, gStringVar4, 167, 1, 0, 1, 0,
+	QuestMenu_AddTextPrinterParameterized(2, 0, gStringVar4, 167, 2, 0, 1, 0,
 	                                      0);
 }
 static void PrintMenuContext(void)
 {
 	QuestMenu_AddTextPrinterParameterized(2, 0,
-	                                      questNameArray[QUEST_ARRAY_COUNT], 10, 1, 0, 1, 0, 0);
+	                                      questNameArray[QUEST_ARRAY_COUNT], 10, 2, 0, 1, 0, 0);
 }
 static void PrintTypeFilterButton(void)
 {
-	QuestMenu_AddTextPrinterParameterized(2, 0, sText_Type, 198, 1,
+	QuestMenu_AddTextPrinterParameterized(2, 0, sText_Type, 198, 2,
 	                                      0, 1, 0, 0);
 
 }

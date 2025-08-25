@@ -475,7 +475,7 @@ static const struct WindowTemplate sShowcaseMultiPartyMenuWindowTemplate[] =
 static const struct WindowTemplate sCancelButtonWindowTemplate =
 {
     .bg = 0,
-    .tilemapLeft = 24,
+    .tilemapLeft = 23,
     .tilemapTop = 17,
     .width = 6,
     .height = 2,
@@ -485,7 +485,7 @@ static const struct WindowTemplate sCancelButtonWindowTemplate =
 static const struct WindowTemplate sCancelButtonWindowTemplate_equal =
 {
     .bg = 0,
-    .tilemapLeft = 24,
+    .tilemapLeft = 23,
     .tilemapTop = 17,
     .width = 6,
     .height = 2,

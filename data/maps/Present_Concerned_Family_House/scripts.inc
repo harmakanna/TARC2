@@ -3,7 +3,7 @@ Present_Concerned_Family_House_MapScripts::
 	.byte 0
 
 Present_Concerned_Family_House_OnTransition:
-	call_if_set FLAG_SYS_WEATHER_CTRL, Present_Concerned_Family_House_EventScript_ForcePlayMusic
+	@call_if_set FLAG_SYS_WEATHER_CTRL, Present_Concerned_Family_House_EventScript_ForcePlayMusic
 	call_if_unset FLAG_SYS_MAIN_GAME_START, Present_Concerned_Family_House_EventScript_PositionNPCs
 	end
 
