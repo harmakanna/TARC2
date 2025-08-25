@@ -19,6 +19,7 @@
 #include "party_menu.h"
 #include "scanline_effect.h"
 #include "sound.h"
+#include "start_menu.h"
 #include "string_util.h"
 #include "strings.h"
 #include "task.h"
@@ -856,6 +857,7 @@ static bool8 SetupGraphics(void)
 			break;
 		case 3:
 			ResetPaletteFade();
+       		gPaletteFade.bufferTransferDisabled = TRUE;
 			gMain.state++;
 			break;
 		case 4:
@@ -937,23 +939,14 @@ static bool8 SetupGraphics(void)
 			gMain.state++;
 			break;
 		case 18:
-			if (sListMenuState.initialized == 1)
-			{
-				BlendPalettes(0xFFFFFFFF, 16, RGB_BLACK);
-			}
+			BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
 			gMain.state++;
 			break;
 		case 19:
-			if (sListMenuState.initialized == 1)
-			{
-				BeginNormalPaletteFade(0xFFFFFFFF, 0, 16, 0, RGB_BLACK);
-			}
-			else
-			{
-
-				BeginNormalPaletteFade(0xFFFFFFFF, 0, 16, 0, RGB_BLACK);
+			BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+      		gPaletteFade.bufferTransferDisabled = FALSE;
+			if (sListMenuState.initialized != 1)
 				SetInitializedFlag(1);
-			}
 			gMain.state++;
 			break;
 		default:
@@ -981,13 +974,14 @@ static bool8 LoadGraphics(void)
 			}
 			break;
 		case 2:
-			LoadPalette(sQuestMenuBgPals, 0x00, 0x60);
+			LoadPalette(sQuestMenuBgPals, BG_PLTT_ID(0), PLTT_SIZE_4BPP);
 			sStateDataPtr->data[0]++;
 			break;
 		case 3:
 			sStateDataPtr->data[0]++;
 			break;
 		default:
+			LoadListMenuSwapLineGfx();
 			sStateDataPtr->data[0] = 0;
 			return TRUE;
 	}
@@ -2617,7 +2611,7 @@ void Task_QuestMenu_OpenFromStartMenu(u8 taskId)
 	if (!gPaletteFade.active)
 	{
         //PlayRainStoppingSoundEffect();
-        // RemoveExtraStartMenuWindows();
+        RemoveExtraStartMenuWindows();
 		CleanupOverworldWindowsAndTilemaps();
 		QuestMenu_Init(tItemPcParam, CB2_ReturnToFieldWithOpenMenu);
 		DestroyTask(taskId);

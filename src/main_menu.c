@@ -261,9 +261,9 @@ static const u8 gText_SaveFileErased[] = _("The save file has been erased\ndue t
 static const u8 gJPText_No1MSubCircuit[] = _("1Mサブきばんが ささっていません！");
 static const u8 gText_BatteryRunDry[] = _("The internal battery has run dry.\nThe game can be played.\pHowever, clock-based events will\nno longer occur.");
 
-static const u8 gText_MainMenuNewGame[] = _("NEW GAME");
-static const u8 gText_MainMenuContinue[] = _("CONTINUE");
-static const u8 gText_MainMenuOption[] = _("OPTION");
+static const u8 gText_MainMenuNewGame[] = _("New Game");
+static const u8 gText_MainMenuContinue[] = _("Continue");
+static const u8 gText_MainMenuOption[] = _("Option");
 static const u8 gText_MainMenuMysteryGift[] = _("MYSTERY GIFT");
 static const u8 gText_MainMenuMysteryGift2[] = _("MYSTERY GIFT");
 static const u8 gText_MainMenuMysteryEvents[] = _("MYSTERY EVENTS");
@@ -271,9 +271,9 @@ static const u8 gText_WirelessNotConnected[] = _("The Wireless Adapter is not\nc
 static const u8 gText_MysteryGiftCantUse[] = _("MYSTERY GIFT can't be used while\nthe Wireless Adapter is attached.");
 static const u8 gText_MysteryEventsCantUse[] = _("MYSTERY EVENTS can't be used while\nthe Wireless Adapter is attached.");
 
-static const u8 gText_ContinueMenuPlayer[] = _("PLAYER");
-static const u8 gText_ContinueMenuTime[] = _("TIME");
-static const u8 gText_ContinueMenuPokedex[] = _("POKéDEX");
+static const u8 gText_ContinueMenuPlayer[] = _("Player");
+static const u8 gText_ContinueMenuTime[] = _("Time");
+static const u8 gText_ContinueMenuPokedex[] = _("Pokémon");
 static const u8 gText_ContinueMenuBadges[] = _("BADGES");
 
 #define MENU_LEFT 2
@@ -427,7 +427,7 @@ static const u16 sMainMenuBgPal[] = INCBIN_U16("graphics/interface/main_menu_bg.
 static const u16 sMainMenuTextPal[] = INCBIN_U16("graphics/interface/main_menu_text.gbapal");
 
 static const u8 sTextColor_Headers[] = {TEXT_DYNAMIC_COLOR_1, TEXT_DYNAMIC_COLOR_2, TEXT_DYNAMIC_COLOR_3};
-static const u8 sTextColor_MenuInfo[] = {TEXT_DYNAMIC_COLOR_1, TEXT_COLOR_WHITE, TEXT_DYNAMIC_COLOR_3};
+static const u8 sTextColor_MenuInfo[] = {TEXT_DYNAMIC_COLOR_1, TEXT_DYNAMIC_COLOR_2, TEXT_DYNAMIC_COLOR_3};
 
 static const struct BgTemplate sMainMenuBgTemplates[] = {
     {
@@ -2167,17 +2167,17 @@ static void MainMenu_FormatSavegamePokedex(void)
     u8 str[0x20];
     u16 dexCount;
 
-    if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
-    {
-        if (IsNationalPokedexEnabled())
+    //if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
+    //{
+    //    if (IsNationalPokedexEnabled())
             dexCount = GetNationalPokedexCount(FLAG_GET_CAUGHT);
-        else
+    //    else
             dexCount = GetHoennPokedexCount(FLAG_GET_CAUGHT);
         StringExpandPlaceholders(gStringVar4, gText_ContinueMenuPokedex);
         AddTextPrinterParameterized3(2, FONT_NORMAL, 0, 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
         ConvertIntToDecimalStringN(str, dexCount, STR_CONV_MODE_LEFT_ALIGN, 4);
         AddTextPrinterParameterized3(2, FONT_NORMAL, GetStringRightAlignXOffset(FONT_NORMAL, str, 100), 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, str);
-    }
+    //}
 }
 
 static void MainMenu_FormatSavegameBadges(void)
@@ -2186,7 +2186,7 @@ static void MainMenu_FormatSavegameBadges(void)
     u8 badgeCount = 0;
     u32 i;
 
-    for (i = FLAG_BADGE01_GET; i < FLAG_BADGE01_GET + NUM_BADGES; i++)
+    /*for (i = FLAG_BADGE01_GET; i < FLAG_BADGE01_GET + NUM_BADGES; i++)
     {
         if (FlagGet(i))
             badgeCount++;
@@ -2194,7 +2194,7 @@ static void MainMenu_FormatSavegameBadges(void)
     StringExpandPlaceholders(gStringVar4, gText_ContinueMenuBadges);
     AddTextPrinterParameterized3(2, FONT_NORMAL, 0x6C, 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, gStringVar4);
     ConvertIntToDecimalStringN(str, badgeCount, STR_CONV_MODE_LEADING_ZEROS, 1);
-    AddTextPrinterParameterized3(2, FONT_NORMAL, GetStringRightAlignXOffset(FONT_NORMAL, str, 0xD0), 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, str);
+    AddTextPrinterParameterized3(2, FONT_NORMAL, GetStringRightAlignXOffset(FONT_NORMAL, str, 0xD0), 33, sTextColor_MenuInfo, TEXT_SKIP_DRAW, str);*/
 }
 
 static void LoadMainMenuWindowFrameTiles(u8 bgId, u16 tileOffset)
