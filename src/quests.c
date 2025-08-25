@@ -743,7 +743,7 @@ static const u8 sQuestMenuWindowFontColors[][4] =
 	{
 		//Header of Quest Menu
 		TEXT_COLOR_TRANSPARENT,
-		TEXT_COLOR_DARK_GRAY,
+		TEXT_COLOR_LIGHT_GRAY,
 		TEXT_COLOR_TRANSPARENT
 	},
 	{

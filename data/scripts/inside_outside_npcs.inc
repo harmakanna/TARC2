@@ -571,8 +571,8 @@ InsideOutside_Text_AceTrainerCoolBye:
     .string "Bye!$"
 
 InsideOutside_Text_AceTrainerSigh:
-    .string "Sigh… You're an officer of the law\n"
-    .string "but you can't even beat a teenager…?\p"
+    .string "Sigh… You're an officer of the law but\n"
+    .string "you can't even beat a teenager…?\p"
     .string "Wow…$"
 
 InsideOutside_Text_LookerUhhIllBeBack:
@@ -596,10 +596,11 @@ InsideOutside_Text_AceTrainerWhatever:
 InsideOutside_Text_LookerThatSoundsSystemic:
     .string "So you caught Landorus for a Pokédex\n"
     .string "entry?\p"
-    .string "I guess that IS common practice for aspiring\n"
-    .string "trainers…\p"
-    .string "… … …Anyways!\n"
-    .string "That's an issue for our government to solve!\p"
+    .string "I guess that IS common practice for\n"
+    .string "aspiring trainers…\p"
+    .string "… … …Anyways!\p"
+    .string "That's an issue for our government to\n"
+    .string "solve!\p"
     .string "So long as you release Landorus, I can\n"
     .string "let this minor transgression go.$"
 

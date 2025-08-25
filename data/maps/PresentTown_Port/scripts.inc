@@ -88,6 +88,7 @@ PresentTown_Port_EventScript_Departure::
 	waitmovement LOCALID_PORT_ANABEL
 	removeobject LOCALID_PORT_ANABEL
 	waitmovement LOCALID_CAMERA
+	delay 100
 	playse SE_SHIP
 	delay 20
 	applymovement LOCALID_PLAYER, PresentTown_Port_Movement_EndGame
@@ -199,17 +200,17 @@ PresentTown_Port_Movement_ShipPullIntoPort:
 	step_end
 
 PresentTown_Port_Movement_EndGame:
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
+	walk_slow_left
 	step_end
 
 PresentTown_Port_Movement_LookerExitShip:

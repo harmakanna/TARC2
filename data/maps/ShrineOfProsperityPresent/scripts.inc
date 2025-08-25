@@ -280,7 +280,6 @@ ShrineOfProsperityPresent_Movement_AnabelWalkUpResolution:
 
 ShrineOfProsperityPresent_Movement_CulpritLeave:
 	walk_left
-	walk_left
 	walk_down
 	walk_down
 	walk_down
@@ -293,7 +292,6 @@ ShrineOfProsperityPresent_Movement_CulpritLeave:
 	step_end
 
 ShrineOfProsperityPresent_Movement_YoungsterLeave:
-	walk_fast_left
 	walk_fast_left
 	walk_fast_down
 	walk_fast_down

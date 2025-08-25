@@ -1362,15 +1362,7 @@ static const struct SpriteFrameImage sPicTable_BWAceTrainerM[] = {
 };
 
 static const struct SpriteFrameImage sPicTable_Blue[] = {
-    overworld_frame(gObjectEventPic_Blue, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Blue, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Blue, 2, 4, 2),
-    overworld_frame(gObjectEventPic_Blue, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Blue, 2, 4, 0),
-    overworld_frame(gObjectEventPic_Blue, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Blue, 2, 4, 1),
-    overworld_frame(gObjectEventPic_Blue, 2, 4, 2),
-    overworld_frame(gObjectEventPic_Blue, 2, 4, 2),
+    overworld_ascending_frames(gObjectEventPic_Blue, 2, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_Cynthia[] = {

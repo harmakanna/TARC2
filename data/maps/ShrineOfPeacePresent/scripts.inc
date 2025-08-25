@@ -43,6 +43,8 @@ ShrineOfPeacePresent_EventScript_MainGameStart::
 	waitmovement 0
 	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, ShrineOfPeacePresent_Text_MainGameStart
 	startquest QUEST_INTERROGATE_MATT
+	setflag FLAG_SYS_MAIN_GAME_START
+	setflag FLAG_SYS_QUEST_MENU_GET
 	setvar VAR_CUTSCENE_STATE, 13
 	release
 	end
