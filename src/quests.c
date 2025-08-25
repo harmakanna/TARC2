@@ -755,13 +755,13 @@ static const u8 sQuestMenuWindowFontColors[][4] =
 	{
 		//Done state progress indicator
 		TEXT_COLOR_TRANSPARENT,
-		TEXT_COLOR_GREEN,
+		TEXT_COLOR_BLUE,
 		TEXT_COLOR_TRANSPARENT
 	},
 	{
 		//Active state progress indicator
 		TEXT_COLOR_TRANSPARENT,
-		TEXT_COLOR_BLUE,
+		TEXT_COLOR_LIGHT_BLUE,
 		TEXT_COLOR_TRANSPARENT
 	},
 	{
