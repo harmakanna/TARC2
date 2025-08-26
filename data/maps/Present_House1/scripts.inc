@@ -217,11 +217,12 @@ Present_House1_Text_AilingManMyTimeIsUp:
 Present_House1_Text_AilingManAnAncientHerb:
 	.string "Mmmmmm… Maybe that could work…\p"
 	.string "When I was a young'un, my great-gramma\n"
-	.string "cooked with this one herb to keep herself\l"
-	.string "lively and strong…\p"
-	.string "But I haven't seen that herb around here in\n"
-	.string "a looooooong time…\p"
-	.string "Forget it… I suppose nothing can help me…$"
+	.string "cooked with this one herb to keep\l"
+	.string "herself lively and strong…\p"
+	.string "But I haven't seen that herb around here\n"
+	.string "in a looooooong time…\p"
+	.string "Forget it…\n"
+	.string "I suppose nothing can help me…$"
 
 Present_House1_Text_AilingManGroan:
 	.string "Oooooh…$"
@@ -244,14 +245,14 @@ Present_House1_Text_AilingManIDidIt:
 	.string "I can move!$"
 
 Present_House1_Text_AilingManFeelingBetter:
-	.string "This root is incredible! I feel three years\n"
-	.string "younger now! Thank you!\p"
+	.string "This root is incredible! I feel three\n"
+	.string "years younger now! Thank you!\p"
 
 Present_House1_Text_AilingManCanTeachMoves:
-	.string "I may not look the part, but back in my\n"
-	.string "youth I was quite the trainer!\p"
-	.string "If you'd like, I can teach your Pokémon\n"
-	.string "some new moves.$"
+	.string "I may not look the part, but back in\n"
+	.string "my youth I was quite the trainer!\p"
+	.string "If you'd like, I can teach your\n"
+	.string "Pokémon some new moves.$"
 
 Present_House1_Text_AilingManWhichMon:
 	.string "Which Pokémon would you like me to teach\n"
