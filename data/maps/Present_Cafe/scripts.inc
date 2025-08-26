@@ -402,7 +402,7 @@ Present_Cafe_Text_LookerSensible:
 	.string "and bring this case to a close!$"
 
 Present_Cafe_Text_MayHuh:
-	.string "Huh? What?\n"
+	.string "Huh? What?\p"
 	.string "I thought this was something Team\n"
 	.string "Aqua did?\p"
 	.string "Why are you accusing ME?$"
