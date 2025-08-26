@@ -380,7 +380,7 @@ bool32 MoveSelectionDisplayZMove(u16 zmove, u32 battler)
 
         ZMoveSelectionDisplayPpNumber(battler);
         ZMoveSelectionDisplayMoveType(zmove, battler);
-        MoveSelectionCreateCursorAt(0, 0);
+        MoveSelectionCreateCursorAt(0, 34);
         return TRUE;
     }
 

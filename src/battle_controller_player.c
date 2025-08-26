@@ -876,7 +876,7 @@ void HandleInputChooseMove(u32 battler)
             MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
             gMoveSelectionCursor[battler] ^= 1;
             PlaySE(SE_SELECT);
-            MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
+            MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 34);
             if (B_SHOW_EFFECTIVENESS)
                 MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
             MoveSelectionDisplayPpNumber(battler);
@@ -893,7 +893,7 @@ void HandleInputChooseMove(u32 battler)
             MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
             gMoveSelectionCursor[battler] ^= 1;
             PlaySE(SE_SELECT);
-            MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
+            MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 34);
             if (B_SHOW_EFFECTIVENESS)
                 MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
             MoveSelectionDisplayPpNumber(battler);
@@ -909,7 +909,7 @@ void HandleInputChooseMove(u32 battler)
             MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
             gMoveSelectionCursor[battler] ^= 2;
             PlaySE(SE_SELECT);
-            MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
+            MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 34);
             if (B_SHOW_EFFECTIVENESS)
                 MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
             MoveSelectionDisplayPpNumber(battler);
@@ -926,7 +926,7 @@ void HandleInputChooseMove(u32 battler)
             MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
             gMoveSelectionCursor[battler] ^= 2;
             PlaySE(SE_SELECT);
-            MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
+            MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 34);
             if (B_SHOW_EFFECTIVENESS)
                 MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
             MoveSelectionDisplayPpNumber(battler);
@@ -1001,7 +1001,7 @@ static void ReloadMoveNames(u32 battler)
         gBattleStruct->zmove.viewing = FALSE;
         MoveSelectionDestroyCursorAt(battler);
         MoveSelectionDisplayMoveNames(battler);
-        MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
+        MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 34);
         if (B_SHOW_EFFECTIVENESS)
             MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
         MoveSelectionDisplayPpNumber(battler);
@@ -1030,7 +1030,7 @@ static u32 UNUSED HandleMoveInputUnused(u32 battler)
         MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
         gMoveSelectionCursor[battler] ^= 1;
         PlaySE(SE_SELECT);
-        MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
+        MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 34);
     }
     if (JOY_NEW(DPAD_RIGHT) && !(gMoveSelectionCursor[battler] & 1)
         && (gMoveSelectionCursor[battler] ^ 1) < gNumberOfMovesToChoose)
@@ -1038,14 +1038,14 @@ static u32 UNUSED HandleMoveInputUnused(u32 battler)
         MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
         gMoveSelectionCursor[battler] ^= 1;
         PlaySE(SE_SELECT);
-        MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
+        MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 34);
     }
     if (JOY_NEW(DPAD_UP) && gMoveSelectionCursor[battler] & 2)
     {
         MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
         gMoveSelectionCursor[battler] ^= 2;
         PlaySE(SE_SELECT);
-        MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
+        MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 34);
     }
     if (JOY_NEW(DPAD_DOWN) && !(gMoveSelectionCursor[battler] & 2)
         && (gMoveSelectionCursor[battler] ^ 2) < gNumberOfMovesToChoose)
@@ -1053,7 +1053,7 @@ static u32 UNUSED HandleMoveInputUnused(u32 battler)
         MoveSelectionDestroyCursorAt(gMoveSelectionCursor[battler]);
         gMoveSelectionCursor[battler] ^= 2;
         PlaySE(SE_SELECT);
-        MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
+        MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 34);
     }
 
     return var;
@@ -1155,7 +1155,7 @@ void HandleMoveSwitching(u32 battler)
 
         gBattlerControllerFuncs[battler] = HandleInputChooseMove;
         gMoveSelectionCursor[battler] = gMultiUsePlayerCursor;
-        MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
+        MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 34);
         if (B_SHOW_EFFECTIVENESS)
             MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
         else
@@ -1168,7 +1168,7 @@ void HandleMoveSwitching(u32 battler)
     {
         PlaySE(SE_SELECT);
         MoveSelectionDestroyCursorAt(gMultiUsePlayerCursor);
-        MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
+        MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 34);
         gBattlerControllerFuncs[battler] = HandleInputChooseMove;
         if (B_SHOW_EFFECTIVENESS)
             MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
@@ -1190,7 +1190,7 @@ void HandleMoveSwitching(u32 battler)
             PlaySE(SE_SELECT);
 
             if (gMultiUsePlayerCursor == gMoveSelectionCursor[battler])
-                MoveSelectionCreateCursorAt(gMultiUsePlayerCursor, 0);
+                MoveSelectionCreateCursorAt(gMultiUsePlayerCursor, 34);
             else
                 MoveSelectionCreateCursorAt(gMultiUsePlayerCursor, 27);
         }
@@ -1208,7 +1208,7 @@ void HandleMoveSwitching(u32 battler)
             PlaySE(SE_SELECT);
 
             if (gMultiUsePlayerCursor == gMoveSelectionCursor[battler])
-                MoveSelectionCreateCursorAt(gMultiUsePlayerCursor, 0);
+                MoveSelectionCreateCursorAt(gMultiUsePlayerCursor, 34);
             else
                 MoveSelectionCreateCursorAt(gMultiUsePlayerCursor, 27);
         }
@@ -1226,7 +1226,7 @@ void HandleMoveSwitching(u32 battler)
             PlaySE(SE_SELECT);
 
             if (gMultiUsePlayerCursor == gMoveSelectionCursor[battler])
-                MoveSelectionCreateCursorAt(gMultiUsePlayerCursor, 0);
+                MoveSelectionCreateCursorAt(gMultiUsePlayerCursor, 34);
             else
                 MoveSelectionCreateCursorAt(gMultiUsePlayerCursor, 27);
         }
@@ -1244,7 +1244,7 @@ void HandleMoveSwitching(u32 battler)
             PlaySE(SE_SELECT);
 
             if (gMultiUsePlayerCursor == gMoveSelectionCursor[battler])
-                MoveSelectionCreateCursorAt(gMultiUsePlayerCursor, 0);
+                MoveSelectionCreateCursorAt(gMultiUsePlayerCursor, 34);
             else
                 MoveSelectionCreateCursorAt(gMultiUsePlayerCursor, 27);
         }
@@ -1914,8 +1914,8 @@ void MoveSelectionCreateCursorAt(u8 cursorPosition, u8 baseTileNum)
 void MoveSelectionDestroyCursorAt(u8 cursorPosition)
 {
     u16 src[2];
-    src[0] = 0x1016;
-    src[1] = 0x1016;
+    src[0] = 33;
+    src[1] = 33;
 
     CopyToBgTilemapBufferRect_ChangePalette(0, src, 9 * (cursorPosition & 1) + 1, 55 + (cursorPosition & 2), 1, 2, 0x11);
     CopyBgTilemapBufferToVram(0);
@@ -2292,7 +2292,7 @@ void InitMoveSelectionsVarsAndStrings(u32 battler)
     LoadTypeIcons(battler);
     MoveSelectionDisplayMoveNames(battler);
     gMultiUsePlayerCursor = 0xFF;
-    MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
+    MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 34);
     if (B_SHOW_EFFECTIVENESS)
         MoveSelectionDisplayMoveEffectiveness(CheckTargetTypeEffectiveness(battler), battler);
     else
