@@ -71,8 +71,13 @@ PresentTown_OnTransition:
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetStormWeather
 	call_if_unset FLAG_SYS_WEATHER_CTRL, PresentTown_EventScript_ClearTornadusNPCFlag
 	call_if_set FLAG_TALKED_TO_MATT_OUTSIDE, PresentTown_EventScript_AquaMemberFPositioning
+	call_if_unset FLAG_HIDE_CUTSCENE_FOREST_IDOL, PresentTown_EventScript_HideLostIdol
 	@call_if_eq VAR_PORTO_BELLA_CITY_STATE, 1, PresentTown_EventScript_PrepareAnabelForCutscene
 	end
+
+PresentTown_EventScript_HideLostIdol::
+	hideobjectat LOCALID_CITY_FOREST_IDOL, MAP_PRESENT_TOWN
+	return
 
 PresentTown_EventScript_ClearTornadusNPCFlag::
 	clearflag FLAG_HIDE_TORNADUS_NPCS
@@ -90,7 +95,52 @@ PresentTown_EventScript_PrepareAnabelForCutscene::
 PresentTown_OnFrame:
 	map_script_2 VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1, PresentTown_EventScript_LookerThinkingScenes
 	map_script_2 VAR_CATCH_GENIES_QUEST, 4, PresentTown_EventScript_FinishGeniesQuest
+	map_script_2 VAR_CUTSCENE_FOREST_STATE, 1, PresentTown_EventScript_LostIdolThankYou
 	.2byte 0
+
+PresentTown_EventScript_LostIdolThankYou::
+	lockall
+	clearflag FLAG_SYS_SPAWN_INVISIBLE
+	fadescreen FADE_FROM_BLACK
+	applymovement LOCALID_PLAYER, PresentTown_Movement_LookerGuideLostIdol
+	delay 16
+	playse SE_EXIT
+	applymovement LOCALID_CITY_FOREST_IDOL, PresentTown_Movement_LookerGuideLostIdol
+	waitmovement 0
+	applymovement LOCALID_CITY_FOREST_IDOL, Common_Movement_FaceRight
+	speak LOCALID_PLAYER, DIR_WEST, Name_Looker, PresentTown_Text_LookerHereWeAreLostIdol
+	speak LOCALID_CITY_FOREST_IDOL, DIR_EAST, Name_Right_Idol, PresentTown_Text_LostIdolThankYou
+	speak LOCALID_PLAYER, DIR_WEST, Name_Looker, Looker_Text_AlwaysHappyToHelp
+	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	applymovement LOCALID_CITY_FOREST_IDOL, PresentTown_Movement_LostIdolExitFrame
+	waitmovement 0
+	removeobject LOCALID_CITY_FOREST_IDOL
+	setvar VAR_TRIGGER_CUTSCENE_FOREST, 0
+	setvar VAR_CUTSCENE_FOREST_STATE, 0
+	clearflag FLAG_SYS_PREVENT_MAP_FADE
+	clearflag FLAG_HIDE_CAFE_IDOL_RIGHT
+	addvar VAR_NUM_FOUND_IDOLS, 1
+	goto_if_eq VAR_NUM_FOUND_IDOLS, 3, Looker_EventScript_FoundAllIdols
+	releaseall
+	end
+
+PresentTown_Movement_LookerGuideLostIdol:
+	set_visible
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+PresentTown_Movement_LostIdolExitFrame:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	step_end
 
 PresentTown_EventScript_FinishGeniesQuest::
 	lock
@@ -284,6 +334,7 @@ PresentTown_EventScript_StartStorm::
 	clearflag FLAG_HIDE_CITYHALL_1F_MAYOR
 	clearflag FLAG_HIDE_ANABEL_CITYHALL
 	clearflag FLAG_HIDE_PORT_BLUE
+	clearflag FLAG_HIDE_POKEMON_CENTER_IDOL
 	setvar VAR_PORTO_BELLA_CITY_STATE, 2
 	setvar VAR_CUTSCENE_STATE, 3
 	warp MAP_PRESENT_CITY_HALL_1F, 8, 8
@@ -775,6 +826,7 @@ PresentTown_EventScript_PeaceRangerCutscene::
 	destroyfollowernpc
 	setvar VAR_CUTSCENE_STATE, 5
 	setflag FLAG_SYS_PREVENT_MAP_FADE
+	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	warp MAP_CUTSCENE_FOREST, 10, 17
 	releaseall
 	end
@@ -1249,3 +1301,12 @@ PresentTown_Text_LookerTheSpiritsAreCaught:
 	.string "the duration of my stay…\p"
 	.string "This should prevent them from causing\n"
 	.string "any more havoc to the city…$"
+
+PresentTown_Text_LookerHereWeAreLostIdol:
+	.string "Well, here we are!\n"
+	.string "Welcome back to Porta Bella!$"
+
+PresentTown_Text_LostIdolThankYou:
+	.string "Thank you sooooo so much!\n"
+	.string "If you don't mind, I gotta run!\p"
+	.string "My show is supposed to start soon!$"

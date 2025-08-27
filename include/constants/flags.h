@@ -689,9 +689,9 @@
 #define FLAG_HIDE_CAFE_IDOL_LEFT  0x282 // Unused Flag
 #define FLAG_HIDE_CAFE_IDOL_RIGHT  0x283 // Unused Flag
 #define FLAG_HIDE_CAFE_IDOL_LISIA  0x284 // Unused Flag
-#define FLAG_HIDE_LOST_IDOL_LEFT  0x285 // Unused Flag
-#define FLAG_HIDE_LOST_IDOL_RIGHT  0x286 // Unused Flag
-#define FLAG_HIDE_LOST_IDOL_LISIA  0x287 // Unused Flag
+#define FLAG_HIDE_POKEMON_CENTER_IDOL  0x285 // Unused Flag
+#define FLAG_HIDE_CUTSCENE_FOREST_IDOL  0x286 // Unused Flag
+#define FLAG_HIDE_PAST_LISIA  0x287 // Unused Flag
 #define FLAG_HIDE_PEST_1_1  0x288 // Unused Flag
 #define FLAG_HIDE_PEST_1_2  0x289 // Unused Flag
 #define FLAG_HIDE_PEST_1_3  0x28A // Unused Flag
@@ -719,8 +719,8 @@
 #define FLAG_HIDE_SHRINE_PROSPERITY_PRESENT_ANABEL  0x2A0 // Unused Flag
 #define FLAG_HIDE_PORT_BLUE  0x2A1 // Unused Flag
 #define FLAG_HIDE_SHRINE_PROSPERITY_PRESENT_LANDORUS  0x2A2 // Unused Flag
-#define FLAG_UNUSED_0x2A3  0x2A3 // Unused Flag
-#define FLAG_UNUSED_0x2A4  0x2A4 // Unused Flag
+#define FLAG_HIDE_CUTSCENE_FOREST_MAINQUEST  0x2A3 // Unused Flag
+#define FLAG_SPOKE_TO_PAST_LISIA  0x2A4 // Unused Flag
 #define FLAG_UNUSED_0x2A5  0x2A5 // Unused Flag
 #define FLAG_UNUSED_0x2A6  0x2A6 // Unused Flag
 #define FLAG_UNUSED_0x2A7  0x2A7 // Unused Flag

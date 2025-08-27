@@ -151,3 +151,11 @@ Name_Ace_Trainer:
 Name_Youngster:
     .string "Youngster$"
     
+Name_Right_Idol:
+    .string "Sophia$"
+
+Name_Left_Idol:
+    .string "Bianca$"
+
+Name_Lisia:
+    .string "Lisia$"

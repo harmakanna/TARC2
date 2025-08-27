@@ -37,6 +37,58 @@ Present_PokemonCenter_EventScript_NurseStorm::
 	release
 	end
 	
+Present_PokemonCenter_EventScript_Idol::
+	lock
+	faceplayer
+	call Script_GetNPCFacingDirection
+	speakername Name_Left_Idol
+	speak LOCALID_POKEMON_CENTER_IDOL, VAR_0x8005, Name_Right_Idol, Present_PokemonCenter_Text_IdolIGotSeparated
+	returnqueststate QUEST_GET_INTO_THE_GROOVE
+	goto_if_eq VAR_RESULT, 2, Present_PokemonCenter_EventScript_IdolQuest
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_ThatIsTroubling
+	closemessage
+	release
+	end
+
+Present_PokemonCenter_EventScript_IdolQuest::
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_LetMeExplain
+	call_if_eq VAR_NUM_FOUND_IDOLS, 2, Present_PokemonCenter_EventScript_IdolYouFoundThemAll
+	call_if_ne VAR_NUM_FOUND_IDOLS, 2, Present_PokemonCenter_EventScript_IdolPleaseFindMyFriends
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_POKEMON_CENTER_IDOL
+	removeobject LOCALID_POKEMON_CENTER_PACHIRISU
+	fadescreen FADE_FROM_BLACK
+	clearflag FLAG_HIDE_CAFE_IDOL_LEFT
+	addvar VAR_NUM_FOUND_IDOLS, 1
+	goto_if_eq VAR_NUM_FOUND_IDOLS, 3, Looker_EventScript_FoundAllIdols
+	release
+	end
+
+Present_PokemonCenter_EventScript_IdolYouFoundThemAll::
+	playse SE_PIN
+	applymovement LOCALID_POKEMON_CENTER_IDOL, Common_Movement_ExclamationMark
+	waitmovement 0
+	delay 50
+	speak LOCALID_POKEMON_CENTER_IDOL, VAR_0x8005, Name_Left_Idol, Present_PokemonCenter_Text_IdolYouFoundThemAll
+	return
+
+Present_PokemonCenter_EventScript_IdolPleaseFindMyFriends::
+	speak LOCALID_POKEMON_CENTER_IDOL, VAR_0x8005, Name_Left_Idol, Present_PokemonCenter_Text_IdolPleaseFindMyFriends
+	return
+
+Present_PokemonCenter_EventScript_Pachirisu::
+	lock
+	waitse
+	playmoncry SPECIES_PACHIRISU, CRY_MODE_NORMAL
+	msgbox Present_PokemonCenter_Text_Pachirisu, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	applymovement LOCALID_POKEMON_CENTER_PACHIRISU, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
 Present_PokemonCenter_EventScript_Blissey::
 	lock
 	waitse
@@ -64,6 +116,33 @@ Present_PokemonCenter_Text_Blissey:
 Present_PokemonCenter_Text_Zangoose:
 	.string "Grrrrr…$"
 
+Present_PokemonCenter_Text_Pachirisu:
+	.string "Pa!$"
+
+Present_PokemonCenter_Text_IdolIGotSeparated:
+	.string "Man… that was scary…\p"
+	.string "My troupe and I…\p"
+	.string "We got attacked by wild Pokémon with the\n"
+	.string "onset of the hurricane.\p"
+	.string "I managed to get away unscathed, but the\n"
+	.string "other two ran off into the forest.\p"
+	.string "I hope they're all right…$"
+
+Present_PokemonCenter_Text_IdolYouFoundThemAll:
+	.string "Yo? They're all waiting for me at the\n"
+	.string "Tauros Café?\p"
+	.string "Awesome! I gotta get over there, ASAP!\p"
+	.string "Thanks for letting me know!$"
+
+Present_PokemonCenter_Text_IdolPleaseFindMyFriends:
+	.string "I'm needed at the Tauros Café ahead\n"
+	.string "of our performance tonight?\p"
+	.string "I guess I can wait for them there.\p"
+	.string "If you're not busy, could you please\n"
+	.string "look for the other two members of my\l"
+	.string "troupe?\p"
+	.string "I'm super worried for them…$"
+	
 Present_PokemonCenter_Text_NurseWelcome:
 	.string "Hello! Welcome to the Pokémon Center!\p"
 	.string "Please let me know if there is anything\n"

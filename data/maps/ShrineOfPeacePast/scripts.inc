@@ -77,7 +77,8 @@ ShrineOfPeacePast_EventScript_WarpToForestL::
 	msgbox ShrineOfPeacePast_Text_LookerISeeFootsteps, MSGBOX_DEFAULT
 	closemessage
 	warp MAP_CUTSCENE_FOREST_PAST, 9, 6
-	delay 48
+	waitstate
+	releaseall
 	end
 
 ShrineOfPeacePast_EventScript_WarpToForestM::
@@ -86,7 +87,8 @@ ShrineOfPeacePast_EventScript_WarpToForestM::
 	msgbox ShrineOfPeacePast_Text_LookerISeeFootsteps, MSGBOX_DEFAULT
 	closemessage
 	warp MAP_CUTSCENE_FOREST_PAST, 10, 6
-	delay 48
+	waitstate
+	releaseall
 	end
 
 ShrineOfPeacePast_EventScript_WarpToForestR::
@@ -95,7 +97,8 @@ ShrineOfPeacePast_EventScript_WarpToForestR::
 	msgbox ShrineOfPeacePast_Text_LookerISeeFootsteps, MSGBOX_DEFAULT
 	closemessage
 	warp MAP_CUTSCENE_FOREST_PAST, 11, 6
-	delay 48
+	waitstate
+	releaseall
 	end
 
 ShrineOfPeacePast_EventScript_Celebi::
@@ -118,20 +121,41 @@ ShrineOfPeacePast_EventScript_CelebiFirstWarp::
 
 ShrineOfPeacePast_EventScript_HandleWarpEvents::
 	setrespawn HEAL_LOCATION_PRESENT
+	call ShrineOfPeacePast_EventScript_ResetWarpEvents
 	call_if_unset FLAG_DEFEATED_SHRINE_GENIES, ShrineOfPeacePast_EventScript_EnableInclementWeather
 	call_if_set FLAG_DEFEATED_SHRINE_GENIES, ShrineOfPeacePast_EventScript_HandlePresentGenieSpawns
+	returnqueststate QUEST_GET_INTO_THE_GROOVE
+	call_if_eq VAR_RESULT, 2, ShrineOfPeacePast_EventScript_HandleLostIdolSpawn
 	goto ShrineOfPeacePast_EventScript_CelebiWarp
 	end
 
+ShrineOfPeacePast_EventScript_ResetWarpEvents::
+	clearflag FLAG_SYS_WEATHER_CTRL
+	setvar VAR_TRIGGER_CUTSCENE_FOREST, 0
+	setvar VAR_CUTSCENE_FOREST_STATE, 0
+	setflag FLAG_HIDE_CITY_TORNADUS
+	setflag FLAG_HIDE_CITY_THUNDURUS
+	return
+	
 ShrineOfPeacePast_EventScript_EnableInclementWeather::
 	setflag FLAG_SYS_WEATHER_CTRL
 	return
 
+ShrineOfPeacePast_EventScript_HandleLostIdolSpawn::
+	call_if_set FLAG_HIDE_CAFE_IDOL_RIGHT, ShrineOfPeacePast_EventScript_TrySpawnLostIdol
+	return
+
+ShrineOfPeacePast_EventScript_TrySpawnLostIdol::
+	randompercentage 34
+	call_if_eq VAR_RESULT, TRUE, ShrineOfPeacePast_EventScript_SpawnLostIdol
+	return
+
+ShrineOfPeacePast_EventScript_SpawnLostIdol::
+	setvar VAR_TRIGGER_CUTSCENE_FOREST, 1
+	setvar VAR_CUTSCENE_FOREST_STATE, 1
+	return
+
 ShrineOfPeacePast_EventScript_HandlePresentGenieSpawns::
-	clearflag FLAG_SYS_WEATHER_CTRL
-	@setflag FLAG_SYS_DISABLE_ENCOUNTERS
-	setflag FLAG_HIDE_CITY_TORNADUS
-	setflag FLAG_HIDE_CITY_THUNDURUS
 	randompercentage 10
 	call_if_eq VAR_RESULT, TRUE, ShrineOfPeacePast_EventScript_TrySpawnPresentGenies
 	return

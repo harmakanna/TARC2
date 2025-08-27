@@ -1,5 +1,14 @@
 Past_CelebiSociety_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Past_CelebiSociety_OnTransition
 	.byte 0
+
+Past_CelebiSociety_OnTransition::
+	call_if_unset FLAG_HIDE_PAST_LISIA, Past_CelebiSociety_EventScript_SetupLisia
+	end
+
+Past_CelebiSociety_EventScript_SetupLisia::
+	setobjectmovementtype LOCALID_PAST_CELEBI_SOCIETY_GENTLEMAN, MOVEMENT_TYPE_FACE_LEFT
+	return
 
 Past_CelebiSociety_EventScript_CouncilWoman::
 	lock
@@ -35,6 +44,122 @@ Past_CelebiSociety_EventScript_CouncilWomanSeeCamilla::
 	closemessage
 	release
 	end
+
+Past_CelebiSociety_Eventscript_Gentleman::
+	lock
+	faceplayer
+	goto_if_unset FLAG_HIDE_PAST_LISIA, Past_CelebiSociety_EventScript_GentlemanLisia
+	msgbox Past_CelebiSociety_Text_GentlemanMyFavoriteThing, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Past_CelebiSociety_EventScript_GentlemanLisia::
+	msgbox Past_CelebiSociety_Text_GentlemanLisia, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Past_CelebiSociety_EventScript_Lisia::
+	lock
+	faceplayer
+	call Script_GetNPCFacingDirection
+	speak LOCALID_PAST_LISIA, VAR_0x8005, Name_Lisia, Past_CelebiSociety_Text_LisiaHello
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_SoHeresTheThing
+	goto_if_set FLAG_DEFEATED_SHRINE_GENIES, Past_CelebiSociety_EventScript_LisiaLeaving
+	goto_if_set FLAG_SPOKE_TO_PAST_LISIA, Past_CelebiSociety_EventScript_LisiaNotLeaving
+	speak LOCALID_PAST_LISIA, VAR_0x8005, Name_Lisia, Past_CelebiSociety_Text_LisiaNotLeaving
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Past_CelebiSociety_Text_LookerCouldntYouGoBack
+	speak LOCALID_PAST_LISIA, VAR_0x8005, Name_Lisia, Past_CelebiSociety_Text_LisiaUmm
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Past_CelebiSociety_Text_LookerIllogical
+	closemessage
+	setflag FLAG_SPOKE_TO_PAST_LISIA
+	release
+	end
+
+Past_CelebiSociety_EventScript_LisiaNotLeaving::
+	speak LOCALID_PAST_LISIA, VAR_0x8005, Name_Lisia, Past_CelebiSociety_Text_LisiaNotLeavingShort
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_IUnderstand
+	closemessage
+	release
+	end
+
+Past_CelebiSociety_EventScript_LisiaLeaving::
+	speak LOCALID_PAST_LISIA, VAR_0x8005, Name_Lisia, Past_CelebiSociety_Text_LisiaLeaving
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_PAST_LISIA
+	setobjectmovementtype LOCALID_PAST_CELEBI_SOCIETY_GENTLEMAN, MOVEMENT_TYPE_FACE_LEFT
+	applymovement LOCALID_PAST_CELEBI_SOCIETY_GENTLEMAN, Common_Movement_FaceLeft
+	waitmovement 0
+	fadescreen FADE_FROM_BLACK
+	clearflag FLAG_HIDE_CAFE_IDOL_LISIA
+	addvar VAR_NUM_FOUND_IDOLS, 1
+	goto_if_eq VAR_NUM_FOUND_IDOLS, 3, Looker_EventScript_FoundAllIdols
+	release
+	end
+
+Past_CelebiSociety_Text_LisiaHello:
+	.string "Oh, hi! Finally, someone else from\n"
+	.string "my time!\p"
+	.string "I hope the storm's all settled?$"
+
+Past_CelebiSociety_Text_LisiaLeaving:
+	.string "So the storm's finally over?\n"
+	.string "Awesome!\p"
+	.string "Legit, we were attacked in the city out\n"
+	.string "of nowhere by a bunch of Mightyena, then\l"
+	.string "I got split up from Sophia in the woods…\p"
+	.string "Thank Celebi for bringing me to safety…\n"
+	.string "I'm still shaken up from that…\p"
+	.string "Anyways, I'll rush back to the present!\n"
+	.string "Thank you!$"
+
+Past_CelebiSociety_Text_LisiaNotLeaving:
+	.string "Ah… So the barista who organized our\n"
+	.string "show is getting impatient and wants us\l"
+	.string "there pronto.\p"
+	.string "But the storm is still rampaging in the\n"
+	.string "present, you said?\p"
+	.string "I'm sorry, but I don't feel comfortable\n"
+	.string "going back through that forest while\l"
+	.string "the typhoon's still raging…\p"
+	.string "I hope you get it.$"
+
+Past_CelebiSociety_Text_LisiaNotLeavingShort:
+	.string "I'm sorry, but I don't feel comfortable\n"
+	.string "going back through that forest while\l"
+	.string "the typhoon's still raging…\p"
+	.string "I hope you get it.$"
+
+Past_CelebiSociety_Text_LookerCouldntYouGoBack:
+	.string "But you could just go back in time to\n"
+	.string "right after the storm ends, no?$"
+
+Past_CelebiSociety_Text_LisiaUmm:
+	.string "Umm, I don't want to risk being out\n"
+	.string "there again alone though…$"
+
+Past_CelebiSociety_Text_LookerIllogical:
+	.string "A bit illogical, but I suppose I\n"
+	.string "cannot argue against anxieties.$"
+
+Past_CelebiSociety_Text_GentlemanMyFavoriteThing:
+	.string "Truly, my favorite aspect of life\n"
+	.string "in Porta Bella is the wealth of\l"
+	.string "knowledge given to us through the\l"
+	.string "steady stream of time travelers.\p"
+	.string "The Spirit of Peace is generous in\n"
+	.string "her quest to save all who wander into\l"
+	.string "her forest!$"
+
+Past_CelebiSociety_Text_GentlemanLisia:
+	.string "The future is fascinating! I could\n"
+	.string "never guess that performers would\l"
+	.string "perform in front of millions of fans\l"
+	.string "via the use of a 'television'!\p"
+	.string "Truly, I appreciate the Spirit of Peace\n"
+	.string "for her endless gift of knowledge\l"
+	.string "through all these time travelers!$"
 
 Past_CelebiSociety_Text_CouncilWomanPregame:
 	.string "Ah, another time traveler.\p"

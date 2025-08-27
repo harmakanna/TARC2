@@ -83,9 +83,15 @@ Looker_Text_AlrightFine:
 Looker_Text_SoHeresTheThing:
     .string "So here's the thing…$"
     
+Looker_Text_LetMeExplain:
+    .string "Let me explain…$"
+
 Looker_Text_ThisSeemsSerious:
     .string "This seems like a serious problem.$"
     
+Looker_Text_ThatIsTroubling:
+    .string "That is troubling.$"
+
 Looker_Text_INeedYourHelp:
     .string "I need your help.$"
 
@@ -120,10 +126,17 @@ Looker_Text_IFoundWhatYoureLookingFor:
 Looker_Text_AllInADaysWork:
     .string "All in a day's work.$"
     
+Looker_Text_AlwaysHappyToHelp:
+    .string "I'm always happy to help a citizen\n"
+    .string "in need.$"
+    
 Looker_Text_WhatsThat:
     .string "Huh?\p"
     .string "What's that?$"
 
+Looker_Text_Huh:
+    .string "Huh?$"
+    
 Looker_Text_Unlucky:
     .string "Unlucky.$"
 
@@ -143,6 +156,9 @@ Looker_Text_UhhOkay:
     .string "Uhh…\p"
     .string "Sure!$"
     
+Looker_Text_IUnderstand:
+    .string "I understand.$"
+    
 Looker_Text_Dots:
     .string "…$"
 
@@ -153,3 +169,17 @@ Looker_Text_DotsLong:
 Looker_Text_IThinkINeedTwoPokemon:
     .string "Hmm…\n"
     .string "I think I need two Pokémon for this…$"
+
+Looker_EventScript_FoundAllIdols::
+    speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, Looker_Text_ThatsAllTheIdols
+    closemessage
+    questmenu QUEST_MENU_SET_REWARD, QUEST_GET_INTO_THE_GROOVE
+    releaseall
+    end
+
+Looker_Text_ThatsAllTheIdols:
+    .string "Hmm…\p"
+    .string "I believe that's the last of the\n"
+    .string "missing idols!\p"
+    .string "I should go talk to the barista at\n"
+    .string "Tauros Café when I get the chance…$"

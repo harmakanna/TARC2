@@ -24,7 +24,7 @@
 #define QUEST_BONJOUR_EMMA          5 // Speak French to Emma - Done
 #define QUEST_HELP_FISHERMAN          6 // Find the best fishing spot in town - Done
 #define QUEST_EUREKA          7 // Find a battery to harness Mareep's power - Done
-#define QUEST_GET_INTO_THE_GROOVE          8 // Find the idols scattered after the storm
+#define QUEST_INVERSE          8 // Teach the student about type matchups through an inverse battle!
 #define QUEST_FARMLAND_INVASION_1         9 // Clear out the first wave of pest Pokemon - Done
 #define QUEST_FARMLAND_INVASION_2        10 // Clear out the second wave of pest Pokemon - Done
 #define QUEST_FARMLAND_INVASION_3        11 // Clear out the third wave of pest Pokemon - Done
@@ -35,9 +35,9 @@
 #define QUEST_HOMEGROWN_REMEDIES        16 // Find herbal remedies lost to time for the ailing old man - Done
 #define QUEST_FORGOTTEN_TO_TIME        17 // Revive fossils - Done
 #define QUEST_WITH_MUCH_GRATITUDE        18 // Send a thank you gift to Camilla from Estella - Done
-#define QUEST_INVERSE        19 // Teach the student about type matchups through an inverse battle!
-#define QUEST_LUXRAY        20 // Prove Luxray isn't a dark type!
-#define QUEST_22        21
+#define QUEST_GET_INTO_THE_GROOVE        19 // Find the idols scattered after the storm 
+#define QUEST_BREAK_A_LEG        20 // Help the idols warm up for their performance
+#define QUEST_LUXRAY        21 // Prove Luxray isn't a dark type!
 #define QUEST_23        22
 #define QUEST_24        23
 #define QUEST_25        24

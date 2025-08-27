@@ -5,11 +5,100 @@ CutsceneForest_MapScripts::
 
 CutsceneForest_OnTransition:
 	setflag FLAG_SYS_PREVENT_MAP_FADE
+	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetStormWeather
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 1, CutsceneForest_EventScript_AddLostIdol
 	end
+
+CutsceneForest_EventScript_AddLostIdol::
+	clearflag FLAG_HIDE_CUTSCENE_FOREST_IDOL
+	addobject LOCALID_FOREST_LOST_IDOL
+	return
 
 CutsceneForest_OnFrame:
     map_script_2 VAR_CUTSCENE_STATE, 5, CutsceneForest_EventScript_SearchForEstella
+	map_script_2 VAR_CUTSCENE_FOREST_STATE, 1, CutsceneForest_EventScript_FindLostIdol
     .2byte 0
+
+CutsceneForest_EventScript_FindLostIdol::
+	lockall
+	special SpawnCameraObject
+	setvar VAR_0x8004, 10  @ x
+	setvar VAR_0x8005, 11  @ y
+	special TeleportCamera
+	delay 80
+	fadescreen FADE_FROM_BLACK
+	delay 20
+	applymovement LOCALID_FOREST_LOST_IDOL, CutsceneForest_Movement_LostIdolLost
+	waitmovement 0
+	delay 40
+	speak LOCALID_FOREST_LOST_IDOL, DIR_EAST, Name_Right_Idol, CutsceneForest_Text_LostIdolLost
+	closemessage
+	delay 60
+	applymovement LOCALID_FOREST_LOST_IDOL, Common_Movement_FaceLeft
+	waitmovement 0
+	delay 80
+	playse SE_PIN
+	applymovement LOCALID_FOREST_LOST_IDOL, Common_Movement_FaceUpExclamationMark
+	waitmovement 0
+	speak LOCALID_FOREST_LOST_IDOL, DIR_NORTH, Name_Right_Idol, CutsceneForest_Text_LostIdolImSaved
+	closemessage
+	delay 50
+	applymovement LOCALID_PLAYER, CutsceneForest_Movement_PlayerWalkIntoFrame
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDownQuestionMark
+	waitmovement 0
+	delay 50
+	speak LOCALID_PLAYER, DIR_WEST, Name_Looker, Looker_Text_Huh
+	speak LOCALID_FOREST_LOST_IDOL, DIR_NORTH, Name_Right_Idol, CutsceneForest_Text_LostIdolImLost
+	speak LOCALID_PLAYER, DIR_WEST, Name_Looker, CutsceneForest_Text_LookerOhLetMeHelp
+	closemessage
+	applymovement LOCALID_PLAYER, CutsceneForest_Movement_LookerGuideIdolHome
+	delay 16
+	applymovement LOCALID_FOREST_LOST_IDOL, CutsceneForest_Movement_LookerGuideIdolHome
+	delay 32
+	fadescreen FADE_TO_BLACK
+	setflag FLAG_SYS_SPAWN_INVISIBLE
+	special RemoveCameraObject
+	warp MAP_PRESENT_TOWN, 16, 5
+	waitstate
+	releaseall
+	end
+
+CutsceneForest_Movement_LostIdolLost:
+	delay_16
+	delay_16
+	walk_right
+	delay_16
+	delay_16
+	delay_8
+	walk_up
+	delay_16
+	delay_16
+	walk_left
+	walk_left
+	delay_16
+	delay_4
+	step_end
+
+CutsceneForest_Movement_PlayerWalkIntoFrame:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+CutsceneForest_Movement_LookerGuideIdolHome:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
 
 CutsceneForest_EventScript_SearchForEstella::
 	lockall
@@ -77,7 +166,7 @@ CutsceneForest_EventScript_SearchForEstella::
 	closemessage
 	delay 100
 	special ReturnCameraToPlayer
-	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
+	setflag FLAG_HIDE_CUTSCENE_FOREST_MAINQUEST
 	warpsilent MAP_SHRINE_OF_PEACE_PRESENT, 14, 28
 	waitstate
 	end
@@ -217,6 +306,27 @@ CutsceneForest_Movement_AnabelRunIntoShot:
 	face_left
 	step_end
 
+CutsceneForest_Text_LostIdolLost:
+	.string "Ohhh…\p"
+	.string "No matter which way I turn, every\n"
+	.string "path looks the same…$"
+
+CutsceneForest_Text_LostIdolImSaved:
+	.string "Oh my gosh!\p"
+	.string "Thank Arceus, I'm saved!$"
+
+CutsceneForest_Text_LostIdolImLost:
+	.string "Oh sir, I've been lost in these woods\n"
+	.string "ever since a group of wild Mightyena\l"
+	.string "separated me from the rest of my\l"
+	.string "troupe!\p"
+	.string "I don't know how long it's been since\n"
+	.string "then…$"
+
+CutsceneForest_Text_LookerOhLetMeHelp:
+	.string "Ah, I see.\p"
+	.string "Here, I can guide you back to Porta\n"
+	.string "Bella City.$"
 
 CutsceneForest_Text_RepelsEffect:
 	.string "Repels' effect wore off…$"
