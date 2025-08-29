@@ -390,7 +390,7 @@
 #define TRAINER_DONNY                       384
 #define TRAINER_TALIA                       385
 #define TRAINER_KATELYN_1                   386
-#define TRAINER_LISIA                     387
+#define TRAINER_UNUSED_387                  387
 #define TRAINER_KATELYN_2                   388
 #define TRAINER_KATELYN_3                   389
 #define TRAINER_KATELYN_4                   390

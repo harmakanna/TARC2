@@ -22,7 +22,7 @@ PresentTown_EventScript_GiveLookerStarters::
 	givemonwithot OT_LOOKER_GROWLITHE
 	givemonwithot OT_LOOKER_TOXICROAK
 	givemonwithot OT_EMMA_GUMSHOOS
-	givemonwithot OT_TONY_MURKROW
+	givemonwithot OT_LISIA_MURKROW
 	setflag FLAG_LOOKER_STARTERS
 	return 
 
