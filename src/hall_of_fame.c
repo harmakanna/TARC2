@@ -317,7 +317,7 @@ static const struct SpriteTemplate sSpriteTemplate_HofConfetti =
 
 static const u16 sHallOfFame_Pal[] = INCBIN_U16("graphics/misc/japanese_hof.gbapal");
 
-static const u32 sHallOfFame_Gfx[] = INCBIN_U32("graphics/misc/japanese_hof.4bpp.lz");
+static const u32 sHallOfFame_Gfx[] = INCBIN_U32("graphics/misc/japanese_hof.4bpp.smol");
 
 static const struct HallofFameMon sDummyFameMon =
 {
@@ -357,37 +357,37 @@ static bool8 InitHallOfFameScreen(void)
     switch (gMain.state)
     {
     case 0:
-        SetVBlankCallback(NULL);
-        ClearVramOamPltt_LoadHofPal();
+        //SetVBlankCallback(NULL);
+        //ClearVramOamPltt_LoadHofPal();
         sHofGfxPtr = AllocZeroed(sizeof(*sHofGfxPtr));
         gMain.state = 1;
         break;
     case 1:
-        LoadHofGfx();
+        //LoadHofGfx();
         gMain.state++;
         break;
     case 2:
-        SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG1 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_ALL);
-        SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(16, 7));
-        SetGpuReg(REG_OFFSET_BLDY, 0);
-        InitHofBgs();
+        //SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG1 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_ALL);
+        //SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(16, 7));
+        //SetGpuReg(REG_OFFSET_BLDY, 0);
+        //InitHofBgs();
         sHofGfxPtr->state = 0;
         gMain.state++;
         break;
     case 3:
         if (!LoadHofBgs())
         {
-            SetVBlankCallback(VBlankCB_HallOfFame);
-            BeginNormalPaletteFade(PALETTES_ALL, 0, 0x10, 0, RGB_BLACK);
+            //SetVBlankCallback(VBlankCB_HallOfFame);
+            //BeginNormalPaletteFade(PALETTES_ALL, 0, 0x10, 0, RGB_BLACK);
             gMain.state++;
         }
         break;
     case 4:
-        UpdatePaletteFade();
+        //UpdatePaletteFade();
         if (!gPaletteFade.active)
         {
             SetMainCallback2(CB2_HallOfFame);
-            PlayBGM(MUS_HALL_OF_FAME);
+            //PlayBGM(MUS_HALL_OF_FAME);
             return FALSE;
         }
         break;
@@ -412,9 +412,9 @@ void CB2_DoHallOfFameScreen(void)
 {
     if (!InitHallOfFameScreen())
     {
-        u8 taskId = CreateTask(Task_Hof_InitMonData, 0);
+        u8 taskId = CreateTask(Task_Hof_InitTeamSaveData, 0);
         gTasks[taskId].tDontSaveData = FALSE;
-        AllocateHoFTeams();
+        //AllocateHoFTeams();
     }
 }
 
@@ -422,9 +422,9 @@ void CB2_DoHallOfFameScreenDontSaveData(void)
 {
     if (!InitHallOfFameScreen())
     {
-        u8 taskId = CreateTask(Task_Hof_InitMonData, 0);
+        u8 taskId = CreateTask(Task_Hof_InitTeamSaveData, 0);
         gTasks[taskId].tDontSaveData = TRUE;
-        AllocateHoFTeams();
+        //AllocateHoFTeams();
     }
 }
 
@@ -480,7 +480,7 @@ static void Task_Hof_InitTeamSaveData(u8 taskId)
     u16 i;
     struct HallofFameTeam *lastSavedTeam = gHoFSaveBuffer;
 
-    if (!gHasHallOfFameRecords)
+    /*if (!gHasHallOfFameRecords)
     {
         memset(gHoFSaveBuffer, 0, SECTOR_SIZE * NUM_HOF_SECTORS);
     }
@@ -506,7 +506,7 @@ static void Task_Hof_InitTeamSaveData(u8 taskId)
         }
         lastSavedTeam--;
     }
-    *lastSavedTeam = *sHofMonPtr;
+    *lastSavedTeam = *sHofMonPtr;*/
 
     DrawDialogueFrame(0, FALSE);
     AddTextPrinterParameterized2(0, FONT_NORMAL, gText_SavingDontTurnOffPower, 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
@@ -536,8 +536,10 @@ static void Task_Hof_TrySaveData(u8 taskId)
     }
     else
     {
+        
         PlaySE(SE_SAVE);
-        gTasks[taskId].func = Task_Hof_WaitToDisplayMon;
+        FadeOutBGM(4);
+        gTasks[taskId].func = Task_Hof_HandlePaletteOnExit;
         gTasks[taskId].tFrameCount = 32;
     }
 }

@@ -167,6 +167,34 @@
       "dest_warp_id": "PEACE_FROM_CITY_MR"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 13,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_TRIGGER_CUTSCENE_FOREST",
+      "var_value": "1",
+      "script": "ShrineOfPeacePresent_EventScript_WarpToCutsceneForest"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_TRIGGER_CUTSCENE_FOREST",
+      "var_value": "1",
+      "script": "ShrineOfPeacePresent_EventScript_WarpToCutsceneForest"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_TRIGGER_CUTSCENE_FOREST",
+      "var_value": "1",
+      "script": "ShrineOfPeacePresent_EventScript_WarpToCutsceneForest"
+    }
+  ],
   "bg_events": []
 }

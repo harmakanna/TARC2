@@ -12,7 +12,9 @@ CutsceneWater_EventScript_StartGame::
 	setvar VAR_0x8005, 5
 	special TeleportCamera
 	delay 40
-	msgbox CutsceneWater_Text_ThreeDaysLater, MSGBOX_DEFAULT
+	message CutsceneWater_Text_ThreeDaysLater
+	waitmessage
+	delay 100
 	closemessage
 	delay 80
 	playse SE_SHIP

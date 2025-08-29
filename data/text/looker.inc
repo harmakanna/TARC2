@@ -26,6 +26,27 @@ Looker_Text_ICanCertainlyTry:
 Looker_Text_ConsiderItDone:
     .string "Consider it done.$"
     
+Looker_Text_YouAreUnderSuspicion:
+    .string "Stop, in the name of the law!\p"
+    .string "You are under suspicion of capturing\n"
+    .string "Landorus and disrupting the lives of\l"
+    .string "people and Pokémon in Porta Bella alike!$"
+
+Looker_Text_IKnowYouDidIt:
+    .string "Don't you play dumb with me!\p"
+    .string "I know you were the one who went to the\n"
+    .string "Shrine of Prosperity, caught Landorus,\l"
+    .string "and caused Tornadus and Thundurus to\l"
+    .string "go wild in his absense!$"
+
+Looker_Text_ComingWithMe:
+    .string "You're coming with me to City Hall so\n"
+    .string "we can sort this mess out!$"
+
+Looker_Text_IKnewItWasYou:
+    .string "Aha! I knew it was you!\p"
+    .string "My hunch is always correct!$"
+
 Looker_Text_IWillHandleThis:
     .string "I will handle this posthaste.$"
 
@@ -62,9 +83,15 @@ Looker_Text_AlrightFine:
 Looker_Text_SoHeresTheThing:
     .string "So here's the thing…$"
     
+Looker_Text_LetMeExplain:
+    .string "Let me explain…$"
+
 Looker_Text_ThisSeemsSerious:
     .string "This seems like a serious problem.$"
     
+Looker_Text_ThatIsTroubling:
+    .string "That is troubling.$"
+
 Looker_Text_INeedYourHelp:
     .string "I need your help.$"
 
@@ -93,16 +120,27 @@ Looker_Text_HereYouGo:
 Looker_Text_NotYet:
     .string "Not yet.$"
 
+Looker_Text_YouDontLookVeryGood:
+    .string "You don't look very good right now.\n"
+    .string "What seems to be the problem?$"
+    
 Looker_Text_IFoundWhatYoureLookingFor:
     .string "I found what you're looking for.$"
 
 Looker_Text_AllInADaysWork:
     .string "All in a day's work.$"
     
+Looker_Text_AlwaysHappyToHelp:
+    .string "I'm always happy to help a citizen\n"
+    .string "in need.$"
+    
 Looker_Text_WhatsThat:
     .string "Huh?\p"
     .string "What's that?$"
 
+Looker_Text_Huh:
+    .string "Huh?$"
+    
 Looker_Text_Unlucky:
     .string "Unlucky.$"
 
@@ -118,6 +156,16 @@ Looker_Text_Asleep:
 Looker_Text_Uhh:
     .string "Uhh…$"
     
+Looker_Text_UhhOkay:
+    .string "Uhh…\p"
+    .string "Sure!$"
+    
+Looker_Text_IUnderstand:
+    .string "I understand.$"
+    
+Looker_Text_NoThanks:
+    .string "No thank you.$"
+    
 Looker_Text_Dots:
     .string "…$"
 
@@ -128,3 +176,17 @@ Looker_Text_DotsLong:
 Looker_Text_IThinkINeedTwoPokemon:
     .string "Hmm…\n"
     .string "I think I need two Pokémon for this…$"
+
+Looker_EventScript_FoundAllIdols::
+    speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, Looker_Text_ThatsAllTheIdols
+    closemessage
+    questmenu QUEST_MENU_SET_REWARD, QUEST_GET_INTO_THE_GROOVE
+    releaseall
+    end
+
+Looker_Text_ThatsAllTheIdols:
+    .string "Hmm…\p"
+    .string "I believe that's the last of the\n"
+    .string "missing idols!\p"
+    .string "I should go talk to the barista at\n"
+    .string "Tauros Café when I get the chance…$"

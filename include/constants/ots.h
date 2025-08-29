@@ -20,8 +20,8 @@
 #define OT_LOOKER_SHIINOTIC    16
 #define OT_TEE_OVERQWIL        17
 #define OT_TEE_DRAGALGE        18
-#define OT_DAMIAN_TAUROS       19
-#define OT_DAMIAN_MILTANK      20
+#define OT_ALICE_TAUROS        19
+#define OT_ALICE_MILTANK       20
 #define OT_BARTOZ_GALVANTULA   21
 #define OT_BARTOZ_PROBOPASS    22
 #define OT_BRENDAN_WALREIN     23

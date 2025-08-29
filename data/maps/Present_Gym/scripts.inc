@@ -273,8 +273,8 @@ Present_Gym_Text_PhoebeTeamAquaSuspicious:
 	.string "gym challengers come by, as we just\l"
 	.string "started gym season a few days ago.\p"
 	.string "There's a few trainers who have come\n"
-	.string "by already, but only one has been\l"
-	.string "strong enough to beat me thus far.\p"
+	.string "by already, but it seems all of them\l"
+	.string "only recently arrived in the city.\p"
 	.string "Does that help?$"
 
 Present_Gym_Text_PhoebeTheStormsAreCertainlyWeird:
@@ -288,8 +288,8 @@ Present_Gym_Text_PhoebeTheStormsAreCertainlyWeird:
 	.string "gym challengers come by, as we just\l"
 	.string "started gym season a few days ago.\p"
 	.string "There's a few trainers who have come\n"
-	.string "by already, but only one has been\l"
-	.string "strong enough to beat me thus far.\p"
+	.string "by already, but it seems all of them\l"
+	.string "only recently arrived in the city.\p"
 	.string "Does that help?$"
 
 Present_Gym_Text_LookerHmm:
@@ -338,17 +338,6 @@ Present_Gym_Text_PhoebeRematch:
 	.string "Get ready for another beatdown from\n"
 	.string "the strongest trainer in Porta Bella!$"
 
-Present_Gym_Text_PhoebeIntroSpeech:
-	.string "Ahahaha!\p"
-	.string "I'm PHOEBE of the ELITE FOUR.\n"
-	.string "I did my training on MT. PYRE.\p"
-	.string "While I trained, I gained the ability\n"
-	.string "to commune with GHOST-type POKéMON.\p"
-	.string "Yes, the bond I developed with POKéMON\n"
-	.string "is extremely tight.\p"
-	.string "So, come on, just try and see if you can\n"
-	.string "even inflict damage on my POKéMON!$"
-
 Present_Gym_Text_PhoebeDefeat:
 	.string "Now that's the Looker I know!$"
 
@@ -363,10 +352,10 @@ Present_Gym_Text_GymGuyBeatPhoebe:
 	.string "heated battle…$"
 
 Present_Gym_Text_LookerIAmBack:
-	.string "Hello, I am back. I hope there\n"
-	.string "isn't a gym challenger around this time?\p"
-	.string "I am here on official business to discuss\n"
-	.string "the most recent torrent with the leader.\p"
+	.string "Hello, I am back. I hope there isn't\n"
+	.string "a gym challenger around this time?\p"
+	.string "I am here on business to discuss the\n"
+	.string "recent torrent with the leader.\p"
 	.string "Would she have time now?$"
 
 Present_Gym_Text_GymGuyYouWereHereEarlier:
@@ -382,8 +371,8 @@ Present_Gym_Text_GymGuyIveHeardOfYou:
 	.string "now, so you can go talk to her.$"
 
 Present_Gym_Text_LookerWonderfulCanSheComeUp:
-	.string "Wonderful. Could she come up to the front,\n"
-	.string "in that case?$"
+	.string "Wonderful. Could she come up to the\n"
+	.string "front, in that case?$"
 
 Present_Gym_Text_GymGuyNoCanDoInTown:
 	.string "No can do. She heard you were in the city\n"
@@ -392,7 +381,7 @@ Present_Gym_Text_GymGuyNoCanDoInTown:
 	.string "do the whole gym challenge.\p"
 	.string "Being a leader, she rarely gets the\n"
 	.string "chance to battle adults.\p"
-	.string "Only kids really take the gyms seriously.$"
+	.string "Only kids take this stuff seriously.$"
 
 Present_Gym_Text_GymGuyNoCanDo:
 	.string "No can do. I told her you swung by\n"

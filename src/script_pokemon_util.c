@@ -416,7 +416,7 @@ static const struct InGameOT sIngameOTs[] =
         .isNicknamed = TRUE,
         .nickname = _("Swimminson"),
     },
-    [OT_DAMIAN_TAUROS] =
+    [OT_ALICE_TAUROS] =
     {
         .species = SPECIES_TAUROS,
         .level = 50,
@@ -428,14 +428,14 @@ static const struct InGameOT sIngameOTs[] =
         .nature = NATURE_HARDY,
         .abilityNum = 0,
         .gender = MON_MALE,
-        .otId = 42784,
-        .otName = _("Damian"),
+        .otId = 87783,
+        .otName = _("Alice"),
         .otGender = MALE,
         .isShiny = FALSE,
         .isNicknamed = TRUE,
-        .nickname = _("Biggie Bag"),
+        .nickname = _("Torin"),
     },
-    [OT_DAMIAN_MILTANK] =
+    [OT_ALICE_MILTANK] =
     {
         .species = SPECIES_MILTANK,
         .level = 50,
@@ -447,12 +447,12 @@ static const struct InGameOT sIngameOTs[] =
         .nature = NATURE_HARDY,
         .abilityNum = 0,
         .gender = MON_FEMALE,
-        .otId = 42784,
-        .otName = _("Damian"),
+        .otId = 87783,
+        .otName = _("Alice"),
         .otGender = MALE,
         .isShiny = FALSE,
         .isNicknamed = TRUE,
-        .nickname = _("Hapi"),
+        .nickname = _("Moomoo"),
     },
     [OT_BARTOZ_GALVANTULA] =
     {
@@ -1015,7 +1015,7 @@ void ScrCmd_createmonwithot(struct ScriptContext *ctx)
 
 static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u16 item, enum PokeBall ball, u8 nature, u8 abilityNum, u8 gender, u8 *evs, u8 *ivs, u16 *moves, bool8 isShiny, bool8 gmaxFactor, u8 teraType, u8 dmaxLevel)
 {
-    u16 nationalDexNum;
+    enum NationalDexOrder nationalDexNum;
     int sentToPc;
     struct Pokemon mon;
     u32 i;

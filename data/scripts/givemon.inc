@@ -409,6 +409,7 @@ Present_CityHall_2F_Ranger_EventScript_ReceivedMamoswineFanfare::
 	waitmessage
 	waitfanfare
 	bufferspeciesname STR_VAR_1, SPECIES_MAMOSWINE
+	removeitem ITEM_CLAW_FOSSIL
 	return
 
 Present_CityHall_2F_Ranger_EventScript_FossilScientistGiveYanmega::
@@ -438,6 +439,7 @@ Present_CityHall_2F_Ranger_EventScript_ReceivedYanmegaFanfare::
 	waitmessage
 	waitfanfare
 	bufferspeciesname STR_VAR_1, SPECIES_YANMEGA
+	removeitem ITEM_ROOT_FOSSIL
 	return
 
 Present_Cafe_EventScript_EmmaGiveGumshoos::
@@ -556,6 +558,74 @@ PastTown_EventScript_ReceivedShiinoticFanfare::
 	waitfanfare
 	bufferspeciesname STR_VAR_1, SPECIES_SHIINOTIC
 	return
+
+PastTown_EventScript_SadGirlGiveTauros::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TAUROS
+	givemonwithot OT_ALICE_TAUROS
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PastTown_EventScript_ReceiveTaurosParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PastTown_EventScript_ReceiveTaurosPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+PastTown_EventScript_ReceiveTaurosParty::
+	call PastTown_EventScript_ReceivedTaurosFanfare
+	goto PastTown_EventScript_SadGirlQuestFinish
+	end
+	
+PastTown_EventScript_ReceiveTaurosPC::
+	call PastTown_EventScript_ReceivedTaurosFanfare
+	call Common_EventScript_TransferredToPC
+	goto PastTown_EventScript_SadGirlQuestFinish
+	end
+
+PastTown_EventScript_ReceivedTaurosFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_TAUROS
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox PastTown_Text_YouReceivedTauros, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_TAUROS
+	setvar VAR_TEMP_1, LOCALID_TAUROS
+	setvar VAR_TEMP_2, LOCALID_MILTANK
+	return
+
+PastTown_EventScript_SadGirlGiveMiltank::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MILTANK
+	givemonwithot OT_ALICE_MILTANK
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PastTown_EventScript_ReceiveMiltankParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PastTown_EventScript_ReceiveMiltankPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+PastTown_EventScript_ReceiveMiltankParty::
+	call PastTown_EventScript_ReceivedMiltankFanfare
+	goto PastTown_EventScript_SadGirlQuestFinish
+	end
+	
+PastTown_EventScript_ReceiveMiltankPC::
+	call PastTown_EventScript_ReceivedMiltankFanfare
+	call Common_EventScript_TransferredToPC
+	goto PastTown_EventScript_SadGirlQuestFinish
+	end
+
+PastTown_EventScript_ReceivedMiltankFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_MILTANK
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox PastTown_Text_YouReceivedMiltank, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_MILTANK
+	setvar VAR_TEMP_1, LOCALID_MILTANK
+	setvar VAR_TEMP_2, LOCALID_TAUROS
+	return
+
+PastTown_Text_YouReceivedTauros:
+	.string "Torin joined your party!$"
+
+PastTown_Text_YouReceivedMiltank:
+	.string "Moomoo joined your party!$"
 
 PastTown_Text_YouReceivedBreloom:
 	.string "Looker received a Breloom!$"

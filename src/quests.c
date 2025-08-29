@@ -19,6 +19,7 @@
 #include "party_menu.h"
 #include "scanline_effect.h"
 #include "sound.h"
+#include "start_menu.h"
 #include "string_util.h"
 #include "strings.h"
 #include "task.h"
@@ -212,11 +213,11 @@ static bool32 ObjectEventAlreadyHasQuest(bool32);
 
 // Tiles, palettes and tilemaps for the Quest Menu
 static const u32 sQuestMenuTiles[] =
-        INCBIN_U32("graphics/quest_menu/menu.4bpp.lz");
+        INCBIN_U32("graphics/quest_menu/menu.4bpp.smol");
 static const u32 sQuestMenuBgPals[] =
         INCBIN_U32("graphics/quest_menu/menu.gbapal");
 static const u32 sQuestMenuTilemap[] =
-        INCBIN_U32("graphics/quest_menu/menu.bin.lz");
+        INCBIN_U32("graphics/quest_menu/menu.bin.smolTM");
 
 //Strings used for the Quest Menu
 static const u8 sText_Empty[] = _("");
@@ -233,7 +234,7 @@ static const u8 sText_Active[] = _("Active");
 static const u8 sText_Reward[] = _("Reward");
 static const u8 sText_Complete[] = _("Done");
 static const u8 sText_ShowLocation[] =
-      _("Location: {STR_VAR_2}");
+      _("{STR_VAR_2}");
 static const u8 sText_StartForMore[] =
       _("Start for more details.");
 static const u8 sText_ReturnRecieveReward[] =
@@ -272,7 +273,7 @@ static const struct SubQuest sSubQuestsInvestigateProsperity[QUEST_INVESTIGATE_P
 static const struct SubQuest sSubQuestsFindTheCulprit[QUEST_FIND_THE_CULPRIT_SUB_COUNT] =
 {
 	sub_quest(
-	      0,
+	      1,
 	      gText_SubQuestFindTheCulprit_Name1,
 	      gText_SubQuestFindTheCulprit_Desc1,
 	      gText_SubQuestFindTheCulprit_Map1,
@@ -281,7 +282,7 @@ static const struct SubQuest sSubQuestsFindTheCulprit[QUEST_FIND_THE_CULPRIT_SUB
 	      sText_Found
 	),
 	sub_quest(
-	      0,
+	      2,
 	      gText_SubQuestFindTheCulprit_Name2,
 	      gText_SubQuestFindTheCulprit_Desc2,
 	      gText_SubQuestFindTheCulprit_Map2,
@@ -290,7 +291,16 @@ static const struct SubQuest sSubQuestsFindTheCulprit[QUEST_FIND_THE_CULPRIT_SUB
 	      sText_Found
 	),
 	sub_quest(
-	      0,
+	      3,
+	      gText_SubQuestFindTheCulprit_Name5,
+	      gText_SubQuestFindTheCulprit_Desc5,
+	      gText_SubQuestFindTheCulprit_Map5,
+	      OBJ_EVENT_GFX_LEAF,
+	      OBJECT,
+	      sText_Found
+	),
+	sub_quest(
+	      4,
 	      gText_SubQuestFindTheCulprit_Name3,
 	      gText_SubQuestFindTheCulprit_Desc3,
 	      gText_SubQuestFindTheCulprit_Map3,
@@ -299,20 +309,11 @@ static const struct SubQuest sSubQuestsFindTheCulprit[QUEST_FIND_THE_CULPRIT_SUB
 	      sText_Found
 	),
 	sub_quest(
-	      0,
+	      5,
 	      gText_SubQuestFindTheCulprit_Name4,
 	      gText_SubQuestFindTheCulprit_Desc4,
 	      gText_SubQuestFindTheCulprit_Map4,
 	      OBJ_EVENT_GFX_YOUNGSTER_NEW,
-	      OBJECT,
-	      sText_Found
-	),
-	sub_quest(
-	      0,
-	      gText_SubQuestFindTheCulprit_Name5,
-	      gText_SubQuestFindTheCulprit_Desc5,
-	      gText_SubQuestFindTheCulprit_Map5,
-	      OBJ_EVENT_GFX_LEAF,
 	      OBJECT,
 	      sText_Found
 	),
@@ -321,7 +322,7 @@ static const struct SubQuest sSubQuestsFindTheCulprit[QUEST_FIND_THE_CULPRIT_SUB
 static const struct SubQuest sSubQuestsCatchTheGenies[QUEST_CATCH_GENIES_SUB_COUNT] =
 {
 	sub_quest(
-	      0,
+	      6,
 	      gText_SubQuestCatchTheGenies_Name1,
 	      gText_SubQuestCatchTheGenies_Desc1,
 	      gText_SubQuestCatchTheGenies_Map,
@@ -330,7 +331,7 @@ static const struct SubQuest sSubQuestsCatchTheGenies[QUEST_CATCH_GENIES_SUB_COU
 	      sText_Found
 	),
 	sub_quest(
-	      0,
+	      7,
 	      gText_SubQuestCatchTheGenies_Name2,
 	      gText_SubQuestCatchTheGenies_Desc2,
 	      gText_SubQuestCatchTheGenies_Map,
@@ -343,7 +344,7 @@ static const struct SubQuest sSubQuestsCatchTheGenies[QUEST_CATCH_GENIES_SUB_COU
 static const struct SubQuest sSubQuestsSaveTheLuvdiscs[QUEST_SENTIMENTAL_SUB_COUNT] =
 {
 	sub_quest(
-	      0,
+	      8,
 	      gText_SubQuestSaveTheLuvdiscs_Name,
 	      gText_SubQuestSaveTheLuvdiscs_Desc,
 	      gText_SubQuestSaveTheLuvdiscs_Map,
@@ -357,7 +358,7 @@ static const struct SubQuest sSubQuestsSaveTheLuvdiscs[QUEST_SENTIMENTAL_SUB_COU
 static const struct SubQuest sSubQuestsAWholeNewWorld[QUEST_WITH_MUCH_GRATITUDE_SUB_COUNT] =
 {
 	sub_quest(
-	      0,
+	      9,
 	      gText_SubQuestAWholeNewWorld_Name,
 	      gText_SubQuestAWholeNewWorld_Desc,
 	      gText_SubQuestAWholeNewWorld_Map,
@@ -388,16 +389,6 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
-	side_quest(// 1 QUEST_INVESTIGATE_PROSPERITY - Investigate Shrine of Prosperity
-	      gText_SideQuestName_2,
-	      gText_SideQuestDesc_2,
-	      gText_SideQuestDoneDesc_2,
-	      gText_SideQuestMap2,
-	      OBJ_EVENT_GFX_PICNICKER,
-	      OBJECT,
-	      sSubQuestsInvestigateProsperity,
-	      QUEST_INVESTIGATE_PROSPERITY_SUB_COUNT
-	),
 	side_quest( // 2 QUEST_INTERROGATE_MATT - Defeat Matt
 	      gText_SideQuestName_3,
 	      gText_SideQuestDesc_3,
@@ -407,6 +398,16 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      OBJECT,
 	      NULL,
 	      0
+	),
+	side_quest(// 1 QUEST_INVESTIGATE_PROSPERITY - Investigate Shrine of Prosperity
+	      gText_SideQuestName_2,
+	      gText_SideQuestDesc_2,
+	      gText_SideQuestDoneDesc_2,
+	      gText_SideQuestMap2,
+	      OBJ_EVENT_GFX_PICNICKER,
+	      OBJECT,
+	      sSubQuestsInvestigateProsperity,
+	      QUEST_INVESTIGATE_PROSPERITY_SUB_COUNT
 	),
 	side_quest( // 3 QUEST_DEFEAT_PHOEBE - Defeat Gym Leader
 	      gText_SideQuestName_4,
@@ -533,7 +534,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestDesc_16,
 	      gText_SideQuestDoneDesc_16,
 	      gText_SideQuestMap16,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_PAST_GIRL,
 	      OBJECT,
 	      NULL,
 	      0
@@ -743,7 +744,7 @@ static const u8 sQuestMenuWindowFontColors[][4] =
 	{
 		//Header of Quest Menu
 		TEXT_COLOR_TRANSPARENT,
-		TEXT_COLOR_DARK_GRAY,
+		TEXT_COLOR_LIGHT_GRAY,
 		TEXT_COLOR_TRANSPARENT
 	},
 	{
@@ -755,13 +756,13 @@ static const u8 sQuestMenuWindowFontColors[][4] =
 	{
 		//Done state progress indicator
 		TEXT_COLOR_TRANSPARENT,
-		TEXT_COLOR_GREEN,
+		TEXT_COLOR_BLUE,
 		TEXT_COLOR_TRANSPARENT
 	},
 	{
 		//Active state progress indicator
 		TEXT_COLOR_TRANSPARENT,
-		TEXT_COLOR_BLUE,
+		TEXT_COLOR_LIGHT_BLUE,
 		TEXT_COLOR_TRANSPARENT
 	},
 	{
@@ -856,6 +857,7 @@ static bool8 SetupGraphics(void)
 			break;
 		case 3:
 			ResetPaletteFade();
+       		gPaletteFade.bufferTransferDisabled = TRUE;
 			gMain.state++;
 			break;
 		case 4:
@@ -937,23 +939,14 @@ static bool8 SetupGraphics(void)
 			gMain.state++;
 			break;
 		case 18:
-			if (sListMenuState.initialized == 1)
-			{
-				BlendPalettes(0xFFFFFFFF, 16, RGB_BLACK);
-			}
+			BlendPalettes(PALETTES_ALL, 16, RGB_BLACK);
 			gMain.state++;
 			break;
 		case 19:
-			if (sListMenuState.initialized == 1)
-			{
-				BeginNormalPaletteFade(0xFFFFFFFF, 0, 16, 0, RGB_BLACK);
-			}
-			else
-			{
-
-				BeginNormalPaletteFade(0xFFFFFFFF, 0, 16, 0, RGB_BLACK);
+			BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
+      		gPaletteFade.bufferTransferDisabled = FALSE;
+			if (sListMenuState.initialized != 1)
 				SetInitializedFlag(1);
-			}
 			gMain.state++;
 			break;
 		default:
@@ -976,18 +969,19 @@ static bool8 LoadGraphics(void)
 		case 1:
 			if (FreeTempTileDataBuffersIfPossible() != TRUE)
 			{
-				LZDecompressWram(sQuestMenuTilemap, sBg1TilemapBuffer);
+				DecompressDataWithHeaderWram(sQuestMenuTilemap, sBg1TilemapBuffer);
 				sStateDataPtr->data[0]++;
 			}
 			break;
 		case 2:
-			LoadPalette(sQuestMenuBgPals, 0x00, 0x60);
+			LoadPalette(sQuestMenuBgPals, BG_PLTT_ID(0), PLTT_SIZE_4BPP);
 			sStateDataPtr->data[0]++;
 			break;
 		case 3:
 			sStateDataPtr->data[0]++;
 			break;
 		default:
+			LoadListMenuSwapLineGfx();
 			sStateDataPtr->data[0] = 0;
 			return TRUE;
 	}
@@ -1843,7 +1837,7 @@ void GenerateQuestLocation(s32 questId)
 void PrintQuestLocation(s32 questId)
 {
 	FillWindowPixelBuffer(1, 0);
-	QuestMenu_AddTextPrinterParameterized(1, 2, gStringVar4, 2, 3, 2, 0, 0,
+	QuestMenu_AddTextPrinterParameterized(1, 2, gStringVar4, 42, 5, 2, 0, 0,
 	                                      4);
 }
 void GenerateQuestFlavorText(s32 questId)
@@ -1889,7 +1883,7 @@ void UpdateQuestFlavorText(s32 questId)
 }
 void PrintQuestFlavorText(s32 questId)
 {
-	QuestMenu_AddTextPrinterParameterized(1, 2, gStringVar3, 40, 19, 5, 0, 0,
+	QuestMenu_AddTextPrinterParameterized(1, 2, gStringVar3, 42, 19, 5, 0, 0,
 	                                      4);
 }
 
@@ -1995,6 +1989,7 @@ void DetermineSpriteType(s32 questId)
 	QuestMenu_DestroySprite(sStateDataPtr->spriteIconSlot ^ 1);
 	sStateDataPtr->spriteIconSlot ^= 1;
 }
+
 static void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType)
 {
 	u8 *ptr = &sItemMenuIconSpriteIds[10];
@@ -2008,15 +2003,15 @@ static void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType)
 		switch (spriteType)
 		{
 			case OBJECT:
-				spriteId = CreateObjectGraphicsSprite(itemId, SpriteCallbackDummy, 20,
-				                                      132, 0);
+				spriteId = CreateObjectGraphicsSprite(itemId, SpriteCallbackDummy, 24,
+				                                      129, 0);
 				break;
 			case ITEM:
 				spriteId = AddItemIconSprite(102 + idx, 102 + idx, itemId);
 				break;
 			case PKMN:
 				LoadMonIconPalettes();
-				spriteId = CreateMonIcon(itemId, SpriteCallbackDummy, 20, 132, 0, 1);
+				spriteId = CreateMonIcon(itemId, SpriteCallbackDummy, 24, 129, 0, 1);
 				break;
 			default:
 				spriteId = SPRITE_NONE;
@@ -2034,8 +2029,8 @@ static void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType)
 
 			if (spriteType == ITEM)
 			{
-				gSprites[spriteId].x2 = 24;
-				gSprites[spriteId].y2 = 140;
+				gSprites[spriteId].x2 = 28;
+				gSprites[spriteId].y2 = 137;
 			}
 		}
 	}
@@ -2248,17 +2243,17 @@ static void GenerateMenuContext(void)
 static void PrintNumQuests(void)
 {
 	StringExpandPlaceholders(gStringVar4, sText_QuestNumberDisplay);
-	QuestMenu_AddTextPrinterParameterized(2, 0, gStringVar4, 167, 1, 0, 1, 0,
+	QuestMenu_AddTextPrinterParameterized(2, 0, gStringVar4, 167, 2, 0, 1, 0,
 	                                      0);
 }
 static void PrintMenuContext(void)
 {
 	QuestMenu_AddTextPrinterParameterized(2, 0,
-	                                      questNameArray[QUEST_ARRAY_COUNT], 10, 1, 0, 1, 0, 0);
+	                                      questNameArray[QUEST_ARRAY_COUNT], 10, 2, 0, 1, 0, 0);
 }
 static void PrintTypeFilterButton(void)
 {
-	QuestMenu_AddTextPrinterParameterized(2, 0, sText_Type, 198, 1,
+	QuestMenu_AddTextPrinterParameterized(2, 0, sText_Type, 198, 2,
 	                                      0, 1, 0, 0);
 
 }
@@ -2615,6 +2610,8 @@ void Task_QuestMenu_OpenFromStartMenu(u8 taskId)
 	s16 *data = gTasks[taskId].data;
 	if (!gPaletteFade.active)
 	{
+        //PlayRainStoppingSoundEffect();
+        RemoveExtraStartMenuWindows();
 		CleanupOverworldWindowsAndTilemaps();
 		QuestMenu_Init(tItemPcParam, CB2_ReturnToFieldWithOpenMenu);
 		DestroyTask(taskId);
@@ -2644,6 +2641,7 @@ void HandleQuestIconForSingleObjectEvent(struct ObjectEvent *objectEvent, u32 ob
     u32 localId = objectEvent->localId;
     u32 mapNum = objectEvent->mapNum;
     u32 mapGroup = objectEvent->mapGroup;
+	u32 graphicsId = objectEvent->graphicsId;
 	u32 questId;
 
     const struct ObjectEventTemplate *obj = GetObjectEventTemplateByLocalIdAndMap(localId, mapNum, mapGroup);
@@ -2659,6 +2657,61 @@ void HandleQuestIconForSingleObjectEvent(struct ObjectEvent *objectEvent, u32 ob
 	
 	if (obj->trainerType != TRAINER_TYPE_QUEST_GIVER)
         return;
+
+	// Add icon to Subquest NPCs of "Find the Culprit!"
+	if ((!objectEvent->hasQuestIcon
+		&& !FlagGet(FLAG_SYS_DISAPPEAR_QUESTS))
+		&& questId == QUEST_FIND_THE_CULPRIT)
+	{
+		switch (graphicsId)
+		{	
+			case OBJ_EVENT_GFX_BLUE:
+				if(!QuestMenu_GetSetSubquestState(QUEST_FIND_THE_CULPRIT, FLAG_GET_COMPLETED, 0) && IsQuestActiveState(questId))
+				{
+					SpawnQuestIconForObject(objectEvent, objectEventId);
+					return;
+				}
+				else
+					return;
+				break;	
+			case OBJ_EVENT_GFX_LINK_RS_MAY:
+				if(!QuestMenu_GetSetSubquestState(QUEST_FIND_THE_CULPRIT, FLAG_GET_COMPLETED, 1) && IsQuestActiveState(questId))
+				{
+					SpawnQuestIconForObject(objectEvent, objectEventId);
+					return;
+				}
+				else
+					return;
+				break;	
+			case OBJ_EVENT_GFX_LEAF:
+				if(!QuestMenu_GetSetSubquestState(QUEST_FIND_THE_CULPRIT, FLAG_GET_COMPLETED, 2) && IsQuestActiveState(questId))
+				{
+					SpawnQuestIconForObject(objectEvent, objectEventId);
+					return;
+				}
+				else
+					return;
+				break;	
+			case OBJ_EVENT_GFX_BW_ACE_TRAINER_F:
+				if(!QuestMenu_GetSetSubquestState(QUEST_FIND_THE_CULPRIT, FLAG_GET_COMPLETED, 3) && IsQuestActiveState(questId))
+				{
+					SpawnQuestIconForObject(objectEvent, objectEventId);
+					return;
+				}
+				else
+					return;
+				break;	
+			case OBJ_EVENT_GFX_YOUNGSTER_NEW:
+				if(!QuestMenu_GetSetSubquestState(QUEST_FIND_THE_CULPRIT, FLAG_GET_COMPLETED, 4) && IsQuestActiveState(questId))
+				{
+					SpawnQuestIconForObject(objectEvent, objectEventId);
+					return;
+				}
+				else
+					return;
+				break;	
+		}
+	}
 
 	// Remove icon if quest is completed
 	if ((IsQuestCompletedState(questId)
@@ -2686,6 +2739,7 @@ void HandleQuestIconForSingleObjectEvent(struct ObjectEvent *objectEvent, u32 ob
 	// Add icon to NPCs who have quests
 	if (!objectEvent->hasQuestIcon /*&& !FieldEffectActiveListContains(FLDEFF_QUEST_ICON)*/ && !FlagGet(FLAG_SYS_DISAPPEAR_QUESTS))
 		SpawnQuestIconForObject(objectEvent, objectEventId);
+
 
 }
 

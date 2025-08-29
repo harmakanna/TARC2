@@ -342,6 +342,9 @@ $(UNUSEDGFXDIR)/color_frames.4bpp: %.4bpp: %.png
 $(BATINTGFXDIR)/unused_window2bar.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 5 -Wnum_tiles
 
+$(BATINTGFXDIR)/ability_pop_up.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 8 -mheight 4
+
 $(JPCONTESTGFXDIR)/composite_1.4bpp: $(JPCONTESTGFXDIR)/frame_1.4bpp \
                                      $(JPCONTESTGFXDIR)/floor.4bpp \
                                      $(JPCONTESTGFXDIR)/frame_2.4bpp \
@@ -384,7 +387,7 @@ $(BATTRANSGFXDIR)/vs_frame.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 16 -Wnum_tiles
 
 graphics/party_menu/bg.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -num_tiles 62 -Wnum_tiles
+	$(GFX) $< $@ -num_tiles 64 -Wnum_tiles
 
 $(TYPESGFXDIR)/move_types.4bpp: $(types:%=$(TYPESGFXDIR)/%.4bpp) $(contest_types:%=$(TYPESGFXDIR)/contest_%.4bpp)
 	@cat $^ >$@
