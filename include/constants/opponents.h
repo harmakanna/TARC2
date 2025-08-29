@@ -830,9 +830,9 @@
 #define TRAINER_KOJI_2                      824
 #define TRAINER_KOJI_3                      825
 #define TRAINER_KOJI_4                      826
-#define TRAINER_KOJI_5                      827
-#define TRAINER_CRISTIN_2                   828
-#define TRAINER_CRISTIN_3                   829
+#define TRAINER_CYNTHIA                     827
+#define TRAINER_FUTURE_LOOKER               828
+#define TRAINER_STUDENT                     829
 #define TRAINER_BIANCA                      830
 #define TRAINER_SOPHIA                      831
 #define TRAINER_LISIA                       832
@@ -851,8 +851,8 @@
 #define TRAINER_THUNDURUS                   845
 #define TRAINER_LANDORUS                    846
 #define TRAINER_ENAMORUS                    847
-#define TRAINER_MARIELA                     848
-#define TRAINER_ALVARO                      849
+#define TRAINER_WO_CHIEN                    848
+#define TRAINER_MARIE_REMATCH               849
 #define TRAINER_EVERETT                     850
 #define TRAINER_MARIE                       851
 #define TRAINER_PRESENT_FISHERMAN           852

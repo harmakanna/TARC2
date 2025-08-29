@@ -495,6 +495,62 @@ Magikarp
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
+=== TRAINER_STUDENT ===
+Name: Paolo
+Class: School Kid
+Pic: School Kid M
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_MARIE_REMATCH ===
+Name: Marie
+Class: Lass
+Pic: Lass New
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_CYNTHIA ===
+Name: Cynthia
+Class: Champion
+Pic: Cynthia
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_FUTURE_LOOKER ===
+Name: Looker
+Class: Rival
+Pic: Looker
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
 /* END EASY TRAINERS */
 
 /* START NORMAL TRAINERS */
@@ -884,6 +940,62 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Check Bad Move
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_STUDENT ===
+Name: Paolo
+Class: School Kid
+Pic: School Kid M
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_MARIE_REMATCH ===
+Name: Marie
+Class: Lass
+Pic: Lass New
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_CYNTHIA ===
+Name: Cynthia
+Class: Champion
+Pic: Cynthia
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_FUTURE_LOOKER ===
+Name: Looker
+Class: Rival
+Pic: Looker
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Basic Trainer
 Difficulty: Normal
 
 Magikarp
@@ -1697,6 +1809,62 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Check Bad Move
+Difficulty: Hard
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_STUDENT ===
+Name: Paolo
+Class: School Kid
+Pic: School Kid M
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Hard
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_MARIE_REMATCH ===
+Name: Marie
+Class: Lass
+Pic: Lass New
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Hard
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_CYNTHIA ===
+Name: Cynthia
+Class: Champion
+Pic: Cynthia
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Hard
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_FUTURE_LOOKER ===
+Name: Looker
+Class: Rival
+Pic: Looker
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Basic Trainer
 Difficulty: Hard
 
 Magikarp
@@ -17851,67 +18019,6 @@ Machoke
 Level: 41
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-=== TRAINER_KOJI_5 ===
-Name: KOJI
-Class: Black Belt
-Pic: Black Belt
-Gender: Male
-Music: Intense
-Double Battle: No
-AI: Check Bad Move
-
-Hariyama
-Level: 43
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-
-Machamp
-Level: 43
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-
-Machamp
-Level: 43
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-
-=== TRAINER_CRISTIN_2 ===
-Name: CRISTIN
-Class: Cooltrainer
-Pic: Cooltrainer F
-Gender: Female
-Music: Cool
-Items: Hyper Potion
-Double Battle: No
-AI: Basic Trainer
-
-Loudred
-Level: 35
-IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
-
-Vigoroth
-Level: 35
-IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
-
-=== TRAINER_CRISTIN_3 ===
-Name: CRISTIN
-Class: Cooltrainer
-Pic: Cooltrainer F
-Gender: Female
-Music: Cool
-Items: Hyper Potion
-Double Battle: No
-AI: Basic Trainer
-
-Spinda
-Level: 37
-IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
-
-Loudred
-Level: 37
-IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
-
-Vigoroth
-Level: 37
-IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
-
 === TRAINER_TORN_AND_THUND ===
 Name: GABRIELLE
 Class: Pkmn Breeder
@@ -18030,7 +18137,7 @@ Kingdra
 Level: 40
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
-=== TRAINER_MARIELA ===
+=== TRAINER_WO_CHIEN ===
 Name: MARIELA
 Class: Psychic
 Pic: Psychic F
@@ -18039,22 +18146,6 @@ Music: Intense
 Double Battle: No
 
 Chimecho
-Level: 41
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_ALVARO ===
-Name: ALVARO
-Class: Psychic
-Pic: Psychic M
-Gender: Male
-Music: Intense
-Double Battle: No
-
-Banette
-Level: 41
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Kadabra
 Level: 41
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
