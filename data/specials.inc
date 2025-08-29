@@ -564,6 +564,7 @@ gSpecials::
 	def_special UseBlankMessageToCancelPokemonPic
 	def_special EnterCode
 	def_special GetCodeFeedback
+	def_special SwitchMonAbility
 	def_special TeleportCamera
 	def_special ReturnCameraToPlayer
-	
+	def_special SetHiddenNature

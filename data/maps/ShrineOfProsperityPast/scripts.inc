@@ -88,7 +88,7 @@ ShrineOfProsperityPast_EventScript_LandorusMyth::
 	setflag FLAG_SYS_SPAWN_INVISIBLE
 	setflag FLAG_SYS_PREVENT_MAP_FADE
 	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
-	warpsilent MAP_CUTSCENE_MYTH, 14, 14
+	warpsilent MAP_CUTSCENE_MYTH, 14, 15
 	waitstate
 	end
 
@@ -134,12 +134,13 @@ ShrineOfProsperityPast_EventScript_EndLandorusMyth::
 	clearflag FLAG_HIDE_WING_FOSSIL
 	clearflag FLAG_HIDE_CITYHALL_2F_OFFICE_MAYOR
 	clearflag FLAG_HIDE_CITYHALL_2F_OFFICE_ANABEL
+	clearflag FLAG_HIDE_PEST_1_1
+	clearflag FLAG_HIDE_PEST_1_2
+	clearflag FLAG_HIDE_PEST_1_3
 	setflag FLAG_HIDE_PAST_TOWN_HALL_ESTELLA
 	setflag FLAG_HIDE_ANABEL_CITYHALL
 	setflag FLAG_HIDE_CITYHALL_1F_CONCERNED_DAD
 	setflag FLAG_HIDE_CITYHALL_1F_MAYOR
-	setflag FLAG_SYS_MAIN_GAME_START
-	setflag FLAG_SYS_QUEST_MENU_GET
 	setvar VAR_CUTSCENE_STATE, 12
 	setvar VAR_PORTO_BELLA_CITY_STATE, 3
 	setvar VAR_QUEUE_GENIE_FIGHT, 1
@@ -244,10 +245,10 @@ ShrineOfProsperityPast_Text_OratorMustBeTornThund:
 	.string "'Tis a frequent occurance.\p"
 	.string "As for the storm…\p"
 	.string "It can only be that the spirit of wind\n"
-	.string "and the spirit of storms are rampaging…$"
+	.string "and spirit of lightning are rampaging…$"
 
 ShrineOfProsperityPast_Text_LookerSpiritsOfWindAndStorms:
-	.string "The spirits of wind and storms?$"
+	.string "The spirits of wind and lightning?$"
 
 ShrineOfProsperityPast_Text_OratorYesTheSpirits:
 	.string "Legend has it that they once ruled the\n"
@@ -266,9 +267,8 @@ ShrineOfProsperityPast_Text_OratorStartFromBeginning:
 	.string "Let us start from the beginning, then.$"
 
 ShrineOfProsperityPast_Text_OratorThisIsALegend:
-	.string "This is a legend which spans thousands\n"
-	.string "of years, back to the founding of this\l"
-	.string "town…$"
+	.string "This is a legend which spans back to\n"
+	.string "the founding of this village…$"
 
 ShrineOfProsperityPast_Text_AnabelSoTheSpiritsAre:
 	.string "Wow…\p"

@@ -409,6 +409,7 @@ Present_CityHall_2F_Ranger_EventScript_ReceivedMamoswineFanfare::
 	waitmessage
 	waitfanfare
 	bufferspeciesname STR_VAR_1, SPECIES_MAMOSWINE
+	removeitem ITEM_CLAW_FOSSIL
 	return
 
 Present_CityHall_2F_Ranger_EventScript_FossilScientistGiveYanmega::
@@ -438,6 +439,7 @@ Present_CityHall_2F_Ranger_EventScript_ReceivedYanmegaFanfare::
 	waitmessage
 	waitfanfare
 	bufferspeciesname STR_VAR_1, SPECIES_YANMEGA
+	removeitem ITEM_ROOT_FOSSIL
 	return
 
 Present_Cafe_EventScript_EmmaGiveGumshoos::
@@ -556,6 +558,282 @@ PastTown_EventScript_ReceivedShiinoticFanfare::
 	waitfanfare
 	bufferspeciesname STR_VAR_1, SPECIES_SHIINOTIC
 	return
+
+PastTown_EventScript_SadGirlGiveTauros::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TAUROS
+	givemonwithot OT_ALICE_TAUROS
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PastTown_EventScript_ReceiveTaurosParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PastTown_EventScript_ReceiveTaurosPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+PastTown_EventScript_ReceiveTaurosParty::
+	call PastTown_EventScript_ReceivedTaurosFanfare
+	goto PastTown_EventScript_SadGirlQuestFinish
+	end
+	
+PastTown_EventScript_ReceiveTaurosPC::
+	call PastTown_EventScript_ReceivedTaurosFanfare
+	call Common_EventScript_TransferredToPC
+	goto PastTown_EventScript_SadGirlQuestFinish
+	end
+
+PastTown_EventScript_ReceivedTaurosFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_TAUROS
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox PastTown_Text_YouReceivedTauros, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_TAUROS
+	setvar VAR_TEMP_1, LOCALID_TAUROS
+	setvar VAR_TEMP_2, LOCALID_MILTANK
+	return
+
+PastTown_EventScript_SadGirlGiveMiltank::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MILTANK
+	givemonwithot OT_ALICE_MILTANK
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PastTown_EventScript_ReceiveMiltankParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PastTown_EventScript_ReceiveMiltankPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+PastTown_EventScript_ReceiveMiltankParty::
+	call PastTown_EventScript_ReceivedMiltankFanfare
+	goto PastTown_EventScript_SadGirlQuestFinish
+	end
+	
+PastTown_EventScript_ReceiveMiltankPC::
+	call PastTown_EventScript_ReceivedMiltankFanfare
+	call Common_EventScript_TransferredToPC
+	goto PastTown_EventScript_SadGirlQuestFinish
+	end
+
+PastTown_EventScript_ReceivedMiltankFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_MILTANK
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox PastTown_Text_YouReceivedMiltank, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_MILTANK
+	setvar VAR_TEMP_1, LOCALID_MILTANK
+	setvar VAR_TEMP_2, LOCALID_TAUROS
+	return
+
+PresentTown_Port_EventScript_BlueGiveGolem::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GOLEM
+	givemonwithot OT_BLUE_GOLEM
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PresentTown_Port_EventScript_ReceiveGolemParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PresentTown_Port_EventScript_ReceiveGolemPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+PresentTown_Port_EventScript_ReceiveGolemParty::
+	call PresentTown_Port_EventScript_ReceivedGolemFanfare
+	closemessage
+	release
+	end
+
+PresentTown_Port_EventScript_ReceiveGolemPC::
+	call PresentTown_Port_EventScript_ReceivedGolemFanfare
+	call Common_EventScript_TransferredToPC
+	closemessage
+	release
+	end
+	
+PresentTown_Port_EventScript_ReceivedGolemFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_GOLEM
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox PresentTown_Port_Text_YouReceivedGolem, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_GOLEM
+	return
+
+PresentTown_Port_EventScript_BlueGiveMachamp::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MACHAMP
+	givemonwithot OT_BLUE_MACHAMP
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PresentTown_Port_EventScript_ReceiveMachampParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PresentTown_Port_EventScript_ReceiveMachampPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+PresentTown_Port_EventScript_ReceiveMachampParty::
+	call PresentTown_Port_EventScript_ReceivedMachampFanfare
+	closemessage
+	release
+	end
+
+PresentTown_Port_EventScript_ReceiveMachampPC::
+	call PresentTown_Port_EventScript_ReceivedMachampFanfare
+	call Common_EventScript_TransferredToPC
+	closemessage
+	release
+	end
+	
+PresentTown_Port_EventScript_ReceivedMachampFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_MACHAMP
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox PresentTown_Port_Text_YouReceivedMachamp, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_MACHAMP
+	return
+
+Present_Cafe_EventScript_MayGiveWalrein::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_WALREIN
+	givemonwithot OT_MAY_WALREIN
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Cafe_EventScript_ReceiveWalreinParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Cafe_EventScript_ReceiveWalreinPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+Present_Cafe_EventScript_ReceiveWalreinParty::
+	call Present_Cafe_EventScript_ReceivedWalreinFanfare
+	closemessage
+	applymovement LOCALID_CAFE_MAY, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+	
+Present_Cafe_EventScript_ReceiveWalreinPC::
+	call Present_Cafe_EventScript_ReceivedWalreinFanfare
+	call Common_EventScript_TransferredToPC
+	closemessage
+	applymovement LOCALID_CAFE_MAY, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+Present_Cafe_EventScript_ReceivedWalreinFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_WALREIN
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox Present_Cafe_Text_YouReceivedWalrein, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_WALREIN
+	return
+
+Present_Cafe_EventScript_MayGiveCamerupt::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CAMERUPT
+	givemonwithot OT_MAY_CAMERUPT
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Cafe_EventScript_ReceiveCameruptParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Cafe_EventScript_ReceiveCameruptPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+Present_Cafe_EventScript_ReceiveCameruptParty::
+	call Present_Cafe_EventScript_ReceivedCameruptFanfare
+	closemessage
+	applymovement LOCALID_CAFE_MAY, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+Present_Cafe_EventScript_ReceiveCameruptPC::
+	call Present_Cafe_EventScript_ReceivedCameruptFanfare
+	call Common_EventScript_TransferredToPC
+	closemessage
+	applymovement LOCALID_CAFE_MAY, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+Present_Cafe_EventScript_ReceivedCameruptFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_CAMERUPT
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox Present_Cafe_Text_YouReceivedCamerupt, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_CAMERUPT
+	return
+
+Present_Cafe_EventScript_LisiaGiveMisdreavus::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MISDREAVUS
+	givemonwithot OT_LISIA_MISDREAVUS
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Cafe_EventScript_ReceiveMisdreavusParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Cafe_EventScript_ReceiveMisdreavusPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+Present_Cafe_EventScript_ReceiveMisdreavusParty::
+	call Present_Cafe_EventScript_ReceivedMisdreavusFanfare
+	goto Present_Cafe_EventScript_LisiaFinishQuest
+	end
+	
+Present_Cafe_EventScript_ReceiveMisdreavusPC::
+	call Present_Cafe_EventScript_ReceivedMisdreavusFanfare
+	call Common_EventScript_TransferredToPC
+	goto Present_Cafe_EventScript_LisiaFinishQuest
+	end
+
+Present_Cafe_EventScript_ReceivedMisdreavusFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_MISDREAVUS
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox Present_Cafe_Text_YouReceivedMisdreavus, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_MISDREAVUS
+	return
+
+Present_Cafe_EventScript_LisiaGiveMurkrow::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MURKROW
+	givemonwithot OT_LISIA_MURKROW
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Cafe_EventScript_ReceiveMurkrowParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Cafe_EventScript_ReceiveMurkrowPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+Present_Cafe_EventScript_ReceiveMurkrowParty::
+	call Present_Cafe_EventScript_ReceivedMurkrowFanfare
+	goto Present_Cafe_EventScript_LisiaFinishQuest
+	end
+	
+Present_Cafe_EventScript_ReceiveMurkrowPC::
+	call Present_Cafe_EventScript_ReceivedMurkrowFanfare
+	call Common_EventScript_TransferredToPC
+	goto Present_Cafe_EventScript_LisiaFinishQuest
+	end
+
+Present_Cafe_EventScript_ReceivedMurkrowFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_MURKROW
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox Present_Cafe_Text_YouReceivedMurkrow, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_MURKROW
+	return
+
+PresentTown_Port_Text_YouReceivedGolem:
+	.string "Blue gave you his Golem!$"
+
+PresentTown_Port_Text_YouReceivedMachamp:
+	.string "Blue gave you his Machamp!$"
+
+Present_Cafe_Text_YouReceivedWalrein:
+	.string "May gave you her Walrein!$"
+
+Present_Cafe_Text_YouReceivedCamerupt:
+	.string "May gave you her Camerupt!$"
+
+Present_Cafe_Text_YouReceivedMisdreavus:
+	.string "Lisia gave you her Misdreavus!$"
+
+Present_Cafe_Text_YouReceivedMurkrow:
+	.string "Lisia gave you her Murkrow!$"
+
+PastTown_Text_YouReceivedTauros:
+	.string "Torin joined your party!$"
+
+PastTown_Text_YouReceivedMiltank:
+	.string "Moomoo joined your party!$"
 
 PastTown_Text_YouReceivedBreloom:
 	.string "Looker received a Breloom!$"

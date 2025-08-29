@@ -25,6 +25,7 @@ Present_CityHall_1F_EventScript_OnFrame:
 
 Present_CityHall_1F_EventScript_PostStormDiscussion::
 	lockall
+	clearflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	special	SpawnCameraObject
 	applymovement LOCALID_CAMERA, Common_Movement_WalkUp2
 	waitmovement 0
@@ -131,7 +132,7 @@ Present_CityHall_1F_EventScript_PostStormDiscussion::
 	clearflag FLAG_SYS_SPAWN_INVISIBLE
 	setvar VAR_CUTSCENE_STATE, 4
 	setflag FLAG_HIDE_MAP_NAME_POPUP
-	setfollowernpc LOCALID_CITYHALL_1F_ANABEL, FNPC_NONE, Present_CityHall_1F_EventScript_AnabelFollower
+	setfollowernpc LOCALID_CITYHALL_1F_ANABEL, FNPC_ALL_LAND, Present_CityHall_1F_EventScript_AnabelFollower
 	special RemoveCameraObject
 	startquest QUEST_SAVE_ESTELLA
 	releaseall
@@ -179,8 +180,14 @@ Present_CityHall_1F_Movement_FranticDad:
 	step_end
 
 Present_CityHall_1F_EventScript_ConcernedDad::
+	lock
+	faceplayer
 	speakername Name_Concerned_Dad
-	msgbox Present_CityHall_1F_Text_DadThankYou, MSGBOX_NPC
+	msgbox Present_CityHall_1F_Text_DadThankYou, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_CITYHALL_1F_CONCERNED_DAD, Common_Movement_FaceUp
+	waitmovement 0
+	release
 	end
 
 Present_CityHall_1F_EventScript_Mayor::
@@ -299,9 +306,8 @@ Present_CityHall_1F_Text_MayorIAmTheMayor:
 	.string "I am Mayor Morrigan!$"
 
 Present_CityHall_1F_Text_MayorMorrigan:
-	.string "I hoped to greet you at the port,\n"
-	.string "but I was bogged down by endless\l"
-	.string "paperwork!$"
+	.string "I hoped to greet you at the port, but I\n"
+	.string "was bogged down by endless paperwork!$"
 
 Present_CityHall_1F_Text_AnabelWhatWasThat:
 	.string "As we all are.\p"
@@ -309,26 +315,26 @@ Present_CityHall_1F_Text_AnabelWhatWasThat:
 	.string "What the heck was that?$"
 
 Present_CityHall_1F_Text_LookerDocilePokemon:
-	.string "Pokémon in this area are known\n"
-	.string "for their docility due to the climate.\p"
+	.string "Pokémon in this area are known for\n"
+	.string "their docility due to the climate.\p"
 	.string "It stands to reason the sudden storm\n"
 	.string "has the wildlife agitated.$"
 	
 Present_CityHall_1F_Text_AnabelButThatDoesntHoldUp:
-	.string "But this region gets slammed\n"
-	.string "by storms for half the year.\p"
+	.string "But this region gets slammed by storms\n"
+	.string "for half the year.\p"
 	.string "From the speed and ferocity it rolled\n"
 	.string "in, this does not seem natural at all.$"
 
 Present_CityHall_1F_Text_MayorYouDontSuppose:
-	.string "Oh me, you don't suppose Team\n"
-	.string "Aqua is up to no good again?\p"
-	.string "Those goons moved in not long ago\n"
-	.string "and now the whole city is on edge!$"
+	.string "Oh me, you don't suppose Team Aqua is\n"
+	.string "up to no good again?\p"
+	.string "Those goons moved in not long ago and\n"
+	.string "now the whole city is on edge!$"
 
 Present_CityHall_1F_Text_AnabelFollowerLetsFindHer:
-    .string "Looker, let's find that man's kid\n"
-    .string "and make sure she returns home safe!$"
+    .string "Looker, let's find that man's kid and\n"
+    .string "make sure she returns home safe!$"
 
 Present_CityHall_1F_Text_AnabelFollowerItSeemsEverybody:
     .string "It seems everybody fled inside and\n"
@@ -372,8 +378,8 @@ Present_CityHall_1F_Text_AnabelItsOkay:
 
 Present_CityHall_1F_Text_DadThankYouLong:
 	.string "Oh, thank you!\p"
-	.string "Here, I brought repels to make my\n"
-	.string "way through the city.\p"
+	.string "Here, I brought repels to make my way\n"
+	.string "through the city.\p"
 	.string "Spray some of this on!$"
 
 Present_CityHall_1F_Text_LookerUsedTheRepel:
@@ -384,8 +390,8 @@ Present_CityHall_1F_Text_DadWeLiveNear:
 	.string "I'm sure she snuck away there!$"
 
 Present_CityHall_1F_Text_AnabelLostChild:
-	.string "Alright, the case of the sudden\n"
-	.string "storm can wait a bit.\p"
+	.string "Alright, the case of the sudden storm\n"
+	.string "can wait a bit.\p"
 	.string "Looker, we have a lost child to find!$"
 
 Present_CityHall_1F_Text_DadThankYou:
