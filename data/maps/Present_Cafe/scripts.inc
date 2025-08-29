@@ -320,6 +320,9 @@ Present_Cafe_EventScript_MayCulpritPostQuest::
 	release
 	end
 
+Present_Cafe_EventScript_Barista::
+	end
+	
 Present_Cafe_Text_LookerThankYouForYourCooperation:
 	.string "Anyways, thank you for your\n"
 	.string "cooperation, young miss!\p"

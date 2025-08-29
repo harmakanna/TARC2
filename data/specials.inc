@@ -567,4 +567,4 @@ gSpecials::
 	def_special SwitchMonAbility
 	def_special TeleportCamera
 	def_special ReturnCameraToPlayer
-	
+	def_special SetHiddenNature
