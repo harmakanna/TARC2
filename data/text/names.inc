@@ -135,3 +135,30 @@ Name_Nurse:
 
 Name_Farmgirl:
     .string "Alice$"
+
+Name_Blue:
+    .string "Blue$"
+
+Name_May:
+    .string "May$"
+
+Name_Leaf:
+    .string "Leaf$"
+
+Name_Ace_Trainer:
+    .string "Katherine$"
+
+Name_Youngster:
+    .string "Trey$"
+    
+Name_Right_Idol:
+    .string "Sophia$"
+
+Name_Left_Idol:
+    .string "Bianca$"
+
+Name_Lisia:
+    .string "Lisia$"
+
+Name_Barista:
+    .string "Barista$"

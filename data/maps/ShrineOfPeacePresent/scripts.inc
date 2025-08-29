@@ -1,8 +1,19 @@
 ShrineOfPeacePresent_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, ShrineOfPeacePresent_OnTransition
+	map_script MAP_SCRIPT_ON_LOAD, ShrineOfPeacePresent_OnLoad
     map_script MAP_SCRIPT_ON_FRAME_TABLE, ShrineOfPeacePresent_OnFrame
 	map_script MAP_SCRIPT_ON_RESUME, ShrineOfPeacePresent_OnResume
 	.byte 0
+
+ShrineOfPeacePresent_OnLoad:
+	call_if_eq VAR_TRIGGER_CUTSCENE_FOREST, 1, ShrineOfPeacePresent_EventScript_UnsetPresentTownWarpTiles
+	end
+
+ShrineOfPeacePresent_EventScript_UnsetPresentTownWarpTiles::
+	setmetatile 13, 21, 0x21B, FALSE
+	setmetatile 14, 21, 0x21C, FALSE
+	setmetatile 15, 21, 0x21D, FALSE
+	return
 
 ShrineOfPeacePresent_OnTransition:
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetStormWeather
@@ -43,6 +54,8 @@ ShrineOfPeacePresent_EventScript_MainGameStart::
 	waitmovement 0
 	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, ShrineOfPeacePresent_Text_MainGameStart
 	startquest QUEST_INTERROGATE_MATT
+	setflag FLAG_SYS_MAIN_GAME_START
+	setflag FLAG_SYS_QUEST_MENU_GET
 	setvar VAR_CUTSCENE_STATE, 13
 	release
 	end
@@ -92,7 +105,6 @@ ShrineOfPeacePresent_EventScript_CelebiEncounter::
 	applymovement LOCALID_CAMERA, ShrineOfPeacePresent_Movement_PanCameraToLooker
 	waitmovement 0
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
-	playse SE_SELECT
 	speak LOCALID_SHRINE_PEACE_PRESENT_ANABEL, DIR_WEST, Name_Anabel, ShrineOfPeacePresent_Text_AnabelItsTooDangerous
 	playse SE_PIN
 	applymovement LOCALID_SHRINE_PEACE_PRESENT_ANABEL, Common_Movement_FaceDownExclamationMark
@@ -466,16 +478,39 @@ ShrineOfPeacePresent_EventScript_Celebi::
 
 ShrineOfPeacePresent_EventScript_HandleWarpEvents::
 	setrespawn HEAL_LOCATION_PAST
-	call ShrineOfPeacePast_EventScript_DisableInclementWeather
+	call ShrineOfPeacePresent_EventScript_ResetWarpEvents
+	returnqueststate QUEST_GET_INTO_THE_GROOVE
+	call_if_eq VAR_RESULT, 2, ShrineOfPeacePresent_EventScript_HandlePastLisiaSpawn
 	goto ShrineOfPeacePresent_EventScript_CelebiWarp
 	end
 
-ShrineOfPeacePast_EventScript_DisableInclementWeather::
+ShrineOfPeacePresent_EventScript_ResetWarpEvents::
 	clearflag FLAG_SYS_WEATHER_CTRL
 	return
 
+ShrineOfPeacePresent_EventScript_HandlePastLisiaSpawn::
+	call_if_set FLAG_HIDE_CAFE_IDOL_LISIA, ShrineOfPeacePast_EventScript_TrySpawnPastLisia
+	return
+
+ShrineOfPeacePast_EventScript_TrySpawnPastLisia::
+	randompercentage 50
+	call_if_eq VAR_RESULT, TRUE, ShrineOfPeacePast_EventScript_SpawnPastLisia
+	return
+
+ShrineOfPeacePast_EventScript_SpawnPastLisia::
+	clearflag FLAG_HIDE_PAST_LISIA
+	return
+	
 ShrineOfPeacePresent_EventScript_CelebiWarp::
 	warpteleport MAP_SHRINE_OF_PEACE_PAST, 14, 9
+	waitstate
+	releaseall
+	end
+
+ShrineOfPeacePresent_EventScript_WarpToCutsceneForest::
+	lockall
+	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
+	warp MAP_CUTSCENE_FOREST, 10, 4
 	waitstate
 	releaseall
 	end
@@ -510,16 +545,14 @@ ShrineOfPeacePresent_Text_LookerLookUpAhead:
 
 ShrineOfPeacePresent_Text_AnabelItsTooDangerous:
 	.string "It's an ambush!\p"
-	.string "Looker, it's too dangerous! We can't\n"
-	.string "save Estella if we're in danger\l"
-	.string "ourselves!\p"
+	.string "Looker, it's too dangerous! We won't\n"
+	.string "save Estella like this ourselves!\p"
 	.string "We NEED to turn back!$"
 
 ShrineOfPeacePresent_Text_AnabelOhNo:
 	.string "Oh no…$"
 
 ShrineOfPeacePresent_Text_AnabelWhatNow:
-	.string "We're surrounded!\p"
 	.string "What do we do now? There's just\n"
 	.string "too many of them to fight!$"
 

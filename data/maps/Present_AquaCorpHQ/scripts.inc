@@ -168,6 +168,9 @@ Present_AquaCorpHQ_EventScript_AquaGauntlet::
 	speak LOCALID_AQUACORP_GEOFF, DIR_EAST, Name_Unknown, Present_AquaCorpHQ_Text_GeoffIntro
 	savebgm MUS_DUMMY
 	trainerbattle_no_intro TRAINER_GRUNT_AQUA_HIDEOUT_1, Present_AquaCorpHQ_Text_GeoffDefeat
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_AquaCorpHQ_EventScript_KickLookerOut
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Present_AquaCorpHQ_EventScript_KickLookerOut
 	goto Present_AquaCorpHQ_EventScript_AquaGauntletSecondTrainer
 	end
 
@@ -178,6 +181,9 @@ Present_AquaCorpHQ_EventScript_AquaGauntletSecondTrainer::
 	speak LOCALID_AQUACORP_SARAH, DIR_WEST, Name_Unknown, Present_AquaCorpHQ_Text_SarahIntro
 	savebgm MUS_DUMMY
 	trainerbattle_no_intro TRAINER_GRUNT_AQUA_HIDEOUT_2, Present_AquaCorpHQ_Text_SarahDefeat
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Present_AquaCorpHQ_EventScript_KickLookerOut
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_AquaCorpHQ_EventScript_KickLookerOut
 	goto Present_AquaCorpHQ_EventScript_AquaGauntletThirdTrainer
 	end
 
@@ -193,6 +199,9 @@ Present_AquaCorpHQ_EventScript_AquaGauntletThirdTrainer::
 	speak LOCALID_AQUACORP_SHELDON, DIR_SOUTH, Name_Unknown, Present_AquaCorpHQ_Text_SheldonIntro
 	savebgm MUS_DUMMY
 	trainerbattle_no_intro TRAINER_GRUNT_AQUA_HIDEOUT_3, Present_AquaCorpHQ_Text_SheldonDefeat
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Present_AquaCorpHQ_EventScript_KickLookerOut
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_AquaCorpHQ_EventScript_KickLookerOut
 	goto Present_AquaCorpHQ_EventScript_AquaGauntletMatt
 	end
 
@@ -208,6 +217,9 @@ Present_AquaCorpHQ_EventScript_AquaGauntletMatt::
 	msgbox Present_AquaCorpHQ_Text_SheldonOw, MSGBOX_DEFAULT
 	speak LOCALID_AQUACORP_MATT, DIR_SOUTH, Name_Matt, Present_AquaCorpHQ_Text_MattGottaDoItYourself
 	trainerbattle_no_intro TRAINER_MATT, Present_AquaCorpHQ_Text_MattDefeat
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Present_AquaCorpHQ_EventScript_KickLookerOut
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_AquaCorpHQ_EventScript_KickLookerOut
 	goto Present_AquaCorpHQ_EventScript_AquaGauntletMattDefeated
 	end
 
@@ -239,12 +251,12 @@ Present_AquaCorpHQ_EventScript_AquaGauntletMattDefeated::
 	speak LOCALID_AQUACORP_SARAH, DIR_SOUTH, Name_Sarah, Present_AquaCorpHQ_Text_SarahShellyDots
 	closemessage
 	playse SE_PIN
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceUpQuestionMark
 	applymovement LOCALID_AQUACORP_SARAH, Present_AquaCorpHQ_Movement_SarahWalkToShelly
 	waitmovement 0
 	speak LOCALID_AQUACORP_SARAH, DIR_SOUTH, Name_Sarah, Present_AquaCorpHQ_Text_SarahCanWeClamperl
 	speak LOCALID_AQUACORP_SHELLY, DIR_NORTH, Name_Shelly, Present_AquaCorpHQ_Text_ShellyOfCourseWeCan
-	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	speak LOCALID_AQUACORP_SARAH, DIR_SOUTH, Name_Sarah, Present_AquaCorpHQ_Text_SarahIllPrepareTheDeepSea
 	closemessage
 	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceUp
@@ -275,6 +287,7 @@ Present_AquaCorpHQ_EventScript_FinishAquaGauntlet::
 	delay 20
 	fadeoutbgm 0
 	delay 20
+	closemessage
 	removeobject LOCALID_GOREBYSS
 	removeobject LOCALID_HUNTAIL
 	clearflag FLAG_HIDE_SHELDON_KRABBY
@@ -307,6 +320,8 @@ Present_AquaCorpHQ_EventScript_FinishAquaGauntlet::
 	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceDown
 	applymovement LOCALID_AQUACORP_SARAH, Common_Movement_FaceUp
 	applymovement LOCALID_AQUACORP_GEOFF, Common_Movement_FaceUp
+	applymovement LOCALID_PLAYER, Present_AquaCorpHQ_Movement_MoveLookerToPostCutscene
+	waitmovement 0
 	setvar VAR_AQUACORP_STATE, 2
 	setvar VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1
 	setflag FLAG_DEFEATED_MATT
@@ -318,6 +333,15 @@ Present_AquaCorpHQ_EventScript_FinishAquaGauntlet::
 	releaseall
 	end
 
+Present_AquaCorpHQ_Movement_MoveLookerToPostCutscene:
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	walk_faster_left
+	face_down
+	step_end
+	
 Present_AquaCorpHQ_Movement_LookerApproachMatt:
 	walk_up
 	walk_up
@@ -519,9 +543,20 @@ Present_AquaCorpHQ_Movement_MonWalkToPlayer:
 	walk_left
 	step_end
 
+Present_AquaCorpHQ_EventScript_KickLookerOut::
+	speak LOCALID_AQUACORP_MATT, DIR_SOUTH, Name_Matt, Present_AquaCorpHQ_Text_MattTakeThat
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	speakername Name_Looker
+	msgbox Present_AquaCorpHQ_Text_LookerThisIsBad
+	closemessage
+	warp MAP_PRESENT_TOWN, 15, 35
+	waitstate
+	releaseall
+	end
+
 Present_AquaCorpHQ_EventScript_Krabby::
 	lock
-	faceplayer
+	@faceplayer
 	waitse
 	playmoncry SPECIES_KRABBY, CRY_MODE_NORMAL
 	msgbox Present_AquaCorpHQ_Text_Krabby, MSGBOX_DEFAULT
@@ -569,8 +604,8 @@ Present_AquaCorpHQ_Text_MattOhComeOn:
 	.string "Oh.\p" 
 	.string "Come.\p"
 	.string "ON!\p"
-	.string "For the last time, we are NOT\n"
-	.string "doing anything seedy!\p"
+	.string "For the last time, we are NOT doing\n"
+	.string "anything seedy!\p"
 	.string "Will you PLEASE get off our backs!?$"
 
 Present_AquaCorpHQ_Text_LookerThereIsAStorm:
@@ -675,9 +710,9 @@ Present_AquaCorpHQ_Text_SarahCmonGuys:
 
 Present_AquaCorpHQ_Text_SheldonIntro:
 	.string "Please don't hurt my crabs sir…\p"
-	.string "They might look tough, but I\n"
-	.string "assure you they're all fragile in\l"
-	.string "their own special way!$"
+	.string "They might look tough, but I assure\n"
+	.string "you they're all fragile in their own\l"
+	.string "special ways!$"
 
 Present_AquaCorpHQ_Text_SheldonDefeat:
 	.string "Aww…\p"
@@ -690,8 +725,8 @@ Present_AquaCorpHQ_Text_SheldonMyCrabs:
 
 Present_AquaCorpHQ_Text_MattBunchOfWorthless:
 	.string "You bunch of worthless…\p"
-	.string "Fine! That's what I get for\n"
-	.string "relying on a bunch of softies!$"
+	.string "Fine! That's what I get for relying on\n"
+	.string "a bunch of softies!$"
 
 Present_AquaCorpHQ_Text_SheldonOw:
 	.string "Ow…$"
@@ -727,9 +762,9 @@ Present_AquaCorpHQ_Text_ShellyHaventYouNoticed:
 	.string "Matt, your temper tantrums aren't\n"
 	.string "getting you anywhere, they're only\l"
 	.string "making everything worse!\p"
-	.string "Like, have you even noticed how\n"
-	.string "much you've stressed out the Pokémon\l"
-	.string "in our care?$"
+	.string "Like, have you even noticed how much\n"
+	.string "you've stressed out the Pokémon in\l"
+	.string "our care?$"
 
 Present_AquaCorpHQ_Text_MattSorry:
 	.string "Sorry Shelly…$"
@@ -747,11 +782,7 @@ Present_AquaCorpHQ_Text_LookerSorry:
 	.string "Sorry…$"
 
 Present_AquaCorpHQ_Text_ShellyLookerComeHere:
-	.string "… … …\n"
-	.string "… … …\p"
-	.string "… … …\n"
-	.string "… … …\p"
-	.string "Sigh… … …\p"
+	.string "Sigh…\p"
 	.string "Mr. Looker, come here. I can explain\n"
 	.string "everything.$"
 	
@@ -760,15 +791,15 @@ Present_AquaCorpHQ_Text_LookerOkay:
 
 Present_AquaCorpHQ_Text_ShellyWeAreResearchers:
 	.string "Our incident with Kyogre stemmed\n"
-	.string "from us wanting to do good for\l"
-	.string "all the water Pokémon in the\l"
-	.string "region, but we went too far.\p"
-	.string "After Team Aqua dissolved, Matt\n"
-	.string "and I turned to studying marine\l"
-	.string "biology with the remnants of Aqua.\p"
+	.string "from us wanting to do good for all\l"
+	.string "the water Pokémon in the region.\p"
+	.string "But we went too far.\p"
+	.string "After Team Aqua dissolved, Matt and\n"
+	.string "I turned to studying marine biology\l"
+	.string "with the remnants of Team Aqua.\p"
 	.string "That way, we could help aquatic\n"
-	.string "Pokémon in need and learn more\l"
-	.string "about them in the process.$"
+	.string "Pokémon in need and learn more about\l"
+	.string "them in the process.$"
 
 Present_AquaCorpHQ_Text_SarahShellyDots:
 	.string "Shelly…$"
@@ -787,7 +818,7 @@ Present_AquaCorpHQ_Text_SarahIllPrepareTheDeepSea:
 	.string "items!$"
 
 Present_AquaCorpHQ_Text_ShellyLookerComeSeeClamperl:
-	.string "Follow me, Looker. This is gonnna\n"
+	.string "Follow me, Looker. This is gonna\n"
 	.string "be exciting!$"
 
 Present_AquaCorpHQ_Text_ShellyThisClamperl:
@@ -796,12 +827,12 @@ Present_AquaCorpHQ_Text_ShellyThisClamperl:
 	.string "operations here.\p"
 	.string "We have been learning about why this\n"
 	.string "Pokémon has trouble evolving in\l"
-	.string "captivity but can in the wild, and\l"
-	.string "we think Sarah cracked the case!$"
+	.string "captivity but can in the wild, and we\l"
+	.string "think Sarah cracked the case!$"
 
 Present_AquaCorpHQ_Text_SarahClamperlIsReady:
-	.string "He's feeling ready! Which one\n"
-	.string "should I use on him first?$"
+	.string "He's feeling ready! Which one should\n"
+	.string "I use on him first?$"
 
 Present_AquaCorpHQ_Text_ShellyLetLookerDecide:
 	.string "How about Looker decides?$"
@@ -850,14 +881,12 @@ Present_AquaCorpHQ_Text_ShellyImGladToHear:
 	.string "I guess.$"
 
 Present_AquaCorpHQ_Text_MattImSorry:
-	.string "… … …\n"
-	.string "… … …\p"
-	.string "…I'm sorry for before.\p"
+	.string "…I'm sorry for before.\n"
 	.string "Old habits die hard.$"
 
 Present_AquaCorpHQ_Text_LookerApologyAcceptedImSorry:
-	.string "Apology accepted. I apologize\n"
-	.string "for my rash assumptions.$"
+	.string "Apology accepted. I apologize for\n"
+	.string "my rash assumptions.$"
 
 Present_AquaCorpHQ_Text_SarahGorebyssWantsToComeWithYou:
 	.string "I think Gorebyss wants to come\n"
@@ -900,3 +929,10 @@ Present_AquaCorpHQ_Text_EvolvedGorebyss:
 
 Present_AquaCorpHQ_Text_EvolvedHuntail:
 	.string "Chowder evolved into Huntail!$"
+
+Present_AquaCorpHQ_Text_MattTakeThat:
+	.string "Take that, loser!$"
+
+Present_AquaCorpHQ_Text_LookerThisIsBad:
+	.string "(Shoot, this is bad…\n"
+	.string "I need to regroup…)$"

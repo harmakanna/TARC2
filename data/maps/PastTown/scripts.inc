@@ -76,7 +76,7 @@ PastTown_OnFrame:
 
 PastTown_EventScript_LookerEnters::
 	lockall
-	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
+	clearflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	delay 40
 	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
 	speakername Name_Looker
@@ -226,7 +226,7 @@ PastTown_EventScript_LookerPassOut::
 	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	fadescreen FADE_TO_BLACK
 	warpsilent MAP_PAST_TOWN_HALL, 2, 2
-	delay 48
+	waitstate
 	end
 
 PastTown_Movement_LookerLookAround:
@@ -291,6 +291,7 @@ PastTown_EventScript_FishermanQuestActive::
 	end
 
 PastTown_EventScript_FishermanQuestReward::
+	setflag FLAG_SYS_DISAPPEAR_QUESTS
 	speak LOCALID_FISHERMAN, VAR_0x8005, Name_Past_Fisherman, PastTown_Text_FishermanRubbish
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_SoHeresTheThing
 	speak LOCALID_FISHERMAN, VAR_0x8005, Name_Past_Fisherman, PastTown_Text_FishermanReward
@@ -305,9 +306,11 @@ PastTown_EventScript_FishermanQuestFinish::
 	setobjectxyperm LOCALID_FISHERMAN, 15, 32
 	setobjectmovementtype LOCALID_FISHERMAN, MOVEMENT_TYPE_FACE_DOWN
 	addobject LOCALID_FISHERMAN
+	closemessage
 	delay 80
 	fadescreen FADE_FROM_BLACK
 	completequest QUEST_HELP_FISHERMAN
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	release
 	end
 
@@ -432,6 +435,8 @@ PastTown_EventScript_Foreman::
 	case 1, PastTown_EventScript_ForemanPests3QuestActivate
 	case 2, PastTown_EventScript_ForemanPests3QuestActive
 	case 3, PastTown_EventScript_ForemanPests3QuestReward
+	speakername Name_Foreman
+	msgbox PastTown_Text_ForemanGuardDog, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
@@ -506,6 +511,7 @@ PastTown_EventScript_ForemanPests3QuestReward::
 
 PastTown_EventScript_ForemanQuestFinish::
 	fadescreen FADE_TO_BLACK
+	clearflag FLAG_HIDE_WOOLOO
 	removeobject LOCALID_PAST_CARROTFARMER
 	removeobject LOCALID_PAST_CABBAGEFARMER
 	setobjectxyperm LOCALID_PAST_CARROTFARMER, 31, 30
@@ -514,6 +520,9 @@ PastTown_EventScript_ForemanQuestFinish::
 	setobjectmovementtype LOCALID_PAST_CABBAGEFARMER, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT
 	addobject LOCALID_PAST_CARROTFARMER
 	addobject LOCALID_PAST_CABBAGEFARMER
+	addobject LOCALID_WOOLOO_1
+	addobject LOCALID_WOOLOO_2
+	addobject LOCALID_WOOLOO_3
 	fadescreen FADE_FROM_BLACK
 	completequest QUEST_FARMLAND_INVASION_3
 	clearflag FLAG_SYS_DISAPPEAR_QUESTS
@@ -531,7 +540,7 @@ PastTown_EventScript_CarrotFarmer::
 	case 3, PastTown_EventScript_CarrotFarmerPests1QuestReward
 	returnqueststate QUEST_FARMLAND_INVASION_2
 	goto_if_lt VAR_RESULT, 3, PastTown_EventScript_CarrotFarmerPostQuest1
-	goto_if_lt VAR_RESULT, 3, PastTown_EventScript_CarrotFarmerPostQuest1Quest2Reward
+	goto_if_eq VAR_RESULT, 3, PastTown_EventScript_CarrotFarmerPostQuest1Quest2Reward
 	returnqueststate QUEST_FARMLAND_INVASION_3
 	goto_if_lt VAR_RESULT, 3, PastTown_EventScript_FarmersPests3
 	goto_if_eq VAR_RESULT, 3, PastTown_EventScript_CarrotFarmerPests3Reward
@@ -612,7 +621,7 @@ PastTown_EventScript_CabbageFarmer::
 	case 2, PastTown_EventScript_CabbageFarmerPests2QuestActive
 	case 3, PastTown_EventScript_CabbageFarmerPests2QuestReward
 	returnqueststate QUEST_FARMLAND_INVASION_3
-	goto_if_lt VAR_RESULT, 4, PastTown_EventScript_FarmersPests3
+	goto_if_lt VAR_RESULT, 3, PastTown_EventScript_FarmersPests3
 	goto_if_eq VAR_RESULT, 3, PastTown_EventScript_CabbageFarmerPests3Reward
 	faceplayer
 	msgbox PastTown_Text_CabbageFarmerPostQuest, MSGBOX_DEFAULT
@@ -649,27 +658,33 @@ PastTown_EventScript_CabbageFarmerPests2QuestReward::
 	giveitem ITEM_TM_DRAGON_CLAW @ Replaced Dragon Claw with U-Turn
 	completequest QUEST_FARMLAND_INVASION_2
 	fadescreen FADE_TO_BLACK
+	setflag FLAG_HIDE_WOOLOO
 	removeobject LOCALID_PAST_CARROTFARMER
 	removeobject LOCALID_PAST_CABBAGEFARMER
+	removeobject LOCALID_WOOLOO_1
+	removeobject LOCALID_WOOLOO_2
+	removeobject LOCALID_WOOLOO_3
 	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	clearflag FLAG_HIDE_PEST_3_1
-	clearflag FLAG_HIDE_PEST_3_2
+	@clearflag FLAG_HIDE_PEST_3_2
 	clearflag FLAG_HIDE_PEST_3_3
 	clearflag FLAG_HIDE_PEST_3_4
 	clearflag FLAG_HIDE_PEST_3_5
-	clearflag FLAG_HIDE_PEST_3_6
+	@clearflag FLAG_HIDE_PEST_3_6
+	setobjectxyperm LOCALID_PAST_FOREMAN, 33, 27
 	setobjectxyperm LOCALID_PAST_CARROTFARMER, 38, 24
 	setobjectxyperm LOCALID_PAST_CABBAGEFARMER, 39, 24
 	setobjectmovementtype LOCALID_PAST_CARROTFARMER, MOVEMENT_TYPE_FACE_RIGHT
 	setobjectmovementtype LOCALID_PAST_CABBAGEFARMER, MOVEMENT_TYPE_FACE_LEFT
+	setobjectmovementtype LOCALID_PAST_FOREMAN, MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT
 	addobject LOCALID_PAST_CARROTFARMER
 	addobject LOCALID_PAST_CABBAGEFARMER
 	addobject LOCALID_PEST_3_1
-	addobject LOCALID_PEST_3_2
+	@addobject LOCALID_PEST_3_2
 	addobject LOCALID_PEST_3_3
 	addobject LOCALID_PEST_3_4
 	addobject LOCALID_PEST_3_5
-	addobject LOCALID_PEST_3_6
+	@addobject LOCALID_PEST_3_6
 	fadescreen FADE_FROM_BLACK
 	release
 	end
@@ -752,10 +767,12 @@ PastTown_EventScript_CabbageFarmerPregame::
 PastTown_EventScript_Bunnelby::
 	lock
 	faceplayer
-	playmoncry SPECIES_BUNNELBY, TRUE
+	playmoncry SPECIES_BUNNELBY, CRY_MODE_NORMAL
 	message PastTown_Text_Bunnelby
 	waitmessage
 	waitmoncry
+	returnqueststate QUEST_FARMLAND_INVASION_1
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_EndPestPokemonPreQuest
 	getpartysize
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
@@ -774,10 +791,12 @@ PastTown_EventScript_Bunnelby::
 PastTown_EventScript_Buneary::
 	lock
 	faceplayer
-	playmoncry SPECIES_BUNEARY, TRUE
+	playmoncry SPECIES_BUNEARY, CRY_MODE_NORMAL
 	message PastTown_Text_Buneary
 	waitmessage
 	waitmoncry
+	returnqueststate QUEST_FARMLAND_INVASION_1
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_EndPestPokemonPreQuest
 	getpartysize
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
@@ -796,10 +815,12 @@ PastTown_EventScript_Buneary::
 PastTown_EventScript_Minun::
 	lock
 	faceplayer
-	playmoncry SPECIES_MINUN, TRUE
+	playmoncry SPECIES_MINUN, CRY_MODE_NORMAL
 	message PastTown_Text_Minun
 	waitmessage
 	waitmoncry
+	returnqueststate QUEST_FARMLAND_INVASION_1
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_EndPestPokemonPreQuest
 	getpartysize
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
@@ -818,10 +839,12 @@ PastTown_EventScript_Minun::
 PastTown_EventScript_Leavanny::
 	lock
 	faceplayer
-	playmoncry SPECIES_LEAVANNY, TRUE
+	playmoncry SPECIES_LEAVANNY, CRY_MODE_NORMAL
 	message PastTown_Text_Leavanny
 	waitmessage
 	waitmoncry
+	returnqueststate QUEST_FARMLAND_INVASION_2
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_EndPestPokemonPreQuest
 	getpartysize
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
@@ -840,10 +863,12 @@ PastTown_EventScript_Leavanny::
 PastTown_EventScript_Kricketune::
 	lock
 	faceplayer
-	playmoncry SPECIES_KRICKETUNE, TRUE
+	playmoncry SPECIES_KRICKETUNE, CRY_MODE_NORMAL
 	message PastTown_Text_Kricketune
 	waitmessage
 	waitmoncry
+	returnqueststate QUEST_FARMLAND_INVASION_2
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_EndPestPokemonPreQuest
 	getpartysize
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
@@ -862,10 +887,12 @@ PastTown_EventScript_Kricketune::
 PastTown_EventScript_Flapple::
 	lock
 	faceplayer
-	playmoncry SPECIES_FLAPPLE, TRUE
+	playmoncry SPECIES_FLAPPLE, CRY_MODE_NORMAL
 	message PastTown_Text_Flapple
 	waitmessage
 	waitmoncry
+	returnqueststate QUEST_FARMLAND_INVASION_2
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_EndPestPokemonPreQuest
 	getpartysize
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
@@ -884,10 +911,12 @@ PastTown_EventScript_Flapple::
 PastTown_EventScript_Breloom::
 	lock
 	faceplayer
-	playmoncry SPECIES_BRELOOM, TRUE
+	playmoncry SPECIES_BRELOOM, CRY_MODE_NORMAL
 	message PastTown_Text_Breloom
 	waitmessage
 	waitmoncry
+	returnqueststate QUEST_FARMLAND_INVASION_3
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_EndPestPokemonPreQuest
 	getpartysize
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
@@ -897,7 +926,7 @@ PastTown_EventScript_Breloom::
 	setwilddoubleflag
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_CompletePestsBattle
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_CompletePestsBattleBreloom
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_SYS_DISABLE_CATCHING
 	release
@@ -906,10 +935,12 @@ PastTown_EventScript_Breloom::
 PastTown_EventScript_Amoonguss::
 	lock
 	faceplayer
-	playmoncry SPECIES_AMOONGUSS, TRUE
+	playmoncry SPECIES_AMOONGUSS, CRY_MODE_NORMAL
 	message PastTown_Text_Amoonguss
 	waitmessage
 	waitmoncry
+	returnqueststate QUEST_FARMLAND_INVASION_3
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_EndPestPokemonPreQuest
 	getpartysize
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
@@ -928,10 +959,12 @@ PastTown_EventScript_Amoonguss::
 PastTown_EventScript_Shiinotic::
 	lock
 	faceplayer
-	playmoncry SPECIES_SHIINOTIC, TRUE
+	playmoncry SPECIES_SHIINOTIC, CRY_MODE_NORMAL
 	message PastTown_Text_Shiinotic
 	waitmessage
 	waitmoncry
+	returnqueststate QUEST_FARMLAND_INVASION_3
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_EndPestPokemonPreQuest
 	getpartysize
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
@@ -941,7 +974,7 @@ PastTown_EventScript_Shiinotic::
 	setwilddoubleflag
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_CompletePestsBattle
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_CompletePestsBattleShiinotic
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_SYS_DISABLE_CATCHING
 	release
@@ -950,10 +983,12 @@ PastTown_EventScript_Shiinotic::
 PastTown_EventScript_Toedscruel::
 	lock
 	faceplayer
-	playmoncry SPECIES_TOEDSCRUEL, TRUE
+	playmoncry SPECIES_TOEDSCRUEL, CRY_MODE_NORMAL
 	message PastTown_Text_Toedscruel
 	waitmessage
 	waitmoncry
+	returnqueststate QUEST_FARMLAND_INVASION_3
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_EndPestPokemonPreQuest
 	getpartysize
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
@@ -972,10 +1007,12 @@ PastTown_EventScript_Toedscruel::
 PastTown_EventScript_Parasect::
 	lock
 	faceplayer
-	playmoncry SPECIES_PARASECT, TRUE
+	playmoncry SPECIES_PARASECT, CRY_MODE_NORMAL
 	message PastTown_Text_Parasect
 	waitmessage
 	waitmoncry
+	returnqueststate QUEST_FARMLAND_INVASION_3
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_EndPestPokemonPreQuest
 	getpartysize
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
@@ -995,7 +1032,7 @@ PastTown_EventScript_Hydrapple::
 	lock
 	faceplayer
 	goto_if_lt VAR_PEST_CONTROL_COUNT, 5, PastTown_EventScript_HydrappleWait
-	playmoncry SPECIES_HYDRAPPLE, TRUE
+	playmoncry SPECIES_HYDRAPPLE, CRY_MODE_ENCOUNTER
 	message PastTown_Text_HydrappleFight
 	waitmessage
 	waitmoncry
@@ -1019,7 +1056,7 @@ PastTown_EventScript_Hydrapple::
 	end
 
 PastTown_EventScript_HydrappleWait::
-	playmoncry SPECIES_HYDRAPPLE, FALSE
+	playmoncry SPECIES_HYDRAPPLE, CRY_MODE_NORMAL
 	msgbox PastTown_Text_Hydrapple, MSGBOX_DEFAULT
 	waitmoncry
 	closemessage
@@ -1041,6 +1078,11 @@ PastTown_EventScript_NotEnoughPokemon::
 	release
 	end
 
+PastTown_EventScript_EndPestPokemonPreQuest:
+	closemessage
+	release
+	end
+	
 PastTown_EventScript_CompletePestsBattle::
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_SYS_DISABLE_CATCHING
@@ -1049,11 +1091,35 @@ PastTown_EventScript_CompletePestsBattle::
 	goto Common_EventScript_RemoveStaticPokemon
 	end
 
+PastTown_EventScript_CompletePestsBattleBreloom::
+	clearflag FLAG_SYS_NO_WHITEOUT
+	clearflag FLAG_SYS_DISABLE_CATCHING
+	addvar VAR_PEST_CONTROL_COUNT, 1
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	clearflag FLAG_HIDE_PEST_3_2
+	addobject LOCALID_PEST_3_2
+	fadescreenswapbuffers FADE_FROM_BLACK
+	release
+	end
+
+PastTown_EventScript_CompletePestsBattleShiinotic::
+	clearflag FLAG_SYS_NO_WHITEOUT
+	clearflag FLAG_SYS_DISABLE_CATCHING
+	addvar VAR_PEST_CONTROL_COUNT, 1
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	clearflag FLAG_HIDE_PEST_3_6
+	addobject LOCALID_PEST_3_6
+	fadescreenswapbuffers FADE_FROM_BLACK
+	release
+	end
+
 PastTown_EventScript_PestsQuestSetReward::
 	questmenu QUEST_MENU_CHECK_ACTIVE, QUEST_FARMLAND_INVASION_1
-	call_if_eq VAR_RESULT, 2, PastTown_EventScript_Pests1QuestSetReward
+	call_if_eq VAR_RESULT, TRUE, PastTown_EventScript_Pests1QuestSetReward
 	questmenu QUEST_MENU_CHECK_ACTIVE, QUEST_FARMLAND_INVASION_2
-	call_if_eq VAR_RESULT, 2, PastTown_EventScript_Pests2QuestSetReward
+	call_if_eq VAR_RESULT, TRUE, PastTown_EventScript_Pests2QuestSetReward
 	return
 
 PastTown_EventScript_Pests1QuestSetReward::
@@ -1065,10 +1131,237 @@ PastTown_EventScript_Pests2QuestSetReward::
 	return
 
 PastTown_EventScript_SadGirl::
-	lock
+	lockall
+	faceplayer
+	call Script_GetNPCFacingDirection
+	goto_if_set FLAG_SAD_GIRL_GAVE_POTIONS, PastTown_EventScript_SadGirlRematch
+	speak LOCALID_PAST_SAD_GIRL_OUTSIDE, VAR_0x8005, Name_Farmgirl, PastTown_Text_SadGirlLetsSee
+	closemessage
+	call_if_eq VAR_FACING, DIR_SOUTH, PastTown_EventScript_SadGirlGiveMonsPotionsFromBelow
+	call_if_ne VAR_FACING, DIR_SOUTH, PastTown_EventScript_SadGirlGiveMonsPotions
+	setflag FLAG_SAD_GIRL_GAVE_POTIONS
+	speak LOCALID_PAST_SAD_GIRL_OUTSIDE, VAR_0x8005, Name_Farmgirl, PastTown_Text_SadGirlIThinkTheyWantToFight
+	playse SE_SELECT
+	msgbox PastTown_Text_SadGirlAreYouReady, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, PastTown_EventScript_SadGirlEndDialogue
+	setflag FLAG_SYS_NO_WHITEOUT
+	speak LOCALID_PAST_SAD_GIRL_OUTSIDE, VAR_0x8005, Name_Farmgirl, PastTown_Text_SadGirlHereWeCome
+	trainerbattle_no_intro TRAINER_ALICE, PastTown_Text_SadGirlDefeated
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_SadGirlPostBattle
+	speak LOCALID_PAST_SAD_GIRL_OUTSIDE, VAR_0x8005, Name_Farmgirl, PastTown_Text_SadGirlThatWasFunWin
+	closemessage
+	clearflag FLAG_SYS_NO_WHITEOUT
+	releaseall
+	end
+
+PastTown_EventScript_SadGirlRematch::
+	speakername Name_Farmgirl
+	msgbox PastTown_Text_SadGirlAreYouReady, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, PastTown_EventScript_SadGirlEndDialogue
+	speak LOCALID_PAST_SAD_GIRL_OUTSIDE, VAR_0x8005, Name_Farmgirl, PastTown_Text_SadGirlHereWeCome
+	setflag FLAG_SYS_NO_WHITEOUT
+	trainerbattle_no_intro TRAINER_ALICE, PastTown_Text_SadGirlDefeated
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_SadGirlPostBattle
+	speak LOCALID_PAST_SAD_GIRL_OUTSIDE, VAR_0x8005, Name_Farmgirl, PastTown_Text_SadGirlThatWasFunWin
+	closemessage
+	clearflag FLAG_SYS_NO_WHITEOUT
+	releaseall
+	end
+
+PastTown_EventScript_SadGirlEndDialogue::
+	speak LOCALID_PAST_SAD_GIRL_OUTSIDE, VAR_0x8005, Name_Farmgirl, PastTown_Text_SadGirlOhOkay
+	closemessage
+	releaseall
+	end
+	
+PastTown_EventScript_SadGirlGiveMonsPotionsFromBelow::
+	applymovement LOCALID_PAST_SAD_GIRL_OUTSIDE, PastTown_Movement_SadGirlGiveMiltankPotionFromBelow
+	waitmovement 0
+	applymovement LOCALID_MILTANK, Common_Movement_FaceRight
+	waitmovement 0
+	delay 10
+	playse SE_REPEL
+	waitse
+	delay 10
+	playse SE_PIN
+	applymovement LOCALID_MILTANK, Common_Movement_HeartEmote
+	waitse
+	playmoncry SPECIES_MILTANK, CRY_MODE_NORMAL
+	delay 50
+	waitmoncry
+	delay 10
+	applymovement LOCALID_PAST_SAD_GIRL_OUTSIDE, PastTown_Movement_SadGirlGiveTaurosPotionFromBelow
+	waitmovement 0
+	applymovement LOCALID_TAUROS, Common_Movement_FaceLeft
+	waitmovement
+	delay 10
+	playse SE_REPEL
+	waitse
+	delay 10
+	playse SE_PIN
+	applymovement LOCALID_TAUROS, Common_Movement_HeartEmote
+	waitse
+	playmoncry SPECIES_TAUROS, CRY_MODE_NORMAL
+	delay 50
+	waitmoncry
+	delay 10
+	speak LOCALID_PAST_SAD_GIRL_OUTSIDE, DIR_WEST, Name_Farmgirl, PastTown_Text_SadGirlFeelingBetter
+	applymovement LOCALID_PAST_SAD_GIRL_OUTSIDE, PastTown_Movement_SadGirlReturnToLooker
+	waitmovement 0
+	applymovement LOCALID_MILTANK, Common_Movement_FaceRight
+	applymovement LOCALID_TAUROS, Common_Movement_FaceLeft
+	speak LOCALID_PAST_SAD_GIRL_OUTSIDE, VAR_0x8005, Name_Farmgirl, PastTown_Text_SadGirlMiracle
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_AllInADaysWork
+	playse SE_PIN
+	applymovement LOCALID_PAST_SAD_GIRL_OUTSIDE, Common_Movement_FaceLeftQuestionMark
+	waitmovement 0
+	delay 50
+	return
+
+PastTown_Movement_SadGirlGiveMiltankPotionFromBelow:
+	walk_left
+	face_up
+	step_end
+
+PastTown_Movement_SadGirlGiveTaurosPotionFromBelow:
+	walk_right
+	walk_right
+	face_up
+	step_end
+
+PastTown_Movement_SadGirlReturnToLooker:
+	walk_left
+	face_up
+	step_end
+
+PastTown_EventScript_SadGirlGiveMonsPotions::
+	applymovement LOCALID_PAST_SAD_GIRL_OUTSIDE, PastTown_Movement_SadGirlGiveMiltankPotion
+	waitmovement 0
+	applymovement LOCALID_MILTANK, Common_Movement_FaceRight
+	waitmovement 0
+	delay 10
+	playse SE_REPEL
+	waitse
+	delay 10
+	playse SE_PIN
+	applymovement LOCALID_MILTANK, Common_Movement_HeartEmote
+	waitse
+	playmoncry SPECIES_MILTANK, CRY_MODE_NORMAL
+	delay 50
+	waitmoncry
+	delay 10
+	applymovement LOCALID_PAST_SAD_GIRL_OUTSIDE, Common_Movement_FaceRight
+	waitmovement 0
+	applymovement LOCALID_TAUROS, Common_Movement_FaceLeft
+	waitmovement
+	delay 10
+	playse SE_REPEL
+	waitse
+	delay 10
+	playse SE_PIN
+	applymovement LOCALID_TAUROS, Common_Movement_HeartEmote
+	waitse
+	playmoncry SPECIES_TAUROS, CRY_MODE_NORMAL
+	delay 50
+	waitmoncry
+	delay 10
+	speak LOCALID_PAST_SAD_GIRL_OUTSIDE, DIR_WEST, Name_Farmgirl, PastTown_Text_SadGirlFeelingBetter
+	applymovement LOCALID_MILTANK, Common_Movement_FaceDown
+	applymovement LOCALID_TAUROS, Common_Movement_FaceDown
+	applymovement LOCALID_PAST_SAD_GIRL_OUTSIDE, Common_Movement_WalkDown
+	waitmovement 0
+	speak LOCALID_PAST_SAD_GIRL_OUTSIDE, VAR_0x8005, Name_Farmgirl, PastTown_Text_SadGirlMiracle
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_AllInADaysWork
+	playse SE_PIN
+	applymovement LOCALID_PAST_SAD_GIRL_OUTSIDE, Common_Movement_FaceUpQuestionMark
+	waitmovement 0
+	delay 50
+	return
+
+PastTown_Movement_SadGirlGiveMiltankPotion:
+	walk_up
+	face_left
+	step_end
+
+PastTown_EventScript_SadGirlPostBattle::	
+	clearflag FLAG_SYS_NO_WHITEOUT
+	speak LOCALID_PAST_SAD_GIRL_OUTSIDE, VAR_0x8005, Name_Farmgirl, PastTown_Text_SadGirlAww
+	multichoice 0, 6, MULTI_FARMGIRL_GIVEMON, TRUE
+	goto_if_eq VAR_RESULT, 0, PastTown_EventScript_SadGirlGiveTauros
+	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_SadGirlGiveMiltank
 	release
 	end
 	
+PastTown_EventScript_SadGirlQuestFinish::
+	fadescreen FADE_TO_BLACK
+	closemessage
+	removeobject LOCALID_PAST_SAD_GIRL_OUTSIDE
+	removeobject VAR_TEMP_1 @The mon you receive
+	removeobject VAR_TEMP_2 @The mon you do not receive
+	setobjectxyperm LOCALID_MILTANK, 9, 24
+	setobjectxyperm LOCALID_TAUROS, 21, 18
+	setobjectmovementtype LOCALID_MILTANK, MOVEMENT_TYPE_WANDER_AROUND
+	setobjectmovementtype LOCALID_TAUROS, MOVEMENT_TYPE_WANDER_AROUND
+	call_if_eq VAR_TEMP_2, LOCALID_TAUROS, PastTown_EventScript_ReaddTauros
+	call_if_eq VAR_TEMP_2, LOCALID_MILTANK, PastTown_EventScript_ReaddMiltank
+	fadescreen FADE_FROM_BLACK
+	completequest QUEST_SENT_TO_THE_FARM
+	clearflag FLAG_HIDE_PAST_SAD_GIRL_INSIDE
+	release
+	end
+
+PastTown_EventScript_ReaddTauros::
+	clearflag FLAG_HIDE_TAUROS
+	addobject LOCALID_TAUROS
+	return
+
+PastTown_EventScript_ReaddMiltank::
+	clearflag FLAG_HIDE_MILTANK
+	addobject LOCALID_MILTANK
+	return
+
+PastTown_EventScript_Miltank::
+lock
+	faceplayer
+	waitse
+	goto_if_set FLAG_SAD_GIRL_GAVE_POTIONS, PastTown_EventScript_MiltankHealthy
+	playmoncry SPECIES_MILTANK, CRY_MODE_NORMAL
+	msgbox PastTown_Text_MiltankSick, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	release
+	end
+
+PastTown_EventScript_MiltankHealthy::
+	playmoncry SPECIES_MILTANK, CRY_MODE_NORMAL
+	msgbox PastTown_Text_MiltankHealthy, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	release
+	end
+
+PastTown_EventScript_Tauros::
+	lock
+	faceplayer
+	waitse
+	goto_if_set FLAG_SAD_GIRL_GAVE_POTIONS, PastTown_EventScript_TaurosHealthy
+	playmoncry SPECIES_TAUROS, CRY_MODE_NORMAL
+	msgbox PastTown_Text_TaurosSick, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	release
+	end
+
+PastTown_EventScript_TaurosHealthy::
+	playmoncry SPECIES_TAUROS, CRY_MODE_NORMAL
+	msgbox PastTown_Text_TaurosHealthy, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	release
+	end
+
 PastTown_EventScript_Wooloo::
 	lock
 	faceplayer
@@ -1155,11 +1448,10 @@ PastTown_Text_ForemanGuardDog:
 	.string "or Mabosstiff would be a better choice?$"
 
 PastTown_Text_ForemanCarrotFarmInvasion:
-	.string "Those pesky rabbits! I thought we\n"
-	.string "had driven them off earlier this\l"
-	.string "season!\p"
-	.string "You look tough, could you please\n"
-	.string "take care of them?$"
+	.string "Those pesky rabbits! I thought we had\n"
+	.string "driven them off earlier this season!\p"
+	.string "You look tough, could you please take\n"
+	.string "care of them?$"
 
 PastTown_Text_ForemanCarrotFarmInvasionReward:
 	.string "Ah, that you sir for clearing out those\n"
@@ -1171,18 +1463,18 @@ PastTown_Text_ForemanCarrotFarmInvasionReward:
 	.string "we should explore alternatives?$"
 
 PastTown_Text_ForemanCabbageFarmInvasion:
-	.string "And now this is happening to our\n"
-	.string "fine cabbages!\p"
+	.string "And now this is happening to our fine\n"
+	.string "cabbages!\p"
 	.string "What happened to all the predator bugs\n"
 	.string "who normally feed on these pests?$"
 
 PastTown_Text_ForemanCabbageFarmInvasionReward:
 	.string "The predator bugs must be in a bust\n"
 	.string "cycle at the moment…\p"
-	.string "Normally we see these prey insects kept\n"
-	.string "in check by local Pinsir and Scolipede…\p"
-	.string "Perhaps a Pokémon of our own to guard our\n"
-	.string "farms may be in our future?$"
+	.string "Normally these prey insects are kept in\n"
+	.string "check by Pinsir and Scolipede…\p"
+	.string "Perhaps a Pokémon of our own to guard\n"
+	.string "our farms may be in our future?$"
 
 PastTown_Text_CarrotFarmerQuest3:
 	.string "Shoot…\p"
@@ -1218,7 +1510,7 @@ PastTown_Text_CarrotFarmerPostQuest1:
 
 PastTown_Text_CarrotFarmerPostQuest1Quest2Reward:
 	.string "Hmm…\p"
-	.string "I SUPPOSE it is a good thing the cabbages\n"
+	.string "I SUPPOSE it is good that the cabbages\n"
 	.string "were saved…\p"
 	.string "What else are we supposed to jar ahead\n"
 	.string "of the upcoming cold season?$"
@@ -1227,7 +1519,7 @@ PastTown_Text_CabbageFarmerPreQuest2:
 	.string "Heh!\p"
 	.string "That silly carrot farmer's crops are\n"
 	.string "being ravaged by rabbits!\p"
-	.string "Serves them right for their hatred of\n"
+	.string "Serves her right for their hatred of\n"
 	.string "the mighty cabbage…$"
 
 PastTown_Text_CabbageFarmerPreQuest2Quest1Reward:
@@ -1241,8 +1533,8 @@ PastTown_Text_ForemanPregame:
 	.string "My farmhands are always fighting over\n"
 	.string "the silliest things…\p"
 	.string "I appreciate their dedication to their\n"
-	.string "work, but they cannot cooperate for the\l"
-	.string "life of them…$"
+	.string "work, but they cannot cooperate for\l"
+	.string "the life of them…$"
 
 PastTown_Text_CarrotFarmerPregame:
 	.string "Hmph…\p"
@@ -1250,7 +1542,8 @@ PastTown_Text_CarrotFarmerPregame:
 	.string "for the value of carrots!\p"
 	.string "They are vital to a person's eyesight\n"
 	.string "and are superb for snacking!\p"
-	.string "Much better than those bitter cabbages…$"
+	.string "Much better than those bitter\n"
+	.string "cabbages…$"
 
 PastTown_Text_CabbageFarmerPregame:
 	.string "Grr…\p"
@@ -1285,7 +1578,7 @@ PastTown_Text_CarrotFarmerMySweetCarrots:
 	.string "Oh, my sweet carrots are saved!$"
 
 PastTown_Text_CarrotFarmerThankYouQuest1:
-	.string "Please accept my deepest gratitude, sir!\p"
+	.string "Please accept my deepest gratitude!\p"
 	.string "These berries are rare. I hoped to turn\n"
 	.string "them into juice, but they are superb in\l"
 	.string "battles as well!$"
@@ -1295,7 +1588,8 @@ PastTown_Text_ObtainedBerries:
 	.string "Liechi Berry each!$"
 
 PastTown_Text_CabbageFarmerMyCabbages:
-	.string "MY CABBAGES!$"
+	.string "My cabbages!\n"
+	.string "Not my cabbages!$"
 
 PastTown_Text_CabbageFarmerYesSomethingIsWrong:
 	.string "Of course something is wrong!\p"
@@ -1344,8 +1638,8 @@ PastTown_Text_ScientistThisWontDo:
 	.string "This won't do…$"
 
 PastTown_Text_ScientistAhYouPassedByHere:
-	.string "Ah, you're the fellow who passed\n"
-	.string "out at the entrance of town.\p"
+	.string "Ah, you're the fellow who passed out\n"
+	.string "at the entrance of town.\p"
 	.string "My name is Sir Bartoz II.\p"
 	.string "I hope you're well. Perhaps you might\n"
 	.string "help with my conundrum?\p"
@@ -1370,9 +1664,9 @@ PastTown_Text_LookerHuhWha:
 
 PastTown_Text_ScientistWhatIAmAsking:
 	.string "Ah, fantastic.\p"
-	.string "Following my discovery that static\n"
-	.string "is generated from rubbing together\l"
-	.string "Mareep wool, I wish to store its\l"
+	.string "Following my discovery that static is\n"
+	.string "generated from rubbing together strands\l"
+	.string "of Mareep's wool, I wish to store its\l"
 	.string "power and use it to develop the city\l"
 	.string "to the next level.\p"
 	.string "Could you please find me such an\n"
@@ -1444,12 +1738,12 @@ PastTown_Text_LassOyGeezer:
 	.string "Oy, geezer!\p"
 	.string "You must be an outsider to our\n"
 	.string "village!\p"
-	.string "Know this, there is nobody\n"
-	.string "in this village stronger than\l"
-	.string "I in Pokémon battles!\p"
-	.string "If you wish to pass through to\n"
-	.string "the Shrine of Prosperity, then\l"
-	.string "show me your strength!$"
+	.string "Know this, there is nobody in this\n"
+	.string "village stronger than I at Pokémon\l"
+	.string "battles!\p"
+	.string "If you wish to pass through to the\n"
+	.string "Shrine of Prosperity, then show me\l"
+	.string "your strength!$"
 
 PastTown_Text_LassAnotherRound:
 	.string "Are you ready for another round,\n"
@@ -1535,7 +1829,7 @@ PastTown_Text_Minun:
 	.string "Mraaa!$"
 
 PastTown_Text_Leavanny:
-	.string "Vaaaaaaan!"
+	.string "Vaaaaaaan!$"
 
 PastTown_Text_Kricketune:
 	.string "Delelelelele!$"
@@ -1570,10 +1864,22 @@ PastTown_Text_Wooloo:
 	.string "Baaa!$"
 
 PastTown_Text_Mareep:
-	.string "Maaa!$"
+	.string "Maraaa!$"
 
 PastTown_Text_Mudsdale:
 	.string "Nyehehehehehe!$"
+
+PastTown_Text_TaurosSick:
+	.string "…Mmm…$"
+
+PastTown_Text_TaurosHealthy:
+	.string "Moooooo!$"
+	
+PastTown_Text_MiltankSick:
+	.string "…Muh…$"
+
+PastTown_Text_MiltankHealthy:
+	.string "Muuuuuuh!$"
 
 PastTown_Text_TownHallSign:
 	.string "Porta Bella Town Hall\p"
@@ -1586,5 +1892,57 @@ PastTown_Text_TrainerTips:
 	.string "rubbed off on Looker, so now he can\l"
 	.string "see the future!\p"
 	.string "In battle, press L to see the next turn\n"
-	.string "of the opponent's left Pokémon, and R to\l"
-	.string "see the turn of the right Pokémon!$"
+	.string "of the opponent's left Pokémon, and R\l"
+	.string "to see the turn of the right Pokémon!$"
+
+PastTown_Text_SadGirlLetsSee:
+	.string "Okay, mister! Let's see if these funny\n"
+	.string "medicines will work on them!\p"
+	.string "Let's cross our fingers!$"
+
+PastTown_Text_SadGirlIThinkTheyWantToFight:
+	.string "Oh? I think Torin and Moomoo want to\n"
+	.string "battle you!$"
+
+PastTown_Text_SadGirlAreYouReady:
+	.string "Mister, would you be interested in a\n"
+	.string "fun, recreational battle?$"
+
+PastTown_Text_SadGirlHereWeCome:
+	.string "All right! Get ready, sir!$"
+
+PastTown_Text_SadGirlOhOkay:
+	.string "Oh. Okay…\p"
+	.string "Well, if you decide later that you want to\n"
+	.string "fight, then let me know…$"
+
+PastTown_Text_SadGirlDefeated:
+	.string "…I think they're going to be alright…!\n"
+	.string "…Snivel…$"
+
+PastTown_Text_SadGirlThatWasFunWin:
+	.string "Yippee! That was fun!\p"
+	.string "Mister, if you will, I would love to take\n"
+	.string "part in another battle!$"
+
+PastTown_Text_SadGirlFeelingBetter:
+	.string "Whoa! You two are already looking much\n"
+	.string "happier now!$"
+
+PastTown_Text_SadGirlMiracle:
+	.string "It's a miracle! Almost in an instant,\n"
+	.string "Torin and Moomoo are feeling better!\p"
+	.string "Thank you, sir!$"
+
+PastTown_Text_SadGirlAww:
+	.string "Aww! I thought I had that!\p"
+	.string "Still, it feels as if Torin and Moomoo\n"
+	.string "are back to full power!\p"
+	.string "I think they would do well to go with\n"
+	.string "you, by the way!\p"
+	.string "Having just come back to full health,\n"
+	.string "they need work to regain their strength!\p"
+	.string "We can provide that hard work for one,\n"
+	.string "but we don't have enough for both.\p"
+	.string "As such, feel free to take one along!\n"
+	.string "Who would you want to come with you?$"

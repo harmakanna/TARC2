@@ -135,6 +135,7 @@
 #define MULTI_EMMA_GIVEMON                 124
 #define MULTI_FOREMAN_GIVEMON              125
 #define MULTI_FARMGIRL_GIVEMON             126
+#define MULTI_LISIA_GIVEMON                127
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0

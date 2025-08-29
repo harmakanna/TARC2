@@ -71,6 +71,7 @@
       "flag": "FLAG_HIDE_CITY_THUNDURUS"
     },
     {
+      "local_id": "LOCALID_BLUE",
       "graphics_id": "OBJ_EVENT_GFX_BLUE",
       "x": 7,
       "y": 10,
@@ -78,12 +79,14 @@
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_type": "TRAINER_TYPE_QUEST_GIVER",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
+      "script": "PresentTown_Port_EventScript_Blue",
+      "flag": "FLAG_HIDE_PORT_BLUE",
+      "quest_id": 4
     },
     {
+      "local_id": "LOCALID_PORT_BOAT",
       "graphics_id": "OBJ_EVENT_GFX_MR_BRINEYS_BOAT",
       "x": 11,
       "y": 9,
@@ -110,6 +113,7 @@
       "flag": "FLAG_HIDE_PRESENT_LUVDISCS"
     },
     {
+      "local_id": "LOCALID_PRESENT_PORT_LUVDISC",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(LUVDISC)",
       "x": 7,
       "y": 8,

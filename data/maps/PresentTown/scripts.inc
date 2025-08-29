@@ -80,8 +80,13 @@ PresentTown_OnTransition:
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetStormWeather
 	call_if_unset FLAG_SYS_WEATHER_CTRL, PresentTown_EventScript_ClearTornadusNPCFlag
 	call_if_set FLAG_TALKED_TO_MATT_OUTSIDE, PresentTown_EventScript_AquaMemberFPositioning
+	call_if_unset FLAG_HIDE_CUTSCENE_FOREST_IDOL, PresentTown_EventScript_HideLostIdol
 	@call_if_eq VAR_PORTO_BELLA_CITY_STATE, 1, PresentTown_EventScript_PrepareAnabelForCutscene
 	end
+
+PresentTown_EventScript_HideLostIdol::
+	hideobjectat LOCALID_CITY_FOREST_IDOL, MAP_PRESENT_TOWN
+	return
 
 PresentTown_EventScript_ClearTornadusNPCFlag::
 	clearflag FLAG_HIDE_TORNADUS_NPCS
@@ -99,7 +104,52 @@ PresentTown_EventScript_PrepareAnabelForCutscene::
 PresentTown_OnFrame:
 	map_script_2 VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1, PresentTown_EventScript_LookerThinkingScenes
 	map_script_2 VAR_CATCH_GENIES_QUEST, 4, PresentTown_EventScript_FinishGeniesQuest
+	map_script_2 VAR_CUTSCENE_FOREST_STATE, 1, PresentTown_EventScript_LostIdolThankYou
 	.2byte 0
+
+PresentTown_EventScript_LostIdolThankYou::
+	lockall
+	clearflag FLAG_SYS_SPAWN_INVISIBLE
+	fadescreen FADE_FROM_BLACK
+	applymovement LOCALID_PLAYER, PresentTown_Movement_LookerGuideLostIdol
+	delay 16
+	playse SE_EXIT
+	applymovement LOCALID_CITY_FOREST_IDOL, PresentTown_Movement_LookerGuideLostIdol
+	waitmovement 0
+	applymovement LOCALID_CITY_FOREST_IDOL, Common_Movement_FaceRight
+	speak LOCALID_PLAYER, DIR_WEST, Name_Looker, PresentTown_Text_LookerHereWeAreLostIdol
+	speak LOCALID_CITY_FOREST_IDOL, DIR_EAST, Name_Right_Idol, PresentTown_Text_LostIdolThankYou
+	speak LOCALID_PLAYER, DIR_WEST, Name_Looker, Looker_Text_AlwaysHappyToHelp
+	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	applymovement LOCALID_CITY_FOREST_IDOL, PresentTown_Movement_LostIdolExitFrame
+	waitmovement 0
+	removeobject LOCALID_CITY_FOREST_IDOL
+	setvar VAR_TRIGGER_CUTSCENE_FOREST, 0
+	setvar VAR_CUTSCENE_FOREST_STATE, 0
+	clearflag FLAG_SYS_PREVENT_MAP_FADE
+	clearflag FLAG_HIDE_CAFE_IDOL_RIGHT
+	addvar VAR_NUM_FOUND_IDOLS, 1
+	goto_if_eq VAR_NUM_FOUND_IDOLS, 3, Looker_EventScript_FoundAllIdols
+	releaseall
+	end
+
+PresentTown_Movement_LookerGuideLostIdol:
+	set_visible
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+PresentTown_Movement_LostIdolExitFrame:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	step_end
 
 PresentTown_EventScript_FinishGeniesQuest::
 	lock
@@ -153,7 +203,7 @@ PresentTown_EventScript_LookerThinkingIGotIt::
 	playse SE_PIN
 	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 	waitmovement 0
-	delay 60
+	delay 50
 	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, PresentTown_Text_LookerIGotIt
 	startquest QUEST_FIND_THE_CULPRIT
 	return
@@ -245,9 +295,9 @@ PresentTown_EventScript_StartStorm::
 	speak LOCALID_PRESENTTOWN_ANABEL, DIR_WEST, Name_Anabel, PresentTown_Text_AnabelWhatTheHeck
 	speak LOCALID_PLAYER, DIR_EAST, Name_Looker, PresentTown_Text_LookerThereWasOneThing
 	closemessage
-	setobjectxyperm LOCALID_PRESENTTOWN_WILDMON1, 24, 27
-	setobjectxyperm LOCALID_PRESENTTOWN_WILDMON2, 24, 28
-	setobjectxyperm LOCALID_PRESENTTOWN_WILDMON3, 23, 27
+	setobjectxyperm LOCALID_PRESENTTOWN_WILDMON1, 23, 27
+	setobjectxyperm LOCALID_PRESENTTOWN_WILDMON2, 23, 28
+	setobjectxyperm LOCALID_PRESENTTOWN_WILDMON3, 22, 27
 	addobject LOCALID_PRESENTTOWN_WILDMON1
 	addobject LOCALID_PRESENTTOWN_WILDMON2
 	addobject LOCALID_PRESENTTOWN_WILDMON3
@@ -257,6 +307,7 @@ PresentTown_EventScript_StartStorm::
 	waitmovement 0
 	special SpawnCameraObject
 	applymovement LOCALID_CAMERA, PresentTown_Movement_CameraPanToWildPokemon
+	delay 16
 	applymovement LOCALID_PRESENTTOWN_WILDMON1, PresentTown_Movement_WildMon12
 	applymovement LOCALID_PRESENTTOWN_WILDMON2, PresentTown_Movement_WildMon12
 	applymovement LOCALID_PRESENTTOWN_WILDMON3, PresentTown_Movement_WildMon3
@@ -270,7 +321,7 @@ PresentTown_EventScript_StartStorm::
 	applymovement LOCALID_PRESENTTOWN_WILDMON1, PresentTown_Movement_WildMon1Chase
 	applymovement LOCALID_PRESENTTOWN_WILDMON2, PresentTown_Movement_WildMon2Chase
 	applymovement LOCALID_PRESENTTOWN_WILDMON3, PresentTown_Movement_WildMon3Chase
-	applymovement LOCALID_CAMERA, Common_Movement_Delay48
+	delay 60
 	waitmovement 0
 	playse SE_EXIT
 	hideobjectat LOCALID_PRESENTTOWN_ANABEL, MAP_PRESENT_TOWN
@@ -291,6 +342,8 @@ PresentTown_EventScript_StartStorm::
 	clearflag FLAG_HIDE_SHRINE_PROSPERITY_RANGER
 	clearflag FLAG_HIDE_CITYHALL_1F_MAYOR
 	clearflag FLAG_HIDE_ANABEL_CITYHALL
+	clearflag FLAG_HIDE_PORT_BLUE
+	clearflag FLAG_HIDE_POKEMON_CENTER_IDOL
 	setvar VAR_PORTO_BELLA_CITY_STATE, 2
 	setvar VAR_CUTSCENE_STATE, 3
 	warp MAP_PRESENT_CITY_HALL_1F, 8, 8
@@ -315,6 +368,7 @@ PresentTown_EventScript_AnabelLookAtStormTop::
 PresentTown_EventScript_AnabelLookAtStormBottom::
 	applymovement LOCALID_PRESENTTOWN_ANABEL, PresentTown_Movement_AnabelLookAtStorm2
 	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 	fadenewbgm MUS_NONE
 	speakername Name_Anabel
 	msgbox PresentTown_Text_AnabelThatsStrange, MSGBOX_DEFAULT
@@ -344,6 +398,7 @@ PresentTown_Movement_AnabelRunIntoCityHall:
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right
+	walk_fast_right
 	walk_fast_up
 	walk_fast_up
 	walk_fast_up
@@ -351,6 +406,7 @@ PresentTown_Movement_AnabelRunIntoCityHall:
 
 PresentTown_Movement_LookerRunIntoCityHall:
 	delay_8
+	walk_fast_right
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right
@@ -373,9 +429,11 @@ PresentTown_Movement_WildMon12:
 	walk_right
 	walk_right
 	walk_right
+	walk_right
 	step_end
 
 PresentTown_Movement_WildMon3:
+	walk_right
 	walk_right
 	walk_right
 	walk_right
@@ -388,6 +446,7 @@ PresentTown_Movement_WildMon3:
 
 PresentTown_Movement_WildMon1Chase:
 	delay_8
+	walk_fast_right
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right
@@ -412,11 +471,13 @@ PresentTown_Movement_WildMon2Chase:
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right
+	walk_fast_right
 	step_end
 
 PresentTown_Movement_WildMon3Chase:
 	delay_8
 	walk_fast_up
+	walk_fast_right
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right
@@ -488,8 +549,6 @@ PresentTown_Movement_LookAtWildPokemon:
 PresentTown_Movement_CameraPanToWildPokemon:
 	walk_left
 	walk_left
-	walk_left
-	walk_left
 	step_end
 
 PresentTown_EventScript_Matt::
@@ -503,9 +562,8 @@ PresentTown_EventScript_Matt::
 	msgbox PresentTown_Text_MattTalkingToGrunt, MSGBOX_DEFAULT
 	closemessage
 	playse SE_PIN
-	faceplayer
-	applymovement LOCALID_PRESENTTOWN_MATT, Common_Movement_ExclamationMark
-	delay 48
+	call_if_eq VAR_FACING, DIR_NORTH, PresentTown_EventScript_AquaTurnDown
+	call_if_ne VAR_FACING, DIR_NORTH, PresentTown_EventScript_AquaTurnLeft
 	call Script_GetNPCFacingDirection
 	speak LOCALID_PRESENTTOWN_MATT, VAR_0x8005, Name_Matt, PresentTown_Text_MattWhoAreYou
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Text_LookerMyNameIs
@@ -516,6 +574,20 @@ PresentTown_EventScript_Matt::
 	goto_if_eq VAR_FACING, DIR_EAST, PresentTown_EventScript_MattAttackSide
 	goto PresentTown_EventScript_MattAttackDown
 	end
+
+PresentTown_EventScript_AquaTurnDown::
+	applymovement LOCALID_PRESENTTOWN_GRUNT, Common_Movement_FaceDownExclamationMark
+	applymovement LOCALID_PRESENTTOWN_MATT, Common_Movement_FaceDownExclamationMark
+	waitmovement
+	delay 50
+	return
+
+PresentTown_EventScript_AquaTurnLeft::
+	applymovement LOCALID_PRESENTTOWN_GRUNT, Common_Movement_FaceLeftExclamationMark
+	applymovement LOCALID_PRESENTTOWN_MATT, Common_Movement_FaceLeftExclamationMark
+	waitmovement
+	delay 50
+	return
 
 PresentTown_EventScript_MattAttackDown::
 	playse SE_EFFECTIVE
@@ -763,6 +835,7 @@ PresentTown_EventScript_PeaceRangerCutscene::
 	destroyfollowernpc
 	setvar VAR_CUTSCENE_STATE, 5
 	setflag FLAG_SYS_PREVENT_MAP_FADE
+	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	warp MAP_CUTSCENE_FOREST, 10, 17
 	releaseall
 	end
@@ -788,6 +861,7 @@ PresentTown_Movement_PeaceRangerEmoteTurn:
 PresentTown_EventScript_Fisherman::
 	lock
 	faceplayer
+	goto_if_unset FLAG_SYS_MAIN_GAME_START, PresentTown_EventScript_FishermanPregame
 	call Script_GetNPCFacingDirection
 	returnqueststate QUEST_HELP_FISHERMAN
 	switch VAR_RESULT
@@ -798,6 +872,14 @@ PresentTown_EventScript_Fisherman::
 	releaseall
 	end
 
+PresentTown_EventScript_FishermanPregame::
+	msgbox PresentTown_Text_FishermanUnaware, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PRESENT_FISHERMAN, Common_Movement_FaceDown
+	waitmovement 0
+	release
+	end
+	
 PresentTown_EventScript_FishermanUnaware::
 	speakername Name_Present_Fisherman
 	msgbox PresentTown_Text_FishermanUnaware, MSGBOX_DEFAULT
@@ -885,6 +967,119 @@ PresentTown_EventScript_RanFromTornadus::
 	goto Common_EventScript_LegendaryFlewAway
 	end
 
+PresentTown_EventScript_EstellasHouseSign::
+	msgbox PresentTown_Text_EstellasHouseSign, MSGBOX_SIGN
+	end
+
+PresentTown_EventScript_CelebiSocietySign::
+	msgbox PresentTown_Text_CelebiSocietySign, MSGBOX_SIGN
+	end
+
+PresentTown_EventScript_SchoolSign::
+	msgbox PresentTown_Text_SchoolSign, MSGBOX_SIGN
+	end
+
+PresentTown_EventScript_CafeSign::
+	msgbox PresentTown_Text_CafeSign, MSGBOX_SIGN
+	end
+
+PresentTown_EventScript_TrainerTipsEVSign::
+	msgbox PresentTown_Text_TrainerTipsEVSign, MSGBOX_SIGN
+	end
+
+PresentTown_EventScript_CityHallSign::
+	msgbox PresentTown_Text_CityHallSign, MSGBOX_SIGN
+	end
+
+PresentTown_EventScript_GymSign::
+	msgbox PresentTown_Text_GymSign, MSGBOX_SIGN
+	end
+
+PresentTown_EventScript_LockedDoor::
+	goto_if_ne VAR_CUTSCENE_STATE, 4, PresentTown_EventScript_End
+	msgbox PresentTown_Text_TheDoorIsLocked, MSGBOX_SIGN
+	end
+
+PresentTown_EventScript_End::
+	end
+
+PresentTown_EventScript_LeftIdolPregame::
+	lock
+	msgbox PresentTown_Text_LeftIdolPregame, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+PresentTown_EventScript_RightIdolPregame::
+	lock
+	msgbox PresentTown_Text_RightIdolPregame, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+PresentTown_EventScript_LisiaPregame::
+	lock
+	msgbox PresentTown_Text_LisiaPregame, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+PresentTown_Text_LisiaPregame:
+	.string "I'm in looooooove with a\n"
+	.string "fairy ta-aaaaaaale!\p"
+	.string "Even thoooooough it huuuuuuuurts!\p"
+	.string "'Cause I don't caaaaaare if I lose my\n"
+	.string "mi-iiiiiiind!\p"
+	.string "I'm alreaaaaady cuuuu-uuuuursed…$"
+
+PresentTown_Text_LeftIdolPregame:
+	.string "Come ON!\n"
+	.string "Our rhythm is completely off!$"
+
+PresentTown_Text_RightIdolPregame:
+	.string "Huff…\n"
+	.string "Hoo…\p"
+	.string "Can't…\n"
+	.string "Keep up…$"
+
+PresentTown_Text_TheDoorIsLocked:
+	.string "The door is locked.$"
+
+PresentTown_Text_GymSign:
+	.string "Porta Bella City\n"
+	.string "Pokémon Gym$"
+
+PresentTown_Text_CityHallSign:
+	.string "Porta Bella\n"
+	.string "City Hall$"
+
+PresentTown_Text_TrainerTipsEVSign:
+	.string "Trainer Tips:\p"
+	.string "Vitamins and feathers have been\n"
+	.string "reworked!\p"
+	.string "Take one vitamin to boost that stat to\n"
+	.string "half its max EVs, and take two to boost\l"
+	.string "the stat to a full 252 EVs!\p"
+	.string "Battles, on the other hand, will no\n"
+	.string "longer provide EVs!$"
+
+PresentTown_Text_CelebiSocietySign:
+	.string "Porta Bella City\n"
+	.string "Celebi Society\p"
+	.string "Dedicated to the environmental and\n"
+	.string "cultural preservation of Porta Bella!$"
+
+PresentTown_Text_SchoolSign:
+	.string "Henry S. Bartoz\n"
+	.string "Innovation Academy$"
+
+PresentTown_Text_CafeSign:
+	.string "Tourin' Torin's\n"
+	.string "Tauros Café$"
+
+PresentTown_Text_EstellasHouseSign:
+	.string "Estella's House$"
+
 PresentTown_Text_ProsperityRangerYouCanPass:
 	.string "Hello! I got the call from HQ. You're\n"
 	.string "free to go to the shrine as needed!$"
@@ -905,8 +1100,8 @@ PresentTown_Text_LookerImHereToHelpFind:
 	.string "I'm here to help find her.$"
 
 PresentTown_Text_PeaceRangerWeCouldAlwaysUseMoreHands:
-	.string "Oh, so you're the person City\n"
-	.string "Hall just called me to look out for.\p"
+	.string "Oh, so you're the person City Hall just\n"
+	.string "called me to look out for.\p"
 	.string "Fantastic! We've been short on staff,\n"
 	.string "the help is really appreciated.$"
 
@@ -970,21 +1165,19 @@ PresentTown_Text_LookerGreet:
 	.string "Ms. Anabel.$"
 
 PresentTown_Text_AnabelDidYouGetTheChance:
-	.string "Did you get the chance\n"
-	.string "to speak with the new leader\l"
-	.string "of Team Aqua?$"
+	.string "Did you get the chance to speak with\n"
+	.string "the new leader of Team Aqua?$"
 
 PresentTown_Text_LookerObstinate:
-	.string "Yes, Matt was rather\n"
-	.string "obstinate…\p"
+	.string "Yes, Matt was rather obstinate…\p"
 	.string "But I did not pick up on anything\n"
 	.string "peculiar from their new operation.$"
 
 PresentTown_Text_AnabelUnderstood:
 	.string "Understood.\p"
-	.string "I spoke with the mayor, and he has\n"
-	.string "a vacant office in City Hall we can\l"
-	.string "use while we stay in…$"
+	.string "I spoke with the mayor, and he has a\n"
+	.string "vacant office in City Hall we can use\l"
+	.string "while we stay in…$"
 
 PresentTown_Text_AnabelThatsStrange:
 	.string "That's strange…$"
@@ -994,7 +1187,7 @@ PresentTown_Text_LookerWhatsWrong:
 	.string "issue, Anabel?$"
 
 PresentTown_Text_AnabelTakeACloserLook:
-	.string "Come take a closer look.$"
+	.string "Take a closer look.$"
 
 PresentTown_Text_LookerISeeIt:
 	.string "That's odd…\p"
@@ -1002,8 +1195,8 @@ PresentTown_Text_LookerISeeIt:
 	.string "Storm clouds?$"
 
 PresentTown_Text_AnabelWhatTheHeck:
-	.string "What the heck!? Hurricane\n"
-	.string "season isn't for another two months!\p"
+	.string "What the heck!? Hurricane season\n"
+	.string "doesn't start for another two months!\p"
 	.string "Looker, are you positive Team Aqua's\n"
 	.string "new operation is above board?$"
 
@@ -1018,8 +1211,8 @@ PresentTown_Text_AnabelLookOut:
 
 PresentTown_Text_MattTalkingToGrunt:
 	.string "Hehehe…\p"
-	.string "The operation at the shrine went\n"
-	.string "off without a hitch!\p"
+	.string "These experiments are going off without\n"
+	.string "a hitch!\p"
 	.string "With these results, we can…$"
 
 PresentTown_Text_MattWhoAreYou:
@@ -1030,20 +1223,20 @@ PresentTown_Text_LookerMyNameIs:
 	.string "is Looker.\p"
 	.string "I am with the International Police,\n"
 	.string "here to ensure nothing shady is going\l"
-	.string "with Team Aqua's new operation…$"
+	.string "on with Team Aqua's new operation…$"
 
 PresentTown_Text_MattSeriously:
 	.string "Ugh, seriously?\p"
-	.string "We've told every officer whose\n"
-	.string "hounded us the past three months,\l"
-	.string "we're REFORMED. Got it?\p"
+	.string "We've told every officer who've hounded\n"
+	.string "us for the past three months, we're\l"
+	.string "REFORMED. Got it?\p"
 	.string "Now scram!$"
 
 PresentTown_Text_LookerIWillNotJustScram:
 	.string "I will not scram!\n"
 	.string "I am on official business!\p"
-	.string "If you would like, we can schedule\n"
-	.string "an audit of the facility…$"
+	.string "If you would like, we can schedule an\n"
+	.string "audit of the facility…$"
 
 PresentTown_Text_MattScrewOff:
 	.string "Oh, screw off!$"
@@ -1052,29 +1245,27 @@ PresentTown_Text_AquaMemberFWait:
 	.string "Wait!$"
 
 PresentTown_Text_AquaMemberFTalkingToMatt:
-	.string "So about the operation at\n"
-	.string "the east shrine…$"
+	.string "So about the experiment on the local\n"
+	.string "wildlife…$"
 
 PresentTown_Text_AquaMemberFNowHesMad:
 	.string "Now you've done it!\p"
-	.string "It'll take hours to get him\n"
-	.string "to calm down…$"
+	.string "It'll take hours to get him to calm\n"
+	.string "down…$"
 
 PresentTown_Text_LookerThinkingGym:
 	.string "Hmm…\p"
-	.string "So there are some pretty strong\n"
-	.string "gym challengers running around\l"
-	.string "the city right now…\p"
-	.string "Including one strong enough to\n"
-	.string "beat a former Elite Four…\p"
+	.string "So there are some pretty strong gym\n"
+	.string "challengers running around the city\l"
+	.string "right now…\p"
 	.string "Hmm…$"
 
 PresentTown_Text_LookerThinkingAqua:
 	.string "Hmm…\p"
-	.string "So Team Aqua did not cause\n"
-	.string "Landorus to disappear…\p"
-	.string "They seem to be a lot less\n"
-	.string "reckless now…\p"
+	.string "So Team Aqua did not cause Landorus\n"
+	.string "to disappear…\p"
+	.string "Only someone as reckless as they once\n"
+	.string "were could have done this…\p"
 	.string "Hmm…$"
 
 PresentTown_Text_LookerThinkingEstella:
@@ -1099,10 +1290,10 @@ PresentTown_Text_LookerThinkingRanger:
 	
 PresentTown_Text_LookerIGotIt:
 	.string "I got it!\p"
-	.string "One of the gym challengers, a\n"
-	.string "child, MUST have captured Landorus\l"
-	.string "at the shrine, not understanding\l"
-	.string "the implications of their actions!\p"
+	.string "One of the gym challengers, a child,\n"
+	.string "MUST have captured Landorus at the\l"
+	.string "shrine, not understanding the\l"
+	.string "implications of their actions!\p"
 	.string "I need to find which challenger\n"
 	.string "caught the legendary and close this\l"
 	.string "case shut!$"
@@ -1158,3 +1349,12 @@ PresentTown_Text_LookerTheSpiritsAreCaught:
 	.string "the duration of my stay…\p"
 	.string "This should prevent them from causing\n"
 	.string "any more havoc to the city…$"
+
+PresentTown_Text_LookerHereWeAreLostIdol:
+	.string "Well, here we are!\n"
+	.string "Welcome back to Porta Bella!$"
+
+PresentTown_Text_LostIdolThankYou:
+	.string "Thank you sooooo so much!\n"
+	.string "If you don't mind, I gotta run!\p"
+	.string "My show is supposed to start soon!$"

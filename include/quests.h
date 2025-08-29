@@ -68,6 +68,9 @@ enum QuestCases
 	FLAG_REMOVE_FAVORITE, //remove favorite flag from quest
 };
 
+extern const struct CompressedSpriteSheet gQuestMenuSpriteSheet;
+extern const struct SpritePalette gQuestMenuPaletteTable;
+
 // functions
 void QuestMenu_Init(u8 a0, MainCallback callback);
 u8 QuestMenu_GetSetSubquestState(u8 quest, u8 caseId, u8 childQuest);
@@ -78,6 +81,8 @@ void QuestMenu_CopySubquestName(u8 *dst, u8 parentId, u8 childId);
 void QuestMenu_ResetMenuSaveData(void);
 void ResetQuestIconOnObject(struct ObjectEvent*);
 void HandleQuestIconForSingleObjectEvent(struct ObjectEvent*, u32);
+void CB2_QuestMenuFromStartMenu(void);
 void RefreshQuestIcons(void);
+bool8 IsQuestCompletedState(s32 questId);
 
 #endif // GUARD_QUESTS_H
