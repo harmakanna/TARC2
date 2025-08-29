@@ -79,22 +79,6 @@ Gender: Male
 Music: Male
 Double Battle: No
 
-=== TRAINER_EVERETT ===
-Name: Everett
-Class: Scientist
-Pic: Scientist
-Gender: Male
-Music: Suspicious
-Double Battle: Yes
-
-Wobbuffet
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Wobbuffet
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
 === TRAINER_MARIE ===
 Name: Marie
 Class: Lass
@@ -118,6 +102,21 @@ Sassy Nature
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Scald  
 
+/* START EASY TRAINERS */
+
+=== TRAINER_EVERETT ===
+Name: Everett
+Class: Scientist
+Pic: Scientist
+Gender: Male
+Music: Suspicious
+Double Battle: Yes
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
 === TRAINER_PRESENT_FISHERMAN ===
 Name: Trevor
 Class: Fisherman
@@ -126,6 +125,797 @@ Gender: Male
 Music: Hiker
 Double Battle: Yes
 AI: Basic Trainer
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_ALICE ===
+Name: Alice
+Class: Farmgirl
+Pic: Farmgirl
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Easy
+
+Tauros
+Level: 5
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Miltank
+Level: 5
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Alcremie
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Mudsdale
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_BIANCA ===
+Name: Bianca
+Class: Idol
+Pic: Idol
+Gender: Female
+Music: Girl
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_SOPHIA ===
+Name: Sophia
+Class: Idol
+Pic: Idol
+Gender: Female
+Music: Girl
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_LISIA ===
+Name: Lisia
+Class: Idol2
+Pic: Lisia
+Gender: Female
+Music: Girl
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_GRUNT_AQUA_HIDEOUT_1 ===
+Name: Geoff
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_GRUNT_AQUA_HIDEOUT_2 ===
+Name: Sarah
+Class: Team Aqua
+Pic: Aqua Grunt F
+Gender: Female
+Music: Aqua
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_GRUNT_AQUA_HIDEOUT_3 ===
+Name: Sheldon
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_MATT ===
+Name: Matt
+Class: Aqua Admin
+Pic: Aqua Admin M
+Gender: Male
+Music: Aqua
+Double Battle: Yes
+AI: Basic Trainer
+Mugshot: Blue
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_SEBASTIAN ===
+Name: Sebastian
+Class: Pkmn Ranger
+Pic: Pokemon Ranger M
+Gender: Male
+Music: Cool
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_TASHA ===
+Name: Tasha
+Class: Hex Maniac
+Pic: Hex Maniac
+Gender: Female
+Music: Suspicious
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_CONNIE ===
+Name: Connie
+Class: Beauty
+Pic: Beauty
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_DAISY ===
+Name: DAISY
+Class: Battle Girl
+Pic: Battle Girl
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_SAMANTHA ===
+Name: Samantha
+Class: Psychic
+Pic: Psychic F
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_LEAH ===
+Name: Leah
+Class: Expert
+Pic: Expert F
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_PHOEBE ===
+Name: Phoebe
+Class: Elite Four
+Pic: Elite Four Phoebe
+Gender: Female
+Music: Elite Four
+Double Battle: Yes
+AI: Basic Trainer
+Mugshot: Pink
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_BLUE ===
+Name: Blue
+Class: Rival
+Pic: Blue
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_BLUE_CULPRIT ===
+Name: Blue
+Class: Rival
+Pic: Blue
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_MAY ===
+Name: May
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_MAY_CULPRIT ===
+Name: May
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_LEAF ===
+Name: Leaf
+Class: Rival
+Pic: Leaf
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_LEAF_CULPRIT ===
+Name: Leaf
+Class: Rival
+Pic: Leaf
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_BW_ACE_TRAINER ===
+Name: Katherine
+Class: Cooltrainer
+Pic: BW Ace Trainer F
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_BW_ACE_TRAINER_CULPRIT ===
+Name: Katherine
+Class: Cooltrainer
+Pic: BW Ace Trainer F
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_YOUNGSTER ===
+Name: Trey
+Class: Youngster
+Pic: Youngster New
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_YOUNGSTER_CULPRIT ===
+Name: Trey
+Class: Youngster
+Pic: Youngster New
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+/* END EASY TRAINERS */
+
+/* START NORMAL TRAINERS */
+
+=== TRAINER_EVERETT ===
+Name: Everett
+Class: Scientist
+Pic: Scientist
+Gender: Male
+Music: Suspicious
+Double Battle: Yes
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_PRESENT_FISHERMAN ===
+Name: Trevor
+Class: Fisherman
+Pic: Fisherman
+Gender: Male
+Music: Hiker
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_ALICE ===
+Name: Alice
+Class: Farmgirl
+Pic: Farmgirl
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Normal
+
+Tauros
+Level: 5
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Miltank
+Level: 5
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Alcremie
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Mudsdale
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_BIANCA ===
+Name: Bianca
+Class: Idol
+Pic: Idol
+Gender: Female
+Music: Girl
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_SOPHIA ===
+Name: Sophia
+Class: Idol
+Pic: Idol
+Gender: Female
+Music: Girl
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_LISIA ===
+Name: Lisia
+Class: Idol2
+Pic: Lisia
+Gender: Female
+Music: Girl
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_GRUNT_AQUA_HIDEOUT_1 ===
+Name: Geoff
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_GRUNT_AQUA_HIDEOUT_2 ===
+Name: Sarah
+Class: Team Aqua
+Pic: Aqua Grunt F
+Gender: Female
+Music: Aqua
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_GRUNT_AQUA_HIDEOUT_3 ===
+Name: Sheldon
+Class: Team Aqua
+Pic: Aqua Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_MATT ===
+Name: Matt
+Class: Aqua Admin
+Pic: Aqua Admin M
+Gender: Male
+Music: Aqua
+Double Battle: Yes
+AI: Basic Trainer
+Mugshot: Blue
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_SEBASTIAN ===
+Name: Sebastian
+Class: Pkmn Ranger
+Pic: Pokemon Ranger M
+Gender: Male
+Music: Cool
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_TASHA ===
+Name: Tasha
+Class: Hex Maniac
+Pic: Hex Maniac
+Gender: Female
+Music: Suspicious
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_CONNIE ===
+Name: Connie
+Class: Beauty
+Pic: Beauty
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_DAISY ===
+Name: DAISY
+Class: Battle Girl
+Pic: Battle Girl
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_SAMANTHA ===
+Name: Samantha
+Class: Psychic
+Pic: Psychic F
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_LEAH ===
+Name: Leah
+Class: Expert
+Pic: Expert F
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_PHOEBE ===
+Name: Phoebe
+Class: Elite Four
+Pic: Elite Four Phoebe
+Gender: Female
+Music: Elite Four
+Double Battle: Yes
+AI: Basic Trainer
+Mugshot: Pink
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_BLUE ===
+Name: Blue
+Class: Rival
+Pic: Blue
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_BLUE_CULPRIT ===
+Name: Blue
+Class: Rival
+Pic: Blue
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_MAY ===
+Name: May
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_MAY_CULPRIT ===
+Name: May
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_LEAF ===
+Name: Leaf
+Class: Rival
+Pic: Leaf
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_LEAF_CULPRIT ===
+Name: Leaf
+Class: Rival
+Pic: Leaf
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_BW_ACE_TRAINER ===
+Name: Katherine
+Class: Cooltrainer
+Pic: BW Ace Trainer F
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_BW_ACE_TRAINER_CULPRIT ===
+Name: Katherine
+Class: Cooltrainer
+Pic: BW Ace Trainer F
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_YOUNGSTER ===
+Name: Trey
+Class: Youngster
+Pic: Youngster New
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_YOUNGSTER_CULPRIT ===
+Name: Trey
+Class: Youngster
+Pic: Youngster New
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+/* END NORMAL TRAINERS */
+
+/* START HARD TRAINERS */
+
+=== TRAINER_EVERETT ===
+Name: Everett
+Class: Scientist
+Pic: Scientist
+Gender: Male
+Music: Suspicious
+Double Battle: Yes
+Difficulty: Hard
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_PRESENT_FISHERMAN ===
+Name: Trevor
+Class: Fisherman
+Pic: Fisherman
+Gender: Male
+Music: Hiker
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Hard
 
 Alomomola  
 Ability: Regenerator
@@ -159,6 +949,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Check Bad Move
+Difficulty: Hard
 
 Tauros
 Level: 5
@@ -184,9 +975,10 @@ Gender: Female
 Music: Girl
 Double Battle: Yes
 AI: Check Bad Move
+Difficulty: Hard
 
-Shroomish
-Level: 18
+Magikarp
+Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_SOPHIA ===
@@ -197,9 +989,10 @@ Gender: Female
 Music: Girl
 Double Battle: Yes
 AI: Check Bad Move
+Difficulty: Hard
 
-Shroomish
-Level: 18
+Magikarp
+Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_LISIA ===
@@ -210,7 +1003,7 @@ Gender: Female
 Music: Girl
 Double Battle: Yes
 AI: Check Bad Move
-
+Difficulty: Hard
 
 Altaria @ Altarianite  
 Ability: Cloud Nine  
@@ -265,6 +1058,7 @@ Gender: Male
 Music: Aqua
 Double Battle: Yes
 AI: Basic Trainer
+Difficulty: Hard
 
 Crobat  
 Ability: Inner Focus  
@@ -310,6 +1104,7 @@ Gender: Female
 Music: Aqua
 Double Battle: Yes
 AI: Basic Trainer
+Difficulty: Hard
 
 Armaldo @ Covert Cloak  
 Ability: Swift Swim  
@@ -355,6 +1150,7 @@ Gender: Male
 Music: Aqua
 Double Battle: Yes
 AI: Basic Trainer
+Difficulty: Hard
 
 Kingler  
 Ability: Hyper Cutter  
@@ -401,6 +1197,7 @@ Music: Aqua
 Double Battle: Yes
 AI: Basic Trainer
 Mugshot: Blue
+Difficulty: Hard
 
 Golisopod  
 Ability: Emergency Exit  
@@ -464,6 +1261,7 @@ Gender: Male
 Music: Cool
 Double Battle: Yes
 AI: Basic Trainer
+Difficulty: Hard
 
 Tropius @ Life Orb  
 Ability: Chlorophyll  
@@ -509,6 +1307,7 @@ Gender: Female
 Music: Suspicious
 Double Battle: Yes
 AI: Basic Trainer
+Difficulty: Hard
 
 Froslass (F)   
 Level: 50
@@ -554,6 +1353,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Basic Trainer
+Difficulty: Hard
 
 Mr. Rime  
 Ability: Tangled Feet  
@@ -599,6 +1399,7 @@ Gender: Female
 Music: Intense
 Double Battle: Yes
 AI: Basic Trainer
+Difficulty: Hard
 
 Hitmontop (M) @ Assault Vest  
 Ability: Intimidate  
@@ -644,6 +1445,7 @@ Gender: Female
 Music: Intense
 Double Battle: Yes
 AI: Basic Trainer
+Difficulty: Hard
 
 Bruxish  
 Level: 50
@@ -677,6 +1479,7 @@ Gender: Female
 Music: Intense
 Double Battle: Yes
 AI: Basic Trainer
+Difficulty: Hard
 
 Cursola  
 Ability: Perish Body  
@@ -704,6 +1507,7 @@ Music: Elite Four
 Double Battle: Yes
 AI: Basic Trainer
 Mugshot: Pink
+Difficulty: Hard
 
 Oricorio-Pa'u  
 Ability: Dancer  
@@ -767,18 +1571,11 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Check Bad Move
+Difficulty: Hard
 
-Electrike
-Level: 37
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-
-Manectric
-Level: 37
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-
-Loudred
-Level: 37
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BLUE_CULPRIT ===
 Name: Blue
@@ -788,18 +1585,11 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Check Bad Move
+Difficulty: Hard
 
-Manectric
-Level: 39
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-
-Manectric
-Level: 39
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-
-Loudred
-Level: 39
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MAY ===
 Name: May
@@ -809,18 +1599,11 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Check Bad Move
+Difficulty: Hard
 
-Manectric
-Level: 41
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-
-Manectric
-Level: 41
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-
-Exploud
-Level: 41
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MAY_CULPRIT ===
 Name: May
@@ -830,14 +1613,11 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Basic Trainer
+Difficulty: Hard
 
-Geodude
-Level: 26
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
-
-Numel
-Level: 26
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_LEAF ===
 Name: Leaf
@@ -847,18 +1627,11 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Basic Trainer
+Difficulty: Hard
 
-Machop
-Level: 28
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-
-Numel
-Level: 28
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-
-Graveler
-Level: 28
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_LEAF_CULPRIT ===
 Name: Leaf
@@ -868,18 +1641,11 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Basic Trainer
+Difficulty: Hard
 
-Machop
-Level: 30
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-
-Numel
-Level: 30
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-
-Graveler
-Level: 30
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BW_ACE_TRAINER ===
 Name: Katherine
@@ -889,18 +1655,11 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Basic Trainer
+Difficulty: Hard
 
-Machoke
-Level: 33
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-
-Camerupt
-Level: 33
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-
-Golem
-Level: 33
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BW_ACE_TRAINER_CULPRIT ===
 Name: Katherine
@@ -910,30 +1669,11 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Check Bad Move
+Difficulty: Hard
 
-Skitty
-Level: 31
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
-
-Mightyena
-Level: 31
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
-
-Zigzagoon
-Level: 31
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
-
-Lotad
-Level: 31
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
-
-Seedot
-Level: 31
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
-
-Taillow
-Level: 31
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_YOUNGSTER ===
 Name: Trey
@@ -943,30 +1683,11 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Check Bad Move
+Difficulty: Hard
 
-Skitty
-Level: 33
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-
-Mightyena
-Level: 33
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-
-Linoone
-Level: 33
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-
-Lombre
-Level: 33
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-
-Nuzleaf
-Level: 33
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-
-Taillow
-Level: 33
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_YOUNGSTER_CULPRIT ===
 Name: Trey
@@ -976,30 +1697,13 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Check Bad Move
+Difficulty: Hard
 
-Delcatty
-Level: 35
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Mightyena
-Level: 35
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-
-Linoone
-Level: 35
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-
-Lombre
-Level: 35
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-
-Nuzleaf
-Level: 35
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-
-Swellow
-Level: 35
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+/* END HARD TRAINERS */
 
 === TRAINER_SAWYER_1 ===
 Name: SAWYER
