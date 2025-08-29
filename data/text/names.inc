@@ -159,3 +159,6 @@ Name_Left_Idol:
 
 Name_Lisia:
     .string "Lisia$"
+
+Name_Barista:
+    .string "Barista$"
