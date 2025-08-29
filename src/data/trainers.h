@@ -42903,7 +42903,7 @@ F_TRAINER_FEMALE |
     [DIFFICULTY_NORMAL][TRAINER_BW_ACE_TRAINER] =
     {
 #line 16509
-        .trainerName = _("Katerina"),
+        .trainerName = _("Katherine"),
 #line 16510
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
 #line 16511
@@ -42961,7 +42961,7 @@ F_TRAINER_FEMALE |
     [DIFFICULTY_NORMAL][TRAINER_BW_ACE_TRAINER_CULPRIT] =
     {
 #line 16530
-        .trainerName = _("Katerina"),
+        .trainerName = _("Katherine"),
 #line 16531
         .trainerClass = TRAINER_CLASS_COOLTRAINER,
 #line 16532
@@ -43052,7 +43052,7 @@ F_TRAINER_FEMALE |
     [DIFFICULTY_NORMAL][TRAINER_YOUNGSTER] =
     {
 #line 16563
-        .trainerName = _("Hayden"),
+        .trainerName = _("Trey"),
 #line 16564
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
 #line 16565
@@ -43141,7 +43141,7 @@ F_TRAINER_FEMALE |
     [DIFFICULTY_NORMAL][TRAINER_YOUNGSTER_CULPRIT] =
     {
 #line 16596
-        .trainerName = _("Hayden"),
+        .trainerName = _("Trey"),
 #line 16597
         .trainerClass = TRAINER_CLASS_YOUNGSTER,
 #line 16598

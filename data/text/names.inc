@@ -146,10 +146,10 @@ Name_Leaf:
     .string "Leaf$"
 
 Name_Ace_Trainer:
-    .string "Ace Trainer$"
+    .string "Katherine$"
 
 Name_Youngster:
-    .string "Youngster$"
+    .string "Trey$"
     
 Name_Right_Idol:
     .string "Sophia$"

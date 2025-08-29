@@ -16506,7 +16506,7 @@ Level: 30
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_BW_ACE_TRAINER ===
-Name: Katerina
+Name: Katherine
 Class: Cooltrainer
 Pic: BW Ace Trainer F
 Gender: Female
@@ -16527,7 +16527,7 @@ Level: 33
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_BW_ACE_TRAINER_CULPRIT ===
-Name: Katerina
+Name: Katherine
 Class: Cooltrainer
 Pic: BW Ace Trainer F
 Gender: Female
@@ -16560,7 +16560,7 @@ Level: 31
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 === TRAINER_YOUNGSTER ===
-Name: Hayden
+Name: Trey
 Class: Youngster
 Pic: Youngster New
 Gender: Male
@@ -16593,7 +16593,7 @@ Level: 33
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
 === TRAINER_YOUNGSTER_CULPRIT ===
-Name: Hayden
+Name: Trey
 Class: Youngster
 Pic: Youngster New
 Gender: Male

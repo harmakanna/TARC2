@@ -721,8 +721,8 @@
 #define FLAG_HIDE_SHRINE_PROSPERITY_PRESENT_LANDORUS  0x2A2 // Unused Flag
 #define FLAG_HIDE_CUTSCENE_FOREST_MAINQUEST  0x2A3 // Unused Flag
 #define FLAG_SPOKE_TO_PAST_LISIA  0x2A4 // Unused Flag
-#define FLAG_UNUSED_0x2A5  0x2A5 // Unused Flag
-#define FLAG_UNUSED_0x2A6  0x2A6 // Unused Flag
+#define FLAG_BLUE_GAVE_POKEMON  0x2A5 // Unused Flag
+#define FLAG_MAY_GAVE_POKEMON  0x2A6 // Unused Flag
 #define FLAG_UNUSED_0x2A7  0x2A7 // Unused Flag
 #define FLAG_UNUSED_0x2A8  0x2A8 // Unused Flag
 #define FLAG_UNUSED_0x2A9  0x2A9 // Unused Flag
