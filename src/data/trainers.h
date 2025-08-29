@@ -200,7 +200,7 @@ F_TRAINER_FEMALE |
                 MOVE_RAIN_DANCE,
                 MOVE_X_SCISSOR,
                 MOVE_ROCK_SLIDE,
-                MOVE_BUG_BITE,
+                MOVE_KNOCK_OFF,
             },
             },
             {
