@@ -20,7 +20,7 @@
 #define QUEST_INTERROGATE_MATT          1 // Defeat Team Aqua - Done
 #define QUEST_INVESTIGATE_PROSPERITY          2 // Investigate the abnormality at the Shrine of Prosperity - Done
 #define QUEST_DEFEAT_PHOEBE          3 // Defeat Phoebe - Done
-#define QUEST_FIND_THE_CULPRIT          4 // Defeat the correct gym challenger
+#define QUEST_FIND_THE_CULPRIT          4 // Defeat the correct gym challenger - Done
 #define QUEST_BONJOUR_EMMA          5 // Speak French to Emma - Done
 #define QUEST_HELP_FISHERMAN          6 // Find the best fishing spot in town - Done
 #define QUEST_EUREKA          7 // Find a battery to harness Mareep's power - Done
@@ -31,11 +31,11 @@
 #define QUEST_FOREVER_FAITHFUL        12 // Defeat the hypnotized boyfriend
 #define QUEST_SENTIMENTAL        13 // Find a heart scale in the past and bring it to the present - Done
 #define QUEST_FIND_TASTY_MINT        14 // Find a tasty mint in the present and bring it back to the past - Done
-#define QUEST_SENT_TO_THE_FARM        15 // Find modern medicine for the ailing cows - Done
+#define QUEST_SENT_TO_THE_FARM        15 // Find modern medicine for theailing cows - Done
 #define QUEST_HOMEGROWN_REMEDIES        16 // Find herbal remedies lost to time for the ailing old man - Done
 #define QUEST_FORGOTTEN_TO_TIME        17 // Revive fossils - Done
 #define QUEST_WITH_MUCH_GRATITUDE        18 // Send a thank you gift to Camilla from Estella - Done
-#define QUEST_GET_INTO_THE_GROOVE        19 // Find the idols scattered after the storm 
+#define QUEST_GET_INTO_THE_GROOVE        19 // Find the idols scattered after the storm  - Done
 #define QUEST_BREAK_A_LEG        20 // Help the idols warm up for their performance
 #define QUEST_LUXRAY        21 // Prove Luxray isn't a dark type!
 #define QUEST_23        22

@@ -994,6 +994,45 @@ PresentTown_EventScript_LockedDoor::
 PresentTown_EventScript_End::
 	end
 
+PresentTown_EventScript_LeftIdolPregame::
+	lock
+	msgbox PresentTown_Text_LeftIdolPregame, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+PresentTown_EventScript_RightIdolPregame::
+	lock
+	msgbox PresentTown_Text_RightIdolPregame, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+PresentTown_EventScript_LisiaPregame::
+	lock
+	msgbox PresentTown_Text_LisiaPregame, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+PresentTown_Text_LisiaPregame:
+	.string "I'm in looooooove with a\n"
+	.string "fairy ta-aaaaaaale!\p"
+	.string "Even thoooooough it huuuuuuuurts!\p"
+	.string "'Cause I don't caaaaaare if I lose my\n"
+	.string "mi-iiiiiiind!\p"
+	.string "I'm alreaaaaady cuuuu-uuuuursed…$"
+
+PresentTown_Text_LeftIdolPregame:
+	.string "Come ON!\n"
+	.string "Our rhythm is completely off!$"
+
+PresentTown_Text_RightIdolPregame:
+	.string "Huff…\n"
+	.string "Hoo…\p"
+	.string "Can't…\n"
+	.string "Keep up…$"
+
 PresentTown_Text_TheDoorIsLocked:
 	.string "The door is locked.$"
 

@@ -5873,6 +5873,9 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_CHAMPION:
             return MUS_VS_CHAMPION;
         case TRAINER_CLASS_RIVAL:
+        case TRAINER_CLASS_YOUNGSTER:
+        case TRAINER_CLASS_IDOL2:
+        case TRAINER_CLASS_COOLTRAINER:
             if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
                 return MUS_VS_RIVAL;
             if (!StringCompare(GetTrainerNameFromId(TRAINER_BATTLE_PARAM.opponentA), gText_BattleWallyName))

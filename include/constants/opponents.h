@@ -564,7 +564,7 @@
 #define TRAINER_JACKSON_5                   558
 #define TRAINER_CATHERINE_1                 559
 #define TRAINER_JENNA                       560
-#define TRAINER_SOPHIA                      561
+#define TRAINER_UNUSED_561                  561
 #define TRAINER_CATHERINE_2                 562
 #define TRAINER_CATHERINE_3                 563
 #define TRAINER_CATHERINE_4                 564
@@ -709,7 +709,7 @@
 #define TRAINER_RHETT                       703
 #define TRAINER_TYRON                       704
 #define TRAINER_CELINA                      705
-#define TRAINER_BIANCA                      706
+#define TRAINER_UNUSED_706                  706
 #define TRAINER_HAYDEN                      707
 #define TRAINER_SOPHIE                      708
 #define TRAINER_COBY                        709
@@ -833,9 +833,9 @@
 #define TRAINER_KOJI_5                      827
 #define TRAINER_CRISTIN_2                   828
 #define TRAINER_CRISTIN_3                   829
-#define TRAINER_CRISTIN_4                   830
-#define TRAINER_CRISTIN_5                   831
-#define TRAINER_FERNANDO_2                  832
+#define TRAINER_BIANCA                      830
+#define TRAINER_SOPHIA                      831
+#define TRAINER_LISIA                       832
 #define TRAINER_BLUE                        833
 #define TRAINER_BLUE_CULPRIT                834
 #define TRAINER_MAY                         835
@@ -857,7 +857,7 @@
 #define TRAINER_MARIE                       851
 #define TRAINER_PRESENT_FISHERMAN           852
 #define TRAINER_RED                         853
-#define TRAINER_UNUSED                      854
+#define TRAINER_UNUSED_854                  854
 #define TRAINER_BRENDAN_PLACEHOLDER         855
 #define TRAINER_MAY_PLACEHOLDER             856
 

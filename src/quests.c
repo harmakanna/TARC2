@@ -154,7 +154,6 @@ static bool8 IsQuestUnlocked(s32 questId);
 static bool8 IsQuestActiveState(s32 questId);
 static bool8 IsQuestInactiveState(s32 questId);
 static bool8 IsQuestRewardState(s32 questId);
-static bool8 IsQuestCompletedState(s32 questId);
 static bool8 IsSubquestCompletedState(s32 questId);
 
 static void DetermineSpriteType(s32 questId);
@@ -459,12 +458,12 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      NULL,
 	      0
 	),
-	side_quest( // 8 QUEST_GET_INTO_THE_GROOVE - Find and prepare the idols for the show!
-	      gText_SideQuestName_9,
-	      gText_SideQuestDesc_9,
-	      gText_SideQuestDoneDesc_9,
-	      gText_SideQuestMap9,
-	      OBJ_EVENT_GFX_IDOL,
+	side_quest( // 8 QUEST_INVERSE
+	      gText_SideQuestName_20,
+	      gText_SideQuestDesc_20,
+	      gText_SideQuestDoneDesc_20,
+	      gText_SideQuestMap20,
+	      OBJ_EVENT_GFX_SCHOOL_KID_M,
 	      OBJECT,
 	      NULL,
 	      0
@@ -504,7 +503,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestDesc_13,
 	      gText_SideQuestDoneDesc_13,
 	      gText_SideQuestMap13,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_BEAUTY,
 	      OBJECT,
 	      NULL,
 	      0
@@ -569,27 +568,27 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      sSubQuestsAWholeNewWorld,
 	      QUEST_WITH_MUCH_GRATITUDE_SUB_COUNT
 	),
-	side_quest(
-	      gText_SideQuestName_20,
-	      gText_SideQuestDesc_20,
-	      gText_SideQuestDoneDesc_20,
-	      gText_SideQuestMap20,
-	      OBJ_EVENT_GFX_WALLY,
+	side_quest( // QUEST_GET_INTO_THE_GROOVE - Find and prepare the idols for the show!
+		  gText_SideQuestName_9,
+	      gText_SideQuestDesc_9,
+	      gText_SideQuestDoneDesc_9,
+	      gText_SideQuestMap9,
+	      OBJ_EVENT_GFX_BARD,
 	      OBJECT,
 	      NULL,
 	      0
 	),
-	side_quest(
+	side_quest( // QUEST_BREAK_A_LEG
 	      gText_SideQuestName_21,
 	      gText_SideQuestDesc_21,
 	      gText_SideQuestDoneDesc_21,
 	      gText_SideQuestMap21,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_IDOL,
 	      OBJECT,
 	      NULL,
 	      0
 	),
-	side_quest(
+	side_quest( // QUEST_LUXRAY
 	      gText_SideQuestName_22,
 	      gText_SideQuestDesc_22,
 	      gText_SideQuestDoneDesc_22,
@@ -2726,7 +2725,8 @@ void HandleQuestIconForSingleObjectEvent(struct ObjectEvent *objectEvent, u32 ob
 
 	// Handle quests which rely on other quests as a prerequisite
 	if ((questId == QUEST_FARMLAND_INVASION_2 && !IsQuestCompletedState(QUEST_FARMLAND_INVASION_1)) //Invasion 2 does not occur until Invasion 1 is complete
-		|| (questId == QUEST_FARMLAND_INVASION_3 && !IsQuestCompletedState(QUEST_FARMLAND_INVASION_2))) //Invasion 3 does not occur until Invasion 2 is complete
+		|| (questId == QUEST_FARMLAND_INVASION_3 && !IsQuestCompletedState(QUEST_FARMLAND_INVASION_2)) //Invasion 3 does not occur until Invasion 2 is complete
+		|| (questId == QUEST_BREAK_A_LEG && !IsQuestCompletedState(QUEST_GET_INTO_THE_GROOVE))) //Break a Le does not occur until finding the idols is complete
 	{
 		ResetQuestIconOnObject(objectEvent);
 		return;
