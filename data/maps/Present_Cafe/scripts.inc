@@ -321,8 +321,173 @@ Present_Cafe_EventScript_MayCulpritPostQuest::
 	end
 
 Present_Cafe_EventScript_Barista::
+	lock
+	call_if_eq VAR_FACING, DIR_WEST, Present_Cafe_EventScript_TurnBaristaEast
+	call_if_eq VAR_FACING, DIR_NORTH, Present_Cafe_EventScript_TurnBaristaSouth
+	goto_if_unset FLAG_SYS_MAIN_GAME_START, Present_Cafe_EventScript_BaristaPreGame
+	call Script_GetNPCFacingDirection
+	returnqueststate QUEST_GET_INTO_THE_GROOVE
+	switch VAR_RESULT
+	case 1, Present_Cafe_EventScript_BaristaPreQuest
+	case 2, Present_Cafe_EventScript_BaristaQuest
+	case 3, Present_Cafe_EventScript_BaristaReward
+	case 4, Present_Cafe_EventScript_BaristaPostQuest
+	release 
+	end
+
+Present_Cafe_EventScript_BaristaPreGame::
+	msgbox Present_Cafe_Text_BaristaPreGame, MSGBOX_DEFAULT
+	closemessage
+	release
 	end
 	
+Present_Cafe_EventScript_BaristaPreQuest::
+	speak LOCALID_CAFE_BARISTA, VAR_0x8005, Name_Barista, Present_Cafe_Text_BaristaNervous
+	speakername NULL
+	msgbox Present_Cafe_Text_BaristaSweating, MSGBOX_DEFAULT
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_YouDontLookVeryGood
+	speak LOCALID_CAFE_BARISTA, VAR_0x8005, Name_Barista, Present_Cafe_Text_BaristaIsCooked
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_IWillHandleThis
+	speak LOCALID_CAFE_BARISTA, VAR_0x8005, Name_Barista, Present_Cafe_Text_BaristaLifesaver
+	startquest QUEST_GET_INTO_THE_GROOVE
+	release
+	end
+	
+Present_Cafe_EventScript_BaristaQuest::
+	speak LOCALID_CAFE_BARISTA, VAR_0x8005, Name_Barista, Present_Cafe_Text_BaristaIsCookedShort
+	closemessage
+	release
+	end
+
+Present_Cafe_EventScript_BaristaReward::
+	speak LOCALID_CAFE_BARISTA, VAR_0x8005, Name_Barista, Present_Cafe_Text_BaristaYouDidIt
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_AlwaysHappyToHelp
+	speak LOCALID_CAFE_BARISTA, VAR_0x8005, Name_Barista, Present_Cafe_Text_BaristaImBroke
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Cafe_Text_LookerThatSoundsWonderful
+	completequest QUEST_GET_INTO_THE_GROOVE
+	release
+	end
+
+Present_Cafe_EventScript_BaristaPostQuest::
+	speak LOCALID_CAFE_BARISTA, VAR_0x8005, Name_Barista, Present_Cafe_Text_BaristaPostQuest
+	speakername NULL
+	msgbox Present_Cafe_Text_WouldYouLikeADrink, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Present_Cafe_EventScript_BaristaDidntChangeAbility
+	msgbox Present_Cafe_Text_WhichPokemonAbility, MSGBOX_DEFAULT
+	special ChoosePartyMon
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, Present_Cafe_EventScript_BaristaDidntChangeAbility
+	special SwitchMonAbility
+	msgbox Present_Cafe_Text_LookerFeelingRefreshed, MSGBOX_DEFAULT
+	speak LOCALID_CAFE_BARISTA, VAR_0x8005, Name_Barista, Present_Cafe_Text_BaristaHaveAGoodOne
+	closemessage
+	release
+	end
+
+Present_Cafe_EventScript_BaristaDidntChangeAbility::
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_NoThanks
+	call Script_GetNPCFacingDirection
+	speak LOCALID_CAFE_BARISTA, VAR_0x8005, Name_Barista, Present_Cafe_Text_BaristaNoProblemo
+	closemessage
+	release
+	end
+
+Present_Cafe_EventScript_TurnBaristaEast::
+	applymovement LOCALID_CAFE_BARISTA, Common_Movement_FaceRight
+	waitmovement 0
+	return
+
+Present_Cafe_EventScript_TurnBaristaSouth::
+	applymovement LOCALID_CAFE_BARISTA, Common_Movement_FaceDown
+	waitmovement 0
+	return
+
+Present_Cafe_Text_BaristaNervous:
+	.string "Uhh, welcome to the Torin Tauros\n"
+	.string "Tourin' Café, home to Moomoo Bella's\l"
+	.string "famous Moomoo Bell!$"
+
+Present_Cafe_Text_BaristaSweating:
+	.string "The man is sweating profusely.$"
+
+Present_Cafe_Text_BaristaIsCooked:
+	.string "Dude, I'm so cooked!\p"
+	.string "My boss paid a FORTUNE for these pop-\n"
+	.string "stars to come out and put on a show!\p"
+	.string "If they aren't here by 5 PM tonight,\n"
+	.string "he's 100 percent totally gonna blame me\l"
+	.string "and dock my pay!\p"
+	.string "Where even are they? Did they get lost\n"
+	.string "in the storm or something?\p"
+	.string "Oh, please help me find them, dude…$"
+
+Present_Cafe_Text_BaristaLifesaver:
+	.string "Yo, you would?\p"
+	.string "You're a lifesaver!\p"
+	.string "They're a group of three. I'm sure if\n"
+	.string "you look around enough, they should pop\l"
+	.string "up somewhere. They gotta!$"
+
+Present_Cafe_Text_BaristaIsCookedShort:
+	.string "I'm so cooked…\n"
+	.string "I'm so cooked…\p"
+	.string "Please help me…$"
+
+Present_Cafe_Text_BaristaYouDidIt:
+	.string "MY MAN!!!!\p"
+	.string "They're all here and accounted for!\n"
+	.string "A few hours early too!\p"
+	.string "Is Looker your name?\n"
+	.string "I cannot thank you enough, dude.$"
+	
+Present_Cafe_Text_BaristaImBroke:
+	.string "Look, I'm pretty uhh…\p"
+	.string "Broke.\p"
+	.string "I don't have much I can give as a\n"
+	.string "reward, buuuuuuuut I can brew up a\l"
+	.string "banger coffee for you, any time!\p"
+	.string "I can add in these gnarly spices I\n"
+	.string "find in the forest here and there!\p"
+	.string "Get this, for some reason they change\n"
+	.string "a Pokémon's ability!\p"
+	.string "Won't do anything to 'em if they only\n"
+	.string "got one ability though!\p"
+	.string "It's on the house, my treat!$"
+
+Present_Cafe_Text_LookerThatSoundsWonderful:
+	.string "That sounds wonderful, sir.\n"
+	.string "The gesture is truly appreciated.$"
+
+Present_Cafe_Text_WhichPokemonAbility:
+	.string "Which Pokémon will switch their\n"
+	.string "ability?$"
+
+Present_Cafe_Text_BaristaPreGame:
+	.string "Welcome to the Tourin' Torin\n"
+	.string "Tauros Café, home to Porta Bella's\l"
+	.string "famous Moomoo Milk!$"
+
+Present_Cafe_Text_BaristaPostQuest:
+	.string "Welcome back to the Tauros Cafe,\n"
+	.string "Looker!\p"
+	.string "Any time you want a free coffee, let\n"
+	.string "me know!$"
+
+Present_Cafe_Text_WouldYouLikeADrink:
+	.string "Would you like a freshly brewed,\n"
+	.string "ability-switching coffee?$"
+
+Present_Cafe_Text_LookerFeelingRefreshed:
+	.string "Looker and {STR_VAR_1} are feeling\n"
+	.string "quite relaxed!$"
+
+Present_Cafe_Text_BaristaNoProblemo:
+	.string "No problemo, my dude!\n"
+	.string "Have a good one!$"
+
+Present_Cafe_Text_BaristaHaveAGoodOne:
+	.string "Hope that coffee rocked your body!\n"
+	.string "Have a good one, my dude!$"
+
 Present_Cafe_Text_LookerThankYouForYourCooperation:
 	.string "Anyways, thank you for your\n"
 	.string "cooperation, young miss!\p"

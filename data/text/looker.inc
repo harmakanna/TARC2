@@ -120,6 +120,10 @@ Looker_Text_HereYouGo:
 Looker_Text_NotYet:
     .string "Not yet.$"
 
+Looker_Text_YouDontLookVeryGood:
+    .string "You don't look very good right now.\n"
+    .string "What seems to be the problem?$"
+    
 Looker_Text_IFoundWhatYoureLookingFor:
     .string "I found what you're looking for.$"
 
@@ -158,6 +162,9 @@ Looker_Text_UhhOkay:
     
 Looker_Text_IUnderstand:
     .string "I understand.$"
+    
+Looker_Text_NoThanks:
+    .string "No thank you.$"
     
 Looker_Text_Dots:
     .string "…$"
