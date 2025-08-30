@@ -829,7 +829,7 @@
 #define TRAINER_PABLO_5                     823
 #define TRAINER_KOJI_2                      824
 #define TRAINER_KOJI_3                      825
-#define TRAINER_KOJI_4                      826
+#define TRAINER_BOYFRIEND                   826
 #define TRAINER_CYNTHIA                     827
 #define TRAINER_FUTURE_LOOKER               828
 #define TRAINER_STUDENT                     829

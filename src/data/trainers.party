@@ -509,6 +509,20 @@ Magikarp
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
+=== TRAINER_BOYFRIED ===
+Name: Damian
+Class: Triathlete
+Pic: Running Triathlete M
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Easy
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
 === TRAINER_MARIE_REMATCH ===
 Name: Marie
 Class: Lass
@@ -955,6 +969,20 @@ Music: Male
 Double Battle: Yes
 AI: Check Bad Move
 Difficulty: Normal
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_BOYFRIED ===
+Name: Damian
+Class: Triathlete
+Pic: Running Triathlete M
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Easy
 
 Magikarp
 Level: 5
@@ -1824,6 +1852,20 @@ Music: Male
 Double Battle: Yes
 AI: Check Bad Move
 Difficulty: Hard
+
+Magikarp
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_BOYFRIED ===
+Name: Damian
+Class: Triathlete
+Pic: Running Triathlete M
+Gender: Male
+Music: Male
+Double Battle: Yes
+AI: Check Bad Move
+Difficulty: Easy
 
 Magikarp
 Level: 5
