@@ -131,7 +131,7 @@
 #define MULTI_BLUE_GIVEMON                 120
 #define MULTI_MAY_GIVEMON                  121
 #define MULTI_FISHERMAN_GIVEMON            122
-#define MULTI_SCIENTIST_GIVEMON            123
+#define MULTI_STUDENT_GIVEMON              123
 #define MULTI_EMMA_GIVEMON                 124
 #define MULTI_FOREMAN_GIVEMON              125
 #define MULTI_FARMGIRL_GIVEMON             126

@@ -509,7 +509,7 @@ Magikarp
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_BOYFRIED ===
+=== TRAINER_BOYFRIEND ===
 Name: Damian
 Class: Triathlete
 Pic: Running Triathlete M
@@ -974,7 +974,7 @@ Magikarp
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_BOYFRIED ===
+=== TRAINER_BOYFRIEND ===
 Name: Damian
 Class: Triathlete
 Pic: Running Triathlete M
@@ -982,7 +982,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Check Bad Move
-Difficulty: Easy
+Difficulty: Normal
 
 Magikarp
 Level: 5
@@ -1857,7 +1857,7 @@ Magikarp
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_BOYFRIED ===
+=== TRAINER_BOYFRIEND ===
 Name: Damian
 Class: Triathlete
 Pic: Running Triathlete M
@@ -1865,7 +1865,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Check Bad Move
-Difficulty: Easy
+Difficulty: Hard
 
 Magikarp
 Level: 5
@@ -18039,27 +18039,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Machoke
 Level: 39
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-
-=== TRAINER_KOJI_4 ===
-Name: KOJI
-Class: Black Belt
-Pic: Black Belt
-Gender: Male
-Music: Intense
-Double Battle: No
-AI: Check Bad Move
-
-Hariyama
-Level: 41
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-
-Machoke
-Level: 41
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-
-Machoke
-Level: 41
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_TORN_AND_THUND ===
 Name: GABRIELLE

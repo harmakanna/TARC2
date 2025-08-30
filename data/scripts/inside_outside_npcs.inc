@@ -527,6 +527,93 @@ InsideOutside_EventScript_AceTrainerCulpritPostQuest::
     release
     end
 
+InsideOutside_EventScript_StudentInside::
+    setvar VAR_TEMP_1, LOCALID_INSIDE_STUDENT
+    goto InsideOutside_EventScript_Student
+    end
+
+InsideOutside_EventScript_StudentOutside::
+    setvar VAR_TEMP_1, LOCALID_OUTSIDE_STUDENT
+    goto InsideOutside_EventScript_Student
+    end
+
+InsideOutside_EventScript_Student::
+    lock
+    call Script_GetNPCFacingDirection
+    goto_if_unset FLAG_SYS_MAIN_GAME_START, InsideOutside_EventScript_StudentPregame
+    returnqueststate QUEST_INVERSE
+    switch VAR_RESULT
+    case 1, InsideOutside_EventScript_StudentPreQuest
+    case 2, InsideOutside_EventScript_StudentQuest
+    case 4, InsideOutside_EventScript_StudentPostQuest
+    release
+    end
+
+InsideOutside_EventScript_StudentPregame::
+    msgbox InsideOutside_Text_StudentPregame, MSGBOX_DEFAULT
+    closemessage
+    release
+    end
+    
+InsideOutside_EventScript_StudentPreQuest::
+    startquest QUEST_INVERSE
+    release
+    end
+
+InsideOutside_EventScript_StudentQuest::
+    trainerbattle_no_intro TRAINER_STUDENT, InsideOutside_Text_StudentDefeated
+    specialvar VAR_RESULT, GetBattleOutcome
+    goto_if_eq VAR_RESULT, B_OUTCOME_LOST, InsideOutside_EventScript_LostToStudent
+    goto_if_eq VAR_RESULT, B_OUTCOME_RAN, InsideOutside_EventScript_LostToStudent
+    multichoice 0, 6, MULTI_STUDENT_GIVEMON, TRUE
+	goto_if_eq VAR_RESULT, 0, InsideOutside_EventScript_StudentGiveGalvantula
+	goto_if_eq VAR_RESULT, 1, InsideOutside_EventScript_StudentGiveProbopass
+    release
+    end
+
+InsideOutside_EventScript_LostToStudent::
+    speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_LostToStudent
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_SorryICouldntHelp
+    closemessage
+    clearflag FLAG_SYS_INVERSE_BATTLE
+    clearflag FLAG_SYS_NO_WHITEOUT
+    release
+    end
+
+InsideOutside_EventScript_FinishStudentQuest::
+    completequest QUEST_INVERSE
+    clearflag FLAG_SYS_INVERSE_BATTLE
+    clearflag FLAG_SYS_NO_WHITEOUT
+    release
+    end
+
+InsideOutside_EventScript_StudentPostQuest::
+    speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentBuckleDown
+    closemessage
+    release
+    end
+    
+InsideOutside_Text_LostToStudent:
+    .string "Mmm… That didn't help…\p"
+    .string "I don't know why, but I just don't\n"
+    .string "get what I'm missing…$"
+
+InsideOutside_Text_StudentDefeated:
+    .string "Mmm… Maybe this isn't the right\n"
+    .string "approach?$"
+
+InsideOutside_Text_StudentBuckleDown:
+    .string "I think I just need to buckle down and\n"
+    .string "really study the textbook, front-to-\l"
+    .string "back if I want to ace this test.\p"
+    .string "I appreciate the battle, at least.\n"
+    .string "It helped clear my head!$"
+
+InsideOutside_Text_StudentPregame:
+    .string "Mmm… I can't read any of these notes…\p"
+    .string "I knew asking Valentina for her\n"
+    .string "study materials was a bad idea…$"
+
 InsideOutside_Text_YoungsterThisStorm:
     .string "Gee, this storm came out of nowhere!\p"
     .string "I thought it was gonna be perfect\n"

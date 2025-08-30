@@ -68,6 +68,9 @@ Looker_Text_OfCourseICanHelp:
 Looker_Text_SorryImBusy:
     .string "Sorry, I'm busy.$"
 
+Looker_Text_SorryICouldntHelp:
+    .string "Sorry I couldn't help.$"
+    
 Looker_Text_SureICan:
     .string "Sure, I can!$"
 

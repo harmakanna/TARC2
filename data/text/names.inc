@@ -162,3 +162,6 @@ Name_Lisia:
 
 Name_Barista:
     .string "Barista$"
+
+Name_Student:
+    .string "Paolo$"

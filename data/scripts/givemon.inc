@@ -1,56 +1,56 @@
-PastTown_EventScript_ScientistGiveGalvantula::
+InsideOutside_EventScript_StudentGiveGalvantula::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GALVANTULA
-	givemonwithot OT_BARTOZ_GALVANTULA
-	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PastTown_EventScript_ReceiveGalvantulaParty
-	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PastTown_EventScript_ReceiveGalvantulaPC
+	givemonwithot OT_PAOLO_GALVANTULA
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, InsideOutside_EventScript_ReceiveGalvantulaParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, InsideOutside_EventScript_ReceiveGalvantulaPC
 	goto Common_EventScript_NoMoreRoomForPokemon
 	end
 
-PastTown_EventScript_ReceiveGalvantulaParty::
-	call PastTown_EventScript_ReceivedGalvantulaFanfare
-	goto PastTown_EventScript_ScientistQuestFinish
+InsideOutside_EventScript_ReceiveGalvantulaParty::
+	call InsideOutside_EventScript_ReceivedGalvantulaFanfare
+	goto InsideOutside_EventScript_FinishStudentQuest
 	end
 	
-PastTown_EventScript_ReceiveGalvantulaPC::
-	call PastTown_EventScript_ReceivedGalvantulaFanfare
+InsideOutside_EventScript_ReceiveGalvantulaPC::
+	call InsideOutside_EventScript_ReceivedGalvantulaFanfare
 	call Common_EventScript_TransferredToPC
-	goto PastTown_EventScript_ScientistQuestFinish
+	goto InsideOutside_EventScript_FinishStudentQuest
 	end
 
-PastTown_EventScript_ReceivedGalvantulaFanfare::
+InsideOutside_EventScript_ReceivedGalvantulaFanfare::
 	bufferspeciesname STR_VAR_2, SPECIES_GALVANTULA
 	playfanfare MUS_OBTAIN_ITEM
 	speakername NULL
-	msgbox PastTown_Text_YouReceivedGalvantula, MSGBOX_DEFAULT
+	msgbox InsideOutside_Text_YouReceivedGalvantula, MSGBOX_DEFAULT
 	waitmessage
 	waitfanfare
 	bufferspeciesname STR_VAR_1, SPECIES_GALVANTULA
 	return
 
-PastTown_EventScript_ScientistGiveProbopass::
+InsideOutside_EventScript_StudentGiveProbopass::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PROBOPASS
-	givemonwithot OT_BARTOZ_PROBOPASS
-	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PastTown_EventScript_ReceiveProbopassParty
-	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PastTown_EventScript_ReceiveProbopassPC
+	givemonwithot OT_PAOLO_PROBOPASS
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, InsideOutside_EventScript_ReceiveProbopassParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, InsideOutside_EventScript_ReceiveProbopassPC
 	goto Common_EventScript_NoMoreRoomForPokemon
 	end
 
-PastTown_EventScript_ReceiveProbopassParty::
-	call PastTown_EventScript_ReceivedProbopassFanfare
-	goto PastTown_EventScript_ScientistQuestFinish
+InsideOutside_EventScript_ReceiveProbopassParty::
+	call InsideOutside_EventScript_ReceivedProbopassFanfare
+	goto InsideOutside_EventScript_FinishStudentQuest
 	end
 	
-PastTown_EventScript_ReceiveProbopassPC::
-	call PastTown_EventScript_ReceivedProbopassFanfare
+InsideOutside_EventScript_ReceiveProbopassPC::
+	call InsideOutside_EventScript_ReceivedProbopassFanfare
 	call Common_EventScript_TransferredToPC
-	goto PastTown_EventScript_ScientistQuestFinish
+	goto InsideOutside_EventScript_FinishStudentQuest
 	end
 
-PastTown_EventScript_ReceivedProbopassFanfare::
+InsideOutside_EventScript_ReceivedProbopassFanfare::
 	bufferspeciesname STR_VAR_2, SPECIES_PROBOPASS
 	playfanfare MUS_OBTAIN_ITEM
 	speakername NULL
-	msgbox PastTown_Text_YouReceivedProbopass, MSGBOX_DEFAULT
+	msgbox InsideOutside_Text_YouReceivedProbopass, MSGBOX_DEFAULT
 	waitmessage
 	waitfanfare
 	bufferspeciesname STR_VAR_1, SPECIES_PROBOPASS
@@ -871,8 +871,8 @@ PastTown_Text_YouReceivedOverqwil:
 PastTown_Text_YouReceivedDragalge:
 	.string "You received a Dragalge!$"
 
-PastTown_Text_YouReceivedGalvantula:
+InsideOutside_Text_YouReceivedGalvantula:
 	.string "You received a Galvantula!$"
 
-PastTown_Text_YouReceivedProbopass:
+InsideOutside_Text_YouReceivedProbopass:
 	.string "You received a Probopass!$"
