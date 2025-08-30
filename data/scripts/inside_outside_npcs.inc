@@ -565,6 +565,18 @@ InsideOutside_EventScript_StudentQuest::
     specialvar VAR_RESULT, GetBattleOutcome
     goto_if_eq VAR_RESULT, B_OUTCOME_LOST, InsideOutside_EventScript_LostToStudent
     goto_if_eq VAR_RESULT, B_OUTCOME_RAN, InsideOutside_EventScript_LostToStudent
+    speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentThatDidntHelp
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerSorryToHear
+    speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentNotYourFault
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerStudyGroup
+    closemessage
+    playse SE_PIN
+    applymovement VAR_TEMP_1, Common_Movement_ExclamationMark
+    waitmovement 0
+    delay 50
+    speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentYoureRight
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerHappyToSpurAnIdea
+    speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentGivePokemon
     multichoice 0, 6, MULTI_STUDENT_GIVEMON, TRUE
 	goto_if_eq VAR_RESULT, 0, InsideOutside_EventScript_StudentGiveGalvantula
 	goto_if_eq VAR_RESULT, 1, InsideOutside_EventScript_StudentGiveProbopass
@@ -593,6 +605,48 @@ InsideOutside_EventScript_StudentPostQuest::
     release
     end
     
+InsideOutside_Text_StudentThatDidntHelp:
+    .string "Well… That didn't help.\n"
+    .string "I still feel as lost as I was before!$"
+
+InsideOutside_Text_LookerSorryToHear:
+    .string "I'm sorry to hear. Would I be able to\n"
+    .string "help in another way?$"
+
+InsideOutside_Text_StudentNotYourFault:
+    .string "Oh, it's not your fault… I think I'm\n"
+    .string "just running away from studying.\p"
+    .string "I think I just need to buckle down and\n"
+    .string "really study the textbook, front-to-\l"
+    .string "back if I want to ace this test.\p"
+    .string "I appreciate the battle, at least.$"
+
+InsideOutside_Text_LookerStudyGroup:
+    .string "Hmm… Perhaps a study group might be\n"
+    .string "beneficial for you?\p"
+    .string "In my line of work, I find bouncing\n"
+    .string "ideas off another person vastly\l"
+    .string "improves my own deductive capabilities…$"
+
+InsideOutside_Text_StudentYoureRight:
+    .string "Wait, you're right! Why didn't I think\n"
+    .string "of that before?\p"
+    .string "I should ask Valentina if we can study\n"
+    .string "together!\p"
+    .string "Hanging with somebody should help me get\n"
+    .string "past all my mental blocks!$"
+
+InsideOutside_Text_LookerHappyToSpurAnIdea:
+    .string "Well, I'm happy to have spurred on that\n"
+    .string "idea!$"
+
+InsideOutside_Text_StudentGivePokemon:
+    .string "Thank you for the help! I'm gonna be\n"
+    .string "hitting the books for a bit, so I won't\l"
+    .string "have much time to battle.\p"
+    .string "Would you like to borrow one of my\n"
+    .string "Pokémon so they can stay active?$"
+
 InsideOutside_Text_LostToStudent:
     .string "Mmm… That didn't help…\p"
     .string "I don't know why, but I just don't\n"
