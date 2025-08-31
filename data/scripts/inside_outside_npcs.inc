@@ -556,11 +556,25 @@ InsideOutside_EventScript_StudentPregame::
     end
     
 InsideOutside_EventScript_StudentPreQuest::
+    speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentStruggling
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_WhatSeemsToBeTheProblem
+    speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentBrainGoingInLoops
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_ThereHasToBeSomething
+    speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentWhatIfWe
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerSureLetsTryIt
+    speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentGreat
     startquest QUEST_INVERSE
     release
     end
 
 InsideOutside_EventScript_StudentQuest::
+    speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentHiSir
+    playse SE_PIN
+    msgbox InsideOutside_Text_StudentAreYouReady, MSGBOX_DEFAULT
+    goto_if_eq VAR_RESULT, NO, InsideOutside_EventScript_StudentDeclined
+    msgbox InsideOutside_Text_StudentLetsGetStarted, MSGBOX_DEFAULT
+    setflag FLAG_SYS_INVERSE_BATTLE
+    setflag FLAG_SYS_NO_WHITEOUT
     trainerbattle_no_intro TRAINER_STUDENT, InsideOutside_Text_StudentDefeated
     specialvar VAR_RESULT, GetBattleOutcome
     goto_if_eq VAR_RESULT, B_OUTCOME_LOST, InsideOutside_EventScript_LostToStudent
@@ -580,6 +594,13 @@ InsideOutside_EventScript_StudentQuest::
     multichoice 0, 6, MULTI_STUDENT_GIVEMON, TRUE
 	goto_if_eq VAR_RESULT, 0, InsideOutside_EventScript_StudentGiveGalvantula
 	goto_if_eq VAR_RESULT, 1, InsideOutside_EventScript_StudentGiveProbopass
+    release
+    end
+
+InsideOutside_EventScript_StudentDeclined:
+    msgbox InsideOutside_Text_StudentOhOkay, MSGBOX_DEFAULT
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_SorryImBusy
+    closemessage
     release
     end
 
@@ -604,7 +625,69 @@ InsideOutside_EventScript_StudentPostQuest::
     closemessage
     release
     end
-    
+
+InsideOutside_Text_StudentStruggling:
+    .string "Hmm, so Ground is immune to Electric,\n"
+    .string "and Flying is immune to Ground…\p"
+    .string "But Flying's weak to Rock…\n"
+    .string "I thought Rock and Ground were basically\n"
+    .string "the same type otherwise…?\p"
+    .string "And I can't wrap my head around the Bug\n"
+    .string "type…\p"
+    .string "Fairy resists it, but is Fairy super-\n"
+    .string "effective to Bug?\p"
+    .string "Do bugs resist electricity?\p"
+    .string "Can you even PUNCH a bug or is it as\n"
+    .string "effective as punching birds!?\p"
+    .string "Gah! I'll never get this down!$"
+
+InsideOutside_Text_StudentBrainGoingInLoops:
+    .string "I've been going in loops for hours\n"
+    .string "studying for an upcoming test!\p"
+    .string "Any time I think I've gotten one\n"
+    .string "type matchup down, I forget its nuances\l"
+    .string "once I move on to the next!\p"
+    .string "Heck, I asked my classmate Valentina for\n"
+    .string "her notes, but her handwriting is so\l"
+    .string "unreadable…\p"
+    .string "I hate studying the textbook…\n"
+    .string "I just want to battle…$"
+
+InsideOutside_Text_StudentWhatIfWe:
+    .string "The past couple hours, I've been\n"
+    .string "toying with the idea that an inverse\l"
+    .string "battle might help me learn better than\l"
+    .string "a stupid textbook!\p"
+    .string "When the type matchups are flipped, I'd\n"
+    .string "be able to see the interactions from a\l"
+    .string "new perspective!\p"
+    .string "It's a fantastic idea, if I do say so\n"
+    .string "myself!$"
+
+InsideOutside_Text_StudentHiSir:
+    .string "Hi, sir!$"
+
+InsideOutside_Text_StudentAreYouReady:
+    .string "Are you ready for an inverse battle?$"
+
+InsideOutside_Text_StudentLetsGetStarted:
+    .string "Fantastic! Let's get started!$"
+
+InsideOutside_Text_StudentOhOkay:
+    .string "Oh, okay…\n"
+    .string "I'll just flunk my test…$"
+
+InsideOutside_Text_LookerSureLetsTryIt:
+    .string "Hmm… I believe that there is nothing\n"
+    .string "more valuable than the knowledge inside\l"
+    .string "a book…\p"
+    .string "But sure. We can try the idea out.$"
+
+InsideOutside_Text_StudentGreat:
+    .string "Great! Let me know once you're all\n"
+    .string "ready to battle!\p"
+    .string "I'll be waiting!$"
+
 InsideOutside_Text_StudentThatDidntHelp:
     .string "Well… That didn't help.\n"
     .string "I still feel as lost as I was before!$"
