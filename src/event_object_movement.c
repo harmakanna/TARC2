@@ -49,6 +49,7 @@
 #include "constants/items.h"
 #include "constants/mauville_old_man.h"
 #include "constants/metatile_behaviors.h"
+#include "constants/quests.h"
 #include "constants/rgb.h"
 #include "constants/region_map_sections.h"
 #include "constants/songs.h"
@@ -2839,6 +2840,9 @@ static void RemoveObjectEventIfOutsideView(struct ObjectEvent *objectEvent)
      && objectEvent->initialCoords.y >= top && objectEvent->initialCoords.y <= bottom)
         return;
     if (objectEvent->graphicsId == OBJ_EVENT_GFX_SS_TIDAL) // SS Tidal can never get unloaded
+        return;
+    if (objectEvent->graphicsId == (OBJ_EVENT_GFX_IDOL || OBJ_EVENT_GFX_LISIA)
+     && IsQuestCompletedState(QUEST_BREAK_A_LEG)) //Idols never unloaded so they are kept in sync
         return;
     RemoveObjectEvent(objectEvent);
 }

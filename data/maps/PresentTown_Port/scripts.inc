@@ -567,6 +567,7 @@ PresentTown_Port_EventScript_BlueDefeat::
 
 PresentTown_Port_EventScript_BluePostQuest::
 	goto_if_eq VAR_CHOOSE_CULPRIT, 0, PresentTown_Port_EventScript_BlueCulpritPostQuest
+	goto_if_unset FLAG_BLUE_GAVE_POKEMON, PresentTown_Port_EventScript_BluePostQuestGiveMon
 	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueGetOffMyBack
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Port_Text_LookerSorry
 	closemessage
@@ -575,7 +576,19 @@ PresentTown_Port_EventScript_BluePostQuest::
 	release
 	end
 	
+PresentTown_Port_EventScript_BluePostQuestGiveMon::
+	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueGivePokemon
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_UhhOkay
+	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueGreatYouWantPokemon
+	setflag FLAG_BLUE_GAVE_POKEMON
+	multichoice MULTI_BLUE_GIVEMON, 0, 6, TRUE
+	goto_if_eq VAR_RESULT, 0, PresentTown_Port_EventScript_BlueGiveGolem
+	goto_if_eq VAR_RESULT, 1, PresentTown_Port_EventScript_BlueGiveMachamp
+	release
+	end
+
 PresentTown_Port_EventScript_BlueCulpritPostQuest::
+	goto_if_unset FLAG_BLUE_GAVE_POKEMON, PresentTown_Port_EventScript_BlueCulpritPostQuestGiveMon
 	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueYouHappy
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Port_Text_LookerICanLetYouOffTheHook
 	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueUgh
@@ -585,6 +598,17 @@ PresentTown_Port_EventScript_BlueCulpritPostQuest::
 	release
 	end
 
+PresentTown_Port_EventScript_BlueCulpritPostQuestGiveMon::
+	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueYouHappyGiveMon
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_UhhOkay
+	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueGreatYouWantPokemon
+	setflag FLAG_BLUE_GAVE_POKEMON
+	multichoice MULTI_BLUE_GIVEMON, 0, 6, TRUE
+	goto_if_eq VAR_RESULT, 0, PresentTown_Port_EventScript_BlueGiveGolem
+	goto_if_eq VAR_RESULT, 1, PresentTown_Port_EventScript_BlueGiveMachamp
+	release
+	end
+	
 PresentTown_Port_Text_LookerWouldYouKnow:
 	.string "Hello, citizen.\p"
 	.string "My name…\n"
@@ -619,6 +643,18 @@ PresentTown_Port_Text_BlueLayOffMe:
 PresentTown_Port_Text_BlueCulpritDefeated:
 	.string "Ugh…$"
 
+PresentTown_Port_Text_BlueGivePokemon:
+	.string "There, you see? I DON'T have Landorus!\n"
+	.string "You wanna give me some space?\p"
+	.string "I'll even give you one of my Pokémon if\n"
+	.string "it gets you to scram faster!$"
+
+PresentTown_Port_Text_BlueGreatYouWantPokemon:
+	.string "Great… You want Machamp or Golem?$"
+
+PresentTown_Port_Text_BlueNowGetOffMe:
+	.string "Now get off my back, you blockhead!$"
+	
 PresentTown_Port_Text_BlueGetOffMyBack:
 	.string "There, you see? I DON'T have Landorus!\n"
 	.string "Now get off my back, you blockhead!$"
@@ -661,6 +697,14 @@ PresentTown_Port_Text_BlueYouHappy:
 	.string "time, okay?\p"
 	.string "I just wanted to try my hand at taking on\n"
 	.string "a legendary Pokémon, 'kay…?$"
+
+PresentTown_Port_Text_BlueYouHappyGiveMon:
+	.string "You happy? I had Landorus the whole\n"
+	.string "time, okay?\p"
+	.string "I just wanted to try my hand at taking on\n"
+	.string "a legendary Pokémon, 'kay…?\p"
+	.string "Maybe you can have one of my Pokémon if it\n"
+	.string "helps make things right…$"
 
 PresentTown_Port_Text_LookerICanLetYouOffTheHook:
 	.string "So long as Landorus is safe and around to\n"

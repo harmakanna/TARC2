@@ -390,7 +390,7 @@
 #define TRAINER_DONNY                       384
 #define TRAINER_TALIA                       385
 #define TRAINER_KATELYN_1                   386
-#define TRAINER_LISIA                     387
+#define TRAINER_UNUSED_387                  387
 #define TRAINER_KATELYN_2                   388
 #define TRAINER_KATELYN_3                   389
 #define TRAINER_KATELYN_4                   390
@@ -564,7 +564,7 @@
 #define TRAINER_JACKSON_5                   558
 #define TRAINER_CATHERINE_1                 559
 #define TRAINER_JENNA                       560
-#define TRAINER_SOPHIA                      561
+#define TRAINER_UNUSED_561                  561
 #define TRAINER_CATHERINE_2                 562
 #define TRAINER_CATHERINE_3                 563
 #define TRAINER_CATHERINE_4                 564
@@ -709,7 +709,7 @@
 #define TRAINER_RHETT                       703
 #define TRAINER_TYRON                       704
 #define TRAINER_CELINA                      705
-#define TRAINER_BIANCA                      706
+#define TRAINER_UNUSED_706                  706
 #define TRAINER_HAYDEN                      707
 #define TRAINER_SOPHIE                      708
 #define TRAINER_COBY                        709
@@ -829,13 +829,13 @@
 #define TRAINER_PABLO_5                     823
 #define TRAINER_KOJI_2                      824
 #define TRAINER_KOJI_3                      825
-#define TRAINER_KOJI_4                      826
-#define TRAINER_KOJI_5                      827
-#define TRAINER_CRISTIN_2                   828
-#define TRAINER_CRISTIN_3                   829
-#define TRAINER_CRISTIN_4                   830
-#define TRAINER_CRISTIN_5                   831
-#define TRAINER_FERNANDO_2                  832
+#define TRAINER_BOYFRIEND                   826
+#define TRAINER_CYNTHIA                     827
+#define TRAINER_FUTURE_LOOKER               828
+#define TRAINER_STUDENT                     829
+#define TRAINER_BIANCA                      830
+#define TRAINER_SOPHIA                      831
+#define TRAINER_LISIA                       832
 #define TRAINER_BLUE                        833
 #define TRAINER_BLUE_CULPRIT                834
 #define TRAINER_MAY                         835
@@ -851,13 +851,13 @@
 #define TRAINER_THUNDURUS                   845
 #define TRAINER_LANDORUS                    846
 #define TRAINER_ENAMORUS                    847
-#define TRAINER_MARIELA                     848
-#define TRAINER_ALVARO                      849
+#define TRAINER_WO_CHIEN                    848
+#define TRAINER_MARIE_REMATCH               849
 #define TRAINER_EVERETT                     850
 #define TRAINER_MARIE                       851
 #define TRAINER_PRESENT_FISHERMAN           852
 #define TRAINER_RED                         853
-#define TRAINER_UNUSED                      854
+#define TRAINER_UNUSED_854                  854
 #define TRAINER_BRENDAN_PLACEHOLDER         855
 #define TRAINER_MAY_PLACEHOLDER             856
 

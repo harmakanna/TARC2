@@ -83,5 +83,6 @@ void ResetQuestIconOnObject(struct ObjectEvent*);
 void HandleQuestIconForSingleObjectEvent(struct ObjectEvent*, u32);
 void CB2_QuestMenuFromStartMenu(void);
 void RefreshQuestIcons(void);
+bool8 IsQuestCompletedState(s32 questId);
 
 #endif // GUARD_QUESTS_H

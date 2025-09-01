@@ -25,4 +25,6 @@
 #define FNPC_ALL_WATER                        FOLLOWER_NPC_FLAG_ALL_WATER
 #define FNPC_ALL                              FOLLOWER_NPC_FLAG_ALL
 
+#define FNPC_NONE 0
+
 #endif // GUARD_CONSTANTS_FOLLOWER_NPC_H

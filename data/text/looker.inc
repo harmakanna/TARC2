@@ -26,6 +26,9 @@ Looker_Text_ICanCertainlyTry:
 Looker_Text_ConsiderItDone:
     .string "Consider it done.$"
     
+Looker_Text_MyApologies:
+    .string "My apologies.$"
+
 Looker_Text_YouAreUnderSuspicion:
     .string "Stop, in the name of the law!\p"
     .string "You are under suspicion of capturing\n"
@@ -51,7 +54,7 @@ Looker_Text_IWillHandleThis:
     .string "I will handle this posthaste.$"
 
 Looker_Text_GladICouldHelp:
-    .string "Glad I could help.$"
+    .string "I'm glad I could help.$"
 
 Looker_Text_AnotherProblemSolved:
     .string "Another problem solved.$"
@@ -62,6 +65,9 @@ Looker_Text_OfCourse:
 Looker_Text_OfCourseICanHelp:
     .string "Of course I can help.$"
     
+Looker_Text_SorryImBusy:
+    .string "Sorry, I'm busy.$"
+
 Looker_Text_SureICan:
     .string "Sure, I can!$"
 
@@ -143,6 +149,9 @@ Looker_Text_Huh:
     
 Looker_Text_Unlucky:
     .string "Unlucky.$"
+
+Looker_Text_ThatWouldBeWonderful:
+    .string "That would be wonderful.$"
 
 Looker_Text_ThankYou:
     .string "Thank you.$"
