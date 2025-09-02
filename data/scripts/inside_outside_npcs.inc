@@ -7,6 +7,13 @@ Common_EventScript_MoveInsideNPCsOutside::
     clearflag FLAG_HIDE_OUTSIDE_NPCS
     setflag FLAG_HIDE_INSIDE_OUTSIDE_NPCS
     setflag FLAG_HIDE_TORNADUS_NPCS
+    returnqueststate QUEST_FOREVER_FAITHFUL
+    call_if_lt VAR_RESULT, 3, InsideOutside_EventScript_AddFaithfulQuest
+    return
+
+InsideOutside_EventScript_AddFaithfulQuest::
+    clearflag FLAG_HIDE_PORT_FAITHFUL_MAN
+    clearflag FLAG_HIDE_PORT_AROMATISSE
     return
 
 InsideOutside_EventScript_GentlemanInside::

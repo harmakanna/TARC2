@@ -165,3 +165,13 @@ Name_Barista:
 
 Name_Student:
     .string "Paolo$"
+
+Name_Beauty:
+    .string "Beatrice$"
+
+Name_Boyfriend:
+    .string "Luca$"
+
+Name_Aromatisse:
+    .string "Aromatisse$"
+    

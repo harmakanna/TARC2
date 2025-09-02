@@ -568,7 +568,7 @@ static const struct InGameOT sIngameOTs[] =
         .isNicknamed = FALSE,
         .nickname = _(""),
     },
-    [OT_BETH_SWANNA] =
+    [OT_BEATRICE_SWANNA] =
     {
         .species = SPECIES_SWANNA,
         .level = 50,
@@ -581,13 +581,13 @@ static const struct InGameOT sIngameOTs[] =
         .abilityNum = 0,
         .gender = MON_FEMALE,
         .otId = 78155,
-        .otName = _("Beth"),
+        .otName = _("Beatrice"),
         .otGender = FEMALE,
         .isShiny = FALSE,
         .isNicknamed = TRUE,
         .nickname = _("Caitlyn"),
     },
-    [OT_BETH_UNFEZANT] =
+    [OT_BEATRICE_UNFEZANT] =
     {
         .species = SPECIES_UNFEZANT,
         .level = 50,
@@ -600,7 +600,7 @@ static const struct InGameOT sIngameOTs[] =
         .abilityNum = 0,
         .gender = MON_FEMALE,
         .otId = 78155,
-        .otName = _("Beth"),
+        .otName = _("Beatrice"),
         .otGender = FEMALE,
         .isShiny = FALSE,
         .isNicknamed = TRUE,

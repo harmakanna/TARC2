@@ -811,6 +811,70 @@ Present_Cafe_EventScript_ReceivedMurkrowFanfare::
 	bufferspeciesname STR_VAR_1, SPECIES_MURKROW
 	return
 
+Present_Flat1_2F_EventScript_BeautyGiveSwanna::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SWANNA
+	givemonwithot OT_BEATRICE_SWANNA
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Flat1_2F_EventScript_ReceiveSwannaParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Flat1_2F_EventScript_ReceiveSwannaPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+Present_Flat1_2F_EventScript_ReceiveSwannaParty::
+	call Present_Flat1_2F_EventScript_ReceivedSwannaFanfare
+	goto Present_Flat1_2F_EventScript_BeautyFinishQuest
+	end
+	
+Present_Flat1_2F_EventScript_ReceiveSwannaPC::
+	call Present_Flat1_2F_EventScript_ReceivedSwannaFanfare
+	call Common_EventScript_TransferredToPC
+	goto Present_Flat1_2F_EventScript_BeautyFinishQuest
+	end
+
+Present_Flat1_2F_EventScript_ReceivedSwannaFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_SWANNA
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox Present_Flat1_2F_Text_YouReceivedSwanna, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_SWANNA
+	return
+
+Present_Flat1_2F_EventScript_BeautyGiveUnfezant::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_UNFEZANT
+	givemonwithot OT_BEATRICE_UNFEZANT
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Flat1_2F_EventScript_ReceiveUnfezantParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Flat1_2F_EventScript_ReceiveUnfezantPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+Present_Flat1_2F_EventScript_ReceiveUnfezantParty::
+	call Present_Flat1_2F_EventScript_ReceivedUnfezantFanfare
+	goto Present_Flat1_2F_EventScript_BeautyFinishQuest
+	end
+	
+Present_Flat1_2F_EventScript_ReceiveUnfezantPC::
+	call Present_Flat1_2F_EventScript_ReceivedUnfezantFanfare
+	call Common_EventScript_TransferredToPC
+	goto Present_Flat1_2F_EventScript_BeautyFinishQuest
+	end
+
+Present_Flat1_2F_EventScript_ReceivedUnfezantFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_UNFEZANT
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox Present_Flat1_2F_Text_YouReceivedUnfezant, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_UNFEZANT
+	return
+
+Present_Flat1_2F_Text_YouReceivedSwanna:
+	.string "You received a Swanna!$"
+
+Present_Flat1_2F_Text_YouReceivedUnfezant:
+	.string "You received an Unfezant!$"
+
 PresentTown_Port_Text_YouReceivedGolem:
 	.string "Blue gave you his Golem!$"
 

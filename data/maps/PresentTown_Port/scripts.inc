@@ -609,6 +609,290 @@ PresentTown_Port_EventScript_BlueCulpritPostQuestGiveMon::
 	release
 	end
 	
+PresentTown_Port_EventScript_FaithfulMan::
+	lockall
+	returnqueststate QUEST_FOREVER_FAITHFUL
+	goto_if_eq VAR_RESULT, 1, PresentTown_Port_EventScript_BoyfriendPreQuest
+	call Script_GetNPCFacingDirection
+	speak LOCALID_PORT_BOYFRIEND, DIR_WEST, Name_Boyfriend, PresentTown_Port_Text_BoyfriendPrequest
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Port_Text_LookerThatIsAnAromatisse
+	closemessage
+	playse SE_PIN
+	call_if_eq VAR_FACING, DIR_WEST, PresentTown_Port_EventScript_BoyfriendFaceRight
+	call_if_ne VAR_FACING, DIR_WEST, PresentTown_Port_EventScript_BoyfriendFaceUp
+	speak LOCALID_PORT_BOYFRIEND, VAR_0x8005, Name_Boyfriend, PresentTown_Port_Text_BoyfriendHuh
+	applymovement LOCALID_PORT_BOYFRIEND, Common_Movement_FaceLeft
+	playse SE_SELECT
+	msgbox PresentTown_Port_Text_BoyfriendWait, MSGBOX_DEFAULT
+	waitse
+	playmoncry SPECIES_AROMATISSE, CRY_MODE_NORMAL
+	speak LOCALID_PORT_AROMATISSE, DIR_EAST, Name_Aromatisse, PresentTown_Port_Text_AromatisseControls
+	waitmoncry
+	speak LOCALID_PORT_BOYFRIEND, VAR_0x8005, Name_Boyfriend, PresentTown_Port_Text_BoyfriendThatsUhh
+	playse SE_SELECT
+	call_if_eq VAR_FACING, DIR_WEST, PresentTown_Port_EventScript_BoyfriendFaceRight
+	call_if_ne VAR_FACING, DIR_WEST, PresentTown_Port_EventScript_BoyfriendFaceUp	
+	trainerbattle_no_intro TRAINER_BOYFRIEND, PresentTown_Port_Text_BoyfriendDefeat
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, PresentTown_Port_EventScript_FaithfulManDefeated
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, PresentTown_Port_EventScript_FaithfulManDefeated
+	speak LOCALID_PORT_BOYFRIEND, VAR_0x8005, Name_Boyfriend, PresentTown_Port_Text_BoyfriendComingToSenses
+	closemessage
+	delay 60
+	playse SE_PIN
+	applymovement LOCALID_PORT_BOYFRIEND, Common_Movement_FaceLeftExclamationMark
+	waitmovement 0
+	delay 50
+	speak LOCALID_PORT_BOYFRIEND, DIR_WEST, Name_Boyfriend, PresentTown_Port_Text_BoyfriendWhatAreYou
+	playmoncry SPECIES_AROMATISSE, CRY_MODE_NORMAL
+	speak LOCALID_PORT_AROMATISSE, DIR_EAST, Name_Aromatisse, PresentTown_Port_Text_AromatisseStartled
+	waitmoncry
+	closemessage
+	call_if_eq VAR_FACING, DIR_WEST, PresentTown_Port_EventScript_AromatisseRunOffUp
+	call_if_ne VAR_FACING, DIR_WEST, PresentTown_Port_EventScript_AromatisseRunOffRight
+	removeobject LOCALID_PORT_AROMATISSE
+	speak LOCALID_PORT_BOYFRIEND, VAR_0x8005, Name_Boyfriend, PresentTown_Port_Text_BoyfriendBackToMyBaby
+	closemessage
+	call_if_eq VAR_FACING, DIR_WEST, PresentTown_Port_EventScript_BoyfriendRunOffUp
+	call_if_ne VAR_FACING, DIR_WEST, PresentTown_Port_EventScript_BoyfriendRunOffRight
+	removeobject LOCALID_PORT_BOYFRIEND
+	questmenu QUEST_MENU_SET_REWARD, QUEST_FOREVER_FAITHFUL
+	releaseall
+	end
+
+PresentTown_Port_EventScript_BoyfriendFaceUp:
+	applymovement LOCALID_PORT_BOYFRIEND, Common_Movement_FaceUpQuestionMark
+	waitmovement 0
+	delay 50
+	return
+	
+
+PresentTown_Port_EventScript_BoyfriendFaceRight:
+	applymovement LOCALID_PORT_BOYFRIEND, Common_Movement_FaceRightQuestionMark
+	waitmovement 0
+	delay 50
+	return
+
+PresentTown_Port_EventScript_AromatisseRunOffUp::
+	applymovement LOCALID_PORT_BOYFRIEND, PresentTown_Port_Movement_BoyfriendWatchAromatisse
+	applymovement LOCALID_PLAYER, PresentTown_Port_Movement_LookerWatchAromatisse
+	applymovement LOCALID_PORT_AROMATISSE, PresentTown_Port_Movement_AromatisseRunOffUp
+	waitmovement 0
+	return
+
+PresentTown_Port_EventScript_AromatisseRunOffRight::
+	applymovement LOCALID_PORT_BOYFRIEND, PresentTown_Port_Movement_BoyfriendWatchAromatisse
+	applymovement LOCALID_PORT_AROMATISSE, PresentTown_Port_Movement_AromatisseRunOffRight
+	playse SE_EFFECTIVE
+	speakername Name_Looker
+	message Looker_Text_Ouch
+	applymovement LOCALID_PLAYER, PresentTown_Port_Movement_LookerPushedByAromatisse
+	waitmessage
+	delay 40
+	closemessage
+	waitmovement LOCALID_PORT_AROMATISSE
+	delay 40
+	applymovement LOCALID_PLAYER, PresentTown_Port_Movement_LookerWalkBackInPlace
+	return
+
+PresentTown_Port_Movement_LookerWatchAromatisse:
+	delay_16
+	delay_8
+	face_up
+	delay_8
+	face_right
+	delay_16
+	delay_16
+	face_up
+	step_end
+
+PresentTown_Port_Movement_BoyfriendWatchAromatisse:
+	delay_16
+	face_up
+	delay_16
+	face_right
+	delay_16
+	delay_16
+	face_up
+	step_end
+
+PresentTown_Port_Movement_AromatisseRunOffUp:
+	walk_fast_up
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	step_end
+
+PresentTown_Port_Movement_AromatisseRunOffRight:
+	walk_fast_up
+	walk_fast_right
+	walk_fast_right
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	step_end
+
+PresentTown_Port_Movement_LookerPushedByAromatisse:
+	delay_16
+	lock_facing_direction
+	walk_faster_right
+	walk_faster_right
+	unlock_facing_direction
+	delay_16
+	delay_16
+	face_right
+	delay_16
+	face_up
+	step_end
+
+PresentTown_Port_Movement_LookerWalkBackInPlace:
+	walk_left
+	walk_left
+	face_down
+	step_end
+
+PresentTown_Port_EventScript_BoyfriendRunOffUp::
+	applymovement LOCALID_PORT_BOYFRIEND, PresentTown_Port_Movement_BoyfriendRunOffUp
+	waitmovement 0
+	return
+
+PresentTown_Port_EventScript_BoyfriendRunOffRight::
+	applymovement LOCALID_PORT_BOYFRIEND, PresentTown_Port_Movement_BoyfriendRunOffRight
+	waitmovement 0
+	return
+
+PresentTown_Port_Movement_BoyfriendRunOffUp:
+	walk_fast_up
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	step_end
+
+PresentTown_Port_Movement_BoyfriendRunOffRight:
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	step_end
+
+PresentTown_Port_EventScript_BoyfriendPreQuest::
+	speakername Name_Boyfriend
+	msgbox PresentTown_Port_Text_BoyfriendPrequest, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+PresentTown_Port_EventScript_FaithfulManDefeated::
+	speak LOCALID_PORT_BOYFRIEND, VAR_0x8005, Name_Boyfriend, PresentTown_Port_Text_BoyfriendWon
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_Drat
+	closemessage
+	clearflag FLAG_SYS_NO_WHITEOUT
+	releaseall
+	end
+
+PresentTown_Port_EventScript_Aromatisse::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_AROMATISSE, CRY_MODE_NORMAL
+	msgbox PresentTown_Port_Text_Aromatisse, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	applymovement LOCALID_PORT_AROMATISSE, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+PresentTown_Port_Text_LookerThatIsAnAromatisse:
+	.string "Uh, sir? Are you okay?\p"
+	.string "That is an Aromatisse you are speaking\n"
+	.string "with.$"
+
+PresentTown_Port_Text_BoyfriendHuh:
+	.string "Hmm… huh…?$"
+
+PresentTown_Port_Text_BoyfriendWait:
+	.string "Wait… is that…?$"
+
+PresentTown_Port_Text_BoyfriendThatsUhh:
+	.string "That's… uhh…\p"
+	.string "…Mmm…$"
+
+PresentTown_Port_Text_BoyfriendPrefight:
+	.string "You won't get my sweet baby…\p"
+	.string "Baby…$"
+
+PresentTown_Port_Text_BoyfriendWon:
+	.string "Don't touch my smells…\p"
+	.string "So sweet and fruity…$"
+
+PresentTown_Port_Text_BoyfriendDefeat:
+	.string "…Mmm…\p"
+	.string "Ahh…\p"
+	.string "Uhh…\p"
+	.string "Wait, huh?$"
+
+PresentTown_Port_Text_BoyfriendComingToSenses:
+	.string "Ahhh…\n"
+	.string "Huh?\p"
+	.string "Hold on!$"
+
+PresentTown_Port_Text_BoyfriendWhatAreYou:
+	.string "Ahh!\p"
+	.string "You're not my sweetie pie!\p"
+	.string "You're a POKéMON!$"
+
+PresentTown_Port_Text_BoyfriendBackToMyBaby:
+	.string "Thanks for breaking me out of that\n"
+	.string "sweet smelling spell!\p"
+	.string "I need to get back to my baby,\n"
+	.string "PRONTO!$"
+	
+PresentTown_Port_Text_BoyfriendPrequest:
+	.string "Oh babycakes…\p"
+	.string "You smell so good…\p"
+	.string "Like cherries and lemons…\p"
+	.string "Stay with me forever…$"
+
+PresentTown_Port_Text_Aromatisse:
+	.string "Ara-ara-ara-ara-ara!$"
+
+PresentTown_Port_Text_AromatisseControls:
+	.string "Ara?\n"
+	.string "Aaaaaaaaaah!$"
+
+PresentTown_Port_Text_AromatisseStartled:
+	.string "Ara!?$"
+
 PresentTown_Port_Text_LookerWouldYouKnow:
 	.string "Hello, citizen.\p"
 	.string "My name…\n"

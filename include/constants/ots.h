@@ -28,7 +28,7 @@
 #define OT_MAY_CAMERUPT        24
 #define OT_BLUE_GOLEM          25
 #define OT_BLUE_MACHAMP        26
-#define OT_BETH_SWANNA         27
-#define OT_BETH_UNFEZANT       28
+#define OT_BEATRICE_SWANNA     27
+#define OT_BEATRICE_UNFEZANT   28
 
 #endif //GUARD_CONSTANTS_OTS_H

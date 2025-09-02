@@ -1472,3 +1472,32 @@ const u8 gText_SubQuestSaveTheLuvdiscs_Map[] = _("Present");
 const u8 gText_SubQuestAWholeNewWorld_Name[] = _("RARE CANDY");
 const u8 gText_SubQuestAWholeNewWorld_Desc[] = _("RARE CANDY");
 const u8 gText_SubQuestAWholeNewWorld_Map[] = _("RARE CANDY");
+
+const u8 gText_SubQuestEvilLuxray_Name[] = _("");
+const u8 gText_SubQuestEvilLuxray_Desc[] = _("");
+const u8 gText_SubQuestEvilLuxray_Map[] = _("");
+
+
+const u8 gText_SubQuestCatchMons_NameRodent[] = _("Electric Rodent");
+const u8 gText_SubQuestCatchMons_DescRodent[] = _("Caught the electric rodent!");
+const u8 gText_SubQuestCatchMons_NameLurantis[] = _("Lurantis");
+const u8 gText_SubQuestCatchMons_DescLurantis[] = _("Caught Lurantis!");
+const u8 gText_SubQuestCatchMons_NameLuxray[] = _("Luxray");
+const u8 gText_SubQuestCatchMons_DescLuxray[] = _("Caught Luxray!");
+const u8 gText_SubQuestCatchMons_NameToedscruel[] = _("Toedscruel");
+const u8 gText_SubQuestCatchMons_DescToedscruel[] = _("Caught Toedscruel!");
+const u8 gText_SubQuestCatchMons_NameFrosmoth[] = _("Frosmoth");
+const u8 gText_SubQuestCatchMons_DescFrosmoth[] = _("Caught Frosmoth!");
+const u8 gText_SubQuestCatchMons_NameKleavor[] = _("Kleavor");
+const u8 gText_SubQuestCatchMons_DescKleavor[] = _("Caught Kleavor!");
+const u8 gText_SubQuestCatchMons_NameGoodra[] = _("Goodra-Hisui");
+const u8 gText_SubQuestCatchMons_DescGoodra[] = _("Caught Goodra-Hisui!");
+const u8 gText_SubQuestCatchMons_NameBeheeyem[] = _("Beheeyem");
+const u8 gText_SubQuestCatchMons_DescBeheeyem[] = _("Caught Beheeyem!");
+const u8 gText_SubQuestCatchMons_NameAerodactyl[] = _("Aerodactyl");
+const u8 gText_SubQuestCatchMons_DescAerodactyl[] = _("Caught Aerodactyl!");
+const u8 gText_SubQuestCatchMons_NameScreamTail[] = _("Scream Tail");
+const u8 gText_SubQuestCatchMons_DescScreamTail[] = _("Caught Scream Tail!");
+const u8 gText_SubQuestCatchMons_NameWoChien[] = _("Wo-Chien");
+const u8 gText_SubQuestCatchMons_DescWoChien[] = _("Caught the demon of the forest,\nWo-Chien!");
+const u8 gText_SubQuestCatchMons_Map[] = _("Present: Forest");

@@ -723,9 +723,9 @@
 #define FLAG_SPOKE_TO_PAST_LISIA  0x2A4 // Unused Flag
 #define FLAG_BLUE_GAVE_POKEMON  0x2A5 // Unused Flag
 #define FLAG_MAY_GAVE_POKEMON  0x2A6 // Unused Flag
-#define FLAG_UNUSED_0x2A7  0x2A7 // Unused Flag
-#define FLAG_UNUSED_0x2A8  0x2A8 // Unused Flag
-#define FLAG_UNUSED_0x2A9  0x2A9 // Unused Flag
+#define FLAG_BOYFRIEND_WENT_OUT  0x2A7 // Unused Flag
+#define FLAG_HIDE_PORT_FAITHFUL_MAN  0x2A8 // Unused Flag
+#define FLAG_HIDE_PORT_AROMATISSE  0x2A9 // Unused Flag
 #define FLAG_UNUSED_0x2AA  0x2AA // Unused Flag
 #define FLAG_UNUSED_0x2AB  0x2AB // Unused Flag
 #define FLAG_UNUSED_0x2AC  0x2AC // Unused Flag
