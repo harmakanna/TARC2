@@ -113,6 +113,16 @@ PresentSchool_EventScript_RightGameboyKidBattery::
 	release
 	end
 
+Present_School_EventScript_Twin::
+	lockall
+	releaseall
+	end
+
+Present_School_EventScript_Doubter::
+	lock
+	release
+	end
+	
 PresentSchool_Text_LeftGameboyKidIGuess:
 	.string "Huh? You want a battery?\n"
 	.string "Hmmm…\p"

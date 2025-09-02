@@ -185,11 +185,11 @@ BattleScript_SuccessBallThrow::
 	sethword gBattle_BG2_X, 0
 BattleScript_TryPrintCaughtMonInfo:
 	jumpifbattletype BATTLE_TYPE_RECORDED, BattleScript_GiveCaughtMonEnd
-	trysetcaughtmondexflags BattleScript_TryNicknameCaughtMon
-	printstring STRINGID_PKMNDATAADDEDTODEX
-	waitstate
-	setbyte gBattleCommunication, 0
-	displaydexinfo
+	@ trysetcaughtmondexflags BattleScript_TryNicknameCaughtMon
+	@ printstring STRINGID_PKMNDATAADDEDTODEX
+	@ waitstate
+	@ setbyte gBattleCommunication, 0
+	@ displaydexinfo
 BattleScript_TryNicknameCaughtMon::
 	printstring STRINGID_GIVENICKNAMECAPTURED
 	waitstate
