@@ -711,6 +711,7 @@ InsideOutside_EventScript_ArtistQuest::
 InsideOutside_EventScript_ArtistReward::
     speak VAR_TEMP_1, VAR_0x8005, Name_Artist, InsideOutside_Text_ArtistOhSir
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_GladICouldHelp
+    closemessage
     call_if_eq VAR_TEMP_2, LOCALID_OUTSIDE_SMEARGLE, InsideOutside_EventScript_SmeargleMoveToPlayerOutside
     call_if_eq VAR_TEMP_2, LOCALID_INSIDE_SMEARGLE, InsideOutside_EventScript_SmeargleMoveToPlayerInside
     playmoncry SPECIES_SMEARGLE, CRY_MODE_NORMAL
