@@ -66,7 +66,7 @@ Pic: Lass
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Check Bad Move
+AI: Basic Trainer
 Party Size: 4
 Pool Rules: Weather Doubles
 Pool Pick Index: Default
