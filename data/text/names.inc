@@ -172,6 +172,11 @@ Name_Beauty:
 Name_Boyfriend:
     .string "Luca$"
 
+Name_Artist:
+    .string "Leo$"
+    
 Name_Aromatisse:
     .string "Aromatisse$"
     
+Name_Smeargle:
+    .string "Smeargle$"

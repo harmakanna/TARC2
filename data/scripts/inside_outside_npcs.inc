@@ -16,6 +16,18 @@ InsideOutside_EventScript_AddFaithfulQuest::
     clearflag FLAG_HIDE_PORT_AROMATISSE
     return
 
+InsideOutside_EventScript_ArtistInside::
+    setvar VAR_TEMP_1, LOCALID_INSIDE_ARTIST
+    setvar VAR_TEMP_2, LOCALID_INSIDE_SMEARGLE
+    goto InsideOutside_EventScript_Artist
+    end
+    
+InsideOutside_EventScript_ArtistOutside::
+    setvar VAR_TEMP_1, LOCALID_OUTSIDE_ARTIST
+    setvar VAR_TEMP_2, LOCALID_OUTSIDE_SMEARGLE
+    goto InsideOutside_EventScript_Artist
+    end
+
 InsideOutside_EventScript_GentlemanInside::
     setvar VAR_TEMP_1, LOCALID_INSIDE_GENTLEMAN
     goto InsideOutside_EventScript_Gentleman
@@ -633,6 +645,236 @@ InsideOutside_EventScript_StudentPostQuest::
     release
     end
 
+InsideOutside_EventScript_ArtistSmeargle::
+    lock
+    goto_if_unset FLAG_SYS_MAIN_GAME_START, InsideOutside_EventScript_ArtistSmearglePregame
+	faceplayer
+    waitse
+    playmoncry SPECIES_SMEARGLE, CRY_MODE_NORMAL
+    speakername Name_Smeargle
+	msgbox InsideOutside_Text_ArtistSmeargleSmurr, MSGBOX_DEFAULT
+    speakername NULL
+    playse SE_SELECT
+    msgbox InsideOutside_Text_ArtistSmeargleHappy, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	release
+	end
+
+InsideOutside_EventScript_ArtistSmearglePregame::
+    waitse
+	playmoncry SPECIES_SMEARGLE, CRY_MODE_NORMAL
+	msgbox InsideOutside_Text_ArtistSmeargle, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	release
+	end
+
+InsideOutside_EventScript_Artist::
+    lock
+    goto_if_unset FLAG_SYS_MAIN_GAME_START, InsideOutside_EventScript_ArtistPregame
+    call Script_GetNPCFacingDirection
+    returnqueststate QUEST_SMEARGLE
+    switch VAR_RESULT
+    case 1, InsideOutside_EventScript_ArtistPreQuest
+    case 2, InsideOutside_EventScript_ArtistQuest
+    case 3, InsideOutside_EventScript_ArtistReward
+    case 4, InsideOutside_EventScript_ArtistPostQuest
+    release
+    end
+
+InsideOutside_EventScript_ArtistPregame::
+    msgbox InsideOutside_Text_ArtistPregame, MSGBOX_DEFAULT
+    closemessage
+    release
+    end
+
+InsideOutside_EventScript_ArtistPreQuest::
+    speak VAR_TEMP_1, VAR_0x8005, Name_Artist, InsideOutside_Text_ArtistAiyee
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_WhatSeemsToBeTheProblem
+    speak VAR_TEMP_1, VAR_0x8005, Name_Artist, InsideOutside_Text_ArtistMySmeargle
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_ImOnTheCase
+    speak VAR_TEMP_1, VAR_0x8005, Name_Artist, InsideOutside_Text_ArtistThankYou
+    startquest QUEST_SMEARGLE
+    setflag FLAG_CAN_SPAWN_SMEARGLE
+    release
+    end
+    
+InsideOutside_EventScript_ArtistQuest::
+    faceplayer
+    speakername Name_Artist
+    msgbox InsideOutside_Text_ArtistOVinnie, MSGBOX_DEFAULT
+    closemessage
+    release
+    end
+
+InsideOutside_EventScript_ArtistReward::
+    speak VAR_TEMP_1, VAR_0x8005, Name_Artist, InsideOutside_Text_ArtistOhSir
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_GladICouldHelp
+    call_if_eq VAR_TEMP_2, LOCALID_OUTSIDE_SMEARGLE, InsideOutside_EventScript_SmeargleMoveToPlayerOutside
+    call_if_eq VAR_TEMP_2, LOCALID_INSIDE_SMEARGLE, InsideOutside_EventScript_SmeargleMoveToPlayerInside
+    playmoncry SPECIES_SMEARGLE, CRY_MODE_NORMAL
+    speakername Name_Smeargle
+    msgbox InsideOutside_Text_ArtistSmeargleSmurr, MSGBOX_DEFAULT
+    speakername NULL
+    msgbox InsideOutside_Text_SmeargleLook, MSGBOX_DEFAULT
+    waitmoncry
+    call_if_eq VAR_FACING, DIR_SOUTH, InsideOutside_EventScript_PlayerFaceDown
+    call_if_ne VAR_FACING, DIR_SOUTH, InsideOutside_EventScript_PlayerFaceRight
+    speak VAR_TEMP_1, VAR_0x8005, Name_Artist, InsideOutside_Text_ArtistGiveSmeargle
+    goto InsideOutside_EventScript_ArtistGiveSmeargle
+    release
+    end 
+
+InsideOutside_EventScript_PlayerFaceDown::
+    applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+    return
+
+InsideOutside_EventScript_PlayerFaceRight::
+    applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+    return
+
+InsideOutside_EventScript_SmeargleMoveToPlayerOutside::
+    applymovement VAR_TEMP_2, InsideOutside_Movement_WalkUpFaceRight
+    waitmovement 0
+    applymovement VAR_TEMP_1, Common_Movement_FaceDown
+    playse SE_PIN
+    applymovement LOCALID_PLAYER, Common_Movement_FaceLeftExclamationMark
+    waitmovement 0
+    delay 50
+    return
+
+InsideOutside_EventScript_SmeargleMoveToPlayerInside::
+    call_if_eq VAR_FACING, DIR_SOUTH, InsideOutside_EventScript_SmeargleMoveToPlayerInsideUp
+    call_if_ne VAR_FACING, DIR_SOUTH, InsideOutside_EventScript_SmeargleMoveToPlayerInsideLeft
+    return
+
+InsideOutside_EventScript_SmeargleMoveToPlayerInsideUp::
+    applymovement VAR_TEMP_2, InsideOutside_Movement_WalkLeftUp2FaceRight
+    waitmovement 0
+    applymovement VAR_TEMP_1, Common_Movement_FaceLeft
+    playse SE_PIN
+    applymovement LOCALID_PLAYER, Common_Movement_FaceLeftExclamationMark
+    waitmovement 0
+    delay 50
+    return
+
+InsideOutside_EventScript_SmeargleMoveToPlayerInsideLeft::
+    applymovement VAR_TEMP_2, InsideOutside_Movement_WalkLeftFaceUp
+    waitmovement 0
+    applymovement VAR_TEMP_1, Common_Movement_FaceDown
+    playse SE_PIN
+    applymovement LOCALID_PLAYER, Common_Movement_FaceDownExclamationMark
+    waitmovement 0
+    delay 50
+    return
+
+InsideOutside_Movement_WalkUpFaceRight:
+    walk_up
+    face_right
+    step_end
+
+InsideOutside_Movement_WalkLeftUp2FaceRight:
+    walk_left
+    walk_up
+    walk_up
+    face_right
+    step_end
+
+InsideOutside_Movement_WalkLeftFaceUp:
+    walk_left
+    face_up
+    step_end
+
+InsideOutside_EventScript_ArtistFinishQuest::
+    fadescreen FADE_TO_BLACK
+    removeobject VAR_TEMP_2
+    applymovement VAR_TEMP_1, Common_Movement_FaceOriginalDirection
+    waitmovement 0
+    fadescreen FADE_FROM_BLACK
+    completequest QUEST_SMEARGLE
+    release
+    end
+    
+InsideOutside_EventScript_ArtistPostQuest::
+    faceplayer
+    speakername Name_Artist
+    msgbox InsideOutside_Text_ArtistPostQuest, MSGBOX_DEFAULT
+    closemessage
+    applymovement VAR_TEMP_1, Common_Movement_FaceOriginalDirection
+    waitmovement 0
+    release
+    end
+    
+InsideOutside_Text_ArtistAiyee:
+    .string "Aiyeeeeee!$"
+
+InsideOutside_Text_ArtistMySmeargle:
+    .string "My poor, darling Vinnie!\p"
+    .string "Upon the start of the storm, my Smeargle\n"
+    .string "and I had been separated by aggressive\l"
+    .string "hordes of raging Electrikes!\p"
+    .string "I could do nothing but watch in horror as\n"
+    .string "my poor, poor Vinnie was chased into the\l"
+    .string "woods by those wretches!\p"
+    .string "Please sir, you have to help Vinnie!$"
+
+InsideOutside_Text_ArtistThankYou:
+    .string "Uwaaaaa! Thank you, sir!\p"
+    .string "He must still be lost in the forest…\p"
+    .string "I don't think he could get very far on\n"
+    .string "his own…$"
+
+InsideOutside_Text_ArtistOVinnie:
+    .string "O Vinnie…\n"
+    .string "O my poor, sweet Vinnie…\p"
+    .string "Where hast thou gone…$"
+
+InsideOutside_Text_ArtistOhSir:
+    .string "Oh sir! I witnessed the most beautiful\n"
+    .string "sight!\p"
+    .string "Imagine, as I anguished over my scared\n"
+    .string "Vinnie, the moment I looked up to see him\l"
+    .string "ready to leap into my arms, tears streaming\l"
+    .string "down his eyes!\p"
+    .string "We were heartbroken to be apart so long!\p"
+    .string "Oh thank you! I do not know how I could even\n"
+    .string "repay you!$"
+
+InsideOutside_Text_ArtistGiveSmeargle:
+    .string "Oho! Vinnie wishes to stay with you a\n"
+    .string "little while longer!\p"
+    .string "As I say, worldly experience develops an\n"
+    .string "artist's eye for beauty!\p"
+    .string "Please, take him along with you while you\n"
+    .string "remain here in Porta Bella!\p"
+    .string "It shall be a perfect chance for you both\n"
+    .string "to support each other!$"
+
+InsideOutside_Text_ArtistPregame:
+    .string "This line here…\p"
+    .string "That there…$"
+
+InsideOutside_Text_ArtistSmeargle:
+    .string "Smurr…\p"
+    .string "The Smeargle is lost in thought painting\n"
+    .string "the city's bay…$"
+
+InsideOutside_Text_ArtistSmeargleSmurr:
+    .string "Smurr…$"
+
+InsideOutside_Text_ArtistSmeargleHappy:
+    .string "The Smeargle looks relaxed to be around\n"
+    .string "you!$"
+
+InsideOutside_Text_SmeargleLook:
+    .string "Smeargle is looking at you expectantly…$"
+
+InsideOutside_Text_ArtistPostQuest:
+    .string "Oho! I hope you are treating Vinnie well!\p"
+    .string "That snappy young Pokémon has much to learn\n"
+    .string "if he wishes to become a master artiste!$"
+    
 InsideOutside_Text_StudentStruggling:
     .string "Hmm, so Ground is immune to Electric,\n"
     .string "and Flying is immune to Ground…\p"

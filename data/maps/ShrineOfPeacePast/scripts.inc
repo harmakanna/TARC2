@@ -126,6 +126,8 @@ ShrineOfPeacePast_EventScript_HandleWarpEvents::
 	call_if_set FLAG_DEFEATED_SHRINE_GENIES, ShrineOfPeacePast_EventScript_HandlePresentGenieSpawns
 	returnqueststate QUEST_GET_INTO_THE_GROOVE
 	call_if_eq VAR_RESULT, 2, ShrineOfPeacePast_EventScript_HandleLostIdolSpawn
+	returnqueststate QUEST_SMEARGLE
+	call_if_eq VAR_RESULT, 2, ShrineOfPeacePast_EventScript_CheckLostSmeargleSpawn
 	goto ShrineOfPeacePast_EventScript_CelebiWarp
 	end
 
@@ -155,6 +157,24 @@ ShrineOfPeacePast_EventScript_SpawnLostIdol::
 	setvar VAR_CUTSCENE_FOREST_STATE, 1
 	return
 
+ShrineOfPeacePast_EventScript_CheckLostSmeargleSpawn::
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 0, ShrineOfPeacePast_EventScript_HandleLostSmeargleSpawn
+	return
+
+ShrineOfPeacePast_EventScript_HandleLostSmeargleSpawn::
+	call_if_set FLAG_CAN_SPAWN_SMEARGLE, ShrineOfPeacePast_EventScript_TrySpawnLostSmeargle
+	return
+
+ShrineOfPeacePast_EventScript_TrySpawnLostSmeargle::
+	randompercentage 25
+	call_if_eq VAR_RESULT, TRUE, ShrineOfPeacePast_EventScript_SpawnLostSmeargle
+	return
+
+ShrineOfPeacePast_EventScript_SpawnLostSmeargle::
+	setvar VAR_TRIGGER_CUTSCENE_FOREST, 1
+	setvar VAR_CUTSCENE_FOREST_STATE, 2 @Do Lost Smeargle Event in Cutscene Forest
+	return
+	
 ShrineOfPeacePast_EventScript_HandlePresentGenieSpawns::
 	randompercentage 10
 	call_if_eq VAR_RESULT, TRUE, ShrineOfPeacePast_EventScript_TrySpawnPresentGenies

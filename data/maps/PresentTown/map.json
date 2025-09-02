@@ -252,17 +252,19 @@
       "flag": "FLAG_HIDE_OUTSIDE_NPCS"
     },
     {
+      "local_id": "LOCALID_OUTSIDE_ARTIST",
       "graphics_id": "OBJ_EVENT_GFX_ARTIST",
       "x": 31,
       "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
+      "movement_range_x": 2,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_type": "TRAINER_TYPE_QUEST_GIVER",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_HIDE_OUTSIDE_NPCS"
+      "script": "InsideOutside_EventScript_ArtistOutside",
+      "flag": "FLAG_HIDE_OUTSIDE_NPCS",
+      "quest_id": 22
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
@@ -411,6 +413,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_HIDE_CUTSCENE_FOREST_IDOL"
+    },
+    {
+      "local_id": "LOCALID_OUTSIDE_SMEARGLE",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SMEARGLE)",
+      "x": 30,
+      "y": 18,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "InsideOutside_EventScript_ArtistSmeargle",
+      "flag": "FLAG_HIDE_OUTSIDE_SMEARGLE"
     }
   ],
   "warp_events": [

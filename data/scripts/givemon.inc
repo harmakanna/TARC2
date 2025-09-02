@@ -56,7 +56,6 @@ InsideOutside_EventScript_ReceivedProbopassFanfare::
 	bufferspeciesname STR_VAR_1, SPECIES_PROBOPASS
 	return
 
-
 PastTown_EventScript_FishermanGiveOverqwil::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_OVERQWIL
 	givemonwithot OT_TEE_OVERQWIL
@@ -869,6 +868,38 @@ Present_Flat1_2F_EventScript_ReceivedUnfezantFanfare::
 	bufferspeciesname STR_VAR_1, SPECIES_UNFEZANT
 	return
 
+InsideOutside_EventScript_ArtistGiveSmeargle::
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SMEARGLE
+	givemonwithot OT_LEO_SMEARGLE
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, InsideOutside_EventScript_ReceiveSmeargleParty
+	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, InsideOutside_EventScript_ReceiveSmearglePC
+	goto Common_EventScript_NoMoreRoomForPokemon
+	end
+
+InsideOutside_EventScript_ReceiveSmeargleParty::
+	call InsideOutside_EventScript_ReceivedSmeargleFanfare
+	goto InsideOutside_EventScript_ArtistFinishQuest
+	end
+	
+InsideOutside_EventScript_ReceiveSmearglePC::
+	call InsideOutside_EventScript_ReceivedSmeargleFanfare
+	call Common_EventScript_TransferredToPC
+	goto InsideOutside_EventScript_ArtistFinishQuest
+	end
+
+InsideOutside_EventScript_ReceivedSmeargleFanfare::
+	bufferspeciesname STR_VAR_2, SPECIES_SMEARGLE
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	msgbox InsideOutside_Text_YouReceivedSmeargle, MSGBOX_DEFAULT
+	waitmessage
+	waitfanfare
+	bufferspeciesname STR_VAR_1, SPECIES_SMEARGLE
+	return
+	
+InsideOutside_Text_YouReceivedSmeargle:
+	.string "Smeargle joined your party!$"
+	
 Present_Flat1_2F_Text_YouReceivedSwanna:
 	.string "You received a Swanna!$"
 

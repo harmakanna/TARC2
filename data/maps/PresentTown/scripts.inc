@@ -81,8 +81,19 @@ PresentTown_OnTransition:
 	call_if_unset FLAG_SYS_WEATHER_CTRL, PresentTown_EventScript_ClearTornadusNPCFlag
 	call_if_set FLAG_TALKED_TO_MATT_OUTSIDE, PresentTown_EventScript_AquaMemberFPositioning
 	call_if_unset FLAG_HIDE_CUTSCENE_FOREST_IDOL, PresentTown_EventScript_HideLostIdol
+	call_if_unset FLAG_HIDE_OUTSIDE_NPCS, PresentTown_EventScript_TrySetUpArtist
 	@call_if_eq VAR_PORTO_BELLA_CITY_STATE, 1, PresentTown_EventScript_PrepareAnabelForCutscene
 	end
+
+PresentTown_EventScript_TrySetUpArtist::
+	returnqueststate QUEST_SMEARGLE
+	call_if_lt VAR_RESULT, 3, PresentTown_EventScript_SetUpArtist
+	return
+
+PresentTown_EventScript_SetUpArtist::
+	setobjectmovementtype LOCALID_OUTSIDE_ARTIST, MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT
+	setobjectxyperm LOCALID_OUTSIDE_ARTIST, 29, 17
+	return
 
 PresentTown_EventScript_HideLostIdol::
 	hideobjectat LOCALID_CITY_FOREST_IDOL, MAP_PRESENT_TOWN
@@ -339,6 +350,7 @@ PresentTown_EventScript_StartStorm::
 	setflag FLAG_HIDE_CITYHALL_1F_EMPLOYEE
 	setflag FLAG_BOYFRIEND_WENT_OUT
 	setflag FLAG_HIDE_FLAT1_2F_FAITHFUL_MAN
+	setflag FLAG_HIDE_OUTSIDE_SMEARGLE
 	clearflag FLAG_HIDE_INSIDE_OUTSIDE_NPCS
 	clearflag FLAG_HIDE_SHRINE_PEACE_RANGER
 	clearflag FLAG_HIDE_SHRINE_PROSPERITY_RANGER
