@@ -1806,9 +1806,49 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Incineroar @ Heavy-Duty Boots  
+Ability: Intimidate  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Fake Out  
+- Knock Off  
+- Blaze Kick  
+- Parting Shot  
+
+Perrserker @ Rocky Helmet  
+Ability: Tough Claws  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Fake Out  
+- Shadow Claw  
+- Iron Head  
+- Stealth Rock  
+
+Meowscarada @ Choice Scarf  
+Ability: Protean  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Flower Trick  
+- U-turn  
+- Play Rough  
+
+Liepard @ Dark Gem  
+Ability: Limber  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Fake Out  
+- Foul Play  
+- Snarl  
+- Thunder Wave  
+
+Meowstic (M) @ Focus Sash  
+Ability: Infiltrator  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Fake Out  
+- Psychic  
+- Nasty Plot  
+- Thunderbolt  
 
 === TRAINER_BW_ACE_TRAINER_CULPRIT ===
 Name: Katherine
@@ -1817,12 +1857,61 @@ Pic: BW Ace Trainer F
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Check Bad Move
+AI: Basic Trainer
 Difficulty: Hard
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Incineroar @ Heavy-Duty Boots  
+Ability: Intimidate  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Fake Out  
+- Knock Off  
+- Blaze Kick  
+- Parting Shot  
+
+Perrserker @ Rocky Helmet  
+Ability: Tough Claws  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Fake Out  
+- Shadow Claw  
+- Iron Head  
+- Stealth Rock  
+
+Meowscarada @ Choice Scarf  
+Ability: Protean  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Flower Trick  
+- U-turn  
+- Play Rough  
+
+Liepard @ Dark Gem  
+Ability: Limber  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Fake Out  
+- Foul Play  
+- Snarl  
+- Thunder Wave  
+
+Meowstic (M) @ Focus Sash  
+Ability: Infiltrator  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Fake Out  
+- Psychic  
+- Nasty Plot  
+- Thunderbolt  
+
+Landorus (M) @ Life Orb  
+Ability: Sheer Force  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Extrasensory  
+- Scorching Sands  
+- Sludge Bomb  
+- Fly 
 
 === TRAINER_YOUNGSTER ===
 Name: Trey
@@ -1831,12 +1920,53 @@ Pic: Youngster New
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Check Bad Move
+AI: Basic Trainer
 Difficulty: Hard
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Rillaboom @ Assault Vest  
+Ability: Grassy Surge  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Grassy Glide  
+- Fake Out  
+- Bulk Up  
+- Drain Punch  
+
+Coalossal @ Focus Sash  
+Ability: Steam Engine  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Heat Crash  
+- Overheat  
+- Rock Slide  
+- Bulldoze  
+
+Dracovish @ Sitrus Berry  
+Ability: Strong Jaw  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Fishious Rend  
+- Ice Fang  
+- Psychic Fangs  
+- Super Fang  
+
+Copperajah  
+Ability: Heavy Metal  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Heavy Slam  
+- Supercell Slam  
+- High Horsepower  
+- Heat Crash  
+
+Hatterene (F) @ Leftovers  
+Ability: Magic Bounce  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Trick Room  
+- Dazzling Gleam  
+- Psychic  
+- Heal Pulse  
 
 === TRAINER_YOUNGSTER_CULPRIT ===
 Name: Trey
@@ -1848,9 +1978,59 @@ Double Battle: Yes
 AI: Check Bad Move
 Difficulty: Hard
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Rillaboom @ Assault Vest  
+Ability: Grassy Surge  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Grassy Glide  
+- Fake Out  
+- Bulk Up  
+- Drain Punch  
+
+Coalossal @ Focus Sash  
+Ability: Steam Engine  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Heat Crash  
+- Overheat  
+- Rock Slide  
+- Bulldoze  
+
+Dracovish @ Sitrus Berry  
+Ability: Strong Jaw  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Fishious Rend  
+- Ice Fang  
+- Psychic Fangs  
+- Super Fang  
+
+Copperajah  
+Ability: Heavy Metal  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Heavy Slam  
+- Supercell Slam  
+- High Horsepower  
+- Heat Crash  
+
+Hatterene (F) @ Leftovers  
+Ability: Magic Bounce  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Trick Room  
+- Dazzling Gleam  
+- Psychic  
+- Heal Pulse  
+
+Landorus (M) @ Life Orb  
+Ability: Sheer Force  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Extrasensory  
+- Scorching Sands  
+- Sludge Bomb  
+- Fly  
 
 === TRAINER_STUDENT ===
 Name: Paolo
