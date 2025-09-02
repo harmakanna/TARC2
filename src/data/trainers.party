@@ -1114,12 +1114,35 @@ Pic: Idol
 Gender: Female
 Music: Girl
 Double Battle: Yes
-AI: Check Bad Move
+AI: Basic Trainer
 Difficulty: Hard
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Pachirisu @ Sitrus Berry  
+Ability: Volt Absorb  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Follow Me  
+- Nuzzle  
+- Super Fang  
+- Charm  
+
+Gardevoir @ Choice Scarf  
+Ability: Trace  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Alluring Voice  
+- Aura Sphere  
+- Psychic Noise  
+- Trick  
+
+Cetitan  
+Ability: Thick Fat  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Icicle Crash  
+- Heavy Slam  
+- Earthquake  
+- Facade  
 
 === TRAINER_SOPHIA ===
 Name: Sophia
@@ -1128,12 +1151,44 @@ Pic: Idol
 Gender: Female
 Music: Girl
 Double Battle: Yes
-AI: Check Bad Move
+AI: Basic Trainer
 Difficulty: Hard
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sylveon  
+Ability: Pixilate  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Mystical Fire  
+- Hyper Voice  
+- Substitute  
+- Quick Attack  
+
+Blissey (F) @ Rocky Helmet  
+Ability: Healer  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Helping Hand  
+- Teleport  
+- Seismic Toss  
+- Soft-Boiled  
+
+Alomomola  
+Ability: Regenerator  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Flip Turn  
+- Helping Hand  
+- Wish  
+- Knock Off  
+
+Flamigo @ Sitrus Berry  
+Ability: Scrappy  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Close Combat  
+- Acrobatics  
+- Lunge  
+- Detect  
 
 === TRAINER_LISIA ===
 Name: Lisia
@@ -1142,53 +1197,53 @@ Pic: Lisia
 Gender: Female
 Music: Girl
 Double Battle: Yes
-AI: Check Bad Move
+AI: Basic Trainer
 Difficulty: Hard
 
 Altaria @ Altarianite  
 Ability: Cloud Nine  
 Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
 - Dragon Claw  
 - Facade  
 - Dual Wingbeat  
 - Dragon Dance  
 
-Milotic @ Rocky Helmet  
-Ability: Marvel Scale  
+Glimmora @ Wise Glasses  
+Ability: Toxic Debris  
 Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Scald  
-- Icy Wind  
-- Life Dew  
-- Dragon Cheer  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Power Gem  
+- Sludge Bomb  
+- Energy Ball  
+- Spiky Shield  
 
 Aurorus @ Focus Sash  
 Ability: Snow Warning  
 Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
 - Aurora Veil  
 - Earth Power  
 - Blizzard  
 - Thunderbolt  
 
-Vivillon-Marine  
+Vivillon-Fancy @ Covert Cloak  
 Ability: Friend Guard  
 Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
 - Pollen Puff  
 - Rage Powder  
 - Sleep Powder  
-- Protect  
+- Tailwind  
 
-Glimmora  
-Ability: Toxic Debris  
+Azumarill @ Fairy Feather  
+Ability: Huge Power  
 Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Power Gem  
-- Sludge Bomb  
-- Energy Ball  
-- Spiky Shield  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Aqua Jet  
+- Aqua Tail  
+- Power-Up Punch  
+- Play Rough  
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_1 ===
 Name: Geoff
@@ -1530,52 +1585,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Energy Ball  
 - Scald  
 - Encore  
-
-=== TRAINER_DAISY ===
-Name: DAISY
-Class: Battle Girl
-Pic: Battle Girl
-Gender: Female
-Music: Intense
-Double Battle: Yes
-AI: Basic Trainer
-Difficulty: Hard
-
-Hitmontop (M) @ Assault Vest  
-Ability: Intimidate  
-Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Fake Out  
-- Triple Kick  
-- Triple Axel  
-- Rapid Spin  
-
-Bellossom  
-Ability: Healer  
-Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Sludge Bomb  
-- Energy Ball  
-- Pollen Puff  
-- Quiver Dance  
-
-Gardevoir  
-Ability: Synchronize  
-Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Alluring Voice  
-- Psychic  
-- Aura Sphere  
-- Thunderbolt  
-
-Quaquaval @ Focus Sash
-Ability: Moxie   
-Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Acrobatics  
-- Aqua Step  
-- Reversal  
-- Bulk Up  
 
 === TRAINER_SAMANTHA ===
 Name: Samantha
@@ -2382,77 +2391,6 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Sharpedo
 Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-=== TRAINER_LEAH ===
-Name: Leah
-Class: Expert
-Pic: Expert F
-Gender: Female
-Music: Suspicious
-Double Battle: Yes
-AI: Basic Trainer
-
-Cursola  
-Ability: Perish Body  
-Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Curse  
-- Shadow Ball  
-- Reflect  
-- Meteor Beam
-
-Houndstone @ Choice Scarf  
-Ability: Fluffy  
-Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Last Respects  
-- Play Rough  
-- Trick
-
-=== TRAINER_DAISY ===
-Name: Daisy
-Class: Battle Girl
-Pic: Battle Girl
-Gender: Female
-Music: Intense
-Double Battle: Yes
-AI: Basic Trainer
-
-Hitmontop (M) @ Assault Vest  
-Ability: Intimidate  
-Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Fake Out  
-- Triple Kick  
-- Triple Axel  
-- Rapid Spin  
-
-Bellossom  
-Ability: Healer  
-Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Sludge Bomb  
-- Energy Ball  
-- Pollen Puff  
-- Quiver Dance  
-
-Gardevoir  
-Ability: Synchronize  
-Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Alluring Voice  
-- Psychic  
-- Aura Sphere  
-- Thunderbolt  
-
-Quaquaval @ Focus Sash
-Ability: Moxie   
-Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Acrobatics  
-- Aqua Step  
-- Reversal  
-- Bulk Up  
 
 === TRAINER_ROSE_1 ===
 Name: ROSE
