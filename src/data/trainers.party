@@ -1722,9 +1722,55 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Blastoise  
+Ability: Torrent  
+Level: 50  
+Tera Type: Water  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Surf  
+- Strength  
+- Ice Beam  
+- Rapid Spin  
+
+Exeggutor @ Leftovers  
+Ability: Chlorophyll  
+Level: 50  
+Tera Type: Grass  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Psychic  
+- Giga Drain  
+- Leech Seed  
+- Flash  
+
+Rhydon @ Eviolite  
+Ability: Lightning Rod  
+Level: 50  
+Tera Type: Ground  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Body Press  
+- Earthquake  
+- Rock Slide  
+- Cut  
+
+Alakazam @ Life Orb  
+Ability: Magic Guard  
+Level: 50  
+Tera Type: Psychic  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Recover  
+- Psyshock  
+- Shadow Ball  
+- Disable  
+
+Pidgeot-Mega @ Pidgeotite  
+Ability: No Guard  
+Level: 50  
+Tera Type: Normal  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Fly  
+- Heat Wave  
+- Air Slash  
+- Roost  
 
 === TRAINER_BLUE_CULPRIT ===
 Name: Blue
@@ -1736,9 +1782,64 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Blastoise  
+Ability: Torrent  
+Level: 50  
+Tera Type: Water  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Surf  
+- Strength  
+- Ice Beam  
+- Rapid Spin  
+
+Exeggutor @ Leftovers  
+Ability: Chlorophyll  
+Level: 50  
+Tera Type: Grass  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Psychic  
+- Giga Drain  
+- Leech Seed  
+- Flash  
+
+Rhydon @ Eviolite  
+Ability: Lightning Rod  
+Level: 50  
+Tera Type: Ground  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Body Press  
+- Earthquake  
+- Rock Slide  
+- Cut  
+
+Alakazam @ Life Orb  
+Ability: Magic Guard  
+Level: 50  
+Tera Type: Psychic  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Recover  
+- Psyshock  
+- Shadow Ball  
+- Disable  
+
+Pidgeot-Mega @ Pidgeotite  
+Ability: No Guard  
+Level: 50  
+Tera Type: Normal  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Fly  
+- Heat Wave  
+- Air Slash  
+- Roost  
+
+Landorus (M) @ Life Orb  
+Ability: Sheer Force  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Extrasensory  
+- Scorching Sands  
+- Sludge Bomb  
+- Fly 
 
 === TRAINER_MAY ===
 Name: May
@@ -1750,9 +1851,55 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Swellow @ Flame Orb  
+Ability: Guts  
+Level: 50  
+Tera Type: Normal  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Quick Attack  
+- Fly  
+- Steel Wing  
+- U-turn  
+
+Grumpig @ Salac Berry  
+Ability: Gluttony  
+Level: 50  
+Tera Type: Psychic  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Extrasensory  
+- Power Gem  
+- Helping Hand  
+- Calm Mind  
+
+Wailord @ Life Orb  
+Ability: Pressure  
+Level: 50  
+Tera Type: Water  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Waterfall  
+- Bounce  
+- Zen Headbutt  
+- Ice Beam  
+
+Linoone @ Starf Berry  
+Ability: Gluttony  
+Level: 50  
+Tera Type: Normal  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Strength  
+- Cut  
+- Rock Smash  
+- Surf  
+
+Blaziken @ Focus Sash  
+Ability: Blaze  
+Level: 50  
+Tera Type: Fire  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Sky Uppercut  
+- Brave Bird  
+- Flamethrower  
+- Flame Charge  
 
 === TRAINER_MAY_CULPRIT ===
 Name: May
@@ -1764,9 +1911,64 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Swellow @ Flame Orb  
+Ability: Guts  
+Level: 50  
+Tera Type: Normal  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Quick Attack  
+- Fly  
+- Steel Wing  
+- U-turn  
+
+Grumpig @ Salac Berry  
+Ability: Gluttony  
+Level: 50  
+Tera Type: Psychic  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Extrasensory  
+- Power Gem  
+- Helping Hand  
+- Calm Mind  
+
+Wailord @ Life Orb  
+Ability: Pressure  
+Level: 50  
+Tera Type: Water  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Waterfall  
+- Bounce  
+- Zen Headbutt  
+- Ice Beam  
+
+Linoone @ Starf Berry  
+Ability: Gluttony  
+Level: 50  
+Tera Type: Normal  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Strength  
+- Cut  
+- Rock Smash  
+- Surf  
+
+Blaziken @ Focus Sash  
+Ability: Blaze  
+Level: 50  
+Tera Type: Fire  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Sky Uppercut  
+- Brave Bird  
+- Flamethrower  
+- Flame Charge  
+
+Landorus (M) @ Life Orb  
+Ability: Sheer Force  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Extrasensory  
+- Scorching Sands  
+- Sludge Bomb  
+- Fly 
 
 === TRAINER_LEAF ===
 Name: Leaf
@@ -1778,9 +1980,55 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Clefable  
+Ability: Magic Guard  
+Level: 50  
+Tera Type: Fairy  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Alluring Voice  
+- Flamethrower  
+- Ice Beam  
+- Calm Mind  
+
+Venusaur  
+Ability: Overgrow  
+Level: 50  
+Tera Type: Grass  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Cut  
+- Giga Drain  
+- Sludge Bomb  
+- Leech Seed  
+
+Jolteon  
+Ability: Volt Absorb  
+Level: 50  
+Tera Type: Electric  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Thunderbolt  
+- Shadow Ball  
+- Signal Beam  
+- Substitute  
+
+Snorlax @ Chesto Berry  
+Ability: Thick Fat  
+Level: 50  
+Tera Type: Normal  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Strength  
+- Rock Smash  
+- Surf  
+- Rest  
+
+Dragonite @ Normal Gem  
+Ability: Inner Focus  
+Level: 50  
+Tera Type: Dragon  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Extreme Speed  
+- Dragon Claw  
+- Fly  
+- Dragon Dance  
 
 === TRAINER_LEAF_CULPRIT ===
 Name: Leaf
@@ -1792,9 +2040,64 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Clefable  
+Ability: Magic Guard  
+Level: 50  
+Tera Type: Fairy  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Alluring Voice  
+- Flamethrower  
+- Ice Beam  
+- Calm Mind  
+
+Venusaur  
+Ability: Overgrow  
+Level: 50  
+Tera Type: Grass  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Cut  
+- Giga Drain  
+- Sludge Bomb  
+- Leech Seed  
+
+Jolteon  
+Ability: Volt Absorb  
+Level: 50  
+Tera Type: Electric  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Thunderbolt  
+- Shadow Ball  
+- Signal Beam  
+- Substitute  
+
+Snorlax @ Chesto Berry  
+Ability: Thick Fat  
+Level: 50  
+Tera Type: Normal  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Strength  
+- Rock Smash  
+- Surf  
+- Rest  
+
+Dragonite @ Normal Gem  
+Ability: Inner Focus  
+Level: 50  
+Tera Type: Dragon  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Extreme Speed  
+- Dragon Claw  
+- Fly  
+- Dragon Dance  
+
+Landorus (M) @ Life Orb  
+Ability: Sheer Force  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Extrasensory  
+- Scorching Sands  
+- Sludge Bomb  
+- Fly 
 
 === TRAINER_BW_ACE_TRAINER ===
 Name: Katherine
