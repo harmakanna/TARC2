@@ -22,13 +22,13 @@
 #define OT_TEE_DRAGALGE        18
 #define OT_ALICE_TAUROS        19
 #define OT_ALICE_MILTANK       20
-#define OT_BARTOZ_GALVANTULA   21
-#define OT_BARTOZ_PROBOPASS    22
+#define OT_PAOLO_GALVANTULA    21
+#define OT_PAOLO_PROBOPASS     22
 #define OT_MAY_WALREIN         23
 #define OT_MAY_CAMERUPT        24
 #define OT_BLUE_GOLEM          25
 #define OT_BLUE_MACHAMP        26
-#define OT_BETH_SWANNA         27
-#define OT_BETH_UNFEZANT       28
+#define OT_BEATRICE_SWANNA     27
+#define OT_BEATRICE_UNFEZANT   28
 
 #endif //GUARD_CONSTANTS_OTS_H

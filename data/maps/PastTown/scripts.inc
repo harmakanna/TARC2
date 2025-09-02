@@ -397,12 +397,9 @@ PastTown_EventScript_ScientistQuestReward::
 	speakername NULL
 	msgbox PastTown_Text_LookerHandedOverTheBattery, MSGBOX_DEFAULT
 	speak LOCALID_PAST_SCIENTIST, VAR_0x8005, Name_Past_Scientist, PastTown_Text_ScientistReward
-	multichoice 0, 6, MULTI_SCIENTIST_GIVEMON, TRUE
-	goto_if_eq VAR_RESULT, 0, PastTown_EventScript_ScientistGiveGalvantula
-	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_ScientistGiveProbopass
-	end
-
-PastTown_EventScript_ScientistQuestFinish::
+	speakername NULL
+	giveitem ITEM_TM_FOCUS_PUNCH, 1 @ Substitute
+	closemessage
 	applymovement LOCALID_PAST_SCIENTIST, Common_Movement_FaceDown
 	waitmovement 0
 	completequest QUEST_EUREKA
@@ -1703,11 +1700,12 @@ PastTown_Text_ScientistReward:
 	.string "Now we can use Mareep's wool to power\n"
 	.string "our mills!\p"
 	.string "No more need for all this wind energy!\p"
-	.string "I had researched these other two\n"
-	.string "Pokémon to no success prior.\p"
-	.string "Perhaps one might assist you on your\n"
-	.string "quest to save the future?\p"
-	.string "Which would you prefer?$"
+	.string "Say, maybe this could be of use to\n"
+	.string "you, my fellow man?\p"
+	.string "I had learnt how to store the memory\n"
+	.string "of a Pokémon move onto this handy\l"
+	.string "device I call a disk!\p"
+	.string "Take it, it's yours!$"
 	
 PastTown_Text_ScientistComplete:
 	.string "This charged battery holds the key\n"

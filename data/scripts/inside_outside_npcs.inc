@@ -7,6 +7,13 @@ Common_EventScript_MoveInsideNPCsOutside::
     clearflag FLAG_HIDE_OUTSIDE_NPCS
     setflag FLAG_HIDE_INSIDE_OUTSIDE_NPCS
     setflag FLAG_HIDE_TORNADUS_NPCS
+    returnqueststate QUEST_FOREVER_FAITHFUL
+    call_if_lt VAR_RESULT, 3, InsideOutside_EventScript_AddFaithfulQuest
+    return
+
+InsideOutside_EventScript_AddFaithfulQuest::
+    clearflag FLAG_HIDE_PORT_FAITHFUL_MAN
+    clearflag FLAG_HIDE_PORT_AROMATISSE
     return
 
 InsideOutside_EventScript_GentlemanInside::
@@ -526,6 +533,230 @@ InsideOutside_EventScript_AceTrainerCulpritPostQuest::
     closemessage
     release
     end
+
+InsideOutside_EventScript_StudentInside::
+    setvar VAR_TEMP_1, LOCALID_INSIDE_STUDENT
+    goto InsideOutside_EventScript_Student
+    end
+
+InsideOutside_EventScript_StudentOutside::
+    setvar VAR_TEMP_1, LOCALID_OUTSIDE_STUDENT
+    goto InsideOutside_EventScript_Student
+    end
+
+InsideOutside_EventScript_Student::
+    lock
+    call Script_GetNPCFacingDirection
+    goto_if_unset FLAG_SYS_MAIN_GAME_START, InsideOutside_EventScript_StudentPregame
+    returnqueststate QUEST_INVERSE
+    switch VAR_RESULT
+    case 1, InsideOutside_EventScript_StudentPreQuest
+    case 2, InsideOutside_EventScript_StudentQuest
+    case 4, InsideOutside_EventScript_StudentPostQuest
+    release
+    end
+
+InsideOutside_EventScript_StudentPregame::
+    msgbox InsideOutside_Text_StudentPregame, MSGBOX_DEFAULT
+    closemessage
+    release
+    end
+    
+InsideOutside_EventScript_StudentPreQuest::
+    speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentStruggling
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_WhatSeemsToBeTheProblem
+    speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentBrainGoingInLoops
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_ThereHasToBeSomething
+    speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentWhatIfWe
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerSureLetsTryIt
+    speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentGreat
+    startquest QUEST_INVERSE
+    release
+    end
+
+InsideOutside_EventScript_StudentQuest::
+    speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentHiSir
+    playse SE_PIN
+    msgbox InsideOutside_Text_StudentAreYouReady, MSGBOX_DEFAULT
+    goto_if_eq VAR_RESULT, NO, InsideOutside_EventScript_StudentDeclined
+    msgbox InsideOutside_Text_StudentLetsGetStarted, MSGBOX_DEFAULT
+    setflag FLAG_SYS_INVERSE_BATTLE
+    setflag FLAG_SYS_NO_WHITEOUT
+    trainerbattle_no_intro TRAINER_STUDENT, InsideOutside_Text_StudentDefeated
+    specialvar VAR_RESULT, GetBattleOutcome
+    goto_if_eq VAR_RESULT, B_OUTCOME_LOST, InsideOutside_EventScript_LostToStudent
+    goto_if_eq VAR_RESULT, B_OUTCOME_RAN, InsideOutside_EventScript_LostToStudent
+    speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentThatDidntHelp
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerSorryToHear
+    speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentNotYourFault
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerStudyGroup
+    closemessage
+    playse SE_PIN
+    applymovement VAR_TEMP_1, Common_Movement_ExclamationMark
+    waitmovement 0
+    delay 50
+    speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentYoureRight
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerHappyToSpurAnIdea
+    speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentGivePokemon
+    multichoice 0, 6, MULTI_STUDENT_GIVEMON, TRUE
+	goto_if_eq VAR_RESULT, 0, InsideOutside_EventScript_StudentGiveGalvantula
+	goto_if_eq VAR_RESULT, 1, InsideOutside_EventScript_StudentGiveProbopass
+    release
+    end
+
+InsideOutside_EventScript_StudentDeclined:
+    msgbox InsideOutside_Text_StudentOhOkay, MSGBOX_DEFAULT
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_SorryImBusy
+    closemessage
+    release
+    end
+
+InsideOutside_EventScript_LostToStudent::
+    speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_LostToStudent
+    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_SorryICouldntHelp
+    closemessage
+    clearflag FLAG_SYS_INVERSE_BATTLE
+    clearflag FLAG_SYS_NO_WHITEOUT
+    release
+    end
+
+InsideOutside_EventScript_FinishStudentQuest::
+    completequest QUEST_INVERSE
+    clearflag FLAG_SYS_INVERSE_BATTLE
+    clearflag FLAG_SYS_NO_WHITEOUT
+    release
+    end
+
+InsideOutside_EventScript_StudentPostQuest::
+    speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentBuckleDown
+    closemessage
+    release
+    end
+
+InsideOutside_Text_StudentStruggling:
+    .string "Hmm, so Ground is immune to Electric,\n"
+    .string "and Flying is immune to Ground…\p"
+    .string "But Flying's weak to Rock…\n"
+    .string "I thought Rock and Ground were basically\n"
+    .string "the same type otherwise…?\p"
+    .string "And I can't wrap my head around the Bug\n"
+    .string "type…\p"
+    .string "Fairy resists it, but is Fairy super-\n"
+    .string "effective to Bug?\p"
+    .string "Do bugs resist electricity?\p"
+    .string "Can you even PUNCH a bug or is it as\n"
+    .string "effective as punching birds!?\p"
+    .string "Gah! I'll never get this down!$"
+
+InsideOutside_Text_StudentBrainGoingInLoops:
+    .string "I've been going in loops for hours\n"
+    .string "studying for an upcoming test!\p"
+    .string "Any time I think I've gotten one\n"
+    .string "type matchup down, I forget its nuances\l"
+    .string "once I move on to the next!\p"
+    .string "Heck, I asked my classmate Valentina for\n"
+    .string "her notes, but her handwriting is so\l"
+    .string "unreadable…\p"
+    .string "I hate studying the textbook…\n"
+    .string "I just want to battle…$"
+
+InsideOutside_Text_StudentWhatIfWe:
+    .string "The past couple hours, I've been\n"
+    .string "toying with the idea that an inverse\l"
+    .string "battle might help me learn better than\l"
+    .string "a stupid textbook!\p"
+    .string "When the type matchups are flipped, I'd\n"
+    .string "be able to see the interactions from a\l"
+    .string "new perspective!\p"
+    .string "It's a fantastic idea, if I do say so\n"
+    .string "myself!$"
+
+InsideOutside_Text_StudentHiSir:
+    .string "Hi, sir!$"
+
+InsideOutside_Text_StudentAreYouReady:
+    .string "Are you ready for an inverse battle?$"
+
+InsideOutside_Text_StudentLetsGetStarted:
+    .string "Fantastic! Let's get started!$"
+
+InsideOutside_Text_StudentOhOkay:
+    .string "Oh, okay…\n"
+    .string "I'll just flunk my test…$"
+
+InsideOutside_Text_LookerSureLetsTryIt:
+    .string "Hmm… I believe that there is nothing\n"
+    .string "more valuable than the knowledge inside\l"
+    .string "a book…\p"
+    .string "But sure. We can try the idea out.$"
+
+InsideOutside_Text_StudentGreat:
+    .string "Great! Let me know once you're all\n"
+    .string "ready to battle!\p"
+    .string "I'll be waiting!$"
+
+InsideOutside_Text_StudentThatDidntHelp:
+    .string "Well… That didn't help.\n"
+    .string "I still feel as lost as I was before!$"
+
+InsideOutside_Text_LookerSorryToHear:
+    .string "I'm sorry to hear. Would I be able to\n"
+    .string "help in another way?$"
+
+InsideOutside_Text_StudentNotYourFault:
+    .string "Oh, it's not your fault… I think I'm\n"
+    .string "just running away from studying.\p"
+    .string "I think I just need to buckle down and\n"
+    .string "really study the textbook, front-to-\l"
+    .string "back if I want to ace this test.\p"
+    .string "I appreciate the battle, at least.$"
+
+InsideOutside_Text_LookerStudyGroup:
+    .string "Hmm… Perhaps a study group might be\n"
+    .string "beneficial for you?\p"
+    .string "In my line of work, I find bouncing\n"
+    .string "ideas off another person vastly\l"
+    .string "improves my own deductive capabilities…$"
+
+InsideOutside_Text_StudentYoureRight:
+    .string "Wait, you're right! Why didn't I think\n"
+    .string "of that before?\p"
+    .string "I should ask Valentina if we can study\n"
+    .string "together!\p"
+    .string "Hanging with somebody should help me get\n"
+    .string "past all my mental blocks!$"
+
+InsideOutside_Text_LookerHappyToSpurAnIdea:
+    .string "Well, I'm happy to have spurred on that\n"
+    .string "idea!$"
+
+InsideOutside_Text_StudentGivePokemon:
+    .string "Thank you for the help! I'm gonna be\n"
+    .string "hitting the books for a bit, so I won't\l"
+    .string "have much time to battle.\p"
+    .string "Would you like to borrow one of my\n"
+    .string "Pokémon so they can stay active?$"
+
+InsideOutside_Text_LostToStudent:
+    .string "Mmm… That didn't help…\p"
+    .string "I don't know why, but I just don't\n"
+    .string "get what I'm missing…$"
+
+InsideOutside_Text_StudentDefeated:
+    .string "Mmm… Maybe this isn't the right\n"
+    .string "approach?$"
+
+InsideOutside_Text_StudentBuckleDown:
+    .string "I think I just need to buckle down and\n"
+    .string "really study the textbook, front-to-\l"
+    .string "back if I want to ace this test.\p"
+    .string "I appreciate the battle, at least.\n"
+    .string "It helped clear my head!$"
+
+InsideOutside_Text_StudentPregame:
+    .string "Mmm… I can't read any of these notes…\p"
+    .string "I knew asking Valentina for her\n"
+    .string "study materials was a bad idea…$"
 
 InsideOutside_Text_YoungsterThisStorm:
     .string "Gee, this storm came out of nowhere!\p"

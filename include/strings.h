@@ -2539,6 +2539,36 @@ extern const u8 gText_SubQuestAWholeNewWorld_Name[];
 extern const u8 gText_SubQuestAWholeNewWorld_Desc[];
 extern const u8 gText_SubQuestAWholeNewWorld_Map[];
 
+//Evil Luxray
+extern const u8 gText_SubQuestEvilLuxray_Name[];
+extern const u8 gText_SubQuestEvilLuxray_Desc[];
+extern const u8 gText_SubQuestEvilLuxray_Map[];
+
+//Catchmons
+extern const u8 gText_SubQuestCatchMons_NameRodent[];
+extern const u8 gText_SubQuestCatchMons_DescRodent[];
+extern const u8 gText_SubQuestCatchMons_NameLurantis[];
+extern const u8 gText_SubQuestCatchMons_DescLurantis[];
+extern const u8 gText_SubQuestCatchMons_NameLuxray[];
+extern const u8 gText_SubQuestCatchMons_DescLuxray[];
+extern const u8 gText_SubQuestCatchMons_NameToedscruel[];
+extern const u8 gText_SubQuestCatchMons_DescToedscruel[];
+extern const u8 gText_SubQuestCatchMons_NameFrosmoth[];
+extern const u8 gText_SubQuestCatchMons_DescFrosmoth[];
+extern const u8 gText_SubQuestCatchMons_NameKleavor[];
+extern const u8 gText_SubQuestCatchMons_DescKleavor[];
+extern const u8 gText_SubQuestCatchMons_NameGoodra[];
+extern const u8 gText_SubQuestCatchMons_DescGoodra[];
+extern const u8 gText_SubQuestCatchMons_NameBeheeyem[];
+extern const u8 gText_SubQuestCatchMons_DescBeheeyem[];
+extern const u8 gText_SubQuestCatchMons_NameAerodactyl[];
+extern const u8 gText_SubQuestCatchMons_DescAerodactyl[];
+extern const u8 gText_SubQuestCatchMons_NameScreamTail[];
+extern const u8 gText_SubQuestCatchMons_DescScreamTail[];
+extern const u8 gText_SubQuestCatchMons_NameWoChien[];
+extern const u8 gText_SubQuestCatchMons_DescWoChien[];
+extern const u8 gText_SubQuestCatchMons_Map[];
+
 // Berry Blender
 extern const u8 gText_SavingDontTurnOff2[];
 extern const u8 gText_BlenderMaxSpeedRecord[];

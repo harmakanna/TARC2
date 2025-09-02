@@ -79,6 +79,7 @@ Present_PokemonCenter_EventScript_IdolPleaseFindMyFriends::
 
 Present_PokemonCenter_EventScript_Pachirisu::
 	lock
+	faceplayer
 	waitse
 	playmoncry SPECIES_PACHIRISU, CRY_MODE_NORMAL
 	msgbox Present_PokemonCenter_Text_Pachirisu, MSGBOX_DEFAULT
