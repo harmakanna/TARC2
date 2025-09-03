@@ -7732,10 +7732,10 @@ static const struct LevelUpMove sShroomishLevelUpLearnset[] = {
 static const struct LevelUpMove sBreloomLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_PROTECT),
     LEVEL_UP_MOVE( 1, MOVE_MACH_PUNCH),
-    LEVEL_UP_MOVE( 1, MOVE_SEED_BOMB),
+    LEVEL_UP_MOVE( 1, MOVE_BULLET_SEED),
     LEVEL_UP_MOVE( 1, MOVE_ROCK_TOMB),
     LEVEL_UP_MOVE( 1, MOVE_SPORE),
-    LEVEL_UP_MOVE( 1, MOVE_GIGA_DRAIN),
+    LEVEL_UP_MOVE( 1, MOVE_SEED_BOMB),
     LEVEL_UP_MOVE( 1, MOVE_BULLDOZE),
     LEVEL_UP_MOVE( 1, MOVE_POUNCE),
     LEVEL_UP_MOVE( 1, MOVE_BULK_UP),
