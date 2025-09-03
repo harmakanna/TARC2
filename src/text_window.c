@@ -61,7 +61,7 @@ static const u16 sTextWindowPalettes[][16] =
 static const struct TilesPal sWindowFrames[WINDOW_FRAMES_COUNT] =
 {
     {gTextWindowFrame1_Gfx, gTextWindowFrame1_Pal},
-    {sTextWindowFrame2_Gfx, sTextWindowFrame2_Pal},
+    /*{sTextWindowFrame2_Gfx, sTextWindowFrame2_Pal},
     {sTextWindowFrame3_Gfx, sTextWindowFrame3_Pal},
     {sTextWindowFrame4_Gfx, sTextWindowFrame4_Pal},
     {sTextWindowFrame5_Gfx, sTextWindowFrame5_Pal},
@@ -79,7 +79,7 @@ static const struct TilesPal sWindowFrames[WINDOW_FRAMES_COUNT] =
     {sTextWindowFrame17_Gfx, sTextWindowFrame17_Pal},
     {sTextWindowFrame18_Gfx, sTextWindowFrame18_Pal},
     {sTextWindowFrame19_Gfx, sTextWindowFrame19_Pal},
-    {sTextWindowFrame20_Gfx, sTextWindowFrame20_Pal}
+    {sTextWindowFrame20_Gfx, sTextWindowFrame20_Pal}*/
 };
 
 static const u16 sTextWindowDexNavFrame[] = INCBIN_U16("graphics/text_window/dexnav_pal.gbapal");
