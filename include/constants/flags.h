@@ -1222,7 +1222,7 @@
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET                     0x491
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 
-#define FLAG_HIDE_FOREST TOGEDEMARU                                           0x493 // Unused Flag
+#define FLAG_HIDE_FOREST_TOGEDEMARU                                           0x493 // Unused Flag
 #define FLAG_HIDE_FOREST_DEDENNE                                           0x494 // Unused Flag
 #define FLAG_HIDE_FOREST_LURANTIS                                    0x495 // Unused Flag
 #define FLAG_HIDE_FOREST_LUXRAY                                   0x496 // Unused Flag
