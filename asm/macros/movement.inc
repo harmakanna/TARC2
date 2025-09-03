@@ -174,3 +174,6 @@
 	create_movement_action end_loop, MOVEMENT_ACTION_END_LOOP
 	create_movement_action loop_last_action, MOVEMENT_ACTION_LOOP_LAST_ACTION
 	create_movement_action step_end, MOVEMENT_ACTION_STEP_END
+
+	create_movement_action shake_horizontal, MOVEMENT_ACTION_SHAKE_HORIZONTAL
+	create_movement_action shake_vertical, MOVEMENT_ACTION_SHAKE_VERTICAL
