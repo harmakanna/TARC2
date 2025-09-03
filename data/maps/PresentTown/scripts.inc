@@ -1068,14 +1068,13 @@ PresentTown_Text_CityHallSign:
 	.string "City Hall$"
 
 PresentTown_Text_TrainerTipsEVSign:
-	.string "Trainer Tips:\p"
-	.string "Vitamins and feathers have been\n"
-	.string "reworked!\p"
-	.string "Take one vitamin to boost that stat to\n"
-	.string "half its max EVs, and take two to boost\l"
-	.string "the stat to a full 252 EVs!\p"
-	.string "Battles, on the other hand, will no\n"
-	.string "longer provide EVs!$"
+	.string "Trainer Tips:\n"
+	.string "Battles no longer provide EVs!\p"
+	.string "There is a new EV-boosting item in this\n"
+	.string "game, Mega-Mochi!\p"
+	.string "Eat one Mega-Mochi to boost that stat to\n"
+	.string "half its max EVs, and eat two to boost\l"
+	.string "that stat to a full 252 EVs!$"
 
 PresentTown_Text_CelebiSocietySign:
 	.string "Porta Bella City\n"

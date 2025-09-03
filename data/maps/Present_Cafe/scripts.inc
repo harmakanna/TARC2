@@ -1,7 +1,12 @@
 Present_Cafe_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, PresentCafe_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, PresentCafe_OnResume
 	.byte 0
 
+PresentCafe_OnResume:
+	special HealPlayerParty
+	end
+	
 PresentCafe_OnTransition:
 	call_if_set FLAG_SWEET_TOOTH_WENT_CRAZY, PresentCafe_EventScript_PlaceCook
 	end

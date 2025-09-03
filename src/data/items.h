@@ -31,29 +31,29 @@ static const u8 sMaxReviveDesc[]      = _("Revives a fainted\n"
                                           "Pokémon with all\n"
                                           "its HP.");
 
-static const u8 sHealthFeatherDesc[]  = _("An item that raises\n"
-                                          "the base HP of\n"
-                                          "a Pokémon.");
+static const u8 sHealthFeatherDesc[]  = _("Mochi that raises the\n"
+                                          "HP of a Pokémon\n"
+                                          "to half its max.");
 
-static const u8 sMuscleFeatherDesc[]  = _("An item that raises\n"
-                                          "the base Attack of\n"
-                                          "a Pokémon.");
+static const u8 sMuscleFeatherDesc[]  = _("Mochi that raises the\n"
+                                          "Attack of a Pokémon\n"
+                                          "to half its max.");
 
-static const u8 sResistFeatherDesc[]  = _("An item that raises\n"
-                                          "the base Defense\n"
-                                          "of a Pokémon.");
+static const u8 sResistFeatherDesc[]  = _("Mochi that raises the\n"
+                                          "Defense of a Pokémon\n"
+                                          "to half its max.");
 
-static const u8 sGeniusFeatherDesc[]  = _("An item that raises\n"
-                                          "the base Sp. Atk.\n"
-                                          "of a Pokémon.");
+static const u8 sGeniusFeatherDesc[]  = _("Mochi that raises the\n"
+                                          "Sp. Atk of a Pokémon\n"
+                                          "to half its max.");
 
-static const u8 sCleverFeatherDesc[]  = _("An item that raises\n"
-                                          "the base Sp. Def.\n"
-                                          "of a Pokémon.");
+static const u8 sCleverFeatherDesc[]  = _("Mochi that raises the\n"
+                                          "Sp. Def of a Pokémon\n"
+                                          "to half its max.");
 
-static const u8 sSwiftFeatherDesc[]   = _("An item that raises\n"
-                                          "the base Speed of\n"
-                                          "a Pokémon.");
+static const u8 sSwiftFeatherDesc[]   = _("Mochi that raises the\n"
+                                          "Speed of a Pokémon\n"
+                                          "to half its max.");
 
 static const u8 sBigMushroomDesc[]    = _("A rare mushroom\n"
                                           "that would sell at a\n"
@@ -14197,10 +14197,10 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_HearthflameMask,
     },
 
-    [ITEM_HEALTH_MOCHI] =
+    [ITEM_HP_MOCHI] =
     {
-        .name = ITEM_NAME("Health Mochi"),
-        .pluralName = ITEM_PLURAL_NAME("Health Mochi"),
+        .name = ITEM_NAME("Health Mega-Mochi"),
+        .pluralName = ITEM_PLURAL_NAME("Health Mega-Mochi"),
         .price = 500,
         .description = sHealthFeatherDesc,
         .pocket = POCKET_ITEMS,
@@ -14213,10 +14213,10 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_HealthMochi,
     },
 
-    [ITEM_MUSCLE_MOCHI] =
+    [ITEM_ATK_MOCHI] =
     {
-        .name = ITEM_NAME("Muscle Mochi"),
-        .pluralName = ITEM_PLURAL_NAME("Muscle Mochi"),
+        .name = ITEM_NAME("Muscle Mega-Mochi"),
+        .pluralName = ITEM_PLURAL_NAME("Muscle Mega-Mochi"),
         .price = 500,
         .description = sMuscleFeatherDesc,
         .pocket = POCKET_ITEMS,
@@ -14229,10 +14229,10 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_MuscleMochi,
     },
 
-    [ITEM_RESIST_MOCHI] =
+    [ITEM_DEF_MOCHI] =
     {
-        .name = ITEM_NAME("Resist Mochi"),
-        .pluralName = ITEM_PLURAL_NAME("Resist Mochi"),
+        .name = ITEM_NAME("Resist Mega-Mochi"),
+        .pluralName = ITEM_PLURAL_NAME("Resist Mega-Mochi"),
         .price = 500,
         .description = sResistFeatherDesc,
         .pocket = POCKET_ITEMS,
@@ -14245,10 +14245,10 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_ResistMochi,
     },
 
-    [ITEM_GENIUS_MOCHI] =
+    [ITEM_SPATK_MOCHI] =
     {
-        .name = ITEM_NAME("Genius Mochi"),
-        .pluralName = ITEM_PLURAL_NAME("Genius Mochi"),
+        .name = ITEM_NAME("Genius Mega-Mochi"),
+        .pluralName = ITEM_PLURAL_NAME("Genius Mega-Mochi"),
         .price = 500,
         .description = sGeniusFeatherDesc,
         .pocket = POCKET_ITEMS,
@@ -14261,10 +14261,10 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_GeniusMochi,
     },
 
-    [ITEM_CLEVER_MOCHI] =
+    [ITEM_SPDEF_MOCHI] =
     {
-        .name = ITEM_NAME("Clever Mochi"),
-        .pluralName = ITEM_PLURAL_NAME("Clever Mochi"),
+        .name = ITEM_NAME("Clever Mega-Mochi"),
+        .pluralName = ITEM_PLURAL_NAME("Clever Mega-Mochi"),
         .price = 500,
         .description = sCleverFeatherDesc,
         .pocket = POCKET_ITEMS,
@@ -14277,10 +14277,10 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_CleverMochi,
     },
 
-    [ITEM_SWIFT_MOCHI] =
+    [ITEM_SPE_MOCHI] =
     {
-        .name = ITEM_NAME("Swift Mochi"),
-        .pluralName = ITEM_PLURAL_NAME("Swift Mochi"),
+        .name = ITEM_NAME("Swift Mega-Mochi"),
+        .pluralName = ITEM_PLURAL_NAME("Swift Mega-Mochi"),
         .price = 500,
         .description = sSwiftFeatherDesc,
         .pocket = POCKET_ITEMS,

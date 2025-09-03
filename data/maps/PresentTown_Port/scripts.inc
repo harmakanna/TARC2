@@ -177,9 +177,15 @@ PresentTown_Port_EventScript_Arrival::
 	applymovement LOCALID_PORT_ANABEL, PresentTown_Port_Movement_AnabelExitShot
 	waitmovement 0
 	removeobject LOCALID_PORT_ANABEL
+	additem ITEM_HP_MOCHI, 1
+	additem ITEM_ATK_MOCHI, 3
+	additem ITEM_DEF_MOCHI, 1
+	additem ITEM_SPDEF_MOCHI, 1
+	additem ITEM_SPE_MOCHI, 2
 	givemonwithot OT_LOOKER_GROWLITHE
 	givemonwithot OT_LOOKER_TOXICROAK
 	setrespawn HEAL_LOCATION_PRESENT
+	special EnableNationalPokedex
 	setvar VAR_CUTSCENE_STATE, 1
 	setobjectxyperm LOCALID_PORT_SHIP, 10, 9
 	clearflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
