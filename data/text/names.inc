@@ -180,3 +180,10 @@ Name_Aromatisse:
     
 Name_Smeargle:
     .string "Smeargle$"
+
+Name_Twin:
+    .string "Mia$"
+
+Name_Doubter:
+    .string "Nicola$"
+    

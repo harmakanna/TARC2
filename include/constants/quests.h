@@ -37,8 +37,8 @@
 #define QUEST_WITH_MUCH_GRATITUDE        18 // Send a thank you gift to Camilla from Estella - Done
 #define QUEST_GET_INTO_THE_GROOVE        19 // Find the idols scattered after the storm  - Done, needs testing
 #define QUEST_BREAK_A_LEG        20 // Help the idols warm up for their performance - Done, needs testing
-#define QUEST_LUXRAY        21 // Prove Luxray isn't a dark type!
-#define QUEST_SMEARGLE       22 // Find the lost Smeargle!
+#define QUEST_LUXRAY        21 // Prove Luxray isn't a dark type! - Done, needs testing
+#define QUEST_SMEARGLE       22 // Find the lost Smeargle! - Done, needs testing
 //#define QUEST_24        23
 //#define QUEST_25        24
 //#define QUEST_26        25

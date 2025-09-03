@@ -2540,9 +2540,9 @@ extern const u8 gText_SubQuestAWholeNewWorld_Desc[];
 extern const u8 gText_SubQuestAWholeNewWorld_Map[];
 
 //Evil Luxray
-extern const u8 gText_SubQuestEvilLuxray_Name[];
-extern const u8 gText_SubQuestEvilLuxray_Desc[];
-extern const u8 gText_SubQuestEvilLuxray_Map[];
+extern const u8 gText_SubQuestLuxray_Name[];
+extern const u8 gText_SubQuestLuxray_Desc[];
+extern const u8 gText_SubQuestLuxray_Map[];
 
 //Catchmons
 extern const u8 gText_SubQuestCatchMons_NameRodent[];

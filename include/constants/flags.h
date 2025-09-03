@@ -732,7 +732,7 @@
 #define FLAG_CAN_SPAWN_SMEARGLE  0x2AD // Unused Flag
 #define FLAG_HIDE_SCHOOL_BOY  0x2AE // Unused Flag
 #define FLAG_HIDE_SCHOOL_TWIN  0x2AF // Unused Flag
-#define FLAG_UNUSED_0x2B0  0x2B0 // Unused Flag
+#define FLAG_SHOWN_DARK_LUXRAY  0x2B0 // Unused Flag
 #define FLAG_UNUSED_0x2B1  0x2B1 // Unused Flag
 #define FLAG_UNUSED_0x2B2  0x2B2 // Unused Flag
 #define FLAG_UNUSED_0x2B3  0x2B3 // Unused Flag

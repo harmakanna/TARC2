@@ -187,6 +187,11 @@ Looker_Text_Drat:
 Looker_Text_Ouch:
     .string "Ouch!$"
     
+Looker_Text_ImOnTheCaseDoubt:
+    .string "Umm…\p"
+    .string "I'm on the case?\p"
+    .string "I think?$"
+
 Looker_Text_Dots:
     .string "…$"
 
