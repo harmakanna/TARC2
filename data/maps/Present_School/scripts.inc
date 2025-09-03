@@ -174,9 +174,15 @@ Present_School_EventScript_TwinPreQuest::
 	speak LOCALID_SCHOOL_TWIN, DIR_EAST, Name_Twin, Present_School_Text_TwinIdiot
 	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, Looker_Text_ImOnTheCaseDoubt
 	startquest QUEST_LUXRAY
+	call_if_set FLAG_CAUGHT_LUXRAY, Present_School_EventScript_SetTwinReward
+	call_if_set FLAG_CAUGHT_LUXRAY_DARK, Present_School_EventScript_SetTwinReward
 	releaseall
 	end
 
+Present_School_EventScript_SetTwinReward::
+	questmenu QUEST_MENU_SET_REWARD, QUEST_LUXRAY
+	return
+	
 Present_School_EventScript_TwinQuest::
 	speak LOCALID_SCHOOL_KID, DIR_WEST, Name_Doubter, Present_School_Text_DoubterBozoBozoBozo
 	speak LOCALID_SCHOOL_TWIN, DIR_EAST, Name_Twin, Present_School_Text_TwinStupidBabyIdiot

@@ -217,11 +217,8 @@ Looker_Text_ThatsAllTheIdols:
     .string "I should go talk to the barista at\n"
     .string "Tauros Café when I get the chance…$"
 
-Looker_Text_Vitamins:
-    .string "Looker received some vitamins!$"
-
-Looker_Text_Feathers:
-    .string "Looker received some feathers!$"
-
 Looker_Text_Mochi:
-    .string "Looker received some mochi!$"
+    .string "Looker received some Mega-Mochi!$"
+
+Looker_Text_AlsoMochi:
+    .string "Looker also received some Mega-Mochi!$"
