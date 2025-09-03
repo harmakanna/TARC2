@@ -85,9 +85,9 @@ Present_CelebiSociety_Text_GrandmaDidYouMeetCelebi:
 	.string "did you truly meet Celebi?$"
 
 Present_CelebiSociety_Text_LookerThatIsCorrect:
-	.string "That is correct. We were sent\n"
-	.string "to the past after being surrounded\l"
-	.string "by a horde of wild Pokémon.$"
+	.string "That is correct. We were sent to the\n"
+	.string "past after being surrounded by a\l"
+	.string "horde of wild Pokémon.$"
 
 Present_CelebiSociety_Text_GrandmaThatIsIncredible:
 	.string "How incredible…\p"

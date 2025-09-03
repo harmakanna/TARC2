@@ -29,6 +29,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_INSIDE_YOUNGSTER",
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_NEW",
       "x": 10,
       "y": 6,
@@ -36,10 +37,11 @@
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_type": "TRAINER_TYPE_QUEST_GIVER",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_HIDE_INSIDE_OUTSIDE_NPCS"
+      "script": "InsideOutside_EventScript_YoungsterInside",
+      "flag": "FLAG_HIDE_INSIDE_OUTSIDE_NPCS",
+      "quest_id": 4
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_4",
@@ -105,6 +107,34 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Present_PokemonCenter_EventScript_Zangoose",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_POKEMON_CENTER_IDOL",
+      "graphics_id": "OBJ_EVENT_GFX_IDOL",
+      "x": 12,
+      "y": 10,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Present_PokemonCenter_EventScript_Idol",
+      "flag": "FLAG_HIDE_POKEMON_CENTER_IDOL"
+    },
+    {
+      "local_id": "LOCALID_POKEMON_CENTER_PACHIRISU",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PACHIRISU)",
+      "x": 11,
+      "y": 10,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Present_PokemonCenter_EventScript_Pachirisu",
+      "flag": "FLAG_HIDE_POKEMON_CENTER_IDOL"
     }
   ],
   "warp_events": [
