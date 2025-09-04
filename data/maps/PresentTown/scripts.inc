@@ -1006,7 +1006,7 @@ PresentTown_EventScript_Tornadus::
 	playmoncry SPECIES_TORNADUS, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
-	setwildbattle SPECIES_TORNADUS, 70
+	createmon 1, 0, SPECIES_TORNADUS, 70, ITEM_CLEAR_AMULET, 1, NATURE_SERIOUS, 0, MON_MALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_BLEAKWIND_STORM, MOVE_FLY, MOVE_HAMMER_ARM, MOVE_KNOCK_OFF
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

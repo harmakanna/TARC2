@@ -431,7 +431,6 @@ PresentTown_Port_Movement_MagikarpManWalkToBench:
 	face_left
 	step_end
 
-
 PresentTown_Port_EventScript_Thundurus::
 	lock
 	faceplayer
@@ -440,7 +439,7 @@ PresentTown_Port_EventScript_Thundurus::
 	playmoncry SPECIES_THUNDURUS, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
-	setwildbattle SPECIES_THUNDURUS, 70
+	createmon 1, 0, SPECIES_THUNDURUS, 70, ITEM_CLEAR_AMULET, 1, NATURE_SERIOUS, 0, MON_MALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_WILDBOLT_STORM, MOVE_FLY, MOVE_SUPERPOWER, MOVE_THUNDER_WAVE
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
