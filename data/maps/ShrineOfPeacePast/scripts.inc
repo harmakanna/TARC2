@@ -128,17 +128,179 @@ ShrineOfPeacePast_EventScript_HandleWarpEvents::
 	call_if_eq VAR_RESULT, 2, ShrineOfPeacePast_EventScript_HandleLostIdolSpawn
 	returnqueststate QUEST_SMEARGLE
 	call_if_eq VAR_RESULT, 2, ShrineOfPeacePast_EventScript_CheckLostSmeargleSpawn
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 0, ShrineOfPeacePast_EventScript_CheckSpawnCatchmon
 	goto ShrineOfPeacePast_EventScript_CelebiWarp
 	end
 
 ShrineOfPeacePast_EventScript_ResetWarpEvents::
 	clearflag FLAG_SYS_WEATHER_CTRL
+	setvar VAR_TRY_CATCHMON_CALL_LIMIT, 0
 	setvar VAR_TRIGGER_CUTSCENE_FOREST, 0
 	setvar VAR_CUTSCENE_FOREST_STATE, 0
 	setflag FLAG_HIDE_CITY_TORNADUS
 	setflag FLAG_HIDE_CITY_THUNDURUS
 	return
 	
+ShrineOfPeacePast_EventScript_CheckSpawnCatchmon::
+	call_if_lt VAR_NUM_MONS_CAUGHT, 12, ShrineOfPeacePast_EventScript_TrySpawnCatchmon
+	return
+
+ShrineOfPeacePast_EventScript_TrySpawnCatchmon::
+	randompercentage 15
+	call_if_eq VAR_RESULT, TRUE, ShrineOfPeacePast_EventScript_SeedCatchMon
+	return
+
+ShrineOfPeacePast_EventScript_SeedCatchMon::
+	randomelement SPECIES_DEDENNE, SPECIES_LURANTIS, SPECIES_LUXRAY, SPECIES_TOEDSCRUEL, SPECIES_FROSMOTH, SPECIES_KLEAVOR, SPECIES_GOODRA, SPECIES_BEHEEYEM, SPECIES_AERODACTYL, SPECIES_SCREAM_TAIL, SPECIES_WO_CHIEN
+	call_if_eq VAR_RESULT, SPECIES_DEDENNE, ShrineOfPeacePast_EventScript_TrySpawnRodent
+	call_if_eq VAR_RESULT, SPECIES_LURANTIS, ShrineOfPeacePast_EventScript_TrySpawnLurantis
+	call_if_eq VAR_RESULT, SPECIES_LUXRAY, ShrineOfPeacePast_EventScript_TrySpawnLuxray
+	call_if_eq VAR_RESULT, SPECIES_TOEDSCRUEL, ShrineOfPeacePast_EventScript_TrySpawnToedscruel
+	call_if_eq VAR_RESULT, SPECIES_FROSMOTH, ShrineOfPeacePast_EventScript_TrySpawnFrosmoth
+	call_if_eq VAR_RESULT, SPECIES_KLEAVOR, ShrineOfPeacePast_EventScript_TrySpawnKleavor
+	call_if_eq VAR_RESULT, SPECIES_GOODRA, ShrineOfPeacePast_EventScript_TrySpawnGoodra
+	call_if_eq VAR_RESULT, SPECIES_BEHEEYEM, ShrineOfPeacePast_EventScript_TrySpawnBeheeyem
+	call_if_eq VAR_RESULT, SPECIES_AERODACTYL, ShrineOfPeacePast_EventScript_TrySpawnAerodactyl
+	call_if_eq VAR_RESULT, SPECIES_SCREAM_TAIL, ShrineOfPeacePast_EventScript_TrySpawnScreamTail
+	call_if_eq VAR_RESULT, SPECIES_WO_CHIEN, ShrineOfPeacePast_EventScript_TrySpawnWoChien
+	return
+
+ShrineOfPeacePast_EventScript_TrySpawnRodent::
+	call_if_unset FLAG_CAUGHT_RODENT, ShrineOfPeacePast_EventScript_SpawnRodent
+	call_if_set FLAG_CAUGHT_RODENT, ShrineOfPeacePast_EventScript_ReseedCatchMon
+	return
+
+ShrineOfPeacePast_EventScript_SpawnRodent::
+	setvar VAR_TRIGGER_CUTSCENE_FOREST, 1
+	setvar VAR_CUTSCENE_FOREST_STATE, 4
+	return
+
+ShrineOfPeacePast_EventScript_TrySpawnLurantis::
+	call_if_unset FLAG_CAUGHT_LURANTIS, ShrineOfPeacePast_EventScript_SpawnLurantis
+	call_if_set FLAG_CAUGHT_LURANTIS, ShrineOfPeacePast_EventScript_ReseedCatchMon
+	return
+
+ShrineOfPeacePast_EventScript_SpawnLurantis::
+	setvar VAR_TRIGGER_CUTSCENE_FOREST, 1
+	setvar VAR_CUTSCENE_FOREST_STATE, 5
+	return
+
+@Luxray will not try to seed another catchmon if it is randomly picked due to multiple VAR_RESULT declarations
+ShrineOfPeacePast_EventScript_TrySpawnLuxray::
+	randompercentage 80
+	call_if_eq VAR_RESULT, TRUE, ShrineOfPeacePast_EventScript_TrySpawnLuxrayBase
+	call_if_eq VAR_RESULT, FALSE, ShrineOfPeacePast_EventScript_TrySpawnLuxrayDark
+	return
+
+ShrineOfPeacePast_EventScript_TrySpawnLuxrayBase::
+	call_if_unset FLAG_CAUGHT_LUXRAY, ShrineOfPeacePast_EventScript_SpawnLuxrayBase
+	return
+
+ShrineOfPeacePast_EventScript_SpawnLuxrayBase::
+	setvar VAR_TRIGGER_CUTSCENE_FOREST, 1
+	setvar VAR_CUTSCENE_FOREST_STATE, 6
+	return
+	
+ShrineOfPeacePast_EventScript_TrySpawnLuxrayDark::
+	call_if_unset FLAG_CAUGHT_LUXRAY_DARK, ShrineOfPeacePast_EventScript_SpawnLuxrayDark
+	return
+
+ShrineOfPeacePast_EventScript_SpawnLuxrayDark::
+	setvar VAR_TRIGGER_CUTSCENE_FOREST, 1
+	setvar VAR_CUTSCENE_FOREST_STATE, 7
+	return
+
+ShrineOfPeacePast_EventScript_TrySpawnToedscruel::
+	call_if_unset FLAG_CAUGHT_TOEDSCRUEL, ShrineOfPeacePast_EventScript_SpawnToedscruel
+	call_if_set FLAG_CAUGHT_TOEDSCRUEL, ShrineOfPeacePast_EventScript_ReseedCatchMon
+	return
+
+ShrineOfPeacePast_EventScript_SpawnToedscruel::
+	setvar VAR_TRIGGER_CUTSCENE_FOREST, 1
+	setvar VAR_CUTSCENE_FOREST_STATE, 8
+	return
+
+ShrineOfPeacePast_EventScript_TrySpawnFrosmoth::
+	call_if_unset FLAG_CAUGHT_FROSMOTH, ShrineOfPeacePast_EventScript_SpawnFrosmoth
+	call_if_set FLAG_CAUGHT_FROSMOTH, ShrineOfPeacePast_EventScript_ReseedCatchMon
+	return
+
+ShrineOfPeacePast_EventScript_SpawnFrosmoth::
+	setvar VAR_TRIGGER_CUTSCENE_FOREST, 1
+	setvar VAR_CUTSCENE_FOREST_STATE, 9
+	return
+
+ShrineOfPeacePast_EventScript_TrySpawnKleavor::
+	call_if_unset FLAG_CAUGHT_KLEAVOR, ShrineOfPeacePast_EventScript_SpawnKleavor
+	call_if_set FLAG_CAUGHT_KLEAVOR, ShrineOfPeacePast_EventScript_ReseedCatchMon
+	return
+
+ShrineOfPeacePast_EventScript_SpawnKleavor::
+	setvar VAR_TRIGGER_CUTSCENE_FOREST, 1
+	setvar VAR_CUTSCENE_FOREST_STATE, 10
+	return
+
+ShrineOfPeacePast_EventScript_TrySpawnGoodra::
+	call_if_unset FLAG_CAUGHT_GOODRA_HISUI, ShrineOfPeacePast_EventScript_SpawnGoodra
+	call_if_set FLAG_CAUGHT_GOODRA_HISUI, ShrineOfPeacePast_EventScript_ReseedCatchMon
+	return
+
+ShrineOfPeacePast_EventScript_SpawnGoodra::
+	setvar VAR_TRIGGER_CUTSCENE_FOREST, 1
+	setvar VAR_CUTSCENE_FOREST_STATE, 11
+	return
+
+ShrineOfPeacePast_EventScript_TrySpawnBeheeyem::
+	call_if_unset FLAG_CAUGHT_BEHEEYEM, ShrineOfPeacePast_EventScript_SpawnBeheeyem
+	call_if_set FLAG_CAUGHT_BEHEEYEM, ShrineOfPeacePast_EventScript_ReseedCatchMon
+	return
+
+ShrineOfPeacePast_EventScript_SpawnBeheeyem::
+	setvar VAR_TRIGGER_CUTSCENE_FOREST, 1
+	setvar VAR_CUTSCENE_FOREST_STATE, 12
+	return
+
+ShrineOfPeacePast_EventScript_TrySpawnAerodactyl::
+	call_if_unset FLAG_CAUGHT_AERODACTYL, ShrineOfPeacePast_EventScript_SpawnAerodactyl
+	call_if_set FLAG_CAUGHT_AERODACTYL, ShrineOfPeacePast_EventScript_ReseedCatchMon
+	return
+
+ShrineOfPeacePast_EventScript_SpawnAerodactyl::
+	setvar VAR_TRIGGER_CUTSCENE_FOREST, 1
+	setvar VAR_CUTSCENE_FOREST_STATE, 13
+	return
+
+ShrineOfPeacePast_EventScript_TrySpawnScreamTail::
+	call_if_unset FLAG_CAUGHT_SCREAM_TAIL, ShrineOfPeacePast_EventScript_SpawnScreamTail
+	call_if_set FLAG_CAUGHT_SCREAM_TAIL, ShrineOfPeacePast_EventScript_ReseedCatchMon
+	return
+
+ShrineOfPeacePast_EventScript_SpawnScreamTail::
+	setvar VAR_TRIGGER_CUTSCENE_FOREST, 1
+	setvar VAR_CUTSCENE_FOREST_STATE, 14
+	return
+
+@Wo chien will not recall SeedCatchMon due to multiple VAR_RESULT declarations
+ShrineOfPeacePast_EventScript_TrySpawnWoChien::
+	randompercentage 50
+	call_if_eq VAR_RESULT, TRUE, ShrineOfPeacePast_EventScript_ReallyTrySpawnWoChien
+	return
+
+ShrineOfPeacePast_EventScript_ReallyTrySpawnWoChien::
+	call_if_unset FLAG_CAUGHT_WO_CHIEN, ShrineOfPeacePast_EventScript_SpawnWoChien
+	return
+	
+ShrineOfPeacePast_EventScript_SpawnWoChien::
+	setvar VAR_TRIGGER_CUTSCENE_FOREST, 1
+	setvar VAR_CUTSCENE_FOREST_STATE, 15
+	return
+
+@Ensures there's a hard stop to the call logic in case of a case of nested calls crashing the game (unknown)
+ShrineOfPeacePast_EventScript_ReseedCatchMon::
+	addvar VAR_TRY_CATCHMON_CALL_LIMIT, 1
+	call_if_lt VAR_TRY_CATCHMON_CALL_LIMIT, 10, ShrineOfPeacePast_EventScript_SeedCatchMon
+	return
+
 ShrineOfPeacePast_EventScript_EnableInclementWeather::
 	setflag FLAG_SYS_WEATHER_CTRL
 	return
