@@ -56,8 +56,19 @@ ShrineOfPeacePresent_EventScript_MainGameStart::
 	startquest QUEST_INTERROGATE_MATT
 	setflag FLAG_SYS_MAIN_GAME_START
 	setflag FLAG_SYS_QUEST_MENU_GET
+	clearflag FLAG_LOCK_CITY_DOORS
+	clearflag FLAG_HIDE_TUSK_FOSSIL
+	clearflag FLAG_HIDE_WING_FOSSIL
+	clearflag FLAG_HIDE_PEST_1_1
+	clearflag FLAG_HIDE_PEST_1_2
+	clearflag FLAG_HIDE_PEST_1_3
 	clearflag FLAG_SYS_DISAPPEAR_QUESTS
+	clearflag FLAG_SYS_DISABLE_ENCOUNTERS
 	setvar VAR_CUTSCENE_STATE, 13
+	setvar VAR_PORTO_BELLA_CITY_STATE, 3
+	setvar VAR_QUEUE_GENIE_FIGHT, 1
+	setvar VAR_PRESENT_GYM_STATE, 1
+	setvar VAR_MANIAC_TRIGGER, 1
 	release
 	end
 

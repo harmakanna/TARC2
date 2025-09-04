@@ -14241,29 +14241,29 @@ void HandleBattleWindow(u8 xStart, u8 yStart, u8 xEnd, u8 yEnd, u8 flags)
             if (destY == yStart)
             {
                 if (destX == xStart)
-                    var = 0x1022;
+                    var = 0x1012;
                 else if (destX == xEnd)
-                    var = 0x1024;
+                    var = 0x1014;
                 else
-                    var = 0x1023;
+                    var = 0x1013;
             }
             else if (destY == yEnd)
             {
                 if (destX == xStart)
-                    var = 0x1028;
+                    var = 0x1018;
                 else if (destX == xEnd)
-                    var = 0x102A;
+                    var = 0x101A;
                 else
-                    var = 0x1029;
+                    var = 0x1019;
             }
             else
             {
                 if (destX == xStart)
-                    var = 0x1025;
+                    var = 0x1015;
                 else if (destX == xEnd)
-                    var = 0x1027;
+                    var = 0x1017;
                 else
-                    var = 0x1026;
+                    var = 0x1016;
             }
 
             if (flags & WINDOW_CLEAR)
