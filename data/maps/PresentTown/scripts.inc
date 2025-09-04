@@ -8,9 +8,25 @@ PresentTown_MapScripts::
 	
 @ Comment out FLAG_SYS_MAIN_GAME_START_SCRIPT_DEBUG line to test intro
 PresentTown_OnLoad:
+	call_if_eq VAR_TRIGGER_CUTSCENE_FOREST, 2, PresentTown_EventScript_UnsetShrinePeaceWarpTiles
 	call_if_eq VAR_CUTSCENE_STATE, 4, PresentTown_EventScript_ChangeAnabelFollowerText
 	@call_if_unset FLAG_SYS_MAIN_GAME_START_SCRIPT_DEBUG, PresentTown_EventScript_DebugMainGameStart
 	call_if_set FLAG_LOCK_CITY_DOORS, PresentTown_EventScript_LockCityDoors
+	end
+
+PresentTown_EventScript_UnsetShrinePeaceWarpTiles::
+	setmetatile 14, 6, 0x316, FALSE
+	setmetatile 15, 6, 0x316, FALSE
+	setmetatile 16, 6, 0x316, FALSE
+	setmetatile 17, 6, 0x316, FALSE
+	return
+
+PresentTown_EventScript_WarpToCutsceneForest::
+	lockall
+	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
+	warp MAP_CUTSCENE_FOREST, 10, 14
+	waitstate
+	releaseall
 	end
 
 PresentTown_EventScript_ChangeAnabelFollowerText::

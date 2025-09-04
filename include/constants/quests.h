@@ -16,7 +16,7 @@
 
 // quest number defines
 #define QUEST_NONE  0xFFFF
-#define QUEST_SAVE_ESTELLA          0 //Find Estella in the past - Done
+#define QUEST_SAVE_ESTELLA          0 // Find Estella in the past - Done
 #define QUEST_INTERROGATE_MATT          1 // Defeat Team Aqua - Done
 #define QUEST_INVESTIGATE_PROSPERITY          2 // Investigate the abnormality at the Shrine of Prosperity - Done
 #define QUEST_DEFEAT_PHOEBE          3 // Defeat Phoebe - Done
@@ -42,7 +42,7 @@
 //#define QUEST_24        23
 //#define QUEST_25        24
 //#define QUEST_26        25
-#define QUEST_CATCHMONS        23
+#define QUEST_CATCHMONS        23 // Catch Forest mons! - Done, needs testing
 //#define QUEST_THE_WOMAN_THE_MYTH_THE_LEGEND        27 // Defeat Cynthia!
 //#define QUEST_PARADOXICAL        28 // Defeat yourself!
 #define QUEST_CATCH_GENIES        24 // Catch the genies - Done

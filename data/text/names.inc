@@ -187,3 +187,39 @@ Name_Twin:
 Name_Doubter:
     .string "Nicola$"
     
+Name_Dedenne:
+    .string "Dedenne$"
+
+Name_Togedemaru:
+    .string "Togedemaru$"
+
+Name_Lurantis:
+    .string "Lurantis$"
+
+Name_Luxray:
+    .string "Luxray$"
+
+Name_Toedscruel:
+    .string "Toedscruel$"
+
+Name_Frosmoth:
+    .string "Frosmoth$"
+
+Name_Kleavor:
+    .string "Kleavor$"
+
+Name_Goodra_Hisui:
+    .string "Goodra-Hisui$"
+
+Name_Beheeyem:
+    .string "Beheeyem$"
+
+Name_Aerodactyl:
+    .string "Aerodactyl$"
+
+Name_Scream_Tail:
+    .string "Scream Tail$"
+
+Name_Wo_Chien:
+    .string "Wo-Chien$"
+    

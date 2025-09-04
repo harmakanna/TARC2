@@ -461,7 +461,6 @@ ShrineOfPeacePresent_Movement_PanCameraToLooker:
 	walk_down
 	step_end
 
-
 ShrineOfPeacePresent_OnResume:
 	special HealPlayerParty
 	end

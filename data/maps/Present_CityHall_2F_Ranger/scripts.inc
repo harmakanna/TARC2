@@ -58,6 +58,8 @@ Present_CityHall_2F_Ranger_EventScript_HeadRangerRewardQuest::
 	waitmovement 0
 	completequest QUEST_INVESTIGATE_PROSPERITY
 	setvar VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1
+	setvar VAR_CUTSCENE_FOREST_STATE, 3
+	setvar VAR_TRIGGER_CUTSCENE_FOREST, 2
 	setflag FLAG_PLAY_LOOKER_RANGER_ON_TRANSITION
 	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	release
