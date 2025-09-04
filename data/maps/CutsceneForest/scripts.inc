@@ -927,11 +927,21 @@ CutsceneForest_EventScript_FindSmeargle::
 	fadescreen FADE_TO_BLACK
 	setflag FLAG_SYS_SPAWN_INVISIBLE
 	special RemoveCameraObject
+	call_if_set FLAG_SYS_WEATHER_CTRL, CutsceneForest_EventScript_UnhideInsideSmeargle
+	call_if_unset FLAG_SYS_WEATHER_CTRL, CutsceneForest_EventScript_UnhideOutsideSmeargle
 	warp MAP_PRESENT_TOWN, 16, 5
 	waitstate
 	releaseall
 	end
 
+CutsceneForest_EventScript_UnhideInsideSmeargle::
+	clearflag FLAG_HIDE_INSIDE_SMEARGLE
+	return
+	
+CutsceneForest_EventScript_UnhideOutsideSmeargle::
+	clearflag FLAG_HIDE_OUTSIDE_SMEARGLE
+	return
+	
 CutsceneForest_EventScript_FindLostIdol::
 	lockall
 	special SpawnCameraObject

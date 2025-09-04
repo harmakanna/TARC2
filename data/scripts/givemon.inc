@@ -1,8 +1,8 @@
 InsideOutside_EventScript_StudentGiveGalvantula::
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GALVANTULA
-	givemonwithot OT_PAOLO_GALVANTULA
 	additem ITEM_SPATK_MOCHI, 2
 	additem ITEM_SPE_MOCHI, 2
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GALVANTULA
+	givemonwithot OT_PAOLO_GALVANTULA
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, InsideOutside_EventScript_ReceiveGalvantulaParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, InsideOutside_EventScript_ReceiveGalvantulaPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -34,10 +34,10 @@ InsideOutside_EventScript_ReceivedGalvantulaFanfare::
 	return
 
 InsideOutside_EventScript_StudentGiveProbopass::
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PROBOPASS
-	givemonwithot OT_PAOLO_PROBOPASS
 	additem ITEM_DEF_MOCHI, 2
 	additem ITEM_SPATK_MOCHI, 2
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PROBOPASS
+	givemonwithot OT_PAOLO_PROBOPASS
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, InsideOutside_EventScript_ReceiveProbopassParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, InsideOutside_EventScript_ReceiveProbopassPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -69,11 +69,11 @@ InsideOutside_EventScript_ReceivedProbopassFanfare::
 	return
 
 PastTown_EventScript_FishermanGiveOverqwil::
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_OVERQWIL
-	givemonwithot OT_TEE_OVERQWIL
 	additem ITEM_HP_MOCHI, 1
 	additem ITEM_ATK_MOCHI, 1
 	additem ITEM_SPDEF_MOCHI, 2
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_OVERQWIL
+	givemonwithot OT_TEE_OVERQWIL
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PastTown_EventScript_ReceiveOverqwilParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PastTown_EventScript_ReceiveOverqwilPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -105,10 +105,10 @@ PastTown_EventScript_ReceivedOverqwilFanfare::
 	return
 
 PastTown_EventScript_FishermanGiveDragalge::
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DRAGALGE
-	givemonwithot OT_TEE_DRAGALGE
 	additem ITEM_SPDEF_MOCHI, 2
 	additem ITEM_SPE_MOCHI, 2
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DRAGALGE
+	givemonwithot OT_TEE_DRAGALGE
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PastTown_EventScript_ReceiveDragalgeParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PastTown_EventScript_ReceiveDragalgePC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -140,11 +140,11 @@ PastTown_EventScript_ReceivedDragalgeFanfare::
 	return
 
 Present_Gym_EventScript_PhoebeGiveDusknoir::
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DUSKNOIR
-    givemonwithot OT_PHOEBE_DUSKNOIR
 	additem ITEM_ATK_MOCHI, 1
 	additem ITEM_DEF_MOCHI, 2
 	additem ITEM_SPDEF_MOCHI, 1
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DUSKNOIR
+    givemonwithot OT_PHOEBE_DUSKNOIR
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Gym_EventScript_ReceiveDusknoirParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Gym_EventScript_ReceiveDusknoirPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -176,11 +176,11 @@ Present_Gym_EventScript_ReceivedDusknoirFanfare::
 	return
 
 Present_Gym_EventScript_PhoebeGiveSableye::
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SABLEYE
-	givemonwithot OT_PHOEBE_SABLEYE
 	additem ITEM_HP_MOCHI, 1
 	additem ITEM_DEF_MOCHI, 1
 	additem ITEM_SPDEF_MOCHI, 2
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SABLEYE
+	givemonwithot OT_PHOEBE_SABLEYE
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Gym_EventScript_ReceiveSableyeParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Gym_EventScript_ReceiveSableyePC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -288,11 +288,11 @@ Present_AquaCorpHQ_EventScript_ShellyGiveGorebyss::
 	playmoncry SPECIES_GOREBYSS, CRY_MODE_NORMAL
 	waitmoncry
 	delay 20
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GOREBYSS
-    givemonwithot OT_SHELLY_GOREBYSS
 	additem ITEM_SPATK_MOCHI, 2
 	additem ITEM_SPDEF_MOCHI, 1
 	additem ITEM_SPE_MOCHI, 1
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GOREBYSS
+    givemonwithot OT_SHELLY_GOREBYSS
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_AquaCorpHQ_EventScript_ReceiveGorebyssParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_AquaCorpHQ_EventScript_ReceiveGorebyssPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -399,11 +399,11 @@ Present_AquaCorpHQ_EventScript_ShellyGiveHuntail::
 	playmoncry SPECIES_HUNTAIL, CRY_MODE_NORMAL
 	waitmoncry
 	delay 20
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HUNTAIL
-    givemonwithot OT_SHELLY_HUNTAIL
 	additem ITEM_ATK_MOCHI, 2
 	additem ITEM_DEF_MOCHI, 1
 	additem ITEM_SPE_MOCHI, 1
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HUNTAIL
+    givemonwithot OT_SHELLY_HUNTAIL
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_AquaCorpHQ_EventScript_ReceiveHuntailParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_AquaCorpHQ_EventScript_ReceiveHuntailPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -435,10 +435,10 @@ Present_AquaCorpHQ_EventScript_ReceivedHuntailFanfare::
 	return
 
 Present_CityHall_2F_Ranger_EventScript_FossilScientistGiveMamoswine::
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MAMOSWINE
-	givemonwithot OT_LOOKER_MAMOSWINE
 	additem ITEM_HP_MOCHI, 2
 	additem ITEM_ATK_MOCHI, 2
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MAMOSWINE
+	givemonwithot OT_LOOKER_MAMOSWINE
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_CityHall_2F_Ranger_EventScript_ReceiveMamoswineParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_CityHall_2F_Ranger_EventScript_ReceiveMamoswinePC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -471,10 +471,10 @@ Present_CityHall_2F_Ranger_EventScript_ReceivedMamoswineFanfare::
 	return
 
 Present_CityHall_2F_Ranger_EventScript_FossilScientistGiveYanmega::
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_YANMEGA
-	givemonwithot OT_LOOKER_YANMEGA
 	additem ITEM_SPATK_MOCHI, 2
 	additem ITEM_SPE_MOCHI, 2
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_YANMEGA
+	givemonwithot OT_LOOKER_YANMEGA
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_CityHall_2F_Ranger_EventScript_ReceiveYanmegaParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_CityHall_2F_Ranger_EventScript_ReceiveYanmegaPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -507,12 +507,12 @@ Present_CityHall_2F_Ranger_EventScript_ReceivedYanmegaFanfare::
 	return
 
 Present_Cafe_EventScript_EmmaGiveGumshoos::
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GUMSHOOS
-	givemonwithot OT_EMMA_GUMSHOOS
 	additem ITEM_HP_MOCHI, 1
 	additem ITEM_ATK_MOCHI, 1
 	additem ITEM_DEF_MOCHI, 1
 	additem ITEM_SPDEF_MOCHI, 1
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GUMSHOOS
+	givemonwithot OT_EMMA_GUMSHOOS
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Cafe_EventScript_ReceiveGumshoosParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Cafe_EventScript_ReceiveGumshoosPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -544,10 +544,10 @@ Present_Cafe_EventScript_ReceivedGumshoosFanfare::
 	return
 
 Present_Cafe_EventScript_EmmaGiveMeowstic::
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MEOWSTIC
-	givemonwithot OT_EMMA_MEOWSTIC
 	additem ITEM_SPATK_MOCHI, 2
 	additem ITEM_SPE_MOCHI, 2
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MEOWSTIC
+	givemonwithot OT_EMMA_MEOWSTIC
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Cafe_EventScript_ReceiveMeowsticParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Cafe_EventScript_ReceiveMeowsticPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -580,10 +580,10 @@ Present_Cafe_EventScript_ReceivedMeowsticFanfare::
 
 
 PastTown_EventScript_ForemanGiveBreloom::
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BRELOOM
-	givemonwithot OT_LOOKER_BRELOOM
 	additem ITEM_ATK_MOCHI, 2
 	additem ITEM_SPE_MOCHI, 2
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BRELOOM
+	givemonwithot OT_LOOKER_BRELOOM
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PastTown_EventScript_ReceiveBreloomParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PastTown_EventScript_ReceiveBreloomPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -615,11 +615,11 @@ PastTown_EventScript_ReceivedBreloomFanfare::
 	return
 
 PastTown_EventScript_ForemanGiveShiinotic::
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SHIINOTIC
-	givemonwithot OT_LOOKER_SHIINOTIC
 	additem ITEM_HP_MOCHI, 2
 	additem ITEM_DEF_MOCHI, 1
 	additem ITEM_SPDEF_MOCHI, 1
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SHIINOTIC
+	givemonwithot OT_LOOKER_SHIINOTIC
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PastTown_EventScript_ReceiveShiinoticParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PastTown_EventScript_ReceiveShiinoticPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -651,11 +651,11 @@ PastTown_EventScript_ReceivedShiinoticFanfare::
 	return
 
 PastTown_EventScript_SadGirlGiveTauros::
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TAUROS
-	givemonwithot OT_ALICE_TAUROS
 	additem ITEM_ATK_MOCHI, 2
 	additem ITEM_DEF_MOCHI, 1
 	additem ITEM_SPE_MOCHI, 1
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TAUROS
+	givemonwithot OT_ALICE_TAUROS
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PastTown_EventScript_ReceiveTaurosParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PastTown_EventScript_ReceiveTaurosPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -689,11 +689,11 @@ PastTown_EventScript_ReceivedTaurosFanfare::
 	return
 
 PastTown_EventScript_SadGirlGiveMiltank::
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MILTANK
-	givemonwithot OT_ALICE_MILTANK
 	additem ITEM_HP_MOCHI, 1
 	additem ITEM_ATK_MOCHI, 1
 	additem ITEM_SPE_MOCHI, 2
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MILTANK
+	givemonwithot OT_ALICE_MILTANK
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PastTown_EventScript_ReceiveMiltankParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PastTown_EventScript_ReceiveMiltankPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -727,11 +727,11 @@ PastTown_EventScript_ReceivedMiltankFanfare::
 	return
 
 PresentTown_Port_EventScript_BlueGiveGolem::
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GOLEM
-	givemonwithot OT_BLUE_GOLEM
 	additem ITEM_ATK_MOCHI, 1
 	additem ITEM_DEF_MOCHI, 2
 	additem ITEM_SPDEF_MOCHI, 1
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GOLEM
+	givemonwithot OT_BLUE_GOLEM
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PresentTown_Port_EventScript_ReceiveGolemParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PresentTown_Port_EventScript_ReceiveGolemPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -763,11 +763,11 @@ PresentTown_Port_EventScript_ReceivedGolemFanfare::
 	return
 
 PresentTown_Port_EventScript_BlueGiveMachamp::
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MACHAMP
-	givemonwithot OT_BLUE_MACHAMP
 	additem ITEM_HP_MOCHI, 1
 	additem ITEM_ATK_MOCHI, 2
 	additem ITEM_SPE_MOCHI, 1
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MACHAMP
+	givemonwithot OT_BLUE_MACHAMP
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PresentTown_Port_EventScript_ReceiveMachampParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PresentTown_Port_EventScript_ReceiveMachampPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -799,11 +799,11 @@ PresentTown_Port_EventScript_ReceivedMachampFanfare::
 	return
 
 Present_Cafe_EventScript_MayGiveWalrein::
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_WALREIN
-	givemonwithot OT_MAY_WALREIN
 	additem ITEM_HP_MOCHI, 2
 	additem ITEM_ATK_MOCHI, 1
 	additem ITEM_SPATK_MOCHI, 1
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_WALREIN
+	givemonwithot OT_MAY_WALREIN
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Cafe_EventScript_ReceiveWalreinParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Cafe_EventScript_ReceiveWalreinPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -839,12 +839,12 @@ Present_Cafe_EventScript_ReceivedWalreinFanfare::
 	return
 
 Present_Cafe_EventScript_MayGiveCamerupt::
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CAMERUPT
-	givemonwithot OT_MAY_CAMERUPT
 	additem ITEM_ATK_MOCHI, 1
 	additem ITEM_DEF_MOCHI, 1
 	additem ITEM_SPATK_MOCHI, 1
 	additem ITEM_SPDEF_MOCHI, 1
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CAMERUPT
+	givemonwithot OT_MAY_CAMERUPT
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Cafe_EventScript_ReceiveCameruptParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Cafe_EventScript_ReceiveCameruptPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -880,11 +880,11 @@ Present_Cafe_EventScript_ReceivedCameruptFanfare::
 	return
 
 Present_Cafe_EventScript_LisiaGiveMisdreavus::
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MISDREAVUS
-	givemonwithot OT_LISIA_MISDREAVUS
 	additem ITEM_SPATK_MOCHI, 1
 	additem ITEM_SPDEF_MOCHI, 2
 	additem ITEM_SPE_MOCHI, 1
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MISDREAVUS
+	givemonwithot OT_LISIA_MISDREAVUS
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Cafe_EventScript_ReceiveMisdreavusParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Cafe_EventScript_ReceiveMisdreavusPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -916,12 +916,12 @@ Present_Cafe_EventScript_ReceivedMisdreavusFanfare::
 	return
 
 Present_Cafe_EventScript_LisiaGiveMurkrow::
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MURKROW
-	givemonwithot OT_LISIA_MURKROW
 	additem ITEM_HP_MOCHI, 1
 	additem ITEM_ATK_MOCHI, 1
 	additem ITEM_SPDEF_MOCHI, 1
 	additem ITEM_SPE_MOCHI, 1
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MURKROW
+	givemonwithot OT_LISIA_MURKROW
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Cafe_EventScript_ReceiveMurkrowParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Cafe_EventScript_ReceiveMurkrowPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -953,11 +953,11 @@ Present_Cafe_EventScript_ReceivedMurkrowFanfare::
 	return
 
 Present_Flat1_2F_EventScript_BeautyGiveSwanna::
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SWANNA
-	givemonwithot OT_BEATRICE_SWANNA
 	additem ITEM_HP_MOCHI, 2
 	additem ITEM_DEF_MOCHI, 1
 	additem ITEM_SPATK_MOCHI, 1
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SWANNA
+	givemonwithot OT_BEATRICE_SWANNA
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Flat1_2F_EventScript_ReceiveSwannaParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Flat1_2F_EventScript_ReceiveSwannaPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -989,11 +989,11 @@ Present_Flat1_2F_EventScript_ReceivedSwannaFanfare::
 	return
 
 Present_Flat1_2F_EventScript_BeautyGiveUnfezant::
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_UNFEZANT
-	givemonwithot OT_BEATRICE_UNFEZANT
 	additem ITEM_HP_MOCHI, 1
 	additem ITEM_SPATK_MOCHI, 2
 	additem ITEM_SPE_MOCHI, 1
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_UNFEZANT
+	givemonwithot OT_BEATRICE_UNFEZANT
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Flat1_2F_EventScript_ReceiveUnfezantParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Flat1_2F_EventScript_ReceiveUnfezantPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -1025,14 +1025,14 @@ Present_Flat1_2F_EventScript_ReceivedUnfezantFanfare::
 	return
 
 InsideOutside_EventScript_ArtistGiveSmeargle::
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SMEARGLE
-	givemonwithot OT_LEO_SMEARGLE
 	additem ITEM_HP_MOCHI, 1
 	additem ITEM_ATK_MOCHI, 1
 	additem ITEM_DEF_MOCHI, 1
 	additem ITEM_SPATK_MOCHI, 1
 	additem ITEM_SPDEF_MOCHI, 1
 	additem ITEM_SPE_MOCHI, 1
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SMEARGLE
+	givemonwithot OT_LEO_SMEARGLE
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, InsideOutside_EventScript_ReceiveSmeargleParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, InsideOutside_EventScript_ReceiveSmearglePC
 	goto Common_EventScript_NoMoreRoomForPokemon

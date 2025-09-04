@@ -103,8 +103,7 @@ PresentTown_OnTransition:
 	end
 
 PresentTown_EventScript_TrySetUpArtist::
-	returnqueststate QUEST_SMEARGLE
-	call_if_lt VAR_RESULT, 3, PresentTown_EventScript_SetUpArtist
+	call_if_set FLAG_HIDE_OUTSIDE_SMEARGLE, PresentTown_EventScript_SetUpArtist
 	return
 
 PresentTown_EventScript_SetUpArtist::
@@ -1132,9 +1131,9 @@ PresentTown_Text_TrainerTipsEVSign:
 	.string "Battles no longer provide EVs!\p"
 	.string "There is a new EV-boosting item in this\n"
 	.string "game, Mega-Mochi!\p"
-	.string "Eat one Mega-Mochi to boost that stat to\n"
-	.string "half its max EVs, and eat two to boost\l"
-	.string "that stat to a full 252 EVs!$"
+	.string "Eat one Mega-Mochi to boost that stat\n"
+	.string "to half its max EVs, and eat two to\l"
+	.string "boost that stat to a full 252 EVs!$"
 
 PresentTown_Text_CelebiSocietySign:
 	.string "Porta Bella City\n"
