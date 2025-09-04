@@ -8,6 +8,19 @@ CutsceneForest_OnTransition:
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetStormWeather
 	call_if_eq VAR_CUTSCENE_FOREST_STATE, 1, CutsceneForest_EventScript_AddLostIdol
 	call_if_eq VAR_CUTSCENE_FOREST_STATE, 2, CutsceneForest_EventScript_AddSmeargle
+	@call_if_eq VAR_CUTSCENE_FOREST_STATE, 3, CutsceneForest_EventScript_AddRodentsInitialEncounter
+	@call_if_eq VAR_CUTSCENE_FOREST_STATE, 4, CutsceneForest_EventScript_AddRodent
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 5, CutsceneForest_EventScript_AddLurantis
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 6, CutsceneForest_EventScript_AddLuxray
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 7, CutsceneForest_EventScript_AddLuxrayDark
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 8, CutsceneForest_EventScript_AddToedscruel
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 9, CutsceneForest_EventScript_AddFrosmoth
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 10, CutsceneForest_EventScript_AddKleavor
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 11, CutsceneForest_EventScript_AddGoodraHisui
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 12, CutsceneForest_EventScript_AddBeheeyem
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 13, CutsceneForest_EventScript_AddAerodactyl
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 14, CutsceneForest_EventScript_AddScreamTail
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 15, CutsceneForest_EventScript_AddWoChien
 	end
 
 CutsceneForest_EventScript_AddLostIdol::
@@ -18,6 +31,76 @@ CutsceneForest_EventScript_AddLostIdol::
 CutsceneForest_EventScript_AddSmeargle::
 	clearflag FLAG_HIDE_CUTSCENE_FOREST_SMEARGLE
 	addobject LOCALID_FOREST_SMEARGLE
+	return
+
+@CutsceneForest_EventScript_AddRodent::
+@	call_if_set FLAG_CHOSE_DEDENNE, CutsceneForest_EventScript_AddDedenne
+@	call_if_set FLAG_CHOSE_TOGEDEMARU, CutsceneForest_EventScript_AddTogedemaru
+	return
+
+@CutsceneForest_EventScript_AddDedenne::
+@	clearflag FLAG_HIDE_FOREST_DEDENNE
+@	addobject LOCALID_FOREST_DEDENNE
+@	return
+
+@CutsceneForest_EventScript_AddTogedemaru::
+@	clearflag FLAG_HIDE_FOREST_TOGEDEMARU
+@	addobject LOCALID_FOREST_TOGEDEMARU
+@	return
+		
+CutsceneForest_EventScript_AddLurantis::
+	clearflag FLAG_HIDE_FOREST_LURANTIS
+	addobject LOCALID_FOREST_LURANTIS
+	return
+
+CutsceneForest_EventScript_AddLuxray::
+	clearflag FLAG_HIDE_FOREST_LUXRAY
+	addobject LOCALID_FOREST_LUXRAY
+	return
+	
+CutsceneForest_EventScript_AddLuxrayDark::
+	clearflag FLAG_HIDE_FOREST_LUXRAY_DARK
+	addobject LOCALID_FOREST_LUXRAY_DARK
+	return
+	
+CutsceneForest_EventScript_AddToedscruel::
+	clearflag FLAG_HIDE_FOREST_TOEDSCRUEL
+	addobject LOCALID_FOREST_TOEDSCRUEL
+	return
+	
+CutsceneForest_EventScript_AddFrosmoth::
+	clearflag FLAG_HIDE_FOREST_FROSMOTH
+	addobject LOCALID_FOREST_FROSMOTH
+	return
+	
+CutsceneForest_EventScript_AddKleavor::
+	clearflag FLAG_HIDE_FOREST_KLEAVOR
+	addobject LOCALID_FOREST_KLEAVOR
+	return
+	
+CutsceneForest_EventScript_AddGoodraHisui::
+	clearflag FLAG_HIDE_FOREST_GOODRA_HISUI
+	addobject LOCALID_FOREST_GOODRA
+	return
+	
+CutsceneForest_EventScript_AddBeheeyem::
+	clearflag FLAG_HIDE_FOREST_BEHEEYEM
+	addobject LOCALID_FOREST_BEHEEYEM
+	return
+	
+CutsceneForest_EventScript_AddAerodactyl::
+	clearflag FLAG_HIDE_FOREST_AERODACTYL
+	addobject LOCALID_FOREST_AERODACTYL
+	return
+	
+CutsceneForest_EventScript_AddScreamTail::
+	clearflag FLAG_HIDE_FOREST_SCREAM_TAIL
+	addobject LOCALID_FOREST_SCREAM_TAIL
+	return
+	
+CutsceneForest_EventScript_AddWoChien::
+	clearflag FLAG_HIDE_FOREST_WO_CHIEN
+	addobject LOCALID_FOREST_WO_CHIEN
 	return
 
 CutsceneForest_OnFrame:
@@ -492,3 +575,15 @@ CutsceneForest_Text_RangerMeetBackAtCityHall:
 	.string "Hall later.\p"
 	.string "Our office is in the left wing of the\n"
 	.string "building. Got it?$"
+
+CutsceneForest_Text_MonFlewAway:
+	.string "The {STR_VAR_1} flew away!$"
+
+CutsceneForest_Text_MonSlitheredAway:
+	.string "The {STR_VAR_1} slithered away!$"
+
+CutsceneForest_Text_WoChienSlitheredAway:
+	.string "Wo-Chien slithered away!$"
+
+CutsceneForest_Text_MonRanAway:
+	.string "The {STR_VAR_1} ran away!$"
