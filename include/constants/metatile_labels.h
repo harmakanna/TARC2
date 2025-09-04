@@ -433,6 +433,7 @@
 
 // gTileset_PresentTown
 #define METATILE_PresentTown_CalmWater              0x2F4
+#define METATILE_PresentTown_Door_City_Hall         0x2B5
 #define METATILE_PresentTown_Locked_Door            0x362
 #define METATILE_PresentTown_Locked_Gym_Door        0x361
 #define METATILE_PresentTown_Porto_Bella_City_Door  0x36A

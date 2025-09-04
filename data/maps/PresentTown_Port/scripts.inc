@@ -302,14 +302,14 @@ PresentTown_Port_EventScript_MagikarpManGivesMagikarpFromTrigger::
 	updatemoneybox
 	playse SE_SHOP
 	speak LOCALID_PORT_MAGIKARPMAN, DIR_EAST, Name_Magikarp_Man, PresentTown_Port_Text_MagikarpManRememberNoTakebacks
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MAGIKARP
-    givemonwithot OT_LOOKER_MAGIKARP
 	additem ITEM_HP_MOCHI, 1
 	additem ITEM_ATK_MOCHI, 1
 	additem ITEM_DEF_MOCHI, 1
 	additem ITEM_SPATK_MOCHI, 1
 	additem ITEM_SPDEF_MOCHI, 1
 	additem ITEM_SPE_MOCHI, 1
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MAGIKARP
+    givemonwithot OT_LOOKER_MAGIKARP
 	speakername NULL
 	call PresentTown_Port_EventScript_ReceivedMagikarpFanfare
 	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
@@ -330,14 +330,14 @@ PresentTown_Port_EventScript_MagikarpManGivesMagikarpFromBench::
 	updatemoneybox
 	playse SE_SHOP
 	speak LOCALID_PORT_MAGIKARPMAN, VAR_0x8005, Name_Magikarp_Man, PresentTown_Port_Text_MagikarpManRememberNoTakebacks
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MAGIKARP
-    givemonwithot OT_LOOKER_MAGIKARP
 	additem ITEM_HP_MOCHI, 1
 	additem ITEM_ATK_MOCHI, 1
 	additem ITEM_DEF_MOCHI, 1
 	additem ITEM_SPATK_MOCHI, 1
 	additem ITEM_SPDEF_MOCHI, 1
 	additem ITEM_SPE_MOCHI, 1
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MAGIKARP
+    givemonwithot OT_LOOKER_MAGIKARP
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PresentTown_Port_EventScript_ReceiveMagikarpParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PresentTown_Port_EventScript_ReceiveMagikarpPC
 	call Common_EventScript_NoMoreRoomForPokemon
