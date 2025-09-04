@@ -216,7 +216,7 @@ CutsceneForest_EventScript_RodentsInitialEncounter::
 	waitmovement 0
 	delay 50
 	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, CutsceneForest_Text_LookerShoot
-	multichoice MULTI_RODENT_CHASEMON, 0, 6, TRUE
+	multichoice 0, 6, MULTI_RODENT_CHASEMON, TRUE
 	goto_if_eq VAR_RESULT, 0, CutsceneForest_EventScript_ChoseDedenne
 	goto_if_eq VAR_RESULT, 1, CutsceneForest_EventScript_ChoseTogedemaru
 	end
