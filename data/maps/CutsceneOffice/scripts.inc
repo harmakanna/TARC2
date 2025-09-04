@@ -10,7 +10,7 @@ CutsceneOffice_EventScript_StartGame::
 	lockall
 	setflag FLAG_FORCE_LOAD_OFFSCREEN_OBJEV
 	msgbox CutsceneOffice_Text_PleaseSetDifficulty, MSGBOX_DEFAULT
-	multichoice MULTI_CHOOSE_DIFFICULTY, 0, 0, TRUE
+	multichoicedefault 0, 0, MULTI_CHOOSE_DIFFICULTY, 1, TRUE
 	call_if_eq VAR_RESULT, 0, CutsceneOffice_EventScript_SetEasy
 	call_if_eq VAR_RESULT, 1, CutsceneOffice_EventScript_SetNormal
 	call_if_eq VAR_RESULT, 2, CutsceneOffice_EventScript_SetHard
@@ -198,8 +198,8 @@ CutsceneOffice_Text_AnabelIllReachOut:
 	.string "Morrigan right away.$"
 
 CutsceneOffice_Text_PleaseSetDifficulty:
-	.string "Please set your difficulty. (This\n"
-	.string "can be changed at any time.)$"
+	.string "Please set your difficulty.\n"
+	.string "(This can be changed at any time.)$"
 
 CutsceneOffice_Text_SetToEasy:
 	.string "The difficulty has been set to\n"
