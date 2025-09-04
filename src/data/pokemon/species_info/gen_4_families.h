@@ -1438,7 +1438,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_LUXRAY}),
     },
 
-    [SPECIES_LUXRAY] =
+    [SPECIES_LUXRAY_DARK] =
     {
         .baseHP        = 80,
         .baseAttack    = 120,
@@ -1446,8 +1446,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .baseSpeed     = 70,
         .baseSpAttack  = 95,
         .baseSpDefense = 79,
-        .types = MON_TYPES(TYPE_ELECTRIC),
-        .catchRate = 45,
+        .types = MON_TYPES(TYPE_ELECTRIC, TYPE_DARK),
+        .catchRate = 35,
     #if P_UPDATED_EXP_YIELDS >= GEN_8
         .expYield = 262,
     #elif P_UPDATED_EXP_YIELDS >= GEN_5
@@ -1461,7 +1461,94 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_RIVALRY, ABILITY_INTIMIDATE, ABILITY_GUTS },
+        .abilities = { ABILITY_GUTS, ABILITY_INTIMIDATE, ABILITY_RIVALRY },
+        .bodyColor = BODY_COLOR_BLUE,
+        .speciesName = _("Luxray"),
+        .cryId = CRY_LUXRAY,
+        .natDexNum = NATIONAL_DEX_LUXRAY,
+        .categoryName = _("Gleam Eyes"),
+        .height = 14,
+        .weight = 420,
+        .description = COMPOUND_STRING(
+            "It has eyes which can see through\n"
+            "anything. Luxray's ability to see\n"
+            "through objects comes in handy when\n"
+            "it's scouting for danger."),
+        .pokemonScale = 265,
+        .pokemonOffset = 2,
+        .trainerScale = 262,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Luxray,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 2,
+        .frontAnimFrames = ANIM_FRAMES(
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 20),
+            ANIMCMD_FRAME(0, 15),
+            ANIMCMD_FRAME(1, 20),
+            ANIMCMD_FRAME(0, 15),
+        ),
+        .frontAnimId = ANIM_GLOW_YELLOW,
+        .backPic = gMonBackPic_Luxray,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_SHRINK_GROW_VIBRATE,
+        .palette = gMonPalette_Luxray,
+        .shinyPalette = gMonShinyPalette_Luxray,
+        .iconSprite = gMonIcon_Luxray,
+        .iconPalIndex = 0,
+#if P_GENDER_DIFFERENCES
+        .frontPicFemale = gMonFrontPic_LuxrayF,
+        .frontPicSizeFemale = MON_COORDS_SIZE(64, 64),
+        .backPicFemale = gMonBackPic_LuxrayF,
+        .backPicSizeFemale = MON_COORDS_SIZE(64, 64),
+#endif //P_GENDER_DIFFERENCES
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-1, 10, SHADOW_SIZE_L)
+        FOOTPRINT(Luxray)
+        OVERWORLD(
+            sPicTable_Luxray,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Luxray,
+            gShinyOverworldPalette_Luxray
+        )
+        OVERWORLD_FEMALE(
+            sPicTable_LuxrayF,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following
+        )
+        .levelUpLearnset = sLuxrayDarkLevelUpLearnset,
+        .teachableLearnset = sLuxrayTeachableLearnset,
+    },
+    [SPECIES_LUXRAY] =
+    {
+        .baseHP        = 80,
+        .baseAttack    = 120,
+        .baseDefense   = 79,
+        .baseSpeed     = 70,
+        .baseSpAttack  = 95,
+        .baseSpDefense = 79,
+        .types = MON_TYPES(TYPE_ELECTRIC),
+        .catchRate = 35,
+    #if P_UPDATED_EXP_YIELDS >= GEN_8
+        .expYield = 262,
+    #elif P_UPDATED_EXP_YIELDS >= GEN_5
+        .expYield = 235,
+    #else
+        .expYield = 194,
+    #endif
+        .evYield_Attack = 3,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_GUTS, ABILITY_INTIMIDATE, ABILITY_RIVALRY },
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Luxray"),
         .cryId = CRY_LUXRAY,

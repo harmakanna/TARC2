@@ -252,17 +252,19 @@
       "flag": "FLAG_HIDE_OUTSIDE_NPCS"
     },
     {
+      "local_id": "LOCALID_OUTSIDE_ARTIST",
       "graphics_id": "OBJ_EVENT_GFX_ARTIST",
       "x": 31,
       "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
+      "movement_range_x": 2,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_type": "TRAINER_TYPE_QUEST_GIVER",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_HIDE_OUTSIDE_NPCS"
+      "script": "InsideOutside_EventScript_ArtistOutside",
+      "flag": "FLAG_HIDE_OUTSIDE_NPCS",
+      "quest_id": 22
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
@@ -278,6 +280,7 @@
       "flag": "FLAG_HIDE_OUTSIDE_NPCS"
     },
     {
+      "local_id": "LOCALID_OUTSIDE_STUDENT",
       "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
       "x": 65,
       "y": 29,
@@ -285,10 +288,11 @@
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_type": "TRAINER_TYPE_QUEST_GIVER",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_HIDE_OUTSIDE_NPCS"
+      "script": "InsideOutside_EventScript_StudentOutside",
+      "flag": "FLAG_HIDE_OUTSIDE_NPCS",
+      "quest_id": 8
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
@@ -409,13 +413,41 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_HIDE_CUTSCENE_FOREST_IDOL"
+    },
+    {
+      "local_id": "LOCALID_OUTSIDE_SMEARGLE",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SMEARGLE)",
+      "x": 30,
+      "y": 18,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "InsideOutside_EventScript_ArtistSmeargle",
+      "flag": "FLAG_HIDE_OUTSIDE_SMEARGLE"
+    },
+    {
+      "local_id": "LOCALID_CITY_FOREST_SMEARGLE",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SMEARGLE)",
+      "x": 15,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_CUTSCENE_FOREST_SMEARGLE"
     }
   ],
   "warp_events": [
     {
       "warp_id": "PEACE_FROM_CITY_ML",
       "x": 15,
-      "y": 5,
+      "y": 6,
       "elevation": 0,
       "dest_map": "MAP_SHRINE_OF_PEACE_PRESENT",
       "dest_warp_id": "CITY_FROM_PEACE_M"
@@ -423,7 +455,7 @@
     {
       "warp_id": "PEACE_FROM_CITY_MR",
       "x": 16,
-      "y": 5,
+      "y": 6,
       "elevation": 0,
       "dest_map": "MAP_SHRINE_OF_PEACE_PRESENT",
       "dest_warp_id": "CITY_FROM_PEACE_M"
@@ -431,7 +463,7 @@
     {
       "warp_id": "PEACE_FROM_CITY_R",
       "x": 17,
-      "y": 5,
+      "y": 6,
       "elevation": 0,
       "dest_map": "MAP_SHRINE_OF_PEACE_PRESENT",
       "dest_warp_id": "CITY_FROM_PEACE_R"
@@ -439,7 +471,7 @@
     {
       "warp_id": "PEACE_FROM_CITY_L",
       "x": 14,
-      "y": 5,
+      "y": 6,
       "elevation": 0,
       "dest_map": "MAP_SHRINE_OF_PEACE_PRESENT",
       "dest_warp_id": "CITY_FROM_PEACE_L"
@@ -447,7 +479,7 @@
     {
       "warp_id": "PROSPERITY_FROM_CITY_L",
       "x": 60,
-      "y": 5,
+      "y": 6,
       "elevation": 0,
       "dest_map": "MAP_SHRINE_OF_PROSPERITY_PRESENT",
       "dest_warp_id": "CITY_FROM_PROSPERITY_L"
@@ -455,7 +487,7 @@
     {
       "warp_id": "PROSPERITY_FROM_CITY_ML",
       "x": 61,
-      "y": 5,
+      "y": 6,
       "elevation": 0,
       "dest_map": "MAP_SHRINE_OF_PROSPERITY_PRESENT",
       "dest_warp_id": "CITY_FROM_PROSPERITY_M"
@@ -463,7 +495,7 @@
     {
       "warp_id": "PROSPERITY_FROM_CITY_MR",
       "x": 62,
-      "y": 5,
+      "y": 6,
       "elevation": 0,
       "dest_map": "MAP_SHRINE_OF_PROSPERITY_PRESENT",
       "dest_warp_id": "CITY_FROM_PROSPERITY_M"
@@ -471,7 +503,7 @@
     {
       "warp_id": "PROSPERITY_FROM_CITY_R",
       "x": 63,
-      "y": 5,
+      "y": 6,
       "elevation": 0,
       "dest_map": "MAP_SHRINE_OF_PROSPERITY_PRESENT",
       "dest_warp_id": "CITY_FROM_PROSPERITY_R"
@@ -804,6 +836,42 @@
       "var": "VAR_QUEUE_GENIE_FIGHT",
       "var_value": "1",
       "script": "PresentTown_EventScript_CatchProsperityRangerAttention2"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TRIGGER_CUTSCENE_FOREST",
+      "var_value": "2",
+      "script": "PresentTown_EventScript_WarpToCutsceneForest"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TRIGGER_CUTSCENE_FOREST",
+      "var_value": "2",
+      "script": "PresentTown_EventScript_WarpToCutsceneForest"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TRIGGER_CUTSCENE_FOREST",
+      "var_value": "2",
+      "script": "PresentTown_EventScript_WarpToCutsceneForest"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_TRIGGER_CUTSCENE_FOREST",
+      "var_value": "2",
+      "script": "PresentTown_EventScript_WarpToCutsceneForest"
     }
   ],
   "bg_events": [

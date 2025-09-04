@@ -438,6 +438,11 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_HO_OH:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
         break;
+    case SPECIES_WO_CHIEN:
+        TRAINER_BATTLE_PARAM.opponentA = TRAINER_WO_CHIEN;
+        TRAINER_BATTLE_PARAM.opponentB = TRAINER_NONE;
+        CreateBattleStartTask(B_TRANSITION_MUGSHOT, MUS_BW_VS_LEGENDARY);
+        break;
     case SPECIES_THUNDURUS:
         TRAINER_BATTLE_PARAM.opponentA = TRAINER_THUNDURUS;
         TRAINER_BATTLE_PARAM.opponentB = TRAINER_NONE;

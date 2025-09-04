@@ -68,6 +68,9 @@ Looker_Text_OfCourseICanHelp:
 Looker_Text_SorryImBusy:
     .string "Sorry, I'm busy.$"
 
+Looker_Text_SorryICouldntHelp:
+    .string "Sorry I couldn't help.$"
+    
 Looker_Text_SureICan:
     .string "Sure, I can!$"
 
@@ -79,6 +82,9 @@ Looker_Text_WillDo:
     
 Looker_Text_LeaveItToMe:
     .string "Leave it to me.$"
+    
+Looker_Text_ImOnTheCase:
+    .string "I'm on the case.$"
     
 Looker_Text_IWillAlwaysHelp:
     .string "Mission complete.$"
@@ -175,6 +181,17 @@ Looker_Text_IUnderstand:
 Looker_Text_NoThanks:
     .string "No thank you.$"
     
+Looker_Text_Drat:
+    .string "Drat… I need to try again…$"
+
+Looker_Text_Ouch:
+    .string "Ouch!$"
+    
+Looker_Text_ImOnTheCaseDoubt:
+    .string "Umm…\p"
+    .string "I'm on the case?\p"
+    .string "I think?$"
+
 Looker_Text_Dots:
     .string "…$"
 
@@ -199,3 +216,9 @@ Looker_Text_ThatsAllTheIdols:
     .string "missing idols!\p"
     .string "I should go talk to the barista at\n"
     .string "Tauros Café when I get the chance…$"
+
+Looker_Text_Mochi:
+    .string "Looker received some Mega-Mochi!$"
+
+Looker_Text_AlsoMochi:
+    .string "Looker also received some Mega-Mochi!$"

@@ -327,7 +327,7 @@ static const struct SubQuest sSubQuestsCatchTheGenies[QUEST_CATCH_GENIES_SUB_COU
 	      gText_SubQuestCatchTheGenies_Map,
 	      SPECIES_TORNADUS,
 	      PKMN,
-	      sText_Found
+	      sText_Caught
 	),
 	sub_quest(
 	      7,
@@ -336,7 +336,7 @@ static const struct SubQuest sSubQuestsCatchTheGenies[QUEST_CATCH_GENIES_SUB_COU
 	      gText_SubQuestCatchTheGenies_Map,
 	      SPECIES_THUNDURUS,
 	      PKMN,
-	      sText_Found
+	      sText_Caught
 	),
 };
 
@@ -366,6 +366,123 @@ static const struct SubQuest sSubQuestsAWholeNewWorld[QUEST_WITH_MUCH_GRATITUDE_
 	      sText_Found
 	),
 	
+};
+
+static const struct SubQuest sSubQuestsLuxray[QUEST_LUXRAY_SUB_COUNT] =
+{
+	sub_quest( //0
+	      10,
+	      gText_SubQuestLuxray_Name,
+	      gText_SubQuestLuxray_Desc,
+	      gText_SubQuestLuxray_Map,
+	      OBJ_EVENT_GFX_LITTLE_BOY_3,
+	      OBJECT,
+	      sText_Found
+	),
+
+};
+
+static const struct SubQuest sSubQuestsCatchMons[QUEST_CATCHMONS_SUB_COUNT] =
+{
+	sub_quest( //0
+	      11,
+	      gText_SubQuestCatchMons_NameRodent,
+	      gText_SubQuestCatchMons_DescRodent,
+	      gText_SubQuestCatchMons_Map,
+	      ITEM_THUNDER_STONE,
+	      ITEM,
+	      sText_Caught
+	),
+	sub_quest( //1
+	      12,
+	      gText_SubQuestCatchMons_NameLurantis,
+	      gText_SubQuestCatchMons_DescLurantis,
+	      gText_SubQuestCatchMons_Map,
+	      SPECIES_LURANTIS,
+	      PKMN,
+	      sText_Caught
+	),
+	sub_quest( //2
+	      13,
+	      gText_SubQuestCatchMons_NameLuxray,
+	      gText_SubQuestCatchMons_DescLuxray,
+	      gText_SubQuestCatchMons_Map,
+	      SPECIES_LUXRAY,
+	      PKMN,
+	      sText_Caught
+	),
+	sub_quest( //3
+	      14,
+	      gText_SubQuestCatchMons_NameToedscruel,
+	      gText_SubQuestCatchMons_DescToedscruel,
+	      gText_SubQuestCatchMons_Map,
+	      SPECIES_TOEDSCRUEL,
+	      PKMN,
+	      sText_Caught
+	),
+	sub_quest( //4
+	      15,
+	      gText_SubQuestCatchMons_NameFrosmoth,
+	      gText_SubQuestCatchMons_DescFrosmoth,
+	      gText_SubQuestCatchMons_Map,
+	      SPECIES_FROSMOTH,
+	      PKMN,
+	      sText_Caught
+	),
+	sub_quest( //5
+	      16,
+	      gText_SubQuestCatchMons_NameKleavor,
+	      gText_SubQuestCatchMons_DescKleavor,
+	      gText_SubQuestCatchMons_Map,
+	      SPECIES_KLEAVOR,
+	      PKMN,
+	      sText_Caught
+	),
+	sub_quest( //6
+	      17,
+	      gText_SubQuestCatchMons_NameGoodra,
+	      gText_SubQuestCatchMons_DescGoodra,
+	      gText_SubQuestCatchMons_Map,
+	      SPECIES_GOODRA_HISUI,
+	      PKMN,
+	      sText_Caught
+	),
+	sub_quest( //7
+	      18,
+	      gText_SubQuestCatchMons_NameBeheeyem,
+	      gText_SubQuestCatchMons_DescBeheeyem,
+	      gText_SubQuestCatchMons_Map,
+	      SPECIES_BEHEEYEM,
+	      PKMN,
+	      sText_Caught
+	),
+	sub_quest( //8
+	      19,
+	      gText_SubQuestCatchMons_NameAerodactyl,
+	      gText_SubQuestCatchMons_DescAerodactyl,
+	      gText_SubQuestCatchMons_Map,
+	      SPECIES_AERODACTYL,
+	      PKMN,
+	      sText_Caught
+	),
+	sub_quest( //9
+	      20,
+	      gText_SubQuestCatchMons_NameScreamTail,
+	      gText_SubQuestCatchMons_DescScreamTail,
+	      gText_SubQuestCatchMons_Map,
+	      SPECIES_SCREAM_TAIL,
+	      PKMN,
+	      sText_Caught
+	),
+	sub_quest( //10
+	      21,
+	      gText_SubQuestCatchMons_NameWoChien,
+	      gText_SubQuestCatchMons_DescWoChien,
+	      gText_SubQuestCatchMons_Map,
+	      SPECIES_WO_CHIEN,
+	      PKMN,
+	      sText_Caught
+	),
 };
 
 ////////////////////////END SUBQUEST CUSTOMIZATION/////////////////////////////
@@ -593,32 +710,32 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestDesc_22,
 	      gText_SideQuestDoneDesc_22,
 	      gText_SideQuestMap22,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_TWIN,
 	      OBJECT,
-	      NULL,
-	      0
+	      sSubQuestsLuxray,
+	      QUEST_LUXRAY_SUB_COUNT
 	),
-	side_quest(
+	side_quest( // QUEST_SMEARGLE
 	      gText_SideQuestName_23,
 	      gText_SideQuestDesc_23,
 	      gText_SideQuestDoneDesc_23,
 	      gText_SideQuestMap23,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_ARTIST,
 	      OBJECT,
 	      NULL,
 	      0
 	),
-	side_quest(
+	side_quest( // QUEST_CATCHMONS
 	      gText_SideQuestName_24,
 	      gText_SideQuestDesc_24,
 	      gText_SideQuestDoneDesc_24,
 	      gText_SideQuestMap24,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      NULL,
-	      0
+	      ITEM_SAFARI_BALL,
+	      ITEM,
+	      sSubQuestsCatchMons,
+	      QUEST_CATCHMONS_SUB_COUNT
 	),
-	side_quest(
+	/*side_quest(
 	      gText_SideQuestName_25,
 	      gText_SideQuestDesc_25,
 	      gText_SideQuestDoneDesc_25,
@@ -667,7 +784,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      OBJECT,
 	      NULL,
 	      0
-	),
+	),*/
 	side_quest(
 	      gText_SideQuestName_30,
 	      gText_SideQuestDesc_30,
@@ -2726,7 +2843,8 @@ void HandleQuestIconForSingleObjectEvent(struct ObjectEvent *objectEvent, u32 ob
 	// Handle quests which rely on other quests as a prerequisite
 	if ((questId == QUEST_FARMLAND_INVASION_2 && !IsQuestCompletedState(QUEST_FARMLAND_INVASION_1)) //Invasion 2 does not occur until Invasion 1 is complete
 		|| (questId == QUEST_FARMLAND_INVASION_3 && !IsQuestCompletedState(QUEST_FARMLAND_INVASION_2)) //Invasion 3 does not occur until Invasion 2 is complete
-		|| (questId == QUEST_BREAK_A_LEG && !IsQuestCompletedState(QUEST_GET_INTO_THE_GROOVE))) //Break a Le does not occur until finding the idols is complete
+		|| (questId == QUEST_BREAK_A_LEG && !IsQuestCompletedState(QUEST_GET_INTO_THE_GROOVE)) //Break a Leg does not occur until finding the idols is complete
+		|| (questId == (QUEST_FOREVER_FAITHFUL || QUEST_LUXRAY) && !FlagGet(FLAG_DEFEATED_SHRINE_GENIES))) //Hypnotized BF quest does not happen until the weather clears up following Shrine Quest
 	{
 		ResetQuestIconOnObject(objectEvent);
 		return;

@@ -510,7 +510,7 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BOYFRIEND ===
-Name: Damian
+Name: Luca
 Class: Triathlete
 Pic: Running Triathlete M
 Gender: Male
@@ -975,7 +975,7 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BOYFRIEND ===
-Name: Damian
+Name: Luca
 Class: Triathlete
 Pic: Running Triathlete M
 Gender: Male
@@ -2350,7 +2350,7 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BOYFRIEND ===
-Name: Damian
+Name: Luca
 Class: Triathlete
 Pic: Running Triathlete M
 Gender: Male
@@ -18653,10 +18653,11 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 === TRAINER_WO_CHIEN ===
 Name: MARIELA
 Class: Psychic
-Pic: Psychic F
+Pic: Wo Chien
 Gender: Female
 Music: Intense
 Double Battle: No
+Mugshot: Green
 
 Chimecho
 Level: 41

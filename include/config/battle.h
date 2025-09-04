@@ -228,7 +228,7 @@
                                           // This var should never remain non-zero long enough for the player to save.
                                           // For better wild AI handling, edit GetWildAiFlags() in src/battle_ai_main.c
 
-#define B_VAR_DIFFICULTY            0     // If not 0, you can use this var to control which difficulty version of a Trainer is loaded. This should be manually set by the developer using Script_SetDifficulty AFTER NewGameInitData has run.
+#define B_VAR_DIFFICULTY            VAR_CHOOSE_DIFFICULTY     // If not 0, you can use this var to control which difficulty version of a Trainer is loaded. This should be manually set by the developer using Script_SetDifficulty AFTER NewGameInitData has run.
 
 // Sky Battles
 #define B_FLAG_SKY_BATTLE                 0     // If this flag has a value, the player will be able to engage in scripted Sky Battles.
@@ -365,5 +365,7 @@
 #define B_POOL_RULE_EXCLUDE_FORMS           FALSE    // Exclude different forms from the Species Clause
 #define B_POOL_RULE_ITEM_CLAUSE             FALSE    // Only allow each item to be picked once
 #define B_POOL_RULES_USE_ITEM_EXCLUSIONS    FALSE    // Exclude items listed in poolItemClauseExclusions
+
+#define B_BATTLE_SPEED VAR_BATTLE_SPEED // Usage with a variable
 
 #endif // GUARD_CONFIG_BATTLE_H

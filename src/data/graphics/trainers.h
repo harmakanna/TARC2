@@ -319,6 +319,9 @@ const u16 gTrainerPalette_FarmGirl[] = INCBIN_U16("graphics/trainers/front_pics/
 const u32 gTrainerFrontPic_TornAndThund[] = INCBIN_U32("graphics/trainers/front_pics/torn_and_thund.4bpp.smol");
 const u16 gTrainerPalette_TornAndThund[] = INCBIN_U16("graphics/trainers/front_pics/torn_and_thund.gbapal");
 
+const u32 gTrainerFrontPic_WoChien[] = INCBIN_U32("graphics/trainers/front_pics/wo_chien.4bpp.smol");
+const u16 gTrainerPalette_WoChien[] = INCBIN_U16("graphics/trainers/front_pics/wo_chien.gbapal");
+
 const u32 gTrainerFrontPic_Tornadus[] = INCBIN_U32("graphics/trainers/front_pics/tornadus.4bpp.smol");
 const u16 gTrainerPalette_Tornadus[] = INCBIN_U16("graphics/trainers/front_pics/tornadus.gbapal");
 const u32 gTrainerFrontPic_Thundurus[] = INCBIN_U32("graphics/trainers/front_pics/thundurus.4bpp.smol");
@@ -468,6 +471,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_YOUNGSTER_NEW, gTrainerFrontPic_YoungsterNew, gTrainerPalette_YoungsterNew),
     TRAINER_SPRITE(TRAINER_PIC_SCIENTIST, gTrainerFrontPic_Scientist, gTrainerPalette_Scientist),
     TRAINER_SPRITE(TRAINER_PIC_FARMGIRL, gTrainerFrontPic_FarmGirl, gTrainerPalette_FarmGirl),
+    TRAINER_SPRITE(TRAINER_PIC_WO_CHIEN, gTrainerFrontPic_WoChien, gTrainerPalette_WoChien),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =

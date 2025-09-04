@@ -125,7 +125,8 @@
 #define TRAINER_PIC_YOUNGSTER_NEW         107
 #define TRAINER_PIC_SCIENTIST             108
 #define TRAINER_PIC_FARMGIRL              109
-#define TRAINER_PIC_COUNT                 110
+#define TRAINER_PIC_WO_CHIEN              110
+#define TRAINER_PIC_COUNT                 111
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
