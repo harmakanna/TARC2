@@ -1140,7 +1140,8 @@ static bool16 IsStormingInPresent(struct WarpData *warp)
     else if (warp->mapGroup != MAP_GROUP(MAP_PRESENT_TOWN))
         return FALSE;
     else if (warp->mapNum == MAP_NUM(MAP_PRESENT_TOWN)
-     || warp->mapNum == MAP_NUM(MAP_PRESENT_TOWN_PORT))
+     || warp->mapNum == MAP_NUM(MAP_PRESENT_TOWN_PORT)
+     || warp->mapNum == MAP_NUM(MAP_CUTSCENE_FOREST))
         return TRUE;
     else
         return FALSE;
@@ -1192,6 +1193,8 @@ u16 GetLocationMusic(struct WarpData *warp)
             || warp->mapNum == MAP_NUM(MAP_PRESENT_CITY_HALL_2F_RANGER)
             || warp->mapNum == MAP_NUM(MAP_PRESENT_CITY_HALL_2F_OFFICE)))
         return MUS_PL_LOOKER;
+    else if (IsStormingInPresent(warp) == TRUE)
+        return MUS_NONE;
     else if (FlagGet(FLAG_SYS_WEATHER_CTRL)
             && warp->mapNum == MAP_NUM(MAP_PRESENT_POKEMON_CENTER))
         return MUS_DP_POKE_CENTER_NIGHT;
@@ -1199,8 +1202,6 @@ u16 GetLocationMusic(struct WarpData *warp)
             && warp->mapNum == MAP_NUM(MAP_PRESENT_TOWN))
         return MUS_NONE;
     else if (FlagGet(FLAG_SYS_NO_MUSIC_ON_TRANSITION))
-        return MUS_NONE;
-    else if (IsStormingInPresent(warp) == TRUE)
         return MUS_NONE;
     else
         return Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum)->music;

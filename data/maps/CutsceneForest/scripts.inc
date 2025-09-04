@@ -237,7 +237,6 @@ CutsceneForest_EventScript_ChoseDedenne::
 	setvar VAR_0x8004, SPECIES_DEDENNE
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
-	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CutsceneForest_EventScript_EndRodentRan
@@ -268,7 +267,6 @@ CutsceneForest_EventScript_ChoseTogedemaru::
 	setvar VAR_0x8004, SPECIES_TOGEDEMARU
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
-	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CutsceneForest_EventScript_EndRodentRan
@@ -339,6 +337,7 @@ CutsceneForest_EventScript_StartEncounter::
 	applymovement LOCALID_CAMERA, CutsceneForest_Movement_WalkUp6
 	waitmovement 0
 	special RemoveCameraObject
+	delay 60
 	applymovement LOCALID_PLAYER, CutsceneForest_Movement_WalkDown4
 	waitmovement 0
 	delay 60
@@ -456,7 +455,6 @@ CutsceneForest_EventScript_DedenneRematch::
 	setvar VAR_TEMP_1, LOCALID_FOREST_DEDENNE
 	setvar VAR_0x8004, SPECIES_DEDENNE
 	dowildbattle
-	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CutsceneForest_EventScript_EndRan
@@ -482,7 +480,6 @@ CutsceneForest_EventScript_TogedemaruRematch::
 	setvar VAR_TEMP_1, LOCALID_FOREST_TOGEDEMARU
 	setvar VAR_0x8004, SPECIES_TOGEDEMARU
 	dowildbattle
-	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CutsceneForest_EventScript_EndRan
@@ -508,7 +505,6 @@ CutsceneForest_EventScript_Lurantis::
 	setvar VAR_TEMP_1, LOCALID_FOREST_LURANTIS
 	setvar VAR_0x8004, SPECIES_LURANTIS
 	dowildbattle
-	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CutsceneForest_EventScript_EndRan
@@ -535,7 +531,6 @@ CutsceneForest_EventScript_Luxray::
 	setvar VAR_0x8004, SPECIES_LUXRAY
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
-	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CutsceneForest_EventScript_EndRan
@@ -564,7 +559,6 @@ CutsceneForest_EventScript_LuxrayDark::
 	setvar VAR_0x8004, SPECIES_LUXRAY_DARK
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
-	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CutsceneForest_EventScript_EndRan
@@ -603,7 +597,6 @@ CutsceneForest_EventScript_Toedscruel::
 	setvar VAR_TEMP_1, LOCALID_FOREST_TOEDSCRUEL
 	setvar VAR_0x8004, SPECIES_TOEDSCRUEL
 	dowildbattle
-	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CutsceneForest_EventScript_EndRan
@@ -629,7 +622,6 @@ CutsceneForest_EventScript_Frosmoth::
 	setvar VAR_TEMP_1, LOCALID_FOREST_FROSMOTH
 	setvar VAR_0x8004, SPECIES_FROSMOTH
 	dowildbattle
-	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CutsceneForest_EventScript_EndFlew
@@ -655,7 +647,6 @@ CutsceneForest_EventScript_Kleavor::
 	setvar VAR_TEMP_1, LOCALID_FOREST_KLEAVOR
 	setvar VAR_0x8004, SPECIES_KLEAVOR
 	dowildbattle
-	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CutsceneForest_EventScript_EndRan
@@ -681,7 +672,6 @@ CutsceneForest_EventScript_GoodraHisui::
 	setvar VAR_TEMP_1, LOCALID_FOREST_GOODRA
 	setvar VAR_0x8004, SPECIES_GOODRA_HISUI
 	dowildbattle
-	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CutsceneForest_EventScript_EndSlithered
@@ -707,7 +697,6 @@ CutsceneForest_EventScript_Beheeyem::
 	setvar VAR_TEMP_1, LOCALID_FOREST_BEHEEYEM
 	setvar VAR_0x8004, SPECIES_BEHEEYEM
 	dowildbattle
-	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CutsceneForest_EventScript_EndRan
@@ -733,7 +722,6 @@ CutsceneForest_EventScript_Aerodactyl::
 	setvar VAR_TEMP_1, LOCALID_FOREST_AERODACTYL
 	setvar VAR_0x8004, SPECIES_AERODACTYL
 	dowildbattle
-	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CutsceneForest_EventScript_EndFlew
@@ -759,7 +747,6 @@ CutsceneForest_EventScript_ScreamTail::
 	setvar VAR_TEMP_1, LOCALID_FOREST_SCREAM_TAIL
 	setvar VAR_0x8004, SPECIES_SCREAM_TAIL
 	dowildbattle
-	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CutsceneForest_EventScript_EndRan

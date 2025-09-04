@@ -974,18 +974,20 @@ void GetMochi(void)
 
 void SetDifficulty(void)
 {
-    switch (VAR_CHOOSE_DIFFICULTY)
-    {
-        case DIFFICULTY_EASY:
-            gSaveBlock2Ptr->optionsBattleStyle = DIFFICULTY_EASY;
-            break;
-        case DIFFICULTY_NORMAL:
-            gSaveBlock2Ptr->optionsBattleStyle = DIFFICULTY_NORMAL;
-            break;
-        case DIFFICULTY_HARD:
-            gSaveBlock2Ptr->optionsBattleStyle = DIFFICULTY_HARD;
-            break;
-    }
+    //Unlikely to be determined by just setting the variable. Likely needs an associated task.
+    
+    // switch (VAR_CHOOSE_DIFFICULTY)
+    // {
+    //     case DIFFICULTY_EASY:
+    //         gSaveBlock2Ptr->optionsBattleStyle = 0; // 0 = DIFFICULTY_EASY
+    //         break;
+    //     case DIFFICULTY_NORMAL:
+    //         gSaveBlock2Ptr->optionsBattleStyle = 1; // 0 = DIFFICULTY_NORMAL
+    //         break;
+    //     case DIFFICULTY_HARD:
+    //         gSaveBlock2Ptr->optionsBattleStyle = 2; // 0 = DIFFICULTY_HARD
+    //         break;
+    // }
 }
 
 void CableCarWarp(void)
