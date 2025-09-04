@@ -551,6 +551,7 @@ PastTown_EventScript_CarrotFarmerPests1QuestActivate::
 	setflag FLAG_SYS_DISAPPEAR_QUESTS
 	speak LOCALID_PAST_CARROTFARMER, DIR_SOUTH, Name_Carrot_Farmer, PastTown_Text_CarrotFarmerMyCarrots
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_WhatSeemsToBeTheProblem
+	closemessage
 	faceplayer
 	playse SE_PIN
 	applymovement LOCALID_PAST_CARROTFARMER, Common_Movement_ExclamationMark
@@ -1211,6 +1212,7 @@ PastTown_EventScript_SadGirlGiveMonsPotionsFromBelow::
 	applymovement LOCALID_TAUROS, Common_Movement_FaceLeft
 	speak LOCALID_PAST_SAD_GIRL_OUTSIDE, VAR_0x8005, Name_Farmgirl, PastTown_Text_SadGirlMiracle
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_AllInADaysWork
+	closemessage
 	playse SE_PIN
 	applymovement LOCALID_PAST_SAD_GIRL_OUTSIDE, Common_Movement_FaceLeftQuestionMark
 	waitmovement 0
@@ -1271,6 +1273,7 @@ PastTown_EventScript_SadGirlGiveMonsPotions::
 	waitmovement 0
 	speak LOCALID_PAST_SAD_GIRL_OUTSIDE, VAR_0x8005, Name_Farmgirl, PastTown_Text_SadGirlMiracle
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_AllInADaysWork
+	closemessage
 	playse SE_PIN
 	applymovement LOCALID_PAST_SAD_GIRL_OUTSIDE, Common_Movement_FaceUpQuestionMark
 	waitmovement 0
