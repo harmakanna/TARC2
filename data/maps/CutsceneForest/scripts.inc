@@ -7,6 +7,7 @@ CutsceneForest_OnTransition:
 	setflag FLAG_SYS_PREVENT_MAP_FADE
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetStormWeather
 	call_if_eq VAR_CUTSCENE_FOREST_STATE, 1, CutsceneForest_EventScript_AddLostIdol
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 2, CutsceneForest_EventScript_AddSmeargle
 	end
 
 CutsceneForest_EventScript_AddLostIdol::
@@ -14,10 +15,70 @@ CutsceneForest_EventScript_AddLostIdol::
 	addobject LOCALID_FOREST_LOST_IDOL
 	return
 
+CutsceneForest_EventScript_AddSmeargle::
+	clearflag FLAG_HIDE_CUTSCENE_FOREST_SMEARGLE
+	addobject LOCALID_FOREST_SMEARGLE
+	return
+
 CutsceneForest_OnFrame:
     map_script_2 VAR_CUTSCENE_STATE, 5, CutsceneForest_EventScript_SearchForEstella
 	map_script_2 VAR_CUTSCENE_FOREST_STATE, 1, CutsceneForest_EventScript_FindLostIdol
+	map_script_2 VAR_CUTSCENE_FOREST_STATE, 2, CutsceneForest_EventScript_FindSmeargle
     .2byte 0
+
+CutsceneForest_EventScript_FindSmeargle::
+	lockall
+	special SpawnCameraObject
+	setvar VAR_0x8004, 10  @ x
+	setvar VAR_0x8005, 11  @ y
+	special TeleportCamera
+	delay 80
+	fadescreen FADE_FROM_BLACK
+	delay 20
+	applymovement LOCALID_FOREST_SMEARGLE, CutsceneForest_Movement_SmeargleScared
+	playmoncry SPECIES_SMEARGLE, CRY_MODE_NORMAL
+	speakername Name_Smeargle
+	msgbox CutsceneForest_Text_Smeargle, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	waitmovement LOCALID_FOREST_SMEARGLE
+	applymovement LOCALID_FOREST_SMEARGLE, CutsceneForest_Movement_SmeargleScared
+	waitmovement 0
+	delay 50
+	playse SE_PIN
+	applymovement LOCALID_FOREST_SMEARGLE, Common_Movement_FaceUpQuestionMark
+	waitmovement 0
+	delay 50
+	applymovement LOCALID_PLAYER, CutsceneForest_Movement_PlayerWalkDown4
+	waitmovement 0
+	playse SE_PIN
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDownQuestionMark
+	waitmovement 0
+	delay 50
+	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, CutsceneForest_Text_LookerYouMustBeSmeargle
+	closemessage
+	playse SE_LEDGE
+	applymovement LOCALID_FOREST_SMEARGLE, CutsceneForest_Movement_SmeargleExcited
+	waitse
+	playse SE_LEDGE
+	waitse
+	waitmovement LOCALID_FOREST_SMEARGLE
+	playmoncry SPECIES_SMEARGLE, CRY_MODE_NORMAL
+	speak LOCALID_FOREST_SMEARGLE, DIR_NORTH, Name_Smeargle, CutsceneForest_Text_SmeargleHappy
+	waitmoncry
+	closemessage
+	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, CutsceneForest_Text_LookerLetsGoHome
+	closemessage
+	applymovement LOCALID_PLAYER, CutsceneForest_Movement_LookerGuideSmeargleHome
+	applymovement LOCALID_FOREST_SMEARGLE, CutsceneForest_Movement_SmeargleFollowLooker
+	delay 32
+	fadescreen FADE_TO_BLACK
+	setflag FLAG_SYS_SPAWN_INVISIBLE
+	special RemoveCameraObject
+	warp MAP_PRESENT_TOWN, 16, 5
+	waitstate
+	releaseall
+	end
 
 CutsceneForest_EventScript_FindLostIdol::
 	lockall
@@ -65,6 +126,20 @@ CutsceneForest_EventScript_FindLostIdol::
 	releaseall
 	end
 
+CutsceneForest_Movement_SmeargleExcited:
+	jump_in_place_up
+	jump_in_place_up
+	step_end
+
+CutsceneForest_Movement_SmeargleScared:
+	shake_horizontal
+	shake_horizontal
+	shake_horizontal
+	shake_horizontal
+	shake_horizontal
+	shake_horizontal
+	step_end
+
 CutsceneForest_Movement_LostIdolLost:
 	delay_16
 	delay_16
@@ -89,6 +164,13 @@ CutsceneForest_Movement_PlayerWalkIntoFrame:
 	walk_down
 	step_end
 
+CutsceneForest_Movement_PlayerWalkDown4:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
 CutsceneForest_Movement_LookerGuideIdolHome:
 	walk_down
 	walk_down
@@ -100,6 +182,29 @@ CutsceneForest_Movement_LookerGuideIdolHome:
 	walk_down
 	step_end
 
+CutsceneForest_Movement_LookerGuideSmeargleHome:
+	walk_right
+	walk_down
+	walk_down
+	walk_left
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+CutsceneForest_Movement_SmeargleFollowLooker:
+	delay_16
+	delay_16
+	delay_16
+	delay_16
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+	
 CutsceneForest_EventScript_SearchForEstella::
 	lockall
 	special SpawnCameraObject
@@ -305,6 +410,19 @@ CutsceneForest_Movement_AnabelRunIntoShot:
 	delay_16
 	face_left
 	step_end
+
+CutsceneForest_Text_Smeargle:
+	.string "Smurr…$"
+
+CutsceneForest_Text_SmeargleHappy:
+	.string "Smurr!$"
+
+CutsceneForest_Text_LookerYouMustBeSmeargle:
+	.string "Ah, you must be Vinnie.$"
+
+CutsceneForest_Text_LookerLetsGoHome:
+	.string "Come with me. I can guide you back\n"
+	.string "to Porta Bella City.$"
 
 CutsceneForest_Text_LostIdolLost:
 	.string "Ohhh…\p"

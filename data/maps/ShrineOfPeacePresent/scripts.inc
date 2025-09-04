@@ -56,6 +56,7 @@ ShrineOfPeacePresent_EventScript_MainGameStart::
 	startquest QUEST_INTERROGATE_MATT
 	setflag FLAG_SYS_MAIN_GAME_START
 	setflag FLAG_SYS_QUEST_MENU_GET
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	setvar VAR_CUTSCENE_STATE, 13
 	release
 	end

@@ -81,6 +81,7 @@ PresentTown_OnTransition:
 	call_if_unset FLAG_SYS_WEATHER_CTRL, PresentTown_EventScript_ClearTornadusNPCFlag
 	call_if_set FLAG_TALKED_TO_MATT_OUTSIDE, PresentTown_EventScript_AquaMemberFPositioning
 	call_if_unset FLAG_HIDE_CUTSCENE_FOREST_IDOL, PresentTown_EventScript_HideLostIdol
+	call_if_unset FLAG_HIDE_CUTSCENE_FOREST_SMEARGLE, PresentTown_EventScript_HideLostSmeargle
 	call_if_unset FLAG_HIDE_OUTSIDE_NPCS, PresentTown_EventScript_TrySetUpArtist
 	@call_if_eq VAR_PORTO_BELLA_CITY_STATE, 1, PresentTown_EventScript_PrepareAnabelForCutscene
 	end
@@ -97,6 +98,10 @@ PresentTown_EventScript_SetUpArtist::
 
 PresentTown_EventScript_HideLostIdol::
 	hideobjectat LOCALID_CITY_FOREST_IDOL, MAP_PRESENT_TOWN
+	return
+
+PresentTown_EventScript_HideLostSmeargle::
+	hideobjectat LOCALID_CITY_FOREST_SMEARGLE, MAP_PRESENT_TOWN
 	return
 
 PresentTown_EventScript_ClearTornadusNPCFlag::
@@ -144,6 +149,45 @@ PresentTown_EventScript_LostIdolThankYou::
 	goto_if_eq VAR_NUM_FOUND_IDOLS, 3, Looker_EventScript_FoundAllIdols
 	releaseall
 	end
+
+PresentTown_EventScript_LostSmeargleGoHome::
+	lockall
+	clearflag FLAG_SYS_SPAWN_INVISIBLE
+	fadescreen FADE_FROM_BLACK
+	applymovement LOCALID_PLAYER, PresentTown_Movement_LookerGuideLostIdol
+	delay 16
+	playse SE_EXIT
+	applymovement LOCALID_CITY_FOREST_SMEARGLE, PresentTown_Movement_LookerGuideLostIdol
+	waitmovement 0
+	applymovement LOCALID_CITY_FOREST_SMEARGLE, Common_Movement_FaceRight
+	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	applymovement LOCALID_CITY_FOREST_IDOL, PresentTown_Movement_LostIdolExitFrame
+	speak LOCALID_PLAYER, DIR_WEST, Name_Looker, PresentTown_Text_LookerGoFindLeo
+	speak LOCALID_CITY_FOREST_SMEARGLE, DIR_EAST, Name_Smeargle, CutsceneForest_Text_SmeargleHappy
+	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	applymovement LOCALID_CITY_FOREST_SMEARGLE, PresentTown_Movement_LostIdolExitFrame
+	waitmovement 0
+	removeobject LOCALID_CITY_FOREST_IDOL
+	setvar VAR_TRIGGER_CUTSCENE_FOREST, 0
+	setvar VAR_CUTSCENE_FOREST_STATE, 0
+	clearflag FLAG_SYS_PREVENT_MAP_FADE
+	clearflag FLAG_CAN_SPAWN_SMEARGLE
+	call_if_set FLAG_SYS_WEATHER_CTRL, PresentTown_EventScript_ShowSmeargleInside
+	call_if_unset FLAG_SYS_WEATHER_CTRL, PresentTown_EventScript_ShowSmeargleOutside
+	questmenu QUEST_MENU_SET_REWARD, QUEST_SMEARGLE
+	releaseall
+	end
+
+PresentTown_EventScript_ShowSmeargleInside::
+	clearflag FLAG_HIDE_INSIDE_SMEARGLE
+	return
+	
+PresentTown_EventScript_ShowSmeargleOutside::
+	clearflag FLAG_HIDE_OUTSIDE_SMEARGLE
+	addobject LOCALID_OUTSIDE_SMEARGLE
+	return
 
 PresentTown_Movement_LookerGuideLostIdol:
 	set_visible
@@ -1371,3 +1415,8 @@ PresentTown_Text_LostIdolThankYou:
 	.string "Thank you sooooo so much!\n"
 	.string "If you don't mind, I gotta run!\p"
 	.string "My show is supposed to start soon!$"
+
+PresentTown_Text_LookerGoFindLeo:
+	.string "Well, here we are!\p"
+	.string "Go find Leo posthaste. I am sure\n"
+	.string "he is waiting for you somewhere.$"

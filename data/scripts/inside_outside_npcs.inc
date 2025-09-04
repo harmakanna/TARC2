@@ -9,8 +9,15 @@ Common_EventScript_MoveInsideNPCsOutside::
     setflag FLAG_HIDE_TORNADUS_NPCS
     returnqueststate QUEST_FOREVER_FAITHFUL
     call_if_lt VAR_RESULT, 3, InsideOutside_EventScript_AddFaithfulQuest
+    returnqueststate QUEST_SMEARGLE
+    call_if_eq VAR_RESULT, 3, InsideOutside_EventScript_MoveSmeargleOutside
     return
 
+InsideOutside_EventScript_MoveSmeargleOutside::
+    setflag FLAG_HIDE_INSIDE_SMEARGLE
+    clearflag FLAG_HIDE_OUTSIDE_SMEARGLE
+    return
+    
 InsideOutside_EventScript_AddFaithfulQuest::
     clearflag FLAG_HIDE_PORT_FAITHFUL_MAN
     clearflag FLAG_HIDE_PORT_AROMATISSE

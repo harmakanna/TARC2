@@ -31,27 +31,27 @@ static const u8 sMaxReviveDesc[]      = _("Revives a fainted\n"
                                           "Pokémon with all\n"
                                           "its HP.");
 
-static const u8 sHealthFeatherDesc[]  = _("Mochi that raises the\n"
-                                          "HP of a Pokémon\n"
+static const u8 sHealthFeatherDesc[]  = _("Raises the base HP\n"
+                                          "of a Pokémon to\n"
+                                          "half its max.");
+
+static const u8 sMuscleFeatherDesc[]  = _("Raises the base\n"
+                                          "Atk of a Pokémon\n"
                                           "to half its max.");
 
-static const u8 sMuscleFeatherDesc[]  = _("Mochi that raises the\n"
-                                          "Attack of a Pokémon\n"
+static const u8 sResistFeatherDesc[]  = _("Raises the base\n"
+                                          "Def of a Pokémon\n"
                                           "to half its max.");
 
-static const u8 sResistFeatherDesc[]  = _("Mochi that raises the\n"
-                                          "Defense of a Pokémon\n"
+static const u8 sGeniusFeatherDesc[]  = _("Raises the base Sp.\n"
+                                          "Atk of a Pokémon\n"
                                           "to half its max.");
 
-static const u8 sGeniusFeatherDesc[]  = _("Mochi that raises the\n"
-                                          "Sp. Atk of a Pokémon\n"
+static const u8 sCleverFeatherDesc[]  = _("Raises the base Sp.\n"
+                                          "Def of a Pokémon\n"
                                           "to half its max.");
 
-static const u8 sCleverFeatherDesc[]  = _("Mochi that raises the\n"
-                                          "Sp. Def of a Pokémon\n"
-                                          "to half its max.");
-
-static const u8 sSwiftFeatherDesc[]   = _("Mochi that raises the\n"
+static const u8 sSwiftFeatherDesc[]   = _("Raises the base\n"
                                           "Speed of a Pokémon\n"
                                           "to half its max.");
 

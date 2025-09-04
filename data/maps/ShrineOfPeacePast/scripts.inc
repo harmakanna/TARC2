@@ -201,7 +201,10 @@ ShrineOfPeacePast_EventScript_SpawnTornadus::
 	setflag FLAG_HIDE_TORNADUS_NPCS
 	clearflag FLAG_HIDE_INSIDE_OUTSIDE_NPCS
 	clearflag FLAG_HIDE_CITY_TORNADUS
+	returnqueststate QUEST_FOREVER_FAITHFUL
 	call_if_lt VAR_RESULT, 3, ShrineOfPeacePast_EventScript_HideFaithfulQuest
+	returnqueststate QUEST_SMEARGLE
+	call_if_eq VAR_RESULT, 3, ShrineOfPeacePast_EventScript_MoveSmeargleInside
 	call ShrineOfPeacePast_EventScript_EndSpawnGenie
 	return
 
@@ -214,10 +217,17 @@ ShrineOfPeacePast_EventScript_SpawnThundurus::
 	clearflag FLAG_HIDE_CITY_THUNDURUS
 	returnqueststate QUEST_FOREVER_FAITHFUL
 	call_if_lt VAR_RESULT, 3, ShrineOfPeacePast_EventScript_HideFaithfulQuest
+	returnqueststate QUEST_SMEARGLE
+	call_if_eq VAR_RESULT, 3, ShrineOfPeacePast_EventScript_MoveSmeargleInside
 	call ShrineOfPeacePast_EventScript_EndSpawnGenie
 	return
 
-ShrineOfPeacePast_EventScript_HideFaithfulQuest:
+ShrineOfPeacePast_EventScript_MoveSmeargleInside::
+	setflag FLAG_HIDE_OUTSIDE_SMEARGLE
+	clearflag FLAG_HIDE_INSIDE_SMEARGLE
+	return
+	
+ShrineOfPeacePast_EventScript_HideFaithfulQuest::
 	setflag FLAG_HIDE_PORT_FAITHFUL_MAN
 	setflag FLAG_HIDE_PORT_AROMATISSE
 	return

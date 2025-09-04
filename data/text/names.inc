@@ -179,7 +179,7 @@ Name_Aromatisse:
     .string "Aromatisse$"
     
 Name_Smeargle:
-    .string "Smeargle$"
+    .string "Vinnie$"
 
 Name_Twin:
     .string "Mia$"
