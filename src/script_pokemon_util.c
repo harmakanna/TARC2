@@ -81,7 +81,7 @@ static const struct InGameOT sIngameOTs[] =
         .heldItem = ITEM_FOCUS_SASH,
         .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
         .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
-        .moves = {MOVE_FAKE_OUT, MOVE_BRICK_BREAK, MOVE_POISON_JAB, MOVE_PROTECT},
+        .moves = {MOVE_FAKE_OUT, MOVE_CLOSE_COMBAT, MOVE_POISON_JAB, MOVE_PROTECT},
         .ball = BALL_CHERISH,
         .nature = NATURE_QUIRKY,
         .abilityNum = 1,
@@ -302,44 +302,6 @@ static const struct InGameOT sIngameOTs[] =
         .isNicknamed = FALSE,
         .nickname = _(""),
     },
-    [OT_MIKEY_DEDENNE] =
-    {
-        .species = SPECIES_DEDENNE,
-        .level = 50,
-        .heldItem = ITEM_AIR_BALLOON,
-        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
-        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
-        .moves = {MOVE_NUZZLE, MOVE_PARABOLIC_CHARGE, MOVE_DAZZLING_GLEAM, MOVE_PROTECT},
-        .ball = BALL_TIMER,
-        .nature = NATURE_HARDY,
-        .abilityNum = 0,
-        .gender = MON_MALE,
-        .otId = 42784,
-        .otName = _("Mikey"),
-        .otGender = FEMALE,
-        .isShiny = FALSE,
-        .isNicknamed = TRUE,
-        .nickname = _("Dr. Cheeks"),
-    },
-    [OT_MIKEY_TOGEDEMARU] =
-    {
-        .species = SPECIES_TOGEDEMARU,
-        .level = 50,
-        .heldItem = ITEM_AIR_BALLOON,
-        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
-        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
-        .moves = {MOVE_NUZZLE, MOVE_ZING_ZAP, MOVE_IRON_HEAD, MOVE_PROTECT},
-        .ball = BALL_TIMER,
-        .nature = NATURE_HARDY,
-        .abilityNum = 0,
-        .gender = MON_FEMALE,
-        .otId = 42784,
-        .otName = _("Mikey"),
-        .otGender = FEMALE,
-        .isShiny = FALSE,
-        .isNicknamed = TRUE,
-        .nickname = _("Dr. Round"),
-    },
     [OT_LOOKER_BRELOOM] =
     {
         .species = SPECIES_BRELOOM,
@@ -454,7 +416,7 @@ static const struct InGameOT sIngameOTs[] =
         .isNicknamed = TRUE,
         .nickname = _("Moomoo"),
     },
-    [OT_BARTOZ_GALVANTULA] =
+    [OT_PAOLO_GALVANTULA] =
     {
         .species = SPECIES_GALVANTULA,
         .level = 50,
@@ -467,13 +429,13 @@ static const struct InGameOT sIngameOTs[] =
         .abilityNum = 0,
         .gender = MON_MALE,
         .otId = 00652,
-        .otName = _("Bartoz"),
+        .otName = _("Paolo"),
         .otGender = MALE,
         .isShiny = FALSE,
         .isNicknamed = TRUE,
         .nickname = _("Galvin"),
     },
-    [OT_BARTOZ_PROBOPASS] =
+    [OT_PAOLO_PROBOPASS] =
     {
         .species = SPECIES_PROBOPASS,
         .level = 50,
@@ -486,7 +448,7 @@ static const struct InGameOT sIngameOTs[] =
         .abilityNum = 0,
         .gender = MON_FEMALE,
         .otId = 00652,
-        .otName = _("Bartoz"),
+        .otName = _("Paolo"),
         .otGender = MALE,
         .isShiny = FALSE,
         .isNicknamed = TRUE,
@@ -568,7 +530,7 @@ static const struct InGameOT sIngameOTs[] =
         .isNicknamed = FALSE,
         .nickname = _(""),
     },
-    [OT_BETH_SWANNA] =
+    [OT_BEATRICE_SWANNA] =
     {
         .species = SPECIES_SWANNA,
         .level = 50,
@@ -581,13 +543,13 @@ static const struct InGameOT sIngameOTs[] =
         .abilityNum = 0,
         .gender = MON_FEMALE,
         .otId = 78155,
-        .otName = _("Beth"),
+        .otName = _("Beatrice"),
         .otGender = FEMALE,
         .isShiny = FALSE,
         .isNicknamed = TRUE,
         .nickname = _("Caitlyn"),
     },
-    [OT_BETH_UNFEZANT] =
+    [OT_BEATRICE_UNFEZANT] =
     {
         .species = SPECIES_UNFEZANT,
         .level = 50,
@@ -600,11 +562,30 @@ static const struct InGameOT sIngameOTs[] =
         .abilityNum = 0,
         .gender = MON_FEMALE,
         .otId = 78155,
-        .otName = _("Beth"),
+        .otName = _("Beatrice"),
         .otGender = FEMALE,
         .isShiny = FALSE,
         .isNicknamed = TRUE,
         .nickname = _("Charlotte"),
+    },
+    [OT_LEO_SMEARGLE] =
+    {
+        .species = SPECIES_SMEARGLE,
+        .level = 50,
+        .heldItem = ITEM_NONE,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_SKETCH, MOVE_SKETCH, MOVE_SKETCH, MOVE_PROTECT},
+        .ball = BALL_DREAM,
+        .nature = NATURE_HARDY,
+        .abilityNum = 0,
+        .gender = MON_MALE,
+        .otId = 25624,
+        .otName = _("Leo"),
+        .otGender = MALE,
+        .isShiny = FALSE,
+        .isNicknamed = TRUE,
+        .nickname = _("Vinnie"),
     }
 };
 

@@ -9627,7 +9627,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .baseSpAttack  = 125,
         .baseSpDefense = 95,
         .types = MON_TYPES(TYPE_PSYCHIC),
-        .catchRate = 90,
+        .catchRate = 25,
         .expYield = 170,
         .evYield_SpAttack = 2,
         .genderRatio = PERCENT_FEMALE(50),
@@ -11107,7 +11107,9 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sBisharpLevelUpLearnset,
         .teachableLearnset = sBisharpTeachableLearnset,
+    #if P_GEN_9_CROSS_EVOS
         .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_KINGAMBIT, CONDITIONS({IF_DEFEAT_X_WITH_ITEMS, SPECIES_BISHARP, ITEM_LEADERS_CREST, 3})}),
+    #endif
     },
 
 #if P_GEN_9_CROSS_EVOS
@@ -12341,7 +12343,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = 90,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-        .abilities = { ABILITY_PRANKSTER, ABILITY_NONE, ABILITY_DEFIANT },
+        .abilities = { ABILITY_PRANKSTER, ABILITY_DEFIANT, ABILITY_NONE },
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Tornadus"),
         .cryId = CRY_TORNADUS_INCARNATE,
@@ -12507,7 +12509,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = 90,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-        .abilities = { ABILITY_PRANKSTER, ABILITY_NONE, ABILITY_DEFIANT },
+        .abilities = { ABILITY_PRANKSTER, ABILITY_DEFIANT, ABILITY_NONE },
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Thundurus"),
         .cryId = CRY_THUNDURUS_INCARNATE,

@@ -162,3 +162,64 @@ Name_Lisia:
 
 Name_Barista:
     .string "Barista$"
+
+Name_Student:
+    .string "Paolo$"
+
+Name_Beauty:
+    .string "Beatrice$"
+
+Name_Boyfriend:
+    .string "Luca$"
+
+Name_Artist:
+    .string "Leo$"
+    
+Name_Aromatisse:
+    .string "Aromatisse$"
+    
+Name_Smeargle:
+    .string "Vinnie$"
+
+Name_Twin:
+    .string "Mia$"
+
+Name_Doubter:
+    .string "Nicola$"
+    
+Name_Dedenne:
+    .string "Dedenne$"
+
+Name_Togedemaru:
+    .string "Togedemaru$"
+
+Name_Lurantis:
+    .string "Lurantis$"
+
+Name_Luxray:
+    .string "Luxray$"
+
+Name_Toedscruel:
+    .string "Toedscruel$"
+
+Name_Frosmoth:
+    .string "Frosmoth$"
+
+Name_Kleavor:
+    .string "Kleavor$"
+
+Name_Goodra_Hisui:
+    .string "Goodra-Hisui$"
+
+Name_Beheeyem:
+    .string "Beheeyem$"
+
+Name_Aerodactyl:
+    .string "Aerodactyl$"
+
+Name_Scream_Tail:
+    .string "Scream Tail$"
+
+Name_Wo_Chien:
+    .string "Wo-Chien$"
+    

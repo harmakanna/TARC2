@@ -1,6 +1,11 @@
 Present_PokemonCenter_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, Present_PokemonCenter_OnResume
 	.byte 0
 
+Present_PokemonCenter_OnResume:
+	special HealPlayerParty
+	end
+	
 Present_PokemonCenter_EventScript_Nurse::
 	lock
 	returnqueststate QUEST_SENT_TO_THE_FARM
@@ -79,6 +84,7 @@ Present_PokemonCenter_EventScript_IdolPleaseFindMyFriends::
 
 Present_PokemonCenter_EventScript_Pachirisu::
 	lock
+	faceplayer
 	waitse
 	playmoncry SPECIES_PACHIRISU, CRY_MODE_NORMAL
 	msgbox Present_PokemonCenter_Text_Pachirisu, MSGBOX_DEFAULT

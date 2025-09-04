@@ -2466,8 +2466,11 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sApplinTeachableLearnset,
         .eggMoveLearnset = sApplinEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_TART_APPLE, SPECIES_FLAPPLE},
-                                {EVO_ITEM, ITEM_SWEET_APPLE, SPECIES_APPLETUN},
-                                {EVO_ITEM, ITEM_SYRUPY_APPLE, SPECIES_DIPPLIN}),
+                                {EVO_ITEM, ITEM_SWEET_APPLE, SPECIES_APPLETUN}
+                            #if P_GEN_9_CROSS_EVOS
+                                ,{EVO_ITEM, ITEM_SYRUPY_APPLE, SPECIES_DIPPLIN}
+                            #endif
+                            ),
     },
 
     [SPECIES_FLAPPLE] =
@@ -5382,7 +5385,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .baseSpAttack  = 125,
         .baseSpDefense = 90,
         .types = MON_TYPES(TYPE_ICE, TYPE_BUG),
-        .catchRate = 75,
+        .catchRate = 25,
         .expYield = 166,
         .evYield_SpAttack = 2,
         .genderRatio = PERCENT_FEMALE(50),
@@ -5390,7 +5393,7 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
-        .abilities = { ABILITY_SHIELD_DUST, ABILITY_NONE, ABILITY_ICE_SCALES },
+        .abilities = { ABILITY_SHIELD_DUST, ABILITY_ICE_SCALES, ABILITY_NONE },
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Frosmoth"),
         .cryId = CRY_FROSMOTH,
@@ -6405,7 +6408,9 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .eggMoveLearnset = sDuraludonEggMoveLearnset,
         .formSpeciesIdTable = sDuraludonFormSpeciesIdTable,
         .formChangeTable = sDuraludonFormChangeTable,
+    #if P_GEN_9_CROSS_EVOS
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_METAL_ALLOY, SPECIES_ARCHALUDON}),
+    #endif
     },
 
 #if P_GIGANTAMAX_FORMS

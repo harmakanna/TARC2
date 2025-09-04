@@ -4387,19 +4387,19 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Used only if all PP are gone.\n"
             "Also hurts the user a little."),
-        #if B_UPDATED_MOVE_DATA >= GEN_4
+        /*#if B_UPDATED_MOVE_DATA >= GEN_4
             .effect = EFFECT_STRUGGLE,
             .accuracy = 0,
             .mirrorMoveBanned = TRUE,
             .additionalEffects = ADDITIONAL_EFFECTS({
                 .moveEffect = MOVE_EFFECT_RECOIL_HP_25,
                 .self = TRUE,
-            }),
-        #else
-            .effect = EFFECT_RECOIL,
-            .accuracy = 100,
-            .argument = { .recoilPercentage = 25 },
-        #endif
+            }),*/
+        //#else
+        .effect = EFFECT_RECOIL,
+        .accuracy = 100,
+        .argument = { .recoilPercentage = 25 },
+        //#endif
         .power = 50,
         .type = TYPE_NORMAL,
         .pp = 1,

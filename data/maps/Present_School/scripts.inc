@@ -113,6 +113,375 @@ PresentSchool_EventScript_RightGameboyKidBattery::
 	release
 	end
 
+Present_School_EventScript_KidsFaceDown::
+	applymovement LOCALID_SCHOOL_TWIN, Common_Movement_FaceDown
+	applymovement LOCALID_SCHOOL_KID, Common_Movement_FaceDown
+	return
+
+Present_School_EventScript_KidsFaceUp::
+	applymovement LOCALID_SCHOOL_TWIN, Common_Movement_FaceUp
+	applymovement LOCALID_SCHOOL_KID, Common_Movement_FaceUp
+	return
+
+Present_School_EventScript_KidsFaceLeft::
+	applymovement LOCALID_SCHOOL_TWIN, Common_Movement_FaceLeft
+	applymovement LOCALID_SCHOOL_KID, Common_Movement_FaceLeft
+	return
+
+Present_School_EventScript_Twin::
+	lockall
+	goto_if_unset FLAG_SYS_MAIN_GAME_START, Present_School_EventScript_TwinPreGenies
+	speakername Name_Twin
+	goto_if_unset FLAG_DEFEATED_SHRINE_GENIES, Present_School_EventScript_TwinPreGenies
+	call Script_GetNPCFacingDirection
+	returnqueststate QUEST_LUXRAY
+	switch VAR_RESULT
+	case 1, Present_School_EventScript_TwinPreQuest
+	case 2, Present_School_EventScript_TwinQuest
+	case 3, Present_School_EventScript_TwinReward
+	case 4, Present_School_EventScript_TwinPostQuest
+	releaseall
+	end
+
+Present_School_EventScript_TwinPreGenies::
+	faceplayer
+	msgbox Present_School_Text_TwinPreGenies, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_SCHOOL_TWIN, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	releaseall
+	end
+
+Present_School_EventScript_TwinPreQuest::
+	speak LOCALID_SCHOOL_TWIN, VAR_0x8005, Name_Twin, Present_School_Text_TwinAaa
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_IsSomethingWrong
+	speak LOCALID_SCHOOL_TWIN, VAR_0x8005, Name_Twin, Present_School_Text_TwinThisLameo
+	applymovement LOCALID_SCHOOL_TWIN, Common_Movement_FaceRight
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	speak LOCALID_SCHOOL_KID, VAR_0x8005, Name_Doubter, Present_School_Text_DoubterItIsnt
+	speak LOCALID_SCHOOL_TWIN, DIR_EAST, Name_Twin, Present_School_Text_TwinItIs
+	call_if_eq VAR_FACING, DIR_SOUTH, Present_School_EventScript_KidsFaceUp
+	call_if_eq VAR_FACING, DIR_NORTH, Present_School_EventScript_KidsFaceDown
+	call_if_eq VAR_FACING, DIR_EAST, Present_School_EventScript_KidsFaceLeft
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_School_Text_LookerYouDontNeedToShout
+	applymovement LOCALID_SCHOOL_KID, Common_Movement_FaceLeft
+	speak LOCALID_SCHOOL_TWIN, VAR_0x8005, Name_Twin, Present_School_Text_TwinIKnow
+	applymovement LOCALID_SCHOOL_TWIN, Common_Movement_FaceRight
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	speak LOCALID_SCHOOL_KID, DIR_WEST, Name_Doubter, Present_School_Text_DoubterNoYouWont
+	speak LOCALID_SCHOOL_TWIN, DIR_EAST, Name_Twin, Present_School_Text_TwinYesIWill
+	speak LOCALID_SCHOOL_KID, DIR_WEST, Name_Doubter, Present_School_Text_DoubterBozoBozoBozo
+	speak LOCALID_SCHOOL_TWIN, DIR_EAST, Name_Twin, Present_School_Text_TwinIdiot
+	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, Looker_Text_ImOnTheCaseDoubt
+	startquest QUEST_LUXRAY
+	call_if_set FLAG_CAUGHT_LUXRAY, Present_School_EventScript_SetTwinReward
+	call_if_set FLAG_CAUGHT_LUXRAY_DARK, Present_School_EventScript_SetTwinReward
+	releaseall
+	end
+
+Present_School_EventScript_SetTwinReward::
+	questmenu QUEST_MENU_SET_REWARD, QUEST_LUXRAY
+	return
+	
+Present_School_EventScript_TwinQuest::
+	speak LOCALID_SCHOOL_KID, DIR_WEST, Name_Doubter, Present_School_Text_DoubterBozoBozoBozo
+	speak LOCALID_SCHOOL_TWIN, DIR_EAST, Name_Twin, Present_School_Text_TwinStupidBabyIdiot
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_Dots
+	closemessage
+	releaseall
+	end
+
+Present_School_EventScript_TwinReward::
+	speak LOCALID_SCHOOL_TWIN, VAR_0x8005, Name_Twin, Present_School_Text_TwinDidYouBringIt
+	special ChoosePartyMon
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, Present_School_EventScript_TwinNothingChosen
+	goto_if_eq VAR_0x8004, SPECIES_LUXRAY, Present_School_EventScript_TwinQuestCompletion
+	goto_if_eq VAR_0x8004, SPECIES_LUXRAY_DARK, Present_School_EventScript_TwinSecretQuestCompletion
+	speak LOCALID_SCHOOL_TWIN, VAR_0x8005, Name_Twin, Present_School_Text_TwinThatsNotLuxray
+	closemessage
+	applymovement LOCALID_SCHOOL_TWIN, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	releaseall
+	end
+
+Present_School_EventScript_TwinNothingChosen::
+	speak LOCALID_SCHOOL_TWIN, VAR_0x8005, Name_Twin, Present_School_Text_TwinNoMonSelected
+	closemessage
+	releaseall
+	end
+
+Present_School_EventScript_TwinQuestCompletion::
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_School_Text_LookerHereIsLuxray
+	speak LOCALID_SCHOOL_TWIN, VAR_0x8005, Name_Twin, Present_School_Text_TwinWhat
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight 
+	applymovement LOCALID_SCHOOL_TWIN, Common_Movement_FaceRight
+	speak LOCALID_SCHOOL_KID, DIR_WEST, Name_Doubter, Present_School_Text_DoubterIWin
+	speak LOCALID_SCHOOL_TWIN, DIR_EAST, Name_Twin, Present_School_Text_TwinNoWay
+	closemessage
+	call_if_eq VAR_FACING, DIR_NORTH, Present_School_EventScript_TwinRunAwayAround
+	call_if_ne VAR_FACING, DIR_NORTH, Present_School_EventScript_TwinRunAway
+	removeobject LOCALID_SCHOOL_TWIN
+	applymovement LOCALID_SCHOOL_KID, Common_Movement_WalkLeft
+	waitmovement 0
+	setobjectxyperm LOCALID_SCHOOL_KID, 1, 4
+	speak LOCALID_SCHOOL_KID, VAR_0x8005, Name_Doubter, Present_School_Text_DoubterReward
+	speakername NULL
+	@ giveitem 
+	completequest QUEST_LUXRAY
+	releaseall
+	end
+
+Present_School_EventScript_TwinRunAway::
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	applymovement LOCALID_SCHOOL_KID, Common_Movement_FaceDown
+	applymovement LOCALID_SCHOOL_TWIN, Present_School_Movement_TwinRunAway
+	waitmovement 0
+	return
+
+Present_School_Movement_TwinRunAway:
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	step_end
+
+Present_School_EventScript_TwinRunAwayAround::
+	applymovement LOCALID_PLAYER, Present_School_Movement_WatchTwinRunAwayAround
+	applymovement LOCALID_SCHOOL_KID, Present_School_Movement_WatchTwinRunAwayAround
+	applymovement LOCALID_SCHOOL_TWIN, Present_School_Movement_TwinRunAwayAround
+	waitmovement 0
+	return
+
+Present_School_Movement_WatchTwinRunAwayAround::
+	delay_8
+	face_left
+	delay_16
+	face_down
+	step_end
+
+Present_School_Movement_TwinRunAwayAround:
+	walk_fast_left
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	step_end
+
+Present_School_EventScript_TwinSecretQuestCompletion::
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_School_Text_LookerHereIsLuxray
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	applymovement LOCALID_SCHOOL_TWIN, Common_Movement_FaceRight
+	speak LOCALID_SCHOOL_KID, VAR_0x8005, Name_Doubter, Present_School_Text_DoubterHuh
+	speak LOCALID_SCHOOL_TWIN, DIR_EAST, Name_Twin, Present_School_Text_TwinThatsRightIdiot
+	speak LOCALID_SCHOOL_KID, DIR_WEST, Name_Doubter, Present_School_Text_DoubterNoWay
+	closemessage
+	applymovement LOCALID_SCHOOL_TWIN, Common_Movement_FaceDown
+	applymovement LOCALID_SCHOOL_KID, Present_School_Movement_DoubterRunAway
+	call_if_eq VAR_FACING, DIR_NORTH, Present_School_EventScript_DelayLookerFaceDown
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	waitmovement LOCALID_SCHOOL_KID
+	removeobject LOCALID_SCHOOL_KID
+	delay 40
+	applymovement LOCALID_PLAYER, Common_Movement_FaceOriginalDirection
+	speak LOCALID_SCHOOL_TWIN, VAR_0x8005, Name_Twin, Present_School_Text_TwinReward
+	speakername NULL
+	giveitem ITEM_CHOICE_SPECS
+	playse SE_PIN
+	applymovement LOCALID_SCHOOL_TWIN, Common_Movement_FaceRightQuestionMark
+	waitmovement 0
+	delay 50
+	speak LOCALID_SCHOOL_TWIN, VAR_0x8005, Name_Twin, Present_School_Text_TwinHeDroppedThis
+	speakername NULL
+	@ giveitem
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_LUXRAY, 0
+	completequest QUEST_LUXRAY
+	closemessage
+	setflag FLAG_SHOWN_DARK_LUXRAY
+	releaseall
+	end
+
+Present_School_EventScript_DelayLookerFaceDown::
+	delay 16
+	return
+
+Present_School_Movement_DoubterRunAway:
+	walk_fast_down
+	walk_fast_right
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	step_end
+
+Present_School_EventScript_TwinPostQuest::
+	faceplayer
+	speakername Name_Twin
+	msgbox Present_School_Text_TwinPostQuest
+	closemessage
+	releaseall
+	end
+
+Present_School_EventScript_Doubter::
+	lockall
+	faceplayer
+	returnqueststate QUEST_LUXRAY
+	switch VAR_RESULT
+	case 2, Present_School_EventScript_TwinQuest
+	case 3, Present_School_EventScript_TwinQuest
+	case 4, Present_School_EventScript_DoubterPostQuest
+	call_if_set FLAG_SYS_MAIN_GAME_START, Present_School_EventScript_GiveDoubterName
+	msgbox Present_School_Text_DoubterPreGenies, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_SCHOOL_KID, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	releaseall
+	end
+	
+Present_School_EventScript_GiveDoubterName::
+	speakername Name_Doubter
+	return
+
+Present_School_EventScript_DoubterPostQuest::
+	faceplayer
+	speakername Name_Doubter
+	msgbox Present_School_Text_DoubterPostQuest
+	closemessage
+	releaseall
+	end
+
+Present_School_Text_LookerHereIsLuxray:
+	.string "Here's a Luxray.$"
+
+Present_School_Text_TwinWhat:
+	.string "wait…\p"
+	.string "WHAAAAAAAAAAT!!!$"
+
+Present_School_Text_DoubterIWin:
+	.string "HAHAHAHAHAHA\p"
+	.string "I WIN BOZO!!!!$"
+
+Present_School_Text_TwinNoWay:
+	.string "NO\p"
+	.string "NO WAY\p"
+	.string "THIS CANT BE REALL!!!!\p"
+	.string "WAAAAAAAAAAAAH!!!!!!!!$"
+
+Present_School_Text_DoubterReward:
+	.string "hehehe! thanks for showing her a\n"
+	.string "REAL luxray sir!\p"
+	.string "now she knows not to believe the LIES\n"
+	.string "in POKéMON HACKS!\p"
+	.string "you can have this!$"
+
+Present_School_Text_DoubterPostQuest:
+	.string "thanks for showing her a REAL luxray!\n"
+	.string "that BOZO cant handle the TRUTH at ALL!$"
+
+Present_School_Text_LookerYouDontNeedToShout:
+	.string "You don't need to shout at each\n"
+	.string "other. What if you talk-$"
+
+Present_School_Text_DoubterHuh:
+	.string "wait…\p"
+	.string "HUUUUUUUUUH!?!?!?$"
+
+Present_School_Text_TwinThatsRightIdiot:
+	.string "AHAHAHAHAHAHA!!!!!\p"
+	.string "THATS RIGHT STUPID!!!!\p"
+	.string "READ IT AND WEEP!!!!!!!$"
+
+Present_School_Text_DoubterNoWay:
+	.string "NO WAY THATS A REAL LUXRAY\p"
+	.string "THIS IS WRONG\p"
+	.string "YOU BROUGHT A FAKE YOU FAKER\p"
+	.string "WAAAAAAAAAAAAH!!!!!!!!$"
+	
+Present_School_Text_TwinReward:
+	.string "HAHAHAHA!!!\p"
+	.string "I KNEW LUXRAY WAS A DARK TYPE!!!\p"
+	.string "POKéMON HACKS ARE NEVER WRONG!!!\p"
+	.string "thanks sir have this as thanks$"
+
+Present_School_Text_TwinHeDroppedThis:
+	.string "oh? he dropped something!\p"
+	.string "well i dont want it\n"
+	.string "its yours now, here!$"
+
+Present_School_Text_TwinPostQuest:
+	.string "I KNEW LUXRAY WAS A DARK TYPE!!!\p"
+	.string "THAT IDIOT WAS WRONG THE WHOLE TIME!!!$"
+	
+Present_School_Text_TwinDidYouBringIt:
+	.string "SO SIR!? DID YOU BRING ME A DARK\n"
+	.string "LUXRAY!?$"
+
+Present_School_Text_TwinThatsNotLuxray:
+	.string "YOU LAMEO! THAT'S NOT A LUXRAY!!!$"
+
+Present_School_Text_TwinNoMonSelected:
+	.string "AAAAA HURRY UP AND BRING LUXRAY!!!$"
+
+Present_School_Text_TwinAaa:
+	.string "AAAAAAAAAAAAAA$"
+
+Present_School_Text_TwinThisLameo:
+	.string "this lameo is making FUN of me\n"
+	.string "because he thinks luxray is NOT a\l"
+	.string "dark type!!!\p"
+	.string "but luxray IS a dark type!!!! my\n"
+	.string "pokémon hack says so!!!!$"
+
+Present_School_Text_DoubterItIsnt:
+	.string "thats cuz IT ISNT!!!$"
+
+Present_School_Text_TwinItIs:
+	.string "IT IS!!!$"
+	
+Present_School_Text_TwinIKnow:
+	.string "I KNOW!!!!\p"
+	.string "what if you CAUGHT ME a LUXRAY so then\n"
+	.string "we can PROVE its a DARK TYPE!!!\p"
+	.string "ill show this LAMEO that hes wrong!!!$"
+
+Present_School_Text_DoubterNoYouWont:
+	.string "no you WONT\p"
+	.string "cuz it ISNT!!!!\p"
+	.string "BOZO!!!$"
+
+Present_School_Text_TwinYesIWill:
+	.string "YES I WILL IDOIT$"
+
+Present_School_Text_DoubterBozoBozoBozo:
+	.string "BOZO BOZO BOZO$"
+
+Present_School_Text_TwinIdiot:
+	.string "AAAAAAAAAAAAAA\p"
+	.string "STUPID BABY IDIOT!!!!!!!$"
+
+Present_School_Text_TwinStupidBabyIdiot:
+	.string "STUPID BABY IDIOT$"
+
+Present_School_Text_TwinPreGenies:
+	.string "HI\p"
+	.string "HI HEY HI\p"
+	.string "MISTER DID YOU KNOW!!!\p"
+	.string "LUXRAY\p"
+	.string "IS A DARK TYPE????\p"
+	.string "MY POKéMON HACK SAYS SO!!!!$"
+
+Present_School_Text_DoubterPreGenies:
+	.string "this BOZO thinks LUXRAY is DARK!\p"
+	.string "she plays too many VIDEO GAMES!!\p"
+	.string "does she have EYES!?\p"
+	.string "BOZO!!!$"
+
 PresentSchool_Text_LeftGameboyKidIGuess:
 	.string "Huh? You want a battery?\n"
 	.string "Hmmm…\p"
@@ -152,3 +521,4 @@ PresentSchool_Text_LeftGameboyKidUghFine:
 	.string "I guess I can give you YET ANOTHER\n"
 	.string "battery…\p"
 	.string "You moocher…$"
+	
