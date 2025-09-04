@@ -1185,8 +1185,6 @@ u16 GetLocationMusic(struct WarpData *warp)
         return MUS_ENCOUNTER_MAGMA;
     else if (IsInfiltratedWeatherInstitute(warp) == TRUE)
         return MUS_MT_CHIMNEY;
-    else if (IsStormingInPresent(warp) == TRUE)
-        return MUS_NONE;
     else if (VarGet(VAR_AQUACORP_STATE) == 1 && warp->mapNum == MAP_NUM(MAP_PRESENT_AQUA_CORP_HQ))
         return MUS_PL_LOOKER;
     else if (VarGet(VAR_CUTSCENE_STATE) == 4 
@@ -1194,10 +1192,15 @@ u16 GetLocationMusic(struct WarpData *warp)
             || warp->mapNum == MAP_NUM(MAP_PRESENT_CITY_HALL_2F_RANGER)
             || warp->mapNum == MAP_NUM(MAP_PRESENT_CITY_HALL_2F_OFFICE)))
         return MUS_PL_LOOKER;
+    else if (FlagGet(FLAG_SYS_WEATHER_CTRL)
+            && warp->mapNum == MAP_NUM(MAP_PRESENT_POKEMON_CENTER))
+        return MUS_DP_POKE_CENTER_NIGHT;
     else if (FlagGet(FLAG_PLAY_LOOKER_RANGER_ON_TRANSITION)
             && warp->mapNum == MAP_NUM(MAP_PRESENT_TOWN))
         return MUS_NONE;
     else if (FlagGet(FLAG_SYS_NO_MUSIC_ON_TRANSITION))
+        return MUS_NONE;
+    else if (IsStormingInPresent(warp) == TRUE)
         return MUS_NONE;
     else
         return Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum)->music;
