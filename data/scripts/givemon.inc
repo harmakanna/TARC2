@@ -1,6 +1,8 @@
 InsideOutside_EventScript_StudentGiveGalvantula::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GALVANTULA
 	givemonwithot OT_PAOLO_GALVANTULA
+	additem ITEM_SPATK_MOCHI, 2
+	additem ITEM_SPE_MOCHI, 2
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, InsideOutside_EventScript_ReceiveGalvantulaParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, InsideOutside_EventScript_ReceiveGalvantulaPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -8,12 +10,16 @@ InsideOutside_EventScript_StudentGiveGalvantula::
 
 InsideOutside_EventScript_ReceiveGalvantulaParty::
 	call InsideOutside_EventScript_ReceivedGalvantulaFanfare
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto InsideOutside_EventScript_FinishStudentQuest
 	end
 	
 InsideOutside_EventScript_ReceiveGalvantulaPC::
 	call InsideOutside_EventScript_ReceivedGalvantulaFanfare
 	call Common_EventScript_TransferredToPC
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto InsideOutside_EventScript_FinishStudentQuest
 	end
 
@@ -30,6 +36,8 @@ InsideOutside_EventScript_ReceivedGalvantulaFanfare::
 InsideOutside_EventScript_StudentGiveProbopass::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_PROBOPASS
 	givemonwithot OT_PAOLO_PROBOPASS
+	additem ITEM_DEF_MOCHI, 2
+	additem ITEM_SPATK_MOCHI, 2
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, InsideOutside_EventScript_ReceiveProbopassParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, InsideOutside_EventScript_ReceiveProbopassPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -37,12 +45,16 @@ InsideOutside_EventScript_StudentGiveProbopass::
 
 InsideOutside_EventScript_ReceiveProbopassParty::
 	call InsideOutside_EventScript_ReceivedProbopassFanfare
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto InsideOutside_EventScript_FinishStudentQuest
 	end
 	
 InsideOutside_EventScript_ReceiveProbopassPC::
 	call InsideOutside_EventScript_ReceivedProbopassFanfare
 	call Common_EventScript_TransferredToPC
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto InsideOutside_EventScript_FinishStudentQuest
 	end
 
@@ -59,6 +71,9 @@ InsideOutside_EventScript_ReceivedProbopassFanfare::
 PastTown_EventScript_FishermanGiveOverqwil::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_OVERQWIL
 	givemonwithot OT_TEE_OVERQWIL
+	additem ITEM_HP_MOCHI, 1
+	additem ITEM_ATK_MOCHI, 1
+	additem ITEM_SPDEF_MOCHI, 2
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PastTown_EventScript_ReceiveOverqwilParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PastTown_EventScript_ReceiveOverqwilPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -66,12 +81,16 @@ PastTown_EventScript_FishermanGiveOverqwil::
 
 PastTown_EventScript_ReceiveOverqwilParty::
 	call PastTown_EventScript_ReceivedOverqwilFanfare
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto PastTown_EventScript_FishermanQuestFinish
 	end
 	
 PastTown_EventScript_ReceiveOverqwilPC::
 	call PastTown_EventScript_ReceivedOverqwilFanfare
 	call Common_EventScript_TransferredToPC
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto PastTown_EventScript_FishermanQuestFinish
 	end
 
@@ -88,6 +107,8 @@ PastTown_EventScript_ReceivedOverqwilFanfare::
 PastTown_EventScript_FishermanGiveDragalge::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DRAGALGE
 	givemonwithot OT_TEE_DRAGALGE
+	additem ITEM_SPDEF_MOCHI, 2
+	additem ITEM_SPE_MOCHI, 2
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PastTown_EventScript_ReceiveDragalgeParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PastTown_EventScript_ReceiveDragalgePC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -95,12 +116,16 @@ PastTown_EventScript_FishermanGiveDragalge::
 
 PastTown_EventScript_ReceiveDragalgeParty::
 	call PastTown_EventScript_ReceivedDragalgeFanfare
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto PastTown_EventScript_FishermanQuestFinish
 	end
 	
 PastTown_EventScript_ReceiveDragalgePC::
 	call PastTown_EventScript_ReceivedDragalgeFanfare
 	call Common_EventScript_TransferredToPC
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto PastTown_EventScript_FishermanQuestFinish
 	end
 
@@ -117,6 +142,9 @@ PastTown_EventScript_ReceivedDragalgeFanfare::
 Present_Gym_EventScript_PhoebeGiveDusknoir::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DUSKNOIR
     givemonwithot OT_PHOEBE_DUSKNOIR
+	additem ITEM_ATK_MOCHI, 1
+	additem ITEM_DEF_MOCHI, 2
+	additem ITEM_SPDEF_MOCHI, 1
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Gym_EventScript_ReceiveDusknoirParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Gym_EventScript_ReceiveDusknoirPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -124,12 +152,16 @@ Present_Gym_EventScript_PhoebeGiveDusknoir::
 
 Present_Gym_EventScript_ReceiveDusknoirParty::
 	call Present_Gym_EventScript_ReceivedDusknoirFanfare
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto Present_Gym_EventScript_PhoebeDefeatedSetFlags
 	end
 	
 Present_Gym_EventScript_ReceiveDusknoirPC::
 	call Present_Gym_EventScript_ReceivedDusknoirFanfare
 	call Common_EventScript_TransferredToPC
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto Present_Gym_EventScript_PhoebeDefeatedSetFlags
 	end
 
@@ -146,6 +178,9 @@ Present_Gym_EventScript_ReceivedDusknoirFanfare::
 Present_Gym_EventScript_PhoebeGiveSableye::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SABLEYE
 	givemonwithot OT_PHOEBE_SABLEYE
+	additem ITEM_HP_MOCHI, 1
+	additem ITEM_DEF_MOCHI, 1
+	additem ITEM_SPDEF_MOCHI, 2
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Gym_EventScript_ReceiveSableyeParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Gym_EventScript_ReceiveSableyePC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -153,12 +188,16 @@ Present_Gym_EventScript_PhoebeGiveSableye::
 
 Present_Gym_EventScript_ReceiveSableyeParty::
 	call Present_Gym_EventScript_ReceivedSableyeFanfare
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto Present_Gym_EventScript_PhoebeDefeatedSetFlags
 	end
 	
 Present_Gym_EventScript_ReceiveSableyePC::
 	call Present_Gym_EventScript_ReceivedSableyeFanfare
 	call Common_EventScript_TransferredToPC
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto Present_Gym_EventScript_PhoebeDefeatedSetFlags
 	end
 
@@ -251,6 +290,9 @@ Present_AquaCorpHQ_EventScript_ShellyGiveGorebyss::
 	delay 20
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GOREBYSS
     givemonwithot OT_SHELLY_GOREBYSS
+	additem ITEM_SPATK_MOCHI, 2
+	additem ITEM_SPDEF_MOCHI, 1
+	additem ITEM_SPE_MOCHI, 1
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_AquaCorpHQ_EventScript_ReceiveGorebyssParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_AquaCorpHQ_EventScript_ReceiveGorebyssPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -258,12 +300,16 @@ Present_AquaCorpHQ_EventScript_ShellyGiveGorebyss::
 
 Present_AquaCorpHQ_EventScript_ReceiveGorebyssParty::
 	call Present_AquaCorpHQ_EventScript_ReceivedGorebyssFanfare
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto Present_AquaCorpHQ_EventScript_FinishAquaGauntlet
 	end
 	
 Present_AquaCorpHQ_EventScript_ReceiveGorebyssPC::
 	call Present_AquaCorpHQ_EventScript_ReceivedGorebyssFanfare
 	call Common_EventScript_TransferredToPC
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto Present_AquaCorpHQ_EventScript_FinishAquaGauntlet
 	end
 
@@ -355,6 +401,9 @@ Present_AquaCorpHQ_EventScript_ShellyGiveHuntail::
 	delay 20
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_HUNTAIL
     givemonwithot OT_SHELLY_HUNTAIL
+	additem ITEM_ATK_MOCHI, 2
+	additem ITEM_DEF_MOCHI, 1
+	additem ITEM_SPE_MOCHI, 1
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_AquaCorpHQ_EventScript_ReceiveHuntailParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_AquaCorpHQ_EventScript_ReceiveHuntailPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -362,12 +411,16 @@ Present_AquaCorpHQ_EventScript_ShellyGiveHuntail::
 
 Present_AquaCorpHQ_EventScript_ReceiveHuntailParty::
 	call Present_AquaCorpHQ_EventScript_ReceivedHuntailFanfare
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto Present_AquaCorpHQ_EventScript_FinishAquaGauntlet
 	end
 	
 Present_AquaCorpHQ_EventScript_ReceiveHuntailPC::
 	call Present_AquaCorpHQ_EventScript_ReceivedHuntailFanfare
 	call Common_EventScript_TransferredToPC
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto Present_AquaCorpHQ_EventScript_FinishAquaGauntlet
 	end
 
@@ -384,6 +437,8 @@ Present_AquaCorpHQ_EventScript_ReceivedHuntailFanfare::
 Present_CityHall_2F_Ranger_EventScript_FossilScientistGiveMamoswine::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MAMOSWINE
 	givemonwithot OT_LOOKER_MAMOSWINE
+	additem ITEM_HP_MOCHI, 2
+	additem ITEM_ATK_MOCHI, 2
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_CityHall_2F_Ranger_EventScript_ReceiveMamoswineParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_CityHall_2F_Ranger_EventScript_ReceiveMamoswinePC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -391,12 +446,16 @@ Present_CityHall_2F_Ranger_EventScript_FossilScientistGiveMamoswine::
 
 Present_CityHall_2F_Ranger_EventScript_ReceiveMamoswineParty::
 	call Present_CityHall_2F_Ranger_EventScript_ReceivedMamoswineFanfare
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto Present_CityHall_2F_Ranger_EventScript_FossilQuestFinish
 	end
 	
 Present_CityHall_2F_Ranger_EventScript_ReceiveMamoswinePC::
 	call Present_CityHall_2F_Ranger_EventScript_ReceivedMamoswineFanfare
 	call Common_EventScript_TransferredToPC
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto Present_CityHall_2F_Ranger_EventScript_FossilQuestFinish
 	end
 
@@ -414,6 +473,8 @@ Present_CityHall_2F_Ranger_EventScript_ReceivedMamoswineFanfare::
 Present_CityHall_2F_Ranger_EventScript_FossilScientistGiveYanmega::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_YANMEGA
 	givemonwithot OT_LOOKER_YANMEGA
+	additem ITEM_SPATK_MOCHI, 2
+	additem ITEM_SPE_MOCHI, 2
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_CityHall_2F_Ranger_EventScript_ReceiveYanmegaParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_CityHall_2F_Ranger_EventScript_ReceiveYanmegaPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -421,12 +482,16 @@ Present_CityHall_2F_Ranger_EventScript_FossilScientistGiveYanmega::
 
 Present_CityHall_2F_Ranger_EventScript_ReceiveYanmegaParty::
 	call Present_CityHall_2F_Ranger_EventScript_ReceivedYanmegaFanfare
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto Present_CityHall_2F_Ranger_EventScript_FossilQuestFinish
 	end
 	
 Present_CityHall_2F_Ranger_EventScript_ReceiveYanmegaPC::
 	call Present_CityHall_2F_Ranger_EventScript_ReceivedYanmegaFanfare
 	call Common_EventScript_TransferredToPC
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto Present_CityHall_2F_Ranger_EventScript_FossilQuestFinish
 	end
 
@@ -444,6 +509,10 @@ Present_CityHall_2F_Ranger_EventScript_ReceivedYanmegaFanfare::
 Present_Cafe_EventScript_EmmaGiveGumshoos::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GUMSHOOS
 	givemonwithot OT_EMMA_GUMSHOOS
+	additem ITEM_HP_MOCHI, 1
+	additem ITEM_ATK_MOCHI, 1
+	additem ITEM_DEF_MOCHI, 1
+	additem ITEM_SPDEF_MOCHI, 1
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Cafe_EventScript_ReceiveGumshoosParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Cafe_EventScript_ReceiveGumshoosPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -451,12 +520,16 @@ Present_Cafe_EventScript_EmmaGiveGumshoos::
 
 Present_Cafe_EventScript_ReceiveGumshoosParty::
 	call Present_Cafe_EventScript_ReceivedGumshoosFanfare
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto Present_Cafe_EventScript_EmmaFinishQuest
 	end
 	
 Present_Cafe_EventScript_ReceiveGumshoosPC::
 	call Present_Cafe_EventScript_ReceivedGumshoosFanfare
 	call Common_EventScript_TransferredToPC
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto Present_Cafe_EventScript_EmmaFinishQuest
 	end
 
@@ -473,6 +546,8 @@ Present_Cafe_EventScript_ReceivedGumshoosFanfare::
 Present_Cafe_EventScript_EmmaGiveMeowstic::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MEOWSTIC
 	givemonwithot OT_EMMA_MEOWSTIC
+	additem ITEM_SPATK_MOCHI, 2
+	additem ITEM_SPE_MOCHI, 2
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Cafe_EventScript_ReceiveMeowsticParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Cafe_EventScript_ReceiveMeowsticPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -480,12 +555,16 @@ Present_Cafe_EventScript_EmmaGiveMeowstic::
 
 Present_Cafe_EventScript_ReceiveMeowsticParty::
 	call Present_Cafe_EventScript_ReceivedMeowsticFanfare
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto Present_Cafe_EventScript_EmmaFinishQuest
 	end
 	
 Present_Cafe_EventScript_ReceiveMeowsticPC::
 	call Present_Cafe_EventScript_ReceivedMeowsticFanfare
 	call Common_EventScript_TransferredToPC
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto Present_Cafe_EventScript_EmmaFinishQuest
 	end
 
@@ -503,6 +582,8 @@ Present_Cafe_EventScript_ReceivedMeowsticFanfare::
 PastTown_EventScript_ForemanGiveBreloom::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_BRELOOM
 	givemonwithot OT_LOOKER_BRELOOM
+	additem ITEM_ATK_MOCHI, 2
+	additem ITEM_SPE_MOCHI, 2
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PastTown_EventScript_ReceiveBreloomParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PastTown_EventScript_ReceiveBreloomPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -510,12 +591,16 @@ PastTown_EventScript_ForemanGiveBreloom::
 
 PastTown_EventScript_ReceiveBreloomParty::
 	call PastTown_EventScript_ReceivedBreloomFanfare
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto PastTown_EventScript_ForemanQuestFinish
 	end
 	
 PastTown_EventScript_ReceiveBreloomPC::
 	call PastTown_EventScript_ReceivedBreloomFanfare
 	call Common_EventScript_TransferredToPC
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto PastTown_EventScript_ForemanQuestFinish
 	end
 
@@ -532,6 +617,9 @@ PastTown_EventScript_ReceivedBreloomFanfare::
 PastTown_EventScript_ForemanGiveShiinotic::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SHIINOTIC
 	givemonwithot OT_LOOKER_SHIINOTIC
+	additem ITEM_HP_MOCHI, 2
+	additem ITEM_DEF_MOCHI, 1
+	additem ITEM_SPDEF_MOCHI, 1
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PastTown_EventScript_ReceiveShiinoticParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PastTown_EventScript_ReceiveShiinoticPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -539,12 +627,16 @@ PastTown_EventScript_ForemanGiveShiinotic::
 
 PastTown_EventScript_ReceiveShiinoticParty::
 	call PastTown_EventScript_ReceivedShiinoticFanfare
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto PastTown_EventScript_ForemanQuestFinish
 	end
 	
 PastTown_EventScript_ReceiveShiinoticPC::
 	call PastTown_EventScript_ReceivedShiinoticFanfare
 	call Common_EventScript_TransferredToPC
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto PastTown_EventScript_ForemanQuestFinish
 	end
 
@@ -561,6 +653,9 @@ PastTown_EventScript_ReceivedShiinoticFanfare::
 PastTown_EventScript_SadGirlGiveTauros::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_TAUROS
 	givemonwithot OT_ALICE_TAUROS
+	additem ITEM_ATK_MOCHI, 2
+	additem ITEM_DEF_MOCHI, 1
+	additem ITEM_SPE_MOCHI, 1
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PastTown_EventScript_ReceiveTaurosParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PastTown_EventScript_ReceiveTaurosPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -568,12 +663,16 @@ PastTown_EventScript_SadGirlGiveTauros::
 
 PastTown_EventScript_ReceiveTaurosParty::
 	call PastTown_EventScript_ReceivedTaurosFanfare
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto PastTown_EventScript_SadGirlQuestFinish
 	end
 	
 PastTown_EventScript_ReceiveTaurosPC::
 	call PastTown_EventScript_ReceivedTaurosFanfare
 	call Common_EventScript_TransferredToPC
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto PastTown_EventScript_SadGirlQuestFinish
 	end
 
@@ -592,6 +691,9 @@ PastTown_EventScript_ReceivedTaurosFanfare::
 PastTown_EventScript_SadGirlGiveMiltank::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MILTANK
 	givemonwithot OT_ALICE_MILTANK
+	additem ITEM_HP_MOCHI, 1
+	additem ITEM_ATK_MOCHI, 1
+	additem ITEM_SPE_MOCHI, 2
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PastTown_EventScript_ReceiveMiltankParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PastTown_EventScript_ReceiveMiltankPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -599,12 +701,16 @@ PastTown_EventScript_SadGirlGiveMiltank::
 
 PastTown_EventScript_ReceiveMiltankParty::
 	call PastTown_EventScript_ReceivedMiltankFanfare
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto PastTown_EventScript_SadGirlQuestFinish
 	end
 	
 PastTown_EventScript_ReceiveMiltankPC::
 	call PastTown_EventScript_ReceivedMiltankFanfare
 	call Common_EventScript_TransferredToPC
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto PastTown_EventScript_SadGirlQuestFinish
 	end
 
@@ -623,6 +729,9 @@ PastTown_EventScript_ReceivedMiltankFanfare::
 PresentTown_Port_EventScript_BlueGiveGolem::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_GOLEM
 	givemonwithot OT_BLUE_GOLEM
+	additem ITEM_ATK_MOCHI, 1
+	additem ITEM_DEF_MOCHI, 2
+	additem ITEM_SPDEF_MOCHI, 1
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PresentTown_Port_EventScript_ReceiveGolemParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PresentTown_Port_EventScript_ReceiveGolemPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -630,6 +739,7 @@ PresentTown_Port_EventScript_BlueGiveGolem::
 
 PresentTown_Port_EventScript_ReceiveGolemParty::
 	call PresentTown_Port_EventScript_ReceivedGolemFanfare
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
@@ -637,6 +747,7 @@ PresentTown_Port_EventScript_ReceiveGolemParty::
 PresentTown_Port_EventScript_ReceiveGolemPC::
 	call PresentTown_Port_EventScript_ReceivedGolemFanfare
 	call Common_EventScript_TransferredToPC
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
@@ -654,6 +765,9 @@ PresentTown_Port_EventScript_ReceivedGolemFanfare::
 PresentTown_Port_EventScript_BlueGiveMachamp::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MACHAMP
 	givemonwithot OT_BLUE_MACHAMP
+	additem ITEM_HP_MOCHI, 1
+	additem ITEM_ATK_MOCHI, 2
+	additem ITEM_SPE_MOCHI, 1
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PresentTown_Port_EventScript_ReceiveMachampParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, PresentTown_Port_EventScript_ReceiveMachampPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -661,6 +775,7 @@ PresentTown_Port_EventScript_BlueGiveMachamp::
 
 PresentTown_Port_EventScript_ReceiveMachampParty::
 	call PresentTown_Port_EventScript_ReceivedMachampFanfare
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
@@ -668,6 +783,7 @@ PresentTown_Port_EventScript_ReceiveMachampParty::
 PresentTown_Port_EventScript_ReceiveMachampPC::
 	call PresentTown_Port_EventScript_ReceivedMachampFanfare
 	call Common_EventScript_TransferredToPC
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
@@ -685,6 +801,9 @@ PresentTown_Port_EventScript_ReceivedMachampFanfare::
 Present_Cafe_EventScript_MayGiveWalrein::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_WALREIN
 	givemonwithot OT_MAY_WALREIN
+	additem ITEM_HP_MOCHI, 2
+	additem ITEM_ATK_MOCHI, 1
+	additem ITEM_SPATK_MOCHI, 1
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Cafe_EventScript_ReceiveWalreinParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Cafe_EventScript_ReceiveWalreinPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -692,6 +811,7 @@ Present_Cafe_EventScript_MayGiveWalrein::
 
 Present_Cafe_EventScript_ReceiveWalreinParty::
 	call Present_Cafe_EventScript_ReceivedWalreinFanfare
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_CAFE_MAY, Common_Movement_FaceOriginalDirection
 	waitmovement 0
@@ -701,6 +821,7 @@ Present_Cafe_EventScript_ReceiveWalreinParty::
 Present_Cafe_EventScript_ReceiveWalreinPC::
 	call Present_Cafe_EventScript_ReceivedWalreinFanfare
 	call Common_EventScript_TransferredToPC
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_CAFE_MAY, Common_Movement_FaceOriginalDirection
 	waitmovement 0
@@ -720,6 +841,10 @@ Present_Cafe_EventScript_ReceivedWalreinFanfare::
 Present_Cafe_EventScript_MayGiveCamerupt::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CAMERUPT
 	givemonwithot OT_MAY_CAMERUPT
+	additem ITEM_ATK_MOCHI, 1
+	additem ITEM_DEF_MOCHI, 1
+	additem ITEM_SPATK_MOCHI, 1
+	additem ITEM_SPDEF_MOCHI, 1
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Cafe_EventScript_ReceiveCameruptParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Cafe_EventScript_ReceiveCameruptPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -727,6 +852,7 @@ Present_Cafe_EventScript_MayGiveCamerupt::
 
 Present_Cafe_EventScript_ReceiveCameruptParty::
 	call Present_Cafe_EventScript_ReceivedCameruptFanfare
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_CAFE_MAY, Common_Movement_FaceOriginalDirection
 	waitmovement 0
@@ -736,6 +862,7 @@ Present_Cafe_EventScript_ReceiveCameruptParty::
 Present_Cafe_EventScript_ReceiveCameruptPC::
 	call Present_Cafe_EventScript_ReceivedCameruptFanfare
 	call Common_EventScript_TransferredToPC
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_CAFE_MAY, Common_Movement_FaceOriginalDirection
 	waitmovement 0
@@ -755,6 +882,9 @@ Present_Cafe_EventScript_ReceivedCameruptFanfare::
 Present_Cafe_EventScript_LisiaGiveMisdreavus::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MISDREAVUS
 	givemonwithot OT_LISIA_MISDREAVUS
+	additem ITEM_SPATK_MOCHI, 1
+	additem ITEM_SPDEF_MOCHI, 2
+	additem ITEM_SPE_MOCHI, 1
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Cafe_EventScript_ReceiveMisdreavusParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Cafe_EventScript_ReceiveMisdreavusPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -762,12 +892,16 @@ Present_Cafe_EventScript_LisiaGiveMisdreavus::
 
 Present_Cafe_EventScript_ReceiveMisdreavusParty::
 	call Present_Cafe_EventScript_ReceivedMisdreavusFanfare
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto Present_Cafe_EventScript_LisiaFinishQuest
 	end
 	
 Present_Cafe_EventScript_ReceiveMisdreavusPC::
 	call Present_Cafe_EventScript_ReceivedMisdreavusFanfare
 	call Common_EventScript_TransferredToPC
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto Present_Cafe_EventScript_LisiaFinishQuest
 	end
 
@@ -784,6 +918,10 @@ Present_Cafe_EventScript_ReceivedMisdreavusFanfare::
 Present_Cafe_EventScript_LisiaGiveMurkrow::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MURKROW
 	givemonwithot OT_LISIA_MURKROW
+	additem ITEM_HP_MOCHI, 1
+	additem ITEM_ATK_MOCHI, 1
+	additem ITEM_SPDEF_MOCHI, 1
+	additem ITEM_SPE_MOCHI, 1
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Cafe_EventScript_ReceiveMurkrowParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Cafe_EventScript_ReceiveMurkrowPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -791,12 +929,16 @@ Present_Cafe_EventScript_LisiaGiveMurkrow::
 
 Present_Cafe_EventScript_ReceiveMurkrowParty::
 	call Present_Cafe_EventScript_ReceivedMurkrowFanfare
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto Present_Cafe_EventScript_LisiaFinishQuest
 	end
 	
 Present_Cafe_EventScript_ReceiveMurkrowPC::
 	call Present_Cafe_EventScript_ReceivedMurkrowFanfare
 	call Common_EventScript_TransferredToPC
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto Present_Cafe_EventScript_LisiaFinishQuest
 	end
 
@@ -813,6 +955,9 @@ Present_Cafe_EventScript_ReceivedMurkrowFanfare::
 Present_Flat1_2F_EventScript_BeautyGiveSwanna::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SWANNA
 	givemonwithot OT_BEATRICE_SWANNA
+	additem ITEM_HP_MOCHI, 2
+	additem ITEM_DEF_MOCHI, 1
+	additem ITEM_SPATK_MOCHI, 1
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Flat1_2F_EventScript_ReceiveSwannaParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Flat1_2F_EventScript_ReceiveSwannaPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -820,12 +965,16 @@ Present_Flat1_2F_EventScript_BeautyGiveSwanna::
 
 Present_Flat1_2F_EventScript_ReceiveSwannaParty::
 	call Present_Flat1_2F_EventScript_ReceivedSwannaFanfare
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto Present_Flat1_2F_EventScript_BeautyFinishQuest
 	end
 	
 Present_Flat1_2F_EventScript_ReceiveSwannaPC::
 	call Present_Flat1_2F_EventScript_ReceivedSwannaFanfare
 	call Common_EventScript_TransferredToPC
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto Present_Flat1_2F_EventScript_BeautyFinishQuest
 	end
 
@@ -842,6 +991,9 @@ Present_Flat1_2F_EventScript_ReceivedSwannaFanfare::
 Present_Flat1_2F_EventScript_BeautyGiveUnfezant::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_UNFEZANT
 	givemonwithot OT_BEATRICE_UNFEZANT
+	additem ITEM_HP_MOCHI, 1
+	additem ITEM_SPATK_MOCHI, 2
+	additem ITEM_SPE_MOCHI, 1
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Flat1_2F_EventScript_ReceiveUnfezantParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Flat1_2F_EventScript_ReceiveUnfezantPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -849,12 +1001,16 @@ Present_Flat1_2F_EventScript_BeautyGiveUnfezant::
 
 Present_Flat1_2F_EventScript_ReceiveUnfezantParty::
 	call Present_Flat1_2F_EventScript_ReceivedUnfezantFanfare
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto Present_Flat1_2F_EventScript_BeautyFinishQuest
 	end
 	
 Present_Flat1_2F_EventScript_ReceiveUnfezantPC::
 	call Present_Flat1_2F_EventScript_ReceivedUnfezantFanfare
 	call Common_EventScript_TransferredToPC
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto Present_Flat1_2F_EventScript_BeautyFinishQuest
 	end
 
@@ -871,6 +1027,12 @@ Present_Flat1_2F_EventScript_ReceivedUnfezantFanfare::
 InsideOutside_EventScript_ArtistGiveSmeargle::
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_SMEARGLE
 	givemonwithot OT_LEO_SMEARGLE
+	additem ITEM_HP_MOCHI, 1
+	additem ITEM_ATK_MOCHI, 1
+	additem ITEM_DEF_MOCHI, 1
+	additem ITEM_SPATK_MOCHI, 1
+	additem ITEM_SPDEF_MOCHI, 1
+	additem ITEM_SPE_MOCHI, 1
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, InsideOutside_EventScript_ReceiveSmeargleParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, InsideOutside_EventScript_ReceiveSmearglePC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -878,12 +1040,16 @@ InsideOutside_EventScript_ArtistGiveSmeargle::
 
 InsideOutside_EventScript_ReceiveSmeargleParty::
 	call InsideOutside_EventScript_ReceivedSmeargleFanfare
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto InsideOutside_EventScript_ArtistFinishQuest
 	end
 	
 InsideOutside_EventScript_ReceiveSmearglePC::
 	call InsideOutside_EventScript_ReceivedSmeargleFanfare
 	call Common_EventScript_TransferredToPC
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	closemessage
 	goto InsideOutside_EventScript_ArtistFinishQuest
 	end
 
