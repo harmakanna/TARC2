@@ -9,7 +9,8 @@ CutsceneOffice_OnFrame:
 CutsceneOffice_EventScript_StartGame::
 	lockall
 	setflag FLAG_FORCE_LOAD_OFFSCREEN_OBJEV
-	msgbox CutsceneOffice_Text_PleaseSetDifficulty, MSGBOX_DEFAULT
+	message CutsceneOffice_Text_PleaseSetDifficulty
+	waitmessage
 	multichoicedefault 0, 0, MULTI_CHOOSE_DIFFICULTY, 1, TRUE
 	call_if_eq VAR_RESULT, 0, CutsceneOffice_EventScript_SetEasy
 	call_if_eq VAR_RESULT, 1, CutsceneOffice_EventScript_SetNormal
@@ -18,7 +19,7 @@ CutsceneOffice_EventScript_StartGame::
 	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 	special SpawnCameraObject
 	waitmovement 0
-	delay 100
+	delay 120
 	setvar VAR_0x8004, 4
 	setvar VAR_0x8005, 6
 	special TeleportCamera

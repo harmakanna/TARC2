@@ -142,11 +142,16 @@ ShrineOfPeacePast_EventScript_ResetWarpEvents::
 	return
 	
 ShrineOfPeacePast_EventScript_CheckSpawnCatchmon::
+	returnqueststate QUEST_INVESTIGATE_PROSPERITY
+	call_if_eq VAR_RESULT, 4, ShrineOfPeacePast_EventScript_CheckSpawnCatchmon2
+	return
+
+ShrineOfPeacePast_EventScript_CheckSpawnCatchmon2::
 	call_if_lt VAR_NUM_MONS_CAUGHT, 12, ShrineOfPeacePast_EventScript_TrySpawnCatchmon
 	return
 
 ShrineOfPeacePast_EventScript_TrySpawnCatchmon::
-	randompercentage 15
+	randompercentage 20
 	call_if_eq VAR_RESULT, TRUE, ShrineOfPeacePast_EventScript_SeedCatchMon
 	return
 
