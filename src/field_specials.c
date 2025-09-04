@@ -946,6 +946,32 @@ u8 GetBattleOutcome(void)
     return gBattleOutcome;
 }
 
+void GetMochi(void)
+{
+    u8 evs[NUM_STATS] = {0, 0, 0, 0, 0, 0};
+    u8 mochi[NUM_STATS] = {0, 0, 0, 0, 0, 0};
+    u32 i;
+
+    for (i = 0; i < NUM_STATS; i++)
+    {
+        // EV
+            evs[i] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_EV + i);
+    }
+
+    for (i = 0; i < NUM_STATS; i++)
+    {
+        mochi[i] = SAFE_DIV(evs[i], 126);
+    }
+
+    VarSet(VAR_TEMP_A, mochi[0]);
+    VarSet(VAR_TEMP_B, mochi[1]);
+    VarSet(VAR_TEMP_C, mochi[2]);
+    VarSet(VAR_TEMP_D, mochi[3]);
+    VarSet(VAR_TEMP_E, mochi[4]);
+    VarSet(VAR_TEMP_F, mochi[5]);
+}
+
+
 void SetDifficulty(void)
 {
     switch (VAR_CHOOSE_DIFFICULTY)
