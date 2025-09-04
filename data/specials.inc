@@ -569,3 +569,5 @@ gSpecials::
 	def_special ReturnCameraToPlayer
 	def_special SetHiddenNature
 	def_special SetDifficulty
+	def_special GetMochi
+	

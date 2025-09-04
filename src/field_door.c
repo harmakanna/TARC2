@@ -294,7 +294,7 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
     {METATILE_PortoBellaTown_Door_Wood,                     DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_PortoBellaWood, sDoorAnimPalettes_PortoBellaWood},
     {METATILE_PortoBellaTown_Door_Glass,                    DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_PortoBellaGlass, sDoorAnimPalettes_PortoBellaGlass},
     {METATILE_PresentTown_Porto_Bella_City_Door,            DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_PortoBellaCity, sDoorAnimPalettes_PortoBellaCity},
-    {METATILE_PortoBellaCity_Door_Slide,                    DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_PortoBellaCitySlide, sDoorAnimPalettes_PortoBellaCitySlide},
+    {METATILE_PresentTown_Door_City_Hall,                   DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_PortoBellaCitySlide, sDoorAnimPalettes_PortoBellaCitySlide},
 };
 
 // NOTE: The tiles of a door's animation must be copied to VRAM because they are not already part of any given tileset.
