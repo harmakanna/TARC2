@@ -1,4 +1,11 @@
 // multichoice lists
+static const struct MenuAction MultichoiceList_ChooseDifficulty[] =
+{
+    {COMPOUND_STRING("Easy")},
+    {COMPOUND_STRING("Normal")},
+    {COMPOUND_STRING("Hard")},
+};
+
 static const struct MenuAction MultichoiceList_SpeakWithEmma1[] = 
 {
     {COMPOUND_STRING("Oui")},
@@ -899,6 +906,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_LISIA_GIVEMON]              = MULTICHOICE(MultichoiceList_LisiaGiveMon),
     [MULTI_BEAUTY_GIVEMON]             = MULTICHOICE(MultichoiceList_BeautyGiveMon),
     [MULTI_RODENT_CHASEMON]            = MULTICHOICE(MultichoiceList_RodentChaseMon),
+    [MULTI_CHOOSE_DIFFICULTY]          = MULTICHOICE(MultichoiceList_ChooseDifficulty),
     [MULTI_BRINEY_ON_DEWFORD]          = MULTICHOICE(MultichoiceList_BrineyOnDewford),
     [MULTI_PC]                         = MULTICHOICE(MultichoiceList_Exit),
     [MULTI_ENTERINFO]                  = MULTICHOICE(MultichoiceList_EnterInfo),

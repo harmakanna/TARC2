@@ -946,6 +946,22 @@ u8 GetBattleOutcome(void)
     return gBattleOutcome;
 }
 
+void SetDifficulty(void)
+{
+    switch (VAR_CHOOSE_DIFFICULTY)
+    {
+        case DIFFICULTY_EASY:
+            gSaveBlock2Ptr->optionsBattleStyle = DIFFICULTY_EASY;
+            break;
+        case DIFFICULTY_NORMAL:
+            gSaveBlock2Ptr->optionsBattleStyle = DIFFICULTY_NORMAL;
+            break;
+        case DIFFICULTY_HARD:
+            gSaveBlock2Ptr->optionsBattleStyle = DIFFICULTY_HARD;
+            break;
+    }
+}
+
 void CableCarWarp(void)
 {
     if (gSpecialVar_0x8004 != 0)

@@ -9,6 +9,12 @@ CutsceneOffice_OnFrame:
 CutsceneOffice_EventScript_StartGame::
 	lockall
 	setflag FLAG_FORCE_LOAD_OFFSCREEN_OBJEV
+	msgbox CutsceneOffice_Text_PleaseSetDifficulty, MSGBOX_DEFAULT
+	multichoice MULTI_CHOOSE_DIFFICULTY, 0, 0, TRUE
+	call_if_eq VAR_RESULT, 0, CutsceneOffice_EventScript_SetEasy
+	call_if_eq VAR_RESULT, 1, CutsceneOffice_EventScript_SetNormal
+	call_if_eq VAR_RESULT, 2, CutsceneOffice_EventScript_SetHard
+	special SetDifficulty
 	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 	special SpawnCameraObject
 	waitmovement 0
@@ -31,6 +37,27 @@ CutsceneOffice_EventScript_StartGame::
 	waitstate
 	releaseall
 	end
+
+CutsceneOffice_EventScript_SetEasy::
+	playse SE_SELECT
+	msgbox CutsceneOffice_Text_SetToEasy, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_CHOOSE_DIFFICULTY, 0
+	return
+
+CutsceneOffice_EventScript_SetNormal::
+	playse SE_SELECT
+	msgbox CutsceneOffice_Text_SetToNormal, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_CHOOSE_DIFFICULTY, 1
+	return
+
+CutsceneOffice_EventScript_SetHard::
+	playse SE_SELECT
+	msgbox CutsceneOffice_Text_SetToHard, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_CHOOSE_DIFFICULTY, 2
+	return
 
 CutsceneOffice_EventScript_Scene::
 	speakername Name_Looker
@@ -169,3 +196,19 @@ CutsceneOffice_Text_LookerOhFine:
 CutsceneOffice_Text_AnabelIllReachOut:
 	.string "Of course. I'll reach back out to\n"
 	.string "Morrigan right away.$"
+
+CutsceneOffice_Text_PleaseSetDifficulty:
+	.string "Please set your difficulty. (This\n"
+	.string "can be changed at any time.)$"
+
+CutsceneOffice_Text_SetToEasy:
+	.string "The difficulty has been set to\n"
+	.string "'Easy'.$"
+	
+CutsceneOffice_Text_SetToNormal:
+	.string "The difficulty has been set to\n"
+	.string "'Normal'.$"
+	
+CutsceneOffice_Text_SetToHard:
+	.string "The difficulty has been set to\n"
+	.string "'Hard'.$"

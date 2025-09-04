@@ -375,7 +375,7 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsButtonMode = gTasks[taskId].tButtonMode;
     gSaveBlock2Ptr->optionsWindowFrameType = gTasks[taskId].tWindowFrameType;
 
-    VarSet(B_VAR_DIFFICULTY, gSaveBlock2Ptr->optionsBattleStyle);
+    VarSet(VAR_CHOOSE_DIFFICULTY, gSaveBlock2Ptr->optionsBattleStyle);
     VarSet(VAR_BATTLE_SPEED, gSaveBlock2Ptr->optionsBattleSpeed);
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
