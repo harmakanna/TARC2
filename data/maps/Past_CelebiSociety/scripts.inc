@@ -17,6 +17,7 @@ Past_CelebiSociety_EventScript_CouncilWoman::
 	goto_if_set FLAG_SAVE_THE_LUVDISCS, Past_CelebiSociety_EventScript_CouncilWomanSaveLuvdiscs
 	returnqueststate QUEST_HOMEGROWN_REMEDIES
 	goto_if_eq VAR_RESULT, 2, Past_CelebiSociety_EventScript_CouncilWomanSeeCamilla
+	speakername Name_Councilwoman
 	msgbox Past_CelebiSociety_Text_CouncilWomanAhAnotherTimeTraveler, MSGBOX_DEFAULT
 	closemessage
 	release
@@ -29,6 +30,7 @@ Past_CelebiSociety_EventScript_CouncilWomanPreGame::
 	end
 
 Past_CelebiSociety_EventScript_CouncilWomanSaveLuvdiscs::
+	speakername Name_Councilwoman
 	msgbox Past_CelebiSociety_Text_CouncilWomanSaveLuvdiscs, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_HIDE_SS_TIDAL
@@ -40,6 +42,7 @@ Past_CelebiSociety_EventScript_CouncilWomanSaveLuvdiscs::
 	end
 
 Past_CelebiSociety_EventScript_CouncilWomanSeeCamilla::
+	speakername Name_Councilwoman
 	msgbox Past_CelebiSociety_Text_CouncilWomanSeeCamilla, MSGBOX_DEFAULT
 	closemessage
 	release
@@ -49,12 +52,14 @@ Past_CelebiSociety_Eventscript_Gentleman::
 	lock
 	faceplayer
 	goto_if_unset FLAG_HIDE_PAST_LISIA, Past_CelebiSociety_EventScript_GentlemanLisia
+	speakername Name_Gentleman
 	msgbox Past_CelebiSociety_Text_GentlemanMyFavoriteThing, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
 
 Past_CelebiSociety_EventScript_GentlemanLisia::
+	speakername Name_Gentleman
 	msgbox Past_CelebiSociety_Text_GentlemanLisia, MSGBOX_DEFAULT
 	closemessage
 	release

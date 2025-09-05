@@ -430,6 +430,24 @@ Present_CelebiSociety_EventScript_MochiResetterAlreadyEmpty::
 	release
 	end
 	
+Present_CelebiSociety_EventScript_Grandma::
+	speakername Name_Grandma
+	msgbox Present_CelebiSociety_Text_Grandma, MSGBOX_NPC
+	end
+
+Present_CelebiSociety_Text_Grandma:
+	.string "Long ago, I had a run-in with Celebi\n"
+	.string "myself!\p"
+	.string "I was cornered by a devious-looking wild\n"
+	.string "Luxray when she came to my rescue!\p"
+	.string "Let me tell you, I was nauseous for a\n"
+	.string "full week after that!\p"
+	.string "Sending me through time DID cause me to\n"
+	.string "see the future here and there for a few\l"
+	.string "days afterward…\p"
+	.string "Wheeehehehe! That's how I met my husband!\n"
+	.string "Have you experienced it?$"
+	
 Present_CelebiSociety_Text_MochiResetterIntro:
 	.string "Oh, that silly old man there is always\n"
 	.string "giving away handfuls of Mega-Mochi!\p"

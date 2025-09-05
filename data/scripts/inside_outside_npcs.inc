@@ -85,6 +85,15 @@ InsideOutside_EventScript_AceTrainerInside::
     goto InsideOutside_EventScript_AceTrainer
     end
 
+InsideOutside_EventScript_CompostGirl::
+    goto_if_set FLAG_HIDDEN_ITEM_SS_TIDAL_LOWER_DECK_LEFTOVERS, InsideOutside_EventScript_CompostGirlEww
+    msgbox InsideOutside_Text_CompostGirl, MSGBOX_NPC
+    end
+
+InsideOutside_EventScript_CompostGirlEww::
+    msgbox InsideOutside_Text_CompostGirlEww, MSGBOX_NPC
+    end
+
 InsideOutside_EventScript_Gentleman::
     lock
     faceplayer
@@ -1364,3 +1373,14 @@ InsideOutside_Text_AngryManReally:
 InsideOutside_Text_AngryManCuteName:
     .string "You know…\p"
     .string "Chowder's kind of a cute name…$"
+
+InsideOutside_Text_CompostGirl:
+    .string "Ever since we installed the compost\n"
+    .string "bin outside, the park has been so much\l"
+    .string "cleaner!\p"
+    .string "It makes me happy seeing it used!$"
+
+InsideOutside_Text_CompostGirlEww:
+    .string "Eww! Why were you digging through our\n"
+    .string "compost bin!?$"
+    

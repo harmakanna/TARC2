@@ -38,7 +38,7 @@ Name_Estella:
     .string "Estella$"
 
 Name_Grandma:
-    .string "Grandma$"
+    .string "Nina$"
     
 Name_Head_Ranger:
     .string "Head Ranger$"
@@ -228,3 +228,15 @@ Name_Mochi_Man:
 
 Name_Old_Lady:
     .string "Strange Lady$"
+
+Name_Teacher:
+    .string "Mrs. M.$"
+
+Name_Councilwoman:
+    .string "Christina$"
+
+Name_Girl:
+    .string "Girl$"
+
+Name_GirlStudent:
+    .string "Valentina$"

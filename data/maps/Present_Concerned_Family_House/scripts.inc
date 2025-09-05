@@ -134,8 +134,6 @@ Present_ConcernedFamilyHouse_EventScript_Estella::
 	case 2, Present_ConcernedFamilyHouse_EventScript_EstellaActive
 	case 3, Present_ConcernedFamilyHouse_EventScript_EstellaReward
 	case 4, Present_ConcernedFamilyHouse_EventScript_EstellaComplete
-	msgbox Present_ConcernedFamilyHouse_Text_EstellaDidntBelieveMe, MSGBOX_DEFAULT
-	closemessage
 	release
 	end
 
@@ -176,7 +174,7 @@ Present_ConcernedFamilyHouse_EventScript_EstellaReward::
 Present_ConcernedFamilyHouse_EventScript_EstellaComplete::
 	goto_if_unset FLAG_SWEET_TOOTH_WENT_CRAZY_REWARD, Present_ConcernedFamilyHouse_EventScript_EstellaSecretReward
 	speakername Name_Estella
-	msgbox Present_ConcernedFamilyHouse_Text_EstellaDidntBelieveMe, MSGBOX_DEFAULT
+	msgbox Present_ConcernedFamilyHouse_Text_EstellaWibblyWobbly, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
@@ -347,12 +345,13 @@ Present_ConcernedFamilyHouse_Text_MomMyBaby:
 	.string "Oh, Mr. Looker, thank you so so much\n"
 	.string "for bringing her home safe!$"
 
-Present_ConcernedFamilyHouse_Text_EstellaDidntBelieveMe:
+Present_ConcernedFamilyHouse_Text_EstellaWibblyWobbly:
 	.string "um, um, um!\p"
-	.string "mom and dad didnt believe me when\n"
-	.string "i said i went to the past!\p"
-	.string "they thought i was pretending!\p"
-	.string "only grammy understands me…$"
+	.string "ever since i got sent to the past, i'm\n"
+	.string "seeing weird things!\p"
+	.string "its all wibbly and wobbly!\p"
+	.string "mister looker sir, i think youll find\n"
+	.string "the culprit just fine!$"
 
 Present_ConcernedFamilyHouse_Text_LookerINeedToThink:
 	.string "Hmm…\p"
