@@ -132,7 +132,8 @@ Present_School_EventScript_Twin::
 	lockall
 	goto_if_unset FLAG_SYS_MAIN_GAME_START, Present_School_EventScript_TwinPreGenies
 	speakername Name_Twin
-	goto_if_unset FLAG_DEFEATED_SHRINE_GENIES, Present_School_EventScript_TwinPreGenies
+	returnqueststate QUEST_INVESTIGATE_PROSPERITY
+	goto_if_ne VAR_RESULT, 4, Present_School_EventScript_TwinPreGenies
 	call Script_GetNPCFacingDirection
 	returnqueststate QUEST_LUXRAY
 	switch VAR_RESULT
@@ -226,7 +227,7 @@ Present_School_EventScript_TwinQuestCompletion::
 	setobjectxyperm LOCALID_SCHOOL_KID, 1, 4
 	speak LOCALID_SCHOOL_KID, VAR_0x8005, Name_Doubter, Present_School_Text_DoubterReward
 	speakername NULL
-	@ giveitem 
+	giveitem ITEM_TM_WATER_PULSE, 1 @replaced with Helping Hand 
 	completequest QUEST_LUXRAY
 	releaseall
 	end
@@ -290,14 +291,14 @@ Present_School_EventScript_TwinSecretQuestCompletion::
 	applymovement LOCALID_PLAYER, Common_Movement_FaceOriginalDirection
 	speak LOCALID_SCHOOL_TWIN, VAR_0x8005, Name_Twin, Present_School_Text_TwinReward
 	speakername NULL
-	giveitem ITEM_CHOICE_SPECS
+	giveitem ITEM_CHOICE_BAND
 	playse SE_PIN
 	applymovement LOCALID_SCHOOL_TWIN, Common_Movement_FaceRightQuestionMark
 	waitmovement 0
 	delay 50
 	speak LOCALID_SCHOOL_TWIN, VAR_0x8005, Name_Twin, Present_School_Text_TwinHeDroppedThis
 	speakername NULL
-	@ giveitem
+	giveitem ITEM_TM_WATER_PULSE, 1 @replaced with Helping Hand 
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_LUXRAY, 0
 	completequest QUEST_LUXRAY
 	closemessage

@@ -223,3 +223,5 @@ Name_Scream_Tail:
 Name_Wo_Chien:
     .string "Wo-Chien$"
     
+Name_Mochi_Man:
+    .string "The Mochi Man$"

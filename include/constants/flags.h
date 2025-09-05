@@ -733,9 +733,9 @@
 #define FLAG_HIDE_SCHOOL_BOY  0x2AE // Unused Flag
 #define FLAG_HIDE_SCHOOL_TWIN  0x2AF // Unused Flag
 #define FLAG_SHOWN_DARK_LUXRAY  0x2B0 // Unused Flag
-#define FLAG_UNUSED_0x2B1  0x2B1 // Unused Flag
-#define FLAG_UNUSED_0x2B2  0x2B2 // Unused Flag
-#define FLAG_UNUSED_0x2B3  0x2B3 // Unused Flag
+#define FLAG_SPOKE_TO_MOCHI_GIVER  0x2B1 // Unused Flag
+#define FLAG_MOCHI_MAN_GAVE_MOCHI  0x2B2 // Unused Flag
+#define FLAG_MISSING_MAN_GAVE_CHOICE_SCARF  0x2B3 // Unused Flag
 #define FLAG_UNUSED_0x2B4  0x2B4 // Unused Flag
 #define FLAG_UNUSED_0x2B5  0x2B5 // Unused Flag
 #define FLAG_UNUSED_0x2B6  0x2B6 // Unused Flag
@@ -1262,8 +1262,8 @@
 #define FLAG_GAVE_AERODACTYL_MOCHI                                           0x4B8 // Unused Flag
 #define FLAG_GAVE_SCREAM_TAIL_MOCHI                                           0x4B9 // Unused Flag
 #define FLAG_GAVE_WO_CHIEN_MOCHI                                           0x4BA // Unused Flag
-#define FLAG_UNUSED_0x4BB                                           0x4BB // Unused Flag
-#define FLAG_UNUSED_0x4BC                                           0x4BC // Unused Flag
+#define FLAG_GAVE_TORNADUS_MOCHI                                           0x4BB // Unused Flag
+#define FLAG_GAVE_THUNDURUS_MOCHI                                           0x4BC // Unused Flag
 #define FLAG_UNUSED_0x4BD                                           0x4BD // Unused Flag
 #define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag
 #define FLAG_UNUSED_0x4BF                                           0x4BF // Unused Flag
