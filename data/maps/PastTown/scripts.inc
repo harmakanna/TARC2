@@ -1762,7 +1762,7 @@ PastTown_Text_LookerOutOfTheWoods:
 	.string "Not sure where this is, but\n"
 	.string "no matter.\p"
 	.string "I need to get to a Pokémon Center\n"
-	.string "and treat this pain pronto…$"
+	.string "and treat this nausea pronto…$"
 
 PastTown_Text_LookerWhatIsThis:
 	.string "What…?\p"
