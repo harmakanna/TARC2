@@ -653,7 +653,7 @@ PastTown_EventScript_CabbageFarmerPests2QuestReward::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_GladICouldHelp
 	speak LOCALID_PAST_CABBAGEFARMER, VAR_0x8005, Name_Cabbage_Farmer, PastTown_Text_CabbageFarmerThankYou
 	speakername NULL
-	giveitem ITEM_TM_DRAGON_CLAW @ Replaced Dragon Claw with U-Turn
+	giveitem ITEM_TM_DRAGON_CLAW @ Replaced Dragon Claw with Baton Pass
 	completequest QUEST_FARMLAND_INVASION_2
 	fadescreen FADE_TO_BLACK
 	setflag FLAG_HIDE_WOOLOO
@@ -1613,8 +1613,8 @@ PastTown_Text_CabbageFarmerTheBugs:
 	.string "to reach maturity now!$"
 
 PastTown_Text_CabbageFarmerThankYou:
-	.string "I committed the way those bugs scuttled\n"
-	.string "off to memory.\p"
+	.string "I committed the way those bugs worked\n"
+	.string "together to memory.\p"
 	.string "Perhaps your Pokémon could learn a thing\n"
 	.string "or two from their nimble technique?$"
 
@@ -1762,7 +1762,7 @@ PastTown_Text_LookerOutOfTheWoods:
 	.string "Not sure where this is, but\n"
 	.string "no matter.\p"
 	.string "I need to get to a Pokémon Center\n"
-	.string "and treat this pain pronto…$"
+	.string "and treat this nausea pronto…$"
 
 PastTown_Text_LookerWhatIsThis:
 	.string "What…?\p"

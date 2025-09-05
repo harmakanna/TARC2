@@ -79,6 +79,367 @@ Present_CelebiSociety_EventScript_Eldegoss::
 	release
 	end
 
+Present_CelebiSociety_EventScript_MochiGiver::
+	lock
+	faceplayer
+	call Script_GetNPCFacingDirection
+	goto_if_set FLAG_SPOKE_TO_MOCHI_GIVER, Present_CelebiSociety_EventScript_MochiGiverIntroShort
+	setflag FLAG_SPOKE_TO_MOCHI_GIVER
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiGiverIntro
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_CelebiSociety_Text_LookerNoImADetective
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiGiverIKnewIt
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_CelebiSociety_Text_LookerNoImNot
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiGiverCatchMons
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_CelebiSociety_Text_LookerImNotATrainer
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiGiverCatchMons
+	goto Present_CelebiSociety_EventScript_CheckForMochi
+	release
+	end
+
+Present_CelebiSociety_EventScript_MochiGiverIntroShort::
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiGiverOffersMochiShort
+	goto Present_CelebiSociety_EventScript_CheckForMochi
+	end
+
+Present_CelebiSociety_EventScript_CheckForMochi::
+	clearflag FLAG_MOCHI_MAN_GAVE_MOCHI
+	call_if_unset FLAG_GAVE_DEDENNE_MOCHI, Present_CelebiSociety_EventScript_CheckMochiDedenne
+	call_if_unset FLAG_GAVE_TOGEDEMARU_MOCHI, Present_CelebiSociety_EventScript_CheckMochiTogedemaru
+	call_if_unset FLAG_GAVE_FROSMOTH_MOCHI, Present_CelebiSociety_EventScript_CheckMochiFrosmoth
+	call_if_unset FLAG_GAVE_AERODACTYL_MOCHI, Present_CelebiSociety_EventScript_CheckMochiAerodactyl
+	call_if_unset FLAG_GAVE_LURANTIS_MOCHI, Present_CelebiSociety_EventScript_CheckMochiLurantis
+	call_if_unset FLAG_GAVE_LUXRAY_MOCHI, Present_CelebiSociety_EventScript_CheckMochiLuxray
+	call_if_unset FLAG_GAVE_WO_CHIEN_MOCHI, Present_CelebiSociety_EventScript_CheckMochiWoChien
+	call_if_unset FLAG_GAVE_BEHEEYEM_MOCHI, Present_CelebiSociety_EventScript_CheckMochiBeheeyem
+	call_if_unset FLAG_GAVE_TOEDSCRUEL_MOCHI, Present_CelebiSociety_EventScript_CheckMochiToedscruel
+	call_if_unset FLAG_GAVE_SCREAM_TAIL_MOCHI, Present_CelebiSociety_EventScript_CheckMochiScreamTail
+	call_if_unset FLAG_GAVE_KLEAVOR_MOCHI, Present_CelebiSociety_EventScript_CheckMochiKleavor
+	call_if_unset FLAG_GAVE_GOODRA_HISUI_MOCHI, Present_CelebiSociety_EventScript_CheckMochiGoodraHisui
+	call_if_unset FLAG_GAVE_LUXRAY_DARK_MOCHI, Present_CelebiSociety_EventScript_CheckMochiLuxrayDark
+	call_if_unset FLAG_GAVE_TORNADUS_MOCHI, Present_CelebiSociety_EventScript_CheckMochiTornadus
+	call_if_unset FLAG_GAVE_THUNDURUS_MOCHI, Present_CelebiSociety_EventScript_CheckMochiThundurus
+	call_if_set FLAG_MOCHI_MAN_GAVE_MOCHI, Present_CelebiSociety_EventScript_LookerReceivedMochi
+	call_if_unset FLAG_MOCHI_MAN_GAVE_MOCHI, Present_CelebiSociety_EventScript_NoNewPokemon
+	closemessage
+	release
+	end
+
+Present_CelebiSociety_EventScript_LookerReceivedMochi::
+	playfanfare MUS_OBTAIN_ITEM
+	speakername NULL
+	message Looker_Text_Mochi
+	delay 10
+	waitfanfare
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManLetMeKnow
+	return
+
+Present_CelebiSociety_EventScript_NoNewPokemon::
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManNoNewPokemon
+	return
+
+Present_CelebiSociety_EventScript_CheckMochiDedenne::
+	call_if_set FLAG_CHOSE_DEDENNE, Present_CelebiSociety_EventScript_CheckMochiDedenne2
+	return
+
+Present_CelebiSociety_EventScript_CheckMochiDedenne2::
+	call_if_set FLAG_CAUGHT_RODENT, Present_CelebiSociety_EventScript_GiveMochiDedenne
+	return
+
+Present_CelebiSociety_EventScript_GiveMochiDedenne::
+	bufferspeciesname STR_VAR_1, SPECIES_DEDENNE
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManOhPokemon
+	additem ITEM_SPATK_MOCHI, 1
+	additem ITEM_SPDEF_MOCHI, 2
+	additem ITEM_SPE_MOCHI, 1
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
+	setflag FLAG_GAVE_DEDENNE_MOCHI
+	return
+
+Present_CelebiSociety_EventScript_CheckMochiTogedemaru::
+	call_if_set FLAG_CHOSE_TOGEDEMARU, Present_CelebiSociety_EventScript_CheckMochiTogedemaru2
+	return
+
+Present_CelebiSociety_EventScript_CheckMochiTogedemaru2::
+	call_if_set FLAG_CAUGHT_RODENT, Present_CelebiSociety_EventScript_GiveMochiTogedemaru
+	return
+
+Present_CelebiSociety_EventScript_GiveMochiTogedemaru::
+	bufferspeciesname STR_VAR_1, SPECIES_TOGEDEMARU
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManOhPokemon
+	additem ITEM_ATK_MOCHI, 1
+	additem ITEM_DEF_MOCHI, 2
+	additem ITEM_SPE_MOCHI, 1
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
+	setflag FLAG_GAVE_TOGEDEMARU_MOCHI
+	return
+
+Present_CelebiSociety_EventScript_CheckMochiFrosmoth::
+	call_if_set FLAG_CAUGHT_FROSMOTH, Present_CelebiSociety_EventScript_GiveMochiFrosmoth
+	return
+
+Present_CelebiSociety_EventScript_GiveMochiFrosmoth::
+	bufferspeciesname STR_VAR_1, SPECIES_FROSMOTH
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManOhPokemon
+	additem ITEM_SPATK_MOCHI, 2
+	additem ITEM_SPDEF_MOCHI, 2
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
+	setflag FLAG_GAVE_FROSMOTH_MOCHI
+	return
+
+Present_CelebiSociety_EventScript_CheckMochiAerodactyl::
+	call_if_set FLAG_CAUGHT_AERODACTYL, Present_CelebiSociety_EventScript_GiveMochiAerodactul
+	return
+
+Present_CelebiSociety_EventScript_GiveMochiAerodactul::
+	bufferspeciesname STR_VAR_1, SPECIES_AERODACTYL
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManOhAerodactyl
+	additem ITEM_ATK_MOCHI, 1
+	additem ITEM_DEF_MOCHI, 1
+	additem ITEM_SPE_MOCHI, 2
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
+	setflag FLAG_GAVE_AERODACTYL_MOCHI
+	return
+
+Present_CelebiSociety_EventScript_CheckMochiLurantis::
+	call_if_set FLAG_CAUGHT_LURANTIS, Present_CelebiSociety_EventScript_GiveMochiLurantis
+	return
+
+Present_CelebiSociety_EventScript_GiveMochiLurantis::
+	bufferspeciesname STR_VAR_1, SPECIES_LURANTIS
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManOhPokemon
+	additem ITEM_HP_MOCHI, 1
+	additem ITEM_ATK_MOCHI, 2
+	additem ITEM_DEF_MOCHI, 1
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
+	setflag FLAG_GAVE_LURANTIS_MOCHI
+	return
+
+Present_CelebiSociety_EventScript_CheckMochiLuxray::
+	call_if_set FLAG_CAUGHT_LUXRAY, Present_CelebiSociety_EventScript_GiveMochiLuxray
+	return
+
+Present_CelebiSociety_EventScript_GiveMochiLuxray::
+	bufferspeciesname STR_VAR_1, SPECIES_LUXRAY
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManOhPokemon
+	additem ITEM_HP_MOCHI, 1
+	additem ITEM_ATK_MOCHI, 1
+	additem ITEM_DEF_MOCHI, 1
+	additem ITEM_SPE_MOCHI, 1
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
+	setflag FLAG_GAVE_LUXRAY_MOCHI
+	return
+
+Present_CelebiSociety_EventScript_CheckMochiWoChien::
+	call_if_set FLAG_CAUGHT_WO_CHIEN, Present_CelebiSociety_EventScript_GiveMochiWoChien
+	return
+
+Present_CelebiSociety_EventScript_GiveMochiWoChien::
+	bufferspeciesname STR_VAR_1, SPECIES_WO_CHIEN
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManOhLegendary
+	additem ITEM_DEF_MOCHI, 2
+	additem ITEM_SPDEF_MOCHI, 2
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
+	setflag FLAG_GAVE_WO_CHIEN_MOCHI
+	return
+
+Present_CelebiSociety_EventScript_CheckMochiBeheeyem::
+	call_if_set FLAG_CAUGHT_BEHEEYEM, Present_CelebiSociety_EventScript_GiveMochiBeheeyem
+	return
+
+Present_CelebiSociety_EventScript_GiveMochiBeheeyem::
+	bufferspeciesname STR_VAR_1, SPECIES_BEHEEYEM
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManOhPokemon
+	additem ITEM_DEF_MOCHI, 1
+	additem ITEM_SPATK_MOCHI, 2
+	additem ITEM_SPDEF_MOCHI, 1
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
+	setflag FLAG_GAVE_BEHEEYEM_MOCHI
+	return
+
+Present_CelebiSociety_EventScript_CheckMochiToedscruel::
+	call_if_set FLAG_CAUGHT_TOEDSCRUEL, Present_CelebiSociety_EventScript_GiveMochiToedscruel
+	return
+
+Present_CelebiSociety_EventScript_GiveMochiToedscruel::
+	bufferspeciesname STR_VAR_1, SPECIES_TOEDSCRUEL
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManOhPokemon
+	additem ITEM_HP_MOCHI, 1
+	additem ITEM_SPATK_MOCHI, 1
+	additem ITEM_SPDEF_MOCHI, 2
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
+	setflag FLAG_GAVE_TOEDSCRUEL_MOCHI
+	return
+
+Present_CelebiSociety_EventScript_CheckMochiScreamTail::
+	call_if_set FLAG_CAUGHT_SCREAM_TAIL, Present_CelebiSociety_EventScript_GiveMochiScreamTail
+	return
+
+Present_CelebiSociety_EventScript_GiveMochiScreamTail::
+	bufferspeciesname STR_VAR_1, SPECIES_SCREAM_TAIL
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManOhScreamTail
+	additem ITEM_HP_MOCHI, 1
+	additem ITEM_DEF_MOCHI, 1
+	additem ITEM_SPDEF_MOCHI, 1
+	additem ITEM_SPE_MOCHI, 1
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
+	setflag FLAG_GAVE_SCREAM_TAIL_MOCHI
+	return
+
+Present_CelebiSociety_EventScript_CheckMochiKleavor::
+	call_if_set FLAG_CAUGHT_KLEAVOR, Present_CelebiSociety_EventScript_GiveMochiKleavor
+	return
+
+Present_CelebiSociety_EventScript_GiveMochiKleavor::
+	bufferspeciesname STR_VAR_1, SPECIES_KLEAVOR
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManOhPokemon
+	additem ITEM_HP_MOCHI, 1
+	additem ITEM_ATK_MOCHI, 1
+	additem ITEM_DEF_MOCHI, 2
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
+	setflag FLAG_GAVE_KLEAVOR_MOCHI
+	return
+
+Present_CelebiSociety_EventScript_CheckMochiGoodraHisui::
+	call_if_set FLAG_CAUGHT_GOODRA_HISUI, Present_CelebiSociety_EventScript_GiveMochiGoodraHisui
+	return
+
+Present_CelebiSociety_EventScript_GiveMochiGoodraHisui::
+	bufferspeciesname STR_VAR_1, SPECIES_GOODRA_HISUI
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManOhPokemon
+	additem ITEM_ATK_MOCHI, 1
+	additem ITEM_DEF_MOCHI, 2
+	additem ITEM_SPDEF_MOCHI, 1
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
+	setflag FLAG_GAVE_GOODRA_HISUI_MOCHI
+	return
+
+Present_CelebiSociety_EventScript_CheckMochiLuxrayDark::
+	call_if_set FLAG_CAUGHT_LUXRAY_DARK, Present_CelebiSociety_EventScript_GiveMochiLuxrayDark
+	return
+
+Present_CelebiSociety_EventScript_GiveMochiLuxrayDark::
+	bufferspeciesname STR_VAR_1, SPECIES_LUXRAY_DARK
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManOhDarkLuxray
+	additem ITEM_HP_MOCHI, 1
+	additem ITEM_ATK_MOCHI, 2
+	additem ITEM_SPE_MOCHI, 1
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
+	setflag FLAG_GAVE_LUXRAY_DARK_MOCHI
+	return
+
+Present_CelebiSociety_EventScript_CheckMochiTornadus::
+	call_if_set FLAG_CAUGHT_TORNADUS, Present_CelebiSociety_EventScript_GiveMochiTornadus
+	return
+
+Present_CelebiSociety_EventScript_GiveMochiTornadus::
+	bufferspeciesname STR_VAR_1, SPECIES_TORNADUS
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManOhLegendary
+	additem ITEM_ATK_MOCHI, 1
+	additem ITEM_SPATK_MOCHI, 1
+	additem ITEM_SPE_MOCHI, 2
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
+	setflag FLAG_GAVE_TORNADUS_MOCHI
+	return
+
+Present_CelebiSociety_EventScript_CheckMochiThundurus::
+	call_if_set FLAG_CAUGHT_THUNDURUS, Present_CelebiSociety_EventScript_GiveMochiThundurus
+	return
+
+Present_CelebiSociety_EventScript_GiveMochiThundurus::
+	bufferspeciesname STR_VAR_1, SPECIES_THUNDURUS
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManOhLegendary
+	additem ITEM_ATK_MOCHI, 1
+	additem ITEM_SPATK_MOCHI, 2
+	additem ITEM_SPE_MOCHI, 1
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
+	setflag FLAG_GAVE_THUNDURUS_MOCHI
+	return
+
+Present_CelebiSociety_Text_MochiGiverIntro:
+	.string "Eeeheeheeheeheehee!\p"
+	.string "Say, you look like a young snapper!\n"
+	.string "Tell me, are you taking the gym challenge?$"
+
+Present_CelebiSociety_Text_LookerNoImADetective:
+	.string "No sir. I'm a detective with the\n"
+	.string "International Po-$"
+
+Present_CelebiSociety_Text_MochiGiverIKnewIt:
+	.string "Eeeheeheeheehee! I knew it!\p"
+	.string "Tell me, how many gyms have you taken\n"
+	.string "down by now?\p"
+	.string "Porta Bella's gym leader is one of the\n"
+	.string "best around, you know!\p"
+	.string "She's one of the best trainers in Hoenn!$"
+
+Present_CelebiSociety_Text_LookerNoImNot:
+	.string "I have not taken the gym challenge in 20\n"
+	.string "years, sir.$"
+	
+Present_CelebiSociety_Text_MochiGiverCatchMons:
+	.string "Oh, I bet!\n"
+	.string "Tell me, do you catch Pokémon regularly?\p"
+	.string "The Pokémon in the forest are quite a\n"
+	.string "powerful lot!\p"
+	.string "When I was but a boy, I got scooped up\n"
+	.string "by what looked like a pterodactyl!\p"
+	.string "Oh, that silly Celebi LOVES bringing in\n"
+	.string "all kinds of Pokémon from the past!$"
+
+Present_CelebiSociety_Text_LookerImNotATrainer:
+	.string "That sounds terrifying. But no, I don't\n"
+	.string "tend to catch many Po-$"
+
+Present_CelebiSociety_Text_MochiGiverOffersMochi:
+	.string "If you ever catch an interesting\n"
+	.string "Pokémon, I would love it in my old bones\l"
+	.string "if you told me the story of your encounter!\p"
+	.string "In fact, I can offer you some sweet Mochi\n"
+	.string "in return!\p"
+	.string "I tell you, it's DEEEEELISH!$"
+
+Present_CelebiSociety_Text_MochiGiverOffersMochiShort:
+	.string "If you ever catch an interesting\n"
+	.string "Pokémon, I would love it in my old bones\l"
+	.string "if you told me about it!$"
+
+Present_CelebiSociety_Text_MochiManOhPokemon:
+	.string "Oh? You caught a {STR_VAR_1}?\n"
+	.string "Eeeheeehee! Here, have some Mochi!$"
+
+Present_CelebiSociety_Text_MochiManOhDarkLuxray:
+	.string "Oh? You caught a dark {STR_VAR_1}?\n"
+	.string "Eeeheehee! I didn't know such a Pokémon\n"
+	.string "even existed!\p"
+	.string "Here, have some Mochi!$"
+
+Present_CelebiSociety_Text_MochiManOhAerodactyl:
+	.string "Oh? You caught a {STR_VAR_1}?\n"
+	.string "Eeeheeehee! Maybe it's the one who\n"
+	.string "yoinked me as a wee child! Who knows!\p" 
+	.string "Here, have some Mochi!$"
+
+Present_CelebiSociety_Text_MochiManOhScreamTail:
+	.string "Oh? You caught a {STR_VAR_1}?\n"
+	.string "Eeeheeehee! That's a Pokémon I've never\n"
+	.string "even heard of before now!\p"
+	.string "Here, have some Mochi!$"
+
+Present_CelebiSociety_Text_MochiManOhLegendary:
+	.string "Wow! Incredible!\n"
+	.string "You caught {STR_VAR_1}?\p"
+	.string "What a talented young man you are!\p"
+	.string "Have some Mochi!$"
+
+Present_CelebiSociety_Text_MochiManLetMeKnow:
+	.string "Eeeheeehee! If you find any more\n"
+	.string "interesting Pokémon, let me know!$"
+
+Present_CelebiSociety_Text_MochiManNoNewPokemon:
+	.string "Oh? You don't have any new stories of\n"
+	.string "your Pokémon-catching escapades?\p"
+	.string "What a shame.$"
+	
 Present_CelebiSociety_Text_GrandmaDidYouMeetCelebi:
 	.string "Here we are.\p"
 	.string "To continue our conversation,\n"

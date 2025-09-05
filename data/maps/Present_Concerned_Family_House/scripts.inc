@@ -165,6 +165,8 @@ Present_ConcernedFamilyHouse_EventScript_EstellaReward::
 	speak LOCALID_CONCERNEDFAMILY_ESTELLA, VAR_0x8005, Name_Estella, Present_ConcernedFamilyHouse_Text_EstellaDidYouBring
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_OfCourse
 	speak LOCALID_CONCERNEDFAMILY_ESTELLA, VAR_0x8005, Name_Estella, Present_ConcernedFamilyHouse_Text_EstellaHereHaveThis
+	speakername NULL
+	giveitem ITEM_POWER_HERB, 1
 	completequest QUEST_WITH_MUCH_GRATITUDE
 	setflag FLAG_SWEET_TOOTH_WENT_CRAZY_REWARD
 	clearflag FLAG_SYS_DISAPPEAR_QUESTS
@@ -185,6 +187,8 @@ Present_ConcernedFamilyHouse_EventScript_EstellaSecretReward::
 	playse SE_SELECT
 	msgbox Present_ConcernedFamilyHouse_Text_LookerIShouldntTellEstella, MSGBOX_DEFAULT
 	speak LOCALID_CONCERNEDFAMILY_ESTELLA, VAR_0x8005, Name_Estella, Present_ConcernedFamilyHouse_Text_EstellaHereHaveThis
+	speakername NULL
+	giveitem ITEM_POWER_HERB, 1
 	closemessage
 	setflag FLAG_SWEET_TOOTH_WENT_CRAZY_REWARD
 	release

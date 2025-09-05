@@ -4381,7 +4381,12 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
         {
             if (CountUsablePartyMons(battlerAtk) == 0)
                 break; // Can't switch
-
+            
+            else if (aiData->abilities[battlerAtk] == ABILITY_ZERO_TO_HERO)
+            {
+                ADJUST_SCORE(10);
+                break;
+            }
             //if (switchAbility == ABILITY_INTIMIDATE && PartyHasMoveCategory(battlerDef, DAMAGE_CATEGORY_PHYSICAL))
                 //ADJUST_SCORE(7);
         }

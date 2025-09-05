@@ -448,8 +448,10 @@ ShrineOfPeacePast_Text_CelebiWarp:
 	.string "Warp to the present?$"
 	
 ShrineOfPeacePast_Text_LookerWhatHappened:
-	.string "What happened…?\p"
-	.string "Everything hurts…\p"
+	.string "Argh…\p"
+	.string "I feel like I've got some insane\n"
+	.string "vertigo…\p"
+	.string "Everything's spinning…\p"
 	.string "It seems like the storm…\p"
 	.string "Is over?\p"
 	.string "Was I dreaming?$"

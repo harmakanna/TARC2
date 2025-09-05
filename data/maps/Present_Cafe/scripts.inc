@@ -175,7 +175,7 @@ Present_Cafe_EventScript_SweetToothThankYou::
 	call Script_GetNPCFacingDirection
 	speak LOCALID_PRESENT_SWEET_TOOTH, VAR_0x8005, Name_Sweet_Tooth, Present_Cafe_Text_SweetToothThankYou
 	speakername NULL
-	giveitem ITEM_LIFE_ORB, 1
+	giveitem ITEM_CHOICE_SPECS, 1
 	closemessage
 	applymovement LOCALID_PRESENT_SWEET_TOOTH, Common_Movement_FaceLeft
 	waitmovement 0
@@ -349,12 +349,21 @@ Present_Cafe_EventScript_MayCulpritPostQuestGiveMon::
 	release
 	end
 
+Present_Cafe_EventScript_BaristaSide::
+	setvar VAR_0x8005, DIR_EAST
+	goto Present_Cafe_EventScript_Barista
+	end
+	
+Present_Cafe_EventScript_BaristaUp::
+	setvar VAR_0x8005, DIR_SOUTH
+	goto Present_Cafe_EventScript_Barista
+	end
+
 Present_Cafe_EventScript_Barista::
 	lock
 	call_if_eq VAR_FACING, DIR_WEST, Present_Cafe_EventScript_TurnBaristaEast
 	call_if_eq VAR_FACING, DIR_NORTH, Present_Cafe_EventScript_TurnBaristaSouth
 	goto_if_unset FLAG_SYS_MAIN_GAME_START, Present_Cafe_EventScript_BaristaPreGame
-	call Script_GetNPCFacingDirection
 	returnqueststate QUEST_GET_INTO_THE_GROOVE
 	switch VAR_RESULT
 	case 1, Present_Cafe_EventScript_BaristaPreQuest
@@ -992,9 +1001,10 @@ Present_Cafe_Text_LookerAhYes:
 
 Present_Cafe_Text_SweetToothThankYou:
 	.string "hi mister!!!!!!\p"
-	.string "thank you so so so much!!!!!!\p"
+	.string "thank you so so so much for SWEET\p"
 	.string "i dont have much, but you can have\n"
-	.string "this thing!!!!!!$"
+	.string "this weird thing!!!!!!\p"
+	.string "i found it on the ground!!!!!$"
 
 Present_Cafe_Text_SweetToothOneRareCandy:
 	.string "hi mister!!!!!\p"

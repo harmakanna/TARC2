@@ -229,7 +229,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "Present_Cafe_EventScript_Barista"
+      "script": "Present_Cafe_EventScript_BaristaUp"
     },
     {
       "type": "sign",
@@ -237,7 +237,7 @@
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
-      "script": "Present_Cafe_EventScript_Barista"
+      "script": "Present_Cafe_EventScript_BaristaSide"
     }
   ]
 }

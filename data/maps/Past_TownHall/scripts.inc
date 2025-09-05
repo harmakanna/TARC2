@@ -296,7 +296,7 @@ Past_TownHall_Text_AnabelPleaseWakeUp:
 
 Past_TownHall_Text_AnabelIKnowYoureStrongEnough:
 	.string "I know you're strong enough to not\n"
-	.string "let a few bruises do you in!$"
+	.string "let a simple fall do you in!$"
 
 Past_TownHall_Text_LookerWakingUp:
 	.string "Anabel…\n"

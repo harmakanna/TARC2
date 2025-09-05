@@ -30,6 +30,8 @@ Present_House2_EventScript_SentimentalWomanHappyReward::
 	speak LOCALID_SENTIMENTAL_WOMAN, VAR_0x8005, Name_Sentimental_Woman, Present_House2_Text_SentimentalWomanHappyDoIKnowYou
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_SoHeresTheThing
 	speak LOCALID_SENTIMENTAL_WOMAN, VAR_0x8005, Name_Sentimental_Woman, Present_House2_Text_SentimentalWomanHappyReward
+	speakername NULL
+	giveitem ITEM_EJECT_BUTTON, 1
 	closemessage
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_SENTIMENTAL, 0
 	completequest QUEST_SENTIMENTAL
@@ -68,6 +70,9 @@ Present_House2_EventScript_SentimentalWomanReward::
 	waitfanfare
 	speak LOCALID_SENTIMENTAL_WOMAN, VAR_0x8005, Name_Sentimental_Woman, Present_House2_Text_SentimentalWomanThisMeansSoMuch
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_House2_Text_LookerIShouldntTellHerWhere
+	speak LOCALID_SENTIMENTAL_WOMAN, VAR_0x8005, Name_Sentimental_Woman, Present_House2_Text_SentimentalWomanReward
+	speakername NULL
+	giveitem ITEM_EJECT_BUTTON, 1
 	completequest QUEST_SENTIMENTAL
 	clearflag FLAG_SAVE_THE_LUVDISCS
 	clearflag FLAG_SYS_DISAPPEAR_QUESTS
@@ -96,10 +101,22 @@ Present_House2_EventScript_MissingMan::
 	delay 50
 	msgbox Present_House2_Text_MissingMan, MSGBOX_DEFAULT
 	closemessage
+	call_if_unset FLAG_MISSING_MAN_GAVE_CHOICE_SCARF, Present_House2_EventScript_MissingManReward
 	applymovement LOCALID_MISSING_MAN, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release
 	end
+
+Present_House2_EventScript_MissingManReward::
+	playse SE_PIN
+	applymovement LOCALID_MISSING_MAN, Common_Movement_QuestionMark
+	waitmovement 0
+	delay 50
+	msgbox Present_House2_Text_MissingManReward, MSGBOX_DEFAULT
+	giveitem ITEM_CHOICE_SCARF, 1
+	closemessage
+	setflag FLAG_MISSING_MAN_GAVE_CHOICE_SCARF
+	return
 
 Present_House2_Text_LookerGaveHeartScale:
 	.string "Looker gave Melissa the heart scale!$"
@@ -135,6 +152,10 @@ Present_House2_Text_LookerIShouldntTellHerWhere:
 	.string "(I suppose I shouldn't tell her\n"
 	.string "where exactly I got this…)$"
 
+Present_House2_Text_SentimentalWomanReward:
+	.string "Here, have this as a sign of my\n"
+	.string "gratitude!$"
+
 Present_House2_Text_SentimentalWomanMaybeYouKnow:
 	.string "Oh sir, my husband proposed to me\n"
 	.string "at the lighthouse 5 years ago today\l"
@@ -165,6 +186,18 @@ Present_House2_Text_MissingMan:
 	.string "Her heart scale earrings make her\n"
 	.string "look as stunning as she was the\l"
 	.string "day I proposed!$"
+
+Present_House2_Text_MissingManReward:
+	.string "Oh? You say I abandoned my wife in\n"
+	.string "a different timeline?\p"
+	.string "What nonsense!\p"
+	.string "Admittedly, I had my doubts when I\n"
+	.string "was fighting in the war, but when I\l"
+	.string "came back to Porta Bella and saw those\l"
+	.string "Luvdiscs, I could only think of my\l"
+	.string "wife's beautiful, smiling face…\p"
+	.string "Hmm… You're still expecting some item?\n"
+	.string "Fine, you can have this old thing…$"
 
 Present_House2_Text_SentimentalWomanHappy:
 	.string "Oh, I love my husband so much!\p"
