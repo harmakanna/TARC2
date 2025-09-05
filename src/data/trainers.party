@@ -1043,9 +1043,44 @@ Music: Suspicious
 Double Battle: Yes
 Difficulty: Hard
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Omastar @ Focus Sash  
+Ability: Weak Armor  
+Tera Type: Rock  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Surf  
+- Meteor Beam  
+- Stealth Rock  
+- Ice Beam  
+
+Cradily @ Leftovers  
+Ability: Storm Drain  
+Tera Type: Rock  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Giga Drain  
+- Leech Seed  
+- Earth Power  
+- Ancient Power  
+
+Archeops  
+Ability: Defeatist  
+Tera Type: Rock  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Heat Wave  
+- Dual Wingbeat  
+- Lash Out  
+- Head Smash  
+
+Tyrantrum @ Rocky Helmet  
+Ability: Strong Jaw  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Psychic Fangs  
+- Crunch  
+- Outrage  
+- Dragon Dance  
 
 === TRAINER_PRESENT_FISHERMAN ===
 Name: Trevor
@@ -1091,21 +1126,45 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Tauros
-Level: 5
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Mudsdale @ Lum Berry  
+Ability: Stamina  
+Level: 50  
+Tera Type: Bug  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Body Press  
+- High Horsepower  
+- Strength  
+- Curse  
 
-Miltank
-Level: 5
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Miltank (F) @ Lum Berry  
+Ability: Thick Fat  
+Level: 50  
+Tera Type: Bug  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Body Slam  
+- Growl  
+- Stealth Rock  
+- Rollout  
 
-Alcremie
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Alcremie (F) @ Lum Berry  
+Ability: Sweet Veil  
+Level: 50  
+Tera Type: Bug  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Mystical Fire  
+- Recover  
+- Calm Mind  
+- Alluring Voice  
 
-Mudsdale
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Tauros (M) @ Lum Berry  
+Ability: Intimidate  
+Level: 50  
+Tera Type: Bug  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Trailblaze  
+- Close Combat  
+- Megahorn  
+- Raging Bull  
 
 === TRAINER_BIANCA ===
 Name: Bianca
@@ -2345,9 +2404,45 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Avalugg-Hisui  
+Ability: Sturdy  
+Level: 50  
+Tera Type: Bug  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Avalanche  
+- Body Press  
+- Rock Slide  
+- Earthquake  
+
+Butterfree  
+Ability: Compound Eyes  
+Level: 50  
+Tera Type: Bug  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Pollen Puff  
+- Electroweb  
+- Sleep Powder  
+- Quiver Dance  
+
+Flapple @ Sitrus Berry  
+Ability: Ripen  
+Level: 50  
+Tera Type: Bug  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Acrobatics  
+- Grav Apple  
+- U-turn  
+- Dragon Dance  
+
+Shedinja @ Focus Sash  
+Ability: Wonder Guard  
+Level: 50  
+Tera Type: Bug  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Will-O-Wisp  
+- Phantom Force  
+- X-Scissor  
+- Swords Dance  
 
 === TRAINER_BOYFRIEND ===
 Name: Luca
@@ -2359,9 +2454,35 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Machamp  
+Ability: Guts  
+Level: 50  
+Tera Type: Fighting  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Cross Chop  
+- Darkest Lariat  
+- Thunder Punch  
+- Coaching  
+
+Grimmsnarl (M) @ Choice Band  
+Ability: Prankster  
+Level: 50  
+Tera Type: Bug  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Spirit Break  
+- False Surrender  
+- Parting Shot  
+- Trick  
+
+Nidoking (M) @ Expert Belt  
+Ability: Rivalry  
+Level: 50  
+Tera Type: Bug  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Earth Power  
+- Flamethrower  
+- Ice Beam  
+- Sludge Bomb  
 
 === TRAINER_MARIE_REMATCH ===
 Name: Marie
