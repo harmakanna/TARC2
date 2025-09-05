@@ -106,6 +106,8 @@
 // - MOVE_SECRET_POWER                                 //
 // - MOVE_SUBSTITUTE                                   //
 // - MOVE_TERA_BLAST                                   //
+// - MOVE_HELPING_HAND                                 //
+// - MOVE_U_TURN                                       //
 // *************************************************** //
 
 static const u16 sNoneTeachableLearnset[] = {

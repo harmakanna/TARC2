@@ -13,7 +13,7 @@ Adding an AI flag to a trainer is straightforward, but the process is different 
 
 ## `COMPETITIVE_PARTY_SYNTAX == TRUE`
 If you are using competitive syntax parties, navigate to the trainer data in [`src/data/trainers.party`](https://github.com/rh-hideout/pokeemerald-expansion/blob/upcoming/src/data/trainers.party), find the trainer you’d like to change, and add flags like so:
-AI: Check Bad Move / Try to Faint / Check Viability. The name of each flag is just the constant, but without AI_FLAG at the beginning. For example, to add `AI_FLAG_SEQUENCE_SWITCHING`, any of the following will work:
+AI: Basic Trainer / Try to Faint / Check Viability. The name of each flag is just the constant, but without AI_FLAG at the beginning. For example, to add `AI_FLAG_SEQUENCE_SWITCHING`, any of the following will work:
 * AI_FLAG_SEQUENCE_SWITCHING
 * SEQUENCE_SWITCHING
 * SEQUENCE SWITCHING
