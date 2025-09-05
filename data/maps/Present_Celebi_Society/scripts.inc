@@ -102,7 +102,7 @@ Present_CelebiSociety_EventScript_MochiGiverIntroShort::
 	end
 
 Present_CelebiSociety_EventScript_CheckForMochi::
-	clearflag FLAG_MOCHI_MAN_GIVES_MOCHI
+	clearflag FLAG_MOCHI_MAN_GAVE_MOCHI
 	call_if_unset FLAG_GAVE_DEDENNE_MOCHI, Present_CelebiSociety_EventScript_CheckMochiDedenne
 	call_if_unset FLAG_GAVE_TOGEDEMARU_MOCHI, Present_CelebiSociety_EventScript_CheckMochiTogedemaru
 	call_if_unset FLAG_GAVE_FROSMOTH_MOCHI, Present_CelebiSociety_EventScript_CheckMochiFrosmoth
@@ -118,8 +118,8 @@ Present_CelebiSociety_EventScript_CheckForMochi::
 	call_if_unset FLAG_GAVE_LUXRAY_DARK_MOCHI, Present_CelebiSociety_EventScript_CheckMochiLuxrayDark
 	call_if_unset FLAG_GAVE_TORNADUS_MOCHI, Present_CelebiSociety_EventScript_CheckMochiTornadus
 	call_if_unset FLAG_GAVE_THUNDURUS_MOCHI, Present_CelebiSociety_EventScript_CheckMochiThundurus
-	call_if_set FLAG_MOCHI_MAN_GIVES_MOCHI, Present_CelebiSociety_EventScript_LookerReceivedMochi
-	call_if_unset FLAG_MOCHI_MAN_GIVES_MOCHI, Present_CelebiSociety_EventScript_NoNewPokemon
+	call_if_set FLAG_MOCHI_MAN_GAVE_MOCHI, Present_CelebiSociety_EventScript_LookerReceivedMochi
+	call_if_unset FLAG_MOCHI_MAN_GAVE_MOCHI, Present_CelebiSociety_EventScript_NoNewPokemon
 	closemessage
 	release
 	end
@@ -151,7 +151,7 @@ Present_CelebiSociety_EventScript_GiveMochiDedenne::
 	additem ITEM_SPATK_MOCHI, 1
 	additem ITEM_SPDEF_MOCHI, 2
 	additem ITEM_SPE_MOCHI, 1
-	setflag FLAG_MOCHI_MAN_GIVES_MOCHI
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
 	setflag FLAG_GAVE_DEDENNE_MOCHI
 	return
 
@@ -169,7 +169,7 @@ Present_CelebiSociety_EventScript_GiveMochiTogedemaru::
 	additem ITEM_ATK_MOCHI, 1
 	additem ITEM_DEF_MOCHI, 2
 	additem ITEM_SPE_MOCHI, 1
-	setflag FLAG_MOCHI_MAN_GIVES_MOCHI
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
 	setflag FLAG_GAVE_TOGEDEMARU_MOCHI
 	return
 
@@ -182,7 +182,7 @@ Present_CelebiSociety_EventScript_GiveMochiFrosmoth::
 	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManOhPokemon
 	additem ITEM_SPATK_MOCHI, 2
 	additem ITEM_SPDEF_MOCHI, 2
-	setflag FLAG_MOCHI_MAN_GIVES_MOCHI
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
 	setflag FLAG_GAVE_FROSMOTH_MOCHI
 	return
 
@@ -196,7 +196,7 @@ Present_CelebiSociety_EventScript_GiveMochiAerodactul::
 	additem ITEM_ATK_MOCHI, 1
 	additem ITEM_DEF_MOCHI, 1
 	additem ITEM_SPE_MOCHI, 2
-	setflag FLAG_MOCHI_MAN_GIVES_MOCHI
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
 	setflag FLAG_GAVE_AERODACTYL_MOCHI
 	return
 
@@ -210,7 +210,7 @@ Present_CelebiSociety_EventScript_GiveMochiLurantis::
 	additem ITEM_HP_MOCHI, 1
 	additem ITEM_ATK_MOCHI, 2
 	additem ITEM_DEF_MOCHI, 1
-	setflag FLAG_MOCHI_MAN_GIVES_MOCHI
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
 	setflag FLAG_GAVE_LURANTIS_MOCHI
 	return
 
@@ -225,7 +225,7 @@ Present_CelebiSociety_EventScript_GiveMochiLuxray::
 	additem ITEM_ATK_MOCHI, 1
 	additem ITEM_DEF_MOCHI, 1
 	additem ITEM_SPE_MOCHI, 1
-	setflag FLAG_MOCHI_MAN_GIVES_MOCHI
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
 	setflag FLAG_GAVE_LUXRAY_MOCHI
 	return
 
@@ -238,7 +238,7 @@ Present_CelebiSociety_EventScript_GiveMochiWoChien::
 	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManOhLegendary
 	additem ITEM_DEF_MOCHI, 2
 	additem ITEM_SPDEF_MOCHI, 2
-	setflag FLAG_MOCHI_MAN_GIVES_MOCHI
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
 	setflag FLAG_GAVE_WO_CHIEN_MOCHI
 	return
 
@@ -252,7 +252,7 @@ Present_CelebiSociety_EventScript_GiveMochiBeheeyem::
 	additem ITEM_DEF_MOCHI, 1
 	additem ITEM_SPATK_MOCHI, 2
 	additem ITEM_SPDEF_MOCHI, 1
-	setflag FLAG_MOCHI_MAN_GIVES_MOCHI
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
 	setflag FLAG_GAVE_BEHEEYEM_MOCHI
 	return
 
@@ -266,7 +266,7 @@ Present_CelebiSociety_EventScript_GiveMochiToedscruel::
 	additem ITEM_HP_MOCHI, 1
 	additem ITEM_SPATK_MOCHI, 1
 	additem ITEM_SPDEF_MOCHI, 2
-	setflag FLAG_MOCHI_MAN_GIVES_MOCHI
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
 	setflag FLAG_GAVE_TOEDSCRUEL_MOCHI
 	return
 
@@ -281,7 +281,7 @@ Present_CelebiSociety_EventScript_GiveMochiScreamTail::
 	additem ITEM_DEF_MOCHI, 1
 	additem ITEM_SPDEF_MOCHI, 1
 	additem ITEM_SPE_MOCHI, 1
-	setflag FLAG_MOCHI_MAN_GIVES_MOCHI
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
 	setflag FLAG_GAVE_SCREAM_TAIL_MOCHI
 	return
 
@@ -295,7 +295,7 @@ Present_CelebiSociety_EventScript_GiveMochiKleavor::
 	additem ITEM_HP_MOCHI, 1
 	additem ITEM_ATK_MOCHI, 1
 	additem ITEM_DEF_MOCHI, 2
-	setflag FLAG_MOCHI_MAN_GIVES_MOCHI
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
 	setflag FLAG_GAVE_KLEAVOR_MOCHI
 	return
 
@@ -309,7 +309,7 @@ Present_CelebiSociety_EventScript_GiveMochiGoodraHisui::
 	additem ITEM_ATK_MOCHI, 1
 	additem ITEM_DEF_MOCHI, 2
 	additem ITEM_SPDEF_MOCHI, 1
-	setflag FLAG_MOCHI_MAN_GIVES_MOCHI
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
 	setflag FLAG_GAVE_GOODRA_HISUI_MOCHI
 	return
 
@@ -317,13 +317,13 @@ Present_CelebiSociety_EventScript_CheckMochiLuxrayDark::
 	call_if_set FLAG_CAUGHT_LUXRAY_DARK, Present_CelebiSociety_EventScript_GiveMochiLuxrayDark
 	return
 
-Present_CelebiSociety_EventScript_GiveMochiLuxray::
+Present_CelebiSociety_EventScript_GiveMochiLuxrayDark::
 	bufferspeciesname STR_VAR_1, SPECIES_LUXRAY_DARK
 	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManOhDarkLuxray
 	additem ITEM_HP_MOCHI, 1
 	additem ITEM_ATK_MOCHI, 2
 	additem ITEM_SPE_MOCHI, 1
-	setflag FLAG_MOCHI_MAN_GIVES_MOCHI
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
 	setflag FLAG_GAVE_LUXRAY_DARK_MOCHI
 	return
 
@@ -337,7 +337,7 @@ Present_CelebiSociety_EventScript_GiveMochiTornadus::
 	additem ITEM_ATK_MOCHI, 1
 	additem ITEM_SPATK_MOCHI, 1
 	additem ITEM_SPE_MOCHI, 2
-	setflag FLAG_MOCHI_MAN_GIVES_MOCHI
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
 	setflag FLAG_GAVE_TORNADUS_MOCHI
 	return
 
@@ -351,7 +351,7 @@ Present_CelebiSociety_EventScript_GiveMochiThundurus::
 	additem ITEM_ATK_MOCHI, 1
 	additem ITEM_SPATK_MOCHI, 2
 	additem ITEM_SPE_MOCHI, 1
-	setflag FLAG_MOCHI_MAN_GIVES_MOCHI
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
 	setflag FLAG_GAVE_THUNDURUS_MOCHI
 	return
 

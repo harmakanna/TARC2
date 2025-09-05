@@ -42,7 +42,7 @@ enum {
 enum {
     MENU_WITHDRAW,
     MENU_DEPOSIT,
-    MENU_TOSS,
+    //MENU_TOSS,
     MENU_EXIT
 };
 
@@ -195,7 +195,7 @@ static const u8 *const sItemStorage_OptionDescriptions[] =
 {
     [MENU_WITHDRAW] = COMPOUND_STRING("Take out items from the PC."),
     [MENU_DEPOSIT]  = COMPOUND_STRING("Store items in the PC."),
-    [MENU_TOSS]     = COMPOUND_STRING("Throw away items stored in the PC."),
+    //[MENU_TOSS]     = COMPOUND_STRING("Throw away items stored in the PC."),
     [MENU_EXIT]     = gText_GoBackPrevMenu,
 };
 
@@ -228,7 +228,7 @@ static const struct MenuAction sItemStorage_MenuActions[] =
 {
     [MENU_WITHDRAW] = { sText_WithdrawItem, {ItemStorage_Withdraw} },
     [MENU_DEPOSIT]  = { sText_DepositItem,  {ItemStorage_Deposit} },
-    [MENU_TOSS]     = { sText_TossItem,     {ItemStorage_Toss} },
+    //[MENU_TOSS]     = { sText_TossItem,     {ItemStorage_Toss} },
     [MENU_EXIT]     = { gText_Cancel,       {ItemStorage_Exit} }
 };
 
@@ -1262,10 +1262,10 @@ static void ItemStorage_ReturnToMenuSelect(u8 taskId)
         DrawDialogueFrame(0, FALSE);
 
         // Select Withdraw/Toss by default depending on which was just exited
-        if (!tInTossMenu)
+        //if (!tInTossMenu)
             InitItemStorageMenu(taskId, MENU_WITHDRAW);
-        else
-            InitItemStorageMenu(taskId, MENU_TOSS);
+        //else
+        //    InitItemStorageMenu(taskId, MENU_TOSS);
         gTasks[taskId].func = ItemStorageMenuProcessInput;
     }
 }
