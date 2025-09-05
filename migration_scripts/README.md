@@ -162,7 +162,7 @@ Converts trainer data (for `convert_trainer_parties.py`) and partner data (for `
 +Gender: Male
 +Music: Hiker
 +Double Battle: No
-+AI: Check Bad Move / Try To Faint / Check Viability
++AI: Basic Trainer / Try To Faint / Check Viability
 +
 +Geodude
 +Level: 21
