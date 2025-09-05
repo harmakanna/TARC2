@@ -85,6 +85,10 @@ InsideOutside_EventScript_AceTrainerInside::
     goto InsideOutside_EventScript_AceTrainer
     end
 
+InsideOutside_EventScript_CompostGirlInside::
+    goto_if_set FLAG_SYS_WEATHER_CTRL, InsideOutside_EventScript_CompostGirl
+    end
+    
 InsideOutside_EventScript_CompostGirl::
     goto_if_set FLAG_HIDDEN_ITEM_SS_TIDAL_LOWER_DECK_LEFTOVERS, InsideOutside_EventScript_CompostGirlEww
     msgbox InsideOutside_Text_CompostGirl, MSGBOX_NPC

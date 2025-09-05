@@ -240,3 +240,9 @@ Name_Girl:
 
 Name_GirlStudent:
     .string "Valentina$"
+
+Name_Oscar:
+    .string "Earnest$"
+
+Name_Hiker:
+    .string "Outdoorsman$"

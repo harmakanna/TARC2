@@ -955,11 +955,13 @@ bool8 GetMochi(void)
 
     for (i = 0; i < NUM_STATS; i++)
     {
-        // EV
+        // Determines if the lady gives any Mochi back
             evs[i] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_EV + i);
             mochi[i] = SAFE_DIV(evs[i], 126);
             if ( mochi[i] != 0)
                 giveMochi = TRUE;
+        //Resets the pokemon's EVs
+            SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_EV + i, 0);
     }
 
 

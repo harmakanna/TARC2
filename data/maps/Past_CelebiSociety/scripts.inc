@@ -103,6 +103,81 @@ Past_CelebiSociety_EventScript_LisiaLeaving::
 	release
 	end
 
+Past_CelebiSociety_EventScript_OscarWilde::
+	lock
+	faceplayer
+	speakername Name_Oscar
+	random 7
+	call_if_eq VAR_RESULT, 0, Past_CelebiSociety_EventScript_OscarWildeQuote1
+	call_if_eq VAR_RESULT, 1, Past_CelebiSociety_EventScript_OscarWildeQuote2
+	call_if_eq VAR_RESULT, 2, Past_CelebiSociety_EventScript_OscarWildeQuote3
+	call_if_eq VAR_RESULT, 3, Past_CelebiSociety_EventScript_OscarWildeQuote4
+	call_if_eq VAR_RESULT, 4, Past_CelebiSociety_EventScript_OscarWildeQuote5
+	call_if_eq VAR_RESULT, 5, Past_CelebiSociety_EventScript_OscarWildeQuote6
+	call_if_eq VAR_RESULT, 6, Past_CelebiSociety_EventScript_OscarWildeQuote7
+	closemessage
+	release
+	end
+
+Past_CelebiSociety_EventScript_OscarWildeQuote1::
+	msgbox Past_CelebiSociety_Text_OscarWildeQuote1, MSGBOX_DEFAULT
+	return
+	
+Past_CelebiSociety_EventScript_OscarWildeQuote2::
+	msgbox Past_CelebiSociety_Text_OscarWildeQuote2, MSGBOX_DEFAULT
+	return
+	
+Past_CelebiSociety_EventScript_OscarWildeQuote3::
+	msgbox Past_CelebiSociety_Text_OscarWildeQuote3, MSGBOX_DEFAULT
+	return
+	
+Past_CelebiSociety_EventScript_OscarWildeQuote4::
+	msgbox Past_CelebiSociety_Text_OscarWildeQuote4, MSGBOX_DEFAULT
+	return
+	
+Past_CelebiSociety_EventScript_OscarWildeQuote5::
+	msgbox Past_CelebiSociety_Text_OscarWildeQuote5, MSGBOX_DEFAULT
+	return
+	
+Past_CelebiSociety_EventScript_OscarWildeQuote6::
+	msgbox Past_CelebiSociety_Text_OscarWildeQuote6, MSGBOX_DEFAULT
+	return
+	
+Past_CelebiSociety_EventScript_OscarWildeQuote7::
+	msgbox Past_CelebiSociety_Text_OscarWildeQuote7, MSGBOX_DEFAULT
+	return
+	
+Past_CelebiSociety_Text_OscarWildeQuote1:
+	.string "I am so clever that sometimes I don't\n"
+	.string "understand a single word I am saying.$"
+	
+Past_CelebiSociety_Text_OscarWildeQuote2:
+	.string "I'd do anything to get back my youth.\p"
+	.string "Except wake up early, partake in\n"
+	.string "exercise, or be respectable.$"
+
+Past_CelebiSociety_Text_OscarWildeQuote3:
+	.string "My own business bores me to death.\n"
+	.string "I prefer other people's/$"
+
+Past_CelebiSociety_Text_OscarWildeQuote4:
+	.string "To lose one parent may be regarded as\n"
+	.string "a misfortune.\p"
+	.string "To lose both, looks like carelessness.$"
+
+Past_CelebiSociety_Text_OscarWildeQuote5:
+	.string "Never speak disrespectfully of society.\n"
+	.string "Only those who can't get into it do so.$"
+
+Past_CelebiSociety_Text_OscarWildeQuote6:
+	.string "I value my friends for their looks,\n"
+	.string "my acquaintances for their characters,\l"
+	.string "and my enemies for their intellects.$"
+
+Past_CelebiSociety_Text_OscarWildeQuote7:
+	.string "I can believe anything provided it's\n"
+	.string "incredible.$"
+
 Past_CelebiSociety_Text_LisiaHello:
 	.string "Oh, hi! Finally, someone else from\n"
 	.string "my time!\p"
