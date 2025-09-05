@@ -355,10 +355,121 @@ Present_CelebiSociety_EventScript_GiveMochiThundurus::
 	setflag FLAG_GAVE_THUNDURUS_MOCHI
 	return
 
+Present_CelebiSociety_EventScript_MochiResetter::
+	lock
+	faceplayer
+	speakername Name_Old_Lady
+	call_if_unset FLAG_SPOKE_TO_MOCHI_RESETTER, Present_CelebiSociety_EventScript_MochiResetterFirstTime
+	setflag FLAG_SPOKE_TO_MOCHI_RESETTER
+	clearflag FLAG_MOCHI_MAN_GAVE_MOCHI
+	msgbox Present_CelebiSociety_Text_MochiResetterCanResetEVs, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Present_CelebiSociety_EventScript_MochiResetterEnd
+	special ChoosePartyMon
+	waitstate
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, Present_CelebiSociety_EventScript_MochiResetterEnd
+	specialvar VAR_RESULT, GetMochi
+	goto_if_eq VAR_RESULT, FALSE, Present_CelebiSociety_EventScript_MochiResetterAlreadyEmpty
+	call_if_ne VAR_TEMP_A, 0, Present_CelebiSociety_EventScript_MochiResetterHP
+	call_if_ne VAR_TEMP_B, 0, Present_CelebiSociety_EventScript_MochiResetterAtk
+	call_if_ne VAR_TEMP_C, 0, Present_CelebiSociety_EventScript_MochiResetterDef
+	call_if_ne VAR_TEMP_D, 0, Present_CelebiSociety_EventScript_MochiResetterSpeed
+	call_if_ne VAR_TEMP_E, 0, Present_CelebiSociety_EventScript_MochiResetterSpAtk
+	call_if_ne VAR_TEMP_F, 0, Present_CelebiSociety_EventScript_MochiResetterSpDef
+	special BufferMoveDeleterNicknameAndMove
+	speakername NULL
+	playfanfare MUS_MOVE_DELETED
+	message Present_CelebiSociety_Text_EmptiedBelly
+	waitmessage
+	waitfanfare
+	delay 10
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	goto Present_CelebiSociety_EventScript_MochiResetterEnd
+	end
+
+Present_CelebiSociety_EventScript_MochiResetterHP::
+	additem ITEM_HP_MOCHI, VAR_TEMP_A
+	return
+
+Present_CelebiSociety_EventScript_MochiResetterAtk::
+	additem ITEM_ATK_MOCHI, VAR_TEMP_B
+	return
+
+Present_CelebiSociety_EventScript_MochiResetterDef::
+	additem ITEM_DEF_MOCHI, VAR_TEMP_C
+	return
+	
+Present_CelebiSociety_EventScript_MochiResetterSpeed::
+	additem ITEM_SPE_MOCHI, VAR_TEMP_D
+	return
+	
+Present_CelebiSociety_EventScript_MochiResetterSpAtk::
+	additem ITEM_SPATK_MOCHI, VAR_TEMP_E
+	return
+	
+Present_CelebiSociety_EventScript_MochiResetterSpDef::
+	additem ITEM_SPDEF_MOCHI, VAR_TEMP_F
+	return
+
+Present_CelebiSociety_EventScript_MochiResetterFirstTime::
+	msgbox Present_CelebiSociety_Text_MochiResetterIntro, MSGBOX_DEFAULT
+	playse SE_SELECT
+	return
+
+Present_CelebiSociety_EventScript_MochiResetterEnd::
+	speakername Name_Old_Lady
+	msgbox Present_CelebiSociety_Text_MochiResetterEnd, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+	
+Present_CelebiSociety_EventScript_MochiResetterAlreadyEmpty::
+	special BufferMoveDeleterNicknameAndMove
+	speakername Name_Old_Lady
+	msgbox Present_CelebiSociety_Text_MochiResetterAlreadyEmpty, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+	
+Present_CelebiSociety_Text_MochiResetterIntro:
+	.string "Oh, that silly old man there is always\n"
+	.string "giving away handfuls of Mega-Mochi!\p"
+	.string "It can make your poor Pokémons'\n"
+	.string "stomachs ache if you eat too much…\p"
+	.string "Say, if you ever feed your Pokémon\n"
+	.string "too much mochi and want their bellies\l"
+	.string "emptied, let me know.\p"
+	.string "I can even give you more mochi after!\p"
+	.string "… … …Oh?\p"
+	.string "You want to know HOW I empty your\n"
+	.string "Pokémons' bellies of mochi?\p"
+	.string "Don't ask.$"
+
+Present_CelebiSociety_Text_MochiResetterCanResetEVs:
+	.string "Would you like me to empty your\n"
+	.string "Pokémon's belly of mochi?$"
+
+Present_CelebiSociety_Text_MochiResetterWhichPokemon:
+	.string "Nweeheehee… Which Pokémon will I\n"
+	.string "empty the belly of today?$"
+
+Present_CelebiSociety_Text_MochiResetterEnd:
+	.string "If you ever want your Pokémons'\n"
+	.string "bellies emptied, you know the lady\l"
+	.string "with that special touch!$"
+
+Present_CelebiSociety_Text_MochiResetterAlreadyEmpty:
+	.string "What!? Your {STR_VAR_1}'s belly is\n"
+	.string "already empty!\p"
+	.string "Please don't toy with an old lady!$"
+
+Present_CelebiSociety_Text_EmptiedBelly:
+	.string "{STR_VAR_1}'s belly was emptied…!$"
+
 Present_CelebiSociety_Text_MochiGiverIntro:
 	.string "Eeeheeheeheeheehee!\p"
-	.string "Say, you look like a young snapper!\n"
-	.string "Tell me, are you taking the gym challenge?$"
+	.string "Say, you look like a young snapper!\p"
+	.string "Tell me, are you taking the gym\n"
+	.string "challenge?$"
 
 Present_CelebiSociety_Text_LookerNoImADetective:
 	.string "No sir. I'm a detective with the\n"
@@ -384,7 +495,7 @@ Present_CelebiSociety_Text_MochiGiverCatchMons:
 	.string "When I was but a boy, I got scooped up\n"
 	.string "by what looked like a pterodactyl!\p"
 	.string "Oh, that silly Celebi LOVES bringing in\n"
-	.string "all kinds of Pokémon from the past!$"
+	.string "all kinds of Pokémon from across time!$"
 
 Present_CelebiSociety_Text_LookerImNotATrainer:
 	.string "That sounds terrifying. But no, I don't\n"
@@ -392,8 +503,8 @@ Present_CelebiSociety_Text_LookerImNotATrainer:
 
 Present_CelebiSociety_Text_MochiGiverOffersMochi:
 	.string "If you ever catch an interesting\n"
-	.string "Pokémon, I would love it in my old bones\l"
-	.string "if you told me the story of your encounter!\p"
+	.string "Pokémon, I would love it if you told me\l"
+	.string "the story of your encounter!\p"
 	.string "In fact, I can offer you some sweet Mochi\n"
 	.string "in return!\p"
 	.string "I tell you, it's DEEEEELISH!$"
@@ -421,8 +532,8 @@ Present_CelebiSociety_Text_MochiManOhAerodactyl:
 
 Present_CelebiSociety_Text_MochiManOhScreamTail:
 	.string "Oh? You caught a {STR_VAR_1}?\n"
-	.string "Eeeheeehee! That's a Pokémon I've never\n"
-	.string "even heard of before now!\p"
+	.string "Eeeheeehee! I've never even heard\n"
+	.string "of that Pokémon!\p"
 	.string "Here, have some Mochi!$"
 
 Present_CelebiSociety_Text_MochiManOhLegendary:

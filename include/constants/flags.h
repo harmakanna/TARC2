@@ -736,7 +736,7 @@
 #define FLAG_SPOKE_TO_MOCHI_GIVER  0x2B1 // Unused Flag
 #define FLAG_MOCHI_MAN_GAVE_MOCHI  0x2B2 // Unused Flag
 #define FLAG_MISSING_MAN_GAVE_CHOICE_SCARF  0x2B3 // Unused Flag
-#define FLAG_UNUSED_0x2B4  0x2B4 // Unused Flag
+#define FLAG_SPOKE_TO_MOCHI_RESETTER 0x2B4 // Unused Flag
 #define FLAG_UNUSED_0x2B5  0x2B5 // Unused Flag
 #define FLAG_UNUSED_0x2B6  0x2B6 // Unused Flag
 #define FLAG_UNUSED_0x2B7  0x2B7 // Unused Flag

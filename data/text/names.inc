@@ -225,3 +225,6 @@ Name_Wo_Chien:
     
 Name_Mochi_Man:
     .string "The Mochi Man$"
+
+Name_Old_Lady:
+    .string "Strange Lady$"
