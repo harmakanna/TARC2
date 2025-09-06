@@ -775,7 +775,7 @@ PastTown_EventScript_Bunnelby::
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
 	setflag FLAG_SYS_DISABLE_CATCHING
-	createmon 1, 0, SPECIES_BUNNELBY, 48, ITEM_ORAN_BERRY, 0, NATURE_SERIOUS, 2
+	createmon 1, 0, SPECIES_BUNNELBY, 48, ITEM_ORAN_BERRY, 0, NATURE_SERIOUS, 1
 	createmon 1, 1, SPECIES_DIGGERSBY, 49, ITEM_ORAN_BERRY, 0, NATURE_SERIOUS, 2
 	setwilddoubleflag
 	dowildbattle
@@ -847,7 +847,7 @@ PastTown_EventScript_Leavanny::
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
 	setflag FLAG_SYS_DISABLE_CATCHING
-	createmon 1, 0, SPECIES_LEAVANNY, 51, ITEM_OCCA_BERRY, 0, NATURE_SERIOUS, 2
+	createmon 1, 0, SPECIES_LEAVANNY, 51, ITEM_LIECHI_BERRY, 0, NATURE_SERIOUS, 0
 	createmon 1, 1, SPECIES_SWADLOON, 50, ITEM_SITRUS_BERRY, 0, NATURE_SERIOUS, 2
 	setwilddoubleflag
 	dowildbattle
@@ -872,7 +872,7 @@ PastTown_EventScript_Kricketune::
 	setflag FLAG_SYS_NO_WHITEOUT
 	setflag FLAG_SYS_DISABLE_CATCHING
 	createmon 1, 0, SPECIES_KRICKETUNE, 52, ITEM_SITRUS_BERRY, 0, NATURE_SERIOUS, 0
-	createmon 1, 1, SPECIES_CHATOT, 51, ITEM_SITRUS_BERRY, 0, NATURE_SERIOUS, 2
+	createmon 1, 1, SPECIES_CHATOT, 51, ITEM_SALAC_BERRY, 0, NATURE_SERIOUS, 2
 	setwilddoubleflag
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -895,7 +895,7 @@ PastTown_EventScript_Flapple::
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
 	setflag FLAG_SYS_DISABLE_CATCHING
-	createmon 1, 0, SPECIES_FLAPPLE, 51, ITEM_SITRUS_BERRY, 0, NATURE_SERIOUS, 1
+	createmon 1, 0, SPECIES_FLAPPLE, 51, ITEM_SITRUS_BERRY, 0, NATURE_SERIOUS, 2
 	createmon 1, 1, SPECIES_APPLETUN, 51, ITEM_SITRUS_BERRY, 0, NATURE_SERIOUS, 0
 	setwilddoubleflag
 	dowildbattle
@@ -919,8 +919,8 @@ PastTown_EventScript_Breloom::
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
 	setflag FLAG_SYS_DISABLE_CATCHING
-	createmon 1, 0, SPECIES_BRELOOM, 54, ITEM_LIECHI_BERRY, 0, NATURE_SERIOUS, 0
-	createmon 1, 1, SPECIES_SHROOMISH, 53, ITEM_JABOCA_BERRY, 0, NATURE_SERIOUS, 2
+	createmon 1, 0, SPECIES_BRELOOM, 54, ITEM_LIECHI_BERRY, 0, NATURE_SERIOUS, 2
+	createmon 1, 1, SPECIES_SHROOMISH, 53, ITEM_JABOCA_BERRY, 0, NATURE_SERIOUS, 0
 	setwilddoubleflag
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -967,7 +967,7 @@ PastTown_EventScript_Shiinotic::
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
 	setflag FLAG_SYS_DISABLE_CATCHING
-	createmon 1, 0, SPECIES_SHIINOTIC, 54, ITEM_KEBIA_BERRY, 0, NATURE_SERIOUS, 0
+	createmon 1, 0, SPECIES_SHIINOTIC, 54, ITEM_KEBIA_BERRY, 0, NATURE_SERIOUS, 1
 	createmon 1, 1, SPECIES_MORELULL, 53, ITEM_ROWAP_BERRY, 0, NATURE_SERIOUS, 1
 	setwilddoubleflag
 	dowildbattle
@@ -1040,7 +1040,7 @@ PastTown_EventScript_Hydrapple::
 	setflag FLAG_SYS_DISABLE_CATCHING
 	setflag FLAG_SYS_SMART_WILD_BATTLES
 	createmon 1, 0, SPECIES_HYDRAPPLE, 60, ITEM_YACHE_BERRY, 0, NATURE_SERIOUS, 0
-	createmon 1, 1, SPECIES_DIPPLIN, 58, ITEM_SITRUS_BERRY, 0, NATURE_SERIOUS, 0
+	createmon 1, 1, SPECIES_DIPPLIN, 58, ITEM_SITRUS_BERRY, 0, NATURE_SERIOUS, 1
 	setwilddoubleflag
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
