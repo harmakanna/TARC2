@@ -919,7 +919,7 @@ PastTown_EventScript_Breloom::
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
 	setflag FLAG_SYS_DISABLE_CATCHING
-	createmon 1, 0, SPECIES_BRELOOM, 54, ITEM_LEICHI_BERRY, 0, NATURE_SERIOUS, 0
+	createmon 1, 0, SPECIES_BRELOOM, 54, ITEM_LIECHI_BERRY, 0, NATURE_SERIOUS, 0
 	createmon 1, 1, SPECIES_SHROOMISH, 53, ITEM_JABOCA_BERRY, 0, NATURE_SERIOUS, 2
 	setwilddoubleflag
 	dowildbattle

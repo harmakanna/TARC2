@@ -5627,7 +5627,7 @@ static const u16 sUniversalMoves[] =
     MOVE_SUBSTITUTE,
     MOVE_TERA_BLAST,
     MOVE_HELPING_HAND,
-    MOVE_U_TURN,
+    MOVE_BATON_PASS,
 };
 
 u8 CanLearnTeachableMove(u16 species, u16 move)
