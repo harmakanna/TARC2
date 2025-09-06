@@ -38,10 +38,10 @@ Name_Estella:
     .string "Estella$"
 
 Name_Grandma:
-    .string "Grandma$"
+    .string "Nina$"
     
 Name_Head_Ranger:
-    .string "Head Ranger$"
+    .string "Luna$"
 
 Name_Ranger:
     .string "Ranger$"
@@ -225,3 +225,36 @@ Name_Wo_Chien:
     
 Name_Mochi_Man:
     .string "The Mochi Man$"
+
+Name_Old_Lady:
+    .string "Strange Lady$"
+
+Name_Teacher:
+    .string "Mrs. M.$"
+
+Name_Councilwoman:
+    .string "Christina$"
+
+Name_Girl:
+    .string "Girl$"
+
+Name_GirlStudent:
+    .string "Valentina$"
+
+Name_Oscar:
+    .string "Earnest$"
+
+Name_Hiker:
+    .string "Outdoorsman$"
+
+Name_Past_Nurse:
+    .string "Joy$"
+
+Name_Sailor:
+    .string "Sailor$"
+
+Name_Center_Cooltrainer:
+    .string "Vito$"
+
+Name_Fanboy:
+    .string "Dante$"

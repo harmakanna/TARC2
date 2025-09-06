@@ -44,6 +44,7 @@
       "quest_id": 4
     },
     {
+      "local_id": "LOCALID_INSIDE_FANBOY",
       "graphics_id": "OBJ_EVENT_GFX_MAN_4",
       "x": 1,
       "y": 5,
@@ -53,7 +54,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "InsideOutside_EventScript_FanboyInside",
       "flag": "FLAG_HIDE_INSIDE_OUTSIDE_NPCS"
     },
     {
@@ -66,7 +67,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Present_PokemonCenter_EventScript_Hiker",
       "flag": "0"
     },
     {
@@ -79,7 +80,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Present_PokemonCenter_EventScript_Cooltrainer",
       "flag": "0"
     },
     {
@@ -135,6 +136,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Present_PokemonCenter_EventScript_Pachirisu",
       "flag": "FLAG_HIDE_POKEMON_CENTER_IDOL"
+    },
+    {
+      "local_id": "LOCALID_INSIDE_SAILOR",
+      "graphics_id": "OBJ_EVENT_GFX_SAILOR",
+      "x": 2,
+      "y": 10,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "InsideOutside_EventScript_SailorInside",
+      "flag": "FLAG_HIDE_INSIDE_OUTSIDE_NPCS"
     }
   ],
   "warp_events": [

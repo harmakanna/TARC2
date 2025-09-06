@@ -742,6 +742,31 @@ Present_Cafe_EventScript_LisiaWorriedRight::
 	releaseall
 	end
 
+Present_Cafe_EventScript_GirlStudent::
+	call_if_set FLAG_SYS_MAIN_GAME_START, Present_Cafe_EventScript_GirlStudentNametag
+	returnqueststate QUEST_INVERSE
+	goto_if_eq VAR_RESULT, 4, Present_Cafe_EventScript_GirlStudentPostQuest
+	msgbox Present_Cafe_Text_GirlStudent, MSGBOX_NPC
+	end
+
+Present_Cafe_EventScript_GirlStudentPostQuest::
+	msgbox Present_Cafe_Text_GirlStudentPostQuest, MSGBOX_NPC
+	end
+
+Present_Cafe_EventScript_GirlStudentNametag::
+	speakername Name_GirlStudent
+	return
+
+Present_Cafe_Text_GirlStudent:
+	.string "Man…\p"
+	.string "I wish I had a study partner…$"
+
+Present_Cafe_Text_GirlStudentPostQuest:
+	.string "Yay! Paolo and I are gonna study\n"
+	.string "together later tonight!\p"
+	.string "We'll knock this type matchup test\n"
+	.string "out of the park for sure!$"
+	
 Present_Cafe_Text_BaristaNervous:
 	.string "Uhh, welcome to the Torin Tauros\n"
 	.string "Tourin' Café, home to Moomoo Bella's\l"

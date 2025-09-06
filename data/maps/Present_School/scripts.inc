@@ -357,6 +357,92 @@ Present_School_EventScript_DoubterPostQuest::
 	releaseall
 	end
 
+Present_School_EventScript_Teacher::
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_LUXRAY, 0
+	goto_if_eq VAR_RESULT, TRUE, Present_School_EventScript_TeacherSecret
+	lock
+	faceplayer
+	speakername Name_Teacher
+	msgbox Present_School_Text_TeacherAllTheyCare, MSGBOX_DEFAULT
+	applymovement LOCALID_SCHOOL_TEACHER, Common_Movement_WalkInPlaceFasterLeft
+	msgbox Present_School_Text_TeacherSeeThatKid, MSGBOX_DEFAULT
+	waitmovement LOCALID_SCHOOL_TEACHER
+	call_if_eq VAR_FACING, DIR_EAST, Present_School_EventScript_TurnTeacherLeft
+	call_if_ne VAR_FACING, DIR_EAST, Present_School_EventScript_TurnTeacherRight
+	msgbox Present_School_Text_TeacherWillBelieveAnything, MSGBOX_DEFAULT
+	waitmovement LOCALID_SCHOOL_TEACHER
+	closemessage
+	applymovement LOCALID_SCHOOL_TEACHER, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+Present_School_EventScript_TurnTeacherLeft::
+	applymovement LOCALID_SCHOOL_TEACHER, Common_Movement_FaceLeft
+	return
+	
+Present_School_EventScript_TurnTeacherRight::
+	applymovement LOCALID_SCHOOL_TEACHER, Common_Movement_FaceRight
+	return
+	
+Present_School_EventScript_TeacherSecret::
+	msgbox Present_School_Text_TeacherSurprised, MSGBOX_NPC
+	end
+
+Present_School_EventScript_BackBoy::
+	lock
+	msgbox Present_School_Text_BackBoy, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Present_School_EventScript_LassStudent::
+	lock
+	faceplayer
+	speakername Name_Girl
+	msgbox Present_School_Text_LassStudent, MSGBOX_DEFAULT
+	applymovement LOCALID_SCHOOL_LASS_STUDENT, Common_Movement_FaceRight
+	waitmovement 0
+	msgbox Present_School_Text_LassThoseBoys, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_SCHOOL_LASS_STUDENT, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+Present_School_Text_LassStudent:
+	.string "Y'know, sometimes I wonder if anyone\n"
+	.string "else in this class actually cares about\l"
+	.string "their studies…$"
+	
+Present_School_Text_LassThoseBoys:
+	.string "Those boys over there? They go through\n"
+	.string "batteries like nobody's business…$"
+
+Present_School_Text_BackBoy:
+	.string "The boy is looking down at his phone.\n"
+	.string "His eyes are glazed over.\p"
+	.string "He seems to be watching a video about\n"
+	.string "a legendary trainer named Doryan.$"
+
+Present_School_Text_TeacherAllTheyCare:
+	.string "Kids these days aren't interested in\n"
+	.string "learning any more…\p"
+	.string "All they care about are Pokémon hacks…$"
+
+Present_School_Text_TeacherSeeThatKid:
+	.string "See that little girl over there?\p"
+	.string "She thinks there's such a thing as a\n"
+	.string "dark-type Luxray.$"
+
+Present_School_Text_TeacherWillBelieveAnything:
+	.string "Kids will believe anything, I swear…$"
+
+Present_School_Text_TeacherSurprised:
+	.string "Color me surprised… There IS a dark-\n"
+	.string "type Luxray out there?\p"
+	.string "Something feels very wrong to me…$"
+
 Present_School_Text_LookerHereIsLuxray:
 	.string "Here's a Luxray.$"
 

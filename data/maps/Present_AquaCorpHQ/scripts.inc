@@ -565,6 +565,91 @@ Present_AquaCorpHQ_EventScript_Krabby::
 	release
 	end
 
+Present_AquaCorpHQ_EventScript_Sarah::
+	lock
+	faceplayer
+	speakername Name_Sarah
+	goto_if_set FLAG_SPOKE_TO_ANGRY_MAN_POST_AQUACORP, Present_AquaCorpHQ_EventScript_SarahBlush
+	msgbox Present_AquaCorpHQ_Text_SarahNPC, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_AQUACORP_SARAH, Common_Movement_FaceDown
+	waitmovement 0
+	release
+	end
+
+Present_AquaCorpHQ_EventScript_SarahBlush::
+	msgbox Present_AquaCorpHQ_Text_SarahBlushNPC, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_AQUACORP_SARAH, Common_Movement_FaceDown
+	waitmovement 0
+	release
+	end
+
+Present_AquaCorpHQ_EventScript_Geoff::
+	speakername Name_Geoff
+	msgbox Present_AquaCorpHQ_Text_Geoff, MSGBOX_NPC
+	end 
+
+Present_AquaCorpHQ_EventScript_Sheldon::
+	lock
+	speakername Name_Sheldon
+	msgbox Present_AquaCorpHQ_Text_Sheldon, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Present_AquaCorpHQ_EventScript_Matt::
+	speakername Name_Matt
+	msgbox Present_AquaCorpHQ_Text_MattNPC, MSGBOX_NPC
+	end
+
+Present_AquaCorpHQ_EventScript_Shelly::
+	lock
+	faceplayer
+	speakername Name_Shelly
+	msgbox Present_AquaCorpHQ_Text_ShellyNPC, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceDown
+	waitmovement 0
+	release
+	end
+
+Present_AquaCorpHQ_Text_ShellyNPC:
+	.string "With the Clamperl experiment being a\n"
+	.string "success, we gotta figure out our\l"
+	.string "next research goal…\p"
+	.string "Perhaps we should coordinate with the\n"
+	.string "rangers a bit more moving forward?$"
+
+Present_AquaCorpHQ_Text_MattNPC:
+	.string "Heh, how was that taste of true\n"
+	.string "Team Aqua power?\p"
+	.string "I think we still got it!\p"
+	.string "No hard feelings?$"
+
+Present_AquaCorpHQ_Text_Sheldon:
+	.string "Oh Krabby…\n"
+	.string "I love you so much…$"
+
+Present_AquaCorpHQ_Text_Geoff:
+	.string "Matt and I joined Team Aqua at the\n"
+	.string "same time.\p"
+	.string "He was always a hothead, but was loyal\n"
+	.string "as heck to every member of the team.\p"
+	.string "This change in the Team's goals has\n"
+	.string "really thrown him for a loop.$"
+
+Present_AquaCorpHQ_Text_SarahNPC:
+	.string "He might be all grown up now, but\n"
+	.string "he'll always be lil' Chowdie to me!\p"
+	.string "Please take good care of him!$"
+
+Present_AquaCorpHQ_Text_SarahBlushNPC:
+	.string "Huh? There's a guy who likes lil'\n"
+	.string "Chowder?\p"
+	.string "Maybe I should get to know more of the\n"
+	.string "people in Porta Bella…$"
+
 Present_AquaCorpHQ_Text_Krabby:
 	.string "Blblblblblblbl!$"
 	

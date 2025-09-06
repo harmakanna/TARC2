@@ -233,6 +233,80 @@ Past_TownHall_EventScript_Happiny::
 	release
 	end
 
+Past_TownHall_EventScript_ApprenticeNurse::
+	speakername Name_Nurse
+	msgbox Past_TownHall_Text_ApprenticeNurse, MSGBOX_NPC
+	end
+
+Past_TownHall_EventScript_Comfey::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_COMFEY, CRY_MODE_NORMAL
+	msgbox Past_TownHall_Text_Comfey, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	release
+	end
+
+Past_TownHall_EventScript_SailorLeft::
+	lock
+	speakername Name_Sailor
+	msgbox Past_TownHall_Text_SailorLeft, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Past_TownHall_EventScript_SailorBottom::
+	speakername Name_Sailor
+	msgbox Past_TownHall_Text_SailorBottom MSGBOX_NPC
+	end
+
+Past_TownHall_EventScript_SailorRight::
+	lock
+	faceplayer
+	speakername Name_Sailor
+	msgbox Past_TownHall_Text_SailorRight, MSGBOX_DEFAULT
+	applymovement LOCALID_PAST_RIGHT_SAILOR, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	msgbox Past_TownHall_Text_SailorAnother, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PAST_RIGHT_SAILOR, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+Past_TownHall_Text_SailorLeft:
+	.string "Camilla! Brine another round of drinks\n"
+	.string "for the table!$"
+
+Past_TownHall_Text_SailorBottom:
+	.string "Uuuuurp…\p"
+	.string "No more… I'm so plastered already…$"
+
+Past_TownHall_Text_SailorRight:
+	.string "Aye! Our ship got wrecked by a gnarly\n"
+	.string "tornado a good while back!\p"
+	.string "We saw some strange green frog man at\n"
+	.string "the top of the tornado, we think…?\p"
+	.string "No matter! If it meant we washed up on\n"
+	.string "the shores of Porta Bella, it was worth\l"
+	.string "it!$"
+
+Past_TownHall_Text_SailorAnother:
+	.string "Camilla, another drink!$"
+
+Past_TownHall_Text_ApprenticeNurse:
+	.string "Oooooh…\p"
+	.string "My mother had recommended I apprentice\n"
+	.string "with Camilla as a nurse and I started\l"
+	.string "last week…\p"
+	.string "I believed it to be a great idea at the\n"
+	.string "time, but I did not know I was so\l"
+	.string "squeamish to blood and mucus…\p"
+	.string "But I cannot let Camilla and my mother\n"
+	.string "down now…$"
+
 Past_TownHall_Text_CamillaPleaseLetMeKnow:
 	.string "Please, should you ever need help in\n"
 	.string "our era, let me know!$"
@@ -398,3 +472,6 @@ Past_TownHall_CamillaICannotHelp:
 
 Past_TownHall_Text_CamillaOfCourse:
 	.string "Of course! I am always happy to help.$"
+
+Past_TownHall_Text_Comfey:
+	.string "Oomfey~!$"

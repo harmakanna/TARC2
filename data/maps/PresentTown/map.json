@@ -213,6 +213,7 @@
       "flag": "FLAG_HIDE_OUTSIDE_NPCS"
     },
     {
+      "local_id": "LOCALID_OUTSIDE_FANBOY",
       "graphics_id": "OBJ_EVENT_GFX_MAN_4",
       "x": 43,
       "y": 38,
@@ -222,7 +223,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "InsideOutside_EventScript_FanboyOutside",
       "flag": "FLAG_HIDE_OUTSIDE_NPCS"
     },
     {
@@ -235,7 +236,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "InsideOutside_EventScript_CompostGirl",
       "flag": "FLAG_HIDE_TORNADUS_NPCS"
     },
     {
@@ -267,16 +268,17 @@
       "quest_id": 22
     },
     {
+      "local_id": "LOCALID_OUTSIDE_SAILOR",
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
       "x": 20,
       "y": 38,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "InsideOutside_EventScript_SailorOutside",
       "flag": "FLAG_HIDE_OUTSIDE_NPCS"
     },
     {

@@ -91,7 +91,7 @@ Present_CelebiSociety_EventScript_MochiGiver::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_CelebiSociety_Text_LookerNoImNot
 	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiGiverCatchMons
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_CelebiSociety_Text_LookerImNotATrainer
-	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiGiverCatchMons
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiGiverOffersMochi
 	goto Present_CelebiSociety_EventScript_CheckForMochi
 	release
 	end
@@ -355,10 +355,161 @@ Present_CelebiSociety_EventScript_GiveMochiThundurus::
 	setflag FLAG_GAVE_THUNDURUS_MOCHI
 	return
 
+Present_CelebiSociety_EventScript_MochiResetter::
+	lockall
+	faceplayer
+	speakername Name_Old_Lady
+	call Script_GetNPCFacingDirection
+	call_if_unset FLAG_SPOKE_TO_MOCHI_RESETTER, Present_CelebiSociety_EventScript_MochiResetterFirstTime
+	setflag FLAG_SPOKE_TO_MOCHI_RESETTER
+	goto_if_unset FLAG_SYS_GAME_CLEAR, Present_CelebiSociety_EventScript_AutoDenyMochiResetter
+	clearflag FLAG_MOCHI_MAN_GAVE_MOCHI
+	msgbox Present_CelebiSociety_Text_MochiResetterCanResetEVs, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Present_CelebiSociety_EventScript_MochiResetterEnd
+	special ChoosePartyMon
+	waitstate
+	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, Present_CelebiSociety_EventScript_MochiResetterEnd
+	specialvar VAR_RESULT, GetMochi
+	goto_if_eq VAR_RESULT, FALSE, Present_CelebiSociety_EventScript_MochiResetterAlreadyEmpty
+	call_if_ne VAR_TEMP_A, 0, Present_CelebiSociety_EventScript_MochiResetterHP
+	call_if_ne VAR_TEMP_B, 0, Present_CelebiSociety_EventScript_MochiResetterAtk
+	call_if_ne VAR_TEMP_C, 0, Present_CelebiSociety_EventScript_MochiResetterDef
+	call_if_ne VAR_TEMP_D, 0, Present_CelebiSociety_EventScript_MochiResetterSpeed
+	call_if_ne VAR_TEMP_E, 0, Present_CelebiSociety_EventScript_MochiResetterSpAtk
+	call_if_ne VAR_TEMP_F, 0, Present_CelebiSociety_EventScript_MochiResetterSpDef
+	special BufferMoveDeleterNicknameAndMove
+	speakername NULL
+	playfanfare MUS_MOVE_DELETED
+	message Present_CelebiSociety_Text_EmptiedBelly
+	waitmessage
+	waitfanfare
+	delay 10
+	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
+	goto Present_CelebiSociety_EventScript_MochiResetterEnd
+	end
+
+Present_CelebiSociety_EventScript_MochiResetterHP::
+	additem ITEM_HP_MOCHI, VAR_TEMP_A
+	return
+
+Present_CelebiSociety_EventScript_MochiResetterAtk::
+	additem ITEM_ATK_MOCHI, VAR_TEMP_B
+	return
+
+Present_CelebiSociety_EventScript_MochiResetterDef::
+	additem ITEM_DEF_MOCHI, VAR_TEMP_C
+	return
+	
+Present_CelebiSociety_EventScript_MochiResetterSpeed::
+	additem ITEM_SPE_MOCHI, VAR_TEMP_D
+	return
+	
+Present_CelebiSociety_EventScript_MochiResetterSpAtk::
+	additem ITEM_SPATK_MOCHI, VAR_TEMP_E
+	return
+	
+Present_CelebiSociety_EventScript_MochiResetterSpDef::
+	additem ITEM_SPDEF_MOCHI, VAR_TEMP_F
+	return
+
+Present_CelebiSociety_EventScript_MochiResetterFirstTime::
+	speak LOCALID_MOCHI_RESETTER, VAR_0x8005, Name_Old_Lady, Present_CelebiSociety_Text_MochiResetterIntro
+	playse SE_SELECT
+	return
+
+Present_CelebiSociety_EventScript_MochiResetterEnd::
+	speakername Name_Old_Lady
+	msgbox Present_CelebiSociety_Text_MochiResetterEnd, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+	
+Present_CelebiSociety_EventScript_MochiResetterAlreadyEmpty::
+	special BufferMoveDeleterNicknameAndMove
+	speakername Name_Old_Lady
+	msgbox Present_CelebiSociety_Text_MochiResetterAlreadyEmpty, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+	
+Present_CelebiSociety_EventScript_AutoDenyMochiResetter::
+	playse SE_SELECT
+	msgbox Present_CelebiSociety_Text_MochiResetterCanResetEVs, MSGBOX_DEFAULT
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_CelebySociety_Text_LookerIllPass
+	speak LOCALID_MOCHI_RESETTER, VAR_0x8005, Name_Old_Lady, Present_CelebiSociety_Text_MochiResetterBah
+	closemessage
+	release
+	end
+	
+Present_CelebiSociety_EventScript_Grandma::
+	speakername Name_Grandma
+	msgbox Present_CelebiSociety_Text_Grandma, MSGBOX_NPC
+	end
+
+Present_CelebiSociety_Text_Grandma:
+	.string "Long ago, I had a run-in with Celebi\n"
+	.string "myself!\p"
+	.string "I was cornered by a devious-looking wild\n"
+	.string "Luxray when she came to my rescue!\p"
+	.string "Let me tell you, I was nauseous for a\n"
+	.string "full week after that!\p"
+	.string "Sending me through time DID cause me to\n"
+	.string "see the future here and there for a few\l"
+	.string "days afterward…\p"
+	.string "Wheeehehehe! That's how I met my husband!\n"
+	.string "Have you experienced it?$"
+	
+Present_CelebiSociety_Text_MochiResetterIntro:
+	.string "Oh, that silly old man there is always\n"
+	.string "giving away handfuls of MOCHI!\p"
+	.string "It can make your poor POKéMONs'\n"
+	.string "bellies ache if you eat too much…\p"
+	.string "Say, if you ever feed your POKéMON\n"
+	.string "too much MOCHI and want their bellies\l"
+	.string "emptied, let me know.\p"
+	.string "I can even give you more MOCHI after!\p"
+	.string "… … …Oh?\p"
+	.string "You want to know HOW I empty your\n"
+	.string "POKéMONs' bellies of MOCHI?\p"
+	.string "Don't ask.$"
+
+Present_CelebiSociety_Text_MochiResetterCanResetEVs:
+	.string "Would you like me to empty your\n"
+	.string "POKéMON's belly of MOCHI?$"
+
+Present_CelebySociety_Text_LookerIllPass:
+	.string "Umm…\p"
+	.string "I'll… Pass…\p"
+	.string "Maybe later?$"
+
+Present_CelebiSociety_Text_MochiResetterBah:
+	.string "Bah! You young'uns have NO respect\n"
+	.string "for our secret, old-timey ways!\p"
+	.string "No wonder this generation is so WEAK\n"
+	.string "and LAZY!$"
+
+Present_CelebiSociety_Text_MochiResetterWhichPokemon:
+	.string "Nweeheehee… Which POKéMON will I\n"
+	.string "empty the belly of today?$"
+
+Present_CelebiSociety_Text_MochiResetterEnd:
+	.string "If you ever want your POKéMONs'\n"
+	.string "bellies emptied, you know the lady\l"
+	.string "with that special touch!$"
+
+Present_CelebiSociety_Text_MochiResetterAlreadyEmpty:
+	.string "What!? Your {STR_VAR_1}'s belly is\n"
+	.string "already empty!\p"
+	.string "Please don't toy with an old lady!$"
+
+Present_CelebiSociety_Text_EmptiedBelly:
+	.string "{STR_VAR_1}'s belly was emptied…!$"
+
 Present_CelebiSociety_Text_MochiGiverIntro:
 	.string "Eeeheeheeheeheehee!\p"
-	.string "Say, you look like a young snapper!\n"
-	.string "Tell me, are you taking the gym challenge?$"
+	.string "Say, you look like a young snapper!\p"
+	.string "Tell me, are you taking the GYM\n"
+	.string "challenge?$"
 
 Present_CelebiSociety_Text_LookerNoImADetective:
 	.string "No sir. I'm a detective with the\n"
@@ -366,25 +517,25 @@ Present_CelebiSociety_Text_LookerNoImADetective:
 
 Present_CelebiSociety_Text_MochiGiverIKnewIt:
 	.string "Eeeheeheeheehee! I knew it!\p"
-	.string "Tell me, how many gyms have you taken\n"
+	.string "Tell me, how many GYMs have you taken\n"
 	.string "down by now?\p"
-	.string "Porta Bella's gym leader is one of the\n"
+	.string "PORTA BELLA's GYM leader is one of the\n"
 	.string "best around, you know!\p"
 	.string "She's one of the best trainers in Hoenn!$"
 
 Present_CelebiSociety_Text_LookerNoImNot:
-	.string "I have not taken the gym challenge in 20\n"
-	.string "years, sir.$"
+	.string "I have not taken the gym challenge in\n"
+	.string "20 years, sir.$"
 	
 Present_CelebiSociety_Text_MochiGiverCatchMons:
 	.string "Oh, I bet!\n"
-	.string "Tell me, do you catch Pokémon regularly?\p"
-	.string "The Pokémon in the forest are quite a\n"
+	.string "Tell me, do you like catching POKéMON?\p"
+	.string "The POKéMON in the forest are quite a\n"
 	.string "powerful lot!\p"
 	.string "When I was but a boy, I got scooped up\n"
 	.string "by what looked like a pterodactyl!\p"
 	.string "Oh, that silly Celebi LOVES bringing in\n"
-	.string "all kinds of Pokémon from the past!$"
+	.string "all kinds of POKéMON from across time!$"
 
 Present_CelebiSociety_Text_LookerImNotATrainer:
 	.string "That sounds terrifying. But no, I don't\n"
@@ -392,52 +543,52 @@ Present_CelebiSociety_Text_LookerImNotATrainer:
 
 Present_CelebiSociety_Text_MochiGiverOffersMochi:
 	.string "If you ever catch an interesting\n"
-	.string "Pokémon, I would love it in my old bones\l"
-	.string "if you told me the story of your encounter!\p"
-	.string "In fact, I can offer you some sweet Mochi\n"
-	.string "in return!\p"
+	.string "POKéMON, I would love it if you told me\l"
+	.string "the story of your encounter!\p"
+	.string "In fact, I can offer you some sweet\n"
+	.string "MOCHI in return!\p"
 	.string "I tell you, it's DEEEEELISH!$"
 
 Present_CelebiSociety_Text_MochiGiverOffersMochiShort:
 	.string "If you ever catch an interesting\n"
-	.string "Pokémon, I would love it in my old bones\l"
-	.string "if you told me about it!$"
+	.string "POKéMON, I would love it if you told me\l"
+	.string "the story of your encounter!$"
 
 Present_CelebiSociety_Text_MochiManOhPokemon:
 	.string "Oh? You caught a {STR_VAR_1}?\n"
-	.string "Eeeheeehee! Here, have some Mochi!$"
+	.string "Eeeheeehee! Here, have some MOCHI!$"
 
 Present_CelebiSociety_Text_MochiManOhDarkLuxray:
 	.string "Oh? You caught a dark {STR_VAR_1}?\n"
-	.string "Eeeheehee! I didn't know such a Pokémon\n"
-	.string "even existed!\p"
-	.string "Here, have some Mochi!$"
+	.string "Eeeheehee! I didn't know such a\l"
+	.string "POKéMON even existed!\p"
+	.string "Here, have some MOCHI!$"
 
 Present_CelebiSociety_Text_MochiManOhAerodactyl:
 	.string "Oh? You caught a {STR_VAR_1}?\n"
-	.string "Eeeheeehee! Maybe it's the one who\n"
+	.string "Eeeheeehee! Maybe it's the one who\l"
 	.string "yoinked me as a wee child! Who knows!\p" 
-	.string "Here, have some Mochi!$"
+	.string "Here, have some MOCHI!$"
 
 Present_CelebiSociety_Text_MochiManOhScreamTail:
 	.string "Oh? You caught a {STR_VAR_1}?\n"
-	.string "Eeeheeehee! That's a Pokémon I've never\n"
-	.string "even heard of before now!\p"
-	.string "Here, have some Mochi!$"
+	.string "Eeeheeehee! I've never even heard\l"
+	.string "of that POKéMON!\p"
+	.string "Here, have some MOCHI!$"
 
 Present_CelebiSociety_Text_MochiManOhLegendary:
 	.string "Wow! Incredible!\n"
 	.string "You caught {STR_VAR_1}?\p"
 	.string "What a talented young man you are!\p"
-	.string "Have some Mochi!$"
+	.string "Have some MOCHI!$"
 
 Present_CelebiSociety_Text_MochiManLetMeKnow:
 	.string "Eeeheeehee! If you find any more\n"
-	.string "interesting Pokémon, let me know!$"
+	.string "interesting POKéMON, let me know!$"
 
 Present_CelebiSociety_Text_MochiManNoNewPokemon:
 	.string "Oh? You don't have any new stories of\n"
-	.string "your Pokémon-catching escapades?\p"
+	.string "your POKéMON-catching escapades?\p"
 	.string "What a shame.$"
 	
 Present_CelebiSociety_Text_GrandmaDidYouMeetCelebi:

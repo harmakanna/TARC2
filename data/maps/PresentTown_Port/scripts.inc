@@ -98,6 +98,7 @@ PresentTown_Port_EventScript_Departure::
 	fadescreen FADE_TO_BLACK
 	clearflag FLAG_HIDE_PORT_BLUE
 	clearflag FLAG_SYS_PREVENT_MAP_FADE
+	setflag FLAG_SYS_GAME_CLEAR
 	setvar VAR_CUTSCENE_STATE, 15
 	special RemoveCameraObject
 	delay 120

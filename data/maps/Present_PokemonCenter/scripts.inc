@@ -82,6 +82,16 @@ Present_PokemonCenter_EventScript_IdolPleaseFindMyFriends::
 	speak LOCALID_POKEMON_CENTER_IDOL, VAR_0x8005, Name_Left_Idol, Present_PokemonCenter_Text_IdolPleaseFindMyFriends
 	return
 
+Present_PokemonCenter_EventScript_Hiker::
+	speakername Name_Hiker
+	msgbox Present_PokemonCenter_Text_Hiker, MSGBOX_NPC
+	end
+
+Present_PokemonCenter_EventScript_Cooltrainer::
+	speakername Name_Center_Cooltrainer
+	msgbox Present_PokemonCenter_Text_Cooltrainer, MSGBOX_NPC
+	end
+
 Present_PokemonCenter_EventScript_Pachirisu::
 	lock
 	faceplayer
@@ -124,6 +134,16 @@ Present_PokemonCenter_Text_Zangoose:
 
 Present_PokemonCenter_Text_Pachirisu:
 	.string "Pa!$"
+
+Present_PokemonCenter_Text_Hiker:
+	.string "Hoooo…\p"
+	.string "I tried hiking up the mountains which\n"
+	.string "surround this city, but I was hit with\l"
+	.string "intense fatigue and hallucinations!\p"
+	.string "I thought I spotted a pile of moss,\n"
+	.string "twigs, and leaves slithering along the\l"
+	.string "forest floor…\p"
+	.string "Maybe I'm not cut out for hiking…$"
 
 Present_PokemonCenter_Text_IdolIGotSeparated:
 	.string "Man… that was scary…\p"
@@ -176,3 +196,11 @@ Present_PokemonCenter_Text_NurseHealthy:
 	.string "Hello! Welcome to the Pokémon Center!\p"
 	.string "I see your Pokémon are quite healthy!\n"
 	.string "I hope you have a wonderful day!$" 
+
+Present_PokemonCenter_Text_Cooltrainer:
+	.string "Man, I hyped myself up SO much going\n"
+	.string "into the gym challenge this year after\l"
+	.string "falling short in Hoenn.\p"
+	.string "Imagine my surprise when I reached the\n"
+	.string "gym leader here and saw who it was…$"
+	
