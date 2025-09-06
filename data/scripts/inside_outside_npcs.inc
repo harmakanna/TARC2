@@ -827,6 +827,82 @@ InsideOutside_EventScript_ArtistPostQuest::
     release
     end
     
+InsideOutside_EventScript_SailorOutside::
+    setvar VAR_TEMP_1, LOCALID_OUTSIDE_SAILOR
+    goto InsideOutside_EventScript_Sailor
+    end
+    
+InsideOutside_EventScript_SailorInside::
+    setvar VAR_TEMP_1, LOCALID_INSIDE_SAILOR
+    goto InsideOutside_EventScript_Sailor
+    end
+    
+InsideOutside_EventScript_Sailor::
+    lock
+    faceplayer
+    speakername Name_Sailor
+    msgbox InsideOutside_Text_Sailor, MSGBOX_DEFAULT
+    closemessage
+    applymovement VAR_TEMP_1, Common_Movement_FaceOriginalDirection
+    waitmovement 0
+    release
+    end
+
+InsideOutside_EventScript_FanboyInside::
+    setvar VAR_TEMP_1, LOCALID_INSIDE_FANBOY
+    goto InsideOutside_EventScript_Fanboy
+    end
+
+InsideOutside_EventScript_FanboyOutside::
+    setvar VAR_TEMP_1, LOCALID_OUTSIDE_FANBOY
+    goto InsideOutside_EventScript_Fanboy
+    end
+
+InsideOutside_EventScript_Fanboy::
+    lock
+    faceplayer
+    returnqueststate QUEST_SAVE_ESTELLA
+    goto_if_eq VAR_RESULT, 1, InsideOutside_EventScript_FanboyPregame
+    speakername Name_Fanboy
+    returnqueststate QUEST_GET_INTO_THE_GROOVE
+    goto_if_le VAR_RESULT, 2, InsideOutside_EventScript_FanboyLostIdols
+    msgbox InsideOutside_Text_FanboyIdolsSaved, MSGBOX_DEFAULT
+    closemessage
+    release
+    end
+    
+InsideOutside_EventScript_FanboyLostIdols::
+    msgbox InsideOutside_Text_FanboyLostIdols, MSGBOX_DEFAULT
+    closemessage
+    release
+    end
+
+InsideOutside_EventScript_FanboyPregame::
+    msgbox InsideOutside_Text_FanboyFanboying, MSGBOX_DEFAULT
+    closemessage
+    release
+    end
+
+InsideOutside_Text_FanboyFanboying:
+    .string "Oh boy, oh boy, oh boy!\n"
+    .string "Lisia and her troupe are in town!\p"
+    .string "I've heard all their songs, they look\n"
+    .string "and sound even better in person!$"
+ 
+InsideOutside_Text_FanboyLostIdols:
+    .string "No! The horror!\n"
+    .string "Wild Pokémon got to Lisia's troupe!\p"
+    .string "I saw them split up and go in different\n"
+    .string "directions in the forest…\p"
+    .string "I hope they're safe…$"
+
+InsideOutside_Text_FanboyIdolsSaved:
+    .string "I heard the good news! Lisia and her\n"
+    .string "girls have been saved!\p"
+    .string "Oh, mister, I'm so grateful they're all\n"
+    .string "okay and accounted for!\p"
+    .string "Looking forward to their show tonight!$"
+    
 InsideOutside_Text_ArtistAiyee:
     .string "Aiyeeeeee!$"
 
@@ -1387,4 +1463,12 @@ InsideOutside_Text_CompostGirl:
 InsideOutside_Text_CompostGirlEww:
     .string "Eww! Why were you digging through our\n"
     .string "compost bin!?$"
+    
+InsideOutside_Text_Sailor:
+    .string "Urff… I had been going to the brewery\n"
+    .string "in town every year since I set out\l"
+    .string "on the high seas…\p"
+    .string "But this year it's been replaced by a\n"
+    .string "trendy coffee shop…\p"
+    .string "Nothing good lasts forever…$"
     

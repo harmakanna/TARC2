@@ -15,6 +15,7 @@
   "connections": null,
   "object_events": [
     {
+      "local_id": "LOCALID_OFFICE_MAYOR",
       "graphics_id": "OBJ_EVENT_GFX_CONTEST_JUDGE",
       "x": 1,
       "y": 6,
@@ -24,10 +25,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Present_CityHall_2F_Office_EventScript_Mayor",
       "flag": "FLAG_HIDE_CITYHALL_2F_OFFICE_MAYOR"
     },
     {
+      "local_id": "LOCALID_OFFICE_2F_ANABEL",
       "graphics_id": "OBJ_EVENT_GFX_ANABEL",
       "x": 6,
       "y": 6,
@@ -37,7 +39,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Present_CityHall_2F_Office_EventScript_Anabel",
       "flag": "FLAG_HIDE_CITYHALL_2F_OFFICE_ANABEL"
     }
   ],

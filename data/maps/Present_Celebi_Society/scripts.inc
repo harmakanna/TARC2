@@ -359,8 +359,10 @@ Present_CelebiSociety_EventScript_MochiResetter::
 	lockall
 	faceplayer
 	speakername Name_Old_Lady
+	call Script_GetNPCFacingDirection
 	call_if_unset FLAG_SPOKE_TO_MOCHI_RESETTER, Present_CelebiSociety_EventScript_MochiResetterFirstTime
 	setflag FLAG_SPOKE_TO_MOCHI_RESETTER
+	goto_if_unset FLAG_SYS_GAME_CLEAR, Present_CelebiSociety_EventScript_AutoDenyMochiResetter
 	clearflag FLAG_MOCHI_MAN_GAVE_MOCHI
 	msgbox Present_CelebiSociety_Text_MochiResetterCanResetEVs, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, Present_CelebiSociety_EventScript_MochiResetterEnd
@@ -411,7 +413,7 @@ Present_CelebiSociety_EventScript_MochiResetterSpDef::
 	return
 
 Present_CelebiSociety_EventScript_MochiResetterFirstTime::
-	msgbox Present_CelebiSociety_Text_MochiResetterIntro, MSGBOX_DEFAULT
+	speak LOCALID_MOCHI_RESETTER, VAR_0x8005, Name_Old_Lady, Present_CelebiSociety_Text_MochiResetterIntro
 	playse SE_SELECT
 	return
 
@@ -428,6 +430,15 @@ Present_CelebiSociety_EventScript_MochiResetterAlreadyEmpty::
 	msgbox Present_CelebiSociety_Text_MochiResetterAlreadyEmpty, MSGBOX_DEFAULT
 	closemessage
 	releaseall
+	end
+	
+Present_CelebiSociety_EventScript_AutoDenyMochiResetter::
+	playse SE_SELECT
+	msgbox Present_CelebiSociety_Text_MochiResetterCanResetEVs, MSGBOX_DEFAULT
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_CelebySociety_Text_LookerIllPass
+	speak LOCALID_MOCHI_RESETTER, VAR_0x8005, Name_Old_Lady, Present_CelebiSociety_Text_MochiResetterBah
+	closemessage
+	release
 	end
 	
 Present_CelebiSociety_EventScript_Grandma::
@@ -465,6 +476,17 @@ Present_CelebiSociety_Text_MochiResetterIntro:
 Present_CelebiSociety_Text_MochiResetterCanResetEVs:
 	.string "Would you like me to empty your\n"
 	.string "POKéMON's belly of MOCHI?$"
+
+Present_CelebySociety_Text_LookerIllPass:
+	.string "Umm…\p"
+	.string "I'll… Pass…\p"
+	.string "Maybe later?$"
+
+Present_CelebiSociety_Text_MochiResetterBah:
+	.string "Bah! You young'uns have NO respect\n"
+	.string "for our secret, old-timey ways!\p"
+	.string "No wonder this generation is so WEAK\n"
+	.string "and LAZY!$"
 
 Present_CelebiSociety_Text_MochiResetterWhichPokemon:
 	.string "Nweeheehee… Which POKéMON will I\n"

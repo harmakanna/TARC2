@@ -87,6 +87,11 @@ Present_PokemonCenter_EventScript_Hiker::
 	msgbox Present_PokemonCenter_Text_Hiker, MSGBOX_NPC
 	end
 
+Present_PokemonCenter_EventScript_Cooltrainer::
+	speakername Name_Center_Cooltrainer
+	msgbox Present_PokemonCenter_Text_Cooltrainer, MSGBOX_NPC
+	end
+
 Present_PokemonCenter_EventScript_Pachirisu::
 	lock
 	faceplayer
@@ -191,3 +196,11 @@ Present_PokemonCenter_Text_NurseHealthy:
 	.string "Hello! Welcome to the Pokémon Center!\p"
 	.string "I see your Pokémon are quite healthy!\n"
 	.string "I hope you have a wonderful day!$" 
+
+Present_PokemonCenter_Text_Cooltrainer:
+	.string "Man, I hyped myself up SO much going\n"
+	.string "into the gym challenge this year after\l"
+	.string "falling short in Hoenn.\p"
+	.string "Imagine my surprise when I reached the\n"
+	.string "gym leader here and saw who it was…$"
+	

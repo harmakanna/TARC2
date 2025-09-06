@@ -252,23 +252,23 @@ Present_House1_Text_AilingManCanTeachMoves:
 	.string "I may not look the part, but back in\n"
 	.string "my youth I was quite the trainer!\p"
 	.string "If you'd like, I can teach your\n"
-	.string "Pokémon some new moves.$"
+	.string "POKéMON some new moves.$"
 
 Present_House1_Text_AilingManWhichMon:
-	.string "Which Pokémon would you like me to teach\n"
+	.string "Which POKéMON would you like me to teach\n"
 	.string "moves to?$"
 	
 Present_House1_Text_AilingManCantTeachMove:
-	.string "That Pokémon does not have any moves I\n"
+	.string "That POKéMON does not have any moves I\n"
 	.string "can teach it!\p"
-	.string "Please choose a different Pokémon.$"
+	.string "Please choose a different POKéMON.$"
 
 Present_House1_Text_AilingManTeachWhichMove:
 	.string "Which move should I teach?$"
 
 Present_House1_Text_AilingManLetMeKnow:
 	.string "Okay. Let me know if you would like a\n"
-	.string "Pokémon to learn something new.$"
+	.string "POKéMON to learn something new.$"
 
 Present_House1_Text_LookerHandedOverRevivalHerb:
 	.string "Looker handed over the\n"

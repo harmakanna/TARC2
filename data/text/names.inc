@@ -41,7 +41,7 @@ Name_Grandma:
     .string "Nina$"
     
 Name_Head_Ranger:
-    .string "Head Ranger$"
+    .string "Luna$"
 
 Name_Ranger:
     .string "Ranger$"
@@ -246,3 +246,15 @@ Name_Oscar:
 
 Name_Hiker:
     .string "Outdoorsman$"
+
+Name_Past_Nurse:
+    .string "Joy$"
+
+Name_Sailor:
+    .string "Sailor$"
+
+Name_Center_Cooltrainer:
+    .string "Vito$"
+
+Name_Fanboy:
+    .string "Dante$"
