@@ -280,8 +280,8 @@ Present_ConcernedFamilyHouse_Text_GrandmaPregame:
 	.string "I don't remember the details, but what I\n"
 	.string "do remember is that, if there's ever any\l"
 	.string "trouble in the city, we must go settle\l"
-	.string "things at the Shrines of Peace and\l"
-	.string "Prosperity in the forest…$"
+	.string "things at the SHRINEs of PEACE and\l"
+	.string "PROSPERITY in the forest…$"
 
 Present_ConcernedFamilyHouse_Text_DadThatOldWoman:
 	.string "Harumph…\p"

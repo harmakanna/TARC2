@@ -476,6 +476,15 @@ static const struct SubQuest sSubQuestsCatchMons[QUEST_CATCHMONS_SUB_COUNT] =
 	),
 	sub_quest( //10
 	      21,
+	      gText_SubQuestCatchMons_NameAromatisse,
+	      gText_SubQuestCatchMons_DescAromatisse,
+	      gText_SubQuestCatchMons_Map,
+	      SPECIES_AROMATISSE,
+	      PKMN,
+	      sText_Caught
+	),
+	sub_quest( //11
+	      22,
 	      gText_SubQuestCatchMons_NameWoChien,
 	      gText_SubQuestCatchMons_DescWoChien,
 	      gText_SubQuestCatchMons_Map,
@@ -2845,7 +2854,7 @@ void HandleQuestIconForSingleObjectEvent(struct ObjectEvent *objectEvent, u32 ob
 		|| (questId == QUEST_FARMLAND_INVASION_3 && !IsQuestCompletedState(QUEST_FARMLAND_INVASION_2)) //Invasion 3 does not occur until Invasion 2 is complete
 		|| (questId == QUEST_BREAK_A_LEG && !IsQuestCompletedState(QUEST_GET_INTO_THE_GROOVE)) //Break a Leg does not occur until finding the idols is complete
 		|| (questId == QUEST_LUXRAY && !IsQuestCompletedState(QUEST_INVESTIGATE_PROSPERITY)) //Luxray quest does not happen until you get Pokeballs
-		|| (questId == QUEST_FOREVER_FAITHFUL && !IsSubquestCompletedState(SUB_QUEST_DEFEAT_GENIES)))
+		|| (questId == QUEST_FOREVER_FAITHFUL && !FlagGet(FLAG_DEFEATED_SHRINE_GENIES)))
 		// Hypnotized BF quest does not happen unti the weather clears up following Shrine Quest
 	{
 		ResetQuestIconOnObject(objectEvent);

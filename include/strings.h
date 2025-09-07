@@ -2569,6 +2569,8 @@ extern const u8 gText_SubQuestCatchMons_NameAerodactyl[];
 extern const u8 gText_SubQuestCatchMons_DescAerodactyl[];
 extern const u8 gText_SubQuestCatchMons_NameScreamTail[];
 extern const u8 gText_SubQuestCatchMons_DescScreamTail[];
+extern const u8 gText_SubQuestCatchMons_NameAromatisse[];
+extern const u8 gText_SubQuestCatchMons_DescAromatisse[];
 extern const u8 gText_SubQuestCatchMons_NameWoChien[];
 extern const u8 gText_SubQuestCatchMons_DescWoChien[];
 extern const u8 gText_SubQuestCatchMons_Map[];

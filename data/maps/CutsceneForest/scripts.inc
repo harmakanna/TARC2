@@ -45,6 +45,10 @@ CutsceneForest_EventScript_ConfirmCaughtAerodactyl::
 	return
 
 CutsceneForest_EventScript_ConfirmCaughtScreamTail::
+	call_if_set FLAG_CAUGHT_AROMATISSE, CutsceneForest_EventScript_ConfirmCaughtAromatisse
+	return
+
+CutsceneForest_EventScript_ConfirmCaughtAromatisse::
 	call_if_set FLAG_CAUGHT_WO_CHIEN, CutsceneForest_EventScript_ConfirmCaughtWoChien
 	return
 
@@ -190,6 +194,7 @@ CutsceneForest_OnFrame:
 	map_script_2 VAR_CUTSCENE_FOREST_STATE, 13, CutsceneForest_EventScript_StartEncounter
 	map_script_2 VAR_CUTSCENE_FOREST_STATE, 14, CutsceneForest_EventScript_StartEncounter
 	map_script_2 VAR_CUTSCENE_FOREST_STATE, 15, CutsceneForest_EventScript_StartEncounter
+	map_script_2 VAR_CUTSCENE_FOREST_STATE, 16, CutsceneForest_EventScript_StartEncounter
     .2byte 0
 
 CutsceneForest_EventScript_RodentsInitialEncounter::
@@ -333,6 +338,7 @@ CutsceneForest_EventScript_StartEncounter::
 	call_if_eq VAR_CUTSCENE_FOREST_STATE, 13, CutsceneForest_EventScript_AerodactylCry
 	call_if_eq VAR_CUTSCENE_FOREST_STATE, 14, CutsceneForest_EventScript_ScreamTailCry
 	call_if_eq VAR_CUTSCENE_FOREST_STATE, 15, CutsceneForest_EventScript_WoChienCry
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 16, CutsceneForest_EventScript_AromatisseCry
 	closemessage
 	applymovement LOCALID_CAMERA, CutsceneForest_Movement_WalkUp6
 	waitmovement 0
@@ -354,6 +360,7 @@ CutsceneForest_EventScript_StartEncounter::
 	case 13, CutsceneForest_EventScript_Aerodactyl
 	case 14, CutsceneForest_EventScript_ScreamTail
 	case 15, CutsceneForest_EventScript_WoChien
+	case 16, CutsceneForest_EventScript_Aromatisse
 	end
 	
 CutsceneForest_EventScript_RodentCry::
@@ -436,6 +443,12 @@ CutsceneForest_EventScript_ScreamTailCry::
 CutsceneForest_EventScript_WoChienCry::
 	playmoncry SPECIES_WO_CHIEN, CRY_MODE_NORMAL
 	msgbox CutsceneForest_Text_WoChien, MSGBOX_DEFAULT
+	waitmoncry
+	return
+
+CutsceneForest_EventScript_AromatisseCry::
+	playmoncry SPECIES_AROMATISSE, CRY_MODE_NORMAL
+	msgbox CutsceneForest_Text_Aromatisse, MSGBOX_DEFAULT
 	waitmoncry
 	return
 
@@ -781,6 +794,31 @@ CutsceneForest_EventScript_WoChien::
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CutsceneForest_EventScript_EndSlithered
 	setflag FLAG_CAUGHT_WO_CHIEN
 	addvar VAR_NUM_MONS_CAUGHT, 1
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 11
+	returnqueststate QUEST_CATCHMONS
+	call_if_ne VAR_RESULT, 4, CutsceneForest_EventScript_CheckCatchMonsCompleted
+	goto CutsceneForest_EventScript_FinishEncounter
+	releaseall
+	end
+
+CutsceneForest_EventScript_Aromatisse::
+	playmoncry SPECIES_AROMATISSE, CRY_MODE_ENCOUNTER
+	applymovement LOCALID_FOREST_AROMATISSE, CutsceneForest_Movement_MonRushPlayer
+	delay 40
+	waitmovement LOCALID_FOREST_AROMATISSE
+	waitmoncry
+	createmon 1, 0, SPECIES_AROMATISSE, 50, ITEM_BRIGHT_POWDER, 1, NATURE_RASH, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_MOONBLAST, MOVE_ENERGY_BALL, MOVE_THUNDERBOLT, MOVE_TRICK_ROOM
+	setvar VAR_TEMP_1, LOCALID_FOREST_AROMATISSE
+	setvar VAR_0x8004, SPECIES_AROMATISSE
+	dowildbattle
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, CutsceneForest_EventScript_EndRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, CutsceneForest_EventScript_EndRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, CutsceneForest_EventScript_EndRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CutsceneForest_EventScript_EndRan
+	setflag FLAG_CAUGHT_AROMATISSE
+	addvar VAR_NUM_MONS_CAUGHT, 1
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 10
 	returnqueststate QUEST_CATCHMONS
 	call_if_ne VAR_RESULT, 4, CutsceneForest_EventScript_CheckCatchMonsCompleted
@@ -868,9 +906,7 @@ CutsceneForest_Movement_MonRushPlayer:
 CutsceneForest_EventScript_FindSmeargle::
 	lockall
 	special SpawnCameraObject
-	setvar VAR_0x8004, 10  @ x
-	setvar VAR_0x8005, 12  @ y
-	special TeleportCamera
+	applymovement LOCALID_CAMERA, CutsceneForest_Movement_CameraFastPanDown8
 	delay 80
 	fadescreen FADE_FROM_BLACK
 	delay 20
@@ -921,6 +957,17 @@ CutsceneForest_EventScript_FindSmeargle::
 	releaseall
 	end
 
+CutsceneForest_Movement_CameraFastPanDown8:
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	step_end
+
 CutsceneForest_EventScript_UnhideInsideSmeargle::
 	clearflag FLAG_HIDE_INSIDE_SMEARGLE
 	return
@@ -932,9 +979,7 @@ CutsceneForest_EventScript_UnhideOutsideSmeargle::
 CutsceneForest_EventScript_FindLostIdol::
 	lockall
 	special SpawnCameraObject
-	setvar VAR_0x8004, 10  @ x
-	setvar VAR_0x8005, 11  @ y
-	special TeleportCamera
+	applymovement LOCALID_CAMERA, CutsceneForest_Movement_CameraFastPanDown7
 	delay 80
 	fadescreen FADE_FROM_BLACK
 	delay 20
@@ -975,6 +1020,16 @@ CutsceneForest_EventScript_FindLostIdol::
 	releaseall
 	end
 
+CutsceneForest_Movement_CameraFastPanDown7:
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	step_end
+	
 CutsceneForest_Movement_SmeargleExcited:
 	jump_in_place_up
 	jump_in_place_up
@@ -1408,6 +1463,10 @@ CutsceneForest_Text_Aerodactyl:
 
 CutsceneForest_Text_ScreamTail:
 	.string "LalalaLAAAAAAAAA!$"
+
+CutsceneForest_Text_Aromatisse:
+	.string "Ara?\p"
+	.string "Ara-ara-ara-ara-ara!$"
 
 CutsceneForest_Text_WoChien:
 	.string "ooOOOoOOoooOOO!$"

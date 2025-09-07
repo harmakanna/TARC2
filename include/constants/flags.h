@@ -1264,9 +1264,9 @@
 #define FLAG_GAVE_WO_CHIEN_MOCHI                                           0x4BA // Unused Flag
 #define FLAG_GAVE_TORNADUS_MOCHI                                           0x4BB // Unused Flag
 #define FLAG_GAVE_THUNDURUS_MOCHI                                           0x4BC // Unused Flag
-#define FLAG_UNUSED_0x4BD                                           0x4BD // Unused Flag
-#define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag
-#define FLAG_UNUSED_0x4BF                                           0x4BF // Unused Flag
+#define FLAG_HIDE_FOREST_AROMATISSE                                           0x4BD // Unused Flag
+#define FLAG_CAUGHT_AROMATISSE                                           0x4BE // Unused Flag
+#define FLAG_GAVE_AROMATISSE_MOCHI                                           0x4BF // Unused Flag
 #define FLAG_UNUSED_0x4C0                                           0x4C0 // Unused Flag
 #define FLAG_UNUSED_0x4C1                                           0x4C1 // Unused Flag
 #define FLAG_UNUSED_0x4C2                                           0x4C2 // Unused Flag

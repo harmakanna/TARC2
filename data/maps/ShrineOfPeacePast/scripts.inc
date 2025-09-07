@@ -147,16 +147,16 @@ ShrineOfPeacePast_EventScript_CheckSpawnCatchmon::
 	return
 
 ShrineOfPeacePast_EventScript_CheckSpawnCatchmon2::
-	call_if_lt VAR_NUM_MONS_CAUGHT, 12, ShrineOfPeacePast_EventScript_TrySpawnCatchmon
+	call_if_lt VAR_NUM_MONS_CAUGHT, 13, ShrineOfPeacePast_EventScript_TrySpawnCatchmon
 	return
 
 ShrineOfPeacePast_EventScript_TrySpawnCatchmon::
-	randompercentage 20
+	randompercentage 30
 	call_if_eq VAR_RESULT, TRUE, ShrineOfPeacePast_EventScript_SeedCatchMon
 	return
 
 ShrineOfPeacePast_EventScript_SeedCatchMon::
-	randomelement SPECIES_DEDENNE, SPECIES_LURANTIS, SPECIES_LUXRAY, SPECIES_TOEDSCRUEL, SPECIES_FROSMOTH, SPECIES_KLEAVOR, SPECIES_GOODRA, SPECIES_BEHEEYEM, SPECIES_AERODACTYL, SPECIES_SCREAM_TAIL, SPECIES_WO_CHIEN
+	randomelement SPECIES_DEDENNE, SPECIES_LURANTIS, SPECIES_LUXRAY, SPECIES_TOEDSCRUEL, SPECIES_FROSMOTH, SPECIES_KLEAVOR, SPECIES_GOODRA, SPECIES_BEHEEYEM, SPECIES_AERODACTYL, SPECIES_SCREAM_TAIL, SPECIES_WO_CHIEN, SPECIES_AROMATISSE
 	call_if_eq VAR_RESULT, SPECIES_DEDENNE, ShrineOfPeacePast_EventScript_TrySpawnRodent
 	call_if_eq VAR_RESULT, SPECIES_LURANTIS, ShrineOfPeacePast_EventScript_TrySpawnLurantis
 	call_if_eq VAR_RESULT, SPECIES_LUXRAY, ShrineOfPeacePast_EventScript_TrySpawnLuxray
@@ -168,6 +168,7 @@ ShrineOfPeacePast_EventScript_SeedCatchMon::
 	call_if_eq VAR_RESULT, SPECIES_AERODACTYL, ShrineOfPeacePast_EventScript_TrySpawnAerodactyl
 	call_if_eq VAR_RESULT, SPECIES_SCREAM_TAIL, ShrineOfPeacePast_EventScript_TrySpawnScreamTail
 	call_if_eq VAR_RESULT, SPECIES_WO_CHIEN, ShrineOfPeacePast_EventScript_TrySpawnWoChien
+	call_if_eq VAR_RESULT, SPECIES_AROMATISSE, ShrineOfPeacePast_EventScript_TrySpawnAromatisse
 	return
 
 ShrineOfPeacePast_EventScript_TrySpawnRodent::
@@ -300,6 +301,16 @@ ShrineOfPeacePast_EventScript_SpawnWoChien::
 	setvar VAR_CUTSCENE_FOREST_STATE, 15
 	return
 
+@Aromatisse will not recall SeedCatchMon due to multiple VAR_RESULT declarations
+ShrineOfPeacePast_EventScript_TrySpawnAromatisse::
+	returnqueststate QUEST_FOREVER_FAITHFUL
+	call_if_eq VAR_RESULT, 4, ShrineOfPeacePast_EventScript_SpawnAromatisse
+	return
+
+ShrineOfPeacePast_EventScript_SpawnAromatisse::
+	setvar VAR_TRIGGER_CUTSCENE_FOREST, 1
+	setvar VAR_CUTSCENE_FOREST_STATE, 16
+
 @Ensures there's a hard stop to the call logic in case of a case of nested calls crashing the game (unknown)
 ShrineOfPeacePast_EventScript_ReseedCatchMon::
 	addvar VAR_TRY_CATCHMON_CALL_LIMIT, 1
@@ -315,7 +326,7 @@ ShrineOfPeacePast_EventScript_HandleLostIdolSpawn::
 	return
 
 ShrineOfPeacePast_EventScript_TrySpawnLostIdol::
-	randompercentage 34
+	randompercentage 45
 	call_if_eq VAR_RESULT, TRUE, ShrineOfPeacePast_EventScript_SpawnLostIdol
 	return
 
@@ -333,7 +344,7 @@ ShrineOfPeacePast_EventScript_HandleLostSmeargleSpawn::
 	return
 
 ShrineOfPeacePast_EventScript_TrySpawnLostSmeargle::
-	randompercentage 25
+	randompercentage 30
 	call_if_eq VAR_RESULT, TRUE, ShrineOfPeacePast_EventScript_SpawnLostSmeargle
 	return
 
@@ -343,7 +354,7 @@ ShrineOfPeacePast_EventScript_SpawnLostSmeargle::
 	return
 	
 ShrineOfPeacePast_EventScript_HandlePresentGenieSpawns::
-	randompercentage 10
+	randompercentage 20
 	call_if_eq VAR_RESULT, TRUE, ShrineOfPeacePast_EventScript_TrySpawnPresentGenies
 	return
 

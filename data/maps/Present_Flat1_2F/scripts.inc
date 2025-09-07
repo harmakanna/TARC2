@@ -143,11 +143,11 @@ Present_Flat1_2F_Text_BeautyOhSir:
 	.string "Where could he have gone…$"
 
 Present_Flat1_2F_Text_BeautyHesMissing:
-	.string "Oh, mister!\n"
+	.string "Oh, mister!\p"
 	.string "I asked my boyfriend to go out and\n"
 	.string "get us some groceries, but then the\l"
 	.string "storm hit!\p"
-	.string "I thought he might have ran inside\n"
+	.string "I thought he might have run inside\n"
 	.string "somewhere to wait it out, but it's\l"
 	.string "over and he's still not home…\p"
 	.string "Could you please try to find where\n"

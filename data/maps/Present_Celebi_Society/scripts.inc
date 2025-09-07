@@ -108,6 +108,7 @@ Present_CelebiSociety_EventScript_CheckForMochi::
 	call_if_unset FLAG_GAVE_FROSMOTH_MOCHI, Present_CelebiSociety_EventScript_CheckMochiFrosmoth
 	call_if_unset FLAG_GAVE_AERODACTYL_MOCHI, Present_CelebiSociety_EventScript_CheckMochiAerodactyl
 	call_if_unset FLAG_GAVE_LURANTIS_MOCHI, Present_CelebiSociety_EventScript_CheckMochiLurantis
+	call_if_unset FLAG_GAVE_AROMATISSE_MOCHI, Present_CelebiSociety_EventScript_CheckMochiAromatisse
 	call_if_unset FLAG_GAVE_LUXRAY_MOCHI, Present_CelebiSociety_EventScript_CheckMochiLuxray
 	call_if_unset FLAG_GAVE_WO_CHIEN_MOCHI, Present_CelebiSociety_EventScript_CheckMochiWoChien
 	call_if_unset FLAG_GAVE_BEHEEYEM_MOCHI, Present_CelebiSociety_EventScript_CheckMochiBeheeyem
@@ -355,6 +356,20 @@ Present_CelebiSociety_EventScript_GiveMochiThundurus::
 	setflag FLAG_GAVE_THUNDURUS_MOCHI
 	return
 
+Present_CelebiSociety_EventScript_CheckMochiAromatisse::
+	call_if_set FLAG_CAUGHT_AROMATISSE, Present_CelebiSociety_EventScript_GiveMochiAromatisse
+	return
+
+Present_CelebiSociety_EventScript_GiveMochiAromatisse::
+	bufferspeciesname STR_VAR_1, SPECIES_AROMATISSE
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManOhAromatisse
+	additem ITEM_HP_MOCHI, 2
+	additem ITEM_SPATK_MOCHI, 1
+	additem ITEM_SPDEF_MOCHI, 1
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
+	setflag FLAG_GAVE_AROMATISSE_MOCHI
+	return
+
 Present_CelebiSociety_EventScript_MochiResetter::
 	lockall
 	faceplayer
@@ -453,11 +468,11 @@ Present_CelebiSociety_Text_Grandma:
 	.string "Luxray when she came to my rescue!\p"
 	.string "Let me tell you, I was nauseous for a\n"
 	.string "full week after that!\p"
-	.string "Sending me through time DID cause me to\n"
-	.string "see the future here and there for a few\l"
-	.string "days afterward…\p"
-	.string "Wheeehehehe! That's how I met my husband!\n"
-	.string "Have you experienced it?$"
+	.string "Sending me through time DID cause me\n"
+	.string "to see the future here and there for\l"
+	.string "a few days afterward…\p"
+	.string "Wheeehehehe! That's how I met my\n"
+	.string "husband! Have you experienced it?$"
 	
 Present_CelebiSociety_Text_MochiResetterIntro:
 	.string "Oh, that silly old man there is always\n"
@@ -564,8 +579,15 @@ Present_CelebiSociety_Text_MochiManOhDarkLuxray:
 	.string "POKéMON even existed!\p"
 	.string "Here, have some MOCHI!$"
 
+Present_CelebiSociety_Text_MochiManOhAromatisse:
+	.string "Oh? You caught an {STR_VAR_1}?\n"
+	.string "Eeheehee! I thought I saw that\l"
+	.string "POKéMON get frisky with a local man!\p"
+	.string "How SCANDALOUS!\p"
+	.string "Here, have some MOCHI!$"
+
 Present_CelebiSociety_Text_MochiManOhAerodactyl:
-	.string "Oh? You caught a {STR_VAR_1}?\n"
+	.string "Oh? You caught an {STR_VAR_1}?\n"
 	.string "Eeeheeehee! Maybe it's the one who\l"
 	.string "yoinked me as a wee child! Who knows!\p" 
 	.string "Here, have some MOCHI!$"
@@ -605,7 +627,7 @@ Present_CelebiSociety_Text_GrandmaThatIsIncredible:
 	.string "How incredible…\p"
 	.string "We here at the Celebi Society meet\n"
 	.string "every month to clear the weeds and\l"
-	.string "maintain the shrines.\p"
+	.string "maintain the SHRINEs.\p"
 	.string "To think, Celebi is still out there…\p"
 	.string "Such a thought brings peace to my soul.$"
 
@@ -617,14 +639,14 @@ Present_CelebiSociety_Text_GrandmaIWish:
 	.string "I wish that were the case.\p"
 	.string "When the city became a major port, its\n"
 	.string "people let go of the traditions set\l"
-	.string "at Porta Bella's founding.\p"
+	.string "at PORTA BELLA's founding.\p"
 	.string "We still maintain the oral traditions,\n"
 	.string "but many of us are getting old…\p"
 	.string "Only locals know of the importance of\n"
-	.string "the spirits of Peace and Prosperity,\l"
+	.string "the spirits of PEACE and PROSPERITY,\l"
 	.string "but even still…\p"
 	.string "Very few people have reverence for\n"
-	.string "the spirits who gave Porta Bella its\l"
+	.string "the spirits who gave PORTA BELLA its\l"
 	.string "peaceful skies and fertile land…\p"
 	.string "We fear these stories will die with\n"
 	.string "us, only written in books as fables…$"

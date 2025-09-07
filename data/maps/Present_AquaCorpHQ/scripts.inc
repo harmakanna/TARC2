@@ -572,7 +572,7 @@ Present_AquaCorpHQ_EventScript_Sarah::
 	goto_if_set FLAG_SPOKE_TO_ANGRY_MAN_POST_AQUACORP, Present_AquaCorpHQ_EventScript_SarahBlush
 	msgbox Present_AquaCorpHQ_Text_SarahNPC, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_AQUACORP_SARAH, Common_Movement_FaceDown
+	applymovement LOCALID_AQUACORP_SARAH, Common_Movement_FaceUp
 	waitmovement 0
 	release
 	end
@@ -580,7 +580,7 @@ Present_AquaCorpHQ_EventScript_Sarah::
 Present_AquaCorpHQ_EventScript_SarahBlush::
 	msgbox Present_AquaCorpHQ_Text_SarahBlushNPC, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_AQUACORP_SARAH, Common_Movement_FaceDown
+	applymovement LOCALID_AQUACORP_SARAH, Common_Movement_FaceUp
 	waitmovement 0
 	release
 	end

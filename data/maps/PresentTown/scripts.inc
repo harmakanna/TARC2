@@ -136,6 +136,7 @@ PresentTown_OnFrame:
 	map_script_2 VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1, PresentTown_EventScript_LookerThinkingScenes
 	map_script_2 VAR_CATCH_GENIES_QUEST, 4, PresentTown_EventScript_FinishGeniesQuest
 	map_script_2 VAR_CUTSCENE_FOREST_STATE, 1, PresentTown_EventScript_LostIdolThankYou
+	map_script_2 VAR_CUTSCENE_FOREST_STATE, 2, PresentTown_EventScript_LostSmeargleGoHome
 	.2byte 0
 
 PresentTown_EventScript_LostIdolThankYou::
@@ -811,6 +812,7 @@ PresentTown_EventScript_CatchProsperityRangerAttention2::
 	lockall
 	applymovement LOCALID_PRESENT_PROSPERITY_RANGER, Common_Movement_WalkInPlaceFasterLeft
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	speakername Name_Ranger
 	msgbox PresentTown_Text_ProsperityRangerNoPassing, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
@@ -823,18 +825,21 @@ PresentTown_EventScript_ProsperityRanger::
 	faceplayer
 	goto_if_eq VAR_CUTSCENE_STATE, 4, PresentTown_EventScript_ProsperityRangerOhNo
 	goto_if_eq VAR_QUEUE_GENIE_FIGHT, 1, PresentTown_EventScript_ProsperityRangerNoPassing
+	speakername Name_Ranger
 	msgbox PresentTown_Text_ProsperityRangerYouCanPass, MSGBOX_DEFAULT
 	closemessage
 	releaseall
 	end
 
 PresentTown_EventScript_ProsperityRangerNoPassing::
+	speakername Name_Ranger
 	msgbox PresentTown_Text_ProsperityRangerNoPassing, MSGBOX_DEFAULT
 	closemessage
 	releaseall
 	end
 
 PresentTown_EventScript_ProsperityRangerOhNo::
+	speakername Name_Ranger
 	msgbox PresentTown_Text_ProsperityOhNoIWasSupposedTo, MSGBOX_DEFAULT
 	closemessage
 	releaseall
