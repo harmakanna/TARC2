@@ -4420,7 +4420,7 @@ static const struct LevelUpMove sKabutopsLevelUpLearnset[] = {
 static const struct LevelUpMove sAerodactylLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_PROTECT),
     LEVEL_UP_MOVE( 1, MOVE_STONE_EDGE),
-    LEVEL_UP_MOVE( 1, MOVE_SKY_DROP),
+    LEVEL_UP_MOVE( 1, MOVE_DOUBLE_EDGE),
     LEVEL_UP_MOVE( 1, MOVE_HONE_CLAWS),
     LEVEL_UP_MOVE( 1, MOVE_SMACK_DOWN),
     LEVEL_UP_MOVE( 1, MOVE_SKY_ATTACK),
