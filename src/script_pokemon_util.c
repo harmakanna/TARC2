@@ -150,6 +150,25 @@ static const struct InGameOT sIngameOTs[] =
         .isNicknamed = FALSE,
         .nickname = _(""),
     },
+    [OT_PHOEBE_CERULEDGE] =
+    {
+        .species = SPECIES_CERULEDGE,
+        .level = 50,
+        .heldItem = ITEM_UTILITY_UMBRELLA,
+        .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
+        .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
+        .moves = {MOVE_BITTER_BLADE, MOVE_SHADOW_SNEAK, MOVE_SWORDS_DANCE, MOVE_PROTECT},
+        .ball = BALL_LUXURY,
+        .nature = NATURE_CAREFUL,
+        .abilityNum = 0,
+        .gender = MON_FEMALE,
+        .otId = 60632,
+        .otName = _("Phoebe"),
+        .otGender = FEMALE,
+        .isShiny = FALSE,
+        .isNicknamed = FALSE,
+        .nickname = _(""),
+    },
     [OT_SHELLY_HUNTAIL] =
     {
         .species = SPECIES_HUNTAIL,
