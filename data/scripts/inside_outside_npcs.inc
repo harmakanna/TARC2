@@ -595,6 +595,7 @@ InsideOutside_EventScript_StudentPregame::
     end
     
 InsideOutside_EventScript_StudentPreQuest::
+    setflag FLAG_SYS_DISAPPEAR_QUESTS
     speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentStruggling
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_WhatSeemsToBeTheProblem
     speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentBrainGoingInLoops
@@ -603,6 +604,7 @@ InsideOutside_EventScript_StudentPreQuest::
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerSureLetsTryIt
     speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentGreat
     startquest QUEST_INVERSE
+    clearflag FLAG_SYS_DISAPPEAR_QUESTS
     release
     end
 
@@ -710,6 +712,7 @@ InsideOutside_EventScript_ArtistPregame::
     end
 
 InsideOutside_EventScript_ArtistPreQuest::
+    setflag FLAG_SYS_DISAPPEAR_QUESTS
     speak VAR_TEMP_1, VAR_0x8005, Name_Artist, InsideOutside_Text_ArtistAiyee
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_WhatSeemsToBeTheProblem
     speak VAR_TEMP_1, VAR_0x8005, Name_Artist, InsideOutside_Text_ArtistMySmeargle
@@ -717,6 +720,7 @@ InsideOutside_EventScript_ArtistPreQuest::
     speak VAR_TEMP_1, VAR_0x8005, Name_Artist, InsideOutside_Text_ArtistThankYou
     startquest QUEST_SMEARGLE
     setflag FLAG_CAN_SPAWN_SMEARGLE
+    clearflag FLAG_SYS_DISAPPEAR_QUESTS
     release
     end
     
@@ -729,6 +733,7 @@ InsideOutside_EventScript_ArtistQuest::
     end
 
 InsideOutside_EventScript_ArtistReward::
+    setflag FLAG_SYS_DISAPPEAR_QUESTS
     speak VAR_TEMP_1, VAR_0x8005, Name_Artist, InsideOutside_Text_ArtistOhSir
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_GladICouldHelp
     closemessage
@@ -814,6 +819,7 @@ InsideOutside_EventScript_ArtistFinishQuest::
     waitmovement 0
     fadescreen FADE_FROM_BLACK
     completequest QUEST_SMEARGLE
+    clearflag FLAG_SYS_DISAPPEAR_QUESTS
     release
     end
     
@@ -882,6 +888,73 @@ InsideOutside_EventScript_FanboyPregame::
     closemessage
     release
     end
+
+InsideOutside_EventScript_ObservantWoman::
+    speakername Name_Observant_Woman
+    goto_if_unset FLAG_DEFEATED_SHRINE_GENIES, InsideOutside_EventScript_ObservantWomanPreGenies
+    returnqueststate QUEST_FOREVER_FAITHFUL
+    goto_if_ne VAR_RESULT, 4, InsideOutside_EventScript_ObservantWomanQuest
+    msgbox InsideOutside_Text_ObservantWomanPostQuest, MSGBOX_NPC
+    end
+    
+InsideOutside_EventScript_ObservantWomanQuest::
+    msgbox InsideOutside_Text_ObservantWomanQuest, MSGBOX_NPC
+    end
+
+InsideOutside_EventScript_ObservantWomanPreGenies::
+    msgbox InsideOutside_Text_ObservantWomanPeopleWatcher, MSGBOX_NPC
+    end
+
+InsideOutside_EventScript_RunningWoman::
+    msgbox InsideOutside_Text_RunningWoman, MSGBOX_NPC
+    end
+
+InsideOutside_Text_RunningWoman::
+    .string "The barista at Taurin' Torin's\n"
+    .string "Tauros Café is the absolute best!\p"
+    .string "I always get the Espresso Matcha\n"
+    .string "Latte with milk and sugar!\l"
+    .string "And a blonde espresso shot!\l"
+    .string "No ice!\l"
+    .string "3 scoops Vanialla Bean Powder,\l"
+    .string "6 shots chai,\l"
+    .string "and 6 shots white mocha!\p"
+    .string "Extra whipped cream,\n"
+    .string "extra sweet cream,\l"
+    .string "EXTRA cookie crumble,\l"
+    .string "extra salted brown butter,\l"
+    .string "and a nice helping of Carbos!$"
+    .string "Apparently he spices the drink with\n"
+    .string "special mints from the forest, too!\p"
+    .string "Those make it taste LUDICROUSLY sweet!\n"
+    .string "Think they do anything for you?$"
+
+InsideOutside_Text_ObservantWomanPeopleWatcher:
+    .string "You know what's a fun activity?\p"
+    .string "People watching.\p"
+    .string "Being a tourist hotspot, all kinds of\n"
+    .string "strange people roam the streets, both\l"
+    .string "local and from abroad.\p"
+    .string "You should try it some time!$"
+
+InsideOutside_Text_ObservantWomanQuest:
+    .string "Say, have you seen this one man around\n"
+    .string "recently?\p"
+    .string "Total wife guy. Absolutely can't take his\n"
+    .string "eyes off her.\p"
+    .string "Well, believe it or not, but I saw him all\n"
+    .string "lovey-dovey with a rather strange Pokémon!\p"
+    .string "It's all feathery and looked like it had a\n"
+    .string "beak. Was it a bird?\p"
+    .string "No way… It was pink and had no wings!\n"
+    .string "Curious!$"
+
+InsideOutside_Text_ObservantWomanPostQuest:
+    .string "I saw an Aromatisse all frazzled and\n"
+    .string "sprinting from the port to the woods!\p"
+    .string "I wonder if it's been weakened enough to\n"
+    .string "be able to catch.\p"
+    .string "Maybe I'll try it later?$"
 
 InsideOutside_Text_FanboyFanboying:
     .string "Oh boy, oh boy, oh boy!\n"

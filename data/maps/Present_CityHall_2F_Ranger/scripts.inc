@@ -23,6 +23,7 @@ Present_CityHall_2F_Ranger_EventScript_HeadRangerBusy:
 	end
 
 Present_CityHall_2F_Ranger_EventScript_HeadRangerInitiateQuest::
+	setflag FLAG_SYS_DISAPPEAR_QUESTS
 	call Script_GetNPCFacingDirection
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_CityHall_2F_Ranger_Text_LookerHello
 	speak LOCALID_CITYHALL_RANGER, VAR_0x8005, Name_Head_Ranger, Present_CityHall_2F_Ranger_Text_HeadRangerGladYouMadeItOut
@@ -32,6 +33,7 @@ Present_CityHall_2F_Ranger_EventScript_HeadRangerInitiateQuest::
 	applymovement LOCALID_CITYHALL_RANGER, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	startquest QUEST_INVESTIGATE_PROSPERITY
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	setvar VAR_QUEUE_GENIE_FIGHT, 2
 	release
 	end

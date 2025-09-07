@@ -488,8 +488,8 @@ Past_House2_EventScript_Purrloin::
 
 Past_House2_Text_MamaTastyMint:
 	.string "The Tasty Mint…?\p"
-	.string "If it were around, you could find\n"
-	.string "it at the Shrine of Prosperity…\p"
+	.string "If it were around, you could find it\n"
+	.string "in the forest…\p"
 	.string "Sadly, it only grows once every 100\n"
 	.string "years…$"
 	

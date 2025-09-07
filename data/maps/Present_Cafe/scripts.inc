@@ -350,11 +350,13 @@ Present_Cafe_EventScript_MayCulpritPostQuestGiveMon::
 	end
 
 Present_Cafe_EventScript_BaristaSide::
+	setvar VAR_0x8004, DIR_WEST
 	setvar VAR_0x8005, DIR_EAST
 	goto Present_Cafe_EventScript_Barista
 	end
 	
 Present_Cafe_EventScript_BaristaUp::
+	setvar VAR_0x8004, DIR_NORTH
 	setvar VAR_0x8005, DIR_SOUTH
 	goto Present_Cafe_EventScript_Barista
 	end
@@ -380,14 +382,16 @@ Present_Cafe_EventScript_BaristaPreGame::
 	end
 	
 Present_Cafe_EventScript_BaristaPreQuest::
+	setflag FLAG_SYS_DISAPPEAR_QUESTS
 	speak LOCALID_CAFE_BARISTA, VAR_0x8005, Name_Barista, Present_Cafe_Text_BaristaNervous
 	speakername NULL
 	msgbox Present_Cafe_Text_BaristaSweating, MSGBOX_DEFAULT
-	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_YouDontLookVeryGood
+	speak LOCALID_PLAYER, VAR_0x8004, Name_Looker, Looker_Text_YouDontLookVeryGood
 	speak LOCALID_CAFE_BARISTA, VAR_0x8005, Name_Barista, Present_Cafe_Text_BaristaIsCooked
-	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_IWillHandleThis
+	speak LOCALID_PLAYER, VAR_0x8004, Name_Looker, Looker_Text_IWillHandleThis
 	speak LOCALID_CAFE_BARISTA, VAR_0x8005, Name_Barista, Present_Cafe_Text_BaristaLifesaver
 	startquest QUEST_GET_INTO_THE_GROOVE
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	release
 	end
 	
@@ -398,11 +402,13 @@ Present_Cafe_EventScript_BaristaQuest::
 	end
 
 Present_Cafe_EventScript_BaristaReward::
+	setflag FLAG_SYS_DISAPPEAR_QUESTS
 	speak LOCALID_CAFE_BARISTA, VAR_0x8005, Name_Barista, Present_Cafe_Text_BaristaYouDidIt
-	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_AlwaysHappyToHelp
-	speak LOCALID_CAFE_BARISTA, VAR_0x8005, Name_Barista, Present_Cafe_Text_BaristaImBroke
+	speak LOCALID_PLAYER, VAR_0x8004, Name_Looker, Looker_Text_AlwaysHappyToHelp
+	speak LOCALID_CAFE_BARISTA, VAR_0x8004, Name_Barista, Present_Cafe_Text_BaristaImBroke
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Cafe_Text_LookerThatSoundsWonderful
 	completequest QUEST_GET_INTO_THE_GROOVE
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	release
 	end
 
@@ -515,12 +521,14 @@ Present_Cafe_EventScript_Lisia::
 	end
 
 Present_Cafe_EventScript_LisiaGiveQuest::
+	setflag FLAG_SYS_DISAPPEAR_QUESTS
 	speak LOCALID_CAFE_LISIA, VAR_0x8005, Name_Lisia, Present_Cafe_Text_LisiaNoHeadway
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_HowCanIHelp
 	speak LOCALID_CAFE_LISIA, VAR_0x8005, Name_Lisia, Present_Cafe_Text_LisiaWereOffTempo
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_Indeed
 	speak LOCALID_CAFE_LISIA, VAR_0x8005, Name_Lisia, Present_Cafe_Text_LisiaGreat
 	startquest QUEST_BREAK_A_LEG
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	applymovement LOCALID_CAFE_LISIA, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	releaseall

@@ -22,8 +22,14 @@ Name_Sarah:
 Name_Sheldon:
     .string "Sheldon$"
     
-Name_Aqua_Grunt:
-    .string "Aqua Grunt$"
+Name_Aqua_Grunt_F:
+    .string "Aqua Grunt F$"
+
+Name_Aqua_Grunt_M:
+    .string "Aqua Grunt M$"
+
+Name_Scientist:
+    .string "Scientist$"
 
 Name_Mayor:
     .string "Mr. Morrigan$"
@@ -258,3 +264,7 @@ Name_Center_Cooltrainer:
 
 Name_Fanboy:
     .string "Dante$"
+
+Name_Observant_Woman:
+    .string "Helen$"
+    

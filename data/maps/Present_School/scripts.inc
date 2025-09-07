@@ -154,6 +154,7 @@ Present_School_EventScript_TwinPreGenies::
 	end
 
 Present_School_EventScript_TwinPreQuest::
+	setflag FLAG_SYS_DISAPPEAR_QUESTS
 	speak LOCALID_SCHOOL_TWIN, VAR_0x8005, Name_Twin, Present_School_Text_TwinAaa
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_IsSomethingWrong
 	speak LOCALID_SCHOOL_TWIN, VAR_0x8005, Name_Twin, Present_School_Text_TwinThisLameo
@@ -177,6 +178,7 @@ Present_School_EventScript_TwinPreQuest::
 	startquest QUEST_LUXRAY
 	call_if_set FLAG_CAUGHT_LUXRAY, Present_School_EventScript_SetTwinReward
 	call_if_set FLAG_CAUGHT_LUXRAY_DARK, Present_School_EventScript_SetTwinReward
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	releaseall
 	end
 
@@ -193,6 +195,7 @@ Present_School_EventScript_TwinQuest::
 	end
 
 Present_School_EventScript_TwinReward::
+	setflag FLAG_SYS_DISAPPEAR_QUESTS
 	speak LOCALID_SCHOOL_TWIN, VAR_0x8005, Name_Twin, Present_School_Text_TwinDidYouBringIt
 	special ChoosePartyMon
 	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, Present_School_EventScript_TwinNothingChosen
@@ -202,12 +205,14 @@ Present_School_EventScript_TwinReward::
 	closemessage
 	applymovement LOCALID_SCHOOL_TWIN, Common_Movement_FaceOriginalDirection
 	waitmovement 0
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	releaseall
 	end
 
 Present_School_EventScript_TwinNothingChosen::
 	speak LOCALID_SCHOOL_TWIN, VAR_0x8005, Name_Twin, Present_School_Text_TwinNoMonSelected
 	closemessage
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	releaseall
 	end
 
@@ -229,6 +234,7 @@ Present_School_EventScript_TwinQuestCompletion::
 	speakername NULL
 	giveitem ITEM_TM_WATER_PULSE, 1 @replaced with Helping Hand 
 	completequest QUEST_LUXRAY
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	releaseall
 	end
 
@@ -303,6 +309,7 @@ Present_School_EventScript_TwinSecretQuestCompletion::
 	completequest QUEST_LUXRAY
 	closemessage
 	setflag FLAG_SHOWN_DARK_LUXRAY
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	releaseall
 	end
 

@@ -54,12 +54,14 @@ Present_Flat1_2F_EventScript_BeautyPreGenies::
 	end
 
 Present_Flat1_2F_EventScript_BeautyPreQuest::
+	setflag FLAG_SYS_DISAPPEAR_QUESTS
 	speak LOCALID_LOVEYDOVEY_WOMAN, VAR_0x8005, Name_Beauty, Present_Flat1_2F_Text_BeautyOhSir
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_IsSomethingWrong
 	speak LOCALID_LOVEYDOVEY_WOMAN, VAR_0x8005, Name_Beauty, Present_Flat1_2F_Text_BeautyHesMissing
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_ImOnTheCase
 	speak LOCALID_LOVEYDOVEY_WOMAN, VAR_0x8005, Name_Beauty, Present_Flat1_2F_Text_BeautyThankYou
 	startquest QUEST_FOREVER_FAITHFUL
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	closemessage
 	release
 	end
@@ -71,6 +73,7 @@ Present_Flat1_2F_EventScript_BeautyQuest::
 	end
 
 Present_Flat1_2F_EventScript_BeautyReward::
+	setflag FLAG_SYS_DISAPPEAR_QUESTS
 	speak LOCALID_LOVEYDOVEY_WOMAN, VAR_0x8005, Name_Beauty, Present_Flat1_2F_Text_BeautyHesBack
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_AllInADaysWork
 	speak LOCALID_LOVEYDOVEY_WOMAN, VAR_0x8005, Name_Beauty, Present_Flat1_2F_Text_BeautyWhichMon 
@@ -82,6 +85,7 @@ Present_Flat1_2F_EventScript_BeautyReward::
 
 Present_Flat1_2F_EventScript_BeautyFinishQuest::
 	completequest QUEST_FOREVER_FAITHFUL
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	release
 	end
 

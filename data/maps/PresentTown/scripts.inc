@@ -697,14 +697,14 @@ PresentTown_EventScript_FinishMattCutscene::
 	hideobjectat LOCALID_PRESENTTOWN_MATT, MAP_PRESENT_TOWN
 	closedoor 15, 34
 	waitdooranim
-	speakername Name_Aqua_Grunt
+	speakername Name_Aqua_Grunt_F
 	message PresentTown_Text_AquaMemberFWait
 	waitmessage
 	applymovement LOCALID_PRESENTTOWN_GRUNT, PresentTown_Movement_GruntFollowsMatt
 	waitmovement 0
 	closemessage
 	delay 80
-	speak LOCALID_PRESENTTOWN_GRUNT, VAR_0x8005, Name_Aqua_Grunt, PresentTown_Text_AquaMemberFNowHesMad
+	speak LOCALID_PRESENTTOWN_GRUNT, VAR_0x8005, Name_Aqua_Grunt_F, PresentTown_Text_AquaMemberFNowHesMad
 	setobjectxyperm LOCALID_PRESENTTOWN_GRUNT, 15, 35
 	setobjectmovementtype LOCALID_PRESENTTOWN_GRUNT, MOVEMENT_TYPE_FACE_UP
 	applymovement LOCALID_PRESENTTOWN_GRUNT, Common_Movement_FaceUp

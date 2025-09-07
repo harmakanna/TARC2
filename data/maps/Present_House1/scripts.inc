@@ -25,6 +25,7 @@ Present_House1_EventScript_AilingMan::
 	end
 
 Present_House1_EventScript_AilingManQuestActivate::
+	setflag FLAG_SYS_DISAPPEAR_QUESTS
 	speak LOCALID_PRESENT_SICK_MAN, DIR_SOUTH, Name_Sick_Man, Present_House1_Text_AilingManPregame
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_WhatSeemsToBeTheProblem
 	speak LOCALID_PRESENT_SICK_MAN, DIR_SOUTH, Name_Sick_Man, Present_House1_Text_AilingManMyTimeIsUp
@@ -33,6 +34,7 @@ Present_House1_EventScript_AilingManQuestActivate::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_IWillHandleThis
 	speak LOCALID_PRESENT_SICK_MAN, DIR_SOUTH, Name_Sick_Man, Present_House1_Text_AilingManGroan
 	startquest QUEST_HOMEGROWN_REMEDIES
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	release
 	end
 
@@ -44,6 +46,7 @@ Present_House1_EventScript_AilingManQuestActive::
 	end
 
 Present_House1_EventScript_AilingManQuestReward::
+	setflag FLAG_SYS_DISAPPEAR_QUESTS
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_IFoundWhatYoureLookingFor
 	speak LOCALID_PRESENT_SICK_MAN, DIR_SOUTH, Name_Sick_Man, Present_House1_Text_AilingManPleaseGiveIt
 	call Script_GetNPCFacingDirection
@@ -61,6 +64,7 @@ Present_House1_EventScript_AilingManQuestReward::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_GladICouldHelp
 	speak LOCALID_PRESENT_SICK_MAN, VAR_0x8005, Name_Well_Man, Present_House1_Text_AilingManCanTeachMoves
 	completequest QUEST_HOMEGROWN_REMEDIES
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	release
 	end
 
