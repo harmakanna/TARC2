@@ -107,7 +107,7 @@
 // - MOVE_SUBSTITUTE                                   //
 // - MOVE_TERA_BLAST                                   //
 // - MOVE_HELPING_HAND                                 //
-// - MOVE_U_TURN                                       //
+// - MOVE_BATON_PASS                                   //
 // *************************************************** //
 
 static const u16 sNoneTeachableLearnset[] = {

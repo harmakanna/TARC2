@@ -1045,7 +1045,6 @@ Difficulty: Hard
 
 Omastar @ Focus Sash  
 Ability: Weak Armor  
-Tera Type: Rock  
 Level: 50
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
 - Surf  
@@ -1055,7 +1054,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Cradily @ Leftovers  
 Ability: Storm Drain  
-Tera Type: Rock  
 Level: 50
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
 - Giga Drain  
@@ -1065,7 +1063,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Archeops  
 Ability: Defeatist  
-Tera Type: Rock  
 Level: 50
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
 - Heat Wave  
@@ -1129,7 +1126,6 @@ Difficulty: Hard
 Mudsdale @ Lum Berry  
 Ability: Stamina  
 Level: 50  
-Tera Type: Bug  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Body Press  
 - High Horsepower  
@@ -1139,7 +1135,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Miltank (F) @ Lum Berry  
 Ability: Thick Fat  
 Level: 50  
-Tera Type: Bug  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Body Slam  
 - Growl  
@@ -1149,7 +1144,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Alcremie (F) @ Lum Berry  
 Ability: Sweet Veil  
 Level: 50  
-Tera Type: Bug  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Mystical Fire  
 - Recover  
@@ -1159,7 +1153,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Tauros (M) @ Lum Berry  
 Ability: Intimidate  
 Level: 50  
-Tera Type: Bug  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Trailblaze  
 - Close Combat  
@@ -1489,14 +1482,14 @@ IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Poltergeist  
 - Pain Split  
 
-Machamp  
+Conkeldurr @ Flame Orb  
 Ability: Guts  
-Level: 50  
+Level: 50   
 IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Cross Chop  
-- Darkest Lariat  
-- Thunder Punch  
-- Coaching  
+- Drain Punch  
+- Mach Punch  
+- Ice Punch  
+- Wide Guard
 
 Sharpedo-Mega @ Sharpedonite  
 Ability: Speed Boost  
@@ -1784,7 +1777,6 @@ Difficulty: Hard
 Blastoise  
 Ability: Torrent  
 Level: 50  
-Tera Type: Water  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Surf  
 - Strength  
@@ -1794,7 +1786,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Exeggutor @ Leftovers  
 Ability: Chlorophyll  
 Level: 50  
-Tera Type: Grass  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Psychic  
 - Giga Drain  
@@ -1804,7 +1795,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Rhydon @ Eviolite  
 Ability: Lightning Rod  
 Level: 50  
-Tera Type: Ground  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Body Press  
 - Earthquake  
@@ -1814,7 +1804,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Alakazam @ Life Orb  
 Ability: Magic Guard  
 Level: 50  
-Tera Type: Psychic  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Recover  
 - Psyshock  
@@ -1824,7 +1813,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Pidgeot-Mega @ Pidgeotite  
 Ability: No Guard  
 Level: 50  
-Tera Type: Normal  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Fly  
 - Heat Wave  
@@ -1844,7 +1832,6 @@ Difficulty: Hard
 Blastoise  
 Ability: Torrent  
 Level: 50  
-Tera Type: Water  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Surf  
 - Strength  
@@ -1854,7 +1841,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Exeggutor @ Leftovers  
 Ability: Chlorophyll  
 Level: 50  
-Tera Type: Grass  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Psychic  
 - Giga Drain  
@@ -1864,7 +1850,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Rhydon @ Eviolite  
 Ability: Lightning Rod  
 Level: 50  
-Tera Type: Ground  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Body Press  
 - Earthquake  
@@ -1874,7 +1859,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Alakazam @ Life Orb  
 Ability: Magic Guard  
 Level: 50  
-Tera Type: Psychic  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Recover  
 - Psyshock  
@@ -1884,7 +1868,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Pidgeot-Mega @ Pidgeotite  
 Ability: No Guard  
 Level: 50  
-Tera Type: Normal  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Fly  
 - Heat Wave  
@@ -1913,7 +1896,6 @@ Difficulty: Hard
 Swellow @ Flame Orb  
 Ability: Guts  
 Level: 50  
-Tera Type: Normal  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Quick Attack  
 - Fly  
@@ -1923,7 +1905,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Grumpig @ Salac Berry  
 Ability: Gluttony  
 Level: 50  
-Tera Type: Psychic  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Extrasensory  
 - Power Gem  
@@ -1933,7 +1914,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Wailord @ Life Orb  
 Ability: Pressure  
 Level: 50  
-Tera Type: Water  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Waterfall  
 - Bounce  
@@ -1943,7 +1923,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Linoone @ Starf Berry  
 Ability: Gluttony  
 Level: 50  
-Tera Type: Normal  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Strength  
 - Cut  
@@ -1953,7 +1932,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Blaziken @ Focus Sash  
 Ability: Blaze  
 Level: 50  
-Tera Type: Fire  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Sky Uppercut  
 - Brave Bird  
@@ -1973,7 +1951,6 @@ Difficulty: Hard
 Swellow @ Flame Orb  
 Ability: Guts  
 Level: 50  
-Tera Type: Normal  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Quick Attack  
 - Fly  
@@ -1983,7 +1960,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Grumpig @ Salac Berry  
 Ability: Gluttony  
 Level: 50  
-Tera Type: Psychic  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Extrasensory  
 - Power Gem  
@@ -1993,7 +1969,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Wailord @ Life Orb  
 Ability: Pressure  
 Level: 50  
-Tera Type: Water  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Waterfall  
 - Bounce  
@@ -2003,7 +1978,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Linoone @ Starf Berry  
 Ability: Gluttony  
 Level: 50  
-Tera Type: Normal  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Strength  
 - Cut  
@@ -2013,7 +1987,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Blaziken @ Focus Sash  
 Ability: Blaze  
 Level: 50  
-Tera Type: Fire  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Sky Uppercut  
 - Brave Bird  
@@ -2042,7 +2015,6 @@ Difficulty: Hard
 Clefable  
 Ability: Magic Guard  
 Level: 50  
-Tera Type: Fairy  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Alluring Voice  
 - Flamethrower  
@@ -2052,7 +2024,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Venusaur  
 Ability: Overgrow  
 Level: 50  
-Tera Type: Grass  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Cut  
 - Giga Drain  
@@ -2062,7 +2033,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Jolteon  
 Ability: Volt Absorb  
 Level: 50  
-Tera Type: Electric  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Thunderbolt  
 - Shadow Ball  
@@ -2072,7 +2042,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Snorlax @ Chesto Berry  
 Ability: Thick Fat  
 Level: 50  
-Tera Type: Normal  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Strength  
 - Rock Smash  
@@ -2082,7 +2051,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Dragonite @ Normal Gem  
 Ability: Inner Focus  
 Level: 50  
-Tera Type: Dragon  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Extreme Speed  
 - Dragon Claw  
@@ -2102,7 +2070,6 @@ Difficulty: Hard
 Clefable  
 Ability: Magic Guard  
 Level: 50  
-Tera Type: Fairy  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Alluring Voice  
 - Flamethrower  
@@ -2112,7 +2079,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Venusaur  
 Ability: Overgrow  
 Level: 50  
-Tera Type: Grass  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Cut  
 - Giga Drain  
@@ -2122,7 +2088,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Jolteon  
 Ability: Volt Absorb  
 Level: 50  
-Tera Type: Electric  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Thunderbolt  
 - Shadow Ball  
@@ -2132,7 +2097,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Snorlax @ Chesto Berry  
 Ability: Thick Fat  
 Level: 50  
-Tera Type: Normal  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Strength  
 - Rock Smash  
@@ -2142,7 +2106,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Dragonite @ Normal Gem  
 Ability: Inner Focus  
 Level: 50  
-Tera Type: Dragon  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Extreme Speed  
 - Dragon Claw  
@@ -2407,37 +2370,33 @@ Difficulty: Hard
 Avalugg-Hisui  
 Ability: Sturdy  
 Level: 50  
-Tera Type: Bug  
 IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Avalanche  
 - Body Press  
 - Rock Slide  
 - Earthquake  
 
-Butterfree  
+Butterfree @ Focus Sash
 Ability: Compound Eyes  
 Level: 50  
-Tera Type: Bug  
 IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Pollen Puff  
 - Electroweb  
 - Sleep Powder  
 - Quiver Dance  
 
-Flapple @ Sitrus Berry  
-Ability: Ripen  
+Shiftry  
+Ability: Wind Rider  
 Level: 50  
-Tera Type: Bug  
 IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Acrobatics  
-- Grav Apple  
-- U-turn  
-- Dragon Dance  
+- Leaf Blade  
+- Fake Out  
+- Foul Play  
+- Heat Wave  
 
-Shedinja @ Focus Sash  
+Shedinja @ Lum Berry  
 Ability: Wonder Guard  
 Level: 50  
-Tera Type: Bug  
 IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Will-O-Wisp  
 - Phantom Force  
@@ -2457,7 +2416,6 @@ Difficulty: Hard
 Machamp  
 Ability: Guts  
 Level: 50  
-Tera Type: Fighting  
 IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Cross Chop  
 - Darkest Lariat  
@@ -2467,7 +2425,6 @@ IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Grimmsnarl (M) @ Choice Band  
 Ability: Prankster  
 Level: 50  
-Tera Type: Bug  
 IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Spirit Break  
 - False Surrender  
@@ -2477,12 +2434,20 @@ IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Nidoking (M) @ Expert Belt  
 Ability: Rivalry  
 Level: 50  
-Tera Type: Bug  
 IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Earth Power  
 - Flamethrower  
 - Ice Beam  
 - Sludge Bomb  
+
+Aromatisse  
+Ability: Aroma Veil  
+Level: 55  
+IVs: 15 HP / 0 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Moonblast  
+- Trick Room  
+- Energy Ball  
+- Ally Switch
 
 === TRAINER_MARIE_REMATCH ===
 Name: Marie
@@ -12085,7 +12050,6 @@ AI: Basic Trainer
 Clefable  
 Ability: Magic Guard  
 Level: 50  
-Tera Type: Fairy  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Alluring Voice  
 - Flamethrower  
@@ -12095,7 +12059,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Venusaur  
 Ability: Overgrow  
 Level: 50  
-Tera Type: Grass  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Cut  
 - Giga Drain  
@@ -12105,7 +12068,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Jolteon  
 Ability: Volt Absorb  
 Level: 50  
-Tera Type: Electric  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Thunderbolt  
 - Shadow Ball  
@@ -12115,7 +12077,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Snorlax @ Chesto Berry  
 Ability: Thick Fat  
 Level: 50  
-Tera Type: Normal  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Strength  
 - Rock Smash  
@@ -12125,7 +12086,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Dragonite @ Normal Gem  
 Ability: Inner Focus  
 Level: 50  
-Tera Type: Dragon  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Extreme Speed  
 - Dragon Claw  
