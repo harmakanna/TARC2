@@ -56,3 +56,4 @@ tools/compresSmol/compresSmolTilemap
 *.fastSmol
 *.smolTM
 __pycache__
+graphics/title_screen/pokemon_logo.bin
