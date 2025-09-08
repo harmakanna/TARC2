@@ -131,7 +131,7 @@ Present_CityHall_2F_Office_EventScript_Mayor::
 	end
 
 Present_CityHall_2F_Office_EventScript_Display::
-	msgbox Present_CityHall_2F_Office_Text_Egg, MSGBOX_DEFAULT
+	msgbox Present_CityHall_2F_Office_Text_Egg, MSGBOX_SIGN
 	end
 
 Present_CityHall_2F_Office_Text_Egg:

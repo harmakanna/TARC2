@@ -252,7 +252,7 @@ static const struct WindowTemplate sWindowTemplates_MainMenus[] =
         .tilemapLeft = 1,
         .tilemapTop = 1,
         .width = 9,
-        .height = 6,
+        .height = 4,
         .paletteNum = 15,
         .baseBlock = 1
     },
@@ -261,7 +261,7 @@ static const struct WindowTemplate sWindowTemplates_MainMenus[] =
         .tilemapLeft = 1,
         .tilemapTop = 1,
         .width = 9,
-        .height = 8,
+        .height = 6,
         .paletteNum = 15,
         .baseBlock = 1
     },
@@ -270,7 +270,7 @@ static const struct WindowTemplate sWindowTemplates_MainMenus[] =
         .tilemapLeft = 1,
         .tilemapTop = 1,
         .width = 10,
-        .height = 8,
+        .height = 6,
         .paletteNum = 15,
         .baseBlock = 1
     }

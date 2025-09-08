@@ -206,7 +206,7 @@ Present_CityHall_2F_Ranger_EventScript_ScientistQuestComplete::
 	end
 
 Present_CityHall_2F_Ranger_EventScript_Display::
-	msgbox Present_CityHall_2F_Ranger_Text_Egg, MSGBOX_DEFAULT
+	msgbox Present_CityHall_2F_Ranger_Text_Egg, MSGBOX_SIGN
 	end
 
 Present_CityHall_2F_Ranger_Text_Egg:
