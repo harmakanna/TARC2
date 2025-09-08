@@ -248,7 +248,7 @@ Pic: Aqua Admin M
 Gender: Male
 Music: Aqua
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Mugshot: Blue
 Difficulty: Easy
 
@@ -347,7 +347,7 @@ Pic: Elite Four Phoebe
 Gender: Female
 Music: Elite Four
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Mugshot: Pink
 Difficulty: Easy
 
@@ -502,7 +502,7 @@ Pic: School Kid M
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Easy
 
 Magikarp
@@ -713,7 +713,7 @@ Pic: Aqua Admin M
 Gender: Male
 Music: Aqua
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Mugshot: Blue
 Difficulty: Normal
 
@@ -812,7 +812,7 @@ Pic: Elite Four Phoebe
 Gender: Female
 Music: Elite Four
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Mugshot: Pink
 Difficulty: Normal
 
@@ -967,7 +967,7 @@ Pic: School Kid M
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Normal
 
 Magikarp
@@ -1443,7 +1443,7 @@ Pic: Aqua Admin M
 Gender: Male
 Music: Aqua
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Mugshot: Blue
 Difficulty: Hard
 
@@ -1698,7 +1698,7 @@ Pic: Elite Four Phoebe
 Gender: Female
 Music: Elite Four
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Mugshot: Pink
 Difficulty: Hard
 
@@ -2387,19 +2387,19 @@ Pic: School Kid M
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Hard
 
-Avalugg-Hisui  
-Ability: Sturdy  
+Avalugg  
+Ability: Own Tempo  
 Level: 50  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
 - Avalanche  
 - Body Press  
-- Rock Slide  
-- Earthquake  
+- Protect  
+- High Horsepower  
 
-Butterfree @ Focus Sash
+Butterfree @ Focus Sash  
 Ability: Compound Eyes  
 Level: 50  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
@@ -2417,6 +2417,15 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Foul Play  
 - Heat Wave  
 
+Aggron  
+Ability: Sturdy  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+- Autotomize  
+- Aqua Tail  
+- Iron Head  
+- Rock Slide  
+
 Shedinja @ Lum Berry  
 Ability: Wonder Guard  
 Level: 50  
@@ -2433,7 +2442,7 @@ Pic: Running Triathlete M
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Hard
 
 Machamp  

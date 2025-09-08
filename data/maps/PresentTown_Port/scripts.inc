@@ -178,9 +178,10 @@ PresentTown_Port_EventScript_Arrival::
 	applymovement LOCALID_PORT_ANABEL, PresentTown_Port_Movement_AnabelExitShot
 	waitmovement 0
 	removeobject LOCALID_PORT_ANABEL
-	additem ITEM_HP_MOCHI, 1
-	additem ITEM_ATK_MOCHI, 3
+	additem ITEM_HP_MOCHI, 2
+	additem ITEM_ATK_MOCHI, 1
 	additem ITEM_DEF_MOCHI, 1
+	additem ITEM_SPATK_MOCHI, 1
 	additem ITEM_SPDEF_MOCHI, 1
 	additem ITEM_SPE_MOCHI, 2
 	givemonwithot OT_LOOKER_GROWLITHE
@@ -303,18 +304,10 @@ PresentTown_Port_EventScript_MagikarpManGivesMagikarpFromTrigger::
 	updatemoneybox
 	playse SE_SHOP
 	speak LOCALID_PORT_MAGIKARPMAN, DIR_EAST, Name_Magikarp_Man, PresentTown_Port_Text_MagikarpManRememberNoTakebacks
-	additem ITEM_HP_MOCHI, 1
-	additem ITEM_ATK_MOCHI, 1
-	additem ITEM_DEF_MOCHI, 1
-	additem ITEM_SPATK_MOCHI, 1
-	additem ITEM_SPDEF_MOCHI, 1
-	additem ITEM_SPE_MOCHI, 1
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MAGIKARP
     givemonwithot OT_LOOKER_MAGIKARP
 	speakername NULL
 	call PresentTown_Port_EventScript_ReceivedMagikarpFanfare
-	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
-	closemessage
 	hidemoneybox
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	call_if_eq VAR_TEMP_0, 17, PresentTown_Port_EventScript_LookerStepAside
@@ -331,12 +324,6 @@ PresentTown_Port_EventScript_MagikarpManGivesMagikarpFromBench::
 	updatemoneybox
 	playse SE_SHOP
 	speak LOCALID_PORT_MAGIKARPMAN, VAR_0x8005, Name_Magikarp_Man, PresentTown_Port_Text_MagikarpManRememberNoTakebacks
-	additem ITEM_HP_MOCHI, 1
-	additem ITEM_ATK_MOCHI, 1
-	additem ITEM_DEF_MOCHI, 1
-	additem ITEM_SPATK_MOCHI, 1
-	additem ITEM_SPDEF_MOCHI, 1
-	additem ITEM_SPE_MOCHI, 1
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MAGIKARP
     givemonwithot OT_LOOKER_MAGIKARP
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, PresentTown_Port_EventScript_ReceiveMagikarpParty
@@ -346,16 +333,12 @@ PresentTown_Port_EventScript_MagikarpManGivesMagikarpFromBench::
 
 PresentTown_Port_EventScript_ReceiveMagikarpParty::
 	call PresentTown_Port_EventScript_ReceivedMagikarpFanfare
-	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
-	closemessage
 	goto PresentTown_Port_EventScript_FinishGiveMagikarp
 	end
 	
 PresentTown_Port_EventScript_ReceiveMagikarpPC::
 	call PresentTown_Port_EventScript_ReceivedMagikarpFanfare
 	call Common_EventScript_TransferredToPC
-	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
-	closemessage
 	goto PresentTown_Port_EventScript_FinishGiveMagikarp
 	end
 
