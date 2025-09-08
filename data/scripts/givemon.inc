@@ -143,8 +143,8 @@ Present_Gym_EventScript_PhoebeGiveDusknoir::
 	additem ITEM_ATK_MOCHI, 2
 	additem ITEM_SPE_MOCHI, 1
 	additem ITEM_SPDEF_MOCHI, 1
-	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_CERULEDGE
-    givemonwithot OT_PHOEBE_CERULEDGE
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_DUSKNOIR
+    givemonwithot OT_PHOEBE_DUSKNOIR
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Present_Gym_EventScript_ReceiveDusknoirParty
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Present_Gym_EventScript_ReceiveDusknoirPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -166,13 +166,13 @@ Present_Gym_EventScript_ReceiveDusknoirPC::
 	end
 
 Present_Gym_EventScript_ReceivedDusknoirFanfare::
-	bufferspeciesname STR_VAR_2, SPECIES_CERULEDGE
+	bufferspeciesname STR_VAR_2, SPECIES_DUSKNOIR
 	playfanfare MUS_OBTAIN_ITEM
 	speakername NULL
 	msgbox Present_Gym_Text_YouReceivedDusknoir, MSGBOX_DEFAULT
 	waitmessage
 	waitfanfare
-	bufferspeciesname STR_VAR_1, SPECIES_CERULEDGE
+	bufferspeciesname STR_VAR_1, SPECIES_DUSKNOIR
 	return
 
 Present_Gym_EventScript_PhoebeGiveSableye::
