@@ -54,8 +54,11 @@ Present_Cafe_EventScript_Emma::
 	end
 
 Present_Cafe_EventScript_EmmaPreGame::
+	faceplayer
 	msgbox Present_Cafe_Text_EmmaCoffeeDelicious, MSGBOX_DEFAULT
 	closemessage
+	applymovement LOCALID_CAFE_EMMA, Common_Movement_FaceLeft
+	waitmovement 0
 	release
 	end
 
@@ -65,6 +68,8 @@ Present_Cafe_EventScript_EmmaPostQuest::
 	speakername Name_Emma
 	msgbox Present_Cafe_Text_EmmaPostQuest, MSGBOX_DEFAULT
 	closemessage
+	applymovement LOCALID_CAFE_EMMA, Common_Movement_FaceLeft
+	waitmovement 0
 	release
 	end
 
@@ -72,6 +77,8 @@ Present_Cafe_EventScript_EmmaLovesLuvdiscs::
 	speakername Name_Emma
 	msgbox Present_Cafe_Text_EmmaLovesLuvdiscs, MSGBOX_DEFAULT
 	closemessage
+	applymovement LOCALID_CAFE_EMMA, Common_Movement_FaceLeft
+	waitmovement 0
 	release
 	end
 
@@ -116,11 +123,15 @@ Present_Cafe_EventScript_EmmaWrongAnswer::
 	speakername Name_Looker
 	msgbox Present_Cafe_Text_LookerWrongAnswer, MSGBOX_DEFAULT
 	closemessage
+	applymovement LOCALID_CAFE_EMMA, Common_Movement_FaceLeft
+	waitmovement 0
 	release
 	end
 
 Present_Cafe_EventScript_EmmaFinishQuest::
 	completequest QUEST_BONJOUR_EMMA
+	applymovement LOCALID_CAFE_EMMA, Common_Movement_FaceLeft
+	waitmovement 0
 	release
 	end
 
@@ -350,21 +361,22 @@ Present_Cafe_EventScript_MayCulpritPostQuestGiveMon::
 	end
 
 Present_Cafe_EventScript_BaristaSide::
+	lock
 	setvar VAR_0x8004, DIR_WEST
 	setvar VAR_0x8005, DIR_EAST
 	goto Present_Cafe_EventScript_Barista
 	end
 	
 Present_Cafe_EventScript_BaristaUp::
+	lock
 	setvar VAR_0x8004, DIR_NORTH
 	setvar VAR_0x8005, DIR_SOUTH
 	goto Present_Cafe_EventScript_Barista
 	end
 
 Present_Cafe_EventScript_Barista::
-	lock
-	call_if_eq VAR_FACING, DIR_WEST, Present_Cafe_EventScript_TurnBaristaEast
-	call_if_eq VAR_FACING, DIR_NORTH, Present_Cafe_EventScript_TurnBaristaSouth
+	call_if_eq VAR_0x8004, DIR_WEST, Present_Cafe_EventScript_TurnBaristaEast
+	call_if_eq VAR_0x8004, DIR_NORTH, Present_Cafe_EventScript_TurnBaristaSouth
 	goto_if_unset FLAG_SYS_MAIN_GAME_START, Present_Cafe_EventScript_BaristaPreGame
 	returnqueststate QUEST_GET_INTO_THE_GROOVE
 	switch VAR_RESULT
@@ -751,14 +763,24 @@ Present_Cafe_EventScript_LisiaWorriedRight::
 	end
 
 Present_Cafe_EventScript_GirlStudent::
+	lock
+	faceplayer
 	call_if_set FLAG_SYS_MAIN_GAME_START, Present_Cafe_EventScript_GirlStudentNametag
 	returnqueststate QUEST_INVERSE
 	goto_if_eq VAR_RESULT, 4, Present_Cafe_EventScript_GirlStudentPostQuest
-	msgbox Present_Cafe_Text_GirlStudent, MSGBOX_NPC
+	msgbox Present_Cafe_Text_GirlStudent, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_CAFE_GIRL_STUDENT, Common_Movement_FaceLeft
+	waitmovement 0
+	release
 	end
 
 Present_Cafe_EventScript_GirlStudentPostQuest::
-	msgbox Present_Cafe_Text_GirlStudentPostQuest, MSGBOX_NPC
+	msgbox Present_Cafe_Text_GirlStudentPostQuest, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_CAFE_GIRL_STUDENT, Common_Movement_FaceLeft
+	waitmovement 0
+	release
 	end
 
 Present_Cafe_EventScript_GirlStudentNametag::

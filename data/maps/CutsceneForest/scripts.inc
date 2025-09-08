@@ -1004,8 +1004,11 @@ CutsceneForest_EventScript_FindLostIdol::
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDownQuestionMark
 	waitmovement 0
 	delay 50
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
+	waitmovement 0
+	applymovement LOCALID_FOREST_LOST_IDOL, Common_Movement_FaceRight
 	speak LOCALID_PLAYER, DIR_WEST, Name_Looker, Looker_Text_Huh
-	speak LOCALID_FOREST_LOST_IDOL, DIR_NORTH, Name_Right_Idol, CutsceneForest_Text_LostIdolImLost
+	speak LOCALID_FOREST_LOST_IDOL, DIR_EAST, Name_Right_Idol, CutsceneForest_Text_LostIdolImLost
 	speak LOCALID_PLAYER, DIR_WEST, Name_Looker, CutsceneForest_Text_LookerOhLetMeHelp
 	closemessage
 	applymovement LOCALID_PLAYER, CutsceneForest_Movement_LookerGuideIdolHome
@@ -1163,7 +1166,6 @@ CutsceneForest_EventScript_SearchForEstella::
 	delay 60
 	closemessage
 	delay 40
-	playse SE_SELECT
 	speak LOCALID_FOREST_ANABEL, DIR_WEST, Name_Anabel, CutsceneForest_Text_AnabelDrat
 	speak LOCALID_FOREST_RANGER, DIR_EAST, Name_Head_Ranger, CutsceneForest_Text_RangerSeemsLikeShesNotHere
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
@@ -1172,7 +1174,6 @@ CutsceneForest_EventScript_SearchForEstella::
 	speak LOCALID_FOREST_ANABEL, DIR_WEST, Name_Anabel, CutsceneForest_Text_AnabelGotIt
 	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, CutsceneForest_Text_LookerUnderstood
 	speak LOCALID_FOREST_RANGER, DIR_EAST, Name_Head_Ranger, CutsceneForest_Text_RangerGreatBeSafe
-	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, CutsceneForest_Text_LookerOfCourse
 	closemessage
 	delay 10
 	applymovement LOCALID_FOREST_RANGER, CutsceneForest_Movement_RangerRunOutOfShot

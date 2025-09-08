@@ -104,12 +104,11 @@ ShrineOfPeacePresent_EventScript_CelebiEncounter::
 	waitmovement 0
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
 	speak LOCALID_SHRINE_PEACE_PRESENT_ANABEL, DIR_WEST, Name_Anabel, ShrineOfPeacePresent_Text_AnabelItsTooDangerous
+	closemessage
 	playse SE_PIN
 	applymovement LOCALID_SHRINE_PEACE_PRESENT_ANABEL, Common_Movement_FaceDownExclamationMark
-	delay 48
-	playse SE_SELECT
-	speakername Name_Anabel
-	msgbox ShrineOfPeacePresent_Text_AnabelOhNo, MSGBOX_DEFAULT
+	delay 50
+	speak LOCALID_SHRINE_PEACE_PRESENT_ANABEL, DIR_SOUTH, Name_Anabel, ShrineOfPeacePresent_Text_AnabelOhNo
 	closemessage
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
 	applymovement LOCALID_CAMERA, Common_Movement_WalkDown2

@@ -148,10 +148,10 @@ Present_PokemonCenter_Text_Hiker:
 Present_PokemonCenter_Text_IdolIGotSeparated:
 	.string "Man… that was scary…\p"
 	.string "My troupe and I…\p"
-	.string "We got attacked by wild Pokémon with the\n"
+	.string "We got attacked by wild Pokémon on the\n"
 	.string "onset of the hurricane.\p"
-	.string "I managed to get away unscathed, but the\n"
-	.string "other two ran off into the forest.\p"
+	.string "I managed to get away unscathed, but\n"
+	.string "the other two ran off into the forest.\p"
 	.string "I hope they're all right…$"
 
 Present_PokemonCenter_Text_IdolYouFoundThemAll:

@@ -130,6 +130,14 @@ Present_CityHall_2F_Office_EventScript_Mayor::
 	release
 	end
 
+Present_CityHall_2F_Office_EventScript_Display::
+	msgbox Present_CityHall_2F_Office_Text_Egg, MSGBOX_DEFAULT
+	end
+
+Present_CityHall_2F_Office_Text_Egg:
+	.string "An intricately decorated fabergé egg\n"
+	.string "is put on display.$"
+
 Present_CityHall_2F_Office_Text_Mayor:
 	.string "Oh dear! Are you okay?\p"
 	.string "Anabel informed me of what went down\n"

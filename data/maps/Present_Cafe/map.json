@@ -45,6 +45,7 @@
       "quest_id": 5
     },
     {
+      "local_id": "LOCALID_CAFE_GIRL_STUDENT",
       "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
       "x": 15,
       "y": 14,

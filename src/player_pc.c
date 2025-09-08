@@ -33,7 +33,7 @@
 // Top level PC menu options
 enum {
     MENU_ITEMSTORAGE,
-    MENU_MAILBOX,
+    //MENU_MAILBOX,
     MENU_DECORATION,
     MENU_TURNOFF
 };
@@ -202,7 +202,7 @@ static const u8 *const sItemStorage_OptionDescriptions[] =
 static const struct MenuAction sPlayerPCMenuActions[] =
 {
     [MENU_ITEMSTORAGE] = { COMPOUND_STRING("Item Storage"), {PlayerPC_ItemStorage} },
-    [MENU_MAILBOX]     = { sText_Mailbox,                   {PlayerPC_Mailbox} },
+    //[MENU_MAILBOX]     = { sText_Mailbox,                   {PlayerPC_Mailbox} },
     [MENU_DECORATION]  = { COMPOUND_STRING("Decoration"),   {PlayerPC_Decoration} },
     [MENU_TURNOFF]     = { COMPOUND_STRING("Turn Off"),     {PlayerPC_TurnOff} }
 };
@@ -210,7 +210,7 @@ static const struct MenuAction sPlayerPCMenuActions[] =
 static const u8 sBedroomPC_OptionOrder[] =
 {
     MENU_ITEMSTORAGE,
-    MENU_MAILBOX,
+    //MENU_MAILBOX,
     MENU_DECORATION,
     MENU_TURNOFF
 };
@@ -219,7 +219,7 @@ static const u8 sBedroomPC_OptionOrder[] =
 static const u8 sPlayerPC_OptionOrder[] =
 {
     MENU_ITEMSTORAGE,
-    MENU_MAILBOX,
+    //MENU_MAILBOX,
     MENU_TURNOFF
 };
 #define NUM_PLAYER_PC_OPTIONS ARRAY_COUNT(sPlayerPC_OptionOrder)
@@ -234,7 +234,6 @@ static const struct MenuAction sItemStorage_MenuActions[] =
 
 static const u16 sNewGamePCItems[][2] =
 {
-    { ITEM_POTION, 1 },
     { ITEM_NONE, 0 }
 };
 

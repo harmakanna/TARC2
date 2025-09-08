@@ -40,6 +40,7 @@ Present_Gym_EventScript_GuyPushesYouOut::
 	end
 
 Present_Gym_EventScript_LookerMeetsGuyPregame::
+	speak LOCALID_GYM_GUY, DIR_SOUTH, Name_Gym_Guy, Present_Gym_Text_GymGuyHi
 	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_Gym_Text_LookerHelloPregame
 	speak LOCALID_GYM_GUY, DIR_SOUTH, Name_Gym_Guy, Present_Gym_Text_TheresAChallenger
 	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Present_Gym_Text_LookerUnderstandable
@@ -119,6 +120,9 @@ Present_Gym_EventScript_Phoebe::
 	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeThankYou
 	setflag FLAG_SPOKE_TO_PHOEBE
 	trainerbattle_no_intro TRAINER_PHOEBE, Present_Gym_Text_PhoebeDefeat
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Present_Gym_EventScript_PhoebeForfeited
+	goto_if_eq VAR_RESULT, B_OUTCOME_FORFEITED, Present_Gym_EventScript_PhoebeForfeited
 	goto Present_Gym_EventScript_PhoebeDefeated
 	end
 
@@ -128,6 +132,14 @@ Present_Gym_EventScript_PhoebeStartBattleFast::
 	goto Present_Gym_EventScript_PhoebeDefeated
 	end
 
+Present_Gym_EventScript_PhoebeForfeited::
+	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeNeedASecond
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Gym_Text_LookerSorry
+	speak LOCALID_GYM_PHOEBE, VAR_0x8005, Name_Phoebe, Present_Gym_Text_PhoebeNoWorries
+	closemessage
+	release
+	end
+	
 Present_Gym_EventScript_PhoebePostBattleSpeech::
 	faceplayer
 	speakername Name_Phoebe
@@ -520,3 +532,15 @@ Present_Gym_Text_GymTrainer6PostBattle:
 
 Present_Gym_Text_GymStatue:
 	.string "Porta Bella City Pokémon Gym$"
+
+Present_Gym_Text_PhoebeNeedASecond:
+	.string "Oh? You need a sec to prepare?$"
+
+Present_Gym_Text_LookerSorry:
+	.string "I do. Sorry for the false start.$"
+
+Present_Gym_Text_PhoebeNoWorries:
+	.string "No problem! Take all the time you need.$"
+
+Present_Gym_Text_GymGuyHi:
+	.string "Hi! May I help you>$"

@@ -398,7 +398,7 @@ PastTown_EventScript_ScientistQuestReward::
 	msgbox PastTown_Text_LookerHandedOverTheBattery, MSGBOX_DEFAULT
 	speak LOCALID_PAST_SCIENTIST, VAR_0x8005, Name_Past_Scientist, PastTown_Text_ScientistReward
 	speakername NULL
-	giveitem ITEM_TM_FOCUS_PUNCH, 1 @ Substitute
+	giveitem ITEM_TM_SUBSTITUTE, 1 @ Substitute
 	closemessage
 	applymovement LOCALID_PAST_SCIENTIST, Common_Movement_FaceDown
 	waitmovement 0
@@ -653,7 +653,7 @@ PastTown_EventScript_CabbageFarmerPests2QuestReward::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_GladICouldHelp
 	speak LOCALID_PAST_CABBAGEFARMER, VAR_0x8005, Name_Cabbage_Farmer, PastTown_Text_CabbageFarmerThankYou
 	speakername NULL
-	giveitem ITEM_TM_DRAGON_CLAW @ Replaced Dragon Claw with Baton Pass
+	giveitem ITEM_TM_BATON_PASS @ Replaced Dragon Claw with Baton Pass
 	completequest QUEST_FARMLAND_INVASION_2
 	fadescreen FADE_TO_BLACK
 	setflag FLAG_HIDE_WOOLOO
