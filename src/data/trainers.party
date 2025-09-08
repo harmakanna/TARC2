@@ -1041,6 +1041,7 @@ Pic: Scientist
 Gender: Male
 Music: Suspicious
 Double Battle: Yes
+AI: Basic Trainer
 Difficulty: Hard
 
 Omastar @ Focus Sash  
@@ -1491,7 +1492,7 @@ IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Ice Punch  
 - Wide Guard
 
-Sharpedo-Mega @ Sharpedonite  
+Sharpedo @ Sharpedonite  
 Ability: Speed Boost  
 Level: 50  
 IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
@@ -1519,14 +1520,14 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Tailwind  
 - Leaf Storm  
 
-Kingler  
-Ability: Sheer Force  
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Razor Shell  
-- Hone Claws  
-- Protect  
+Crustle @ Salac Berry  
+Ability: Sturdy  
+Level: 50  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Stealth Rock  
+- Shell Smash  
 - Rock Slide  
+- Knock Off  
 
 Chatot  
 Ability: Keen Eye  
