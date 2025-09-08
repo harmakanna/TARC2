@@ -36,6 +36,10 @@ const u32 gBattleEnvironmentTiles_Building[] = INCBIN_U32("graphics/battle_envir
 const u16 gBattleEnvironmentPalette_Frontier[] = INCBIN_U16("graphics/battle_environment/stadium/battle_frontier.gbapal"); // this is also used for link battles
 const u32 gBattleEnvironmentTilemap_Building[] = INCBIN_U32("graphics/battle_environment/building/map.bin.smolTM");
 
+const u32 gBattleEnvironmentTiles_Forest[] = INCBIN_U32("graphics/battle_environment/forest/tiles.4bpp.smol");
+const u16 gBattleEnvironmentPalette_Forest[] = INCBIN_U16("graphics/battle_environment/forest/palette.gbapal");
+const u32 gBattleEnvironmentTilemap_Forest[] = INCBIN_U32("graphics/battle_environment/forest/map.bin.smolTM");
+
 #define ENVIRONMENT_BACKGROUND(background)                      \
 {                                                               \
     .tileset = gBattleEnvironmentTiles_##background,            \
@@ -430,5 +434,7 @@ static const struct {
     {MAP_BATTLE_SCENE_PHOEBE,   BATTLE_ENVIRONMENT_PHOEBE},
     {MAP_BATTLE_SCENE_GLACIA,   BATTLE_ENVIRONMENT_GLACIA},
     {MAP_BATTLE_SCENE_DRAKE,    BATTLE_ENVIRONMENT_DRAKE},
-    {MAP_BATTLE_SCENE_FRONTIER, BATTLE_ENVIRONMENT_FRONTIER}
+    {MAP_BATTLE_SCENE_FRONTIER, BATTLE_ENVIRONMENT_FRONTIER},
+    {MAP_BATTLE_SCENE_GRASS,    BATTLE_ENVIRONMENT_LONG_GRASS},
+    {MAP_BATTLE_SCENE_FOREST,   BATTLE_ENVIRONMENT_GRASS}
 };

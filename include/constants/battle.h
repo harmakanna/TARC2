@@ -536,6 +536,7 @@ enum BattleEnvironments
     BATTLE_ENVIRONMENT_GROUDON,
     BATTLE_ENVIRONMENT_KYOGRE,
     BATTLE_ENVIRONMENT_RAYQUAZA,
+    BATTLE_ENVIRONMENT_FOREST,
     // New battle environments are used for Secret Power but not fully implemented.
     BATTLE_ENVIRONMENT_SOARING,
     BATTLE_ENVIRONMENT_SKY_PILLAR,

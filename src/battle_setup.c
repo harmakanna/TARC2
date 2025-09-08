@@ -627,7 +627,7 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
     switch (gMapHeader.mapType)
     {
     case MAP_TYPE_TOWN:
-    case MAP_TYPE_CITY:
+        return BATTLE_ENVIRONMENT_LONG_GRASS;
     case MAP_TYPE_ROUTE:
         break;
     case MAP_TYPE_UNDERGROUND:
@@ -636,6 +636,7 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
         if (MetatileBehavior_IsSurfableWaterOrUnderwater(tileBehavior))
             return BATTLE_ENVIRONMENT_POND;
         return BATTLE_ENVIRONMENT_CAVE;
+    case MAP_TYPE_CITY:
     case MAP_TYPE_INDOOR:
     case MAP_TYPE_SECRET_BASE:
         return BATTLE_ENVIRONMENT_BUILDING;

@@ -898,8 +898,8 @@ gText_PokemonCenterSign::
 
 gText_MomOrDadMightLikeThisProgram::
 	.string "The weather channel is on.\p"
-	.string "A cloud and a sun are fighting pollution\n"
-	.string "caused by a strange Yam Man.$"
+	.string "In this episode, a cloud and a sun are\n"
+	.string "fighting pollution caused by a Yam Man.$"
 
 gText_WhichFloorWouldYouLike::
 	.string "Welcome to LILYCOVE DEPARTMENT STORE.\p"

@@ -385,6 +385,8 @@ const u8 gBattleBackgroundNames[][30] =
     [MAP_BATTLE_SCENE_GROUDON]  = _("GROUDON                 "),
     [MAP_BATTLE_SCENE_KYOGRE]   = _("KYOGRE                  "),
     [MAP_BATTLE_SCENE_RAYQUAZA] = _("RAYQUAZA                "),
+    [MAP_BATTLE_SCENE_GRASS]    = _("GRASS                   "),
+    [MAP_BATTLE_SCENE_FOREST]   = _("FOREST                  "),
 };
 
 const u8 gBattleBackgroundTerrainNames[][26] =
@@ -1000,6 +1002,11 @@ static void LoadBattleBg(u8 battleBgType, enum BattleEnvironments battleEnvironm
         DecompressDataWithHeaderVram(gBattleEnvironmentTilemap_Rayquaza, (void*)(BG_SCREEN_ADDR(26)));
         LoadPalette(gBattleEnvironmentPalette_Rayquaza, 0x20, 0x60);
         break;
+    case MAP_BATTLE_SCENE_GRASS:
+        DecompressDataWithHeaderVram(gBattleEnvironmentTiles_TallGrass, (void*)(BG_CHAR_ADDR(2)));
+        DecompressDataWithHeaderVram(gBattleEnvironmentTilemap_TallGrass, (void*)(BG_SCREEN_ADDR(26)));
+        LoadPalette(gBattleEnvironmentPalette_TallGrass, 0x20, 0x60);
+        break;
     }
 }
 
@@ -1032,7 +1039,7 @@ static void UpdateBattleBg(u8 taskId, bool8 increment)
         else
         {
             if (data->battleEnvironment == BATTLE_ENVIRONMENT_GRASS)
-                data->battleBgType = MAP_BATTLE_SCENE_RAYQUAZA;
+                data->battleBgType = MAP_BATTLE_SCENE_GRASS;
             else
                 data->battleEnvironment -= 1;
         }

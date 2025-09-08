@@ -244,7 +244,7 @@ static void BattleIntroSlide1(u8 taskId)
         }
         else
         {
-            if (gTasks[taskId].tEnvironment == BATTLE_ENVIRONMENT_LONG_GRASS)
+            if (gTasks[taskId].tEnvironment == BATTLE_ENVIRONMENT_LONG_GRASS || gTasks[taskId].tEnvironment == BATTLE_ENVIRONMENT_FOREST)
             {
                 if (gBattle_BG1_Y != (u16)(-80))
                     gBattle_BG1_Y -= 2;
