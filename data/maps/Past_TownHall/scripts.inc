@@ -234,7 +234,7 @@ Past_TownHall_EventScript_Happiny::
 	end
 
 Past_TownHall_EventScript_ApprenticeNurse::
-	speakername Name_Nurse
+	speakername Name_Past_Nurse
 	msgbox Past_TownHall_Text_ApprenticeNurse, MSGBOX_NPC
 	end
 
@@ -269,6 +269,7 @@ Past_TownHall_EventScript_SailorRight::
 	msgbox Past_TownHall_Text_SailorRight, MSGBOX_DEFAULT
 	applymovement LOCALID_PAST_RIGHT_SAILOR, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
+	playse SE_SELECT
 	msgbox Past_TownHall_Text_SailorAnother, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_PAST_RIGHT_SAILOR, Common_Movement_FaceOriginalDirection
@@ -277,7 +278,7 @@ Past_TownHall_EventScript_SailorRight::
 	end
 
 Past_TownHall_Text_SailorLeft:
-	.string "Camilla! Brine another round of drinks\n"
+	.string "Camilla! Bring another round of drinks\n"
 	.string "for the table!$"
 
 Past_TownHall_Text_SailorBottom:
@@ -290,8 +291,8 @@ Past_TownHall_Text_SailorRight:
 	.string "We saw some strange green frog man at\n"
 	.string "the top of the tornado, we think…?\p"
 	.string "No matter! If it meant we washed up on\n"
-	.string "the shores of Porta Bella, it was worth\l"
-	.string "it!$"
+	.string "the shores of Porta Bella, it was\l"
+	.string "worth it!$"
 
 Past_TownHall_Text_SailorAnother:
 	.string "Camilla, another drink!$"

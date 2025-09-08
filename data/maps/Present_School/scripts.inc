@@ -232,7 +232,7 @@ Present_School_EventScript_TwinQuestCompletion::
 	setobjectxyperm LOCALID_SCHOOL_KID, 1, 4
 	speak LOCALID_SCHOOL_KID, VAR_0x8005, Name_Doubter, Present_School_Text_DoubterReward
 	speakername NULL
-	giveitem ITEM_TM_WATER_PULSE, 1 @replaced with Helping Hand 
+	giveitem ITEM_TM_HELPING_HAND, 1 @replaced with Helping Hand 
 	completequest QUEST_LUXRAY
 	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	releaseall
@@ -304,7 +304,7 @@ Present_School_EventScript_TwinSecretQuestCompletion::
 	delay 50
 	speak LOCALID_SCHOOL_TWIN, VAR_0x8005, Name_Twin, Present_School_Text_TwinHeDroppedThis
 	speakername NULL
-	giveitem ITEM_TM_WATER_PULSE, 1 @replaced with Helping Hand 
+	giveitem ITEM_TM_HELPING_HAND, 1 @replaced with Helping Hand 
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_LUXRAY, 0
 	completequest QUEST_LUXRAY
 	closemessage
@@ -372,10 +372,12 @@ Present_School_EventScript_Teacher::
 	speakername Name_Teacher
 	msgbox Present_School_Text_TeacherAllTheyCare, MSGBOX_DEFAULT
 	applymovement LOCALID_SCHOOL_TEACHER, Common_Movement_WalkInPlaceFasterLeft
+	playse SE_SELECT
 	msgbox Present_School_Text_TeacherSeeThatKid, MSGBOX_DEFAULT
 	waitmovement LOCALID_SCHOOL_TEACHER
 	call_if_eq VAR_FACING, DIR_EAST, Present_School_EventScript_TurnTeacherLeft
 	call_if_ne VAR_FACING, DIR_EAST, Present_School_EventScript_TurnTeacherRight
+	playse SE_SELECT
 	msgbox Present_School_Text_TeacherWillBelieveAnything, MSGBOX_DEFAULT
 	waitmovement LOCALID_SCHOOL_TEACHER
 	closemessage
@@ -409,8 +411,9 @@ Present_School_EventScript_LassStudent::
 	speakername Name_Girl
 	msgbox Present_School_Text_LassStudent, MSGBOX_DEFAULT
 	applymovement LOCALID_SCHOOL_LASS_STUDENT, Common_Movement_FaceRight
-	waitmovement 0
+	playse SE_SELECT
 	msgbox Present_School_Text_LassThoseBoys, MSGBOX_DEFAULT
+	waitmovement LOCALID_SCHOOL_LASS_STUDENT
 	closemessage
 	applymovement LOCALID_SCHOOL_LASS_STUDENT, Common_Movement_FaceOriginalDirection
 	waitmovement 0

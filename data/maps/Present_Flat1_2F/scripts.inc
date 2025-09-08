@@ -28,15 +28,11 @@ Present_Flat1_2F_EventScript_Beauty::
 Present_Flat1_2F_EventScript_BeautyBoyfriendPreGame::
 	speak LOCALID_LOVEYDOVEY_WOMAN, DIR_SOUTH, NULL, Present_Flat1_2F_Text_BeautyPregame
 	speak LOCALID_FLAT1_BOYFRIEND, DIR_NORTH, NULL, Present_Flat1_2F_Text_BoyfriendPregame
-	playse SE_M_CHARM
+	playse SE_PIN
 	applymovement LOCALID_LOVEYDOVEY_WOMAN, Common_Movement_HeartEmote
-	waitse
-	playse SE_M_CHARM
-	waitse
-	playse SE_M_CHARM
-	waitse
-	delay 35
-	speak LOCALID_LOVEYDOVEY_WOMAN, DIR_SOUTH, NULL, Present_Flat1_2F_Text_BeautyPregame
+	waitmovement 0
+	delay 50
+	speak LOCALID_LOVEYDOVEY_WOMAN, DIR_SOUTH, NULL, Present_Flat1_2F_Text_BeautyPregame2
 	applymovement LOCALID_LOVEYDOVEY_WOMAN, Common_Movement_FaceLeft
 	applymovement LOCALID_FLAT1_BOYFRIEND, Common_Movement_FaceLeft
 	closemessage

@@ -205,6 +205,14 @@ Present_CityHall_2F_Ranger_EventScript_ScientistQuestComplete::
 	release
 	end
 
+Present_CityHall_2F_Ranger_EventScript_Display::
+	msgbox Present_CityHall_2F_Ranger_Text_Egg, MSGBOX_SIGN
+	end
+
+Present_CityHall_2F_Ranger_Text_Egg:
+	.string "An intricately decorated fabergé egg\n"
+	.string "is put on display.$"
+
 Present_CityHall_2F_Ranger_Text_ScientistThankYou:
 	.string "Thank you for giving me the chance\n"
 	.string "to revive a Pokémon!\p"

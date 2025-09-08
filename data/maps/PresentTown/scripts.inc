@@ -755,6 +755,7 @@ PresentTown_Movement_GruntFollowsMatt:
 
 PresentTown_EventScript_AquaMemberF::
 	lockall
+	speakername Name_Aqua_Grunt_F
 	goto_if_set FLAG_TALKED_TO_MATT_OUTSIDE, PresentTown_EventScript_AquaMemberNowHesMad
 	msgbox PresentTown_Text_AquaMemberFTalkingToMatt, MSGBOX_DEFAULT
 	closemessage
@@ -1102,6 +1103,20 @@ PresentTown_EventScript_LisiaPregame::
 	release
 	end
 
+PresentTown_EventScript_Clobbopus::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_CLOBBOPUS, CRY_MODE_NORMAL
+	msgbox PresentTown_Text_Clobbopus, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	release
+	end
+
+PresentTown_Text_Clobbopus:
+	.string "Bobbo-bobble!$"
+	
 PresentTown_Text_LisiaPregame:
 	.string "I'm in looooooove with a\n"
 	.string "fairy ta-aaaaaaale!\p"

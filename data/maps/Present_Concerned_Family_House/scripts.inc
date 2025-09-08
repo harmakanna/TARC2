@@ -249,18 +249,18 @@ Present_ConcernedFamilyHouse_Text_LookerIShouldntTellEstella:
 	.string "the candy never reached Camilla…)$"
 
 Present_ConcernedFamilyHouse_Text_MomPregame:
-	.string "My mother-in-law worries me sick with the\n"
-	.string "bad ideas she gives our baby…\p"
-	.string "I've half a mind to send her back home to\n"
-	.string "Hoenn on the next cruise out!$"
+	.string "My mother-in-law worries me sick with\n"
+	.string "the bad ideas she gives our baby…\p"
+	.string "I've half a mind to send her back home\n"
+	.string "to Hoenn on the next cruise out!$"
 
 Present_ConcernedFamilyHouse_Text_EstellaPregame:
 	.string "um, um, um!\p"
-	.string "so the spirits who were here were bad but\n"
-	.string "then there's good spirits in the forest\l"
-	.string "who helped us?\p"
+	.string "so the spirits who were here were bad\n"
+	.string "but then there's good spirits in the\l"
+	.string "forest who helped us?\p"
 	.string "so the forest spirits are friendly and\n"
-	.string "who help us if we're in trouble?$"
+	.string "can help us if we're in trouble?$"
 
 Present_ConcernedFamilyHouse_Text_Grandma:
 	.string "Ohohoho…\p"
@@ -271,17 +271,17 @@ Present_ConcernedFamilyHouse_Text_Grandma:
 	.string "forest!$"
 
 Present_ConcernedFamilyHouse_Text_GrandmaPregame:
-	.string "Long ago, this city was nothing but\n"
-	.string "a stormy wasteland ruled by two spirits.\p"
+	.string "Long ago, this city was nothing but a\n"
+	.string "stormy wasteland ruled by two spirits.\p"
 	.string "These spirits were locked in an endless\n"
 	.string "battle.\p"
 	.string "Then, one day, their fighting suddenly\n"
 	.string "stopped.\p"
 	.string "I don't remember the details, but what I\n"
-	.string "do remember is that, if there's ever any\l"
+	.string "do remember is, if there's ever any\l"
 	.string "trouble in the city, we must go settle\l"
-	.string "things at the SHRINEs of PEACE and\l"
-	.string "PROSPERITY in the forest…$"
+	.string "things at the shrines of peace and\l"
+	.string "prosperity in the forest…$"
 
 Present_ConcernedFamilyHouse_Text_DadThatOldWoman:
 	.string "Harumph…\p"

@@ -393,7 +393,7 @@ PresentTown_Port_EventScript_MagikarpManWalkToBench::
 	return
 
 PresentTown_Port_EventScript_MagikarpMan::
-	lockall
+	lock
 	faceplayer
 	goto_if_set FLAG_PURCHASED_MAGIKARP, PresentTown_Port_EventScript_MagikarpManNoTakebacks
 	call Script_GetNPCFacingDirection
@@ -404,7 +404,7 @@ PresentTown_Port_EventScript_MagikarpMan::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, PresentTown_Port_Text_LookerNotInterested
 	closemessage
 	hidemoneybox
-	releaseall
+	release
 	end
 	
 PresentTown_Port_EventScript_MagikarpManNoTakebacks::

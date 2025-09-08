@@ -131,9 +131,9 @@ InsideOutside_EventScript_AngryMan::
     goto_if_eq VAR_RESULT, TRUE, InsideOutside_EventScript_AngryManActually
     checkspecies SPECIES_HUNTAIL
     goto_if_eq VAR_RESULT, TRUE, InsideOutside_EventScript_AngryManActually
-    returnqueststate QUEST_INTERROGATE_MATT
-    goto_if_eq VAR_RESULT, 4, InsideOutside_EventScript_LookerDots
-    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerTroubling
+    @ returnqueststate QUEST_INTERROGATE_MATT
+    @ goto_if_eq VAR_RESULT, 4, InsideOutside_EventScript_LookerDots
+    @ speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerTroubling
     closemessage
     release
     end
@@ -454,7 +454,6 @@ InsideOutside_EventScript_AceTrainer::
 InsideOutside_EventScript_AceTrainerLostChild::
     faceplayer
     speak VAR_TEMP_1, VAR_0x8005, Name_Ace_Trainer, InsideOutside_Text_AceTrainerLostChild
-    speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_Dots
     closemessage
     release
     end
@@ -578,6 +577,7 @@ InsideOutside_EventScript_StudentOutside::
 
 InsideOutside_EventScript_Student::
     lock
+    faceplayer
     call Script_GetNPCFacingDirection
     goto_if_unset FLAG_SYS_MAIN_GAME_START, InsideOutside_EventScript_StudentPregame
     returnqueststate QUEST_INVERSE
@@ -910,14 +910,14 @@ InsideOutside_EventScript_RunningWoman::
     end
 
 InsideOutside_Text_RunningWoman::
-    .string "The barista at Taurin' Torin's\n"
-    .string "Tauros Café is the absolute best!\p"
+    .string "The barista at Taurin' Torin's Tauros\n"
+    .string "Café is the absolute best!\p"
     .string "I always get the Espresso Matcha\n"
     .string "Latte with milk and sugar!\l"
     .string "And a blonde espresso shot!\l"
     .string "No ice!\l"
-    .string "3 scoops Vanialla Bean Powder,\l"
-    .string "6 shots chai,\l"
+    .string "3 scoops vanilla bean powder,\l"
+    .string "6 pumps chai,\l"
     .string "and 6 shots white mocha!\p"
     .string "Extra whipped cream,\n"
     .string "extra sweet cream,\l"

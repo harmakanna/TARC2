@@ -243,6 +243,14 @@ Present_CityHall_1F_EventScript_EmployeeCounter::
 	release
 	end
 
+Present_CityHall_1F_EventScript_Sign::
+	msgbox Present_CityHall_1F_Text_Directions, MSGBOX_SIGN
+	end
+
+Present_CityHall_1F_Text_Directions:
+	.string "{LEFT_ARROW} Ranger's Offices\n"
+	.string "{RIGHT_ARROW} Mayor's Office$"
+
 Present_CityHall_1F_Text_EmployeeCounter:
 	.string "Welcome to Porta Bella City, the\n"
 	.string "city of progress!\p"
@@ -349,8 +357,7 @@ Present_CityHall_1F_Text_DadHelpMe:
 	.string "Help! Somebody help!$"
 
 Present_CityHall_1F_Text_LookerWhatsTheMatter:
-	.string "Sir, what seems to be the\n"
-	.string "matter?$"
+	.string "Sir, what seems to be the matter?$"
 
 Present_CityHall_1F_Text_DadMyDaughter:
 	.string "My daughter!\n"

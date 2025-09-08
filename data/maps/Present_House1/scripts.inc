@@ -208,6 +208,44 @@ Present_House1_EventScript_AilingManPregame::
 	release
 	end
 
+Present_House1_EventScript_FatMan::
+	lock
+	faceplayer
+	call Script_GetNPCFacingDirection
+	speak LOCALID_HOUSE_FATMAN, VAR_0x8005, Name_Fat_Man Present_House1_Text_FatMan
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_House1_Text_LookerDontWantTo
+	speak LOCALID_HOUSE_FATMAN, VAR_0x8005, Name_Fat_Man Present_House1_Text_FatManOkay
+	closemessage
+	release
+	end
+
+Present_House1_EventScript_Snubbull::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_SNUBBULL, CRY_MODE_NORMAL
+	msgbox Present_House1_Text_Snubbull, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+	release
+	end
+
+Present_House1_Text_FatMan:
+	.string "Huh… I've seen you around town, and\n"
+	.string "I've been wondering.\p"
+	.string "Why do you powerwalk everywhere?$"
+
+Present_House1_Text_LookerDontWantTo:
+	.string "I don't want to get sweaty and ruin\n"
+	.string "my outfit.$"
+
+Present_House1_Text_FatManOkay:
+	.string "Oh, okay.\p"
+	.string "Weird.$"
+
+Present_House1_Text_Snubbull:
+	.string "Snub-bu-bull.$"
+
 Present_House1_Text_AilingManPregame:
 	.string "Uwooooooooo…\p"
 	.string "My boooooooones…$"

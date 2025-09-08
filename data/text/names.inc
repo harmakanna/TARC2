@@ -268,3 +268,6 @@ Name_Fanboy:
 Name_Observant_Woman:
     .string "Helen$"
     
+Name_Fat_Man:
+    .string "Man$"
+    
