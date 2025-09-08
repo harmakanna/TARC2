@@ -2390,16 +2390,16 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Avalugg-Hisui  
-Ability: Sturdy  
+Avalugg  
+Ability: Own Tempo  
 Level: 50  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
 - Avalanche  
 - Body Press  
-- Rock Slide  
-- Earthquake  
+- Protect  
+- High Horsepower  
 
-Butterfree @ Focus Sash
+Butterfree @ Focus Sash  
 Ability: Compound Eyes  
 Level: 50  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
@@ -2416,6 +2416,15 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Fake Out  
 - Foul Play  
 - Heat Wave  
+
+Aggron  
+Ability: Sturdy  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+- Autotomize  
+- Aqua Tail  
+- Iron Head  
+- Rock Slide  
 
 Shedinja @ Lum Berry  
 Ability: Wonder Guard  

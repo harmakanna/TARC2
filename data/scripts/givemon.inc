@@ -689,8 +689,7 @@ PastTown_EventScript_ReceivedTaurosFanfare::
 	return
 
 PastTown_EventScript_SadGirlGiveMiltank::
-	additem ITEM_HP_MOCHI, 1
-	additem ITEM_ATK_MOCHI, 1
+	additem ITEM_HP_MOCHI, 2
 	additem ITEM_SPE_MOCHI, 2
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_MILTANK
 	givemonwithot OT_ALICE_MILTANK
@@ -839,7 +838,7 @@ Present_Cafe_EventScript_ReceivedWalreinFanfare::
 	return
 
 Present_Cafe_EventScript_MayGiveCamerupt::
-	additem ITEM_ATK_MOCHI, 1
+	additem ITEM_HP_MOCHI, 1
 	additem ITEM_DEF_MOCHI, 1
 	additem ITEM_SPATK_MOCHI, 1
 	additem ITEM_SPDEF_MOCHI, 1
