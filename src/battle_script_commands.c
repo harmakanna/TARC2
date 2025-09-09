@@ -14241,7 +14241,7 @@ void HandleBattleWindow(u8 xStart, u8 yStart, u8 xEnd, u8 yEnd, u8 flags)
             if (destY == yStart)
             {
                 if (destX == xStart)
-                    var = 0x1012;
+                    var = 0x1028;
                 else if (destX == xEnd)
                     var = 0x1014;
                 else
@@ -14250,7 +14250,7 @@ void HandleBattleWindow(u8 xStart, u8 yStart, u8 xEnd, u8 yEnd, u8 flags)
             else if (destY == yEnd)
             {
                 if (destX == xStart)
-                    var = 0x1018;
+                    var = 0x1029;
                 else if (destX == xEnd)
                     var = 0x101A;
                 else
