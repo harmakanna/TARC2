@@ -1,10 +1,91 @@
 PastTown_Port_MapScripts::
-	@map_script MAP_SCRIPT_ON_FRAME_TABLE, PastTown_Port_OnFrame
+	map_script MAP_SCRIPT_ON_LOAD, PastTown_Port_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, PastTown_Port_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, PastTown_Port_OnResume
 	.byte 0
 
-PastTown_Port_OnFrame:
-	.2byte 0
+PastTown_Port_OnLoad:
+	call PastTown_Port_EventScript_ResetPortMons
+	returnqueststate QUEST_INVESTIGATE_PROSPERITY
+	call_if_eq VAR_RESULT, 4, PastTown_Port_EventScript_CheckSpawnCatchMon
+	return
+
+PastTown_Port_EventScript_ResetPortMons::
+	setflag FLAG_HIDE_PORT_DHELMISE
+	setflag FLAG_HIDE_PORT_GRAPPLOCT
+	setflag FLAG_HIDE_PORT_CRABOMINABLE
+	setflag FLAG_HIDE_PORT_PALOSSAND
+	setflag FLAG_HIDE_PORT_PHIONE
+	setvar VAR_RESEED_PORT_MON, 0
+	return
+
+PastTown_Port_EventScript_CheckSpawnCatchMon::
+	call_if_lt VAR_PORT_MONS_CAUGHT, 5, PastTown_Port_EventScript_TrySpawnCatchMon
+	return
+
+PastTown_Port_EventScript_TrySpawnCatchMon::
+	randompercentage 10
+	call_if_eq VAR_RESULT, TRUE, PastTown_Port_EventScript_SpawnPortMon
+	return
+
+PastTown_Port_EventScript_SpawnPortMon::
+	randomelement SPECIES_DHELMISE, SPECIES_GRAPPLOCT, SPECIES_CRABOMINABLE, SPECIES_PALOSSAND, SPECIES_PHIONE
+	call_if_eq VAR_RESULT, SPECIES_DHELMISE, PastTown_Port_EventScript_TrySpawnDhelmise
+	call_if_eq VAR_RESULT, SPECIES_GRAPPLOCT, PastTown_Port_EventScript_TrySpawnGrapploct
+	call_if_eq VAR_RESULT, SPECIES_CRABOMINABLE, PastTown_Port_EventScript_TrySpawnCrabominable
+	call_if_eq VAR_RESULT, SPECIES_PALOSSAND, PastTown_Port_EventScript_TrySpawnPalossand
+	call_if_eq VAR_RESULT, SPECIES_PHIONE, PastTown_Port_EventScript_TrySpawnPhione
+	return
+
+PastTown_Port_EventScript_ReseedPortMon::
+	addvar VAR_RESEED_PORT_MON, 1
+	call_if_lt VAR_RESEED_PORT_MON, 10, PastTown_Port_EventScript_SpawnPortMon
+	return
+
+PastTown_Port_EventScript_TrySpawnDhelmise::
+	call_if_set FLAG_CAUGHT_DHELMISE, PastTown_Port_EventScript_ReseedPortMon
+	call_if_unset FLAG_CAUGHT_DHELMISE, PastTown_Port_EventScript_SpawnDhelmise
+	return
+
+PastTown_Port_EventScript_SpawnDhelmise::
+	clearflag FLAG_HIDE_PORT_DHELMISE
+	return
+
+PastTown_Port_EventScript_TrySpawnGrapploct::
+	call_if_set FLAG_CAUGHT_GRAPPLOCT, PastTown_Port_EventScript_ReseedPortMon
+	call_if_unset FLAG_CAUGHT_GRAPPLOCT, PastTown_Port_EventScript_TrySpawnGrapploct
+	return
+
+PastTown_Port_EventScript_SpawnGrapploct::
+	clearflag FLAG_HIDE_PORT_GRAPPLOCT
+	return
+
+PastTown_Port_EventScript_TrySpawnCrabominable::
+	call_if_set FLAG_CAUGHT_CRABOMINABLE, PastTown_Port_EventScript_ReseedPortMon
+	call_if_unset FLAG_CAUGHT_CRABOMINABLE, PastTown_Port_EventScript_SpawnCrabominable
+	return
+
+PastTown_Port_EventScript_SpawnCrabominable::
+	clearflag FLAG_HIDE_PORT_CRABOMINABLE
+	return
+
+PastTown_Port_EventScript_TrySpawnPalossand::
+	call_if_set FLAG_CAUGHT_PALOSSAND, PastTown_Port_EventScript_ReseedPortMon
+	call_if_unset FLAG_CAUGHT_PALOSSAND, PastTown_Port_EventScript_SpawnPalossand
+	return
+
+PastTown_Port_EventScript_SpawnPalossand::
+	clearflag FLAG_HIDE_PORT_PALOSSAND
+	return
+
+PastTown_Port_EventScript_TrySpawnPhione::
+	call_if_set FLAG_CAUGHT_PHIONE, PastTown_Port_EventScript_ReseedPortMon
+	call_if_unset FLAG_CAUGHT_PHIONE, PastTown_Port_EventScript_SpawnPhione
+	return
+
+PastTown_Port_EventScript_SpawnPhione::
+	clearflag FLAG_HIDE_PORT_PHIONE
+	return
 
 PastTown_Port_OnTransition:
 	returnqueststate QUEST_SENTIMENTAL
@@ -29,6 +110,16 @@ PastTown_Port_EventScript_DoHeartScaleSparkle::
 	setvar VAR_HEART_SCALE_SPARKLE, 2
 	releaseall
 	end
+
+PastTown_Port_OnResume:
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, PastTown_Port_EventScript_TryRemovePortMon
+	end
+
+PastTown_Port_EventScript_TryRemovePortMon::
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
+	removeobject VAR_LAST_TALKED
+	return
 
 PastTown_Port_EventScript_HiddenHeartScale::
 	goto_if_eq VAR_HEART_SCALE_SPARKLE, 2, PastTown_Port_EventScript_GiveHeartScale
@@ -398,6 +489,136 @@ PastTown_Port_EventScript_PokemaniacChoseTuskFossil::
 	release
 	end
 
+PastTown_Port_EventScript_Dhelmise::
+	lockall
+	waitse
+	playmoncry SPECIES_DHELMISE, CRY_MODE_ENCOUNTER
+	msgbox PastTown_Port_Text_Dhelmise, MSGBOX_DEFAULT
+	waitmoncry
+	createmon 1, 0, SPECIES_DEDENNE, 50, ITEM_AIR_BALLOON, 1, NATURE_TIMID, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_NUZZLE, MOVE_PARABOLIC_CHARGE, MOVE_DAZZLING_GLEAM, MOVE_SUPER_FANG
+	setflag FLAG_SYS_NO_WHITEOUT
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	dowildbattle
+	clearflag FLAG_SYS_NO_WHITEOUT
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	setvar VAR_TEMP_2, SPECIES_DHELMISE
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_Port_EventScript_MonRanAway
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, PastTown_Port_EventScript_MonRanAway
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, PastTown_Port_EventScript_MonRanAway
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, PastTown_Port_EventScript_MonRanAway
+	setflag FLAG_CAUGHT_DHELMISE
+	addvar VAR_PORT_MONS_CAUGHT, 1
+	releaseall
+	end
+
+PastTown_Port_EventScript_Grapploct::
+	lockall
+	waitse
+	playmoncry SPECIES_GRAPPLOCT, CRY_MODE_ENCOUNTER
+	msgbox PastTown_Port_Text_Grapploct, MSGBOX_DEFAULT
+	waitmoncry
+	createmon 1, 0, SPECIES_DEDENNE, 50, ITEM_AIR_BALLOON, 1, NATURE_TIMID, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_NUZZLE, MOVE_PARABOLIC_CHARGE, MOVE_DAZZLING_GLEAM, MOVE_SUPER_FANG
+	setflag FLAG_SYS_NO_WHITEOUT
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	dowildbattle
+	clearflag FLAG_SYS_NO_WHITEOUT
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	setvar VAR_TEMP_2, SPECIES_GRAPPLOCT
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_Port_EventScript_MonRanAway
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, PastTown_Port_EventScript_MonRanAway
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, PastTown_Port_EventScript_MonRanAway
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, PastTown_Port_EventScript_MonRanAway
+	setflag FLAG_CAUGHT_GRAPPLOCT
+	addvar VAR_PORT_MONS_CAUGHT, 1
+	releaseall
+	end
+
+PastTown_Port_EventScript_Crabominable::
+	lockall
+	waitse
+	playmoncry SPECIES_CRABOMINABLE, CRY_MODE_ENCOUNTER
+	msgbox PastTown_Port_Text_Crabominable, MSGBOX_DEFAULT
+	waitmoncry
+	createmon 1, 0, SPECIES_DEDENNE, 50, ITEM_AIR_BALLOON, 1, NATURE_TIMID, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_NUZZLE, MOVE_PARABOLIC_CHARGE, MOVE_DAZZLING_GLEAM, MOVE_SUPER_FANG
+	setflag FLAG_SYS_NO_WHITEOUT
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	dowildbattle
+	clearflag FLAG_SYS_NO_WHITEOUT
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	setvar VAR_TEMP_2, SPECIES_CRABOMINABLE
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_Port_EventScript_MonRanAway
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, PastTown_Port_EventScript_MonRanAway
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, PastTown_Port_EventScript_MonRanAway
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, PastTown_Port_EventScript_MonRanAway
+	setflag FLAG_CAUGHT_CRABOMINABLE
+	addvar VAR_PORT_MONS_CAUGHT, 1
+	releaseall
+	end
+
+PastTown_Port_EventScript_Palossand::
+	lockall
+	waitse
+	playmoncry SPECIES_PALOSSAND, CRY_MODE_ENCOUNTER
+	msgbox PastTown_Port_Text_Palossand, MSGBOX_DEFAULT
+	waitmoncry
+	createmon 1, 0, SPECIES_DEDENNE, 50, ITEM_AIR_BALLOON, 1, NATURE_TIMID, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_NUZZLE, MOVE_PARABOLIC_CHARGE, MOVE_DAZZLING_GLEAM, MOVE_SUPER_FANG
+	setflag FLAG_SYS_NO_WHITEOUT
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	dowildbattle
+	clearflag FLAG_SYS_NO_WHITEOUT
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	setvar VAR_TEMP_2, SPECIES_PALOSSAND
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_Port_EventScript_PalossandRanAway
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, PastTown_Port_EventScript_PalossandRanAway
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, PastTown_Port_EventScript_PalossandRanAway
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, PastTown_Port_EventScript_PalossandRanAway
+	setflag FLAG_CAUGHT_PALOSSAND
+	addvar VAR_PORT_MONS_CAUGHT, 1
+	releaseall
+	end
+
+PastTown_Port_EventScript_Phione::
+	lockall
+	waitse
+	playmoncry SPECIES_PHIONE, CRY_MODE_ENCOUNTER
+	msgbox PastTown_Port_Text_Phione, MSGBOX_DEFAULT
+	waitmoncry
+	createmon 1, 0, SPECIES_DEDENNE, 50, ITEM_AIR_BALLOON, 1, NATURE_TIMID, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_NUZZLE, MOVE_PARABOLIC_CHARGE, MOVE_DAZZLING_GLEAM, MOVE_SUPER_FANG
+	setflag FLAG_SYS_NO_WHITEOUT
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	dowildbattle
+	clearflag FLAG_SYS_NO_WHITEOUT
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	setvar VAR_TEMP_2, SPECIES_PHIONE
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_Port_EventScript_MonRanAway
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, PastTown_Port_EventScript_MonRanAway
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, PastTown_Port_EventScript_MonRanAway
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, PastTown_Port_EventScript_MonRanAway
+	setflag FLAG_CAUGHT_PHIONE
+	addvar VAR_PORT_MONS_CAUGHT, 1
+	releaseall
+	end
+
+PastTown_Port_EventScript_MonRanAway::
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	bufferspeciesname STR_VAR_1, VAR_TEMP_2
+	msgbox PastTown_Port_Text_MonRanAway, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
+PastTown_Port_EventScript_PalossandRanAway::
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	bufferspeciesname STR_VAR_1, VAR_TEMP_2
+	msgbox PastTown_Port_Text_PalossandRanAway, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
 PastTown_Port_Text_LookerFossilRevive:
 	.string "Hmm…\p"
 	.string "I wonder what I could do with this\n"
@@ -474,3 +695,24 @@ PastTown_Port_Text_LeftTuskFossilAlone:
 
 PastTown_Port_Text_LeftWingFossilAlone:
 	.string "Looker left the wing imprint alone.$"
+
+PastTown_Port_Text_Dhelmise:
+	.string "uuOOooUUoUOOOuuuOooUoo…$"
+
+PastTown_Port_Text_Grapploct:
+	.string "Gra?$"
+
+PastTown_Port_Text_Crabominable:
+	.string "Blblblbl!$"
+
+PastTown_Port_Text_Palossand:
+	.string "Ssssssaaa!$"
+
+PastTown_Port_Text_Phione:
+	.string "Phiiiiii!$"
+
+PastTown_Port_Text_MonRanAway:
+	.string "{STR_VAR_1} jumped into the bay!$"
+
+PastTown_Port_Text_PalossandRanAway:
+	.string "{STR_VAR_1} sank into the ground!$"

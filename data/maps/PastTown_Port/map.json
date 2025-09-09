@@ -120,6 +120,71 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PastTown_Port_EventScript_Pokemaniac",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(DHELMISE)",
+      "x": 12,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_Port_EventScript_Dhelmise",
+      "flag": "FLAG_HIDE_PORT_DHELMISE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(GRAPPLOCT)",
+      "x": 12,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_Port_EventScript_Grapploct",
+      "flag": "FLAG_HIDE_PORT_GRAPPLOCT"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CRABOMINABLE)",
+      "x": 12,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_Port_EventScript_Crabominable",
+      "flag": "FLAG_HIDE_PORT_CRABOMINABLE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PALOSSAND)",
+      "x": 12,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_Port_EventScript_Palossand",
+      "flag": "FLAG_HIDE_PORT_PALOSSAND"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PHIONE)",
+      "x": 12,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastTown_Port_EventScript_Phione",
+      "flag": "FLAG_HIDE_PORT_PHIONE"
     }
   ],
   "warp_events": [

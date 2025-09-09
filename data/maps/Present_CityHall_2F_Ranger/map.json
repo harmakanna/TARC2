@@ -27,7 +27,7 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Present_CityHall_2F_Ranger_EventScript_HeadRanger",
       "flag": "FLAG_HIDE_CITYHALL_2F_RANGER_HEADRANGER",
-      "quest_id": 1
+      "quest_id": 2
     },
     {
       "local_id": "LOCALID_CITYHALL_SCIENTIST",

@@ -237,8 +237,10 @@ Present_House1_Text_FatMan:
 	.string "Why do you powerwalk everywhere?$"
 
 Present_House1_Text_LookerDontWantTo:
-	.string "I don't want to get sweaty and ruin\n"
-	.string "my outfit.$"
+	.string "As a professional representing the\n"
+	.string "International Police, I must be sure to\l"
+	.string "maintain my demeanor and look my best at\l"
+	.string "all times!$"
 
 Present_House1_Text_FatManOkay:
 	.string "Oh, okay.\p"
