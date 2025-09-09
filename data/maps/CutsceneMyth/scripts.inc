@@ -14,12 +14,13 @@ CutsceneMyth_Event::
 	delay 160
 	speakername NULL
 	message Myth_Text_LongAgo
-	@delay 10
+	delay 10
 	applymovement LOCALID_CAMERA, Myth_Movement_CameraPanDiagonalDownSetScene
 	playbgm MUS_DP_LAKE_CAVERNS, FALSE
 	fadescreen FADE_FROM_BLACK
-	delay 240
+	delay 160
 	closemessage
+	delay 90
 	fadescreen FADE_TO_BLACK
 	delay 80
 	waitmovement LOCALID_CAMERA
@@ -35,9 +36,8 @@ CutsceneMyth_Event::
 	playmoncry SPECIES_TORNADUS, CRY_MODE_NORMAL
 	message Myth_Text_SpiritOfWind
 	waitmessage
-	delay 100
+	delay 140
 	closemessage
-	delay 40
 	fadescreen FADE_TO_BLACK
 	applymovement LOCALID_CAMERA, Myth_Movement_PositionCameraToThirdShot
 	waitmovement 0
@@ -48,9 +48,8 @@ CutsceneMyth_Event::
 	playmoncry SPECIES_THUNDURUS, CRY_MODE_NORMAL
 	message Myth_Text_SpiritOfStorms
 	waitmessage
-	delay 100
+	delay 140
 	closemessage
-	delay 40
 	fadescreen FADE_TO_BLACK
 	applymovement LOCALID_CAMERA, Myth_Movement_PositionCameraToFourthShot
 	delay 60
@@ -150,7 +149,7 @@ CutsceneMyth_Event::
 	setvar VAR_0x8007, 3  @ shake delay
 	message Myth_Text_AsIfFromTheHeavens
 	waitmessage
-	delay 80
+	delay 100
 	closemessage
 	playmoncry SPECIES_LANDORUS, CRY_MODE_NORMAL
 	waitmoncry

@@ -163,6 +163,7 @@ Present_House1_Movement_PlayerWalkToAilingManFromRight:
 	step_end
 	
 Present_House1_EventScript_AilingManQuestComplete::
+	faceplayer
 	speakername Name_Well_Man
 	msgbox Present_House1_Text_AilingManCanTeachMoves, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, Present_House1_EventScript_AilingManEndLearnMove

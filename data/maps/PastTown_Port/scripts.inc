@@ -175,6 +175,9 @@ PastTown_Port_EventScript_TriggerPokemaniacFight::
 	speakername Name_Past_Maniac
 	msgbox PastTown_Port_Text_ManiacDoNotApproachThoseFossils, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_EVERETT, PastTown_Port_Text_EverettDefeated
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, PastTown_Port_EventScript_RanFromManiac
+	goto_if_eq VAR_RESULT, B_OUTCOME_FORFEITED, PastTown_Port_EventScript_RanFromManiac
 	speakername Name_Past_Maniac
 	msgbox PastTown_Port_Text_ManiacOhFine, MSGBOX_DEFAULT
 	closemessage
@@ -182,6 +185,15 @@ PastTown_Port_EventScript_TriggerPokemaniacFight::
 	releaseall
 	end
 
+PastTown_Port_EventScript_RanFromManiac::
+	speak LOCALID_PASTTOWN_PORT_MANIAC, DIR_SOUTH, Name_Past_Maniac, PastTown_Port_Text_ManiacGetOut
+	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, PastTown_Port_Text_LookerDrat
+	closemessage
+	warp MAP_PAST_TOWN, 33, 38
+	waitstate
+	releaseall
+	end
+	
 PastTown_Port_EventScript_PokemaniacChoosesTuskFossil::
 	getobjectcurrentxy LOCALID_PASTTOWN_PORT_MANIAC, CURRENT_POSITION, VAR_0x8000, VAR_0x8001
 	call_if_eq VAR_0x8000, 18, PastTown_Port_EventScript_PokemaniacMovesToTusk1
@@ -304,7 +316,7 @@ PastTown_Port_EventScript_PokemaniacMovesToWingFromLow::
 PastTown_Port_Movemenet_PokemaniacToWing2Low:
 	walk_right
 	walk_right
-	walk_left
+	walk_down
 	step_end
 
 PastTown_Port_Movemenet_PokemaniacToWing2Top:
@@ -394,6 +406,13 @@ PastTown_Port_Text_LookerFossilRevive:
 PastTown_Port_Text_ManiacNo:
 	.string "No!$"
 
+PastTown_Port_Text_ManiacGetOut:
+	.string "Haha! The spirit of the river has\n"
+	.string "bestowed the fossils unto me!$"
+
+PastTown_Port_Text_LookerDrat:
+	.string "(Drat, I need to regroup…)$"
+
 PastTown_Port_Text_ManiacDoNotApproachThoseFossils:
 	.string "I have been waiting months for new\n"
 	.string "fossils to appear on the shores of\l"
@@ -414,8 +433,8 @@ PastTown_Port_Text_ManiacLookingForFossils:
 	.string "Oh river delta…\p"
 	.string "When will you bestow upon me the gift\n"
 	.string "of a fossil?\p"
-	.string "I have strolled your shores for months\n"
-	.string "with no reward…$"
+	.string "I have combed your shores for months,\n"
+	.string "yet you bear no fruit…$"
 
 PastTown_Port_Text_ManiacOhFossils:
 	.string "Oh great river delta!\p"

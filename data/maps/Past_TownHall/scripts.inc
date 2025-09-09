@@ -15,9 +15,9 @@ Past_TownHall_EventScript_LookerWakesUpSetup::
 	setobjectmovementtype LOCALID_TOWNHALL_ESTELLA, MOVEMENT_TYPE_FACE_UP
 	setobjectxyperm LOCALID_TOWNHALL_ANABEL 2, 4
 	setobjectmovementtype LOCALID_TOWNHALL_ANABEL, MOVEMENT_TYPE_FACE_UP
-	setobjectxyperm LOCALID_TOWNHALL_CAMILLA, 3, 3
+	setobjectxyperm LOCALID_TOWNHALL_CAMILLA, 3, 2
 	setobjectmovementtype LOCALID_TOWNHALL_CAMILLA, MOVEMENT_TYPE_FACE_LEFT
-	setobjectxyperm LOCALID_TOWNHALL_HAPPINY, 3, 2
+	setobjectxyperm LOCALID_TOWNHALL_HAPPINY, 3, 3
 	setobjectmovementtype LOCALID_TOWNHALL_HAPPINY, MOVEMENT_TYPE_FACE_LEFT
 	return
 
@@ -36,6 +36,8 @@ Past_TownHall_OnFrame:
 
 Past_TownHall_EventScript_LookerWakesUp::
 	lockall
+	special SpawnCameraObject
+	applymovement LOCALID_CAMERA, Common_Movement_WalkDown
 	clearflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	delay 100
 	msgbox Past_TownHall_Text_Dots, MSGBOX_DEFAULT
@@ -87,6 +89,9 @@ Past_TownHall_EventScript_LookerWakesUp::
 	speak LOCALID_PLAYER, DIR_EAST, Name_Looker, Past_TownHall_Text_LookerSure
 	closemessage
 	fadescreen FADE_TO_BLACK
+	applymovement LOCALID_CAMERA, Common_Movement_WalkUp
+	waitmovement 0
+	special RemoveCameraObject
 	delay 100
 	msgbox Past_TownHall_Text_Dots, MSGBOX_DEFAULT
 	delay 40

@@ -1554,7 +1554,7 @@ PastTown_Text_CabbageFarmerPreQuest2Quest1Reward:
 PastTown_Text_ForemanPregame:
 	.string "My farmhands are always fighting over\n"
 	.string "the silliest things…\p"
-	.string "I appreciate their dedication to their\n"
+	.string "I appreciate their dedication to the\n"
 	.string "work, but they cannot cooperate for\l"
 	.string "the life of them…$"
 

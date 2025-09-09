@@ -29,39 +29,39 @@ CutsceneWater_EventScript_StartGame::
 	speakername Name_Looker
 	message CutsceneWater_Text_LookerSoHasAqua
 	waitmessage
-	delay 80
+	delay 90
 	closemessage
-	delay 40
+	delay 30
 	speakername Name_Anabel
 	message CutsceneWater_Text_AnabelNotToMyUnderstanding
 	waitmessage
-	delay 60
+	delay 70
 	closemessage
-	delay 40
+	delay 30
 	speakername Name_Looker
 	message CutsceneWater_Text_LookerIsThisJustACheckIn
 	waitmessage
-	delay 80
+	delay 90
 	closemessage
-	delay 40
+	delay 30
 	speakername Name_Anabel
 	message CutsceneWater_Text_AnabelYup
 	waitmessage
-	delay 50
+	delay 60
 	closemessage
-	delay 40
+	delay 30
 	speakername Name_Looker
 	message CutsceneWater_Text_LookerNeat
 	waitmessage
-	delay 50
+	delay 60
 	closemessage
-	delay 100
+	delay 90
 	speakername Name_Anabel
 	message CutsceneWater_Text_AnabelWereAlmostThere
 	waitmessage
-	delay 80
+	delay 90
 	closemessage
-	delay 40
+	delay 30
 	fadescreen FADE_TO_BLACK
 	delay 40
 	setflag FLAG_SYS_PREVENT_MAP_FADE

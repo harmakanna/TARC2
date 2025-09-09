@@ -158,7 +158,7 @@ Past_CelebiSociety_Text_OscarWildeQuote2:
 
 Past_CelebiSociety_Text_OscarWildeQuote3:
 	.string "My own business bores me to death.\n"
-	.string "I prefer other people's/$"
+	.string "I prefer other people's.$"
 
 Past_CelebiSociety_Text_OscarWildeQuote4:
 	.string "To lose one parent may be regarded as\n"
@@ -224,13 +224,12 @@ Past_CelebiSociety_Text_LookerIllogical:
 	.string "cannot argue against anxieties.$"
 
 Past_CelebiSociety_Text_GentlemanMyFavoriteThing:
-	.string "Truly, my favorite aspect of life\n"
-	.string "in Porta Bella is the wealth of\l"
-	.string "knowledge given to us through the\l"
-	.string "steady stream of time travelers.\p"
-	.string "The Spirit of Peace is generous in\n"
-	.string "her quest to save all who wander into\l"
-	.string "her forest!$"
+	.string "Truly, my favorite aspect of life in\n"
+	.string "Porta Bella is the wealth of knowledge\l"
+	.string "given to us through the steady stream\l"
+	.string "of time travelers.\p"
+	.string "The Spirit of Peace is generous in her\n"
+	.string "quest to save all who wander her forest!$"
 
 Past_CelebiSociety_Text_GentlemanLisia:
 	.string "The future is fascinating! I could\n"

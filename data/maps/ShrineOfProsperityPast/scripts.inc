@@ -289,8 +289,8 @@ ShrineOfProsperityPast_Text_LookerAnabelWeNeedToGoBack:
 
 ShrineOfProsperityPast_Text_AnabelIllHeadBackWithEstella:
 	.string "I'm 100 percent with you, Looker.\p"
-	.string "I'll rush back to the city proper now\n"
-	.string "with Estella.\p"
+	.string "I'll rush back to the city now with\n"
+	.string "Estella.\p"
 	.string "Be sure to meet up with her parents.\n"
 	.string "They're sure to show their gratitude.$"
 
