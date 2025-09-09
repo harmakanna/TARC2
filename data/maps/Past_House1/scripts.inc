@@ -35,6 +35,7 @@ Past_House1_EventScript_SadGirlQuestActivate::
 	end
 
 Past_House1_EventScript_SadGirlQuestActive::
+	faceplayer
 	speakername Name_Farmgirl
 	msgbox Past_House1_Text_SadGirlEveryRemedy, MSGBOX_DEFAULT
 	closemessage

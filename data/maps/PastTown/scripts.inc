@@ -435,6 +435,8 @@ PastTown_EventScript_Foreman::
 	speakername Name_Foreman
 	msgbox PastTown_Text_ForemanGuardDog, MSGBOX_DEFAULT
 	closemessage
+	applymovement LOCALID_PAST_FOREMAN, Common_Movement_FaceDown
+	waitmovement 0
 	release
 	end
 
@@ -520,6 +522,8 @@ PastTown_EventScript_ForemanQuestFinish::
 	addobject LOCALID_WOOLOO_1
 	addobject LOCALID_WOOLOO_2
 	addobject LOCALID_WOOLOO_3
+	applymovement LOCALID_PAST_FOREMAN, Common_Movement_FaceDown
+	waitmovement 0
 	fadescreen FADE_FROM_BLACK
 	completequest QUEST_FARMLAND_INVASION_3
 	clearflag FLAG_SYS_DISAPPEAR_QUESTS
@@ -697,12 +701,14 @@ PastTown_EventScript_FarmersPests3::
 	end
 	
 PastTown_EventScript_CarrotFarmerPests3Reward::
+	speakername Name_Carrot_Farmer
 	msgbox PastTown_Text_CarrotFarmerQuest3Reward, MSGBOX_DEFAULT
 	closemessage
 	release
 	end
 	
 PastTown_EventScript_CabbageFarmerPests3Reward::
+	speakername Name_Cabbage_Farmer
 	msgbox PastTown_Text_CabbageFarmerQuest3Reward, MSGBOX_DEFAULT
 	closemessage
 	release
@@ -778,10 +784,13 @@ PastTown_EventScript_Bunnelby::
 	setflag FLAG_SYS_SMART_WILD_BATTLES
 	createmon 1, 0, SPECIES_BUNNELBY, 48, ITEM_ORAN_BERRY, 0, NATURE_SERIOUS, 1
 	createmon 1, 1, SPECIES_DIGGERSBY, 49, ITEM_ORAN_BERRY, 0, NATURE_SERIOUS, 2
+	closemessage
 	setwilddoubleflag
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_CompletePestsBattle
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_SYS_DISABLE_CATCHING
 	clearflag FLAG_SYS_SMART_WILD_BATTLES
@@ -804,10 +813,13 @@ PastTown_EventScript_Buneary::
 	setflag FLAG_SYS_SMART_WILD_BATTLES
 	createmon 1, 0, SPECIES_BUNEARY, 48, ITEM_LUM_BERRY, 0, NATURE_SERIOUS, 2
 	createmon 1, 1, SPECIES_LOPUNNY, 49, ITEM_SITRUS_BERRY, 0, NATURE_SERIOUS, 2
+	closemessage
 	setwilddoubleflag
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_CompletePestsBattle
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_SYS_DISABLE_CATCHING
 	clearflag FLAG_SYS_SMART_WILD_BATTLES
@@ -830,10 +842,13 @@ PastTown_EventScript_Minun::
 	setflag FLAG_SYS_SMART_WILD_BATTLES
 	createmon 1, 0, SPECIES_MINUN, 49, ITEM_SITRUS_BERRY, 0, NATURE_SERIOUS, 0
 	createmon 1, 1, SPECIES_PLUSLE, 49, ITEM_CUSTAP_BERRY, 0, NATURE_SERIOUS, 0
+	closemessage
 	setwilddoubleflag
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_CompletePestsBattle
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_SYS_DISABLE_CATCHING
 	clearflag FLAG_SYS_SMART_WILD_BATTLES
@@ -856,10 +871,13 @@ PastTown_EventScript_Leavanny::
 	setflag FLAG_SYS_SMART_WILD_BATTLES
 	createmon 1, 0, SPECIES_LEAVANNY, 51, ITEM_LIECHI_BERRY, 0, NATURE_SERIOUS, 0
 	createmon 1, 1, SPECIES_SWADLOON, 50, ITEM_SITRUS_BERRY, 0, NATURE_SERIOUS, 2
+	closemessage
 	setwilddoubleflag
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_CompletePestsBattle
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_SYS_DISABLE_CATCHING
 	clearflag FLAG_SYS_SMART_WILD_BATTLES
@@ -882,10 +900,13 @@ PastTown_EventScript_Kricketune::
 	setflag FLAG_SYS_SMART_WILD_BATTLES
 	createmon 1, 0, SPECIES_KRICKETUNE, 51, ITEM_SITRUS_BERRY, 0, NATURE_SERIOUS, 0
 	createmon 1, 1, SPECIES_ARIADOS, 53, ITEM_SALAC_BERRY, 0, NATURE_SERIOUS, 1
+	closemessage
 	setwilddoubleflag
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_CompletePestsBattle
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_SYS_DISABLE_CATCHING
 	clearflag FLAG_SYS_SMART_WILD_BATTLES
@@ -908,10 +929,13 @@ PastTown_EventScript_Flapple::
 	setflag FLAG_SYS_SMART_WILD_BATTLES
 	createmon 1, 0, SPECIES_FLAPPLE, 51, ITEM_SITRUS_BERRY, 0, NATURE_SERIOUS, 2
 	createmon 1, 1, SPECIES_APPLETUN, 51, ITEM_SITRUS_BERRY, 0, NATURE_SERIOUS, 0
+	closemessage
 	setwilddoubleflag
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_CompletePestsBattle
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_SYS_DISABLE_CATCHING
 	clearflag FLAG_SYS_SMART_WILD_BATTLES
@@ -934,10 +958,13 @@ PastTown_EventScript_Breloom::
 	setflag FLAG_SYS_SMART_WILD_BATTLES
 	createmon 1, 0, SPECIES_BRELOOM, 54, ITEM_LIECHI_BERRY, 0, NATURE_SERIOUS, 0
 	createmon 1, 1, SPECIES_SHROOMISH, 53, ITEM_JABOCA_BERRY, 0, NATURE_SERIOUS, 2
+	closemessage
 	setwilddoubleflag
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_CompletePestsBattleBreloom
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_SYS_DISABLE_CATCHING
 	clearflag FLAG_SYS_SMART_WILD_BATTLES
@@ -960,10 +987,13 @@ PastTown_EventScript_Amoonguss::
 	setflag FLAG_SYS_SMART_WILD_BATTLES
 	createmon 1, 0, SPECIES_AMOONGUSS, 53, ITEM_BLACK_SLUDGE, 0, NATURE_SERIOUS, 0
 	createmon 1, 1, SPECIES_FOONGUS, 53, ITEM_CUSTAP_BERRY, 0, NATURE_SERIOUS, 0
+	closemessage
 	setwilddoubleflag
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_CompletePestsBattle
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_SYS_DISABLE_CATCHING
 	clearflag FLAG_SYS_SMART_WILD_BATTLES
@@ -986,10 +1016,13 @@ PastTown_EventScript_Shiinotic::
 	setflag FLAG_SYS_SMART_WILD_BATTLES
 	createmon 1, 0, SPECIES_SHIINOTIC, 54, ITEM_KEBIA_BERRY, 0, NATURE_SERIOUS, 1
 	createmon 1, 1, SPECIES_MORELULL, 53, ITEM_ROWAP_BERRY, 0, NATURE_SERIOUS, 1
+	closemessage
 	setwilddoubleflag
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_CompletePestsBattleShiinotic
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_SYS_DISABLE_CATCHING
 	clearflag FLAG_SYS_SMART_WILD_BATTLES
@@ -1012,10 +1045,13 @@ PastTown_EventScript_Toedscruel::
 	setflag FLAG_SYS_SMART_WILD_BATTLES
 	createmon 1, 0, SPECIES_TOEDSCRUEL, 53, ITEM_LANSAT_BERRY, 0, NATURE_SERIOUS, 0
 	createmon 1, 1, SPECIES_TOEDSCOOL, 53, ITEM_STARF_BERRY, 0, NATURE_SERIOUS, 0
+	closemessage
 	setwilddoubleflag
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_CompletePestsBattle
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_SYS_DISABLE_CATCHING
 	clearflag FLAG_SYS_SMART_WILD_BATTLES
@@ -1038,10 +1074,13 @@ PastTown_EventScript_Parasect::
 	setflag FLAG_SYS_SMART_WILD_BATTLES
 	createmon 1, 0, SPECIES_PARASECT, 55, ITEM_OCCA_BERRY, 0, NATURE_SERIOUS, 0
 	createmon 1, 1, SPECIES_PARAS, 54, ITEM_COBA_BERRY, 0, NATURE_SERIOUS, 0
+	closemessage
 	setwilddoubleflag
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_CompletePestsBattle
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_SYS_DISABLE_CATCHING
 	clearflag FLAG_SYS_SMART_WILD_BATTLES
@@ -1063,10 +1102,13 @@ PastTown_EventScript_Hydrapple::
 	setflag FLAG_SYS_SMART_WILD_BATTLES
 	createmon 1, 0, SPECIES_HYDRAPPLE, 60, ITEM_YACHE_BERRY, 0, NATURE_SERIOUS, 0
 	createmon 1, 1, SPECIES_DIPPLIN, 58, ITEM_SITRUS_BERRY, 0, NATURE_SERIOUS, 1
+	closemessage
 	setwilddoubleflag
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_EventScript_CompleteHydrappleBattle
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	msgbox PastTown_Text_Hydrapple, MSGBOX_DEFAULT
 	closemessage
 	clearflag FLAG_SYS_NO_WHITEOUT
@@ -1100,6 +1142,8 @@ PastTown_EventScript_NotEnoughPokemon::
 
 PastTown_EventScript_EndPestPokemonPreQuest:
 	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	release
 	end
 	
@@ -1476,8 +1520,8 @@ PastTown_Text_ForemanCarrotFarmInvasion:
 	.string "care of them?$"
 
 PastTown_Text_ForemanCarrotFarmInvasionReward:
-	.string "Ah, that you sir for clearing out those\n"
-	.string "silly rabbits!\p"
+	.string "Ah, thnkt you sir for clearing out\n"
+	.string "those silly rabbits!\p"
 	.string "Very few trainers of your caliber live in\n"
 	.string "our town, so we rely on outside help for\l"
 	.string "swarms like this.\p"
@@ -1546,8 +1590,8 @@ PastTown_Text_CabbageFarmerPreQuest2:
 
 PastTown_Text_CabbageFarmerPreQuest2Quest1Reward:
 	.string "Ahh…\p"
-	.string "I submit to the idea it would have been\n"
-	.string "disastrous to lose our yield of carrots…\p"
+	.string "I admit, it would have been disastrous\n"
+	.string "to lose our yield of carrots…\p"
 	.string "Baby carrots are the only vegetable my\n"
 	.string "children will even look at…$"
 
@@ -1610,7 +1654,7 @@ PastTown_Text_ObtainedBerries:
 	.string "Liechi Berry each!$"
 
 PastTown_Text_CabbageFarmerMyCabbages:
-	.string "My cabbages!\n"
+	.string "No!\n"
 	.string "Not my cabbages!$"
 
 PastTown_Text_CabbageFarmerYesSomethingIsWrong:
@@ -1651,7 +1695,7 @@ PastTown_Text_CarrotFarmerPostQuest:
 
 PastTown_Text_CabbageFarmerPostQuest:
 	.string "Cabbages may be the superior vegetable,\n"
-	.string "but I concede that carrots are an\l"
+	.string "but I SUPPOSE that carrots are an\l"
 	.string "important staple in our diet…$"
 
 PastTown_Text_ScientistThisWontDo:

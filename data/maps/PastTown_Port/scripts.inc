@@ -496,6 +496,7 @@ PastTown_Port_EventScript_Dhelmise::
 	msgbox PastTown_Port_Text_Dhelmise, MSGBOX_DEFAULT
 	waitmoncry
 	createmon 1, 0, SPECIES_DEDENNE, 50, ITEM_AIR_BALLOON, 1, NATURE_TIMID, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_NUZZLE, MOVE_PARABOLIC_CHARGE, MOVE_DAZZLING_GLEAM, MOVE_SUPER_FANG
+	closemessage
 	setflag FLAG_SYS_NO_WHITEOUT
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
@@ -518,6 +519,7 @@ PastTown_Port_EventScript_Grapploct::
 	msgbox PastTown_Port_Text_Grapploct, MSGBOX_DEFAULT
 	waitmoncry
 	createmon 1, 0, SPECIES_DEDENNE, 50, ITEM_AIR_BALLOON, 1, NATURE_TIMID, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_NUZZLE, MOVE_PARABOLIC_CHARGE, MOVE_DAZZLING_GLEAM, MOVE_SUPER_FANG
+	closemessage
 	setflag FLAG_SYS_NO_WHITEOUT
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
@@ -540,6 +542,7 @@ PastTown_Port_EventScript_Crabominable::
 	msgbox PastTown_Port_Text_Crabominable, MSGBOX_DEFAULT
 	waitmoncry
 	createmon 1, 0, SPECIES_DEDENNE, 50, ITEM_AIR_BALLOON, 1, NATURE_TIMID, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_NUZZLE, MOVE_PARABOLIC_CHARGE, MOVE_DAZZLING_GLEAM, MOVE_SUPER_FANG
+	closemessage
 	setflag FLAG_SYS_NO_WHITEOUT
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
@@ -562,6 +565,7 @@ PastTown_Port_EventScript_Palossand::
 	msgbox PastTown_Port_Text_Palossand, MSGBOX_DEFAULT
 	waitmoncry
 	createmon 1, 0, SPECIES_DEDENNE, 50, ITEM_AIR_BALLOON, 1, NATURE_TIMID, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_NUZZLE, MOVE_PARABOLIC_CHARGE, MOVE_DAZZLING_GLEAM, MOVE_SUPER_FANG
+	closemessage
 	setflag FLAG_SYS_NO_WHITEOUT
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
@@ -584,6 +588,7 @@ PastTown_Port_EventScript_Phione::
 	msgbox PastTown_Port_Text_Phione, MSGBOX_DEFAULT
 	waitmoncry
 	createmon 1, 0, SPECIES_DEDENNE, 50, ITEM_AIR_BALLOON, 1, NATURE_TIMID, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_NUZZLE, MOVE_PARABOLIC_CHARGE, MOVE_DAZZLING_GLEAM, MOVE_SUPER_FANG
+	closemessage
 	setflag FLAG_SYS_NO_WHITEOUT
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle

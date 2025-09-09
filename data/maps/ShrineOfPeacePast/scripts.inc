@@ -102,7 +102,7 @@ ShrineOfPeacePast_EventScript_WarpToForestR::
 	end
 
 ShrineOfPeacePast_EventScript_Celebi::
-	lockall
+	lock
 	faceplayer
 	goto_if_unset FLAG_WARPED_WITH_CELEBI, ShrineOfPeacePast_EventScript_CelebiFirstWarp
 	speakername Name_Celebi
@@ -110,13 +110,13 @@ ShrineOfPeacePast_EventScript_Celebi::
 	speakername NULL
 	msgbox ShrineOfPeacePast_Text_CelebiWarp, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, ShrineOfPeacePast_EventScript_HandleWarpEvents
-	releaseall
+	release
 	end
 
 ShrineOfPeacePast_EventScript_CelebiFirstWarp::
 	msgbox ShrineOfPeacePast_Text_CelebiFirstWarp, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, ShrineOfPeacePast_EventScript_HandleWarpEvents
-	releaseall
+	release
 	end
 
 ShrineOfPeacePast_EventScript_HandleWarpEvents::
@@ -423,7 +423,7 @@ ShrineOfPeacePast_EventScript_CelebiWarp::
 	setflag FLAG_WARPED_WITH_CELEBI
 	warpteleport MAP_SHRINE_OF_PEACE_PRESENT, 14, 9
 	waitstate
-	releaseall
+	release
 	end
 
 ShrineOfPeacePast_EventScript_Shrine::
