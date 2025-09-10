@@ -143,8 +143,8 @@
     {
       "local_id": "LOCALID_FOREST_FROSMOTH",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(FROSMOTH)",
-      "x": 56,
-      "y": 26,
+      "x": 10,
+      "y": 14,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_SLOWLY_IN_PLACE_UP",
       "movement_range_x": 0,

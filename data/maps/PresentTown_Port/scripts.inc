@@ -16,6 +16,7 @@ PresentTown_Port_EventScript_TryRemoveThundurus::
 
 PresentTown_Port_EventScript_RemoveThundurus::
 	setflag FLAG_CAUGHT_THUNDURUS
+	playbgm MUS_DP_SUNYSHORE_DAY, TRUE
 	setweather WEATHER_SUNNY
 	doweather
 	call Common_EventScript_MoveInsideNPCsOutside
@@ -435,6 +436,7 @@ PresentTown_Port_EventScript_Thundurus::
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, PresentTown_Port_EventScript_RanFromThundurus
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, PresentTown_Port_EventScript_RanFromThundurus
 	clearflag FLAG_SYS_WEATHER_CTRL
+	playbgm MUS_DP_SUNYSHORE_DAY, TRUE
 	setweather WEATHER_SUNNY
 	doweather
 	removeobject VAR_LAST_TALKED
@@ -444,6 +446,7 @@ PresentTown_Port_EventScript_Thundurus::
 
 PresentTown_Port_EventScript_DefeatedThundurus::
 	clearflag FLAG_SYS_WEATHER_CTRL
+	playbgm MUS_DP_SUNYSHORE_DAY, TRUE
 	setweather WEATHER_SUNNY
 	doweather
 	call Common_EventScript_MoveInsideNPCsOutside
@@ -452,6 +455,7 @@ PresentTown_Port_EventScript_DefeatedThundurus::
 
 PresentTown_Port_EventScript_RanFromThundurus::
 	clearflag FLAG_SYS_WEATHER_CTRL
+	playbgm MUS_DP_SUNYSHORE_DAY, TRUE
 	setweather WEATHER_SUNNY
 	doweather
 	call Common_EventScript_MoveInsideNPCsOutside
@@ -636,9 +640,6 @@ PresentTown_Port_EventScript_FaithfulMan::
 	speak LOCALID_PORT_AROMATISSE, DIR_EAST, Name_Aromatisse, PresentTown_Port_Text_AromatisseControls
 	waitmoncry
 	speak LOCALID_PORT_BOYFRIEND, VAR_0x8005, Name_Boyfriend, PresentTown_Port_Text_BoyfriendThatsUhh
-	playse SE_SELECT
-	call_if_eq VAR_FACING, DIR_WEST, PresentTown_Port_EventScript_BoyfriendFaceRight
-	call_if_ne VAR_FACING, DIR_WEST, PresentTown_Port_EventScript_BoyfriendFaceUp	
 	trainerbattle_no_intro TRAINER_BOYFRIEND, PresentTown_Port_Text_BoyfriendDefeat
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, PresentTown_Port_EventScript_FaithfulManDefeated
@@ -664,6 +665,7 @@ PresentTown_Port_EventScript_FaithfulMan::
 	call_if_ne VAR_FACING, DIR_WEST, PresentTown_Port_EventScript_BoyfriendRunOffRight
 	removeobject LOCALID_PORT_BOYFRIEND
 	questmenu QUEST_MENU_SET_REWARD, QUEST_FOREVER_FAITHFUL
+	clearflag FLAG_HIDE_FLAT1_2F_FAITHFUL_MAN
 	releaseall
 	end
 
@@ -685,6 +687,7 @@ PresentTown_Port_EventScript_AromatisseRunOffUp::
 	applymovement LOCALID_PLAYER, PresentTown_Port_Movement_LookerWatchAromatisse
 	applymovement LOCALID_PORT_AROMATISSE, PresentTown_Port_Movement_AromatisseRunOffUp
 	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 	return
 
 PresentTown_Port_EventScript_AromatisseRunOffRight::
@@ -700,6 +703,7 @@ PresentTown_Port_EventScript_AromatisseRunOffRight::
 	waitmovement LOCALID_PORT_AROMATISSE
 	delay 40
 	applymovement LOCALID_PLAYER, PresentTown_Port_Movement_LookerWalkBackInPlace
+	waitmovement 0
 	return
 
 PresentTown_Port_Movement_LookerWatchAromatisse:
@@ -823,6 +827,8 @@ PresentTown_Port_EventScript_FaithfulManDefeated::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_Drat
 	closemessage
 	clearflag FLAG_SYS_NO_WHITEOUT
+	applymovement LOCALID_PORT_BOYFRIEND, Common_Movement_FaceLeft
+	waitmovement 0
 	releaseall
 	end
 
@@ -852,7 +858,9 @@ PresentTown_Port_Text_BoyfriendWait:
 
 PresentTown_Port_Text_BoyfriendThatsUhh:
 	.string "That's… uhh…\p"
-	.string "…Mmm…$"
+	.string "…Mmm…\p"
+	.string "You won't get my sweet baby…\p"
+	.string "Baby…$"
 
 PresentTown_Port_Text_BoyfriendPrefight:
 	.string "You won't get my sweet baby…\p"
@@ -894,8 +902,8 @@ PresentTown_Port_Text_Aromatisse:
 	.string "Ara-ara-ara-ara-ara!$"
 
 PresentTown_Port_Text_AromatisseControls:
-	.string "Ara?\n"
-	.string "Aaaaaaaaaah!$"
+	.string "Ara-ara?\n"
+	.string "Aaaaaaaaaaaaaaaaaaah!$"
 
 PresentTown_Port_Text_AromatisseStartled:
 	.string "Ara!?$"

@@ -11,6 +11,7 @@ ShrineOfProsperityPresent_EventScript_OnTransition:
 	end
 
 ShrineOfProsperityPresent_EventScript_SetTornadusFaceDown::
+	setflag FLAG_HIDE_SHRINE_THUNDURUS
 	setobjectmovementtype LOCALID_SHRINE_TORNADUS, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
 	return
 
@@ -410,7 +411,6 @@ ShrineOfProsperityPresent_EventScript_StartGenieFight::
 	setobjectmovementtype LOCALID_SHRINE_THUNDURUS, MOVEMENT_TYPE_WALK_IN_PLACE_UP
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, ShrineOfProsperityPresent_EventScript_DefeatedGenies
-	setflag FLAG_HIDE_SHRINE_THUNDURUS
 	releaseall
 	end
 
@@ -460,6 +460,7 @@ ShrineOfProsperityPresent_EventScript_DefeatedGenies::
 	speakername Name_Looker
 	msgbox ShrineOfProsperityPresent_Text_LookerTheWeather, MSGBOX_DEFAULT
 	closemessage
+	@playbgm MUS_DP_ETERNA_FOREST, TRUE
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_INVESTIGATE_PROSPERITY, 0
 	questmenu QUEST_MENU_SET_REWARD QUEST_INVESTIGATE_PROSPERITY
 	setflag FLAG_SYS_DISABLE_ENCOUNTERS

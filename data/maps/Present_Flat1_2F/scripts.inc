@@ -20,7 +20,7 @@ Present_Flat1_2F_EventScript_Beauty::
 	switch VAR_RESULT
 	case 1, Present_Flat1_2F_EventScript_BeautyPreQuest
 	case 2, Present_Flat1_2F_EventScript_BeautyQuest
-	@ case 3, Present_Flat1_2F_EventScript_BeautyReward
+	case 3, Present_Flat1_2F_EventScript_BeautyReward
 	case 4, Present_Flat1_2F_EventScript_BeautyBoyfriendPostQuest
 	release
 	end

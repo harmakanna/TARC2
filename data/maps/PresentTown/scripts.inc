@@ -23,7 +23,6 @@ PresentTown_EventScript_UnsetShrinePeaceWarpTiles::
 
 PresentTown_EventScript_WarpToCutsceneForest::
 	lockall
-	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	warp MAP_CUTSCENE_FOREST, 10, 14
 	waitstate
 	releaseall
@@ -176,16 +175,14 @@ PresentTown_EventScript_LostSmeargleGoHome::
 	applymovement LOCALID_CITY_FOREST_SMEARGLE, PresentTown_Movement_LookerGuideLostIdol
 	waitmovement 0
 	applymovement LOCALID_CITY_FOREST_SMEARGLE, Common_Movement_FaceRight
-	closemessage
-	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
-	applymovement LOCALID_CITY_FOREST_IDOL, PresentTown_Movement_LostIdolExitFrame
+	@applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 	speak LOCALID_PLAYER, DIR_WEST, Name_Looker, PresentTown_Text_LookerGoFindLeo
 	speak LOCALID_CITY_FOREST_SMEARGLE, DIR_EAST, Name_Smeargle, CutsceneForest_Text_SmeargleHappy
 	closemessage
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
 	applymovement LOCALID_CITY_FOREST_SMEARGLE, PresentTown_Movement_LostIdolExitFrame
 	waitmovement 0
-	removeobject LOCALID_CITY_FOREST_IDOL
+	removeobject LOCALID_CITY_FOREST_SMEARGLE
 	setvar VAR_TRIGGER_CUTSCENE_FOREST, 0
 	setvar VAR_CUTSCENE_FOREST_STATE, 0
 	clearflag FLAG_SYS_PREVENT_MAP_FADE
@@ -1015,7 +1012,7 @@ PresentTown_EventScript_Tornadus::
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	clearflag FLAG_SYS_NO_WHITEOUT
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PresentTown_EventScript_DefeatedTornadus
@@ -1023,6 +1020,8 @@ PresentTown_EventScript_Tornadus::
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, PresentTown_EventScript_RanFromTornadus
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, PresentTown_EventScript_RanFromTornadus
 	clearflag FLAG_SYS_WEATHER_CTRL
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	playbgm MUS_DP_SUNYSHORE_DAY, TRUE
 	setweather WEATHER_SUNNY
 	doweather
 	removeobject VAR_LAST_TALKED
@@ -1031,6 +1030,7 @@ PresentTown_EventScript_Tornadus::
 
 PresentTown_EventScript_DefeatedTornadus::
 	clearflag FLAG_SYS_WEATHER_CTRL
+	playbgm MUS_DP_SUNYSHORE_DAY, TRUE
 	setweather WEATHER_SUNNY
 	doweather
 	call Common_EventScript_MoveInsideNPCsOutside
@@ -1039,6 +1039,7 @@ PresentTown_EventScript_DefeatedTornadus::
 
 PresentTown_EventScript_RanFromTornadus::
 	clearflag FLAG_SYS_WEATHER_CTRL
+	playbgm MUS_DP_SUNYSHORE_DAY, TRUE
 	setweather WEATHER_SUNNY
 	doweather
 	call Common_EventScript_MoveInsideNPCsOutside

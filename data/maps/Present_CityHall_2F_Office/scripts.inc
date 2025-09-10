@@ -41,14 +41,14 @@ Present_CityHall_2F_Office_EventScript_AnabelHiLooker::
 	closemessage
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
 	waitmovement 0
-	delay 80
+	delay 120
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_CityHall_2F_Office_Text_LookerWillYouTellMe
 	speak LOCALID_OFFICE_2F_ANABEL, VAR_0x8005, Name_Anabel, Present_CityHall_2F_Office_Text_AnabelNo
 	closemessage
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
 	applymovement LOCALID_OFFICE_2F_ANABEL, Common_Movement_FaceDown
 	waitmovement 0
-	delay 120
+	delay 170
 	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
 	speak LOCALID_OFFICE_2F_ANABEL, VAR_0x8005, Name_Anabel, Present_CityHall_2F_Office_Text_AnabelWhat
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_CityHall_2F_Office_Text_LookerFine
@@ -136,7 +136,7 @@ Present_CityHall_2F_Office_EventScript_Display::
 
 Present_CityHall_2F_Office_Text_Egg:
 	.string "An intricately decorated fabergé egg\n"
-	.string "is put on display.$"
+	.string "is on display.$"
 
 Present_CityHall_2F_Office_Text_Mayor:
 	.string "Oh dear! Are you okay?\p"
@@ -161,15 +161,15 @@ Present_CityHall_2F_Office_Text_LookerOutOfAdvice:
 	.string "paperwork on my mind left to do…$"
 
 Present_CityHall_2F_Office_Text_AnabelNoAdvice:
-	.string "Okay then. Let me know if you\n"
-	.string "need any help cracking this case!$"
+	.string "Okay then. Let me know if you need any\n"
+	.string "help cracking this case!$"
 
 Present_CityHall_2F_Office_Text_AnabelHiLookerShort:
 	.string "Hi, Looker!$"
 
 Present_CityHall_2F_Office_Text_AnabelWantAdvice:
 	.string "Would you like some advice on where\n"
-	.string "to investigate next, now?$"
+	.string "to investigate next?$"
 
 Present_CityHall_2F_Office_Text_AnabelHiLooker:
 	.string "Hi, Looker!\p"
@@ -177,8 +177,8 @@ Present_CityHall_2F_Office_Text_AnabelHiLooker:
 
 Present_CityHall_2F_Office_Text_LookerTripOkay:
 	.string "It was certainly better on the way\n"
-	.string "back. I could prepare for the spinning,\l"
-	.string "at the very least.\p"
+	.string "back. At the very least, I could prepare\l"
+	.string "for the spinning…\p"
 	.string "Say, do you know why I have been seeing\n"
 	.string "visions of the future?\p"
 	.string "My deduction abilities are unaffected,\n"
@@ -197,7 +197,7 @@ Present_CityHall_2F_Office_Text_LookerWhyNoDeduction:
 
 Present_CityHall_2F_Office_Text_AnabelYouCantJust:
 	.string "Well, you can't just 'see the future'!\p"
-	.string "It's an intuition thing. Kind of like a\l"
+	.string "It's an intuition thing. Kind of like a\n"
 	.string "sixth sense of sorts.\p"
 	.string "As such, it won't affect everything.$"
 

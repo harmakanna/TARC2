@@ -462,14 +462,14 @@ ShrineOfPeacePresent_OnResume:
 	end
 	
 ShrineOfPeacePresent_EventScript_Celebi::
-	lockall
+	lock
 	faceplayer
 	speakername Name_Celebi
 	msgbox ShrineOfPeacePresent_Text_Celebi, MSGBOX_DEFAULT
 	speakername NULL
 	msgbox ShrineOfPeacePresent_Text_CelebiWarp, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, ShrineOfPeacePresent_EventScript_HandleWarpEvents
-	releaseall
+	release
 	end
 
 ShrineOfPeacePresent_EventScript_HandleWarpEvents::
@@ -489,7 +489,7 @@ ShrineOfPeacePresent_EventScript_HandlePastLisiaSpawn::
 	return
 
 ShrineOfPeacePast_EventScript_TrySpawnPastLisia::
-	randompercentage 50
+	randompercentage 100
 	call_if_eq VAR_RESULT, TRUE, ShrineOfPeacePast_EventScript_SpawnPastLisia
 	return
 
@@ -500,12 +500,11 @@ ShrineOfPeacePast_EventScript_SpawnPastLisia::
 ShrineOfPeacePresent_EventScript_CelebiWarp::
 	warpteleport MAP_SHRINE_OF_PEACE_PAST, 14, 9
 	waitstate
-	releaseall
+	release
 	end
 
 ShrineOfPeacePresent_EventScript_WarpToCutsceneForest::
 	lockall
-	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	warp MAP_CUTSCENE_FOREST, 10, 4
 	waitstate
 	releaseall

@@ -63,6 +63,8 @@ Present_CityHall_2F_Ranger_EventScript_HeadRangerRewardQuest::
 	setvar VAR_CUTSCENE_FOREST_STATE, 3
 	setvar VAR_TRIGGER_CUTSCENE_FOREST, 2
 	setflag FLAG_PLAY_LOOKER_RANGER_ON_TRANSITION
+	clearflag FLAG_HIDE_FOREST_DEDENNE
+	clearflag FLAG_HIDE_FOREST_TOGEDEMARU
 	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	release
 	end
@@ -211,7 +213,7 @@ Present_CityHall_2F_Ranger_EventScript_Display::
 
 Present_CityHall_2F_Ranger_Text_Egg:
 	.string "An intricately decorated fabergé egg\n"
-	.string "is put on display.$"
+	.string "is on display.$"
 
 Present_CityHall_2F_Ranger_Text_ScientistThankYou:
 	.string "Thank you for giving me the chance\n"
@@ -376,6 +378,8 @@ Present_CityHall_2F_Ranger_Text_HeadRangerReward:
 	.string "rampant on the ecosystem if unchecked.\p"
 	.string "But to think there would be one strong\n"
 	.string "enough to capture a legend…\p"
+	.string "… … …\n"
+	.string "… … …\p"
 	.string "Anyways, I think we can trust you to\n"
 	.string "not go crazy yourself.\p"
 	.string "We don't have much to give, but I hope\n"

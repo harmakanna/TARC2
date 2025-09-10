@@ -338,12 +338,12 @@ Present_School_EventScript_TwinPostQuest::
 
 Present_School_EventScript_Doubter::
 	lockall
-	faceplayer
 	returnqueststate QUEST_LUXRAY
 	switch VAR_RESULT
 	case 2, Present_School_EventScript_TwinQuest
 	case 3, Present_School_EventScript_TwinQuest
 	case 4, Present_School_EventScript_DoubterPostQuest
+	faceplayer
 	call_if_set FLAG_SYS_MAIN_GAME_START, Present_School_EventScript_GiveDoubterName
 	msgbox Present_School_Text_DoubterPreGenies, MSGBOX_DEFAULT
 	closemessage
@@ -526,7 +526,7 @@ Present_School_Text_TwinNoMonSelected:
 	.string "AAAAA HURRY UP AND BRING LUXRAY!!!$"
 
 Present_School_Text_TwinAaa:
-	.string "AAAAAAAAAAAAAA$"
+	.string "AAAAAAAAAAAAAAAAAAAAAA$"
 
 Present_School_Text_TwinThisLameo:
 	.string "this lameo is making FUN of me\n"
@@ -559,7 +559,8 @@ Present_School_Text_DoubterBozoBozoBozo:
 	.string "BOZO BOZO BOZO$"
 
 Present_School_Text_TwinIdiot:
-	.string "AAAAAAAAAAAAAA\p"
+	.string "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n"
+	.string "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\p"
 	.string "STUPID BABY IDIOT!!!!!!!$"
 
 Present_School_Text_TwinStupidBabyIdiot:

@@ -8,7 +8,7 @@ PastTown_Port_OnLoad:
 	call PastTown_Port_EventScript_ResetPortMons
 	returnqueststate QUEST_INVESTIGATE_PROSPERITY
 	call_if_eq VAR_RESULT, 4, PastTown_Port_EventScript_CheckSpawnCatchMon
-	return
+	end
 
 PastTown_Port_EventScript_ResetPortMons::
 	setflag FLAG_HIDE_PORT_DHELMISE
@@ -71,7 +71,7 @@ PastTown_Port_EventScript_SpawnCrabominable::
 
 PastTown_Port_EventScript_TrySpawnPalossand::
 	call_if_set FLAG_CAUGHT_PALOSSAND, PastTown_Port_EventScript_ReseedPortMon
-	call_if_unset FLAG_CAUGHT_PALOSSAND, PastTown_Port_EventScript_SpawnPalossand
+call_if_unset FLAG_CAUGHT_PALOSSAND, PastTown_Port_EventScript_SpawnPalossand
 	return
 
 PastTown_Port_EventScript_SpawnPalossand::
@@ -90,6 +90,9 @@ PastTown_Port_EventScript_SpawnPhione::
 PastTown_Port_OnTransition:
 	returnqueststate QUEST_SENTIMENTAL
 	call_if_eq VAR_RESULT, 2, PastTown_Port_EventScript_ResetHeartScaleSparkle
+	@call PastTown_Port_EventScript_ResetPortMons
+	@eturnqueststate QUEST_INVESTIGATE_PROSPERITY
+	@call_if_eq VAR_RESULT, 4, PastTown_Port_EventScript_CheckSpawnCatchMon
 	end
 
 PastTown_Port_EventScript_ResetHeartScaleSparkle::
@@ -491,6 +494,7 @@ PastTown_Port_EventScript_PokemaniacChoseTuskFossil::
 
 PastTown_Port_EventScript_Dhelmise::
 	lockall
+	faceplayer
 	waitse
 	playmoncry SPECIES_DHELMISE, CRY_MODE_ENCOUNTER
 	msgbox PastTown_Port_Text_Dhelmise, MSGBOX_DEFAULT
@@ -514,6 +518,7 @@ PastTown_Port_EventScript_Dhelmise::
 
 PastTown_Port_EventScript_Grapploct::
 	lockall
+	faceplayer
 	waitse
 	playmoncry SPECIES_GRAPPLOCT, CRY_MODE_ENCOUNTER
 	msgbox PastTown_Port_Text_Grapploct, MSGBOX_DEFAULT
@@ -537,6 +542,7 @@ PastTown_Port_EventScript_Grapploct::
 
 PastTown_Port_EventScript_Crabominable::
 	lockall
+	faceplayer
 	waitse
 	playmoncry SPECIES_CRABOMINABLE, CRY_MODE_ENCOUNTER
 	msgbox PastTown_Port_Text_Crabominable, MSGBOX_DEFAULT
@@ -560,6 +566,7 @@ PastTown_Port_EventScript_Crabominable::
 
 PastTown_Port_EventScript_Palossand::
 	lockall
+	faceplayer
 	waitse
 	playmoncry SPECIES_PALOSSAND, CRY_MODE_ENCOUNTER
 	msgbox PastTown_Port_Text_Palossand, MSGBOX_DEFAULT
@@ -583,6 +590,7 @@ PastTown_Port_EventScript_Palossand::
 
 PastTown_Port_EventScript_Phione::
 	lockall
+	faceplayer
 	waitse
 	playmoncry SPECIES_PHIONE, CRY_MODE_ENCOUNTER
 	msgbox PastTown_Port_Text_Phione, MSGBOX_DEFAULT

@@ -22,6 +22,7 @@ Present_Cafe_EventScript_Emma::
 	returnqueststate QUEST_BONJOUR_EMMA
 	goto_if_eq VAR_RESULT, 4, Present_Cafe_EventScript_EmmaPostQuest
 	call Script_GetNPCFacingDirection
+	questmenu QUEST_MENU_SET_ACTIVE, QUEST_BONJOUR_EMMA
 	speak LOCALID_CAFE_EMMA, VAR_0x8005, Name_Emma, Present_Cafe_Text_EmmaBonjour
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Cafe_Text_LookerBonjour
 	speak LOCALID_CAFE_EMMA, VAR_0x8005, Name_Emma, Present_Cafe_Text_EmmaComoCaVa
@@ -116,6 +117,8 @@ Present_Cafe_EventScript_EmmaSad::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Cafe_Text_LookerNoThanks
 	speak LOCALID_CAFE_EMMA, VAR_0x8005, Name_Emma, Present_Cafe_Text_EmmaAhDaccord
 	closemessage
+	applymovement LOCALID_CAFE_EMMA, Common_Movement_FaceLeft
+	waitmovement 0
 	release
 	end
 
@@ -125,6 +128,7 @@ Present_Cafe_EventScript_EmmaWrongAnswer::
 	closemessage
 	applymovement LOCALID_CAFE_EMMA, Common_Movement_FaceLeft
 	waitmovement 0
+	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	release
 	end
 
@@ -375,8 +379,6 @@ Present_Cafe_EventScript_BaristaUp::
 	end
 
 Present_Cafe_EventScript_Barista::
-	call_if_eq VAR_0x8004, DIR_WEST, Present_Cafe_EventScript_TurnBaristaEast
-	call_if_eq VAR_0x8004, DIR_NORTH, Present_Cafe_EventScript_TurnBaristaSouth
 	goto_if_unset FLAG_SYS_MAIN_GAME_START, Present_Cafe_EventScript_BaristaPreGame
 	returnqueststate QUEST_GET_INTO_THE_GROOVE
 	switch VAR_RESULT
@@ -388,6 +390,8 @@ Present_Cafe_EventScript_Barista::
 	end
 
 Present_Cafe_EventScript_BaristaPreGame::
+	call_if_eq VAR_0x8004, DIR_WEST, Present_Cafe_EventScript_TurnBaristaEast
+	call_if_eq VAR_0x8004, DIR_NORTH, Present_Cafe_EventScript_TurnBaristaSouth
 	msgbox Present_Cafe_Text_BaristaPreGame, MSGBOX_DEFAULT
 	closemessage
 	release
@@ -395,6 +399,8 @@ Present_Cafe_EventScript_BaristaPreGame::
 	
 Present_Cafe_EventScript_BaristaPreQuest::
 	setflag FLAG_SYS_DISAPPEAR_QUESTS
+	call_if_eq VAR_0x8004, DIR_WEST, Present_Cafe_EventScript_TurnBaristaEast
+	call_if_eq VAR_0x8004, DIR_NORTH, Present_Cafe_EventScript_TurnBaristaSouth
 	speak LOCALID_CAFE_BARISTA, VAR_0x8005, Name_Barista, Present_Cafe_Text_BaristaNervous
 	speakername NULL
 	msgbox Present_Cafe_Text_BaristaSweating, MSGBOX_DEFAULT
@@ -408,6 +414,8 @@ Present_Cafe_EventScript_BaristaPreQuest::
 	end
 	
 Present_Cafe_EventScript_BaristaQuest::
+	call_if_eq VAR_0x8004, DIR_WEST, Present_Cafe_EventScript_TurnBaristaEast
+	call_if_eq VAR_0x8004, DIR_NORTH, Present_Cafe_EventScript_TurnBaristaSouth
 	speak LOCALID_CAFE_BARISTA, VAR_0x8005, Name_Barista, Present_Cafe_Text_BaristaIsCookedShort
 	closemessage
 	release
@@ -415,6 +423,8 @@ Present_Cafe_EventScript_BaristaQuest::
 
 Present_Cafe_EventScript_BaristaReward::
 	setflag FLAG_SYS_DISAPPEAR_QUESTS
+	call_if_eq VAR_0x8004, DIR_WEST, Present_Cafe_EventScript_TurnBaristaEast
+	call_if_eq VAR_0x8004, DIR_NORTH, Present_Cafe_EventScript_TurnBaristaSouth
 	speak LOCALID_CAFE_BARISTA, VAR_0x8005, Name_Barista, Present_Cafe_Text_BaristaYouDidIt
 	speak LOCALID_PLAYER, VAR_0x8004, Name_Looker, Looker_Text_AlwaysHappyToHelp
 	speak LOCALID_CAFE_BARISTA, VAR_0x8004, Name_Barista, Present_Cafe_Text_BaristaImBroke
@@ -425,6 +435,8 @@ Present_Cafe_EventScript_BaristaReward::
 	end
 
 Present_Cafe_EventScript_BaristaPostQuest::
+	call_if_eq VAR_0x8004, DIR_WEST, Present_Cafe_EventScript_TurnBaristaEast
+	call_if_eq VAR_0x8004, DIR_NORTH, Present_Cafe_EventScript_TurnBaristaSouth
 	speak LOCALID_CAFE_BARISTA, VAR_0x8005, Name_Barista, Present_Cafe_Text_BaristaPostQuest
 	speakername NULL
 	msgbox Present_Cafe_Text_WouldYouLikeADrink, MSGBOX_YESNO

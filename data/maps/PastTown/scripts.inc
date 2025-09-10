@@ -387,15 +387,20 @@ PastTown_EventScript_ScientistQuestActive::
 	end
 
 PastTown_EventScript_ScientistQuestReward::
+	closemessage
 	playse SE_PIN
 	applymovement LOCALID_PAST_SCIENTIST, Common_Movement_ExclamationMark
 	waitmovement 0
-	delay 60
+	delay 50
 	speak LOCALID_PAST_SCIENTIST, VAR_0x8005, Name_Past_Scientist, PastTown_Text_ScientistGiveToMe
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_HereYouGo
+
 	removeitem ITEM_CELL_BATTERY, 1
 	speakername NULL
-	msgbox PastTown_Text_LookerHandedOverTheBattery, MSGBOX_DEFAULT
+	playfanfare MUS_OBTAIN_TMHM
+	message PastTown_Text_LookerHandedOverTheBattery
+	waitmessage
+	waitfanfare
 	speak LOCALID_PAST_SCIENTIST, VAR_0x8005, Name_Past_Scientist, PastTown_Text_ScientistReward
 	speakername NULL
 	giveitem ITEM_TM_SUBSTITUTE, 1 @ Substitute

@@ -70,9 +70,75 @@ CutsceneForest_OnResume:
 CutsceneForest_EventScript_TryRemoveCatchMon::
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
-	removeobject VAR_TEMP_1
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 3, CutsceneForest_EventScript_RemoveRodent
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 4, CutsceneForest_EventScript_RemoveRodent
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 5, CutsceneForest_EventScript_RemoveLurantis
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 6, CutsceneForest_EventScript_RemoveLuxray
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 7, CutsceneForest_EventScript_RemoveLuxrayDark
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 8, CutsceneForest_EventScript_RemoveToedscruel
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 9, CutsceneForest_EventScript_RemoveFrosmoth
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 10, CutsceneForest_EventScript_RemoveKleavor
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 11, CutsceneForest_EventScript_RemoveGoodraHisui
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 12, CutsceneForest_EventScript_RemoveBeheeyem
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 13, CutsceneForest_EventScript_RemoveAerodactyl
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 14, CutsceneForest_EventScript_RemoveScreamTail
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 15, CutsceneForest_EventScript_RemoveWoChien
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 16, CutsceneForest_EventScript_RemoveAromatisse
 	return
 
+CutsceneForest_EventScript_RemoveRodent::
+	removeobject LOCALID_FOREST_TOGEDEMARU
+	removeobject LOCALID_FOREST_DEDENNE
+	return
+	
+CutsceneForest_EventScript_RemoveLurantis::
+	removeobject LOCALID_FOREST_LURANTIS
+	return
+	
+CutsceneForest_EventScript_RemoveLuxray::
+	removeobject LOCALID_FOREST_LUXRAY
+	return
+	
+CutsceneForest_EventScript_RemoveLuxrayDark::
+	removeobject LOCALID_FOREST_LUXRAY_DARK
+	return
+	
+CutsceneForest_EventScript_RemoveToedscruel::
+	removeobject LOCALID_FOREST_TOEDSCRUEL
+	return
+	
+CutsceneForest_EventScript_RemoveFrosmoth::
+	removeobject LOCALID_FOREST_FROSMOTH
+	return
+	
+CutsceneForest_EventScript_RemoveKleavor::
+	removeobject LOCALID_FOREST_KLEAVOR
+	return
+	
+CutsceneForest_EventScript_RemoveGoodraHisui::
+	removeobject LOCALID_FOREST_GOODRA
+	return
+	
+CutsceneForest_EventScript_RemoveBeheeyem::
+	removeobject LOCALID_FOREST_BEHEEYEM
+	return
+	
+CutsceneForest_EventScript_RemoveAerodactyl::
+	removeobject LOCALID_FOREST_AERODACTYL
+	return
+	
+CutsceneForest_EventScript_RemoveScreamTail::
+	removeobject LOCALID_FOREST_SCREAM_TAIL
+	return
+	
+CutsceneForest_EventScript_RemoveWoChien::
+	removeobject LOCALID_FOREST_WO_CHIEN
+	return
+	
+CutsceneForest_EventScript_RemoveAromatisse::
+	removeobject LOCALID_FOREST_AROMATISSE
+	return
+	
 CutsceneForest_OnTransition:
 	setflag FLAG_SYS_PREVENT_MAP_FADE
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetStormWeather
@@ -91,6 +157,7 @@ CutsceneForest_OnTransition:
 	call_if_eq VAR_CUTSCENE_FOREST_STATE, 13, CutsceneForest_EventScript_AddAerodactyl
 	call_if_eq VAR_CUTSCENE_FOREST_STATE, 14, CutsceneForest_EventScript_AddScreamTail
 	call_if_eq VAR_CUTSCENE_FOREST_STATE, 15, CutsceneForest_EventScript_AddWoChien
+	call_if_eq VAR_CUTSCENE_FOREST_STATE, 16, CutsceneForest_EventScript_AddAromatisse
 	end
 
 CutsceneForest_EventScript_AddLostIdol::
@@ -177,6 +244,11 @@ CutsceneForest_EventScript_AddWoChien::
 	addobject LOCALID_FOREST_WO_CHIEN
 	return
 
+CutsceneForest_EventScript_AddAromatisse::
+	clearflag FLAG_HIDE_FOREST_AROMATISSE
+	addobject LOCALID_FOREST_AROMATISSE
+	return
+
 CutsceneForest_OnFrame:
     map_script_2 VAR_CUTSCENE_STATE, 5, CutsceneForest_EventScript_SearchForEstella
 	map_script_2 VAR_CUTSCENE_FOREST_STATE, 1, CutsceneForest_EventScript_FindLostIdol
@@ -199,7 +271,11 @@ CutsceneForest_OnFrame:
 
 CutsceneForest_EventScript_RodentsInitialEncounter::
 	lockall
+	clearflag FLAG_SYS_PREVENT_MAP_FADE
+	setflag FLAG_SYS_NO_WHITEOUT
+	fadescreen FADE_FROM_BLACK
 	applymovement LOCALID_PLAYER, CutsceneForest_Movement_WalkUp3
+	waitmovement 0
 	playse SE_PIN
 	applymovement LOCALID_PLAYER, Common_Movement_QuestionMark
 	waitmovement 0
@@ -239,7 +315,7 @@ CutsceneForest_EventScript_ChoseDedenne::
 	waitmovement 0
 	createmon 1, 0, SPECIES_DEDENNE, 50, ITEM_AIR_BALLOON, 1, NATURE_TIMID, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_NUZZLE, MOVE_PARABOLIC_CHARGE, MOVE_DAZZLING_GLEAM, MOVE_SUPER_FANG
 	closemessage
-	setvar VAR_TEMP_1, LOCALID_FOREST_DEDENNE
+	setvar VAR_LAST_TALKED, LOCALID_FOREST_DEDENNE
 	setvar VAR_0x8004, SPECIES_DEDENNE
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
@@ -270,7 +346,7 @@ CutsceneForest_EventScript_ChoseTogedemaru::
 	waitmovement 0
 	createmon 1, 0, SPECIES_TOGEDEMARU, 50, ITEM_AIR_BALLOON, 1, NATURE_JOLLY, 0, MON_MALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_NUZZLE, MOVE_ZING_ZAP, MOVE_IRON_HEAD, MOVE_SUPER_FANG
 	closemessage
-	setvar VAR_TEMP_1, LOCALID_FOREST_TOGEDEMARU
+	setvar VAR_LAST_TALKED, LOCALID_FOREST_TOGEDEMARU
 	setvar VAR_0x8004, SPECIES_TOGEDEMARU
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
@@ -468,7 +544,7 @@ CutsceneForest_EventScript_DedenneRematch::
 	waitmoncry
 	createmon 1, 0, SPECIES_DEDENNE, 50, ITEM_AIR_BALLOON, 1, NATURE_TIMID, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_NUZZLE, MOVE_PARABOLIC_CHARGE, MOVE_DAZZLING_GLEAM, MOVE_SUPER_FANG
 	closemessage
-	setvar VAR_TEMP_1, LOCALID_FOREST_DEDENNE
+	setvar VAR_LAST_TALKED, LOCALID_FOREST_DEDENNE
 	setvar VAR_0x8004, SPECIES_DEDENNE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -494,7 +570,7 @@ CutsceneForest_EventScript_TogedemaruRematch::
 	waitmoncry
 	createmon 1, 0, SPECIES_TOGEDEMARU, 50, ITEM_AIR_BALLOON, 1, NATURE_JOLLY, 0, MON_MALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_NUZZLE, MOVE_ZING_ZAP, MOVE_IRON_HEAD, MOVE_SUPER_FANG
 	closemessage
-	setvar VAR_TEMP_1, LOCALID_FOREST_TOGEDEMARU
+	setvar VAR_LAST_TALKED, LOCALID_FOREST_TOGEDEMARU
 	setvar VAR_0x8004, SPECIES_TOGEDEMARU
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -520,7 +596,7 @@ CutsceneForest_EventScript_Lurantis::
 	waitmoncry
 	createmon 1, 0, SPECIES_LURANTIS, 50, ITEM_COBA_BERRY, 1, NATURE_ADAMANT, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_LEAF_BLADE, MOVE_SUPERPOWER, MOVE_LEECH_LIFE, MOVE_SOLAR_BLADE
 	closemessage
-	setvar VAR_TEMP_1, LOCALID_FOREST_LURANTIS
+	setvar VAR_LAST_TALKED, LOCALID_FOREST_LURANTIS
 	setvar VAR_0x8004, SPECIES_LURANTIS
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -546,7 +622,7 @@ CutsceneForest_EventScript_Luxray::
 	waitmoncry
 	createmon 1, 0, SPECIES_LUXRAY, 50, ITEM_SHUCA_BERRY, 1, NATURE_JOLLY, 0, MON_MALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_SUPERCELL_SLAM, MOVE_CRUNCH, MOVE_PLAY_ROUGH, MOVE_ICE_FANG
 	closemessage
-	setvar VAR_TEMP_1, LOCALID_FOREST_LUXRAY
+	setvar VAR_LAST_TALKED, LOCALID_FOREST_LUXRAY
 	setvar VAR_0x8004, SPECIES_LUXRAY
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
@@ -575,7 +651,7 @@ CutsceneForest_EventScript_LuxrayDark::
 	waitmoncry
 	createmon 1, 0, SPECIES_LUXRAY_DARK, 50, ITEM_SHUCA_BERRY, 1, NATURE_ADAMANT, 0, MON_MALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_WILD_CHARGE, MOVE_CRUNCH, MOVE_PLAY_ROUGH, MOVE_ICE_FANG
 	closemessage
-	setvar VAR_TEMP_1, LOCALID_FOREST_LUXRAY_DARK
+	setvar VAR_LAST_TALKED, LOCALID_FOREST_LUXRAY_DARK
 	setvar VAR_0x8004, SPECIES_LUXRAY_DARK
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
@@ -615,7 +691,7 @@ CutsceneForest_EventScript_Toedscruel::
 	waitmoncry
 	createmon 1, 0, SPECIES_TOEDSCRUEL, 50, ITEM_YACHE_BERRY, 1, NATURE_TIMID, 0, MON_MALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_ENERGY_BALL, MOVE_EARTH_POWER, MOVE_RAGE_POWDER, MOVE_SPIKES
 	closemessage
-	setvar VAR_TEMP_1, LOCALID_FOREST_TOEDSCRUEL
+	setvar VAR_LAST_TALKED, LOCALID_FOREST_TOEDSCRUEL
 	setvar VAR_0x8004, SPECIES_TOEDSCRUEL
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -641,7 +717,7 @@ CutsceneForest_EventScript_Frosmoth::
 	waitmoncry
 	createmon 1, 0, SPECIES_FROSMOTH, 50, ITEM_CHARTI_BERRY, 1, NATURE_BOLD, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_ICE_BEAM, MOVE_BUG_BUZZ, MOVE_SNOWSCAPE, MOVE_STRUGGLE_BUG
 	closemessage
-	setvar VAR_TEMP_1, LOCALID_FOREST_FROSMOTH
+	setvar VAR_LAST_TALKED, LOCALID_FOREST_FROSMOTH
 	setvar VAR_0x8004, SPECIES_FROSMOTH
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -667,7 +743,7 @@ CutsceneForest_EventScript_Kleavor::
 	waitmoncry
 	createmon 1, 0, SPECIES_KLEAVOR, 50, ITEM_BABIRI_BERRY, 1, NATURE_JOLLY, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_STONE_AXE, MOVE_LUNGE, MOVE_AERIAL_ACE, MOVE_CROSS_POISON
 	closemessage
-	setvar VAR_TEMP_1, LOCALID_FOREST_KLEAVOR
+	setvar VAR_LAST_TALKED, LOCALID_FOREST_KLEAVOR
 	setvar VAR_0x8004, SPECIES_KLEAVOR
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -693,7 +769,7 @@ CutsceneForest_EventScript_GoodraHisui::
 	waitmoncry
 	createmon 1, 0, SPECIES_GOODRA_HISUI, 50, ITEM_CHOPLE_BERRY, 1, NATURE_SASSY, 0, MON_MALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_IRON_HEAD, MOVE_DRAGON_TAIL, MOVE_SLUDGE_WAVE, MOVE_DRAGON_CLAW
 	closemessage
-	setvar VAR_TEMP_1, LOCALID_FOREST_GOODRA
+	setvar VAR_LAST_TALKED, LOCALID_FOREST_GOODRA
 	setvar VAR_0x8004, SPECIES_GOODRA_HISUI
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -719,7 +795,7 @@ CutsceneForest_EventScript_Beheeyem::
 	waitmoncry
 	createmon 1, 0, SPECIES_BEHEEYEM, 50, ITEM_COLBUR_BERRY, 1, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_EXPANDING_FORCE, MOVE_FLASH_CANNON, MOVE_CALM_MIND, MOVE_SHADOW_BALL
 	closemessage
-	setvar VAR_TEMP_1, LOCALID_FOREST_BEHEEYEM
+	setvar VAR_LAST_TALKED, LOCALID_FOREST_BEHEEYEM
 	setvar VAR_0x8004, SPECIES_BEHEEYEM
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -745,7 +821,7 @@ CutsceneForest_EventScript_Aerodactyl::
 	waitmoncry
 	createmon 1, 0, SPECIES_AERODACTYL, 50, ITEM_PASSHO_BERRY, 1, NATURE_ADAMANT, 0, MON_MALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_STONE_EDGE, MOVE_DOUBLE_EDGE, MOVE_HONE_CLAWS, MOVE_SMACK_DOWN
 	closemessage
-	setvar VAR_TEMP_1, LOCALID_FOREST_AERODACTYL
+	setvar VAR_LAST_TALKED, LOCALID_FOREST_AERODACTYL
 	setvar VAR_0x8004, SPECIES_AERODACTYL
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -771,7 +847,7 @@ CutsceneForest_EventScript_ScreamTail::
 	waitmoncry
 	createmon 1, 0, SPECIES_SCREAM_TAIL, 50, ITEM_KEBIA_BERRY, 1, NATURE_BASHFUL, 0, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_PSYCHIC_NOISE, MOVE_MISTY_TERRAIN, MOVE_PERISH_SONG, MOVE_METRONOME
 	closemessage
-	setvar VAR_TEMP_1, LOCALID_FOREST_SCREAM_TAIL
+	setvar VAR_LAST_TALKED, LOCALID_FOREST_SCREAM_TAIL
 	setvar VAR_0x8004, SPECIES_SCREAM_TAIL
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -797,7 +873,7 @@ CutsceneForest_EventScript_WoChien::
 	waitmoncry
 	createmon 1, 0, SPECIES_WO_CHIEN, 50, ITEM_TANGA_BERRY, 1, NATURE_QUIET, 0, MON_GENDERLESS, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_GIGA_DRAIN, MOVE_SNARL, MOVE_RUINATION, MOVE_LEECH_SEED
 	closemessage
-	setvar VAR_TEMP_1, LOCALID_FOREST_WO_CHIEN
+	setvar VAR_LAST_TALKED, LOCALID_FOREST_WO_CHIEN
 	setvar VAR_0x8004, SPECIES_WO_CHIEN
 	special BattleSetup_StartLegendaryBattle
 	waitstate
@@ -824,7 +900,7 @@ CutsceneForest_EventScript_Aromatisse::
 	waitmoncry
 	createmon 1, 0, SPECIES_AROMATISSE, 50, ITEM_BRIGHT_POWDER, 1, NATURE_RASH, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_MOONBLAST, MOVE_ENERGY_BALL, MOVE_THUNDERBOLT, MOVE_TRICK_ROOM
 	closemessage
-	setvar VAR_TEMP_1, LOCALID_FOREST_AROMATISSE
+	setvar VAR_LAST_TALKED, LOCALID_FOREST_AROMATISSE
 	setvar VAR_0x8004, SPECIES_AROMATISSE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -844,7 +920,7 @@ CutsceneForest_EventScript_Aromatisse::
 
 CutsceneForest_EventScript_EndRodentRan::
 	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject VAR_TEMP_1
+	removeobject VAR_LAST_TALKED
 	fadescreenswapbuffers FADE_FROM_BLACK
 	bufferspeciesname STR_VAR_1, VAR_0x8004
 	msgbox CutsceneForest_Text_MonRanAway, MSGBOX_DEFAULT
@@ -855,7 +931,7 @@ CutsceneForest_EventScript_EndRodentRan::
 
 CutsceneForest_EventScript_EndRan::
 	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject VAR_TEMP_1
+	removeobject VAR_LAST_TALKED
 	fadescreenswapbuffers FADE_FROM_BLACK
 	bufferspeciesname STR_VAR_1, VAR_0x8004
 	msgbox CutsceneForest_Text_MonRanAway, MSGBOX_DEFAULT
@@ -865,7 +941,7 @@ CutsceneForest_EventScript_EndRan::
 
 CutsceneForest_EventScript_EndSlithered::
 	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject VAR_TEMP_1
+	removeobject VAR_LAST_TALKED
 	fadescreenswapbuffers FADE_FROM_BLACK
 	bufferspeciesname STR_VAR_1, VAR_0x8004
 	msgbox CutsceneForest_Text_MonSlitheredAway, MSGBOX_DEFAULT
@@ -875,7 +951,7 @@ CutsceneForest_EventScript_EndSlithered::
 
 CutsceneForest_EventScript_EndFlew::
 	fadescreenswapbuffers FADE_TO_BLACK
-	removeobject VAR_TEMP_1
+	removeobject VAR_LAST_TALKED
 	fadescreenswapbuffers FADE_FROM_BLACK
 	bufferspeciesname STR_VAR_1, VAR_0x8004
 	msgbox CutsceneForest_Text_MonFlewAway, MSGBOX_DEFAULT
@@ -931,8 +1007,8 @@ CutsceneForest_EventScript_FindSmeargle::
 	speakername Name_Smeargle
 	msgbox CutsceneForest_Text_Smeargle, MSGBOX_DEFAULT
 	waitmoncry
-	closemessage
 	waitmovement LOCALID_FOREST_SMEARGLE
+	closemessage
 	applymovement LOCALID_FOREST_SMEARGLE, CutsceneForest_Movement_SmeargleScared
 	waitmovement 0
 	delay 50
@@ -957,7 +1033,6 @@ CutsceneForest_EventScript_FindSmeargle::
 	playmoncry SPECIES_SMEARGLE, CRY_MODE_NORMAL
 	speak LOCALID_FOREST_SMEARGLE, DIR_NORTH, Name_Smeargle, CutsceneForest_Text_SmeargleHappy
 	waitmoncry
-	closemessage
 	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, CutsceneForest_Text_LookerLetsGoHome
 	closemessage
 	applymovement LOCALID_PLAYER, CutsceneForest_Movement_LookerGuideSmeargleHome
@@ -1011,6 +1086,7 @@ CutsceneForest_EventScript_FindLostIdol::
 	playse SE_PIN
 	applymovement LOCALID_FOREST_LOST_IDOL, Common_Movement_FaceUpExclamationMark
 	waitmovement 0
+	delay 50
 	speak LOCALID_FOREST_LOST_IDOL, DIR_NORTH, Name_Right_Idol, CutsceneForest_Text_LostIdolImSaved
 	closemessage
 	delay 50
@@ -1055,9 +1131,6 @@ CutsceneForest_Movement_SmeargleExcited:
 	step_end
 
 CutsceneForest_Movement_SmeargleScared:
-	shake_horizontal
-	shake_horizontal
-	shake_horizontal
 	shake_horizontal
 	shake_horizontal
 	shake_horizontal
@@ -1504,7 +1577,7 @@ CutsceneForest_Text_LookerCatchMons:
 	.string "Hmm…\p"
 	.string "Perhaps I could catch some Pokémon in\n"
 	.string "this forest to assist in my\l"
-	.string "investigation…\p"
+	.string "investigation…$"
 
 CutsceneForest_Text_LookerShoot:
 	.string "Shoot! They noticed me!\n"

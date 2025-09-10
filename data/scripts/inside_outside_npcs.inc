@@ -596,7 +596,8 @@ InsideOutside_EventScript_StudentPregame::
     
 InsideOutside_EventScript_StudentPreQuest::
     setflag FLAG_SYS_DISAPPEAR_QUESTS
-    speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentStruggling
+    call_if_eq VAR_TEMP_1, LOCALID_OUTSIDE_STUDENT, InsideOutside_EventScript_StudentStrugglingOutside
+    call_if_eq VAR_TEMP_1, LOCALID_INSIDE_STUDENT, InsideOutside_EventScript_StudentStrugglingInside
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_WhatSeemsToBeTheProblem
     speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentBrainGoingInLoops
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_ThereHasToBeSomething
@@ -608,10 +609,19 @@ InsideOutside_EventScript_StudentPreQuest::
     release
     end
 
+InsideOutside_EventScript_StudentStrugglingOutside::
+    speak VAR_TEMP_1, DIR_WEST, Name_Student, InsideOutside_Text_StudentStruggling
+    return
+
+InsideOutside_EventScript_StudentStrugglingInside::
+    speak VAR_TEMP_1, DIR_EAST, Name_Student, InsideOutside_Text_StudentStruggling
+    return
+
 InsideOutside_EventScript_StudentQuest::
+    setflag FLAG_SYS_DISAPPEAR_QUESTS
     speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentHiSir
-    playse SE_PIN
-    msgbox InsideOutside_Text_StudentAreYouReady, MSGBOX_DEFAULT
+    playse SE_SELECT
+    msgbox InsideOutside_Text_StudentAreYouReady, MSGBOX_YESNO
     goto_if_eq VAR_RESULT, NO, InsideOutside_EventScript_StudentDeclined
     msgbox InsideOutside_Text_StudentLetsGetStarted, MSGBOX_DEFAULT
     setflag FLAG_SYS_INVERSE_BATTLE
@@ -642,6 +652,7 @@ InsideOutside_EventScript_StudentDeclined:
     msgbox InsideOutside_Text_StudentOhOkay, MSGBOX_DEFAULT
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_SorryImBusy
     closemessage
+    clearflag FLAG_SYS_DISAPPEAR_QUESTS
     release
     end
 
@@ -651,6 +662,7 @@ InsideOutside_EventScript_LostToStudent::
     closemessage
     clearflag FLAG_SYS_INVERSE_BATTLE
     clearflag FLAG_SYS_NO_WHITEOUT
+    clearflag FLAG_SYS_DISAPPEAR_QUESTS
     release
     end
 
@@ -658,12 +670,15 @@ InsideOutside_EventScript_FinishStudentQuest::
     completequest QUEST_INVERSE
     clearflag FLAG_SYS_INVERSE_BATTLE
     clearflag FLAG_SYS_NO_WHITEOUT
+    clearflag FLAG_SYS_DISAPPEAR_QUESTS
     release
     end
 
 InsideOutside_EventScript_StudentPostQuest::
     speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentBuckleDown
     closemessage
+    applymovement VAR_TEMP_1, Common_Movement_FaceOriginalDirection
+    waitmovement 0
     release
     end
 
@@ -763,7 +778,7 @@ InsideOutside_EventScript_PlayerFaceRight::
 InsideOutside_EventScript_SmeargleMoveToPlayerOutside::
     applymovement VAR_TEMP_2, InsideOutside_Movement_WalkUpFaceRight
     waitmovement 0
-    applymovement VAR_TEMP_1, Common_Movement_FaceDown
+    applymovement VAR_TEMP_1, Common_Movement_FaceLeft
     playse SE_PIN
     applymovement LOCALID_PLAYER, Common_Movement_FaceLeftExclamationMark
     waitmovement 0
@@ -1004,12 +1019,13 @@ InsideOutside_Text_ArtistOhSir:
     .string "Oh sir! I witnessed the most beautiful\n"
     .string "sight!\p"
     .string "Imagine, as I anguished over my scared\n"
-    .string "Vinnie, the moment I looked up to see him\l"
-    .string "ready to leap into my arms, tears streaming\l"
-    .string "down his eyes!\p"
-    .string "We were heartbroken to be apart so long!\p"
-    .string "Oh thank you! I do not know how I could even\n"
-    .string "repay you!$"
+    .string "Vinnie, the moment I looked up to see\l"
+    .string "him ready to leap into my arms, tears\l"
+    .string "streaming down his eyes!\p"
+    .string "We were heartbroken to be apart so\n"
+    .string "long!\p"
+    .string "Oh thank you! I do not know how I could\n"
+    .string "even repay you!$"
 
 InsideOutside_Text_ArtistGiveSmeargle:
     .string "Oho! Vinnie wishes to stay with you a\n"
@@ -1018,8 +1034,8 @@ InsideOutside_Text_ArtistGiveSmeargle:
     .string "artist's eye for beauty!\p"
     .string "Please, take him along with you while you\n"
     .string "remain here in Porta Bella!\p"
-    .string "It shall be a perfect chance for you both\n"
-    .string "to support each other!$"
+    .string "It shall be a perfect chance for you\n"
+    .string "both to support each other!$"
 
 InsideOutside_Text_ArtistPregame:
     .string "This line here…\p"
@@ -1041,30 +1057,31 @@ InsideOutside_Text_SmeargleLook:
     .string "Smeargle is looking at you expectantly…$"
 
 InsideOutside_Text_ArtistPostQuest:
-    .string "Oho! I hope you are treating Vinnie well!\p"
-    .string "That snappy young Pokémon has much to learn\n"
-    .string "if he wishes to become a master artiste!$"
+    .string "Oho!\n"
+    .string "I hope you are treating Vinnie well!\p"
+    .string "That young Pokémon has much to learn if\n"
+    .string "he's to become a master artiste!$"
     
 InsideOutside_Text_StudentStruggling:
     .string "Hmm, so Ground is immune to Electric,\n"
     .string "and Flying is immune to Ground…\p"
-    .string "But Flying's weak to Rock…\n"
+    .string "But Flying's weak to Rock…\p"
     .string "I thought Rock and Ground were basically\n"
     .string "the same type otherwise…?\p"
     .string "And I can't wrap my head around the Bug\n"
     .string "type…\p"
     .string "Fairy resists it, but is Fairy super-\n"
-    .string "effective to Bug?\p"
+    .string "effective against Bug?\p"
     .string "Do bugs resist electricity?\p"
-    .string "Can you even PUNCH a bug or is it as\n"
+    .string "Can you PUNCH a bug? Or is it as\n"
     .string "effective as punching birds!?\p"
     .string "Gah! I'll never get this down!$"
 
 InsideOutside_Text_StudentBrainGoingInLoops:
     .string "I've been going in loops for hours\n"
     .string "studying for an upcoming test!\p"
-    .string "Any time I think I've gotten one\n"
-    .string "type matchup down, I forget its nuances\l"
+    .string "Any time I think I've gotten one type\n"
+    .string "matchup down, I forget its nuances\l"
     .string "once I move on to the next!\p"
     .string "Heck, I asked my classmate Valentina for\n"
     .string "her notes, but her handwriting is so\l"
@@ -1116,8 +1133,8 @@ InsideOutside_Text_LookerSorryToHear:
     .string "help in another way?$"
 
 InsideOutside_Text_StudentNotYourFault:
-    .string "Oh, it's not your fault… I think I'm\n"
-    .string "just running away from studying.\p"
+    .string "Oh, it's not your fault… I'm just\n"
+    .string "running away from studying.\p"
     .string "I think I just need to buckle down and\n"
     .string "really study the textbook, front-to-\l"
     .string "back if I want to ace this test.\p"
@@ -1151,8 +1168,8 @@ InsideOutside_Text_StudentGivePokemon:
 
 InsideOutside_Text_LostToStudent:
     .string "Mmm… That didn't help…\p"
-    .string "I don't know why, but I just don't\n"
-    .string "get what I'm missing…$"
+    .string "I don't know why, but I just don't get\n"
+    .string "what I'm missing…$"
 
 InsideOutside_Text_StudentDefeated:
     .string "Mmm… Maybe this isn't the right\n"

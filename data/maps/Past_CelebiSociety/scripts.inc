@@ -7,7 +7,7 @@ Past_CelebiSociety_OnTransition::
 	end
 
 Past_CelebiSociety_EventScript_SetupLisia::
-	setobjectmovementtype LOCALID_PAST_CELEBI_SOCIETY_GENTLEMAN, MOVEMENT_TYPE_FACE_LEFT
+	setobjectmovementtype LOCALID_PAST_CELEBI_SOCIETY_GENTLEMAN, MOVEMENT_TYPE_FACE_DOWN
 	return
 
 Past_CelebiSociety_EventScript_CouncilWoman::
@@ -93,6 +93,7 @@ Past_CelebiSociety_EventScript_LisiaLeaving::
 	speak LOCALID_PAST_LISIA, VAR_0x8005, Name_Lisia, Past_CelebiSociety_Text_LisiaLeaving
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_PAST_LISIA
+	closemessage
 	setobjectmovementtype LOCALID_PAST_CELEBI_SOCIETY_GENTLEMAN, MOVEMENT_TYPE_FACE_LEFT
 	applymovement LOCALID_PAST_CELEBI_SOCIETY_GENTLEMAN, Common_Movement_FaceLeft
 	waitmovement 0
@@ -187,8 +188,8 @@ Past_CelebiSociety_Text_LisiaLeaving:
 	.string "So the storm's finally over?\n"
 	.string "Awesome!\p"
 	.string "Legit, we were attacked in the city out\n"
-	.string "of nowhere by a bunch of Mightyena, then\l"
-	.string "I got split up from Sophia in the woods…\p"
+	.string "of nowhere by a ton of Mightyena, then\l"
+	.string "I had split from Sophia in the woods…\p"
 	.string "Thank Celebi for bringing me to safety…\n"
 	.string "I'm still shaken up from that…\p"
 	.string "Anyways, I'll rush back to the present!\n"
@@ -212,8 +213,8 @@ Past_CelebiSociety_Text_LisiaNotLeavingShort:
 	.string "I hope you get it.$"
 
 Past_CelebiSociety_Text_LookerCouldntYouGoBack:
-	.string "But you could just go back in time to\n"
-	.string "right after the storm ends, no?$"
+	.string "But you could just go back through time\n"
+	.string "to right after the storm ends, no?$"
 
 Past_CelebiSociety_Text_LisiaUmm:
 	.string "Umm, I don't want to risk being out\n"

@@ -2834,6 +2834,14 @@ void HandleQuestIconForSingleObjectEvent(struct ObjectEvent *objectEvent, u32 ob
 				}
 				else
 					return;
+			case OBJ_EVENT_GFX_SCHOOL_KID_M:
+				if(IsQuestActiveState(questId))
+				{
+					SpawnQuestIconForObject(objectEvent, objectEventId);
+					return;
+				}
+				else
+					return;
 				break;	
 		}
 	}
