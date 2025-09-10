@@ -71,6 +71,7 @@ Present_PokemonCenter_EventScript_IdolQuest::
 	end
 
 Present_PokemonCenter_EventScript_IdolYouFoundThemAll::
+	closemessage
 	playse SE_PIN
 	applymovement LOCALID_POKEMON_CENTER_IDOL, Common_Movement_ExclamationMark
 	waitmovement 0

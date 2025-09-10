@@ -1174,6 +1174,17 @@ static bool16 IsInflitratedSpaceCenter(struct WarpData *warp)
     return FALSE;
 }
 
+u16 IsInfiltratedAquaCorp(struct WarpData *warp)
+{
+    if (VarGet(VAR_AQUACORP_STATE) != 1)
+        return FALSE;
+    else if (warp->mapGroup != MAP_GROUP(MAP_PRESENT_AQUA_CORP_HQ))
+        return FALSE;
+    else if (warp->mapNum == MAP_NUM(MAP_PRESENT_AQUA_CORP_HQ))
+        return TRUE;
+    return FALSE;
+}
+
 u16 GetLocationMusic(struct WarpData *warp)
 {
     if (VarGet(VAR_CUTSCENE_STATE) == 14)
@@ -1186,7 +1197,7 @@ u16 GetLocationMusic(struct WarpData *warp)
         return MUS_ENCOUNTER_MAGMA;
     else if (IsInfiltratedWeatherInstitute(warp) == TRUE)
         return MUS_MT_CHIMNEY;
-    else if (VarGet(VAR_AQUACORP_STATE) == 1 && warp->mapNum == MAP_NUM(MAP_PRESENT_AQUA_CORP_HQ))
+    else if (IsInfiltratedAquaCorp(warp) == TRUE)
         return MUS_PL_LOOKER;
     else if (VarGet(VAR_CUTSCENE_STATE) == 4 
             && (warp->mapNum == MAP_NUM(MAP_PRESENT_CITY_HALL_1F)

@@ -399,15 +399,12 @@ ShrineOfProsperityPresent_EventScript_StartGenieFight::
 	waitmoncry
 	waitmessage
 	closemessage
-	setflag FLAG_SYS_SMART_WILD_BATTLES
-	@ setwildbattle SPECIES_TORNADUS, 5, ITEM_NONE, SPECIES_THUNDURUS, 5, ITEM_NONE
 	createmon 1, 0, SPECIES_TORNADUS, 50, ITEM_KINGS_ROCK, 1, NATURE_SERIOUS, 0, MON_MALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_BLEAKWIND_STORM, MOVE_FLY, MOVE_HAMMER_ARM, MOVE_KNOCK_OFF
 	createmon 1, 1, SPECIES_THUNDURUS, 50, ITEM_KINGS_ROCK, 1, NATURE_SERIOUS, 0, MON_MALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_WILDBOLT_STORM, MOVE_FLY, MOVE_SUPERPOWER, MOVE_THUNDER_WAVE
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattleDouble
 	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-	clearflag FLAG_SYS_SMART_WILD_BATTLES
 	setobjectmovementtype LOCALID_SHRINE_THUNDURUS, MOVEMENT_TYPE_WALK_IN_PLACE_UP
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_WON, ShrineOfProsperityPresent_EventScript_DefeatedGenies

@@ -73,7 +73,7 @@ Present_Flat1_2F_EventScript_BeautyReward::
 	speak LOCALID_LOVEYDOVEY_WOMAN, VAR_0x8005, Name_Beauty, Present_Flat1_2F_Text_BeautyHesBack
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_AllInADaysWork
 	speak LOCALID_LOVEYDOVEY_WOMAN, VAR_0x8005, Name_Beauty, Present_Flat1_2F_Text_BeautyWhichMon 
-	multichoice MULTI_BEAUTY_GIVEMON, 0, 6, TRUE
+	multichoice 0, 6, MULTI_BEAUTY_GIVEMON, TRUE
 	goto_if_eq VAR_RESULT, 0, Present_Flat1_2F_EventScript_BeautyGiveSwanna
 	goto_if_eq VAR_RESULT, 1, Present_Flat1_2F_EventScript_BeautyGiveUnfezant
 	release
@@ -82,6 +82,8 @@ Present_Flat1_2F_EventScript_BeautyReward::
 Present_Flat1_2F_EventScript_BeautyFinishQuest::
 	completequest QUEST_FOREVER_FAITHFUL
 	clearflag FLAG_SYS_DISAPPEAR_QUESTS
+	applymovement LOCALID_LOVEYDOVEY_WOMAN, Common_Movement_FaceDown
+	waitmovement 0
 	release
 	end
 

@@ -151,7 +151,7 @@ ShrineOfPeacePast_EventScript_CheckSpawnCatchmon2::
 	return
 
 ShrineOfPeacePast_EventScript_TrySpawnCatchmon::
-	randompercentage 30
+	randompercentage 50
 	call_if_eq VAR_RESULT, TRUE, ShrineOfPeacePast_EventScript_SeedCatchMon
 	return
 
@@ -200,6 +200,7 @@ ShrineOfPeacePast_EventScript_TrySpawnLuxray::
 
 ShrineOfPeacePast_EventScript_TrySpawnLuxrayBase::
 	call_if_unset FLAG_CAUGHT_LUXRAY, ShrineOfPeacePast_EventScript_SpawnLuxrayBase
+	call_if_set FLAG_CAUGHT_LUXRAY, ShrineOfPeacePast_EventScript_ReseedCatchMon
 	return
 
 ShrineOfPeacePast_EventScript_SpawnLuxrayBase::
@@ -209,6 +210,7 @@ ShrineOfPeacePast_EventScript_SpawnLuxrayBase::
 	
 ShrineOfPeacePast_EventScript_TrySpawnLuxrayDark::
 	call_if_unset FLAG_CAUGHT_LUXRAY_DARK, ShrineOfPeacePast_EventScript_SpawnLuxrayDark
+	call_if_set FLAG_CAUGHT_LUXRAY_DARK, ShrineOfPeacePast_EventScript_ReseedCatchMon
 	return
 
 ShrineOfPeacePast_EventScript_SpawnLuxrayDark::
@@ -290,10 +292,12 @@ ShrineOfPeacePast_EventScript_SpawnScreamTail::
 ShrineOfPeacePast_EventScript_TrySpawnWoChien::
 	randompercentage 50
 	call_if_eq VAR_RESULT, TRUE, ShrineOfPeacePast_EventScript_ReallyTrySpawnWoChien
+	call_if_eq VAR_RESULT, FALSE, ShrineOfPeacePast_EventScript_ReseedCatchMon
 	return
 
 ShrineOfPeacePast_EventScript_ReallyTrySpawnWoChien::
 	call_if_unset FLAG_CAUGHT_WO_CHIEN, ShrineOfPeacePast_EventScript_SpawnWoChien
+	call_if_set FLAG_CAUGHT_WO_CHIEN, ShrineOfPeacePast_EventScript_ReseedCatchMon
 	return
 	
 ShrineOfPeacePast_EventScript_SpawnWoChien::

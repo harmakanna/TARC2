@@ -45,7 +45,6 @@ CutsceneForestPast_EventScript_AmIGoingTheRightWay::
 	speakername Name_Looker
 	msgbox CutsceneForestPast_Text_SeemsRight, MSGBOX_DEFAULT
 	closemessage
-	setflag FLAG_HIDE_MAP_NAME_POPUP
 	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	setvar VAR_CUTSCENE_STATE, 7
 	releaseall

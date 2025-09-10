@@ -21,14 +21,26 @@ PresentTown_Port_EventScript_RemoveThundurus::
 	doweather
 	call Common_EventScript_MoveInsideNPCsOutside
 	removeobject LOCALID_CITY_THUNDURUS
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCH_GENIES, 1
 	addvar VAR_CATCH_GENIES_QUEST, 1
 	return
 
 PresentTown_Port_OnTransition:
 	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetStormWeather
+	call_if_unset FLAG_SYS_WEATHER_CTRL, PresentTown_Port_EventScript_TryClearBoyfriendQuestFlag
 	call_if_eq VAR_CUTSCENE_STATE, 0, PresentTown_Port_SetUpArrival
 	call_if_eq VAR_CUTSCENE_STATE, 14, PresentTown_Port_SetUpDeparture
 	end
+
+PresentTown_Port_EventScript_TryClearBoyfriendQuestFlag::
+	returnqueststate QUEST_FOREVER_FAITHFUL
+	call_if_lt VAR_RESULT, 3, PresentTown_Port_EventScript_ClearBoyfriendQuestFlag
+	return
+
+PresentTown_Port_EventScript_ClearBoyfriendQuestFlag::
+    clearflag FLAG_HIDE_PORT_FAITHFUL_MAN
+    clearflag FLAG_HIDE_PORT_AROMATISSE
+    return
 
 PresentTown_Port_SetUpArrival::
 	setobjectmovementtype LOCALID_PORT_MAGIKARPMAN, MOVEMENT_TYPE_FACE_RIGHT
@@ -592,7 +604,7 @@ PresentTown_Port_EventScript_BluePostQuestGiveMon::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_UhhOkay
 	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueGreatYouWantPokemon
 	setflag FLAG_BLUE_GAVE_POKEMON
-	multichoice MULTI_BLUE_GIVEMON, 0, 6, TRUE
+	multichoice 0, 6, MULTI_BLUE_GIVEMON, TRUE
 	goto_if_eq VAR_RESULT, 0, PresentTown_Port_EventScript_BlueGiveGolem
 	goto_if_eq VAR_RESULT, 1, PresentTown_Port_EventScript_BlueGiveMachamp
 	release
@@ -614,7 +626,7 @@ PresentTown_Port_EventScript_BlueCulpritPostQuestGiveMon::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_UhhOkay
 	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueGreatYouWantPokemon
 	setflag FLAG_BLUE_GAVE_POKEMON
-	multichoice MULTI_BLUE_GIVEMON, 0, 6, TRUE
+	multichoice 0, 6, MULTI_BLUE_GIVEMON, TRUE
 	goto_if_eq VAR_RESULT, 0, PresentTown_Port_EventScript_BlueGiveGolem
 	goto_if_eq VAR_RESULT, 1, PresentTown_Port_EventScript_BlueGiveMachamp
 	release
@@ -637,7 +649,9 @@ PresentTown_Port_EventScript_FaithfulMan::
 	msgbox PresentTown_Port_Text_BoyfriendWait, MSGBOX_DEFAULT
 	waitse
 	playmoncry SPECIES_AROMATISSE, CRY_MODE_NORMAL
-	speak LOCALID_PORT_AROMATISSE, DIR_EAST, Name_Aromatisse, PresentTown_Port_Text_AromatisseControls
+	speakername Name_Aromatisse
+	applymovement LOCALID_PORT_AROMATISSE, Common_Movement_FaceRight
+	msgbox PresentTown_Port_Text_AromatisseControls, MSGBOX_DEFAULT
 	waitmoncry
 	speak LOCALID_PORT_BOYFRIEND, VAR_0x8005, Name_Boyfriend, PresentTown_Port_Text_BoyfriendThatsUhh
 	trainerbattle_no_intro TRAINER_BOYFRIEND, PresentTown_Port_Text_BoyfriendDefeat
@@ -659,6 +673,7 @@ PresentTown_Port_EventScript_FaithfulMan::
 	call_if_eq VAR_FACING, DIR_WEST, PresentTown_Port_EventScript_AromatisseRunOffUp
 	call_if_ne VAR_FACING, DIR_WEST, PresentTown_Port_EventScript_AromatisseRunOffRight
 	removeobject LOCALID_PORT_AROMATISSE
+	delay 60
 	speak LOCALID_PORT_BOYFRIEND, VAR_0x8005, Name_Boyfriend, PresentTown_Port_Text_BoyfriendBackToMyBaby
 	closemessage
 	call_if_eq VAR_FACING, DIR_WEST, PresentTown_Port_EventScript_BoyfriendRunOffUp

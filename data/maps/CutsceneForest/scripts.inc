@@ -272,7 +272,6 @@ CutsceneForest_OnFrame:
 CutsceneForest_EventScript_RodentsInitialEncounter::
 	lockall
 	clearflag FLAG_SYS_PREVENT_MAP_FADE
-	setflag FLAG_SYS_NO_WHITEOUT
 	fadescreen FADE_FROM_BLACK
 	applymovement LOCALID_PLAYER, CutsceneForest_Movement_WalkUp3
 	waitmovement 0
@@ -317,6 +316,7 @@ CutsceneForest_EventScript_ChoseDedenne::
 	closemessage
 	setvar VAR_LAST_TALKED, LOCALID_FOREST_DEDENNE
 	setvar VAR_0x8004, SPECIES_DEDENNE
+	setvar VAR_TRIGGER_CUTSCENE_FOREST, 3
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -348,6 +348,7 @@ CutsceneForest_EventScript_ChoseTogedemaru::
 	closemessage
 	setvar VAR_LAST_TALKED, LOCALID_FOREST_TOGEDEMARU
 	setvar VAR_0x8004, SPECIES_TOGEDEMARU
+	setvar VAR_TRIGGER_CUTSCENE_FOREST, 3
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -546,6 +547,7 @@ CutsceneForest_EventScript_DedenneRematch::
 	closemessage
 	setvar VAR_LAST_TALKED, LOCALID_FOREST_DEDENNE
 	setvar VAR_0x8004, SPECIES_DEDENNE
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -572,6 +574,7 @@ CutsceneForest_EventScript_TogedemaruRematch::
 	closemessage
 	setvar VAR_LAST_TALKED, LOCALID_FOREST_TOGEDEMARU
 	setvar VAR_0x8004, SPECIES_TOGEDEMARU
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -598,6 +601,7 @@ CutsceneForest_EventScript_Lurantis::
 	closemessage
 	setvar VAR_LAST_TALKED, LOCALID_FOREST_LURANTIS
 	setvar VAR_0x8004, SPECIES_LURANTIS
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -624,6 +628,7 @@ CutsceneForest_EventScript_Luxray::
 	closemessage
 	setvar VAR_LAST_TALKED, LOCALID_FOREST_LUXRAY
 	setvar VAR_0x8004, SPECIES_LUXRAY
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -653,6 +658,7 @@ CutsceneForest_EventScript_LuxrayDark::
 	closemessage
 	setvar VAR_LAST_TALKED, LOCALID_FOREST_LUXRAY_DARK
 	setvar VAR_0x8004, SPECIES_LUXRAY_DARK
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -693,6 +699,7 @@ CutsceneForest_EventScript_Toedscruel::
 	closemessage
 	setvar VAR_LAST_TALKED, LOCALID_FOREST_TOEDSCRUEL
 	setvar VAR_0x8004, SPECIES_TOEDSCRUEL
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -719,6 +726,7 @@ CutsceneForest_EventScript_Frosmoth::
 	closemessage
 	setvar VAR_LAST_TALKED, LOCALID_FOREST_FROSMOTH
 	setvar VAR_0x8004, SPECIES_FROSMOTH
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -745,6 +753,7 @@ CutsceneForest_EventScript_Kleavor::
 	closemessage
 	setvar VAR_LAST_TALKED, LOCALID_FOREST_KLEAVOR
 	setvar VAR_0x8004, SPECIES_KLEAVOR
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -771,6 +780,7 @@ CutsceneForest_EventScript_GoodraHisui::
 	closemessage
 	setvar VAR_LAST_TALKED, LOCALID_FOREST_GOODRA
 	setvar VAR_0x8004, SPECIES_GOODRA_HISUI
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -797,6 +807,7 @@ CutsceneForest_EventScript_Beheeyem::
 	closemessage
 	setvar VAR_LAST_TALKED, LOCALID_FOREST_BEHEEYEM
 	setvar VAR_0x8004, SPECIES_BEHEEYEM
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -823,6 +834,7 @@ CutsceneForest_EventScript_Aerodactyl::
 	closemessage
 	setvar VAR_LAST_TALKED, LOCALID_FOREST_AERODACTYL
 	setvar VAR_0x8004, SPECIES_AERODACTYL
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -849,6 +861,7 @@ CutsceneForest_EventScript_ScreamTail::
 	closemessage
 	setvar VAR_LAST_TALKED, LOCALID_FOREST_SCREAM_TAIL
 	setvar VAR_0x8004, SPECIES_SCREAM_TAIL
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -875,6 +888,7 @@ CutsceneForest_EventScript_WoChien::
 	closemessage
 	setvar VAR_LAST_TALKED, LOCALID_FOREST_WO_CHIEN
 	setvar VAR_0x8004, SPECIES_WO_CHIEN
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -902,6 +916,7 @@ CutsceneForest_EventScript_Aromatisse::
 	closemessage
 	setvar VAR_LAST_TALKED, LOCALID_FOREST_AROMATISSE
 	setvar VAR_0x8004, SPECIES_AROMATISSE
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome

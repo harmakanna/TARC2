@@ -6,9 +6,14 @@ PastTown_MapScripts::
 	.byte 0
 
 PastTown_OnLoad:
+	call_if_eq VAR_CUTSCENE_STATE, 7, PastTown_EventScript_HideMapPopup
 	call_if_unset FLAG_SWEET_TOOTH_WENT_CRAZY, PastTown_EventScript_CloseSweetToothHole
 	call_if_unset FLAG_HIDE_PAST_SAD_GIRL_OUTSIDE, PastTown_EventScript_SetUpSadGirlFight
 	end
+
+PastTown_EventScript_HideMapPopup::
+	setflag FLAG_HIDE_MAP_NAME_POPUP
+	return
 
 PastTown_EventScript_CloseSweetToothHole::
 	setmetatile 15, 26, METATILE_SmallTownWithLab_Past_FixedRoof, FALSE
@@ -224,6 +229,7 @@ PastTown_EventScript_LookerPassOut::
 	msgbox PastTown_Text_LookerUrgh, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	fadescreen FADE_TO_BLACK
 	warpsilent MAP_PAST_TOWN_HALL, 2, 2
 	waitstate
@@ -786,7 +792,6 @@ PastTown_EventScript_Bunnelby::
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
 	setflag FLAG_SYS_DISABLE_CATCHING
-	setflag FLAG_SYS_SMART_WILD_BATTLES
 	createmon 1, 0, SPECIES_BUNNELBY, 48, ITEM_ORAN_BERRY, 0, NATURE_SERIOUS, 1
 	createmon 1, 1, SPECIES_DIGGERSBY, 49, ITEM_ORAN_BERRY, 0, NATURE_SERIOUS, 2
 	closemessage
@@ -798,7 +803,6 @@ PastTown_EventScript_Bunnelby::
 	waitmovement 0
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_SYS_DISABLE_CATCHING
-	clearflag FLAG_SYS_SMART_WILD_BATTLES
 	release
 	end
 
@@ -815,7 +819,6 @@ PastTown_EventScript_Buneary::
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
 	setflag FLAG_SYS_DISABLE_CATCHING
-	setflag FLAG_SYS_SMART_WILD_BATTLES
 	createmon 1, 0, SPECIES_BUNEARY, 48, ITEM_LUM_BERRY, 0, NATURE_SERIOUS, 2
 	createmon 1, 1, SPECIES_LOPUNNY, 49, ITEM_SITRUS_BERRY, 0, NATURE_SERIOUS, 2
 	closemessage
@@ -827,7 +830,6 @@ PastTown_EventScript_Buneary::
 	waitmovement 0
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_SYS_DISABLE_CATCHING
-	clearflag FLAG_SYS_SMART_WILD_BATTLES
 	release
 	end
 
@@ -844,7 +846,6 @@ PastTown_EventScript_Minun::
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
 	setflag FLAG_SYS_DISABLE_CATCHING
-	setflag FLAG_SYS_SMART_WILD_BATTLES
 	createmon 1, 0, SPECIES_MINUN, 49, ITEM_SITRUS_BERRY, 0, NATURE_SERIOUS, 0
 	createmon 1, 1, SPECIES_PLUSLE, 49, ITEM_CUSTAP_BERRY, 0, NATURE_SERIOUS, 0
 	closemessage
@@ -856,7 +857,6 @@ PastTown_EventScript_Minun::
 	waitmovement 0
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_SYS_DISABLE_CATCHING
-	clearflag FLAG_SYS_SMART_WILD_BATTLES
 	release
 	end
 
@@ -873,7 +873,6 @@ PastTown_EventScript_Leavanny::
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
 	setflag FLAG_SYS_DISABLE_CATCHING
-	setflag FLAG_SYS_SMART_WILD_BATTLES
 	createmon 1, 0, SPECIES_LEAVANNY, 51, ITEM_LIECHI_BERRY, 0, NATURE_SERIOUS, 0
 	createmon 1, 1, SPECIES_SWADLOON, 50, ITEM_SITRUS_BERRY, 0, NATURE_SERIOUS, 2
 	closemessage
@@ -885,7 +884,6 @@ PastTown_EventScript_Leavanny::
 	waitmovement 0
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_SYS_DISABLE_CATCHING
-	clearflag FLAG_SYS_SMART_WILD_BATTLES
 	release
 	end
 
@@ -902,7 +900,6 @@ PastTown_EventScript_Kricketune::
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
 	setflag FLAG_SYS_DISABLE_CATCHING
-	setflag FLAG_SYS_SMART_WILD_BATTLES
 	createmon 1, 0, SPECIES_KRICKETUNE, 51, ITEM_SITRUS_BERRY, 0, NATURE_SERIOUS, 0
 	createmon 1, 1, SPECIES_ARIADOS, 53, ITEM_SALAC_BERRY, 0, NATURE_SERIOUS, 1
 	closemessage
@@ -914,7 +911,6 @@ PastTown_EventScript_Kricketune::
 	waitmovement 0
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_SYS_DISABLE_CATCHING
-	clearflag FLAG_SYS_SMART_WILD_BATTLES
 	release
 	end
 
@@ -931,7 +927,6 @@ PastTown_EventScript_Flapple::
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
 	setflag FLAG_SYS_DISABLE_CATCHING
-	setflag FLAG_SYS_SMART_WILD_BATTLES
 	createmon 1, 0, SPECIES_FLAPPLE, 51, ITEM_SITRUS_BERRY, 0, NATURE_SERIOUS, 2
 	createmon 1, 1, SPECIES_APPLETUN, 51, ITEM_SITRUS_BERRY, 0, NATURE_SERIOUS, 0
 	closemessage
@@ -943,7 +938,6 @@ PastTown_EventScript_Flapple::
 	waitmovement 0
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_SYS_DISABLE_CATCHING
-	clearflag FLAG_SYS_SMART_WILD_BATTLES
 	release
 	end
 
@@ -960,7 +954,6 @@ PastTown_EventScript_Breloom::
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
 	setflag FLAG_SYS_DISABLE_CATCHING
-	setflag FLAG_SYS_SMART_WILD_BATTLES
 	createmon 1, 0, SPECIES_BRELOOM, 54, ITEM_LIECHI_BERRY, 0, NATURE_SERIOUS, 0
 	createmon 1, 1, SPECIES_SHROOMISH, 53, ITEM_JABOCA_BERRY, 0, NATURE_SERIOUS, 2
 	closemessage
@@ -972,7 +965,6 @@ PastTown_EventScript_Breloom::
 	waitmovement 0
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_SYS_DISABLE_CATCHING
-	clearflag FLAG_SYS_SMART_WILD_BATTLES
 	release
 	end
 
@@ -989,7 +981,6 @@ PastTown_EventScript_Amoonguss::
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
 	setflag FLAG_SYS_DISABLE_CATCHING
-	setflag FLAG_SYS_SMART_WILD_BATTLES
 	createmon 1, 0, SPECIES_AMOONGUSS, 53, ITEM_BLACK_SLUDGE, 0, NATURE_SERIOUS, 0
 	createmon 1, 1, SPECIES_FOONGUS, 53, ITEM_CUSTAP_BERRY, 0, NATURE_SERIOUS, 0
 	closemessage
@@ -1001,7 +992,6 @@ PastTown_EventScript_Amoonguss::
 	waitmovement 0
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_SYS_DISABLE_CATCHING
-	clearflag FLAG_SYS_SMART_WILD_BATTLES
 	release
 	end
 
@@ -1018,7 +1008,6 @@ PastTown_EventScript_Shiinotic::
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
 	setflag FLAG_SYS_DISABLE_CATCHING
-	setflag FLAG_SYS_SMART_WILD_BATTLES
 	createmon 1, 0, SPECIES_SHIINOTIC, 54, ITEM_KEBIA_BERRY, 0, NATURE_SERIOUS, 1
 	createmon 1, 1, SPECIES_MORELULL, 53, ITEM_ROWAP_BERRY, 0, NATURE_SERIOUS, 1
 	closemessage
@@ -1030,7 +1019,6 @@ PastTown_EventScript_Shiinotic::
 	waitmovement 0
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_SYS_DISABLE_CATCHING
-	clearflag FLAG_SYS_SMART_WILD_BATTLES
 	release
 	end
 	
@@ -1047,7 +1035,6 @@ PastTown_EventScript_Toedscruel::
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
 	setflag FLAG_SYS_DISABLE_CATCHING
-	setflag FLAG_SYS_SMART_WILD_BATTLES
 	createmon 1, 0, SPECIES_TOEDSCRUEL, 53, ITEM_LANSAT_BERRY, 0, NATURE_SERIOUS, 0
 	createmon 1, 1, SPECIES_TOEDSCOOL, 53, ITEM_STARF_BERRY, 0, NATURE_SERIOUS, 0
 	closemessage
@@ -1059,7 +1046,6 @@ PastTown_EventScript_Toedscruel::
 	waitmovement 0
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_SYS_DISABLE_CATCHING
-	clearflag FLAG_SYS_SMART_WILD_BATTLES
 	release
 	end
 	
@@ -1076,7 +1062,6 @@ PastTown_EventScript_Parasect::
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
 	setflag FLAG_SYS_DISABLE_CATCHING
-	setflag FLAG_SYS_SMART_WILD_BATTLES
 	createmon 1, 0, SPECIES_PARASECT, 55, ITEM_OCCA_BERRY, 0, NATURE_SERIOUS, 0
 	createmon 1, 1, SPECIES_PARAS, 54, ITEM_COBA_BERRY, 0, NATURE_SERIOUS, 0
 	closemessage
@@ -1088,7 +1073,6 @@ PastTown_EventScript_Parasect::
 	waitmovement 0
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_SYS_DISABLE_CATCHING
-	clearflag FLAG_SYS_SMART_WILD_BATTLES
 	release
 	end
 
@@ -1104,7 +1088,6 @@ PastTown_EventScript_Hydrapple::
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
 	setflag FLAG_SYS_DISABLE_CATCHING
-	setflag FLAG_SYS_SMART_WILD_BATTLES
 	createmon 1, 0, SPECIES_HYDRAPPLE, 60, ITEM_YACHE_BERRY, 0, NATURE_SERIOUS, 0
 	createmon 1, 1, SPECIES_DIPPLIN, 58, ITEM_SITRUS_BERRY, 0, NATURE_SERIOUS, 1
 	closemessage
@@ -1118,7 +1101,6 @@ PastTown_EventScript_Hydrapple::
 	closemessage
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_SYS_DISABLE_CATCHING
-	clearflag FLAG_SYS_SMART_WILD_BATTLES
 	release
 	end
 
@@ -1133,7 +1115,6 @@ PastTown_EventScript_HydrappleWait::
 PastTown_EventScript_CompleteHydrappleBattle::
 	clearflag FLAG_SYS_NO_WHITEOUT
 	clearflag FLAG_SYS_DISABLE_CATCHING
-	clearflag FLAG_SYS_SMART_WILD_BATTLES
 	questmenu QUEST_MENU_SET_REWARD, QUEST_FARMLAND_INVASION_3
 	goto Common_EventScript_RemoveStaticPokemon
 	end

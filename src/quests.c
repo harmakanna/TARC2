@@ -2179,7 +2179,7 @@ static void QuestMenu_DestroySprite(u8 idx)
 	{
 		u16 palTag = GetSpritePaletteTagByPaletteNum(
 		                   gSprites[ptr[idx]].oam.paletteNum);
-		DestroySprite(&gSprites[ptr[idx]]);
+		DestroySpriteAndFreeResources(&gSprites[ptr[idx]]);
 		ptr[idx] = 0xFF;
 
 		if (sStateDataPtr->oldPaletteTag != palTag)

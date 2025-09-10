@@ -7,8 +7,6 @@ Common_EventScript_MoveInsideNPCsOutside::
     clearflag FLAG_HIDE_OUTSIDE_NPCS
     setflag FLAG_HIDE_INSIDE_OUTSIDE_NPCS
     setflag FLAG_HIDE_TORNADUS_NPCS
-    returnqueststate QUEST_FOREVER_FAITHFUL
-    call_if_lt VAR_RESULT, 3, InsideOutside_EventScript_AddFaithfulQuest
     returnqueststate QUEST_SMEARGLE
     call_if_eq VAR_RESULT, 3, InsideOutside_EventScript_MoveSmeargleOutside
     return
@@ -1067,7 +1065,7 @@ InsideOutside_Text_StudentStruggling:
     .string "and Flying is immune to Ground…\p"
     .string "But Flying's weak to Rock…\p"
     .string "I thought Rock and Ground were basically\n"
-    .string "the same type otherwise…?\p"
+    .string "the same type…?\p"
     .string "And I can't wrap my head around the Bug\n"
     .string "type…\p"
     .string "Fairy resists it, but is Fairy super-\n"

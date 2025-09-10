@@ -334,7 +334,7 @@ Present_Cafe_EventScript_MayPostQuestGiveMon::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_ThatWouldBeWonderful
 	speak LOCALID_CAFE_MAY, VAR_0x8005, Name_May, Present_Cafe_Text_MayWhichPokemon
 	setflag FLAG_MAY_GAVE_POKEMON
-	multichoice MULTI_MAY_GIVEMON, 0, 6, TRUE
+	multichoice 0, 6, MULTI_MAY_GIVEMON, TRUE
 	goto_if_eq VAR_RESULT, 0, Present_Cafe_EventScript_MayGiveWalrein
 	goto_if_eq VAR_RESULT, 1, Present_Cafe_EventScript_MayGiveCamerupt
 	release
@@ -358,7 +358,7 @@ Present_Cafe_EventScript_MayCulpritPostQuestGiveMon::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_ThatWouldBeWonderful
 	speak LOCALID_CAFE_MAY, VAR_0x8005, Name_May, Present_Cafe_Text_MayWhichPokemon
 	setflag FLAG_MAY_GAVE_POKEMON
-	multichoice MULTI_MAY_GIVEMON, 0, 6, TRUE
+	multichoice 0, 6, MULTI_MAY_GIVEMON, TRUE
 	goto_if_eq VAR_RESULT, 0, Present_Cafe_EventScript_MayGiveWalrein
 	goto_if_eq VAR_RESULT, 1, Present_Cafe_EventScript_MayGiveCamerupt
 	release
@@ -427,12 +427,36 @@ Present_Cafe_EventScript_BaristaReward::
 	call_if_eq VAR_0x8004, DIR_NORTH, Present_Cafe_EventScript_TurnBaristaSouth
 	speak LOCALID_CAFE_BARISTA, VAR_0x8005, Name_Barista, Present_Cafe_Text_BaristaYouDidIt
 	speak LOCALID_PLAYER, VAR_0x8004, Name_Looker, Looker_Text_AlwaysHappyToHelp
-	speak LOCALID_CAFE_BARISTA, VAR_0x8004, Name_Barista, Present_Cafe_Text_BaristaImBroke
-	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Cafe_Text_LookerThatSoundsWonderful
+	speak LOCALID_CAFE_BARISTA, VAR_0x8005, Name_Barista, Present_Cafe_Text_BaristaImPretty
+	call_if_eq VAR_FACING, DIR_WEST, Present_Cafe_EventScript_TurnBaristaLeft
+	call_if_eq VAR_FACING, DIR_NORTH, Present_Cafe_EventScript_TurnBaristaUp
+	speak LOCALID_PLAYER, VAR_0x8004, Name_Looker, Present_Cafe_Text_LookerThatSoundsWonderful
 	completequest QUEST_GET_INTO_THE_GROOVE
 	clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	release
 	end
+
+Present_Cafe_EventScript_TurnBaristaLeft::
+	applymovement LOCALID_CAFE_BARISTA, Common_Movement_FaceLeft
+	playse SE_SELECT
+	msgbox Present_Cafe_Text_BaristaBroke, MSGBOX_DEFAULT
+	waitmovement LOCALID_CAFE_BARISTA
+	applymovement LOCALID_CAFE_BARISTA, Common_Movement_FaceRight
+	playse SE_SELECT
+	msgbox Present_Cafe_Text_BaristaDontHaveMuch, MSGBOX_DEFAULT
+	waitmovement LOCALID_CAFE_BARISTA
+	return
+
+Present_Cafe_EventScript_TurnBaristaUp::
+	applymovement LOCALID_CAFE_BARISTA, Common_Movement_FaceUp
+	playse SE_SELECT
+	msgbox Present_Cafe_Text_BaristaBroke, MSGBOX_DEFAULT
+	waitmovement LOCALID_CAFE_BARISTA
+	applymovement LOCALID_CAFE_BARISTA, Common_Movement_FaceDown
+	playse SE_SELECT
+	msgbox Present_Cafe_Text_BaristaDontHaveMuch, MSGBOX_DEFAULT
+	waitmovement LOCALID_CAFE_BARISTA
+	return
 
 Present_Cafe_EventScript_BaristaPostQuest::
 	call_if_eq VAR_0x8004, DIR_WEST, Present_Cafe_EventScript_TurnBaristaEast
@@ -452,8 +476,7 @@ Present_Cafe_EventScript_BaristaPostQuest::
 	end
 
 Present_Cafe_EventScript_BaristaDidntChangeAbility::
-	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_NoThanks
-	call Script_GetNPCFacingDirection
+	speak LOCALID_PLAYER, VAR_0x8004, Name_Looker, Looker_Text_NoThanks
 	speak LOCALID_CAFE_BARISTA, VAR_0x8005, Name_Barista, Present_Cafe_Text_BaristaNoProblemo
 	closemessage
 	release
@@ -477,6 +500,10 @@ Present_Cafe_EventScript_LeftIdol::
 	returnqueststate QUEST_GET_INTO_THE_GROOVE
 	goto_if_eq VAR_RESULT, 3, Present_Cafe_EventScript_LeftIdolPrereqReward
 	goto_if_ne VAR_RESULT, 4, Present_Cafe_EventScript_LeftIdolPrereqQuest
+	returnqueststate QUEST_BREAK_A_LEG
+	switch VAR_RESULT
+	goto_if_ne VAR_RESULT, 4, Present_Cafe_EventScript_LeftRightIdolQuest
+	goto_if_eq VAR_RESULT, 4, Present_Cafe_EventScript_LeftIdolPostQuest
 	release
 	end
 
@@ -496,12 +523,24 @@ Present_Cafe_EventScript_LeftIdolPrereqQuest::
 	release
 	end
 
+Present_Cafe_EventScript_LeftIdolPostQuest::
+	applymovement LOCALID_CAFE_RIGHT_IDOL, Common_Movement_FaceDown
+	applymovement LOCALID_CAFE_LISIA, Common_Movement_FaceDown
+	speakername Name_Left_Idol
+	msgbox Present_Cafe_Text_LeftIdolPostQuest, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
 Present_Cafe_EventScript_RightIdol::
 	lock
 	call Script_GetNPCFacingDirection
 	returnqueststate QUEST_GET_INTO_THE_GROOVE
 	goto_if_eq VAR_RESULT, 3, Present_Cafe_EventScript_RightIdolPrereqReward
 	goto_if_ne VAR_RESULT, 4, Present_Cafe_EventScript_RightIdolPrereqQuest
+	returnqueststate QUEST_BREAK_A_LEG
+	goto_if_ne VAR_RESULT, 4, Present_Cafe_EventScript_LeftRightIdolQuest
+	goto_if_eq VAR_RESULT, 4, Present_Cafe_EventScript_RightIdolPostQuest
 	release
 	end
 
@@ -526,6 +565,27 @@ Present_Cafe_EventScript_RightWorriedLisia::
 	speak LOCALID_CAFE_RIGHT_IDOL, VAR_0x8005, Name_Right_Idol, Present_Cafe_Text_RightWorriedLisia
 	closemessage
 	applymovement LOCALID_CAFE_RIGHT_IDOL, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+	release
+	end
+
+Present_Cafe_EventScript_RightIdolPostQuest::
+	applymovement LOCALID_CAFE_LEFT_IDOL, Common_Movement_FaceDown
+	applymovement LOCALID_CAFE_LISIA, Common_Movement_FaceDown
+	speakername Name_Right_Idol
+	msgbox Present_Cafe_Text_RightIdolPostQuest, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
+Present_Cafe_EventScript_LeftRightIdolQuest::
+	speak LOCALID_CAFE_LEFT_IDOL, DIR_EAST, Name_Left_Idol, Present_Cafe_Text_BiancaPreQuest
+	speak LOCALID_CAFE_RIGHT_IDOL, DIR_WEST, Name_Right_Idol, Present_Cafe_Text_SophiaPreQuest
+	speak LOCALID_CAFE_LEFT_IDOL, DIR_EAST, Name_Left_Idol, Present_Cafe_Text_BiancaPreQuest
+	speak LOCALID_CAFE_RIGHT_IDOL, DIR_WEST, Name_Right_Idol, Present_Cafe_Text_SophiaPreQuest
+	closemessage
+	applymovement LOCALID_CAFE_LEFT_IDOL, Common_Movement_FaceDown
+	applymovement LOCALID_CAFE_RIGHT_IDOL, Common_Movement_FaceDown
 	waitmovement 0
 	release
 	end
@@ -625,7 +685,7 @@ Present_Cafe_EventScript_LisiaQuest::
 	speak LOCALID_CAFE_LISIA, DIR_SOUTH, Name_Lisia, Present_Cafe_Text_LisiaThankYouLooker
 	speak LOCALID_PLAYER, DIR_NORTH, Name_Looker, Looker_Text_GladICouldHelp
 	speak LOCALID_CAFE_LISIA, DIR_SOUTH, Name_Lisia, Present_Cafe_Text_LisiaWhichMon
-	multichoice MULTI_LISIA_GIVEMON, 0, 6, TRUE
+	multichoice 0, 6, MULTI_LISIA_GIVEMON, TRUE
 	goto_if_eq VAR_RESULT, 0, Present_Cafe_EventScript_LisiaGiveMisdreavus
 	goto_if_eq VAR_RESULT, 1, Present_Cafe_EventScript_LisiaGiveMurkrow
 	releaseall
@@ -692,6 +752,7 @@ Present_Cafe_Movement_JumpInPlaceDown:
 Present_Cafe_Movement_BackUp:
 	lock_facing_direction
 	walk_up
+	unlock_facing_direction
 	step_end
 
 Present_Cafe_EventScript_LisiaFinishQuest::
@@ -741,6 +802,8 @@ Present_Cafe_EventScript_LisiaNoWay::
 	end
 
 Present_Cafe_EventScript_LisiaPostQuest::
+	applymovement LOCALID_CAFE_LEFT_IDOL, Common_Movement_FaceDown
+	applymovement LOCALID_CAFE_RIGHT_IDOL, Common_Movement_FaceDown
 	speak LOCALID_CAFE_LISIA, VAR_0x8005, Name_Lisia, Present_Cafe_Text_LisiaPostQuest
 	closemessage
 	applymovement LOCALID_CAFE_LISIA, Common_Movement_FaceOriginalDirection
@@ -847,9 +910,13 @@ Present_Cafe_Text_BaristaYouDidIt:
 	.string "Is Looker your name?\n"
 	.string "I cannot thank you enough, dude.$"
 	
-Present_Cafe_Text_BaristaImBroke:
-	.string "Look, I'm pretty uhh…\p"
-	.string "Broke.\p"
+Present_Cafe_Text_BaristaImPretty:
+	.string "Look, I'm pretty uhh…$"
+
+Present_Cafe_Text_BaristaBroke:
+	.string "Broke.$"
+
+Present_Cafe_Text_BaristaDontHaveMuch:
 	.string "I don't have much I can give as a\n"
 	.string "reward, buuuuuuuut I can brew up a\l"
 	.string "banger coffee for you, any time!\p"
@@ -1225,7 +1292,7 @@ Present_Cafe_Text_RightWorriedLisia:
 	.string "I hope she's safe…$"
 
 Present_Cafe_Text_RightWorriedLeft:
-	.string "Bianca got to safety, I think…\n"
+	.string "Bianca got to safety, I think…\p"
 	.string "I saw her get into the Pokémon Center\n"
 	.string "before the Mightyenas got to her…$"
 
@@ -1341,11 +1408,12 @@ Present_Cafe_Text_LisiaWhichMon:
 	.string "around Porta Bella!\p"
 	.string "My buddies Misdreavus and Murkow don't\n"
 	.string "get to come out much during our shows,\l"
-	.string "so they've been yearning for some action!\p"
+	.string "so they're yearning for some action!\p"
 	.string "…Hmm? Why're you giving me that look?\n"
 	.string "I only dress like this for work.\p"
 	.string "I'm way more into alt styles normally…\p"
-	.string "Anyways, who would you like to come along?$"
+	.string "Anyways, who would you like to bring\n"
+	.string "along with you?$"
 
 Present_Cafe_Text_SophiaImGettingAnxious:
 	.string "Oooooh no…\n"
@@ -1356,6 +1424,21 @@ Present_Cafe_Text_BiancaComeOn:
 	.string "You're always like this, Sophia!\n"
 	.string "Either whip yourself up in shape or step\l"
 	.string "aside and let the pros work!$"
+
+Present_Cafe_Text_BiancaPreQuest:
+	.string "Come ON! We're off-rhythm!\p"
+	.string "I can't focus if you're fumbling around\n"
+	.string "right outside my line of sight!$"
+
+Present_Cafe_Text_SophiaPreQuest:
+	.string "I'm sorry…\p"
+	.string "I'm still all stressed and shaky…$"
+
+Present_Cafe_Text_BiancaPreQuest2:
+	.string "Well, get over it!$"
+
+Present_Cafe_Text_SophiaPreQuest2:
+	.string "Ohhhh… Okay…$"
 
 Present_Cafe_Text_LisiaThisWontDo:
 	.string "Ahh, this won't do!\p"

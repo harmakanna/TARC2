@@ -8,12 +8,32 @@ PresentTown_MapScripts::
 	
 @ Comment out FLAG_SYS_MAIN_GAME_START_SCRIPT_DEBUG line to test intro
 PresentTown_OnLoad:
+	call_if_gt VAR_CUTSCENE_FOREST_STATE, 3, PresentTown_EventScript_ResetCutsceneForest
 	call_if_eq VAR_TRIGGER_CUTSCENE_FOREST, 2, PresentTown_EventScript_UnsetShrinePeaceWarpTiles
 	call_if_eq VAR_CUTSCENE_STATE, 4, PresentTown_EventScript_ChangeAnabelFollowerText
 	@call_if_unset FLAG_SYS_MAIN_GAME_START_SCRIPT_DEBUG, PresentTown_EventScript_DebugMainGameStart
 	call_if_set FLAG_LOCK_CITY_DOORS, PresentTown_EventScript_LockCityDoors
 	end
 
+PresentTown_EventScript_ResetCutsceneForest::
+	setflag FLAG_HIDE_FOREST_TOGEDEMARU
+	setflag FLAG_HIDE_FOREST_DEDENNE
+	setflag FLAG_HIDE_FOREST_LURANTIS
+	setflag FLAG_HIDE_FOREST_LUXRAY
+	setflag FLAG_HIDE_FOREST_LUXRAY_DARK
+	setflag FLAG_HIDE_FOREST_TOEDSCRUEL
+	setflag FLAG_HIDE_FOREST_FROSMOTH
+	setflag FLAG_HIDE_FOREST_KLEAVOR
+	setflag FLAG_HIDE_FOREST_GOODRA_HISUI
+	setflag FLAG_HIDE_FOREST_BEHEEYEM
+	setflag FLAG_HIDE_FOREST_AERODACTYL
+	setflag FLAG_HIDE_FOREST_SCREAM_TAIL
+	setflag FLAG_HIDE_FOREST_WO_CHIEN
+	setflag FLAG_HIDE_FOREST_AROMATISSE
+	setvar VAR_CUTSCENE_FOREST_STATE, 0
+	setvar VAR_TRIGGER_CUTSCENE_FOREST, 0
+	return
+	
 PresentTown_EventScript_UnsetShrinePeaceWarpTiles::
 	setmetatile 14, 6, 0x316, FALSE
 	setmetatile 15, 6, 0x316, FALSE
@@ -102,7 +122,12 @@ PresentTown_OnTransition:
 	end
 
 PresentTown_EventScript_TrySetUpArtist::
-	call_if_set FLAG_HIDE_OUTSIDE_SMEARGLE, PresentTown_EventScript_SetUpArtist
+	call_if_set FLAG_HIDE_OUTSIDE_SMEARGLE, PresentTown_EventScript_TrySetUpArtist2
+	return
+
+PresentTown_EventScript_TrySetUpArtist2::
+	returnqueststate QUEST_SMEARGLE
+	call_if_ne VAR_RESULT, 4, PresentTown_EventScript_SetUpArtist
 	return
 
 PresentTown_EventScript_SetUpArtist::
@@ -132,11 +157,26 @@ PresentTown_EventScript_PrepareAnabelForCutscene::
 	return
 	
 PresentTown_OnFrame:
+	map_script_2 VAR_TRIGGER_CUTSCENE_FOREST, 3, PresentTown_EventScript_LookerLostToRodents
 	map_script_2 VAR_PLAY_LOOKER_SCENE_ON_TRANSITION, 1, PresentTown_EventScript_LookerThinkingScenes
 	map_script_2 VAR_CATCH_GENIES_QUEST, 4, PresentTown_EventScript_FinishGeniesQuest
 	map_script_2 VAR_CUTSCENE_FOREST_STATE, 1, PresentTown_EventScript_LostIdolThankYou
 	map_script_2 VAR_CUTSCENE_FOREST_STATE, 2, PresentTown_EventScript_LostSmeargleGoHome
 	.2byte 0
+
+PresentTown_EventScript_LookerLostToRodents::
+	lock
+	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, PresentTown_Text_LookerLostToRodents
+	playse SE_SELECT
+	msgbox CutsceneForest_Text_LookerThatsUnfortunate, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_CUTSCENE_FOREST_STATE, 0
+	setvar VAR_TRIGGER_CUTSCENE_FOREST, 0
+	setflag FLAG_HIDE_FOREST_DEDENNE
+	setflag FLAG_HIDE_FOREST_TOGEDEMARU
+	startquest QUEST_CATCHMONS
+	release
+	end
 
 PresentTown_EventScript_LostIdolThankYou::
 	lockall
@@ -314,6 +354,7 @@ PresentTown_EventScript_RemoveTornadus::
 	doweather
 	call Common_EventScript_MoveInsideNPCsOutside
 	removeobject LOCALID_CITY_TORNADUS
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCH_GENIES, 0
 	addvar VAR_CATCH_GENIES_QUEST, 1
 	return
 
@@ -1456,3 +1497,6 @@ PresentTown_Text_LookerGoFindLeo:
 	.string "Well, here we are!\p"
 	.string "Go find Leo posthaste. I am sure\n"
 	.string "he is waiting for you somewhere.$"
+
+PresentTown_Text_LookerLostToRodents:
+	.string "Man, I lost to a tiny rodent?$"
