@@ -119,6 +119,11 @@ Present_CelebiSociety_EventScript_CheckForMochi::
 	call_if_unset FLAG_GAVE_LUXRAY_DARK_MOCHI, Present_CelebiSociety_EventScript_CheckMochiLuxrayDark
 	call_if_unset FLAG_GAVE_TORNADUS_MOCHI, Present_CelebiSociety_EventScript_CheckMochiTornadus
 	call_if_unset FLAG_GAVE_THUNDURUS_MOCHI, Present_CelebiSociety_EventScript_CheckMochiThundurus
+	call_if_unset FLAG_GAVE_PALOSSAND_MOCHI, Present_CelebiSociety_EventScript_CheckMochiPalossand
+	call_if_unset FLAG_GAVE_DHELMISE_MOCHI, Present_CelebiSociety_EventScript_CheckMochiDhelmise
+	call_if_unset FLAG_GAVE_CRABOMINABLE_MOCHI, Present_CelebiSociety_EventScript_CheckMochiCrabominable
+	call_if_unset FLAG_GAVE_GRAPPLOCT_MOCHI, Present_CelebiSociety_EventScript_CheckMochiGrapploct
+	call_if_unset FLAG_GAVE_PHIONE_MOCHI, Present_CelebiSociety_EventScript_CheckMochiPhione
 	call_if_set FLAG_MOCHI_MAN_GAVE_MOCHI, Present_CelebiSociety_EventScript_LookerReceivedMochi
 	call_if_unset FLAG_MOCHI_MAN_GAVE_MOCHI, Present_CelebiSociety_EventScript_NoNewPokemon
 	closemessage
@@ -354,6 +359,76 @@ Present_CelebiSociety_EventScript_GiveMochiThundurus::
 	additem ITEM_SPE_MOCHI, 1
 	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
 	setflag FLAG_GAVE_THUNDURUS_MOCHI
+	return
+
+Present_CelebiSociety_EventScript_CheckMochiPalossand::
+	call_if_set FLAG_CAUGHT_PALOSSAND, Present_CelebiSociety_EventScript_GiveMochiPalossand
+	return
+
+Present_CelebiSociety_EventScript_GiveMochiPalossand::
+	bufferspeciesname STR_VAR_1, SPECIES_PALOSSAND
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManOhLegendary
+	additem ITEM_HP_MOCHI, 1
+	additem ITEM_SPATK_MOCHI, 2
+	additem ITEM_SPDEF_MOCHI, 1
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
+	setflag FLAG_GAVE_PALOSSAND_MOCHI
+	return
+
+Present_CelebiSociety_EventScript_CheckMochiDhelmise::
+	call_if_set FLAG_CAUGHT_DHELMISE, Present_CelebiSociety_EventScript_GiveMochiDhelmise
+	return
+
+Present_CelebiSociety_EventScript_GiveMochiDhelmise::
+	bufferspeciesname STR_VAR_1, SPECIES_DHELMISE
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManOhLegendary
+	additem ITEM_HP_MOCHI, 1
+	additem ITEM_ATK_MOCHI, 1
+	additem ITEM_DEF_MOCHI, 2
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
+	setflag FLAG_GAVE_DHELMISE_MOCHI
+	return
+
+Present_CelebiSociety_EventScript_CheckMochiCrabominable::
+	call_if_set FLAG_CAUGHT_CRABOMINABLE, Present_CelebiSociety_EventScript_GiveMochiCrabominable
+	return
+
+Present_CelebiSociety_EventScript_GiveMochiCrabominable::
+	bufferspeciesname STR_VAR_1, SPECIES_CRABOMINABLE
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManOhLegendary
+	additem ITEM_HP_MOCHI, 1
+	additem ITEM_ATK_MOCHI, 2
+	additem ITEM_SPDEF_MOCHI, 1
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
+	setflag FLAG_GAVE_CRABOMINABLE_MOCHI
+	return
+
+Present_CelebiSociety_EventScript_CheckMochiGrapploct::
+	call_if_set FLAG_CAUGHT_GRAPPLOCT, Present_CelebiSociety_EventScript_GiveMochiGrapploct
+	return
+
+Present_CelebiSociety_EventScript_GiveMochiGrapploct::
+	bufferspeciesname STR_VAR_1, SPECIES_GRAPPLOCT
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManOhLegendary
+	additem ITEM_HP_MOCHI, 1
+	additem ITEM_ATK_MOCHI, 1
+	additem ITEM_DEF_MOCHI, 1
+	additem ITEM_SPE_MOCHI, 1
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
+	setflag FLAG_GAVE_GRAPPLOCT_MOCHI
+	return
+
+Present_CelebiSociety_EventScript_CheckMochiPhione::
+	call_if_set FLAG_CAUGHT_PHIONE, Present_CelebiSociety_EventScript_GiveMochiPhione
+	return
+
+Present_CelebiSociety_EventScript_GiveMochiPhione::
+	bufferspeciesname STR_VAR_1, SPECIES_PHIONE
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManOhLegendary
+	additem ITEM_SPATK_MOCHI, 2
+	additem ITEM_SPE_MOCHI, 2
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
+	setflag FLAG_GAVE_PHIONE_MOCHI
 	return
 
 Present_CelebiSociety_EventScript_CheckMochiAromatisse::
