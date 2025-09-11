@@ -3864,7 +3864,8 @@ static void TryDoEventsBeforeFirstTurn(void)
         }
         #endif // TESTING
 
-        gBattleStruct->speedTieBreaks = RandomUniform(RNG_SPEED_TIE, 0, Factorial(MAX_BATTLERS_COUNT) - 1);
+        // gBattleStruct->speedTieBreaks = RandomUniform(RNG_SPEED_TIE, 0, Factorial(MAX_BATTLERS_COUNT) - 1);
+        gBattleStruct->speedTieBreaks = 0;
         gBattleTurnCounter = 0;
 
         for (i = 0; i < gBattlersCount; i++)
