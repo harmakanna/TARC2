@@ -632,9 +632,30 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Alomomola  
+Ability: Regenerator  
+Level: 50  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Flip Turn  
+- Helping Hand  
+- Protect  
+- Scale Shot  
+
+Palafin  
+Ability: Zero to Hero  
+Level: 50  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Flip Turn  
+- Iron Head  
+- Ice Punch  
+
+Basculin @ Choice Scarf  
+Ability: Adaptability  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Flip Turn  
+- Crunch  
+- Psychic Fangs  
 
 === TRAINER_ALICE ===
 Name: Alice
@@ -1247,25 +1268,31 @@ AI: Basic Trainer
 Difficulty: Hard
 
 Alomomola  
-Ability: Regenerator
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+Ability: Regenerator  
+Level: 50  
+EVs: 252 Atk / 126 SpD / 126 Spe  
+Impish Nature  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Flip Turn  
 - Helping Hand  
 - Protect  
+- Scale Shot  
 
-Palafin
+Palafin  
 Ability: Zero to Hero  
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+Level: 50  
+EVs: 126 HP / 252 Atk / 126 SpD  
+Adamant Nature  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Flip Turn  
 - Iron Head  
 - Ice Punch  
 
-Basculin-Red-Striped @ Choice Scarf  
+Basculin @ Choice Scarf  
 Ability: Adaptability  
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+Level: 50  
+EVs: 126 HP / 126 Atk / 252 Spe  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Flip Turn  
 - Crunch  
 - Psychic Fangs  
@@ -2557,7 +2584,6 @@ Difficulty: Hard
 Avalugg  
 Ability: Own Tempo  
 Level: 50  
-Tera Type: Ice  
 EVs: 126 HP / 252 Atk / 126 SpD  
 Careful Nature  
 IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
@@ -2569,7 +2595,6 @@ IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Butterfree @ Focus Sash  
 Ability: Compound Eyes  
 Level: 50  
-Tera Type: Bug  
 EVs: 126 HP / 126 SpA / 252 Spe  
 Timid Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
@@ -2581,7 +2606,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Shiftry  
 Ability: Wind Rider  
 Level: 50  
-Tera Type: Grass  
 EVs: 252 Atk / 252 Spe  
 Hasty Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
@@ -2593,7 +2617,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Aggron  
 Ability: Sturdy  
 Level: 50  
-Tera Type: Steel  
 EVs: 126 HP / 252 Atk / 126 Spe  
 Adamant Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
@@ -2605,7 +2628,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Shedinja @ Lum Berry  
 Ability: Wonder Guard  
 Level: 50  
-Tera Type: Bug  
 EVs: 252 Atk / 252 Spe  
 Jolly Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
@@ -9639,8 +9661,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Energy Ball  
 - Spiky Shield  
 
-Terapagos  
-Ability: Tera Shift 
 Level: 50
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Rapid Spin  
