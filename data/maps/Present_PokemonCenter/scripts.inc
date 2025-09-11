@@ -26,11 +26,11 @@ Present_PokemonCenter_EventScript_NurseGiveFullRestores::
 	speakername NULL
 	giveitem ITEM_FULL_RESTORE
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_ThankYou
-	applymovement LOCALID_PRESENT_NURSE, Movement_PkmnCenterNurse_Bow
-	waitmovement 0
 	speakername Name_Nurse
 	msgbox Present_PokemonCenter_Text_NurseWeHopeToSeeYouAgain
 	closemessage
+	applymovement LOCALID_PRESENT_NURSE, Movement_PkmnCenterNurse_Bow
+	waitmovement 0
 	questmenu QUEST_MENU_SET_REWARD, QUEST_SENT_TO_THE_FARM
 	release
 	end

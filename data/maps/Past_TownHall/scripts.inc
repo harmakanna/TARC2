@@ -166,6 +166,7 @@ Past_TownHall_EventScript_CamillaGiveRevivalHerb::
 
 Past_TownHall_EventScript_CamillaAcceptEstellaCandy::
 	call Script_GetNPCFacingDirection
+	waitmovement LOCALID_TOWNHALL_CAMILLA
 	playse SE_PIN
 	applymovement LOCALID_TOWNHALL_CAMILLA, Common_Movement_ExclamationMark
 	waitmovement 0
@@ -173,7 +174,10 @@ Past_TownHall_EventScript_CamillaAcceptEstellaCandy::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Past_TownHall_Text_LookerAGiftForYou
 	removeitem ITEM_RARE_CANDY
 	speakername NULL
-	msgbox Past_TownHall_Text_LookerHandedOverTheRareCandy, MSGBOX_DEFAULT
+	playfanfare MUS_OBTAIN_TMHM
+	message Past_TownHall_Text_LookerHandedOverTheRareCandy
+	waitmessage
+	waitfanfare
 	speak LOCALID_TOWNHALL_CAMILLA, VAR_0x8005, Name_Camilla, Past_TownHall_Text_CamillaWhyAGift
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_WillDo
 	questmenu QUEST_MENU_SET_REWARD, QUEST_WITH_MUCH_GRATITUDE

@@ -184,7 +184,7 @@ PresentTown_EventScript_LostIdolThankYou::
 	fadescreen FADE_FROM_BLACK
 	applymovement LOCALID_PLAYER, PresentTown_Movement_LookerGuideLostIdol
 	delay 16
-	playse SE_EXIT
+	@playse SE_EXIT
 	applymovement LOCALID_CITY_FOREST_IDOL, PresentTown_Movement_LookerGuideLostIdol
 	waitmovement 0
 	applymovement LOCALID_CITY_FOREST_IDOL, Common_Movement_FaceRight
@@ -211,7 +211,7 @@ PresentTown_EventScript_LostSmeargleGoHome::
 	fadescreen FADE_FROM_BLACK
 	applymovement LOCALID_PLAYER, PresentTown_Movement_LookerGuideLostIdol
 	delay 16
-	playse SE_EXIT
+	@playse SE_EXIT
 	applymovement LOCALID_CITY_FOREST_SMEARGLE, PresentTown_Movement_LookerGuideLostIdol
 	waitmovement 0
 	applymovement LOCALID_CITY_FOREST_SMEARGLE, Common_Movement_FaceRight
@@ -1499,4 +1499,5 @@ PresentTown_Text_LookerGoFindLeo:
 	.string "he is waiting for you somewhere.$"
 
 PresentTown_Text_LookerLostToRodents:
-	.string "Man, I lost to a tiny rodent?$"
+	.string "Man…\p"
+	.string "Did I really lose to a tiny rodent?$"

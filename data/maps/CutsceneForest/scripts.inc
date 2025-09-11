@@ -305,13 +305,18 @@ CutsceneForest_EventScript_ChoseDedenne::
 	msgbox CutsceneForest_Text_LookerPursueDedenne, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_CHOSE_DEDENNE
-	applymovement LOCALID_FOREST_DEDENNE, Common_Movement_FaceUp
+	playse SE_PIN
+	applymovement LOCALID_FOREST_DEDENNE, Common_Movement_FaceUpQuestionMark
 	applymovement LOCALID_FOREST_TOGEDEMARU, CutsceneForest_Movement_RodentRunAway
-	waitmovement 0
+	delay 50
+	waitmovement LOCALID_FOREST_TOGEDEMARU
 	removeobject LOCALID_FOREST_TOGEDEMARU
+	delay 40
 	applymovement LOCALID_FOREST_DEDENNE, Common_Movement_FaceDown
 	applymovement LOCALID_PLAYER, CutsceneForest_Movement_PlayerToDedenne
 	waitmovement 0
+	playmoncry SPECIES_DEDENNE, CRY_MODE_ENCOUNTER
+	waitmoncry
 	createmon 1, 0, SPECIES_DEDENNE, 50, ITEM_AIR_BALLOON, 1, NATURE_TIMID, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_NUZZLE, MOVE_PARABOLIC_CHARGE, MOVE_DAZZLING_GLEAM, MOVE_SUPER_FANG
 	closemessage
 	setvar VAR_LAST_TALKED, LOCALID_FOREST_DEDENNE
@@ -337,13 +342,18 @@ CutsceneForest_EventScript_ChoseTogedemaru::
 	msgbox CutsceneForest_Text_LookerPursueTogedemaru, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_CHOSE_TOGEDEMARU
-	applymovement LOCALID_FOREST_TOGEDEMARU, Common_Movement_FaceUp
+	playse SE_PIN
+	applymovement LOCALID_FOREST_TOGEDEMARU, Common_Movement_FaceUpQuestionMark
 	applymovement LOCALID_FOREST_DEDENNE, CutsceneForest_Movement_RodentRunAway
-	waitmovement 0
+	delay 50
+	waitmovement LOCALID_FOREST_DEDENNE
 	removeobject LOCALID_FOREST_DEDENNE
+	delay 40
 	applymovement LOCALID_FOREST_TOGEDEMARU, Common_Movement_FaceDown
 	applymovement LOCALID_PLAYER, CutsceneForest_Movement_PlayerToTogedemaru
 	waitmovement 0
+	playmoncry SPECIES_TOGEDEMARU, CRY_MODE_ENCOUNTER
+	waitmoncry
 	createmon 1, 0, SPECIES_TOGEDEMARU, 50, ITEM_AIR_BALLOON, 1, NATURE_JOLLY, 0, MON_MALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_NUZZLE, MOVE_ZING_ZAP, MOVE_IRON_HEAD, MOVE_SUPER_FANG
 	closemessage
 	setvar VAR_LAST_TALKED, LOCALID_FOREST_TOGEDEMARU
@@ -938,7 +948,11 @@ CutsceneForest_EventScript_EndRodentRan::
 	removeobject VAR_LAST_TALKED
 	fadescreenswapbuffers FADE_FROM_BLACK
 	bufferspeciesname STR_VAR_1, VAR_0x8004
-	msgbox CutsceneForest_Text_MonRanAway, MSGBOX_DEFAULT
+	message CutsceneForest_Text_MonRanAway
+	waitmessage
+	delay 80
+	closemessage
+	delay 40
 	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, CutsceneForest_Text_LookerThatsUnfortunate
 	startquest QUEST_CATCHMONS
 	goto CutsceneForest_EventScript_FinishRodentEncounter
@@ -949,8 +963,11 @@ CutsceneForest_EventScript_EndRan::
 	removeobject VAR_LAST_TALKED
 	fadescreenswapbuffers FADE_FROM_BLACK
 	bufferspeciesname STR_VAR_1, VAR_0x8004
-	msgbox CutsceneForest_Text_MonRanAway, MSGBOX_DEFAULT
+	message CutsceneForest_Text_MonRanAway
+	waitmessage
+	delay 80
 	closemessage
+	delay 40
 	goto CutsceneForest_EventScript_FinishEncounter
 	end
 
@@ -959,8 +976,11 @@ CutsceneForest_EventScript_EndSlithered::
 	removeobject VAR_LAST_TALKED
 	fadescreenswapbuffers FADE_FROM_BLACK
 	bufferspeciesname STR_VAR_1, VAR_0x8004
-	msgbox CutsceneForest_Text_MonSlitheredAway, MSGBOX_DEFAULT
+	message CutsceneForest_Text_MonSlitheredAway
+	waitmessage
+	delay 80
 	closemessage
+	delay 40
 	goto CutsceneForest_EventScript_FinishEncounter
 	end
 
@@ -969,8 +989,11 @@ CutsceneForest_EventScript_EndFlew::
 	removeobject VAR_LAST_TALKED
 	fadescreenswapbuffers FADE_FROM_BLACK
 	bufferspeciesname STR_VAR_1, VAR_0x8004
-	msgbox CutsceneForest_Text_MonFlewAway, MSGBOX_DEFAULT
+	message CutsceneForest_Text_MonFlewAway
+	waitmessage
+	delay 80
 	closemessage
+	delay 40
 	goto CutsceneForest_EventScript_FinishEncounter
 	end
 
@@ -991,7 +1014,7 @@ CutsceneForest_EventScript_FinishRodentEncounter::
 	end
 
 CutsceneForest_EventScript_FinishEncounter::
-	delay 60
+	delay 30
 	special SpawnCameraObject
 	applymovement LOCALID_PLAYER, CutsceneForest_Movement_WalkDown6
 	delay 30

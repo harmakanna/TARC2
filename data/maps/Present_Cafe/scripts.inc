@@ -152,12 +152,12 @@ Present_Cafe_EventScript_SweetTooth::
 	delay 90
 	speak LOCALID_PRESENT_SWEET_TOOTH, DIR_WEST, Name_Sweet_Tooth, Present_Cafe_Text_SweetToothOoo
 	speak LOCALID_CAFE_COOK, DIR_EAST, Name_Cook, Present_Cafe_Text_CookGivesIn
-	playbgm MUS_DP_SUNYSHORE_DAY, TRUE
 	speak LOCALID_PRESENT_SWEET_TOOTH, DIR_WEST, Name_Sweet_Tooth, Present_Cafe_Text_SweetToothYay
+	closemessage
+	playbgm MUS_DP_SUNYSHORE_DAY, TRUE
 	call_if_eq VAR_FACING, DIR_WEST, Present_Cafe_EventScript_PanCameraRight
 	call_if_eq VAR_FACING, DIR_NORTH, Present_Cafe_EventScript_PanCameraDown
 	special RemoveCameraObject
-	closemessage
 	release
 	end
 
@@ -428,8 +428,8 @@ Present_Cafe_EventScript_BaristaReward::
 	speak LOCALID_CAFE_BARISTA, VAR_0x8005, Name_Barista, Present_Cafe_Text_BaristaYouDidIt
 	speak LOCALID_PLAYER, VAR_0x8004, Name_Looker, Looker_Text_AlwaysHappyToHelp
 	speak LOCALID_CAFE_BARISTA, VAR_0x8005, Name_Barista, Present_Cafe_Text_BaristaImPretty
-	call_if_eq VAR_FACING, DIR_WEST, Present_Cafe_EventScript_TurnBaristaLeft
-	call_if_eq VAR_FACING, DIR_NORTH, Present_Cafe_EventScript_TurnBaristaUp
+	call_if_eq VAR_0x8004, DIR_WEST, Present_Cafe_EventScript_TurnBaristaLeft
+	call_if_eq VAR_0x8004, DIR_NORTH, Present_Cafe_EventScript_TurnBaristaUp
 	speak LOCALID_PLAYER, VAR_0x8004, Name_Looker, Present_Cafe_Text_LookerThatSoundsWonderful
 	completequest QUEST_GET_INTO_THE_GROOVE
 	clearflag FLAG_SYS_DISAPPEAR_QUESTS
@@ -467,6 +467,7 @@ Present_Cafe_EventScript_BaristaPostQuest::
 	goto_if_eq VAR_RESULT, NO, Present_Cafe_EventScript_BaristaDidntChangeAbility
 	msgbox Present_Cafe_Text_WhichPokemonAbility, MSGBOX_DEFAULT
 	special ChoosePartyMon
+	waitstate
 	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, Present_Cafe_EventScript_BaristaDidntChangeAbility
 	special SwitchMonAbility
 	msgbox Present_Cafe_Text_LookerFeelingRefreshed, MSGBOX_DEFAULT
@@ -581,8 +582,8 @@ Present_Cafe_EventScript_RightIdolPostQuest::
 Present_Cafe_EventScript_LeftRightIdolQuest::
 	speak LOCALID_CAFE_LEFT_IDOL, DIR_EAST, Name_Left_Idol, Present_Cafe_Text_BiancaPreQuest
 	speak LOCALID_CAFE_RIGHT_IDOL, DIR_WEST, Name_Right_Idol, Present_Cafe_Text_SophiaPreQuest
-	speak LOCALID_CAFE_LEFT_IDOL, DIR_EAST, Name_Left_Idol, Present_Cafe_Text_BiancaPreQuest
-	speak LOCALID_CAFE_RIGHT_IDOL, DIR_WEST, Name_Right_Idol, Present_Cafe_Text_SophiaPreQuest
+	speak LOCALID_CAFE_LEFT_IDOL, DIR_EAST, Name_Left_Idol, Present_Cafe_Text_BiancaPreQuest2
+	speak LOCALID_CAFE_RIGHT_IDOL, DIR_WEST, Name_Right_Idol, Present_Cafe_Text_SophiaPreQuest2
 	closemessage
 	applymovement LOCALID_CAFE_LEFT_IDOL, Common_Movement_FaceDown
 	applymovement LOCALID_CAFE_RIGHT_IDOL, Common_Movement_FaceDown

@@ -237,10 +237,10 @@ Present_House1_Text_FatMan:
 	.string "Why do you powerwalk everywhere?$"
 
 Present_House1_Text_LookerDontWantTo:
-	.string "As a professional representing the\n"
-	.string "International Police, I must be sure to\l"
-	.string "maintain my demeanor and look my best at\l"
-	.string "all times!$"
+	.string "As a representative of the\n"
+	.string "International Police, I must always\l"
+	.string "maintain my professional demeanor\l"
+	.string "and look my best!$"
 
 Present_House1_Text_FatManOkay:
 	.string "Oh, okay.\p"
@@ -291,7 +291,7 @@ Present_House1_Text_AilingManIDidIt:
 
 Present_House1_Text_AilingManFeelingBetter:
 	.string "This root is incredible! I feel three\n"
-	.string "years younger now! Thank you!\p"
+	.string "years younger now! Thank you!$"
 
 Present_House1_Text_AilingManCanTeachMoves:
 	.string "I may not look the part, but back in\n"

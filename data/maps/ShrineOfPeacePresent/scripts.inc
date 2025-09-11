@@ -568,4 +568,4 @@ ShrineOfPeacePresent_Text_LookerStartGeniesQuest:
 	.string "Huh…?\p"
 	.string "I thought I quelled the spirits\n"
 	.string "already…\p"
-	.string "Why is it back to storming…?$"
+	.string "Why is the storm back…?$"
