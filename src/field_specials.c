@@ -73,6 +73,8 @@
 #include "palette.h"
 #include "battle_util.h"
 #include "naming_screen.h"
+#include "constants/difficulty.h"
+#include "difficulty.h"
 
 #define TAG_ITEM_ICON 5500
 
@@ -982,16 +984,19 @@ void SetDifficulty(void)
     
     // switch (VAR_CHOOSE_DIFFICULTY)
     // {
-    //     case DIFFICULTY_EASY:
+    //     case 0:
+    //     default:
     //         gSaveBlock2Ptr->optionsBattleStyle = 0; // 0 = DIFFICULTY_EASY
     //         break;
-    //     case DIFFICULTY_NORMAL:
-    //         gSaveBlock2Ptr->optionsBattleStyle = 1; // 0 = DIFFICULTY_NORMAL
+    //     case 1:
+    //         gSaveBlock2Ptr->optionsBattleStyle = 1; // 1 = DIFFICULTY_NORMAL
     //         break;
-    //     case DIFFICULTY_HARD:
-    //         gSaveBlock2Ptr->optionsBattleStyle = 2; // 0 = DIFFICULTY_HARD
+    //     case 2:
+    //         gSaveBlock2Ptr->optionsBattleStyle = 2; // 2 = DIFFICULTY_HARD
     //         break;
     // }
+    VarSet(VAR_BATTLE_SPEED, 0);
+    gSaveBlock2Ptr->optionsBattleSpeed = 0;
 }
 
 void CableCarWarp(void)
