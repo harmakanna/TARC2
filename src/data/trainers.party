@@ -819,9 +819,41 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Crobat  
+Ability: Inner Focus  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Cross Poison  
+- Dual Wingbeat  
+- U-turn  
+- Super Fang  
+
+Mightyena @ Razor Claw  
+Ability: Intimidate  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Crunch  
+- Snarl  
+- Foul Play  
+- Play Rough  
+
+Muk  
+Ability: Poison Touch  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Gunk Shot  
+- Fire Punch  
+- Curse  
+- Disable  
+
+Wailord @ Sitrus Berry  
+Ability: Pressure  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Water Spout  
+- Scald  
+- Heavy Slam  
+- Protect  
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_2 ===
 Name: Sarah
@@ -1582,16 +1614,20 @@ Difficulty: Hard
 Crobat  
 Ability: Inner Focus  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+EVs: 126 Atk / 126 SpD / 252 Spe  
+Careful Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Cross Poison  
 - Dual Wingbeat  
 - U-turn  
 - Super Fang  
 
-Mightyena  
+Mightyena @ Razor Claw  
 Ability: Intimidate  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+EVs: 126 HP / 126 Atk / 126 Def / 126 Spe  
+Jolly Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Crunch  
 - Snarl  
 - Foul Play  
@@ -1600,7 +1636,9 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Muk  
 Ability: Poison Touch  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+EVs: 252 HP / 252 SpD  
+Adamant Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Gunk Shot  
 - Fire Punch  
 - Curse  
@@ -1609,11 +1647,13 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Wailord @ Sitrus Berry  
 Ability: Pressure  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+EVs: 126 Atk / 126 SpA / 252 Spe  
+Timid Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Water Spout  
 - Scald  
 - Heavy Slam  
-- Protect   
+- Protect  
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_2 ===
 Name: Sarah
