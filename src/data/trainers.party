@@ -981,9 +981,40 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Tropius (M) @ Life Orb  
+Ability: Chlorophyll  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Dual Wingbeat  
+- Dragon Hammer  
+- Tailwind  
+- Leaf Storm  
+
+Kingler (M)  
+Ability: Sheer Force  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Razor Shell  
+- Hammer Arm  
+- Protect  
+- Rock Slide  
+
+Chatot (M)  
+Ability: Keen Eye  
+Level: 50  
+- Chatter  
+- Hyper Voice  
+- U-turn  
+- Feather Dance  
+
+Volcarona (M) @ Charti Berry  
+Ability: Flame Body  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Fiery Dance  
+- Bug Buzz  
+- Rage Powder  
+- Psychic  
 
 === TRAINER_TASHA ===
 Name: Tasha
@@ -1904,36 +1935,43 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Tropius @ Life Orb  
+Tropius (M) @ Life Orb  
 Ability: Chlorophyll  
-Level: 50
+Level: 50  
+EVs: 252 HP / 252 Atk  
+Adamant Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Dual Wingbeat  
 - Dragon Hammer  
 - Tailwind  
 - Leaf Storm  
 
-Crustle @ Salac Berry  
-Ability: Sturdy  
+Kingler (M)  
+Ability: Sheer Force  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
-- Stealth Rock  
-- Shell Smash  
-- Rock Slide  
-- Knock Off  
-
-Chatot  
-Ability: Keen Eye  
-Level: 50
+EVs: 252 Atk / 126 SpD / 126 Spe  
+Jolly Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Razor Shell  
+- Hammer Arm  
+- Protect  
+- Rock Slide  
+
+Chatot (M)  
+Ability: Keen Eye  
+Level: 50  
+EVs: 252 HP / 252 Spe  
+Timid Nature  
 - Chatter  
 - Hyper Voice  
 - U-turn  
 - Feather Dance  
 
-Volcarona  
-Ability: Flame Body 
-Level: 50 
+Volcarona (M) @ Charti Berry  
+Ability: Flame Body  
+Level: 50  
+EVs: 252 HP / 126 Def / 126 SpA  
+Bold Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Fiery Dance  
 - Bug Buzz  
