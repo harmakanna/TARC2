@@ -578,9 +578,53 @@ Music: Suspicious
 Double Battle: Yes
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Omastar @ Focus Sash  
+Ability: Weak Armor  
+Level: 50  
+Tera Type: Rock  
+EVs: 126 HP / 252 SpA / 126 SpD  
+Timid Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Surf  
+- Meteor Beam  
+- Stealth Rock  
+- Ice Beam  
+
+Cradily @ Leftovers  
+Ability: Storm Drain  
+Level: 50  
+Tera Type: Rock  
+EVs: 252 HP / 252 Def  
+Calm Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Giga Drain  
+- Leech Seed  
+- Earth Power  
+- Ancient Power  
+
+Archeops  
+Ability: Defeatist  
+Level: 50  
+Tera Type: Rock  
+EVs: 126 Atk / 126 SpA / 252 Spe  
+Hasty Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Heat Wave  
+- Dual Wingbeat  
+- Lash Out  
+- Head Smash  
+
+Tyrantrum @ Rocky Helmet  
+Ability: Strong Jaw  
+Level: 50  
+Tera Type: Rock  
+EVs: 252 Atk / 126 Def / 126 Spe  
+Adamant Nature  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Psychic Fangs  
+- Crunch  
+- Dragon Claw  
+- Dragon Dance  
 
 === TRAINER_PRESENT_FISHERMAN ===
 Name: Trevor
@@ -1046,8 +1090,10 @@ Difficulty: Hard
 
 Omastar @ Focus Sash  
 Ability: Weak Armor  
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+Level: 50  
+Tera Type: Rock  
+Timid Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Surf  
 - Meteor Beam  
 - Stealth Rock  
@@ -1055,8 +1101,10 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Cradily @ Leftovers  
 Ability: Storm Drain  
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+Level: 50  
+Tera Type: Rock  
+Calm Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Giga Drain  
 - Leech Seed  
 - Earth Power  
@@ -1064,8 +1112,10 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Archeops  
 Ability: Defeatist  
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+Level: 50  
+Tera Type: Rock  
+Hasty Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Heat Wave  
 - Dual Wingbeat  
 - Lash Out  
@@ -1073,11 +1123,13 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Tyrantrum @ Rocky Helmet  
 Ability: Strong Jaw  
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+Level: 50  
+Tera Type: Rock  
+Adamant Nature  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Psychic Fangs  
 - Crunch  
-- Outrage  
+- Dragon Claw  
 - Dragon Dance  
 
 === TRAINER_PRESENT_FISHERMAN ===
