@@ -1030,9 +1030,50 @@ Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Avalugg  
+Ability: Own Tempo  
+Level: 50  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Avalanche  
+- Body Press  
+- Protect  
+- High Horsepower  
+
+Butterfree @ Focus Sash  
+Ability: Compound Eyes  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Pollen Puff  
+- Electroweb  
+- Sleep Powder  
+- Quiver Dance  
+
+Shiftry  
+Ability: Wind Rider  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Leaf Blade  
+- Fake Out  
+- Foul Play  
+- Heat Wave  
+
+Aggron  
+Ability: Sturdy  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Autotomize  
+- Aqua Tail  
+- Iron Head  
+- Rock Slide  
+
+Shedinja @ Lum Berry  
+Ability: Wonder Guard  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Will-O-Wisp  
+- Phantom Force  
+- X-Scissor  
+- Swords Dance  
 
 === TRAINER_BOYFRIEND ===
 Name: Luca
@@ -2516,7 +2557,10 @@ Difficulty: Hard
 Avalugg  
 Ability: Own Tempo  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+Tera Type: Ice  
+EVs: 126 HP / 252 Atk / 126 SpD  
+Careful Nature  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Avalanche  
 - Body Press  
 - Protect  
@@ -2525,7 +2569,10 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Butterfree @ Focus Sash  
 Ability: Compound Eyes  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+Tera Type: Bug  
+EVs: 126 HP / 126 SpA / 252 Spe  
+Timid Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Pollen Puff  
 - Electroweb  
 - Sleep Powder  
@@ -2534,7 +2581,10 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Shiftry  
 Ability: Wind Rider  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+Tera Type: Grass  
+EVs: 252 Atk / 252 Spe  
+Hasty Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Leaf Blade  
 - Fake Out  
 - Foul Play  
@@ -2543,7 +2593,10 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Aggron  
 Ability: Sturdy  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+Tera Type: Steel  
+EVs: 126 HP / 252 Atk / 126 Spe  
+Adamant Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Autotomize  
 - Aqua Tail  
 - Iron Head  
@@ -2552,7 +2605,10 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Shedinja @ Lum Berry  
 Ability: Wonder Guard  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+Tera Type: Bug  
+EVs: 252 Atk / 252 Spe  
+Jolly Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Will-O-Wisp  
 - Phantom Force  
 - X-Scissor  
