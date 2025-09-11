@@ -632,14 +632,14 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Alomomola  
-Ability: Regenerator  
+Dewgong  
+Ability: Hydration  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe   
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Flip Turn  
 - Helping Hand  
 - Protect  
-- Scale Shot  
+- Icicle Spear
 
 Palafin  
 Ability: Zero to Hero  
@@ -713,9 +713,32 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Pachirisu (F) @ Sitrus Berry  
+Ability: Volt Absorb  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Follow Me  
+- Nuzzle  
+- Super Fang  
+- Charm  
+
+Gardevoir (F) @ Choice Scarf  
+Ability: Trace  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Alluring Voice  
+- Aura Sphere  
+- Psychic Noise  
+- Trick  
+
+Cetitan (F)  
+Ability: Thick Fat  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Icicle Crash  
+- Heavy Slam  
+- Earthquake  
+- Facade  
 
 === TRAINER_SOPHIA ===
 Name: Sophia
@@ -744,7 +767,6 @@ Difficulty: Normal
 Altaria @ Altarianite  
 Ability: Cloud Nine  
 Level: 50  
-Tera Type: Dragon  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Dragon Claw  
 - Facade  
@@ -754,7 +776,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Glimmora  
 Ability: Toxic Debris  
 Level: 50  
-Tera Type: Rock  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Power Gem  
 - Sludge Bomb  
@@ -764,7 +785,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Aurorus @ Focus Sash  
 Ability: Snow Warning  
 Level: 50  
-Tera Type: Rock  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Aurora Veil  
 - Earth Power  
@@ -774,7 +794,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Vivillon-Marine  
 Ability: Friend Guard  
 Level: 50  
-Tera Type: Bug  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Pollen Puff  
 - Rage Powder  
@@ -784,7 +803,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Azumarill @ Fairy Feather  
 Ability: Huge Power  
 Level: 50  
-Tera Type: Water  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Aqua Jet  
 - Aqua Tail  
@@ -1313,8 +1331,8 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Alomomola  
-Ability: Regenerator  
+Dewgong  
+Ability: Hydration  
 Level: 50  
 EVs: 252 Atk / 126 SpD / 126 Spe  
 Impish Nature  
@@ -1322,7 +1340,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Flip Turn  
 - Helping Hand  
 - Protect  
-- Scale Shot  
+- Icicle Spear
 
 Palafin  
 Ability: Zero to Hero  
@@ -1407,27 +1425,33 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Pachirisu @ Sitrus Berry  
+Pachirisu (F) @ Sitrus Berry  
 Ability: Volt Absorb  
 Level: 50  
+EVs: 252 HP / 252 Spe  
+Jolly Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Follow Me  
 - Nuzzle  
 - Super Fang  
 - Charm  
 
-Gardevoir @ Choice Scarf  
+Gardevoir (F) @ Choice Scarf  
 Ability: Trace  
-Level: 50
+Level: 50  
+EVs: 126 HP / 126 Def / 252 SpA  
+Modest Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Alluring Voice  
 - Aura Sphere  
 - Psychic Noise  
 - Trick  
 
-Cetitan  
+Cetitan (F)  
 Ability: Thick Fat  
-Level: 50
+Level: 50  
+EVs: 126 Atk / 252 Def / 126 SpD  
+Brave Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Icicle Crash  
 - Heavy Slam  
@@ -1493,7 +1517,6 @@ Difficulty: Hard
 Altaria @ Altarianite  
 Ability: Cloud Nine  
 Level: 50  
-Tera Type: Dragon  
 EVs: 126 HP / 126 Atk / 252 SpD  
 Relaxed Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
@@ -1505,7 +1528,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Glimmora  
 Ability: Toxic Debris  
 Level: 50  
-Tera Type: Rock  
 EVs: 126 HP / 126 SpA / 252 Spe  
 Modest Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
@@ -1517,7 +1539,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Aurorus @ Focus Sash  
 Ability: Snow Warning  
 Level: 50  
-Tera Type: Rock  
 EVs: 252 SpA / 252 Spe  
 Timid Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
@@ -1529,7 +1550,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Vivillon-Fancy  
 Ability: Friend Guard  
 Level: 50  
-Tera Type: Bug  
 EVs: 252 HP / 252 Def  
 Bold Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
@@ -1541,7 +1561,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Azumarill @ Fairy Feather  
 Ability: Huge Power  
 Level: 50  
-Tera Type: Water  
 EVs: 252 Atk / 126 SpD / 126 Spe  
 Jolly Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
