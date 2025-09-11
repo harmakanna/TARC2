@@ -897,7 +897,7 @@ gText_PokemonCenterSign::
 	.string "Pokémon Center$"
 
 gText_MomOrDadMightLikeThisProgram::
-	.string "The weather channel is on.\p"
+	.string "EVTV Weather is on.\p"
 	.string "In this episode, a cloud and a sun are\n"
 	.string "fighting pollution caused by a Yam Man.$"
 

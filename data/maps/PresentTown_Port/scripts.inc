@@ -708,12 +708,13 @@ PresentTown_Port_EventScript_AromatisseRunOffUp::
 PresentTown_Port_EventScript_AromatisseRunOffRight::
 	applymovement LOCALID_PORT_BOYFRIEND, PresentTown_Port_Movement_BoyfriendWatchAromatisse
 	applymovement LOCALID_PORT_AROMATISSE, PresentTown_Port_Movement_AromatisseRunOffRight
+	delay 16
 	playse SE_EFFECTIVE
 	speakername Name_Looker
 	message Looker_Text_Ouch
 	applymovement LOCALID_PLAYER, PresentTown_Port_Movement_LookerPushedByAromatisse
 	waitmessage
-	delay 40
+	delay 30
 	closemessage
 	waitmovement LOCALID_PORT_AROMATISSE
 	delay 40

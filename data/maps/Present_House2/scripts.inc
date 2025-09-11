@@ -95,6 +95,7 @@ Present_House2_EventScript_SentimentalWomanPreGame::
 Present_House2_EventScript_MissingMan::
 	lock
 	faceplayer
+	waitmovement 0
 	playse SE_PIN
 	applymovement LOCALID_MISSING_MAN, Present_House2_Movement_EmoteHeart
 	waitmovement 0
