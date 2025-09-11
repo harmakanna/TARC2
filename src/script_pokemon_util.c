@@ -477,10 +477,10 @@ static const struct InGameOT sIngameOTs[] =
     {
         .species = SPECIES_WALREIN,
         .level = 50,
-        .heldItem = ITEM_LIFE_ORB,
+        .heldItem = ITEM_ASSAULT_VEST,
         .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
         .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
-        .moves = {MOVE_GLACIATE, MOVE_BRINE, MOVE_ROLLOUT, MOVE_PROTECT},
+        .moves = {MOVE_GLACIATE, MOVE_BRINE, MOVE_YAWN, MOVE_PROTECT},
         .ball = BALL_HEAVY,
         .nature = NATURE_SERIOUS,
         .abilityNum = 0,
@@ -496,7 +496,7 @@ static const struct InGameOT sIngameOTs[] =
     {
         .species = SPECIES_CAMERUPT,
         .level = 50,
-        .heldItem = ITEM_LIFE_ORB,
+        .heldItem = ITEM_ASSAULT_VEST,
         .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
         .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
         .moves = {MOVE_SCORCHING_SANDS, MOVE_LAVA_PLUME, MOVE_YAWN, MOVE_PROTECT},
@@ -515,10 +515,10 @@ static const struct InGameOT sIngameOTs[] =
     {
         .species = SPECIES_GOLEM,
         .level = 50,
-        .heldItem = ITEM_LIFE_ORB,
+        .heldItem = ITEM_ROCKY_HELMET,
         .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
         .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
-        .moves = {MOVE_SCORCHING_SANDS, MOVE_LAVA_PLUME, MOVE_YAWN, MOVE_PROTECT},
+        .moves = {MOVE_EARTHQUAKE, MOVE_STONE_EDGE, MOVE_EXPLOSION, MOVE_PROTECT},
         .ball = BALL_MOON,
         .nature = NATURE_BRAVE,
         .abilityNum = 0,
@@ -534,10 +534,10 @@ static const struct InGameOT sIngameOTs[] =
     {
         .species = SPECIES_MACHAMP,
         .level = 50,
-        .heldItem = ITEM_LIFE_ORB,
+        .heldItem = ITEM_HEAVY_DUTY_BOOTS,
         .ivs = {15, 15, 15, 15, 15, 15}, //HP, Atk, Def, Spe, SpA, SpDef
         .evs = {0, 0, 0, 0, 0, 0}, //HP, Atk, Def, Spe, SpA, SpDef
-        .moves = {MOVE_SCORCHING_SANDS, MOVE_LAVA_PLUME, MOVE_YAWN, MOVE_PROTECT},
+        .moves = {MOVE_CROSS_CHOP, MOVE_STONE_EDGE, MOVE_KNOCK_OFF, MOVE_PROTECT},
         .ball = BALL_MOON,
         .nature = NATURE_JOLLY,
         .abilityNum = 0,
