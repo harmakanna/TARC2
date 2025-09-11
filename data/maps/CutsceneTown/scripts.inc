@@ -26,9 +26,9 @@ CutsceneTown_Event::
 	applymovement LOCALID_TOWNMYTH_WESTWOMAN, MythTown_Movement_ManWomanEnterWestScene
 	delay 5
 	applymovement LOCALID_TOWNMYTH_WESTMAN, MythTown_Movement_ManWomanEnterWestScene
-	delay 80
+	delay 110
 	closemessage
-	delay 60
+	delay 30
 	playse SE_PIN
 	applymovement LOCALID_TOWNMYTH_WESTMAN, MythTown_Movement_ManLoveWoman
 	applymovement LOCALID_TOWNMYTH_WESTWOMAN, MythTown_Movement_WomanLoveMan
@@ -47,8 +47,7 @@ CutsceneTown_Event::
 	playmoncry SPECIES_LANDORUS, CRY_MODE_NORMAL
 	applymovement LOCALID_TOWNMYTH_CABBAGEMAN, MythTown_Movement_CabbageMan
 	applymovement LOCALID_TOWNMYTH_LANDORUS, MythTown_Movement_Landorus
-	delay 40
-	delay 130
+	delay 200
 	closemessage
 	fadescreen FADE_TO_BLACK
 	delay 80
@@ -62,10 +61,10 @@ CutsceneTown_Event::
 	playmoncry SPECIES_KECLEON, CRY_MODE_NORMAL
 	applymovement LOCALID_TOWNMYTH_KECLEON, Myth_Movement_KecleonAppears
 	delay 60
-	closemessage
 	playse SE_PIN
 	applymovement LOCALID_TOWNMYTH_NORTHWOMAN, Common_Movement_FaceUpExclamationMark
 	delay 80
+	closemessage
 	applymovement LOCALID_TOWNMYTH_KECLEON, Myth_Movement_KecleonEscapeToForest
 	waitmovement 0
 	delay 100
@@ -73,11 +72,11 @@ CutsceneTown_Event::
 	delay 80
 	message Myth_Text_NowLandorus
 	waitmessage
-	delay 150
+	delay 180
 	message Myth_Text_NowCelebi
 	waitmessage
 	fadenewbgm MUS_NONE
-	delay 150
+	delay 180
 	playbgm MUS_NONE, TRUE
 	closemessage
 	delay 80

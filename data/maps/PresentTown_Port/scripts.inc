@@ -33,8 +33,12 @@ PresentTown_Port_OnTransition:
 	end
 
 PresentTown_Port_EventScript_TryClearBoyfriendQuestFlag::
+	call_if_set FLAG_DEFEATED_SHRINE_GENIES, PresentTown_Port_EventScript_TryClearBoyfriendQuestFlag2
+	return
+
+PresentTown_Port_EventScript_TryClearBoyfriendQuestFlag2::
 	returnqueststate QUEST_FOREVER_FAITHFUL
-	call_if_lt VAR_RESULT, 3, PresentTown_Port_EventScript_ClearBoyfriendQuestFlag
+	call_if_eq VAR_RESULT, 3, PresentTown_Port_EventScript_ClearBoyfriendQuestFlag
 	return
 
 PresentTown_Port_EventScript_ClearBoyfriendQuestFlag::
@@ -321,6 +325,7 @@ PresentTown_Port_EventScript_MagikarpManGivesMagikarpFromTrigger::
     givemonwithot OT_LOOKER_MAGIKARP
 	speakername NULL
 	call PresentTown_Port_EventScript_ReceivedMagikarpFanfare
+	closemessage
 	hidemoneybox
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	call_if_eq VAR_TEMP_0, 17, PresentTown_Port_EventScript_LookerStepAside

@@ -145,7 +145,7 @@ CutsceneOffice_Text_AnabelLooker:
 	.string "LOOKER! We've got work!$"
 
 CutsceneOffice_Text_LookerAhh:
-	.string "AHH!$"
+	.string "AAAAAAAAAAHHH!$"
 
 CutsceneOffice_Text_LookerAnabel:
 	.string "Oww…\p"
@@ -160,8 +160,7 @@ CutsceneOffice_Text_AnabelWeReceived:
 	.string "mayor of the city of Porta Bella.$"
 
 CutsceneOffice_Text_LookerThePortCity:
-	.string "The port city? That sounds like a\n"
-	.string "nice change of pace from the office.\p"
+	.string "The port city?\p"
 	.string "What is he requesting of us?$"
 
 CutsceneOffice_Text_AnabelRecently:

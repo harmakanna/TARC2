@@ -14,15 +14,15 @@ CutsceneMyth_Event::
 	delay 160
 	speakername NULL
 	message Myth_Text_LongAgo
-	delay 10
+	waitmessage
 	applymovement LOCALID_CAMERA, Myth_Movement_CameraPanDiagonalDownSetScene
 	playbgm MUS_DP_LAKE_CAVERNS, FALSE
 	fadescreen FADE_FROM_BLACK
 	delay 160
 	closemessage
-	delay 90
+	delay 110
 	fadescreen FADE_TO_BLACK
-	delay 80
+	delay 60
 	waitmovement LOCALID_CAMERA
 	clearflag FLAG_HIDE_FIRST_PAN
 	addobject LOCALID_MYTH_TORNADUS

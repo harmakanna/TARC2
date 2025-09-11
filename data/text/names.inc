@@ -173,7 +173,7 @@ Name_Student:
     .string "Paolo$"
 
 Name_Beauty:
-    .string "Beatrice$"
+    .string "Aurora$"
 
 Name_Boyfriend:
     .string "Luca$"
@@ -254,7 +254,7 @@ Name_Hiker:
     .string "Outdoorsman$"
 
 Name_Past_Nurse:
-    .string "Joy$"
+    .string "Beatrice$"
 
 Name_Sailor:
     .string "Sailor$"

@@ -665,6 +665,8 @@ PastTown_EventScript_ReceiveTaurosParty::
 	call PastTown_EventScript_ReceivedTaurosFanfare
 	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
 	closemessage
+	setvar VAR_TEMP_1, LOCALID_TAUROS
+	setvar VAR_TEMP_2, LOCALID_MILTANK
 	goto PastTown_EventScript_SadGirlQuestFinish
 	end
 	
@@ -673,6 +675,8 @@ PastTown_EventScript_ReceiveTaurosPC::
 	call Common_EventScript_TransferredToPC
 	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
 	closemessage
+	setvar VAR_TEMP_1, LOCALID_TAUROS
+	setvar VAR_TEMP_2, LOCALID_MILTANK
 	goto PastTown_EventScript_SadGirlQuestFinish
 	end
 
@@ -684,8 +688,6 @@ PastTown_EventScript_ReceivedTaurosFanfare::
 	waitmessage
 	waitfanfare
 	bufferspeciesname STR_VAR_1, SPECIES_TAUROS
-	setvar VAR_TEMP_1, LOCALID_TAUROS
-	setvar VAR_TEMP_2, LOCALID_MILTANK
 	return
 
 PastTown_EventScript_SadGirlGiveMiltank::
@@ -702,6 +704,8 @@ PastTown_EventScript_ReceiveMiltankParty::
 	call PastTown_EventScript_ReceivedMiltankFanfare
 	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
 	closemessage
+	setvar VAR_TEMP_1, LOCALID_MILTANK
+	setvar VAR_TEMP_2, LOCALID_TAUROS
 	goto PastTown_EventScript_SadGirlQuestFinish
 	end
 	
@@ -710,6 +714,8 @@ PastTown_EventScript_ReceiveMiltankPC::
 	call Common_EventScript_TransferredToPC
 	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
 	closemessage
+	setvar VAR_TEMP_1, LOCALID_MILTANK
+	setvar VAR_TEMP_2, LOCALID_TAUROS
 	goto PastTown_EventScript_SadGirlQuestFinish
 	end
 
@@ -721,8 +727,6 @@ PastTown_EventScript_ReceivedMiltankFanfare::
 	waitmessage
 	waitfanfare
 	bufferspeciesname STR_VAR_1, SPECIES_MILTANK
-	setvar VAR_TEMP_1, LOCALID_MILTANK
-	setvar VAR_TEMP_2, LOCALID_TAUROS
 	return
 
 PresentTown_Port_EventScript_BlueGiveGolem::

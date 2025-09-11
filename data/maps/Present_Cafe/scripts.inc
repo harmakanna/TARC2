@@ -183,6 +183,7 @@ Present_Cafe_EventScript_PanCameraRight::
 
 Present_Cafe_EventScript_SweetToothThankYou::
 	faceplayer
+	waitmovement 0
 	playse SE_PIN
 	applymovement LOCALID_PRESENT_SWEET_TOOTH, Common_Movement_ExclamationMark
 	waitmovement 0
@@ -525,6 +526,7 @@ Present_Cafe_EventScript_LeftIdolPrereqQuest::
 	end
 
 Present_Cafe_EventScript_LeftIdolPostQuest::
+	applymovement LOCALID_CAFE_LEFT_IDOL, Common_Movement_FaceDown
 	applymovement LOCALID_CAFE_RIGHT_IDOL, Common_Movement_FaceDown
 	applymovement LOCALID_CAFE_LISIA, Common_Movement_FaceDown
 	speakername Name_Left_Idol
@@ -572,6 +574,7 @@ Present_Cafe_EventScript_RightWorriedLisia::
 
 Present_Cafe_EventScript_RightIdolPostQuest::
 	applymovement LOCALID_CAFE_LEFT_IDOL, Common_Movement_FaceDown
+	applymovement LOCALID_CAFE_RIGHT_IDOL, Common_Movement_FaceDown
 	applymovement LOCALID_CAFE_LISIA, Common_Movement_FaceDown
 	speakername Name_Right_Idol
 	msgbox Present_Cafe_Text_RightIdolPostQuest, MSGBOX_DEFAULT
@@ -701,17 +704,21 @@ Present_Cafe_EventScript_LisiaEndGauntlet::
 	call_if_eq VAR_TEMP_1, 1, Present_Cafe_EventScript_MoveLeftIdolBack
 	call_if_eq VAR_TEMP_1, 2, Present_Cafe_EventScript_MoveRightIdolBack
 	clearflag FLAG_SYS_NO_WHITEOUT
+	applymovement LOCALID_CAFE_LISIA, Common_Movement_FaceDown
+	waitmovement 0
 	releaseall
 	end
 
 Present_Cafe_EventScript_MoveLeftIdolBack::
 	applymovement LOCALID_CAFE_LEFT_IDOL, Common_Movement_FaceDown
 	waitmovement 0
+	applymovement LOCALID_CAFE_RIGHT_IDOL, Common_Movement_FaceDown
 	applymovement LOCALID_CAFE_LEFT_IDOL, Present_Cafe_Movement_BackUp
 	waitmovement 0
 	return
 
 Present_Cafe_EventScript_MoveRightIdolBack::
+	applymovement LOCALID_CAFE_LEFT_IDOL, Common_Movement_FaceDown
 	applymovement LOCALID_CAFE_RIGHT_IDOL, Present_Cafe_Movement_BackUp
 	waitmovement 0
 	return

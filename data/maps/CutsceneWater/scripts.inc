@@ -232,7 +232,7 @@ CutsceneWater_Movement_InfiniteMovement:
 
 CutsceneWater_Text_LookerSoHasAqua:
 	.string "So has Team Aqua actually done anything\n"
-	.string "yet to earn the ire of the city?$"
+	.string "bad yet?$"
 
 CutsceneWater_Text_AnabelNotToMyUnderstanding:
 	.string "Not to my understanding.$"
