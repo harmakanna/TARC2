@@ -38,7 +38,7 @@ PresentTown_Port_EventScript_TryClearBoyfriendQuestFlag::
 
 PresentTown_Port_EventScript_TryClearBoyfriendQuestFlag2::
 	returnqueststate QUEST_FOREVER_FAITHFUL
-	call_if_eq VAR_RESULT, 3, PresentTown_Port_EventScript_ClearBoyfriendQuestFlag
+	call_if_lt VAR_RESULT, 3, PresentTown_Port_EventScript_ClearBoyfriendQuestFlag
 	return
 
 PresentTown_Port_EventScript_ClearBoyfriendQuestFlag::
@@ -658,6 +658,11 @@ PresentTown_Port_EventScript_FaithfulMan::
 	applymovement LOCALID_PORT_AROMATISSE, Common_Movement_FaceRight
 	msgbox PresentTown_Port_Text_AromatisseControls, MSGBOX_DEFAULT
 	waitmoncry
+	@special DoSweetScent
+	speakername NULL
+	message PresentTown_Port_Text_ScentFillsTheAir
+	waitmessage
+	delay 80
 	speak LOCALID_PORT_BOYFRIEND, VAR_0x8005, Name_Boyfriend, PresentTown_Port_Text_BoyfriendThatsUhh
 	trainerbattle_no_intro TRAINER_BOYFRIEND, PresentTown_Port_Text_BoyfriendDefeat
 	specialvar VAR_RESULT, GetBattleOutcome
@@ -713,11 +718,11 @@ PresentTown_Port_EventScript_AromatisseRunOffUp::
 PresentTown_Port_EventScript_AromatisseRunOffRight::
 	applymovement LOCALID_PORT_BOYFRIEND, PresentTown_Port_Movement_BoyfriendWatchAromatisse
 	applymovement LOCALID_PORT_AROMATISSE, PresentTown_Port_Movement_AromatisseRunOffRight
+	applymovement LOCALID_PLAYER, PresentTown_Port_Movement_LookerPushedByAromatisse
 	delay 16
 	playse SE_EFFECTIVE
 	speakername Name_Looker
 	message Looker_Text_Ouch
-	applymovement LOCALID_PLAYER, PresentTown_Port_Movement_LookerPushedByAromatisse
 	waitmessage
 	delay 30
 	closemessage
@@ -782,6 +787,7 @@ PresentTown_Port_Movement_AromatisseRunOffRight:
 
 PresentTown_Port_Movement_LookerPushedByAromatisse:
 	delay_16
+	face_left
 	lock_facing_direction
 	walk_faster_right
 	walk_faster_right
@@ -925,6 +931,9 @@ PresentTown_Port_Text_Aromatisse:
 PresentTown_Port_Text_AromatisseControls:
 	.string "Ara-ara?\n"
 	.string "Aaaaaaaaaaaaaaaaaaah!$"
+
+PresentTown_Port_Text_ScentFillsTheAir:
+	.string "The smell of citrus fills the air…$"
 
 PresentTown_Port_Text_AromatisseStartled:
 	.string "Ara!?$"

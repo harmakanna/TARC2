@@ -166,12 +166,13 @@ Past_TownHall_EventScript_CamillaGiveRevivalHerb::
 
 Past_TownHall_EventScript_CamillaAcceptEstellaCandy::
 	call Script_GetNPCFacingDirection
-	waitmovement LOCALID_TOWNHALL_CAMILLA
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Past_TownHall_Text_LookerAGiftForYou
+	closemessage
 	playse SE_PIN
 	applymovement LOCALID_TOWNHALL_CAMILLA, Common_Movement_ExclamationMark
 	waitmovement 0
 	delay 50
-	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Past_TownHall_Text_LookerAGiftForYou
+	speak LOCALID_TOWNHALL_CAMILLA, VAR_0x8005, Name_Camilla, Past_TownHall_EventScript_CamillaOhLooker
 	removeitem ITEM_RARE_CANDY
 	speakername NULL
 	playfanfare MUS_OBTAIN_TMHM
@@ -485,3 +486,6 @@ Past_TownHall_Text_CamillaOfCourse:
 
 Past_TownHall_Text_Comfey:
 	.string "Oomfey~!$"
+
+Past_TownHall_EventScript_CamillaOhLooker:
+	.string "Oh?$"

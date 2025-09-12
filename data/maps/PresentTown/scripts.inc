@@ -196,6 +196,7 @@ PresentTown_EventScript_LostIdolThankYou::
 	applymovement LOCALID_CITY_FOREST_IDOL, PresentTown_Movement_LostIdolExitFrame
 	waitmovement 0
 	removeobject LOCALID_CITY_FOREST_IDOL
+	delay 40
 	setvar VAR_TRIGGER_CUTSCENE_FOREST, 0
 	setvar VAR_CUTSCENE_FOREST_STATE, 0
 	clearflag FLAG_SYS_PREVENT_MAP_FADE
@@ -223,6 +224,7 @@ PresentTown_EventScript_LostSmeargleGoHome::
 	applymovement LOCALID_CITY_FOREST_SMEARGLE, PresentTown_Movement_LostIdolExitFrame
 	waitmovement 0
 	removeobject LOCALID_CITY_FOREST_SMEARGLE
+	delay 40
 	setvar VAR_TRIGGER_CUTSCENE_FOREST, 0
 	setvar VAR_CUTSCENE_FOREST_STATE, 0
 	clearflag FLAG_SYS_PREVENT_MAP_FADE
