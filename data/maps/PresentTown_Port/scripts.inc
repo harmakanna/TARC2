@@ -321,6 +321,7 @@ PresentTown_Port_EventScript_MagikarpManGivesMagikarpFromTrigger::
     givemonwithot OT_LOOKER_MAGIKARP
 	speakername NULL
 	call PresentTown_Port_EventScript_ReceivedMagikarpFanfare
+	closemessage
 	hidemoneybox
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	call_if_eq VAR_TEMP_0, 17, PresentTown_Port_EventScript_LookerStepAside
