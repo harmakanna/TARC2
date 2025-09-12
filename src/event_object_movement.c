@@ -2841,7 +2841,10 @@ static void RemoveObjectEventIfOutsideView(struct ObjectEvent *objectEvent)
         return;
     if (objectEvent->graphicsId == OBJ_EVENT_GFX_SS_TIDAL) // SS Tidal can never get unloaded
         return;
-    if (objectEvent->graphicsId == (OBJ_EVENT_GFX_IDOL || OBJ_EVENT_GFX_LISIA)
+    if (objectEvent->graphicsId == OBJ_EVENT_GFX_IDOL
+     && IsQuestCompletedState(QUEST_BREAK_A_LEG)) //Idols never unloaded so they are kept in sync
+        return;
+    if (objectEvent->graphicsId == OBJ_EVENT_GFX_LISIA
      && IsQuestCompletedState(QUEST_BREAK_A_LEG)) //Idols never unloaded so they are kept in sync
         return;
     RemoveObjectEvent(objectEvent);

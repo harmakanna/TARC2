@@ -210,6 +210,7 @@
 #define METATILE_General_CalmWater             0x170
 #define METATILE_General_CaveEntrance_Bottom   0x0A7
 #define METATILE_General_CaveEntrance_Top      0x09F
+#define METATILE_General_DOOR_CITY_HALL_2      0x13F
 #define METATILE_General_Door                  0x021
 #define METATILE_General_Door_Contest          0x1DB
 #define METATILE_General_Door_Gym              0x1CD
@@ -432,11 +433,12 @@
 #define METATILE_PokemonCenter_Floor_ShadowTop_Alt       0x2DC
 
 // gTileset_PresentTown
-#define METATILE_PresentTown_CalmWater              0x2F4
-#define METATILE_PresentTown_Door_City_Hall         0x2B5
-#define METATILE_PresentTown_Locked_Door            0x362
-#define METATILE_PresentTown_Locked_Gym_Door        0x361
-#define METATILE_PresentTown_Porto_Bella_City_Door  0x36A
+#define METATILE_PresentTown_CalmWater                    0x2F4
+#define METATILE_PresentTown_Door_City_Hall               0x2B5
+#define METATILE_PresentTown_Locked_Door                  0x362
+#define METATILE_PresentTown_Locked_Gym_Door              0x361
+#define METATILE_PresentTown_Porto_Bella_City_Door        0x36A
+#define METATILE_PresentTown_Porto_Bella_City_Door_Slide  0x367
 
 // gTileset_Rustboro
 #define METATILE_Rustboro_Door_Gray  0x21F

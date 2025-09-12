@@ -20,6 +20,20 @@ void SetCurrentDifficultyLevel(enum DifficultyLevel desiredDifficulty)
     if (desiredDifficulty > DIFFICULTY_MAX)
         desiredDifficulty = DIFFICULTY_MAX;
 
+    switch (desiredDifficulty)
+    {
+        case DIFFICULTY_EASY:
+            gSaveBlock2Ptr->optionsBattleStyle = 0; // 0 = DIFFICULTY_EASY
+            break;
+        case DIFFICULTY_NORMAL:
+        default:
+            gSaveBlock2Ptr->optionsBattleStyle = 1; // 1 = DIFFICULTY_NORMAL
+            break;
+        case DIFFICULTY_HARD:
+            gSaveBlock2Ptr->optionsBattleStyle = 2; // 2 = DIFFICULTY_HARD
+            break;
+    }
+    
     VarSet(B_VAR_DIFFICULTY, desiredDifficulty);
 }
 

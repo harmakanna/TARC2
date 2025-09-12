@@ -15,7 +15,7 @@ CutsceneOffice_EventScript_StartGame::
 	call_if_eq VAR_RESULT, 0, CutsceneOffice_EventScript_SetEasy
 	call_if_eq VAR_RESULT, 1, CutsceneOffice_EventScript_SetNormal
 	call_if_eq VAR_RESULT, 2, CutsceneOffice_EventScript_SetHard
-	special SetDifficulty
+	special SetDifficulty @Resets battle speed, doesn't touch difficulty any more
 	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 	special SpawnCameraObject
 	waitmovement 0
@@ -43,21 +43,24 @@ CutsceneOffice_EventScript_SetEasy::
 	playse SE_SELECT
 	msgbox CutsceneOffice_Text_SetToEasy, MSGBOX_DEFAULT
 	closemessage
-	setvar VAR_CHOOSE_DIFFICULTY, 0
+	setdifficulty DIFFICULTY_EASY 
+	@copyvar VAR_CHOOSE_DIFFICULTY, 0
 	return
 
 CutsceneOffice_EventScript_SetNormal::
 	playse SE_SELECT
 	msgbox CutsceneOffice_Text_SetToNormal, MSGBOX_DEFAULT
 	closemessage
-	setvar VAR_CHOOSE_DIFFICULTY, 1
+	setdifficulty DIFFICULTY_NORMAL
+	@copyvar VAR_CHOOSE_DIFFICULTY, 1
 	return
 
 CutsceneOffice_EventScript_SetHard::
 	playse SE_SELECT
 	msgbox CutsceneOffice_Text_SetToHard, MSGBOX_DEFAULT
 	closemessage
-	setvar VAR_CHOOSE_DIFFICULTY, 2
+	setdifficulty DIFFICULTY_HARD
+	@copyvar VAR_CHOOSE_DIFFICULTY, 2
 	return
 
 CutsceneOffice_EventScript_Scene::
@@ -145,7 +148,7 @@ CutsceneOffice_Text_AnabelLooker:
 	.string "LOOKER! We've got work!$"
 
 CutsceneOffice_Text_LookerAhh:
-	.string "AHH!$"
+	.string "AAAAAAAAAAHHH!$"
 
 CutsceneOffice_Text_LookerAnabel:
 	.string "Oww…\p"
@@ -160,8 +163,7 @@ CutsceneOffice_Text_AnabelWeReceived:
 	.string "mayor of the city of Porta Bella.$"
 
 CutsceneOffice_Text_LookerThePortCity:
-	.string "The port city? That sounds like a\n"
-	.string "nice change of pace from the office.\p"
+	.string "The port city?\p"
 	.string "What is he requesting of us?$"
 
 CutsceneOffice_Text_AnabelRecently:

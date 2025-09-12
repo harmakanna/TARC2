@@ -270,7 +270,7 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
     {METATILE_BattleFrontier_Door_Elevator,                 DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleTowerElevator, sDoorAnimPalettes_BattleTowerElevator},
     // The metatile for this door doesn't seem to correspond to a door in any Emerald tileset. Given the surrounding door animations, it was likely cut from the Battle Frontier.
     // From the palettes array we know it uses palette 9, and the door's shadow looks correct using either the Battle Tent or Battle Frontier Outside's 9th palette.
-    {0x3B0,                                                 DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_UnusedBattleFrontier, sDoorAnimPalettes_UnusedBattleFrontier},
+    //{0x3B0,                                                 DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_UnusedBattleFrontier, sDoorAnimPalettes_UnusedBattleFrontier},
     {METATILE_BattleFrontierOutsideWest_Door_BattleDome,    DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleDome, sDoorAnimPalettes_BattleDome},
     {METATILE_BattleFrontierOutsideWest_Door_BattleFactory, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleFactory, sDoorAnimPalettes_BattleFactory},
     {METATILE_BattleFrontierOutsideEast_Door_BattleTower,   DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleTower, sDoorAnimPalettes_BattleTower},
@@ -295,6 +295,7 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
     {METATILE_PortoBellaTown_Door_Glass,                    DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_PortoBellaGlass, sDoorAnimPalettes_PortoBellaGlass},
     {METATILE_PresentTown_Porto_Bella_City_Door,            DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_PortoBellaCity, sDoorAnimPalettes_PortoBellaCity},
     {METATILE_PresentTown_Door_City_Hall,                   DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_PortoBellaCitySlide, sDoorAnimPalettes_PortoBellaCitySlide},
+    {METATILE_PresentTown_Porto_Bella_City_Door_Slide,                   DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_PortoBellaCitySlide, sDoorAnimPalettes_PortoBellaCitySlide},
 };
 
 // NOTE: The tiles of a door's animation must be copied to VRAM because they are not already part of any given tileset.
