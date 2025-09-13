@@ -905,7 +905,8 @@ static u32 ChooseMoveOrAction_Doubles(u32 battler)
     gBattlerTarget = mostViableTargetsArray[Random() % mostViableTargetsNo];
     
     if ( gBattleMons[battler].volatiles.multipleTurns == TRUE 
-        && !(gDisableStructs[battler].isFirstTurn))
+        && !(gDisableStructs[battler].isFirstTurn)
+        && IsBattlerAlive(gAiBattleData->previousTarget[battler]))
     {
         gAiBattleData->chosenTarget[battler] = gAiBattleData->previousTarget[battler];
     } 
