@@ -31,7 +31,7 @@ Present_House2_EventScript_SentimentalWomanHappyReward::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_SoHeresTheThing
 	speak LOCALID_SENTIMENTAL_WOMAN, VAR_0x8005, Name_Sentimental_Woman, Present_House2_Text_SentimentalWomanHappyReward
 	speakername NULL
-	giveitem ITEM_EJECT_BUTTON, 1
+	giveitem ITEM_CLEAR_AMULET, 1
 	closemessage
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_SENTIMENTAL, 0
 	completequest QUEST_SENTIMENTAL
@@ -72,7 +72,7 @@ Present_House2_EventScript_SentimentalWomanReward::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_House2_Text_LookerIShouldntTellHerWhere
 	speak LOCALID_SENTIMENTAL_WOMAN, VAR_0x8005, Name_Sentimental_Woman, Present_House2_Text_SentimentalWomanReward
 	speakername NULL
-	giveitem ITEM_EJECT_BUTTON, 1
+	giveitem ITEM_CLEAR_AMULET, 1
 	completequest QUEST_SENTIMENTAL
 	clearflag FLAG_SAVE_THE_LUVDISCS
 	clearflag FLAG_SYS_DISAPPEAR_QUESTS
@@ -95,11 +95,6 @@ Present_House2_EventScript_SentimentalWomanPreGame::
 Present_House2_EventScript_MissingMan::
 	lock
 	faceplayer
-	waitmovement 0
-	playse SE_PIN
-	applymovement LOCALID_MISSING_MAN, Present_House2_Movement_EmoteHeart
-	waitmovement 0
-	delay 50
 	msgbox Present_House2_Text_MissingMan, MSGBOX_DEFAULT
 	closemessage
 	call_if_unset FLAG_MISSING_MAN_GAVE_CHOICE_SCARF, Present_House2_EventScript_MissingManReward
@@ -155,23 +150,24 @@ Present_House2_Text_LookerIShouldntTellHerWhere:
 
 Present_House2_Text_SentimentalWomanReward:
 	.string "Here, have this as a sign of my\n"
-	.string "gratitude!$"
+	.string "gratitude.\p"
+	.string "My husband gave it to me long ago…\p"
+	.string "I think this Heart Scale can help me\n"
+	.string "hold onto hope a little longer…$"
 
 Present_House2_Text_SentimentalWomanMaybeYouKnow:
-	.string "Oh sir, my husband proposed to me\n"
-	.string "at the lighthouse 5 years ago today\l"
-	.string "before shipping off to the war.\p"
-	.string "Back then, swarms of Luvdisc would\n"
-	.string "glide along the water, glimmering\l"
-	.string "over the freshwater bay.\p"
+	.string "Oh sir, my husband proposed to me at\n"
+	.string "the lighthouse 5 years ago today before\l"
+	.string "shipping off to the war.\p"
+	.string "Back then, swarms of Luvdisc would glide\n"
+	.string "along the water, glimmering over the\l"
+	.string "freshwater bay.\p"
 	.string "But once Porta Bella became a hot\n"
 	.string "destination for cruise lines, the\l"
-	.string "increased ship traffic drove them\l"
-	.string "all away…\p"
-	.string "I'm not sure how, but if it is at\n"
-	.string "all possible, could you bring me\l"
-	.string "some evidence the Luvdisc still\l"
-	.string "congregate here?$"
+	.string "increased ship traffic drove them away…\p"
+	.string "I'm not sure how, but if it is at all\n"
+	.string "possible, could you bring me some proof\l"
+	.string "the Luvdisc still congregate here?$"
 
 Present_House2_Text_SentimentalWomanOhThankYou:
 	.string "Oh, thank you kindly!\p"
@@ -181,6 +177,9 @@ Present_House2_Text_SentimentalWomanOhThankYou:
 Present_House2_Text_SentimentalWomanIfOnly:
 	.string "I would give anything to see those\n"
 	.string "glistening scales just one more time…$"
+
+Present_House2_Text_MissingManLove:
+	.string "Oh honey, I love you!$"
 
 Present_House2_Text_MissingMan:
 	.string "Ain't my wife a beauty?\p"
@@ -198,7 +197,7 @@ Present_House2_Text_MissingManReward:
 	.string "Luvdiscs, I could only think of my\l"
 	.string "wife's beautiful, smiling face…\p"
 	.string "Hmm… You're still expecting some item?\n"
-	.string "Fine, you can have this old thing…$"
+	.string "Fine, you can have this…$"
 
 Present_House2_Text_SentimentalWomanHappy:
 	.string "Oh, I love my husband so much!\p"
@@ -219,13 +218,14 @@ Present_House2_Text_SentimentalWomanHappyDoIKnowYou:
 
 Present_House2_Text_SentimentalWomanHappyReward:
 	.string "Hmm… So you're saying my husband\n"
-	.string "never came back and I wanted a\l"
-	.string "heart scale from the shore?\p"
+	.string "never came back and I wanted a Heart\l"
+	.string "Scale from the shore?\p"
 	.string "Why?\p"
-	.string "Luvdisc are pests, they swarm\n"
-	.string "like crazy!\p"
-	.string "And my hubby would NEVER leave\n"
-	.string "me like that!\p"
-	.string "But it doesn't sound like you're\n"
-	.string "lying to me…\p"
-	.string "Fine, I guess I can reward you…$"
+	.string "Luvdisc are pests, they swarm like\n"
+	.string "crazy!\p"
+	.string "And my hubby would NEVER leave me\n"
+	.string "like that!\p"
+	.string "But it doesn't sound like you're lying\n"
+	.string "to me…\p"
+	.string "Fine, I guess I can reward you…\p"
+	.string "I don't need this old thing, I guess.$"

@@ -570,4 +570,4 @@ gSpecials::
 	def_special SetHiddenNature
 	def_special SetDifficulty
 	def_special GetMochi
-	
+	def_special DoSweetScent

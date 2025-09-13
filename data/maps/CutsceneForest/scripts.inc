@@ -317,6 +317,7 @@ CutsceneForest_EventScript_ChoseDedenne::
 	waitmovement 0
 	playmoncry SPECIES_DEDENNE, CRY_MODE_ENCOUNTER
 	waitmoncry
+	delay 30
 	createmon 1, 0, SPECIES_DEDENNE, 50, ITEM_AIR_BALLOON, 1, NATURE_TIMID, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_NUZZLE, MOVE_PARABOLIC_CHARGE, MOVE_DAZZLING_GLEAM, MOVE_SUPER_FANG
 	closemessage
 	setvar VAR_LAST_TALKED, LOCALID_FOREST_DEDENNE
@@ -354,6 +355,7 @@ CutsceneForest_EventScript_ChoseTogedemaru::
 	waitmovement 0
 	playmoncry SPECIES_TOGEDEMARU, CRY_MODE_ENCOUNTER
 	waitmoncry
+	delay 30
 	createmon 1, 0, SPECIES_TOGEDEMARU, 50, ITEM_AIR_BALLOON, 1, NATURE_JOLLY, 0, MON_MALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_NUZZLE, MOVE_ZING_ZAP, MOVE_IRON_HEAD, MOVE_SUPER_FANG
 	closemessage
 	setvar VAR_LAST_TALKED, LOCALID_FOREST_TOGEDEMARU
