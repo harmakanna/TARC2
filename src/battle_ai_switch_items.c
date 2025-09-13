@@ -2401,6 +2401,11 @@ u32 GetMostSuitableMonToSwitchInto(u32 battler, enum SwitchType switchType)
                 aliveCount++;
             }
         }
+        
+        bestMonId = aceMonId;
+        if (aliveCount == 0 && IsDoubleBattle() && bestMonId != PARTY_SIZE)
+            return bestMonId;
+
         bestMonId = GetBestMonBatonPass(party, firstId, lastId, invalidMons, aliveCount, battler, opposingBattler);
         if (bestMonId != PARTY_SIZE)
             return bestMonId;
