@@ -999,6 +999,11 @@ void SetDifficulty(void)
     gSaveBlock2Ptr->optionsBattleSpeed = 0;
 }
 
+void DoSweetScent(void)
+{
+    FieldEffectStart(FLDEFF_SWEET_SCENT);
+}
+
 void CableCarWarp(void)
 {
     if (gSpecialVar_0x8004 != 0)

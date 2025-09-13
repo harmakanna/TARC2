@@ -182,11 +182,10 @@ Present_Cafe_EventScript_PanCameraRight::
 	return
 
 Present_Cafe_EventScript_SweetToothThankYou::
-	faceplayer
-	waitmovement 0
-	playse SE_PIN
-	applymovement LOCALID_PRESENT_SWEET_TOOTH, Common_Movement_ExclamationMark
-	waitmovement 0
+	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Present_Cafe_Text_LookerWait
+	closemessage
+	call_if_eq VAR_FACING, DIR_WEST, Present_Cafe_EventScript_SweetToothTurnEast
+	call_if_ne VAR_FACING, DIR_WEST, Present_Cafe_EventScript_SweetToothTurnSouth
 	delay 50
 	call Script_GetNPCFacingDirection
 	speak LOCALID_PRESENT_SWEET_TOOTH, VAR_0x8005, Name_Sweet_Tooth, Present_Cafe_Text_SweetToothThankYou
@@ -198,6 +197,18 @@ Present_Cafe_EventScript_SweetToothThankYou::
 	setflag FLAG_TALKED_TO_PRESENT_SWEET_TOOTH
 	release
 	end
+
+Present_Cafe_EventScript_SweetToothTurnEast::
+	playse SE_PIN
+	applymovement LOCALID_PRESENT_SWEET_TOOTH, Common_Movement_FaceRightExclamationMark
+	waitmovement 0
+	return
+
+Present_Cafe_EventScript_SweetToothTurnSouth::
+	playse SE_PIN
+	applymovement LOCALID_PRESENT_SWEET_TOOTH, Common_Movement_FaceDownExclamationMark
+	waitmovement 0
+	return
 
 Present_Cafe_EventScript_Cook::
 	lock
@@ -470,8 +481,11 @@ Present_Cafe_EventScript_BaristaPostQuest::
 	special ChoosePartyMon
 	waitstate
 	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, Present_Cafe_EventScript_BaristaDidntChangeAbility
+	special BufferMonNickname
 	special SwitchMonAbility
+	playfanfare MUS_LEVEL_UP
 	msgbox Present_Cafe_Text_LookerFeelingRefreshed, MSGBOX_DEFAULT
+	waitfanfare
 	speak LOCALID_CAFE_BARISTA, VAR_0x8005, Name_Barista, Present_Cafe_Text_BaristaHaveAGoodOne
 	closemessage
 	release
@@ -703,12 +717,18 @@ Present_Cafe_EventScript_LisiaEndGauntlet::
 	closemessage
 	call_if_eq VAR_TEMP_1, 1, Present_Cafe_EventScript_MoveLeftIdolBack
 	call_if_eq VAR_TEMP_1, 2, Present_Cafe_EventScript_MoveRightIdolBack
+	call_if_eq VAR_TEMP_1, 0, Present_Cafe_EventScript_TurnLeftIdol
 	clearflag FLAG_SYS_NO_WHITEOUT
 	applymovement LOCALID_CAFE_LISIA, Common_Movement_FaceDown
 	waitmovement 0
 	releaseall
 	end
 
+Present_Cafe_EventScript_TurnLeftIdol::
+	applymovement LOCALID_CAFE_LEFT_IDOL, Common_Movement_FaceDown
+	waitmovement 0
+	return
+	
 Present_Cafe_EventScript_MoveLeftIdolBack::
 	applymovement LOCALID_CAFE_LEFT_IDOL, Common_Movement_FaceDown
 	waitmovement 0
@@ -928,7 +948,7 @@ Present_Cafe_Text_BaristaDontHaveMuch:
 	.string "I don't have much I can give as a\n"
 	.string "reward, buuuuuuuut I can brew up a\l"
 	.string "banger coffee for you, any time!\p"
-	.string "I can add in these gnarly spices I\n"
+	.string "I can add in these gnarly mints I\n"
 	.string "find in the forest here and there!\p"
 	.string "Get this, for some reason they change\n"
 	.string "a Pokémon's ability!\p"
@@ -1453,3 +1473,6 @@ Present_Cafe_Text_LisiaThisWontDo:
 	.string "Looker, do you think we could go another\n"
 	.string "round? Those two are really off their\l"
 	.string "game now after what happened earlier…$"
+
+Present_Cafe_Text_LookerWait:
+	.string "Wait, huh?$"

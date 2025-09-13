@@ -44,7 +44,6 @@ CutsceneOffice_EventScript_SetEasy::
 	msgbox CutsceneOffice_Text_SetToEasy, MSGBOX_DEFAULT
 	closemessage
 	setdifficulty DIFFICULTY_EASY 
-	@copyvar VAR_CHOOSE_DIFFICULTY, 0
 	return
 
 CutsceneOffice_EventScript_SetNormal::
@@ -52,7 +51,6 @@ CutsceneOffice_EventScript_SetNormal::
 	msgbox CutsceneOffice_Text_SetToNormal, MSGBOX_DEFAULT
 	closemessage
 	setdifficulty DIFFICULTY_NORMAL
-	@copyvar VAR_CHOOSE_DIFFICULTY, 1
 	return
 
 CutsceneOffice_EventScript_SetHard::
@@ -60,7 +58,6 @@ CutsceneOffice_EventScript_SetHard::
 	msgbox CutsceneOffice_Text_SetToHard, MSGBOX_DEFAULT
 	closemessage
 	setdifficulty DIFFICULTY_HARD
-	@copyvar VAR_CHOOSE_DIFFICULTY, 2
 	return
 
 CutsceneOffice_EventScript_Scene::
