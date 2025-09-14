@@ -287,6 +287,18 @@ Past_TownHall_EventScript_SailorRight::
 	release
 	end
 
+Past_TownHall_EventScript_SailorTop::
+	speakername Name_Sailor
+	msgbox Past_TownHall_Text_SailorTop, MSGBOX_NPC
+	end
+
+Past_TownHall_Text_SailorTop:
+	.string "When I walk the beaches of the local\n"
+	.string "port, Pokémon will sometimes stroll\l"
+	.string "onto shore!\p"
+	.string "If ye've got a Poké Ball, you could even\n"
+	.string "catch 'em, probably!$"
+
 Past_TownHall_Text_SailorLeft:
 	.string "Camilla! Bring another round of drinks\n"
 	.string "for the table!$"

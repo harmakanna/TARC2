@@ -49,7 +49,27 @@ CutsceneForest_EventScript_ConfirmCaughtScreamTail::
 	return
 
 CutsceneForest_EventScript_ConfirmCaughtAromatisse::
-	call_if_set FLAG_CAUGHT_WO_CHIEN, CutsceneForest_EventScript_ConfirmCaughtWoChien
+	call_if_set FLAG_CAUGHT_DHELMISE, CutsceneForest_EventScript_ConfirmCaughtDhelmise
+	return
+
+CutsceneForest_EventScript_ConfirmCaughtDhelmise::
+	call_if_set FLAG_CAUGHT_GRAPPLOCT, CutsceneForest_EventScript_ConfirmCaughtGrapploct
+	return
+
+CutsceneForest_EventScript_ConfirmCaughtGrapploct::
+	call_if_set FLAG_CAUGHT_PALOSSAND, CutsceneForest_EventScript_ConfirmCaughtPalossand
+	return
+
+CutsceneForest_EventScript_ConfirmCaughtPalossand::
+	call_if_set FLAG_CAUGHT_CRABOMINABLE, CutsceneForest_EventScript_ConfirmCaughtCrabominable
+	return
+	
+CutsceneForest_EventScript_ConfirmCaughtCrabominable::
+	call_if_set FLAG_CAUGHT_PHIONE, CutsceneForest_EventScript_ConfirmCaughtPhione
+	return
+	
+CutsceneForest_EventScript_ConfirmCaughtPhione::
+	call_if_set FLAG_CAUGHT_WO_CHIEN, CutsceneForest_EventScript_ConfirmCaughtDhelmise
 	return
 
 CutsceneForest_EventScript_ConfirmCaughtWoChien::
@@ -802,7 +822,7 @@ CutsceneForest_EventScript_GoodraHisui::
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CutsceneForest_EventScript_EndSlithered
 	setflag FLAG_CAUGHT_GOODRA_HISUI
 	addvar VAR_NUM_MONS_CAUGHT, 1
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 6
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 11
 	returnqueststate QUEST_CATCHMONS
 	call_if_ne VAR_RESULT, 4, CutsceneForest_EventScript_CheckCatchMonsCompleted
 	goto CutsceneForest_EventScript_FinishEncounter
@@ -829,7 +849,7 @@ CutsceneForest_EventScript_Beheeyem::
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CutsceneForest_EventScript_EndRan
 	setflag FLAG_CAUGHT_BEHEEYEM
 	addvar VAR_NUM_MONS_CAUGHT, 1
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 7
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 6
 	returnqueststate QUEST_CATCHMONS
 	call_if_ne VAR_RESULT, 4, CutsceneForest_EventScript_CheckCatchMonsCompleted
 	goto CutsceneForest_EventScript_FinishEncounter
@@ -856,7 +876,7 @@ CutsceneForest_EventScript_Aerodactyl::
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CutsceneForest_EventScript_EndFlew
 	setflag FLAG_CAUGHT_AERODACTYL
 	addvar VAR_NUM_MONS_CAUGHT, 1
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 8
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 12
 	returnqueststate QUEST_CATCHMONS
 	call_if_ne VAR_RESULT, 4, CutsceneForest_EventScript_CheckCatchMonsCompleted
 	goto CutsceneForest_EventScript_FinishEncounter
@@ -883,7 +903,7 @@ CutsceneForest_EventScript_ScreamTail::
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CutsceneForest_EventScript_EndRan
 	setflag FLAG_CAUGHT_SCREAM_TAIL
 	addvar VAR_NUM_MONS_CAUGHT, 1
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 9
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 13
 	returnqueststate QUEST_CATCHMONS
 	call_if_ne VAR_RESULT, 4, CutsceneForest_EventScript_CheckCatchMonsCompleted
 	goto CutsceneForest_EventScript_FinishEncounter
@@ -911,7 +931,7 @@ CutsceneForest_EventScript_WoChien::
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CutsceneForest_EventScript_EndSlithered
 	setflag FLAG_CAUGHT_WO_CHIEN
 	addvar VAR_NUM_MONS_CAUGHT, 1
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 11
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 16
 	returnqueststate QUEST_CATCHMONS
 	call_if_ne VAR_RESULT, 4, CutsceneForest_EventScript_CheckCatchMonsCompleted
 	goto CutsceneForest_EventScript_FinishEncounter
@@ -938,7 +958,7 @@ CutsceneForest_EventScript_Aromatisse::
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CutsceneForest_EventScript_EndRan
 	setflag FLAG_CAUGHT_AROMATISSE
 	addvar VAR_NUM_MONS_CAUGHT, 1
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 10
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 14
 	returnqueststate QUEST_CATCHMONS
 	call_if_ne VAR_RESULT, 4, CutsceneForest_EventScript_CheckCatchMonsCompleted
 	goto CutsceneForest_EventScript_FinishEncounter
@@ -1038,7 +1058,7 @@ CutsceneForest_Movement_MonRushPlayer:
 CutsceneForest_EventScript_FindSmeargle::
 	lockall
 	special SpawnCameraObject
-	applymovement LOCALID_CAMERA, CutsceneForest_Movement_CameraFastPanDown8
+	applymovement LOCALID_CAMERA, CutsceneForest_Movement_CameraFastPanDown7
 	delay 80
 	fadescreen FADE_FROM_BLACK
 	delay 20

@@ -764,6 +764,9 @@ InsideOutside_EventScript_ArtistReward::
     call_if_eq VAR_FACING, DIR_SOUTH, InsideOutside_EventScript_PlayerFaceDown
     call_if_ne VAR_FACING, DIR_SOUTH, InsideOutside_EventScript_PlayerFaceRight
     speak VAR_TEMP_1, VAR_0x8005, Name_Artist, InsideOutside_Text_ArtistGiveSmeargle
+    closemessage
+    call_if_eq VAR_FACING, DIR_SOUTH, InsideOutside_EventScript_PlayerFaceLeftSmeargleJump
+    call_if_ne VAR_FACING, DIR_SOUTH, InsideOutside_EventScript_PlayerFaceDownSmeargleJump
     goto InsideOutside_EventScript_ArtistGiveSmeargle
     release
     end 
@@ -775,6 +778,48 @@ InsideOutside_EventScript_PlayerFaceDown::
 InsideOutside_EventScript_PlayerFaceRight::
     applymovement LOCALID_PLAYER, Common_Movement_FaceRight
     return
+
+InsideOutside_EventScript_PlayerFaceLeftSmeargleJump::
+    applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
+    playse SE_LEDGE
+    applymovement VAR_TEMP_2, InsideOutside_Movement_SmeargleJumpRight
+    waitse
+    playse SE_LEDGE
+    waitse
+    waitmovement VAR_TEMP_2
+    speakername Name_Smeargle
+    playmoncry SPECIES_SMEARGLE, CRY_MODE_NORMAL
+    message InsideOutside_Text_ArtistSmeargleSmurr
+    waitmessage
+    waitmoncry
+    delay 30
+    return
+
+InsideOutside_EventScript_PlayerFaceDownSmeargleJump::
+    applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+    playse SE_LEDGE
+    applymovement VAR_TEMP_2, InsideOutside_Movement_SmeargleJumpUp
+    waitse
+    playse SE_LEDGE
+    waitse
+    waitmovement VAR_TEMP_2
+    speakername Name_Smeargle
+    playmoncry SPECIES_SMEARGLE, CRY_MODE_NORMAL
+    message InsideOutside_Text_ArtistSmeargleSmurr
+    waitmessage
+    waitmoncry
+    delay 30
+    return
+
+InsideOutside_Movement_SmeargleJumpRight:
+    jump_in_place_right
+    jump_in_place_right
+    step_end
+
+InsideOutside_Movement_SmeargleJumpUp:
+    jump_in_place_up
+    jump_in_place_up
+    step_end
 
 InsideOutside_EventScript_SmeargleMoveToPlayerOutside::
     applymovement VAR_TEMP_2, InsideOutside_Movement_WalkUpFaceRight
