@@ -97,7 +97,7 @@ static const struct InGameOT sIngameOTs[] =
     {
         .species = SPECIES_MAGIKARP,
         .level = 50,
-        .heldItem = ITEM_CLEAR_AMULET,
+        .heldItem = ITEM_EJECT_BUTTON
         .ivs = {31, 31, 31, 31, 31, 31}, //HP, Atk, Def, Spe, SpA, SpDef
         .evs = {252, 0, 0, 0, 0, 252}, //HP, Atk, Def, Spe, SpA, SpDef
         .moves = {MOVE_SPLASH, MOVE_NONE, MOVE_NONE, MOVE_NONE},
