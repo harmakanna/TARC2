@@ -477,6 +477,8 @@ ShrineOfPeacePresent_EventScript_HandleWarpEvents::
 	call ShrineOfPeacePresent_EventScript_ResetWarpEvents
 	returnqueststate QUEST_GET_INTO_THE_GROOVE
 	call_if_eq VAR_RESULT, 2, ShrineOfPeacePresent_EventScript_HandlePastLisiaSpawn
+	returnqueststate QUEST_CATCH_GENIES
+	call_if_ne VAR_RESULT, 1, ShrineOfPeacePresent_EventScript_ResetInsideOutsideNPCLocations
 	goto ShrineOfPeacePresent_EventScript_CelebiWarp
 	end
 
@@ -497,6 +499,10 @@ ShrineOfPeacePast_EventScript_SpawnPastLisia::
 	clearflag FLAG_HIDE_PAST_LISIA
 	return
 	
+ShrineOfPeacePresent_EventScript_ResetInsideOutsideNPCLocations::
+	call Common_EventScript_MoveInsideNPCsOutside
+	return
+
 ShrineOfPeacePresent_EventScript_CelebiWarp::
 	warpteleport MAP_SHRINE_OF_PEACE_PAST, 14, 9
 	waitstate
