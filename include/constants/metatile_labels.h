@@ -111,6 +111,10 @@
 #define METATILE_BrendansMaysHouse_MovingBox_Closed  0x268
 #define METATILE_BrendansMaysHouse_MovingBox_Open    0x270
 
+// gTileset_BrickCafe
+#define METATILE_BrickCafe_Fixed_Wall_High  0x211
+#define METATILE_BrickCafe_Fixed_Wall_Low   0x219
+
 // gTileset_Building
 #define METATILE_Building_PC_Off  0x004
 #define METATILE_Building_PC_On   0x005
@@ -433,6 +437,7 @@
 #define METATILE_PokemonCenter_Floor_ShadowTop_Alt       0x2DC
 
 // gTileset_PresentTown
+#define METATILE_PresentTown_Cafe_Hole_Closed             0x229
 #define METATILE_PresentTown_CalmWater                    0x2F4
 #define METATILE_PresentTown_Door_City_Hall               0x2B5
 #define METATILE_PresentTown_Locked_Door                  0x362

@@ -220,6 +220,14 @@
       "elevation": 0,
       "dest_map": "MAP_PRESENT_TOWN",
       "dest_warp_id": "CAFE_ENTRANCE_2"
+    },
+    {
+      "warp_id": "CAFE_EXIT_HOLE",
+      "x": 11,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_TOWN",
+      "dest_warp_id": "CAFE_ENTRANCE_HOLE"
     }
   ],
   "coord_events": [],

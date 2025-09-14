@@ -650,6 +650,14 @@
       "elevation": 0,
       "dest_map": "MAP_PRESENT_CITY_HALL_1F",
       "dest_warp_id": "Present_City_Hall_Exit_1"
+    },
+    {
+      "warp_id": "CAFE_ENTRANCE_HOLE",
+      "x": 56,
+      "y": 29,
+      "elevation": 0,
+      "dest_map": "MAP_PRESENT_CAFE",
+      "dest_warp_id": "CAFE_EXIT_HOLE"
     }
   ],
   "coord_events": [

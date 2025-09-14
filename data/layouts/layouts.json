@@ -4776,7 +4776,7 @@
       "name": "Present_Cafe_Layout",
       "width": 24,
       "height": 18,
-      "primary_tileset": "gTileset_Building",
+      "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_BrickCafe",
       "border_filepath": "data/layouts/Present_Cafe/border.bin",
       "blockdata_filepath": "data/layouts/Present_Cafe/map.bin"

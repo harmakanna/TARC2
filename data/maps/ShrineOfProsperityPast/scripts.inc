@@ -26,6 +26,7 @@ ShrineOfProsperityPast_OnResume:
 	end
 	
 ShrineOfProsperityPast_EventScript_VillageOrator::
+	speakername Name_Orator
 	msgbox ShrineOfProsperityPast_Text_OratorPleaseReturn, MSGBOX_NPC
 	end
 

@@ -118,9 +118,14 @@ PresentTown_OnTransition:
 	call_if_unset FLAG_HIDE_CUTSCENE_FOREST_IDOL, PresentTown_EventScript_HideLostIdol
 	call_if_unset FLAG_HIDE_CUTSCENE_FOREST_SMEARGLE, PresentTown_EventScript_HideLostSmeargle
 	call_if_unset FLAG_HIDE_OUTSIDE_NPCS, PresentTown_EventScript_TrySetUpArtist
+	call_if_unset FLAG_SWEET_TOOTH_WENT_CRAZY, PresentTown_EventScript_CloseSweetToothHole
 	@call_if_eq VAR_PORTO_BELLA_CITY_STATE, 1, PresentTown_EventScript_PrepareAnabelForCutscene
 	end
 
+PresentTown_EventScript_CloseSweetToothHole::
+	setmetatile 56, 29, METATILE_PresentTown_Cafe_Hole_Closed, TRUE
+	return
+	
 PresentTown_EventScript_TrySetUpArtist::
 	call_if_set FLAG_HIDE_OUTSIDE_SMEARGLE, PresentTown_EventScript_TrySetUpArtist2
 	return
