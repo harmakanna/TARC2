@@ -4558,6 +4558,8 @@ u16 GetNationalPokedexCount(u8 caseID)
         case FLAG_GET_CAUGHT:
             if (GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT))
                 count++;
+            if (GetSetPokedexFlag(SPECIES_ARCANINE, FLAG_GET_CAUGHT))
+                count--;
             break;
         }
     }
