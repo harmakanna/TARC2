@@ -116,7 +116,6 @@ Difficulty: Easy
 Omastar  
 Ability: Weak Armor  
 Level: 50  
-Tera Type: Rock  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
 - Surf  
 - Ice Beam  
@@ -125,7 +124,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Cradily  
 Ability: Storm Drain  
 Level: 50  
-Tera Type: Rock  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
 - Giga Drain  
 - Leech Seed  
@@ -134,7 +132,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Tyrantrum @ Rocky Helmet  
 Ability: Strong Jaw  
 Level: 50  
-Tera Type: Rock  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
 - Psychic Fangs  
 - Crunch  
@@ -153,7 +150,6 @@ Difficulty: Easy
 Dewgong  
 Ability: Hydration  
 Level: 50  
-Tera Type: Water  
 EVs: 252 Atk / 126 SpD / 126 Spe  
 Impish Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
@@ -164,7 +160,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Palafin  
 Ability: Zero to Hero  
 Level: 50  
-Tera Type: Water  
 EVs: 126 HP / 252 Atk / 126 SpD  
 Adamant Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
@@ -174,7 +169,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Basculin @ Choice Scarf  
 Ability: Adaptability  
 Level: 50  
-Tera Type: Water  
 EVs: 126 HP / 126 Atk / 252 Spe  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
 - Flip Turn  
@@ -193,7 +187,6 @@ Difficulty: Easy
 Miltank (F)  
 Ability: Thick Fat  
 Level: 50  
-Tera Type: Normal  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
 - Body Slam  
 - Growl  
@@ -202,7 +195,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Tauros (M)  
 Ability: Intimidate  
 Level: 50  
-Tera Type: Normal  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
 - Trailblaze  
 - Raging Bull  
@@ -211,7 +203,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Mudsdale  
 Ability: Stamina  
 Level: 50  
-Tera Type: Ground  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
 - Curse  
 - High Horsepower  
@@ -272,7 +263,6 @@ Difficulty: Easy
 Crobat  
 Ability: Infiltrator  
 Level: 50  
-Tera Type: Poison  
 IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Cross Poison  
 - Aerial Ace  
@@ -281,7 +271,6 @@ IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Mightyena  
 Ability: Intimidate  
 Level: 50  
-Tera Type: Dark  
 IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Crunch  
 - Snarl  
@@ -290,7 +279,6 @@ IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Wailord  
 Ability: Pressure  
 Level: 50  
-Tera Type: Water  
 IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Water Spout  
 - Protect  
@@ -309,7 +297,6 @@ Difficulty: Easy
 Armaldo  
 Ability: Swift Swim  
 Level: 50  
-Tera Type: Rock  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Rain Dance  
 - Bug Bite  
@@ -318,7 +305,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Beartic  
 Ability: Swift Swim  
 Level: 50  
-Tera Type: Ice  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Icicle Crash  
 - Protect  
@@ -327,7 +313,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Grapploct  
 Ability: Limber  
 Level: 50  
-Tera Type: Fighting  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Sucker Punch  
 - Waterfall  
@@ -346,7 +331,6 @@ Difficulty: Easy
 Crustle  
 Ability: Sturdy  
 Level: 50  
-Tera Type: Bug  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Stealth Rock  
 - Shell Smash  
@@ -355,7 +339,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Crawdaunt  
 Ability: Adaptability  
 Level: 50  
-Tera Type: Water  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Swords Dance  
 - Aqua Jet  
@@ -364,7 +347,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Clawitzer  
 Ability: Mega Launcher  
 Level: 50  
-Tera Type: Water  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Water Pulse  
 - Flash Cannon  
@@ -384,7 +366,6 @@ Difficulty: Easy
 Golisopod  
 Ability: Emergency Exit  
 Level: 50  
-Tera Type: Bug  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - First Impression  
 - Aqua Jet  
@@ -393,7 +374,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Qwilfish-Hisui @ Eviolite  
 Ability: Intimidate  
 Level: 50  
-Tera Type: Dark  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Aqua Tail  
 - Toxic Spikes  
@@ -402,7 +382,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Dhelmise  
 Ability: Steelworker  
 Level: 50  
-Tera Type: Ghost  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Anchor Shot  
 - Gyro Ball  
@@ -411,7 +390,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Sharpedo  
 Ability: Speed Boost  
 Level: 50  
-Tera Type: Water  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Crunch  
 - Liquidation  
@@ -427,9 +405,29 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Easy
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Tropius (M)  
+Ability: Chlorophyll  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Dual Wingbeat  
+- Dragon Hammer  
+- Leaf Storm  
+
+Kingler (M)  
+Ability: Sheer Force  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Razor Shell  
+- Hammer Arm  
+- Protect  
+
+Chatot (M)  
+Ability: Keen Eye  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Chatter  
+- Hyper Voice  
+- Feather Dance  
 
 === TRAINER_TASHA ===
 Name: Tasha
@@ -455,9 +453,29 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Easy
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Mr. Rime  
+Ability: Tangled Feet  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Teeter Dance  
+- Fake Out  
+- Ice Beam  
+
+Ludicolo  
+Ability: Swift Swim  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Fake Out  
+- Energy Ball  
+- Scald  
+
+Oricorio-Sensu  
+Ability: Dancer  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Revelation Dance  
+- Quiver Dance  
+- Feather Dance  
 
 === TRAINER_DAISY ===
 Name: DAISY
@@ -469,9 +487,29 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Easy
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Hitmontop (M)  
+Ability: Intimidate  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Fake Out  
+- Triple Kick  
+- Rapid Spin  
+
+Bellossom  
+Ability: Healer  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Quiver Dance  
+- Energy Ball  
+- Pollen Puff  
+
+Quaquaval @ Heavy-Duty Boots  
+Ability: Moxie  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Acrobatics  
+- Aqua Step  
+- Knock Off  
 
 === TRAINER_SAMANTHA ===
 Name: Samantha
@@ -680,7 +718,6 @@ Difficulty: Easy
 Avalugg  
 Ability: Own Tempo  
 Level: 50  
-Tera Type: Ice  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
 - Avalanche  
 - High Horsepower  
@@ -689,7 +726,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Butterfree @ Focus Sash  
 Ability: Compound Eyes  
 Level: 50  
-Tera Type: Bug  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
 - Pollen Puff  
 - Electroweb  
@@ -698,7 +734,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Shiftry  
 Ability: Wind Rider  
 Level: 50  
-Tera Type: Grass  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
 - Leaf Blade  
 - Fake Out  
@@ -707,7 +742,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Shedinja  
 Ability: Wonder Guard  
 Level: 50  
-Tera Type: Bug  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
 - Will-O-Wisp  
 - Phantom Force  
@@ -726,7 +760,6 @@ Difficulty: Easy
 Machamp  
 Ability: Guts  
 Level: 50  
-Tera Type: Fighting  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
 - Cross Chop  
 - Coaching  
@@ -735,7 +768,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Grimmsnarl (M) @ Choice Band  
 Ability: Prankster  
 Level: 50  
-Tera Type: Dark  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
 - Spirit Break  
 - False Surrender  
@@ -744,7 +776,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Nidoking (M)  
 Ability: Rivalry  
 Level: 50  
-Tera Type: Poison  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
 - Earth Power  
 - Flamethrower  
@@ -753,7 +784,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Aromatisse  
 Ability: Aroma Veil  
 Level: 50  
-Tera Type: Fairy  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Moonblast  
 - Ally Switch  
@@ -1325,9 +1355,50 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Froslass (F) @ Ice Gem  
+Ability: Cursed Body  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Ice Beam  
+- Curse  
+- Draining Kiss  
+- Destiny Bond  
+
+Rotom @ Electric Gem  
+Ability: Levitate  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Volt Switch  
+- Shadow Ball  
+- Substitute  
+- Spite  
+
+Typhlosion-Hisui @ Fire Gem  
+Ability: Blaze  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Infernal Parade  
+- Detect  
+- Flamethrower  
+- Extrasensory  
+
+Decidueye @ Grass Gem  
+Ability: Long Reach  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Spirit Shackle  
+- Leaf Blade  
+- Dual Wingbeat  
+- Knock Off  
+
+Jellicent @ Water Gem  
+Ability: Cursed Body  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Hex  
+- Scald  
+- Will-O-Wisp  
+- Pain Split  
 
 === TRAINER_CONNIE ===
 Name: Connie
@@ -1402,6 +1473,14 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Energy Ball  
 - Pollen Puff  
 - Quiver Dance  
+
+Gardevoir  
+Ability: Trace  
+Level: 50  
+- Mystical Fire  
+- Dazzling Gleam  
+- Stored Power  
+- Calm Mind  
 
 Quaquaval @ Heavy-Duty Boots  
 Ability: Moxie  
@@ -2444,7 +2523,6 @@ Difficulty: Hard
 Miltank (F) @ Lum Berry  
 Ability: Thick Fat  
 Level: 50  
-Tera Type: Bug  
 EVs: 252 HP / 252 Spe  
 Hardy Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
@@ -2456,7 +2534,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Tauros (M) @ Lum Berry  
 Ability: Intimidate  
 Level: 50  
-Tera Type: Bug  
 EVs: 252 Atk / 126 Def / 126 Spe  
 Hardy Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
@@ -2468,7 +2545,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Alcremie (F) @ Lum Berry  
 Ability: Sweet Veil  
 Level: 50  
-Tera Type: Bug  
 EVs: 252 HP / 126 Def / 126 SpA  
 Hardy Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
@@ -2480,7 +2556,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Mudsdale @ Lum Berry  
 Ability: Stamina  
 Level: 50  
-Tera Type: Bug  
 EVs: 126 Atk / 252 SpD / 126 Spe  
 Hardy Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
@@ -2941,41 +3016,60 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Froslass (F)   
-Level: 50
-Ability: Snow Cloak  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Froslass (F) @ Ice Gem  
+Ability: Cursed Body  
+Level: 50  
+EVs: 252 SpD / 252 Spe  
+Timid Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Ice Beam  
-- Shadow Ball  
-- Chilling Water  
-- Destiny Bond
+- Curse  
+- Draining Kiss  
+- Destiny Bond  
 
-Typhlosion-Hisui  
-Level: 50
+Rotom @ Electric Gem  
+Ability: Levitate  
+Level: 50  
+EVs: 126 HP / 126 SpA / 252 Spe  
+Modest Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Volt Switch  
+- Shadow Ball  
+- Substitute  
+- Spite  
+
+Typhlosion-Hisui @ Fire Gem  
 Ability: Blaze  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Level: 50  
+EVs: 252 HP / 252 SpA  
+Relaxed Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Infernal Parade  
 - Detect  
 - Flamethrower  
 - Extrasensory  
 
-Decidueye  
-Level: 50
+Decidueye @ Grass Gem  
 Ability: Long Reach  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Level: 50  
+EVs: 126 HP / 252 Atk / 126 Spe  
+Adamant Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Spirit Shackle  
 - Leaf Blade  
 - Dual Wingbeat  
 - Knock Off  
 
-Jellicent  
-Level: 50
-Ability: Water Absorb  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Jellicent @ Water Gem  
+Ability: Cursed Body  
+Level: 50  
+EVs: 252 HP / 126 Def / 126 SpD  
+Calm Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Hex  
 - Scald  
 - Will-O-Wisp  
-- Pain Split 
+- Pain Split  
 
 === TRAINER_CONNIE ===
 Name: Connie
@@ -3062,6 +3156,16 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Energy Ball  
 - Pollen Puff  
 - Quiver Dance  
+
+Gardevoir  
+Ability: Trace  
+Level: 50  
+EVs: 252 Def / 126 SpA / 126 Spe  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Mystical Fire  
+- Dazzling Gleam  
+- Stored Power  
+- Calm Mind  
 
 Quaquaval @ Heavy-Duty Boots  
 Ability: Moxie  
