@@ -684,9 +684,45 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Easy
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Blastoise (M)  
+Ability: Torrent  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Surf  
+- Strength  
+- Rapid Spin  
+
+Exeggutor (M)  
+Ability: Chlorophyll  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Extrasensory  
+- Giga Drain  
+- Explosion  
+
+Arcanine (F)  
+Ability: Intimidate  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Play Rough  
+- Flare Blitz  
+- Morning Sun  
+
+Snorlax (M)  
+Ability: Thick Fat  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Body Slam  
+- Darkest Lariat  
+- Rest  
+
+Rhydon (M)  
+Ability: Lightning Rod  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Earthquake  
+- Rock Slide  
+- Cut  
 
 === TRAINER_BLUE_CULPRIT ===
 Name: Blue
@@ -698,9 +734,45 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Easy
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Blastoise (M)  
+Ability: Torrent  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Surf  
+- Strength  
+- Rapid Spin  
+
+Exeggutor (M)  
+Ability: Chlorophyll  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Extrasensory  
+- Giga Drain  
+- Explosion  
+
+Arcanine (F)  
+Ability: Intimidate  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Play Rough  
+- Flare Blitz  
+- Morning Sun  
+
+Snorlax (M)  
+Ability: Thick Fat  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Body Slam  
+- Darkest Lariat  
+- Rest  
+
+Landorus (M)  
+Ability: Sheer Force  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Extrasensory  
+- Scorching Sands  
+- Fly  
 
 === TRAINER_MAY ===
 Name: May
@@ -712,9 +784,45 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Easy
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Linoone   
+Ability: Gluttony  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Strength  
+- Rock Smash  
+- Surf  
+
+Blaziken   
+Ability: Blaze  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Sky Uppercut  
+- Brave Bird  
+- Flamethrower  
+
+Grumpig  
+Ability: Thick Fat  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Extrasensory  
+- Power Gem  
+- Calm Mind  
+
+Whiscash  
+Ability: Oblivious  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- High Horsepower  
+- Muddy Water  
+- Rock Slide  
+
+Flygon   
+Ability: Levitate 
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Scorching Sands  
+- Fly  
+- Dragon Pulse  
 
 === TRAINER_MAY_CULPRIT ===
 Name: May
@@ -726,9 +834,45 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Easy
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Linoone  
+Ability: Gluttony  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Strength  
+- Rock Smash  
+- Surf  
+
+Blaziken  
+Ability: Blaze  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Sky Uppercut  
+- Brave Bird  
+- Flamethrower  
+
+Grumpig  
+Ability: Thick Fat  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Extrasensory  
+- Power Gem  
+- Calm Mind  
+
+Whiscash  
+Ability: Oblivious  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- High Horsepower  
+- Muddy Water  
+- Rock Slide  
+
+Landorus (M)  
+Ability: Sheer Force  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Extrasensory  
+- Scorching Sands  
+- Fly   
 
 === TRAINER_LEAF ===
 Name: Leaf
@@ -740,9 +884,45 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Easy
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Clefable (F)  
+Ability: Unaware  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Moonblast  
+- Mystical Fire  
+- Calm Mind  
+
+Jolteon (F)  
+Ability: Volt Absorb  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Volt Switch  
+- Thunder Wave  
+- Shadow Ball  
+
+Venusaur (F)  
+Ability: Overgrow  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Cut  
+- Giga Drain  
+- Leech Seed  
+
+Lapras (F)  
+Ability: Water Absorb  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Surf  
+- Freeze-Dry  
+- Strength  
+
+Dragonite (F)  
+Ability: Inner Focus  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Extreme Speed  
+- Dragon Claw  
+- Fly   
 
 === TRAINER_LEAF_CULPRIT ===
 Name: Leaf
@@ -754,9 +934,45 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Easy
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Clefable  
+Ability: Unaware  
+Level: 50    
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Moonblast  
+- Mystical Fire  
+- Calm Mind  
+
+Jolteon 
+Ability: Volt Absorb  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Volt Switch  
+- Thunder Wave  
+- Shadow Ball
+
+Venusaur   
+Ability: Overgrow  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Cut  
+- Giga Drain  
+- Leech Seed  
+
+Lapras (F)  
+Ability: Water Absorb  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Surf  
+- Freeze-Dry  
+- Strength  
+
+Landorus (M)  
+Ability: Sheer Force  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Extrasensory  
+- Scorching Sands  
+- Fly 
 
 === TRAINER_BW_ACE_TRAINER ===
 Name: Katherine
@@ -768,9 +984,51 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Easy
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gothitelle  
+Ability: Frisk  
+Level: 50  
+Tera Type: Psychic  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Fake Out  
+- Trick Room  
+- Psyshock  
+
+Samurott-Hisui  
+Ability: Torrent  
+Level: 50  
+Tera Type: Water  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Razor Shell  
+- Sacred Sword  
+- Aqua Jet  
+
+Chandelure  
+Ability: Infiltrator  
+Level: 50  
+Shiny: Yes  
+Tera Type: Ghost  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Hex  
+- Flame Burst  
+- Fire Spin  
+
+Sawsbuck-Summer  
+Ability: Chlorophyll  
+Level: 50  
+Tera Type: Normal  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Body Slam  
+- Horn Leech  
+- Jump Kick  
+
+Golurk @ Assault Vest  
+Ability: Iron Fist  
+Level: 50  
+Tera Type: Ground  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- High Horsepower  
+- Drain Punch  
+- Fly  
 
 === TRAINER_BW_ACE_TRAINER_CULPRIT ===
 Name: Katherine
@@ -782,19 +1040,48 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Easy
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gothitelle  
+Ability: Frisk  
+Level: 50  
+Tera Type: Psychic  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Fake Out  
+- Trick Room  
+- Psyshock  
 
-Landorus (M) @ Life Orb  
+Samurott-Hisui  
+Ability: Torrent  
+Level: 50  
+Tera Type: Water  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Razor Shell  
+- Sacred Sword  
+- Aqua Jet  
+
+Chandelure  
+Ability: Infiltrator  
+Level: 50  
+Shiny: Yes  
+Tera Type: Ghost  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Hex  
+- Flame Burst  
+- Fire Spin  
+
+Sawsbuck-Summer  
+Ability: Chlorophyll  
+Level: 50  
+Tera Type: Normal  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Body Slam  
+- Horn Leech  
+- Jump Kick  
+
+Landorus (M)  
 Ability: Sheer Force  
-Level: 50
-EVs: 126 Def / 126 SpA / 252 Spe 
-Serious Nature 
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
 - Extrasensory  
 - Scorching Sands  
-- Sludge Bomb  
 - Fly 
 
 === TRAINER_YOUNGSTER ===
@@ -2086,7 +2373,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Reflect  
 - Volt Switch  
 - Thunder Wave  
-- Substitute  
+- Shadow Ball  
 
 Venusaur @ Leftovers  
 Ability: Overgrow  
@@ -2150,7 +2437,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Reflect  
 - Volt Switch  
 - Thunder Wave  
-- Substitute  
+- Shadow Ball  
 
 Venusaur (M) @ Leftovers  
 Ability: Overgrow  
@@ -3845,7 +4132,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Reflect  
 - Volt Switch  
 - Thunder Wave  
-- Substitute  
+- Shadow Ball 
 
 Venusaur @ Leftovers  
 Ability: Overgrow  
@@ -3921,7 +4208,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Reflect  
 - Volt Switch  
 - Thunder Wave  
-- Substitute  
+- Shadow Ball 
 
 Venusaur @ Leftovers  
 Ability: Overgrow  
@@ -14017,7 +14304,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Thunderbolt  
 - Shadow Ball  
 - Signal Beam  
-- Substitute  
+- Shadow Ball 
 
 Snorlax @ Chesto Berry  
 Ability: Thick Fat  
