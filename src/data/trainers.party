@@ -269,9 +269,32 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Easy
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Crobat  
+Ability: Infiltrator  
+Level: 50  
+Tera Type: Poison  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Cross Poison  
+- Aerial Ace  
+- Super Fang  
+
+Mightyena  
+Ability: Intimidate  
+Level: 50  
+Tera Type: Dark  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Crunch  
+- Snarl  
+- Foul Play  
+
+Wailord  
+Ability: Pressure  
+Level: 50  
+Tera Type: Water  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Water Spout  
+- Protect  
+- Heavy Slam  
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_2 ===
 Name: Sarah
@@ -283,9 +306,32 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Easy
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Armaldo  
+Ability: Swift Swim  
+Level: 50  
+Tera Type: Rock  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Rain Dance  
+- Bug Bite  
+- Rock Slide  
+
+Beartic  
+Ability: Swift Swim  
+Level: 50  
+Tera Type: Ice  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Icicle Crash  
+- Protect  
+- Liquidation  
+
+Grapploct  
+Ability: Limber  
+Level: 50  
+Tera Type: Fighting  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Sucker Punch  
+- Waterfall  
+- Octolock  
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_3 ===
 Name: Sheldon
@@ -297,9 +343,32 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Easy
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Crustle  
+Ability: Sturdy  
+Level: 50  
+Tera Type: Bug  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Stealth Rock  
+- Shell Smash  
+- Rock Slide  
+
+Crawdaunt  
+Ability: Adaptability  
+Level: 50  
+Tera Type: Water  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Swords Dance  
+- Aqua Jet  
+- Lash Out  
+
+Clawitzer  
+Ability: Mega Launcher  
+Level: 50  
+Tera Type: Water  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Water Pulse  
+- Flash Cannon  
+- Dragon Pulse  
 
 === TRAINER_MATT ===
 Name: Matt
@@ -312,9 +381,41 @@ AI: Basic Trainer / Ace Pokemon
 Mugshot: Blue
 Difficulty: Easy
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Golisopod  
+Ability: Emergency Exit  
+Level: 50  
+Tera Type: Bug  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- First Impression  
+- Aqua Jet  
+- X-Scissor  
+
+Qwilfish-Hisui @ Eviolite  
+Ability: Intimidate  
+Level: 50  
+Tera Type: Dark  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Aqua Tail  
+- Toxic Spikes  
+- Lash Out  
+
+Dhelmise  
+Ability: Steelworker  
+Level: 50  
+Tera Type: Ghost  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Anchor Shot  
+- Gyro Ball  
+- Pain Split  
+
+Sharpedo  
+Ability: Speed Boost  
+Level: 50  
+Tera Type: Water  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Crunch  
+- Liquidation  
+- Super Fang  
 
 === TRAINER_SEBASTIAN ===
 Name: Sebastian
@@ -1096,7 +1197,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Thunder Punch  
 
 Crawdaunt  
-Ability: Hyper Cutter  
+Ability: Adaptability  
 Level: 50  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Swords Dance  
@@ -2690,7 +2791,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Coaching  
 
 Crawdaunt  
-Ability: Hyper Cutter  
+Ability: Adaptability  
 Level: 50  
 EVs: 252 Atk / 252 Spe  
 Jolly Nature  
