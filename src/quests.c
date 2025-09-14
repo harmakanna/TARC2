@@ -440,15 +440,6 @@ static const struct SubQuest sSubQuestsCatchMons[QUEST_CATCHMONS_SUB_COUNT] =
 	),
 	sub_quest( //6
 	      17,
-	      gText_SubQuestCatchMons_NameGoodra,
-	      gText_SubQuestCatchMons_DescGoodra,
-	      gText_SubQuestCatchMons_Map,
-	      SPECIES_GOODRA_HISUI,
-	      PKMN,
-	      sText_Caught
-	),
-	sub_quest( //7
-	      18,
 	      gText_SubQuestCatchMons_NameBeheeyem,
 	      gText_SubQuestCatchMons_DescBeheeyem,
 	      gText_SubQuestCatchMons_Map,
@@ -456,8 +447,53 @@ static const struct SubQuest sSubQuestsCatchMons[QUEST_CATCHMONS_SUB_COUNT] =
 	      PKMN,
 	      sText_Caught
 	),
+	sub_quest( //7
+	      18,
+	      gText_SubQuestCatchMons_NameDhelmise,
+	      gText_SubQuestCatchMons_DescDhelmise,
+	      gText_SubQuestCatchMons_PortMap,
+	      SPECIES_DHELMISE,
+	      PKMN,
+	      sText_Caught
+	),
 	sub_quest( //8
 	      19,
+	      gText_SubQuestCatchMons_NameGrapploct,
+	      gText_SubQuestCatchMons_DescGrapploct,
+	      gText_SubQuestCatchMons_PortMap,
+	      SPECIES_GRAPPLOCT,
+	      PKMN,
+	      sText_Caught
+	),
+	sub_quest( //9
+	      20,
+	      gText_SubQuestCatchMons_NamePalossand,
+	      gText_SubQuestCatchMons_DescPalossand,
+	      gText_SubQuestCatchMons_PortMap,
+	      SPECIES_PALOSSAND,
+	      PKMN,
+	      sText_Caught
+	),
+	sub_quest( //10
+	      21,
+	      gText_SubQuestCatchMons_NameCrabominable,
+	      gText_SubQuestCatchMons_DescCrabominable,
+	      gText_SubQuestCatchMons_PortMap,
+	      SPECIES_CRABOMINABLE,
+	      PKMN,
+	      sText_Caught
+	),
+	sub_quest( //11
+	      22,
+	      gText_SubQuestCatchMons_NameGoodra,
+	      gText_SubQuestCatchMons_DescGoodra,
+	      gText_SubQuestCatchMons_Map,
+	      SPECIES_GOODRA_HISUI,
+	      PKMN,
+	      sText_Caught
+	),
+	sub_quest( //12
+	      23,
 	      gText_SubQuestCatchMons_NameAerodactyl,
 	      gText_SubQuestCatchMons_DescAerodactyl,
 	      gText_SubQuestCatchMons_Map,
@@ -465,8 +501,8 @@ static const struct SubQuest sSubQuestsCatchMons[QUEST_CATCHMONS_SUB_COUNT] =
 	      PKMN,
 	      sText_Caught
 	),
-	sub_quest( //9
-	      20,
+	sub_quest( //13
+	      24,
 	      gText_SubQuestCatchMons_NameScreamTail,
 	      gText_SubQuestCatchMons_DescScreamTail,
 	      gText_SubQuestCatchMons_Map,
@@ -474,8 +510,8 @@ static const struct SubQuest sSubQuestsCatchMons[QUEST_CATCHMONS_SUB_COUNT] =
 	      PKMN,
 	      sText_Caught
 	),
-	sub_quest( //10
-	      21,
+	sub_quest( //14
+	      25,
 	      gText_SubQuestCatchMons_NameAromatisse,
 	      gText_SubQuestCatchMons_DescAromatisse,
 	      gText_SubQuestCatchMons_Map,
@@ -483,8 +519,17 @@ static const struct SubQuest sSubQuestsCatchMons[QUEST_CATCHMONS_SUB_COUNT] =
 	      PKMN,
 	      sText_Caught
 	),
-	sub_quest( //11
-	      22,
+	sub_quest( //15
+	      26,
+	      gText_SubQuestCatchMons_NamePhione,
+	      gText_SubQuestCatchMons_DescPhione,
+	      gText_SubQuestCatchMons_PortMap,
+	      SPECIES_PHIONE,
+	      PKMN,
+	      sText_Caught
+	),
+	sub_quest( //16
+	      27,
 	      gText_SubQuestCatchMons_NameWoChien,
 	      gText_SubQuestCatchMons_DescWoChien,
 	      gText_SubQuestCatchMons_Map,

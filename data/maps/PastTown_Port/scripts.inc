@@ -513,6 +513,9 @@ PastTown_Port_EventScript_Dhelmise::
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, PastTown_Port_EventScript_MonRanAway
 	setflag FLAG_CAUGHT_DHELMISE
 	addvar VAR_PORT_MONS_CAUGHT, 1
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 7
+	returnqueststate QUEST_CATCHMONS
+	call_if_ne VAR_RESULT, 4, CutsceneForest_EventScript_CheckCatchMonsCompleted
 	releaseall
 	end
 
@@ -537,6 +540,9 @@ PastTown_Port_EventScript_Grapploct::
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, PastTown_Port_EventScript_MonRanAway
 	setflag FLAG_CAUGHT_GRAPPLOCT
 	addvar VAR_PORT_MONS_CAUGHT, 1
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 8
+	returnqueststate QUEST_CATCHMONS
+	call_if_ne VAR_RESULT, 4, CutsceneForest_EventScript_CheckCatchMonsCompleted
 	releaseall
 	end
 
@@ -561,6 +567,9 @@ PastTown_Port_EventScript_Crabominable::
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, PastTown_Port_EventScript_MonRanAway
 	setflag FLAG_CAUGHT_CRABOMINABLE
 	addvar VAR_PORT_MONS_CAUGHT, 1
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 10
+	returnqueststate QUEST_CATCHMONS
+	call_if_ne VAR_RESULT, 4, CutsceneForest_EventScript_CheckCatchMonsCompleted
 	releaseall
 	end
 
@@ -585,6 +594,9 @@ PastTown_Port_EventScript_Palossand::
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, PastTown_Port_EventScript_PalossandRanAway
 	setflag FLAG_CAUGHT_PALOSSAND
 	addvar VAR_PORT_MONS_CAUGHT, 1
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 9
+	returnqueststate QUEST_CATCHMONS
+	call_if_ne VAR_RESULT, 4, CutsceneForest_EventScript_CheckCatchMonsCompleted
 	releaseall
 	end
 
@@ -609,6 +621,9 @@ PastTown_Port_EventScript_Phione::
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, PastTown_Port_EventScript_MonRanAway
 	setflag FLAG_CAUGHT_PHIONE
 	addvar VAR_PORT_MONS_CAUGHT, 1
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 15
+	returnqueststate QUEST_CATCHMONS
+	call_if_ne VAR_RESULT, 4, CutsceneForest_EventScript_CheckCatchMonsCompleted
 	releaseall
 	end
 

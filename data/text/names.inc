@@ -152,7 +152,7 @@ Name_Leaf:
     .string "Leaf$"
 
 Name_Ace_Trainer:
-    .string "Katherine$"
+    .string "Katerina$"
 
 Name_Youngster:
     .string "Trey$"

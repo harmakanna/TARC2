@@ -42,6 +42,7 @@ CutsceneOffice_EventScript_StartGame::
 CutsceneOffice_EventScript_SetEasy::
 	playse SE_SELECT
 	msgbox CutsceneOffice_Text_SetToEasy, MSGBOX_DEFAULT
+	msgbox CutsceneOffice_Text_BattleSpeed, MSGBOX_DEFAULT
 	closemessage
 	setdifficulty DIFFICULTY_EASY 
 	return
@@ -49,6 +50,7 @@ CutsceneOffice_EventScript_SetEasy::
 CutsceneOffice_EventScript_SetNormal::
 	playse SE_SELECT
 	msgbox CutsceneOffice_Text_SetToNormal, MSGBOX_DEFAULT
+	msgbox CutsceneOffice_Text_BattleSpeed, MSGBOX_DEFAULT
 	closemessage
 	setdifficulty DIFFICULTY_NORMAL
 	return
@@ -56,6 +58,7 @@ CutsceneOffice_EventScript_SetNormal::
 CutsceneOffice_EventScript_SetHard::
 	playse SE_SELECT
 	msgbox CutsceneOffice_Text_SetToHard, MSGBOX_DEFAULT
+	msgbox CutsceneOffice_Text_BattleSpeed, MSGBOX_DEFAULT
 	closemessage
 	setdifficulty DIFFICULTY_HARD
 	return
@@ -212,3 +215,6 @@ CutsceneOffice_Text_SetToNormal:
 CutsceneOffice_Text_SetToHard:
 	.string "The difficulty has been set to\n"
 	.string "'Hard'.$"
+
+CutsceneOffice_Text_BattleSpeed:
+	.string "Battle speed has been set to 1x.$"

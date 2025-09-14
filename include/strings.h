@@ -2571,9 +2571,20 @@ extern const u8 gText_SubQuestCatchMons_NameScreamTail[];
 extern const u8 gText_SubQuestCatchMons_DescScreamTail[];
 extern const u8 gText_SubQuestCatchMons_NameAromatisse[];
 extern const u8 gText_SubQuestCatchMons_DescAromatisse[];
+extern const u8 gText_SubQuestCatchMons_NameDhelmise[];
+extern const u8 gText_SubQuestCatchMons_DescDhelmise[];
+extern const u8 gText_SubQuestCatchMons_NameGrapploct[];
+extern const u8 gText_SubQuestCatchMons_DescGrapploct[];
+extern const u8 gText_SubQuestCatchMons_NamePalossand[];
+extern const u8 gText_SubQuestCatchMons_DescPalossand[];
+extern const u8 gText_SubQuestCatchMons_NameCrabominable[];
+extern const u8 gText_SubQuestCatchMons_DescCrabominable[];
+extern const u8 gText_SubQuestCatchMons_NamePhione[];
+extern const u8 gText_SubQuestCatchMons_DescPhione[];
 extern const u8 gText_SubQuestCatchMons_NameWoChien[];
 extern const u8 gText_SubQuestCatchMons_DescWoChien[];
 extern const u8 gText_SubQuestCatchMons_Map[];
+extern const u8 gText_SubQuestCatchMons_PortMap[];
 
 // Berry Blender
 extern const u8 gText_SavingDontTurnOff2[];
