@@ -789,7 +789,7 @@ InsideOutside_EventScript_PlayerFaceLeftSmeargleJump::
     waitmovement VAR_TEMP_2
     speakername Name_Smeargle
     playmoncry SPECIES_SMEARGLE, CRY_MODE_NORMAL
-    message InsideOutside_Text_ArtistSmeargleSmurr
+    message InsideOutside_Text_ArtistSmeargleSmurr2
     waitmessage
     waitmoncry
     delay 30
@@ -805,7 +805,7 @@ InsideOutside_EventScript_PlayerFaceDownSmeargleJump::
     waitmovement VAR_TEMP_2
     speakername Name_Smeargle
     playmoncry SPECIES_SMEARGLE, CRY_MODE_NORMAL
-    message InsideOutside_Text_ArtistSmeargleSmurr
+    message InsideOutside_Text_ArtistSmeargleSmurr2
     waitmessage
     waitmoncry
     delay 30
@@ -1094,6 +1094,9 @@ InsideOutside_Text_ArtistSmeargle:
 
 InsideOutside_Text_ArtistSmeargleSmurr:
     .string "Smurr…$"
+
+InsideOutside_Text_ArtistSmeargleSmurr2:
+    .string "Smurr!$"
 
 InsideOutside_Text_ArtistSmeargleHappy:
     .string "The Smeargle looks relaxed to be around\n"
