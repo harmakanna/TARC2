@@ -1,26 +1,51 @@
 Present_Cafe_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, PresentCafe_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, PresentCafe_OnTransition
 	map_script MAP_SCRIPT_ON_RESUME, PresentCafe_OnResume
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, PresentCafe_OnFrame
 	.byte 0
 
+PresentCafe_OnLoad:
+	call_if_unset FLAG_SWEET_TOOTH_WENT_CRAZY, PresentCafe_EventScript_CloseSweetToothHole
+	end
+	
 PresentCafe_OnResume:
 	special HealPlayerParty
 	end
 	
 PresentCafe_OnTransition:
-	call_if_unset FLAG_SWEET_TOOTH_WENT_CRAZY, PresentCafe_EventScript_CloseSweetToothHole
 	call_if_set FLAG_SWEET_TOOTH_WENT_CRAZY, PresentCafe_EventScript_PlaceCook
+	returnqueststate QUEST_BREAK_A_LEG
+	call_if_eq VAR_RESULT, 4, PresentCafe_EventScript_SetSyncIdolVar
 	end
 
+PresentCafe_EventScript_SetSyncIdolVar::
+	setvar VAR_SYNC_IDOLS, 1
+	return
+
 PresentCafe_EventScript_CloseSweetToothHole::
-	setmetatile 11, 3, METATILE_BrickCafe_Fixed_Wall_High, TRUE
-	setmetatile 11, 4, METATILE_BrickCafe_Fixed_Wall_Low, TRUE
+	setmetatile 11, 3, 0x211, TRUE
+	setmetatile 11, 4, 0x219, TRUE
 	return
 
 PresentCafe_EventScript_PlaceCook::
 	setobjectxyperm LOCALID_CAFE_COOK, 9, 5
 	setobjectmovementtype LOCALID_CAFE_COOK, MOVEMENT_TYPE_FACE_RIGHT
 	return
+
+PresentCafe_OnFrame::
+	map_script_2 VAR_SYNC_IDOLS, 1, PresentCafe_EventScript_SyncIdolsOnLoad
+	.2byte 0
+
+PresentCafe_EventScript_SyncIdolsOnLoad::
+	lockall
+	applymovement LOCALID_CAFE_LEFT_IDOL, Common_Movement_FaceDown
+	applymovement LOCALID_CAFE_RIGHT_IDOL, Common_Movement_FaceDown
+	applymovement LOCALID_CAFE_LISIA, Common_Movement_FaceDown
+	waitmovement 0
+	setvar VAR_SYNC_IDOLS, 0
+	releaseall
+	end
 
 Present_Cafe_EventScript_Emma::
 	lock

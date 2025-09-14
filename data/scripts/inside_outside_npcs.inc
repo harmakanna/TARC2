@@ -202,6 +202,7 @@ InsideOutside_EventScript_LeafQuest::
     setflag FLAG_SYS_DISAPPEAR_QUESTS
     playbgm MUS_PL_LOOKER, TRUE
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_YouAreUnderSuspicion
+    closemessage
     call_if_eq VAR_FACING, DIR_NORTH, InsideOutside_EventScript_TargetTurnFaceLookerNorth
     call_if_eq VAR_FACING, DIR_WEST, InsideOutside_EventScript_TargetTurnFaceLookerWest
     call_if_eq VAR_FACING, DIR_SOUTH, InsideOutside_EventScript_TargetTurnFaceLookerSouth
@@ -361,6 +362,7 @@ InsideOutside_EventScript_YoungsterQuest::
     setflag FLAG_SYS_DISAPPEAR_QUESTS
     playbgm MUS_PL_LOOKER, TRUE
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_YouAreUnderSuspicion
+    closemessage
     call_if_eq VAR_FACING, DIR_NORTH, InsideOutside_EventScript_TargetTurnFaceLookerNorth
     call_if_eq VAR_FACING, DIR_WEST, InsideOutside_EventScript_TargetTurnFaceLookerWest
     call_if_eq VAR_FACING, DIR_SOUTH, InsideOutside_EventScript_TargetTurnFaceLookerSouth
@@ -480,6 +482,7 @@ InsideOutside_EventScript_AceTrainerQuest::
     setflag FLAG_SYS_DISAPPEAR_QUESTS
     playbgm MUS_PL_LOOKER, TRUE
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_YouAreUnderSuspicion
+    closemessage
     call_if_eq VAR_FACING, DIR_NORTH, InsideOutside_EventScript_TargetTurnFaceLookerNorth
     call_if_eq VAR_FACING, DIR_WEST, InsideOutside_EventScript_TargetTurnFaceLookerWest
     call_if_eq VAR_FACING, DIR_SOUTH, InsideOutside_EventScript_TargetTurnFaceLookerSouth

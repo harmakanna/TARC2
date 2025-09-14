@@ -30,6 +30,7 @@
 #include "window.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
+#include "constants/species.h"
 #include "config/pokedex_plus_hgss.h"
 
 enum
@@ -4558,7 +4559,8 @@ u16 GetNationalPokedexCount(u8 caseID)
         case FLAG_GET_CAUGHT:
             if (GetSetPokedexFlag(i + 1, FLAG_GET_CAUGHT))
                 count++;
-            if (GetSetPokedexFlag(SPECIES_ARCANINE, FLAG_GET_CAUGHT))
+            if (i + 1 == SPECIES_ARCANINE
+                && GetSetPokedexFlag(SPECIES_ARCANINE, FLAG_GET_CAUGHT))
                 count--;
             break;
         }
