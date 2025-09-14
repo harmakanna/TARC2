@@ -657,13 +657,12 @@ PresentTown_Port_EventScript_FaithfulMan::
 	playmoncry SPECIES_AROMATISSE, CRY_MODE_NORMAL
 	speakername Name_Aromatisse
 	applymovement LOCALID_PORT_AROMATISSE, Common_Movement_FaceRight
-	msgbox PresentTown_Port_Text_AromatisseControls, MSGBOX_DEFAULT
-	waitmoncry
-	@special DoSweetScent
-	speakername NULL
-	message PresentTown_Port_Text_ScentFillsTheAir
+	message PresentTown_Port_Text_AromatisseControls
 	waitmessage
-	delay 80
+	waitmoncry
+	closemessage
+	special DoSweetScent
+	delay 200
 	speak LOCALID_PORT_BOYFRIEND, VAR_0x8005, Name_Boyfriend, PresentTown_Port_Text_BoyfriendThatsUhh
 	trainerbattle_no_intro TRAINER_BOYFRIEND, PresentTown_Port_Text_BoyfriendDefeat
 	specialvar VAR_RESULT, GetBattleOutcome

@@ -24,6 +24,7 @@
 static void FieldCallback_SweetScent(void);
 static void TrySweetScentEncounter(u8 taskId);
 static void FailSweetScentEncounter(u8 taskId);
+static u8 CreateFieldMoveSweetScentTask(void);
 
 bool32 SetUpFieldMove_SweetScent(void)
 {
@@ -43,10 +44,15 @@ bool8 FldEff_SweetScent(void)
     u8 taskId;
 
     SetWeatherScreenFadeOut();
-    taskId = CreateFieldMoveTask();
+    taskId = CreateFieldMoveSweetScentTask();
     gTasks[taskId].data[8] = (u32)StartSweetScentFieldEffect >> 16;
     gTasks[taskId].data[9] = (u32)StartSweetScentFieldEffect;
     return FALSE;
+}
+
+u8 CreateFieldMoveSweetScentTask(void)
+{
+    return CreateTask(Task_DoFieldMove_RunFunc, 8);
 }
 
 #define tPalBuffer1 data[1]
@@ -116,7 +122,7 @@ static void FailSweetScentEncounter(u8 taskId)
     {
         CpuFastCopy(GetPalBufferPtr(taskId), gPlttBufferUnfaded, PLTT_SIZE);
         SetWeatherPalStateIdle();
-        ScriptContext_SetupScript(EventScript_FailSweetScent);
+        //ScriptContext_SetupScript(EventScript_FailSweetScent);
         FreeDestroyTask(taskId);
     }
 }

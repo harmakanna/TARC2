@@ -36,6 +36,7 @@ bool8 FldEff_UseStrength(void);
 bool32 SetUpFieldMove_SweetScent(void);
 bool8 FldEff_SweetScent(void);
 void StartSweetScentFieldEffect(void);
+void Task_DoFieldMove_RunFunc(u8 taskId);
 
 // teleport
 bool32 SetUpFieldMove_Teleport(void);

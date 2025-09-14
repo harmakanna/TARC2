@@ -271,4 +271,4 @@ Present_CityHall_2F_Office_Text_AnabelYouMightHaveTalked:
 	.string "Well, there's a decent chance you\n"
 	.string "have already talked to them!\p"
 	.string "I'll narrow it down to five, at least -\n"
-	.string "Leaf, Katherine, May, Blue, and Trey.$"
+	.string "Leaf, Katerina, May, Blue, and Trey.$"
