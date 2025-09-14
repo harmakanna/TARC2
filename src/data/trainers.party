@@ -113,9 +113,32 @@ Music: Suspicious
 Double Battle: Yes
 Difficulty: Easy
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Omastar  
+Ability: Weak Armor  
+Level: 50  
+Tera Type: Rock  
+IVs: 15 HP / 0 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Surf  
+- Ice Beam  
+- Stealth Rock  
+
+Cradily  
+Ability: Storm Drain  
+Level: 50  
+Tera Type: Rock  
+IVs: 15 HP / 0 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Giga Drain  
+- Leech Seed  
+- Ancient Power  
+
+Tyrantrum @ Rocky Helmet  
+Ability: Strong Jaw  
+Level: 50  
+Tera Type: Rock  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Psychic Fangs  
+- Crunch  
+- Dragon Claw  
 
 === TRAINER_PRESENT_FISHERMAN ===
 Name: Trevor
@@ -127,9 +150,35 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Easy
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Dewgong  
+Ability: Hydration  
+Level: 50  
+Tera Type: Water  
+EVs: 252 Atk / 126 SpD / 126 Spe  
+Impish Nature  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Flip Turn  
+- Helping Hand  
+- Protect  
+
+Palafin  
+Ability: Zero to Hero  
+Level: 50  
+Tera Type: Water  
+EVs: 126 HP / 252 Atk / 126 SpD  
+Adamant Nature  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Flip Turn  
+- Ice Punch  
+
+Basculin @ Choice Scarf  
+Ability: Adaptability  
+Level: 50  
+Tera Type: Water  
+EVs: 126 HP / 126 Atk / 252 Spe  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Flip Turn  
+- Crunch  
 
 === TRAINER_ALICE ===
 Name: Alice
@@ -141,21 +190,32 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Easy
 
-Tauros
-Level: 5
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Miltank (F)  
+Ability: Thick Fat  
+Level: 50  
+Tera Type: Normal  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Body Slam  
+- Growl  
+- Milk Drink  
 
-Miltank
-Level: 5
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Tauros (M)  
+Ability: Intimidate  
+Level: 50  
+Tera Type: Normal  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Trailblaze  
+- Raging Bull  
+- Megahorn  
 
-Alcremie
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Mudsdale
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Mudsdale  
+Ability: Stamina  
+Level: 50  
+Tera Type: Ground  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Curse  
+- High Horsepower  
+- Strength  
 
 === TRAINER_BIANCA ===
 Name: Bianca
@@ -516,9 +576,41 @@ Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
 Difficulty: Easy
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Avalugg  
+Ability: Own Tempo  
+Level: 50  
+Tera Type: Ice  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Avalanche  
+- High Horsepower  
+- Protect  
+
+Butterfree @ Focus Sash  
+Ability: Compound Eyes  
+Level: 50  
+Tera Type: Bug  
+IVs: 15 HP / 0 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Pollen Puff  
+- Electroweb  
+- Sleep Powder  
+
+Shiftry  
+Ability: Wind Rider  
+Level: 50  
+Tera Type: Grass  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Leaf Blade  
+- Fake Out  
+- Foul Play  
+
+Shedinja  
+Ability: Wonder Guard  
+Level: 50  
+Tera Type: Bug  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Will-O-Wisp  
+- Phantom Force  
+- X-Scissor  
 
 === TRAINER_BOYFRIEND ===
 Name: Luca
@@ -530,9 +622,41 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Easy
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Machamp  
+Ability: Guts  
+Level: 50  
+Tera Type: Fighting  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Cross Chop  
+- Coaching  
+- Thunder Punch  
+
+Grimmsnarl (M) @ Choice Band  
+Ability: Prankster  
+Level: 50  
+Tera Type: Dark  
+IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Spirit Break  
+- False Surrender  
+- Parting Shot  
+
+Nidoking (M)  
+Ability: Rivalry  
+Level: 50  
+Tera Type: Poison  
+IVs: 15 HP / 0 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Earth Power  
+- Flamethrower  
+- Sludge Bomb  
+
+Aromatisse  
+Ability: Aroma Veil  
+Level: 50  
+Tera Type: Fairy  
+IVs: 15 HP / 0 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Moonblast  
+- Ally Switch  
+- Energy Ball  
 
 === TRAINER_MARIE_REMATCH ===
 Name: Marie
@@ -678,15 +802,6 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Mudsdale @ Lum Berry  
-Ability: Stamina  
-Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Body Press  
-- High Horsepower  
-- Strength  
-- Curse  
-
 Miltank (F) @ Lum Berry  
 Ability: Thick Fat  
 Level: 50  
@@ -695,6 +810,15 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Growl  
 - Milk Drink  
 - Rollout  
+
+Tauros (M) @ Lum Berry  
+Ability: Intimidate  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Trailblaze  
+- Close Combat  
+- Megahorn  
+- Raging Bull  
 
 Alcremie (F) @ Lum Berry  
 Ability: Sweet Veil  
@@ -705,14 +829,14 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Calm Mind  
 - Alluring Voice  
 
-Tauros (M) @ Lum Berry  
-Ability: Intimidate  
+Mudsdale @ Lum Berry  
+Ability: Stamina  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe   
-- Trailblaze  
-- Close Combat  
-- Megahorn  
-- Raging Bull  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Body Press  
+- High Horsepower  
+- Strength  
+- Curse  
 
 === TRAINER_BIANCA ===
 Name: Bianca
@@ -2216,20 +2340,10 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Mudsdale @ Lum Berry  
-Ability: Stamina  
-Level: 50  
-EVs: 126 Atk / 252 SpD / 126 Spe  
-Hardy Nature  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Body Press  
-- High Horsepower  
-- Strength  
-- Curse  
-
 Miltank (F) @ Lum Berry  
 Ability: Thick Fat  
 Level: 50  
+Tera Type: Bug  
 EVs: 252 HP / 252 Spe  
 Hardy Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
@@ -2238,9 +2352,22 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Milk Drink  
 - Rollout  
 
+Tauros (M) @ Lum Berry  
+Ability: Intimidate  
+Level: 50  
+Tera Type: Bug  
+EVs: 252 Atk / 126 Def / 126 Spe  
+Hardy Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Trailblaze  
+- Close Combat  
+- Megahorn  
+- Raging Bull  
+
 Alcremie (F) @ Lum Berry  
 Ability: Sweet Veil  
 Level: 50  
+Tera Type: Bug  
 EVs: 252 HP / 126 Def / 126 SpA  
 Hardy Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
@@ -2249,16 +2376,17 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Calm Mind  
 - Alluring Voice  
 
-Tauros (M) @ Lum Berry  
-Ability: Intimidate  
+Mudsdale @ Lum Berry  
+Ability: Stamina  
 Level: 50  
-EVs: 252 Atk / 126 Def / 126 Spe  
+Tera Type: Bug  
+EVs: 126 Atk / 252 SpD / 126 Spe  
 Hardy Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Trailblaze  
-- Close Combat  
-- Megahorn  
-- Raging Bull  
+- Body Press  
+- High Horsepower  
+- Strength  
+- Curse  
 
 === TRAINER_BIANCA ===
 Name: Bianca
