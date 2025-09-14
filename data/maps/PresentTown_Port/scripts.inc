@@ -520,6 +520,7 @@ PresentTown_Port_EventScript_BlueQuest::
     setflag FLAG_SYS_DISAPPEAR_QUESTS
     playbgm MUS_PL_LOOKER, TRUE
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_YouAreUnderSuspicion
+	closemessage
 	call_if_eq VAR_FACING, DIR_NORTH, PresentTown_Port_EventScript_BlueTurnFaceLookerNorth
 	call_if_ne VAR_FACING, DIR_NORTH, PresentTown_Port_EventScript_BlueTurnFaceLooker
 	speak LOCALID_BLUE, VAR_0x8005, Name_Blue, PresentTown_Port_Text_BlueImSorryWhat

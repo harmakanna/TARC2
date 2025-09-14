@@ -11,7 +11,7 @@
   "allow_escaping": false,
   "allow_running": true,
   "show_map_name": false,
-  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "battle_scene": "MAP_BATTLE_SCENE_DRAKE",
   "connections": null,
   "object_events": [
     {
@@ -93,10 +93,11 @@
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
       "movement_range_x": 1,
       "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_type": "TRAINER_TYPE_QUEST_GIVER",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "InsideOutside_EventScript_AceTrainerInside",
-      "flag": "FLAG_HIDE_INSIDE_OUTSIDE_NPCS"
+      "flag": "FLAG_HIDE_INSIDE_OUTSIDE_NPCS",
+      "quest_id": 4
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_DEVON_EMPLOYEE",
