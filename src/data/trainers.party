@@ -521,9 +521,21 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Easy
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Toucannon  
+Ability: Skill Link  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Beak Blast  
+- Bullet Seed  
+- Heat Wave  
+
+Exeggutor-Alola  
+Ability: Harvest  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Dragon Hammer  
+- Grass Knot  
+- Extrasensory  
 
 === TRAINER_LEAH ===
 Name: Leah
@@ -535,9 +547,21 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Easy
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Cursola  
+Ability: Perish Body  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Curse  
+- Shadow Ball  
+- Reflect  
+
+Houndstone @ Choice Scarf  
+Ability: Fluffy  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Last Respects  
+- Play Rough  
+- Crunch  
 
 === TRAINER_PHOEBE ===
 Name: Phoebe
@@ -550,9 +574,37 @@ AI: Basic Trainer / Ace Pokemon
 Mugshot: Pink
 Difficulty: Easy
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Oricorio-Pa'u  
+Ability: Dancer  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Air Cutter  
+- Feather Dance  
+- Revelation Dance  
+
+Marowak-Alola @ Thick Club  
+Ability: Cursed Body  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Shadow Bone  
+- Bonemerang  
+- Will-O-Wisp  
+
+Palossand  
+Ability: Water Compaction  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Curse  
+- Scorching Sands  
+- Energy Ball  
+
+Banette @ Banettite  
+Ability: Cursed Body  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Shadow Claw  
+- Cotton Guard  
+- Skitter Smack  
 
 === TRAINER_BLUE ===
 Name: Blue
