@@ -8,8 +8,14 @@ PresentCafe_OnResume:
 	end
 	
 PresentCafe_OnTransition:
+	call_if_unset FLAG_SWEET_TOOTH_WENT_CRAZY, PresentCafe_EventScript_CloseSweetToothHole
 	call_if_set FLAG_SWEET_TOOTH_WENT_CRAZY, PresentCafe_EventScript_PlaceCook
 	end
+
+PresentCafe_EventScript_CloseSweetToothHole::
+	setmetatile 11, 3, METATILE_BrickCafe_Fixed_Wall_High, TRUE
+	setmetatile 11, 4, METATILE_BrickCafe_Fixed_Wall_Low, TRUE
+	return
 
 PresentCafe_EventScript_PlaceCook::
 	setobjectxyperm LOCALID_CAFE_COOK, 9, 5

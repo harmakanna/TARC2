@@ -839,7 +839,7 @@ const struct Tileset gTileset_SmallTownWithLab =
     .palettes = gTilesetPalettes_SmallTownWithLab,
     .metatiles = gMetatiles_SmallTownWithLab,
     .metatileAttributes = gMetatileAttributes_SmallTownWithLab,
-    .callback = NULL,
+    .callback = InitTilesetAnim_SmallTown,
 };
 
 const struct Tileset gTileset_lozinterior =
@@ -862,7 +862,7 @@ const struct Tileset gTileset_LugiaShrine =
     .palettes = gTilesetPalettes_LugiaShrine,
     .metatiles = gMetatiles_LugiaShrine,
     .metatileAttributes = gMetatileAttributes_LugiaShrine,
-    .callback = NULL,
+    .callback = InitTilesetAnim_LugiaShrine,
 };
 
 const struct Tileset gTileset_PokeCenterAlt =

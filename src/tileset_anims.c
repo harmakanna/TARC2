@@ -44,6 +44,8 @@ static void TilesetAnim_BikeShop(u16);
 static void TilesetAnim_BattlePyramid(u16);
 static void TilesetAnim_BattleDome(u16);
 static void TilesetAnim_CableClub(u16);
+static void TilesetAnim_LugiaShrine(u16);
+static void TilesetAnim_SmallTown(u16);
 static void QueueAnimTiles_General_Flower(u16);
 static void QueueAnimTiles_General_Water(u16);
 static void QueueAnimTiles_General_SandWaterEdge(u16);
@@ -76,6 +78,9 @@ static void QueueAnimTiles_EliteFour_GroundLights(u16);
 static void QueueAnimTiles_EliteFour_WallLights(u16);
 static void QueueAnimTiles_CableClub_GroundLights(u16);
 static void QueueAnimTiles_CableClub_WallLights(u16);
+static void QueueAnimTiles_LugiaShrine_Flower(u16);
+static void QueueAnimTiles_LugiaShrine_Torch(u16);
+static void QueueAnimTiles_SmallTown_Flower(u16);
 
 const u16 gTilesetAnims_General_Flower_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/1.4bpp");
 const u16 gTilesetAnims_General_Flower_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/0.4bpp");
@@ -567,6 +572,36 @@ const u16 *const gTilesetAnims_CableClub_FloorLight[] = {
     gTilesetAnims_CableClub_FloorLight_Frame1
 };
 
+const u16 gTilesetAnims_LugiaShrine_Flower_Frame0[] = INCBIN_U16("data/tilesets/secondary/lugia_shrine/anim/flower/0.4bpp");
+const u16 gTilesetAnims_LugiaShrine_Flower_Frame1[] = INCBIN_U16("data/tilesets/secondary/lugia_shrine/anim/flower/1.4bpp");
+const u16 gTilesetAnims_LugiaShrine_Flower_Frame2[] = INCBIN_U16("data/tilesets/secondary/lugia_shrine/anim/flower/2.4bpp");
+
+const u16 *const gTilesetAnims_LugiaShrine_Flower[] = {
+    gTilesetAnims_LugiaShrine_Flower_Frame0,
+    gTilesetAnims_LugiaShrine_Flower_Frame2
+};
+
+const u16 gTilesetAnims_LugiaShrine_Torch_Frame0[] = INCBIN_U16("data/tilesets/secondary/lugia_shrine/anim/torch/0.4bpp");
+const u16 gTilesetAnims_LugiaShrine_Torch_Frame1[] = INCBIN_U16("data/tilesets/secondary/lugia_shrine/anim/torch/1.4bpp");
+const u16 gTilesetAnims_LugiaShrine_Torch_Frame2[] = INCBIN_U16("data/tilesets/secondary/lugia_shrine/anim/torch/2.4bpp");
+
+const u16 *const gTilesetAnims_LugiaShrine_Torch[] = {
+    gTilesetAnims_LugiaShrine_Torch_Frame0,
+    gTilesetAnims_LugiaShrine_Torch_Frame1,
+    gTilesetAnims_LugiaShrine_Torch_Frame2
+};
+
+const u16 gTilesetAnims_SmallTown_Flower_Frame0[] = INCBIN_U16("data/tilesets/secondary/small_town_with_lab/anim/flower/0.4bpp");
+const u16 gTilesetAnims_SmallTown_Flower_Frame1[] = INCBIN_U16("data/tilesets/secondary/small_town_with_lab/anim/flower/1.4bpp");
+const u16 gTilesetAnims_SmallTown_Flower_Frame2[] = INCBIN_U16("data/tilesets/secondary/small_town_with_lab/anim/flower/2.4bpp");
+
+const u16 *const gTilesetAnims_SmallTown_Flower[] = {
+    gTilesetAnims_SmallTown_Flower_Frame0,
+    gTilesetAnims_SmallTown_Flower_Frame1,
+    gTilesetAnims_SmallTown_Flower_Frame0,
+    gTilesetAnims_SmallTown_Flower_Frame2
+};
+
 static void ResetTilesetAnimBuffer(void)
 {
     sTilesetDMA3TransferBufferSize = 0;
@@ -862,6 +897,20 @@ void InitTilesetAnim_CableClub(void)
     sSecondaryTilesetAnimCounter = 0;
     sSecondaryTilesetAnimCounterMax = 128;
     sSecondaryTilesetAnimCallback = TilesetAnim_CableClub;
+}
+
+void InitTilesetAnim_LugiaShrine(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = TilesetAnim_LugiaShrine;
+}
+
+void InitTilesetAnim_SmallTown(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = 128;
+    sSecondaryTilesetAnimCallback = TilesetAnim_SmallTown;
 }
 
 static void TilesetAnim_Rustboro(u16 timer)
@@ -1213,6 +1262,38 @@ static void QueueAnimTiles_BattlePyramid_StatueShadow(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_BattlePyramid_StatueShadow);
     AppendTilesetAnimToBuffer(gTilesetAnims_BattlePyramid_StatueShadow[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 135)), 8 * TILE_SIZE_4BPP);
+}
+
+static void TilesetAnim_LugiaShrine(u16 timer)
+{
+    if (timer % 32 == 0)
+        QueueAnimTiles_LugiaShrine_Flower(timer / 32);
+    if (timer % 8 == 0)
+        QueueAnimTiles_LugiaShrine_Torch(timer / 8);
+}
+
+static void QueueAnimTiles_LugiaShrine_Flower(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_LugiaShrine_Flower);
+    AppendTilesetAnimToBuffer(gTilesetAnims_LugiaShrine_Flower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 106)), 4 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_LugiaShrine_Torch(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_LugiaShrine_Torch);
+    AppendTilesetAnimToBuffer(gTilesetAnims_LugiaShrine_Torch[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 50)), 4 * TILE_SIZE_4BPP);
+}
+
+static void TilesetAnim_SmallTown(u16 timer)
+{
+    if (timer % 16 == 0)
+        QueueAnimTiles_SmallTown_Flower(timer / 16);
+}
+
+static void QueueAnimTiles_SmallTown_Flower(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_SmallTown_Flower);
+    AppendTilesetAnimToBuffer(gTilesetAnims_SmallTown_Flower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 279)), 4 * TILE_SIZE_4BPP);
 }
 
 static void BlendAnimPalette_BattleDome_FloorLights(u16 timer)
