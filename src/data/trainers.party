@@ -467,6 +467,17 @@ Magikarp
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
+Landorus (M) @ Life Orb  
+Ability: Sheer Force  
+Level: 50
+EVs: 126 Def / 126 SpA / 252 Spe 
+Serious Nature 
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Extrasensory  
+- Scorching Sands  
+- Sludge Bomb  
+- Fly 
+
 === TRAINER_YOUNGSTER ===
 Name: Trey
 Class: Youngster
@@ -578,9 +589,49 @@ Music: Suspicious
 Double Battle: Yes
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Omastar @ Focus Sash  
+Ability: Weak Armor  
+Level: 50  
+EVs: 126 HP / 252 SpA / 126 SpD  
+Timid Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Surf  
+- Meteor Beam  
+- Stealth Rock  
+- Ice Beam  
+
+Cradily @ Leftovers  
+Ability: Storm Drain  
+Level: 50  
+EVs: 252 HP / 252 Def  
+Calm Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Giga Drain  
+- Leech Seed  
+- Earth Power  
+- Ancient Power  
+
+Archeops  
+Ability: Defeatist  
+Level: 50  
+EVs: 126 Atk / 126 SpA / 252 Spe  
+Hasty Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Heat Wave  
+- Dual Wingbeat  
+- Lash Out  
+- Head Smash  
+
+Tyrantrum @ Rocky Helmet  
+Ability: Strong Jaw  
+Level: 50  
+EVs: 252 Atk / 126 Def / 126 Spe  
+Adamant Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Psychic Fangs  
+- Crunch  
+- Dragon Claw  
+- Dragon Dance  
 
 === TRAINER_PRESENT_FISHERMAN ===
 Name: Trevor
@@ -592,9 +643,30 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Dewgong  
+Ability: Hydration  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Flip Turn  
+- Helping Hand  
+- Protect  
+- Icicle Spear
+
+Palafin  
+Ability: Zero to Hero  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Flip Turn  
+- Iron Head  
+- Ice Punch  
+
+Basculin @ Choice Scarf  
+Ability: Adaptability  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Flip Turn  
+- Crunch  
+- Psychic Fangs  
 
 === TRAINER_ALICE ===
 Name: Alice
@@ -606,21 +678,41 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Tauros
-Level: 5
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Mudsdale @ Lum Berry  
+Ability: Stamina  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Body Press  
+- High Horsepower  
+- Strength  
+- Curse  
 
-Miltank
-Level: 5
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Miltank (F) @ Lum Berry  
+Ability: Thick Fat  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Body Slam  
+- Growl  
+- Milk Drink  
+- Rollout  
 
-Alcremie
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Alcremie (F) @ Lum Berry  
+Ability: Sweet Veil  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Mystical Fire  
+- Recover  
+- Calm Mind  
+- Alluring Voice  
 
-Mudsdale
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Tauros (M) @ Lum Berry  
+Ability: Intimidate  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe   
+- Trailblaze  
+- Close Combat  
+- Megahorn  
+- Raging Bull  
 
 === TRAINER_BIANCA ===
 Name: Bianca
@@ -632,9 +724,32 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Pachirisu (F) @ Sitrus Berry  
+Ability: Volt Absorb  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Follow Me  
+- Nuzzle  
+- Super Fang  
+- Charm  
+
+Cetitan (F)  
+Ability: Thick Fat  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Icicle Crash  
+- Heavy Slam  
+- Earthquake  
+- Facade  
+
+Togekiss (M)  
+Ability: Serene Grace  
+Level: 50  
+IVs: 15 HP / 0 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Air Slash  
+- Dazzling Gleam  
+- Aura Sphere  
+- Encore  
 
 === TRAINER_SOPHIA ===
 Name: Sophia
@@ -646,9 +761,41 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sylveon (F)  
+Ability: Pixilate  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Mystical Fire  
+- Hyper Voice  
+- Substitute  
+- Quick Attack  
+
+Blissey (F) @ Rocky Helmet  
+Ability: Healer  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Helping Hand  
+- Teleport  
+- Seismic Toss  
+- Soft-Boiled  
+
+Alomomola (F)  
+Ability: Regenerator  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Flip Turn  
+- Helping Hand  
+- Wish  
+- Knock Off  
+
+Flamigo (F) @ Bug Gem  
+Ability: Scrappy  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Close Combat  
+- Acrobatics  
+- Lunge  
+- Detect  
 
 === TRAINER_LISIA ===
 Name: Lisia
@@ -660,9 +807,50 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Altaria @ Altarianite  
+Ability: Cloud Nine  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Dragon Claw  
+- Facade  
+- Dual Wingbeat  
+- Dragon Dance  
+
+Glimmora  
+Ability: Toxic Debris  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Power Gem  
+- Sludge Bomb  
+- Energy Ball  
+- Spiky Shield  
+
+Aurorus @ Focus Sash  
+Ability: Snow Warning  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Aurora Veil  
+- Earth Power  
+- Blizzard  
+- Thunderbolt  
+
+Vivillon-Marine  
+Ability: Friend Guard  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Pollen Puff  
+- Rage Powder  
+- Sleep Powder  
+- Tailwind  
+
+Azumarill @ Fairy Feather  
+Ability: Huge Power  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Aqua Jet  
+- Aqua Tail  
+- Power-Up Punch  
+- Play Rough  
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_1 ===
 Name: Geoff
@@ -674,9 +862,41 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Crobat  
+Ability: Inner Focus  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Cross Poison  
+- Dual Wingbeat  
+- U-turn  
+- Super Fang  
+
+Mightyena @ Razor Claw  
+Ability: Intimidate  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Crunch  
+- Snarl  
+- Foul Play  
+- Play Rough  
+
+Muk  
+Ability: Poison Touch  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Gunk Shot  
+- Fire Punch  
+- Curse  
+- Disable  
+
+Wailord @ Sitrus Berry  
+Ability: Pressure  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Water Spout  
+- Scald  
+- Heavy Slam  
+- Protect  
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_2 ===
 Name: Sarah
@@ -688,9 +908,40 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Armaldo @ Covert Cloak  
+Ability: Swift Swim  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Rain Dance  
+- X-Scissor  
+- Rock Slide  
+- Bug Bite  
+
+Beartic  
+Ability: Swift Swim  
+Level: 50  
+- Icicle Crash  
+- Play Rough  
+- Liquidation  
+- Protect  
+
+Pincurchin @ Mental Herb  
+Ability: Electric Surge  
+Level: 50  
+IVs: 15 HP / 0 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Electroweb  
+- Rising Voltage  
+- Thunder Wave  
+- Rain Dance  
+
+Grapploct  
+Ability: Limber  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Circle Throw  
+- Waterfall  
+- Octolock  
+- Sucker Punch  
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_3 ===
 Name: Sheldon
@@ -702,9 +953,41 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Crustle @ Salac Berry  
+Ability: Sturdy  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Stealth Rock  
+- Shell Smash  
+- Rock Slide  
+- Knock Off  
+
+Crabominable  
+Ability: Iron Fist  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Coaching  
+- Power-Up Punch  
+- Ice Punch  
+- Thunder Punch  
+
+Crawdaunt  
+Ability: Hyper Cutter  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Swords Dance  
+- Aqua Jet  
+- Lash Out  
+- Razor Shell  
+
+Clawitzer @ Expert Belt  
+Ability: Mega Launcher  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Water Pulse  
+- Aura Sphere  
+- Dragon Pulse  
+- Flash Cannon  
 
 === TRAINER_MATT ===
 Name: Matt
@@ -717,9 +1000,50 @@ AI: Basic Trainer / Ace Pokemon
 Mugshot: Blue
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Golisopod  
+Ability: Emergency Exit  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- First Impression  
+- Brick Break  
+- Leech Life  
+- Aqua Jet  
+
+Qwilfish-Hisui @ Eviolite  
+Ability: Intimidate  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Aqua Tail  
+- Toxic Spikes  
+- Lash Out  
+- Poison Jab  
+
+Gyarados @ Safety Goggles  
+Ability: Moxie  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Waterfall  
+- Dragon Tail  
+- Temper Flare  
+- Dragon Dance  
+
+Dhelmise  
+Ability: Steelworker  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Anchor Shot  
+- Gyro Ball  
+- Poltergeist  
+- Pain Split  
+
+Sharpedo @ Sharpedonite  
+Ability: Speed Boost  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Crunch  
+- Liquidation  
+- Psychic Fangs  
+- Super Fang  
 
 === TRAINER_SEBASTIAN ===
 Name: Sebastian
@@ -731,9 +1055,40 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Tropius (M) @ Life Orb  
+Ability: Chlorophyll  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Dual Wingbeat  
+- Dragon Hammer  
+- Tailwind  
+- Leaf Storm  
+
+Kingler (M)  
+Ability: Sheer Force  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Razor Shell  
+- Hammer Arm  
+- Protect  
+- Rock Slide  
+
+Chatot (M)  
+Ability: Keen Eye  
+Level: 50  
+- Chatter  
+- Hyper Voice  
+- U-turn  
+- Feather Dance  
+
+Volcarona (M) @ Charti Berry  
+Ability: Flame Body  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Fiery Dance  
+- Bug Buzz  
+- Rage Powder  
+- Psychic  
 
 === TRAINER_TASHA ===
 Name: Tasha
@@ -759,9 +1114,41 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Mr. Rime @ Light Clay  
+Ability: Tangled Feet  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Teeter Dance  
+- Fake Out  
+- Ice Beam  
+- Light Screen  
+
+Lilligant  
+Ability: Own Tempo  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Petal Dance  
+- Pollen Puff  
+- Alluring Voice  
+- Encore  
+
+Oricorio-Sensu @ Spell Tag  
+Ability: Dancer  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Revelation Dance  
+- Acrobatics  
+- Feather Dance  
+- Quiver Dance  
+
+Ludicolo  
+Ability: Swift Swim  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Rain Dance  
+- Energy Ball  
+- Scald  
+- Fake Out  
 
 === TRAINER_DAISY ===
 Name: DAISY
@@ -773,9 +1160,32 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Hitmontop (M) @ Assault Vest  
+Ability: Intimidate  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Fake Out  
+- Triple Kick  
+- Triple Axel  
+- Rapid Spin  
+
+Bellossom  
+Ability: Healer  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Sludge Bomb  
+- Energy Ball  
+- Pollen Puff  
+- Quiver Dance  
+
+Quaquaval @ Heavy-Duty Boots  
+Ability: Moxie  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Acrobatics  
+- Aqua Step  
+- Knock Off  
+- Bulk Up  
 
 === TRAINER_SAMANTHA ===
 Name: Samantha
@@ -787,9 +1197,32 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Bruxish @ Ability Shield  
+Ability: Dazzling  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Aqua Jet  
+- Flip Turn  
+- Psychic Fangs  
+- Ice Fang  
+
+Toucannon  
+Ability: Skill Link  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Beak Blast  
+- Bullet Seed  
+- Rock Blast  
+- Heat Wave  
+
+Exeggutor-Alola @ Sitrus Berry  
+Ability: Harvest  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Dragon Hammer  
+- Grass Knot  
+- Extrasensory  
+- Sleep Powder  
 
 === TRAINER_LEAH ===
 Name: Leah
@@ -801,9 +1234,23 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Cursola @ Power Herb  
+Ability: Perish Body  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Curse  
+- Shadow Ball  
+- Reflect  
+- Meteor Beam  
+
+Houndstone @ Choice Scarf  
+Ability: Fluffy  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Last Respects  
+- Play Rough  
+- Trick  
+- Crunch  
 
 === TRAINER_PHOEBE ===
 Name: Phoebe
@@ -816,9 +1263,50 @@ AI: Basic Trainer / Ace Pokemon
 Mugshot: Pink
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Oricorio-Pa'u  
+Ability: Dancer  
+Level: 50  
+IVs: 15 HP / 0 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Air Cutter  
+- Quiver Dance  
+- Revelation Dance  
+- Feather Dance  
+
+Marowak-Alola @ Thick Club  
+Ability: Cursed Body  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Shadow Bone  
+- Bonemerang  
+- Flame Charge  
+- Will-O-Wisp  
+
+Mimikyu  
+Ability: Disguise  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Shadow Sneak  
+- Play Rough  
+- Drain Punch  
+- Swords Dance  
+
+Palossand @ Choice Specs  
+Ability: Water Compaction  
+Level: 50  
+IVs: 15 HP / 0 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Curse  
+- Scorching Sands  
+- Energy Ball  
+- Trick  
+
+Banette @ Banettite  
+Ability: Frisk  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Shadow Claw  
+- Will-O-Wisp  
+- Skitter Smack  
+- Cotton Guard  
 
 === TRAINER_BLUE ===
 Name: Blue
@@ -830,9 +1318,59 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Blastoise  
+Ability: Torrent  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Surf  
+- Strength  
+- Ice Beam  
+- Rapid Spin  
+
+Exeggutor  
+Ability: Chlorophyll  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Extrasensory  
+- Giga Drain  
+- Leech Seed  
+- Explosion  
+
+Arcanine  
+Ability: Intimidate  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Play Rough  
+- Will-O-Wisp  
+- Flare Blitz  
+- Morning Sun  
+
+Snorlax (M)  
+Ability: Thick Fat  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Body Slam  
+- Darkest Lariat  
+- Curse  
+- Rest  
+
+Pidgeot-Mega @ Pidgeotite  
+Ability: No Guard  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Fly  
+- Double-Edge  
+- Roost  
+- Hurricane  
+
+Rhydon  
+Ability: Lightning Rod  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Body Press  
+- Earthquake  
+- Rock Slide  
+- Cut  
 
 === TRAINER_BLUE_CULPRIT ===
 Name: Blue
@@ -844,9 +1382,59 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Blastoise  
+Ability: Torrent  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Surf  
+- Strength  
+- Ice Beam  
+- Rapid Spin  
+
+Exeggutor  
+Ability: Chlorophyll  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Extrasensory  
+- Giga Drain  
+- Leech Seed  
+- Explosion  
+
+Arcanine  
+Ability: Intimidate  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Play Rough  
+- Will-O-Wisp  
+- Flare Blitz  
+- Morning Sun  
+
+Snorlax (M)  
+Ability: Thick Fat  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Body Slam  
+- Darkest Lariat  
+- Curse  
+- Rest  
+
+Pidgeot-Mega @ Pidgeotite  
+Ability: No Guard  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Fly  
+- Double-Edge  
+- Roost  
+- Hurricane  
+
+Landorus (M) @ Life Orb  
+Ability: Sheer Force  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Extrasensory  
+- Scorching Sands  
+- Sludge Bomb  
+- Fly  
 
 === TRAINER_MAY ===
 Name: May
@@ -858,9 +1446,59 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Linoone @ Starf Berry  
+Ability: Gluttony  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Strength  
+- Cut  
+- Rock Smash  
+- Surf  
+
+Blaziken @ Focus Sash  
+Ability: Blaze  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Sky Uppercut  
+- Brave Bird  
+- Flamethrower  
+- Flame Charge  
+
+Swellow @ Flame Orb  
+Ability: Guts  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Quick Attack  
+- Fly  
+- Steel Wing  
+- U-turn  
+
+Grumpig @ Salac Berry  
+Ability: Gluttony  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Extrasensory  
+- Power Gem  
+- Helping Hand  
+- Calm Mind  
+
+Whiscash @ Mystic Water  
+Ability: Oblivious  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- High Horsepower  
+- Waterfall  
+- Icy Wind  
+- Dragon Dance  
+
+Flygon @ Life Orb  
+Ability: Levitate  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Scorching Sands  
+- Fly  
+- Dragon Pulse  
+- First Impression  
 
 === TRAINER_MAY_CULPRIT ===
 Name: May
@@ -872,9 +1510,59 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Linoone @ Starf Berry  
+Ability: Gluttony  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Strength  
+- Cut  
+- Rock Smash  
+- Surf  
+
+Blaziken @ Focus Sash  
+Ability: Blaze  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Sky Uppercut  
+- Brave Bird  
+- Flamethrower  
+- Flame Charge  
+
+Swellow @ Flame Orb  
+Ability: Guts  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Facade  
+- Air Slash  
+- Protect  
+- U-turn  
+
+Grumpig  
+Ability: Thick Fat  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Extrasensory  
+- Power Gem  
+- Energy Ball  
+- Calm Mind  
+
+Whiscash  
+Ability: Oblivious  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- High Horsepower  
+- Muddy Water  
+- Rock Slide  
+- Dragon Dance   
+
+Landorus (M) @ Life Orb  
+Ability: Sheer Force  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Extrasensory  
+- Scorching Sands  
+- Sludge Bomb  
+- Fly  
 
 === TRAINER_LEAF ===
 Name: Leaf
@@ -886,9 +1574,59 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Clefable  
+Ability: Unaware  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Moonblast  
+- Mystical Fire  
+- Calm Mind  
+- Stealth Rock  
+
+Jolteon @ Magnet  
+Ability: Volt Absorb  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Reflect  
+- Volt Switch  
+- Thunder Wave  
+- Substitute  
+
+Venusaur @ Leftovers  
+Ability: Overgrow  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Cut  
+- Giga Drain  
+- Sludge Bomb  
+- Leech Seed  
+
+Lapras (F)  
+Ability: Water Absorb  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Surf  
+- Freeze-Dry  
+- Psychic Noise  
+- Strength  
+
+Gengar @ Leppa Berry  
+Ability: Levitate  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Shadow Ball  
+- Hypnosis  
+- Sludge Bomb  
+- Dream Eater  
+
+Dragonite @ Silk Scarf  
+Ability: Inner Focus  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Extreme Speed  
+- Dragon Claw  
+- Fly  
+- Dragon Dance  
 
 === TRAINER_LEAF_CULPRIT ===
 Name: Leaf
@@ -900,9 +1638,59 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Clefable (F)  
+Ability: Unaware  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Moonblast  
+- Mystical Fire  
+- Calm Mind  
+- Stealth Rock  
+
+Jolteon (M) @ Magnet  
+Ability: Volt Absorb  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Reflect  
+- Volt Switch  
+- Thunder Wave  
+- Substitute  
+
+Venusaur (M) @ Leftovers  
+Ability: Overgrow  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Cut  
+- Giga Drain  
+- Sludge Bomb  
+- Leech Seed  
+
+Lapras (F)  
+Ability: Water Absorb  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Surf  
+- Freeze-Dry  
+- Psychic Noise  
+- Strength  
+
+Gengar (F) @ Leppa Berry  
+Ability: Levitate  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Shadow Ball  
+- Hypnosis  
+- Sludge Bomb  
+- Dream Eater  
+
+Landorus (M) @ Life Orb  
+Ability: Sheer Force  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Extrasensory  
+- Scorching Sands  
+- Sludge Bomb  
+- Fly  
 
 === TRAINER_BW_ACE_TRAINER ===
 Name: Katherine
@@ -914,9 +1702,60 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gothitelle  
+Ability: Shadow Tag  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Fake Out  
+- Trick Room  
+- Psyshock  
+- Substitute  
+
+Samurott-Hisui @ Covert Cloak  
+Ability: Sharpness  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Razor Shell  
+- Sacred Sword  
+- Aqua Jet  
+- Ceaseless Edge  
+
+Chandelure @ Charcoal  
+Ability: Infiltrator  
+Level: 50  
+Shiny: Yes  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Hex  
+- Flame Burst  
+- Will-O-Wisp  
+- Fire Spin  
+
+Sawsbuck-Summer  
+Ability: Chlorophyll  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Body Slam  
+- Horn Leech  
+- Leech Seed  
+- Jump Kick  
+
+Kingambit  
+Ability: Supreme Overlord  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Sucker Punch  
+- Iron Head  
+- Psycho Cut  
+- Swords Dance  
+
+Golurk @ Assault Vest  
+Ability: Iron Fist  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- High Horsepower  
+- Drain Punch  
+- Fly  
+- Heavy Slam  
 
 === TRAINER_BW_ACE_TRAINER_CULPRIT ===
 Name: Katherine
@@ -928,9 +1767,60 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gothitelle  
+Ability: Shadow Tag  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Fake Out  
+- Trick Room  
+- Psyshock  
+- Substitute  
+
+Samurott-Hisui @ Covert Cloak  
+Ability: Sharpness  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Razor Shell  
+- Sacred Sword  
+- Aqua Jet  
+- Ceaseless Edge  
+
+Chandelure @ Charcoal  
+Ability: Infiltrator  
+Level: 50  
+Shiny: Yes  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Hex  
+- Flame Burst  
+- Will-O-Wisp  
+- Fire Spin  
+
+Sawsbuck-Summer  
+Ability: Chlorophyll  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Body Slam  
+- Horn Leech  
+- Leech Seed  
+- Jump Kick  
+
+Kingambit  
+Ability: Supreme Overlord  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Sucker Punch  
+- Iron Head  
+- Psycho Cut  
+- Swords Dance  
+
+Landorus (M) @ Life Orb  
+Ability: Sheer Force  
+Level: 50
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+- Extrasensory  
+- Scorching Sands  
+- Sludge Bomb  
+- Fly  
 
 === TRAINER_YOUNGSTER ===
 Name: Trey
@@ -942,9 +1832,59 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Rillaboom  
+Ability: Grassy Surge  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Grassy Glide  
+- Fake Out  
+- Bulk Up  
+- Knock Off  
+
+Sirfetch’d @ Leek  
+Ability: Scrappy  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Brick Break  
+- Brave Bird  
+- First Impression  
+- Focus Energy  
+
+Centiskorch @ Charti Berry  
+Ability: White Smoke  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Fire Lash  
+- Leech Life  
+- Will-O-Wisp  
+- Coil  
+
+Arctovish @ Power Herb  
+Ability: Slush Rush  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Fishious Rend  
+- Freeze-Dry  
+- Meteor Beam  
+- Snowscape  
+
+Copperajah  
+Ability: Heavy Metal  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Heavy Slam  
+- Supercell Slam  
+- High Horsepower  
+- Heat Crash  
+
+Dragapult  
+Ability: Clear Body  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Phantom Force  
+- Flamethrower  
+- Thunderbolt  
+- Substitute 
 
 === TRAINER_YOUNGSTER_CULPRIT ===
 Name: Trey
@@ -956,9 +1896,59 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Rillaboom  
+Ability: Grassy Surge  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Grassy Glide  
+- Fake Out  
+- Bulk Up  
+- Knock Off  
+
+Sirfetch’d @ Leek  
+Ability: Scrappy  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Brick Break  
+- Brave Bird  
+- First Impression  
+- Focus Energy  
+
+Centiskorch @ Charti Berry  
+Ability: White Smoke  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Fire Lash  
+- Leech Life  
+- Will-O-Wisp  
+- Coil  
+
+Arctovish @ Power Herb  
+Ability: Slush Rush  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Fishious Rend  
+- Freeze-Dry  
+- Meteor Beam  
+- Snowscape  
+
+Copperajah  
+Ability: Heavy Metal  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Heavy Slam  
+- Supercell Slam  
+- High Horsepower  
+- Heat Crash  
+
+Landorus (M) @ Life Orb  
+Ability: Sheer Force  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Extrasensory  
+- Scorching Sands  
+- Sludge Bomb  
+- Fly  
 
 === TRAINER_STUDENT ===
 Name: Paolo
@@ -970,9 +1960,50 @@ Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Avalugg  
+Ability: Own Tempo  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Avalanche  
+- Body Press  
+- Protect  
+- High Horsepower  
+
+Butterfree @ Focus Sash  
+Ability: Compound Eyes  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Pollen Puff  
+- Electroweb  
+- Sleep Powder  
+- Quiver Dance  
+
+Shiftry  
+Ability: Wind Rider  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Leaf Blade  
+- Fake Out  
+- Foul Play  
+- Heat Wave  
+
+Aggron  
+Ability: Sturdy  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Autotomize  
+- Aqua Tail  
+- Iron Head  
+- Rock Slide  
+
+Shedinja @ Lum Berry  
+Ability: Wonder Guard  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Will-O-Wisp  
+- Phantom Force  
+- X-Scissor  
+- Swords Dance  
 
 === TRAINER_BOYFRIEND ===
 Name: Luca
@@ -984,9 +2015,60 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Machamp  
+Ability: Guts  
+Level: 50  
+EVs: 126 HP / 126 Atk / 126 SpD / 126 Spe  
+Adamant Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Cross Chop  
+- Darkest Lariat  
+- Thunder Punch  
+- Coaching  
+
+Grimmsnarl (M) @ Choice Band  
+Ability: Prankster  
+Level: 50  
+EVs: 252 HP / 252 Atk  
+Impish Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Spirit Break  
+- False Surrender  
+- Parting Shot  
+- Trick  
+
+Nidoking (M) @ Expert Belt  
+Ability: Rivalry  
+Level: 50  
+EVs: 126 Def / 252 SpA / 126 Spe  
+Bold Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Earth Power  
+- Flamethrower  
+- Ice Beam  
+- Sludge Bomb  
+
+Braviary-Hisui (M)  
+Ability: Tinted Lens  
+Level: 50  
+EVs: 126 HP / 126 SpA / 252 Spe  
+Timid Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Esper Wing  
+- Defog  
+- U-turn  
+- Air Slash  
+
+Aromatisse  
+Ability: Aroma Veil  
+Level: 55  
+EVs: 252 HP / 126 SpA / 126 SpD  
+Sassy Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Moonblast  
+- Trick Room  
+- Energy Ball  
+- Ally Switch  
 
 === TRAINER_MARIE_REMATCH ===
 Name: Marie
@@ -1046,8 +2128,9 @@ Difficulty: Hard
 
 Omastar @ Focus Sash  
 Ability: Weak Armor  
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+Level: 50  
+Timid Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Surf  
 - Meteor Beam  
 - Stealth Rock  
@@ -1055,8 +2138,9 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Cradily @ Leftovers  
 Ability: Storm Drain  
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+Level: 50  
+Calm Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Giga Drain  
 - Leech Seed  
 - Earth Power  
@@ -1064,8 +2148,9 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Archeops  
 Ability: Defeatist  
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+Level: 50  
+Hasty Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Heat Wave  
 - Dual Wingbeat  
 - Lash Out  
@@ -1073,11 +2158,12 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Tyrantrum @ Rocky Helmet  
 Ability: Strong Jaw  
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+Level: 50  
+Adamant Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Psychic Fangs  
 - Crunch  
-- Outrage  
+- Dragon Claw  
 - Dragon Dance  
 
 === TRAINER_PRESENT_FISHERMAN ===
@@ -1090,26 +2176,32 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Alomomola  
-Ability: Regenerator
-Level: 50
+Dewgong  
+Ability: Hydration  
+Level: 50  
+EVs: 252 Atk / 126 SpD / 126 Spe  
+Impish Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Flip Turn  
 - Helping Hand  
 - Protect  
+- Icicle Spear
 
-Palafin
+Palafin  
 Ability: Zero to Hero  
-Level: 50
+Level: 50  
+EVs: 126 HP / 252 Atk / 126 SpD  
+Adamant Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Flip Turn  
 - Iron Head  
 - Ice Punch  
 
-Basculin-Red-Striped @ Choice Scarf  
+Basculin @ Choice Scarf  
 Ability: Adaptability  
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+Level: 50  
+EVs: 126 HP / 126 Atk / 252 Spe  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Flip Turn  
 - Crunch  
 - Psychic Fangs  
@@ -1127,6 +2219,8 @@ Difficulty: Hard
 Mudsdale @ Lum Berry  
 Ability: Stamina  
 Level: 50  
+EVs: 126 Atk / 252 SpD / 126 Spe  
+Hardy Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Body Press  
 - High Horsepower  
@@ -1136,15 +2230,19 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Miltank (F) @ Lum Berry  
 Ability: Thick Fat  
 Level: 50  
+EVs: 252 HP / 252 Spe  
+Hardy Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Body Slam  
 - Growl  
-- Stealth Rock  
+- Milk Drink  
 - Rollout  
 
 Alcremie (F) @ Lum Berry  
 Ability: Sweet Veil  
 Level: 50  
+EVs: 252 HP / 126 Def / 126 SpA  
+Hardy Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Mystical Fire  
 - Recover  
@@ -1154,6 +2252,8 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Tauros (M) @ Lum Berry  
 Ability: Intimidate  
 Level: 50  
+EVs: 252 Atk / 126 Def / 126 Spe  
+Hardy Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Trailblaze  
 - Close Combat  
@@ -1170,32 +2270,38 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Pachirisu @ Sitrus Berry  
+Pachirisu (F) @ Sitrus Berry  
 Ability: Volt Absorb  
 Level: 50  
+EVs: 252 HP / 252 Spe  
+Jolly Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Follow Me  
 - Nuzzle  
 - Super Fang  
 - Charm  
 
-Gardevoir @ Choice Scarf  
-Ability: Trace  
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Alluring Voice  
-- Aura Sphere  
-- Psychic Noise  
-- Trick  
-
-Cetitan  
+Cetitan (F)  
 Ability: Thick Fat  
-Level: 50
+Level: 50  
+EVs: 126 Atk / 252 Def / 126 SpD  
+Brave Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Icicle Crash  
 - Heavy Slam  
 - Earthquake  
 - Facade  
+
+Togekiss (M)  
+Ability: Serene Grace  
+Level: 50  
+EVs: 252 HP / 126 SpA / 126 SpD  
+Modest Nature  
+IVs: 15 HP / 0 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Air Slash  
+- Dazzling Gleam  
+- Aura Sphere  
+- Encore  
 
 === TRAINER_SOPHIA ===
 Name: Sophia
@@ -1207,9 +2313,11 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Sylveon  
+Sylveon (F)  
 Ability: Pixilate  
-Level: 50
+Level: 50  
+EVs: 252 HP / 126 SpA / 126 Spe  
+Modest Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Mystical Fire  
 - Hyper Voice  
@@ -1218,25 +2326,31 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Blissey (F) @ Rocky Helmet  
 Ability: Healer  
-Level: 50
+Level: 50  
+EVs: 252 Def / 252 Spe  
+Hardy Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Helping Hand  
 - Teleport  
 - Seismic Toss  
 - Soft-Boiled  
 
-Alomomola  
+Alomomola (F)  
 Ability: Regenerator  
-Level: 50
+Level: 50  
+EVs: 252 Atk / 126 Def / 126 SpD  
+Calm Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Flip Turn  
 - Helping Hand  
 - Wish  
 - Knock Off  
 
-Flamigo @ Sitrus Berry  
+Flamigo (F) @ Bug Gem  
 Ability: Scrappy  
-Level: 50
+Level: 50  
+EVs: 126 Atk / 126 SpD / 252 Spe  
+Jolly Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Close Combat  
 - Acrobatics  
@@ -1255,17 +2369,21 @@ Difficulty: Hard
 
 Altaria @ Altarianite  
 Ability: Cloud Nine  
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+Level: 50  
+EVs: 126 HP / 126 Atk / 252 SpD  
+Relaxed Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Dragon Claw  
 - Facade  
 - Dual Wingbeat  
 - Dragon Dance  
 
-Glimmora @ Wise Glasses  
+Glimmora  
 Ability: Toxic Debris  
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+Level: 50  
+EVs: 126 HP / 126 SpA / 252 Spe  
+Modest Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Power Gem  
 - Sludge Bomb  
 - Energy Ball  
@@ -1273,17 +2391,21 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Aurorus @ Focus Sash  
 Ability: Snow Warning  
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+Level: 50  
+EVs: 252 SpA / 252 Spe  
+Timid Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Aurora Veil  
 - Earth Power  
 - Blizzard  
 - Thunderbolt  
 
-Vivillon-Fancy @ Covert Cloak  
+Vivillon-Fancy  
 Ability: Friend Guard  
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+Level: 50  
+EVs: 252 HP / 252 Def  
+Bold Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Pollen Puff  
 - Rage Powder  
 - Sleep Powder  
@@ -1291,8 +2413,10 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Azumarill @ Fairy Feather  
 Ability: Huge Power  
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+Level: 50  
+EVs: 252 Atk / 126 SpD / 126 Spe  
+Jolly Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Aqua Jet  
 - Aqua Tail  
 - Power-Up Punch  
@@ -1311,16 +2435,20 @@ Difficulty: Hard
 Crobat  
 Ability: Inner Focus  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+EVs: 126 Atk / 126 SpD / 252 Spe  
+Careful Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Cross Poison  
 - Dual Wingbeat  
 - U-turn  
 - Super Fang  
 
-Mightyena  
+Mightyena @ Razor Claw  
 Ability: Intimidate  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+EVs: 126 HP / 126 Atk / 126 Def / 126 Spe  
+Jolly Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Crunch  
 - Snarl  
 - Foul Play  
@@ -1329,7 +2457,9 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Muk  
 Ability: Poison Touch  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+EVs: 252 HP / 252 SpD  
+Adamant Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Gunk Shot  
 - Fire Punch  
 - Curse  
@@ -1338,11 +2468,13 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Wailord @ Sitrus Berry  
 Ability: Pressure  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+EVs: 126 Atk / 126 SpA / 252 Spe  
+Timid Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Water Spout  
 - Scald  
 - Heavy Slam  
-- Protect   
+- Protect  
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_2 ===
 Name: Sarah
@@ -1357,16 +2489,19 @@ Difficulty: Hard
 Armaldo @ Covert Cloak  
 Ability: Swift Swim  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+EVs: 126 HP / 126 Atk / 126 SpD / 126 Spe  
+Careful Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Rain Dance  
 - X-Scissor  
 - Rock Slide  
-- Knock Off  
+- Bug Bite  
 
 Beartic  
 Ability: Swift Swim  
 Level: 50  
-IVs: 15 HP / 0 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+EVs: 252 HP / 252 Atk  
+Jolly Nature  
 - Icicle Crash  
 - Play Rough  
 - Liquidation  
@@ -1375,6 +2510,8 @@ IVs: 15 HP / 0 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Pincurchin @ Mental Herb  
 Ability: Electric Surge  
 Level: 50  
+EVs: 252 Def / 252 SpD  
+Brave Nature  
 IVs: 15 HP / 0 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Electroweb  
 - Rising Voltage  
@@ -1384,7 +2521,9 @@ IVs: 15 HP / 0 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Grapploct  
 Ability: Limber  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+EVs: 126 HP / 126 Atk / 252 SpD  
+Adamant Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Circle Throw  
 - Waterfall  
 - Octolock  
@@ -1400,41 +2539,49 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Kingler  
-Ability: Hyper Cutter  
+Crustle @ Salac Berry  
+Ability: Sturdy  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
-- Crabhammer  
-- Wide Guard  
-- Body Slam  
-- Agility  
+EVs: 126 HP / 252 Def / 126 Spe  
+Impish Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Rock Slide  
+- Knock Off  
+- Shell Smash  
+- Stealth Rock  
 
 Crabominable  
 Ability: Iron Fist  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
-- Coaching  
-- Focus Punch  
+EVs: 252 HP / 126 Atk / 126 SpD  
+Adamant Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Ice Punch  
+- Power-Up Punch  
 - Thunder Punch  
+- Coaching  
 
 Crawdaunt  
 Ability: Hyper Cutter  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
-- Swords Dance  
+EVs: 252 Atk / 252 Spe  
+Jolly Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Aqua Jet  
 - Lash Out  
 - Razor Shell  
+- Swords Dance  
 
 Clawitzer @ Expert Belt  
 Ability: Mega Launcher  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+EVs: 252 HP / 252 SpA  
+Modest Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Water Pulse  
 - Aura Sphere  
+- Flash Cannon  
 - Dragon Pulse  
-- Flash Cannon   
 
 === TRAINER_MATT ===
 Name: Matt
@@ -1450,25 +2597,31 @@ Difficulty: Hard
 Golisopod  
 Ability: Emergency Exit  
 Level: 50  
-IVs: 15 HP / 15 Def / 15 SpA / 15 SpD  
+EVs: 126 HP / 252 Atk / 126 Def  
+Adamant Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - First Impression  
 - Brick Break  
 - Leech Life  
-- Brick Break
+- Aqua Jet  
 
 Qwilfish-Hisui @ Eviolite  
 Ability: Intimidate  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+EVs: 252 HP / 126 Def / 126 SpD  
+Careful Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Aqua Tail  
 - Toxic Spikes  
 - Lash Out  
 - Poison Jab  
 
-Gyarados  
-Ability: Intimidate  
+Gyarados @ Safety Goggles  
+Ability: Moxie  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+EVs: 252 SpD / 252 Spe  
+Hasty Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Waterfall  
 - Dragon Tail  
 - Temper Flare  
@@ -1477,6 +2630,8 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Dhelmise  
 Ability: Steelworker  
 Level: 50  
+EVs: 252 HP / 126 Atk / 126 Def  
+Relaxed Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Anchor Shot  
 - Gyro Ball  
@@ -1486,6 +2641,8 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Sharpedo @ Sharpedonite  
 Ability: Speed Boost  
 Level: 50  
+EVs: 252 HP / 252 Spe  
+Jolly Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Crunch  
 - Liquidation  
@@ -1502,36 +2659,43 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Tropius @ Life Orb  
+Tropius (M) @ Life Orb  
 Ability: Chlorophyll  
-Level: 50
+Level: 50  
+EVs: 252 HP / 252 Atk  
+Adamant Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Dual Wingbeat  
 - Dragon Hammer  
 - Tailwind  
 - Leaf Storm  
 
-Crustle @ Salac Berry  
-Ability: Sturdy  
+Kingler (M)  
+Ability: Sheer Force  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
-- Stealth Rock  
-- Shell Smash  
-- Rock Slide  
-- Knock Off  
-
-Chatot  
-Ability: Keen Eye  
-Level: 50
+EVs: 252 Atk / 126 SpD / 126 Spe  
+Jolly Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Razor Shell  
+- Hammer Arm  
+- Protect  
+- Rock Slide  
+
+Chatot (M)  
+Ability: Keen Eye  
+Level: 50  
+EVs: 252 HP / 252 Spe  
+Timid Nature  
 - Chatter  
 - Hyper Voice  
 - U-turn  
 - Feather Dance  
 
-Volcarona  
-Ability: Flame Body 
-Level: 50 
+Volcarona (M) @ Charti Berry  
+Ability: Flame Body  
+Level: 50  
+EVs: 252 HP / 126 Def / 126 SpA  
+Bold Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Fiery Dance  
 - Bug Buzz  
@@ -1594,41 +2758,92 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Mr. Rime  
+Mr. Rime @ Light Clay  
 Ability: Tangled Feet  
 Level: 50  
+EVs: 252 HP / 252 Spe  
+Jolly Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Teeter Dance  
 - Fake Out  
 - Ice Beam  
-- Reflect
+- Light Screen  
 
 Lilligant  
-Level: 50
 Ability: Own Tempo  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Level: 50  
+EVs: 126 SpA / 126 SpD / 252 Spe  
+Timid Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Petal Dance  
 - Pollen Puff  
 - Alluring Voice  
-- Quiver Dance  
+- Encore  
 
-Oricorio-Sensu @ Wiki Berry
-Level: 50
+Oricorio-Sensu @ Spell Tag  
 Ability: Dancer  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Level: 50  
+EVs: 252 Atk / 126 SpA / 126 SpD  
+Modest Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Revelation Dance  
 - Acrobatics  
 - Feather Dance  
-- U-Turn  
+- Quiver Dance  
 
 Ludicolo  
-Level: 50
 Ability: Swift Swim  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Level: 50  
+EVs: 252 HP / 126 Def / 126 SpA  
+Quirky Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Rain Dance  
 - Energy Ball  
 - Scald  
-- Encore  
+- Fake Out  
+
+=== TRAINER_DAISY ===
+Name: DAISY
+Class: Battle Girl
+Pic: Battle Girl
+Gender: Female
+Music: Intense
+Double Battle: Yes
+AI: Basic Trainer
+Difficulty: Hard
+
+Hitmontop (M) @ Assault Vest  
+Ability: Intimidate  
+Level: 50  
+EVs: 126 HP / 126 Atk / 126 SpD / 126 Spe  
+Adamant Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Fake Out  
+- Triple Kick  
+- Triple Axel  
+- Rapid Spin  
+
+Bellossom  
+Ability: Healer  
+Level: 50  
+EVs: 126 HP / 252 SpA / 126 Spe  
+Timid Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Sludge Bomb  
+- Energy Ball  
+- Pollen Puff  
+- Quiver Dance  
+
+Quaquaval @ Heavy-Duty Boots  
+Ability: Moxie  
+Level: 50  
+EVs: 126 Atk / 252 Def / 126 SpD  
+Jolly Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Acrobatics  
+- Aqua Step  
+- Knock Off  
+- Bulk Up  
 
 === TRAINER_SAMANTHA ===
 Name: Samantha
@@ -1640,25 +2855,34 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Bruxish  
-Level: 50
+Bruxish @ Ability Shield  
 Ability: Dazzling  
+Level: 50  
+EVs: 252 HP / 252 Spe  
+Timid Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Aqua Jet  
 - Flip Turn  
 - Psychic Fangs  
 - Ice Fang  
 
 Toucannon  
-Level: 50
 Ability: Skill Link  
+Level: 50  
+EVs: 252 Atk / 126 Def / 126 SpA  
+Lonely Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Beak Blast  
 - Bullet Seed  
 - Rock Blast  
 - Heat Wave  
 
 Exeggutor-Alola @ Sitrus Berry  
-Level: 50
 Ability: Harvest  
+Level: 50  
+EVs: 252 HP / 252 SpA  
+Quirky Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Dragon Hammer  
 - Grass Knot  
 - Extrasensory  
@@ -1674,22 +2898,27 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Cursola  
+Cursola @ Power Herb  
 Ability: Perish Body  
 Level: 50  
+EVs: 252 HP / 126 Def / 126 SpA  
+Relaxed Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Curse  
 - Shadow Ball  
 - Reflect  
-- Meteor Beam
+- Meteor Beam  
 
 Houndstone @ Choice Scarf  
 Ability: Fluffy  
 Level: 50  
+EVs: 126 HP / 126 Atk / 252 Spe  
+Jolly Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Last Respects  
 - Play Rough  
-- Trick
+- Trick  
+- Crunch  
 
 === TRAINER_PHOEBE ===
 Name: Phoebe
@@ -1705,15 +2934,19 @@ Difficulty: Hard
 Oricorio-Pa'u  
 Ability: Dancer  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+EVs: 126 HP / 252 SpA / 126 SpD  
+Timid Nature  
+IVs: 15 HP / 0 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Air Cutter  
 - Quiver Dance  
 - Revelation Dance  
-- Alluring Voice  
+- Feather Dance  
 
 Marowak-Alola @ Thick Club  
 Ability: Cursed Body  
 Level: 50  
+EVs: 126 HP / 126 Atk / 252 Spe  
+Adamant Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Shadow Bone  
 - Bonemerang  
@@ -1723,24 +2956,30 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Mimikyu  
 Ability: Disguise  
 Level: 50  
+EVs: 252 Atk / 252 Spe  
+Jolly Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Phantom Force  
+- Shadow Sneak  
 - Play Rough  
-- Leech Life  
+- Drain Punch  
 - Swords Dance  
 
 Palossand @ Choice Specs  
 Ability: Water Compaction  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Ancient Power  
+EVs: 252 HP / 252 SpA  
+Modest Nature  
+IVs: 15 HP / 0 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Curse  
 - Scorching Sands  
-- Sludge Bomb  
+- Energy Ball  
 - Trick  
 
 Banette @ Banettite  
 Ability: Frisk  
 Level: 50  
+EVs: 126 HP / 126 Atk / 252 SpD  
+Careful Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Shadow Claw  
 - Will-O-Wisp  
@@ -1760,6 +2999,8 @@ Difficulty: Hard
 Blastoise  
 Ability: Torrent  
 Level: 50  
+EVs: 126 HP / 126 Atk / 252 SpA  
+Quiet Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Surf  
 - Strength  
@@ -1769,33 +3010,41 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Exeggutor  
 Ability: Chlorophyll  
 Level: 50  
+EVs: 126 Def / 252 SpA / 126 Spe  
+Quirky Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Psychic  
+- Extrasensory  
 - Giga Drain  
 - Leech Seed  
-- Flash  
+- Explosion  
 
 Arcanine  
 Ability: Intimidate  
 Level: 50  
+EVs: 252 HP / 252 Spe  
+Jolly Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Play Rough  
-- Flame Charge  
-- Heat Wave  
+- Will-O-Wisp  
+- Flare Blitz  
 - Morning Sun  
 
-Alakazam  
-Ability: Magic Guard  
+Snorlax (M)  
+Ability: Thick Fat  
 Level: 50  
+EVs: 252 Atk / 252 Def  
+Relaxed Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Recover  
-- Psyshock  
-- Shadow Ball  
-- Disable  
+- Body Slam  
+- Darkest Lariat  
+- Curse  
+- Rest  
 
 Pidgeot-Mega @ Pidgeotite  
 Ability: No Guard  
 Level: 50  
+EVs: 252 HP / 126 Atk / 126 Spe  
+Adamant Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Fly  
 - Double-Edge  
@@ -1805,6 +3054,8 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Rhydon  
 Ability: Lightning Rod  
 Level: 50  
+EVs: 126 HP / 126 Def / 252 SpD  
+Careful Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Body Press  
 - Earthquake  
@@ -1824,6 +3075,8 @@ Difficulty: Hard
 Blastoise  
 Ability: Torrent  
 Level: 50  
+EVs: 126 HP / 126 Atk / 252 SpA  
+Quiet Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Surf  
 - Strength  
@@ -1833,42 +3086,52 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Exeggutor  
 Ability: Chlorophyll  
 Level: 50  
+EVs: 126 Def / 252 SpA / 126 Spe  
+Quirky Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Psychic  
+- Extrasensory  
 - Giga Drain  
 - Leech Seed  
-- Flash  
+- Explosion  
 
 Arcanine  
 Ability: Intimidate  
 Level: 50  
+EVs: 252 HP / 252 Spe  
+Jolly Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Play Rough  
-- Flame Charge  
-- Heat Wave  
+- Will-O-Wisp  
+- Flare Blitz  
 - Morning Sun  
 
-Alakazam  
-Ability: Magic Guard  
+Snorlax (M)  
+Ability: Thick Fat  
 Level: 50  
+EVs: 252 Atk / 252 Def  
+Relaxed Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Recover  
-- Psyshock  
-- Shadow Ball  
-- Disable  
+- Body Slam  
+- Darkest Lariat  
+- Curse  
+- Rest  
 
 Pidgeot-Mega @ Pidgeotite  
 Ability: No Guard  
 Level: 50  
+EVs: 252 HP / 126 Atk / 126 Spe  
+Adamant Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Fly  
 - Double-Edge  
 - Roost  
-- Hurricane  
+- Hurricane    
 
 Landorus (M) @ Life Orb  
 Ability: Sheer Force  
 Level: 50
+EVs: 126 Def / 126 SpA / 252 Spe 
+Serious Nature 
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
 - Extrasensory  
 - Scorching Sands  
@@ -1885,36 +3148,11 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Swellow @ Flame Orb  
-Ability: Guts  
-Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Quick Attack  
-- Fly  
-- Steel Wing  
-- U-turn  
-
-Grumpig @ Salac Berry  
-Ability: Gluttony  
-Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Extrasensory  
-- Power Gem  
-- Helping Hand  
-- Calm Mind  
-
-Wailord @ Life Orb  
-Ability: Pressure  
-Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Waterfall  
-- Bounce  
-- Zen Headbutt  
-- Ice Beam  
-
 Linoone @ Starf Berry  
 Ability: Gluttony  
 Level: 50  
+EVs: 252 Atk / 252 Spe  
+Jolly Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Strength  
 - Cut  
@@ -1924,11 +3162,57 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Blaziken @ Focus Sash  
 Ability: Blaze  
 Level: 50  
+EVs: 126 HP / 126 Atk / 126 SpA / 126 Spe  
+Naughty Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Sky Uppercut  
 - Brave Bird  
 - Flamethrower  
 - Flame Charge  
+
+Swellow @ Flame Orb  
+Ability: Guts  
+Level: 50  
+EVs: 126 HP / 126 SpA / 252 Spe  
+Modest Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Facade  
+- Air Slash  
+- Protect  
+- U-turn  
+
+Grumpig  
+Ability: Thick Fat  
+Level: 50  
+EVs: 126 HP / 126 Def / 252 SpA  
+Timid Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Extrasensory  
+- Power Gem  
+- Energy Ball  
+- Calm Mind  
+
+Whiscash  
+Ability: Oblivious  
+Level: 50  
+EVs: 252 HP / 126 Atk / 126 SpA  
+Quirky Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- High Horsepower  
+- Muddy Water  
+- Rock Slide  
+- Dragon Dance  
+
+Flygon @ Life Orb  
+Ability: Levitate  
+Level: 50  
+EVs: 126 Atk / 126 SpA / 252 Spe  
+Bashful Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Scorching Sands  
+- Fly  
+- Dragon Pulse  
+- First Impression  
 
 === TRAINER_MAY_CULPRIT ===
 Name: May
@@ -1940,36 +3224,11 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Swellow @ Flame Orb  
-Ability: Guts  
-Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Quick Attack  
-- Fly  
-- Steel Wing  
-- U-turn  
-
-Grumpig @ Salac Berry  
-Ability: Gluttony  
-Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Extrasensory  
-- Power Gem  
-- Helping Hand  
-- Calm Mind  
-
-Wailord @ Life Orb  
-Ability: Pressure  
-Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Waterfall  
-- Bounce  
-- Zen Headbutt  
-- Ice Beam  
-
 Linoone @ Starf Berry  
 Ability: Gluttony  
 Level: 50  
+EVs: 252 Atk / 252 Spe  
+Jolly Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Strength  
 - Cut  
@@ -1979,20 +3238,57 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Blaziken @ Focus Sash  
 Ability: Blaze  
 Level: 50  
+EVs: 126 HP / 126 Atk / 126 SpA / 126 Spe  
+Naughty Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Sky Uppercut  
 - Brave Bird  
 - Flamethrower  
 - Flame Charge  
 
+Swellow @ Flame Orb  
+Ability: Guts  
+Level: 50  
+EVs: 126 HP / 126 SpA / 252 Spe  
+Modest Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Facade  
+- Air Slash  
+- Protect  
+- U-turn  
+
+Grumpig  
+Ability: Thick Fat  
+Level: 50  
+EVs: 126 HP / 126 Def / 252 SpA  
+Timid Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Extrasensory  
+- Power Gem  
+- Energy Ball  
+- Calm Mind  
+
+Whiscash  
+Ability: Oblivious  
+Level: 50  
+EVs: 252 HP / 126 Atk / 126 SpA  
+Quirky Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- High Horsepower  
+- Muddy Water  
+- Rock Slide  
+- Dragon Dance  
+
 Landorus (M) @ Life Orb  
 Ability: Sheer Force  
 Level: 50
+EVs: 126 Def / 126 SpA / 252 Spe 
+Serious Nature 
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
 - Extrasensory  
 - Scorching Sands  
 - Sludge Bomb  
-- Fly 
+- Fly
 
 === TRAINER_LEAF ===
 Name: Leaf
@@ -2004,59 +3300,71 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Clefable @ Leftovers  
-Ability: Magic Guard  
+Clefable  
+Ability: Unaware  
 Level: 50  
+EVs: 252 HP / 252 Def  
+Bold Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Alluring Voice  
-- Flamethrower  
-- Ice Beam  
+- Moonblast  
+- Mystical Fire  
 - Calm Mind  
+- Stealth Rock  
 
-Venusaur @ Covert Cloak  
+Jolteon @ Magnet  
+Ability: Volt Absorb  
+Level: 50  
+EVs: 252 HP / 252 Spe  
+Modest Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Reflect  
+- Volt Switch  
+- Thunder Wave  
+- Substitute  
+
+Venusaur @ Leftovers  
 Ability: Overgrow  
 Level: 50  
+EVs: 252 Def / 252 SpD  
+Calm Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Cut  
 - Giga Drain  
 - Sludge Bomb  
 - Leech Seed  
 
-Jolteon @ Magnet  
-Ability: Volt Absorb  
+Lapras (F)  
+Ability: Water Absorb  
 Level: 50  
+EVs: 126 Def / 126 SpA / 252 SpD  
+Quiet Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Thunderbolt  
-- Volt Switch  
-- Thunder Wave  
-- Substitute  
-
-Snorlax @ Chesto Berry  
-Ability: Thick Fat  
-Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Strength  
-- Rock Smash  
 - Surf  
-- Rest  
+- Freeze-Dry  
+- Psychic Noise  
+- Strength  
 
 Gengar @ Leppa Berry  
 Ability: Levitate  
 Level: 50  
+EVs: 252 HP / 126 SpD / 126 Spe  
+Timid Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Shadow Ball  
 - Hypnosis  
 - Sludge Bomb  
-- Haze  
+- Dream Eater  
 
-Dragonite @ Normal Gem  
+Dragonite @ Silk Scarf  
 Ability: Inner Focus  
 Level: 50  
+EVs: 252 HP / 252 Atk  
+Adamant Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Extreme Speed  
 - Dragon Claw  
 - Fly  
-- Dragon Dance  
+- Dragon Dance    
 
 === TRAINER_LEAF_CULPRIT ===
 Name: Leaf
@@ -2068,54 +3376,66 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Clefable @ Leftovers  
-Ability: Magic Guard  
+Clefable  
+Ability: Unaware  
 Level: 50  
+EVs: 252 HP / 252 Def  
+Bold Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Alluring Voice  
-- Flamethrower  
-- Ice Beam  
+- Moonblast  
+- Mystical Fire  
 - Calm Mind  
+- Stealth Rock  
 
-Venusaur @ Covert Cloak  
+Jolteon @ Magnet  
+Ability: Volt Absorb  
+Level: 50  
+EVs: 252 HP / 252 Spe  
+Modest Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Reflect  
+- Volt Switch  
+- Thunder Wave  
+- Substitute  
+
+Venusaur @ Leftovers  
 Ability: Overgrow  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+EVs: 252 Def / 252 SpD  
+Calm Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Cut  
 - Giga Drain  
 - Sludge Bomb  
 - Leech Seed  
 
-Jolteon @ Magnet  
-Ability: Volt Absorb  
+Lapras (F)  
+Ability: Water Absorb  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Thunderbolt  
-- Volt Switch  
-- Thunder Wave  
-- Substitute  
-
-Snorlax @ Chesto Berry  
-Ability: Thick Fat  
-Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Strength  
-- Rock Smash  
+EVs: 126 Def / 126 SpA / 252 SpD  
+Quiet Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Surf  
-- Rest  
+- Freeze-Dry  
+- Psychic Noise  
+- Strength  
 
 Gengar @ Leppa Berry  
 Ability: Levitate  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+EVs: 252 HP / 126 SpD / 126 Spe  
+Timid Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
 - Shadow Ball  
 - Hypnosis  
 - Sludge Bomb  
-- Haze  
+- Dream Eater  
 
 Landorus (M) @ Life Orb  
 Ability: Sheer Force  
 Level: 50
+EVs: 126 Def / 126 SpA / 252 Spe 
+Serious Nature 
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
 - Extrasensory  
 - Scorching Sands  
@@ -2132,10 +3452,12 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Gothitelle @ Sitrus Berry  
-Ability: Shadow Tag
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+Gothitelle  
+Ability: Shadow Tag  
+Level: 50  
+EVs: 252 HP / 126 Def / 126 SpA  
+Bold Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Fake Out  
 - Trick Room  
 - Psyshock  
@@ -2143,45 +3465,55 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Samurott-Hisui @ Covert Cloak  
 Ability: Sharpness  
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
-- Ceaseless Edge  
+Level: 50  
+EVs: 126 HP / 126 SpD / 252 Spe  
+Careful Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Razor Shell  
 - Sacred Sword  
 - Aqua Jet  
+- Ceaseless Edge  
 
 Chandelure @ Charcoal  
-Ability: Flash Fire  
+Ability: Infiltrator  
+Level: 50  
 Shiny: Yes  
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+EVs: 126 HP / 252 SpA / 126 Spe  
+Timid Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Hex  
 - Flame Burst  
 - Will-O-Wisp  
 - Fire Spin  
 
-Sawsbuck-Summer @ Clear Amulet  
+Sawsbuck-Summer  
 Ability: Chlorophyll  
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+Level: 50  
+EVs: 252 HP / 126 Atk / 126 Spe  
+Jolly Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Body Slam  
 - Horn Leech  
 - Leech Seed  
 - Jump Kick  
 
-Kingambit @ Chople Berry
-Ability: Defiant  
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+Kingambit  
+Ability: Supreme Overlord  
+Level: 50  
+EVs: 252 Atk / 252 Spe  
+Adamant Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Sucker Punch  
 - Iron Head  
 - Psycho Cut  
-- Kowtow Cleave  
+- Swords Dance  
 
 Golurk @ Assault Vest  
 Ability: Iron Fist  
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+Level: 50  
+EVs: 252 HP / 126 Atk / 126 Def  
+Impish Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - High Horsepower  
 - Drain Punch  
 - Fly  
@@ -2197,10 +3529,12 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Gothitelle @ Sitrus Berry  
-Ability: Shadow Tag
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+Gothitelle  
+Ability: Shadow Tag  
+Level: 50  
+EVs: 252 HP / 126 Def / 126 SpA  
+Bold Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Fake Out  
 - Trick Room  
 - Psyshock  
@@ -2208,44 +3542,54 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Samurott-Hisui @ Covert Cloak  
 Ability: Sharpness  
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
-- Ceaseless Edge  
+Level: 50  
+EVs: 126 HP / 126 SpD / 252 Spe  
+Careful Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Razor Shell  
 - Sacred Sword  
 - Aqua Jet  
+- Ceaseless Edge  
 
 Chandelure @ Charcoal  
-Ability: Flash Fire  
+Ability: Infiltrator  
+Level: 50  
 Shiny: Yes  
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+EVs: 126 HP / 252 SpA / 126 Spe  
+Timid Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Hex  
 - Flame Burst  
 - Will-O-Wisp  
 - Fire Spin  
 
-Sawsbuck-Summer @ Clear Amulet  
+Sawsbuck-Summer  
 Ability: Chlorophyll  
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+Level: 50  
+EVs: 252 HP / 126 Atk / 126 Spe  
+Jolly Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Body Slam  
 - Horn Leech  
 - Leech Seed  
 - Jump Kick  
 
-Kingambit @ Chople Berry
-Ability: Defiant  
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
+Kingambit  
+Ability: Supreme Overlord  
+Level: 50  
+EVs: 252 Atk / 252 Spe  
+Adamant Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Sucker Punch  
 - Iron Head  
 - Psycho Cut  
-- Kowtow Cleave  
+- Swords Dance  
 
 Landorus (M) @ Life Orb  
 Ability: Sheer Force  
 Level: 50
+EVs: 126 Def / 126 SpA / 252 Spe 
+Serious Nature 
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
 - Extrasensory  
 - Scorching Sands  
@@ -2262,9 +3606,11 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Rillaboom @ Assault Vest  
+Rillaboom  
 Ability: Grassy Surge  
 Level: 50  
+EVs: 126 HP / 252 Atk / 126 SpD  
+Careful Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Grassy Glide  
 - Fake Out  
@@ -2274,6 +3620,8 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Sirfetch’d @ Leek  
 Ability: Scrappy  
 Level: 50  
+EVs: 252 Atk / 252 Def  
+Adamant Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Brick Break  
 - Brave Bird  
@@ -2283,38 +3631,46 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Centiskorch @ Charti Berry  
 Ability: White Smoke  
 Level: 50  
+EVs: 252 HP / 252 Spe  
+Jolly Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Fire Lash  
 - Leech Life  
 - Will-O-Wisp  
 - Coil  
 
-Dracovish @ Adrenaline Orb  
-Ability: Strong Jaw  
+Arctovish @ Power Herb  
+Ability: Slush Rush  
 Level: 50  
-IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+EVs: 252 SpD / 252 Spe  
+Timid Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Fishious Rend  
-- Ice Fang  
-- Psychic Fangs  
-- Super Fang  
+- Freeze-Dry  
+- Meteor Beam  
+- Snowscape  
 
-Copperajah @ Lum Berry  
+Copperajah  
 Ability: Heavy Metal  
 Level: 50  
+EVs: 252 Atk / 252 SpD  
+Brave Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Heavy Slam  
 - Supercell Slam  
 - High Horsepower  
 - Heat Crash  
 
-Runerigus @ Sitrus Berry  
-Ability: Wandering Spirit  
+Dragapult  
+Ability: Clear Body  
 Level: 50  
+EVs: 252 SpA / 252 Spe  
+Hasty Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Body Press  
-- Earth Power  
-- Poltergeist  
-- Calm Mind  
+- Phantom Force  
+- Flamethrower  
+- Thunderbolt  
+- Substitute  
 
 === TRAINER_YOUNGSTER_CULPRIT ===
 Name: Trey
@@ -2326,9 +3682,11 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
 
-Rillaboom @ Assault Vest  
+Rillaboom  
 Ability: Grassy Surge  
 Level: 50  
+EVs: 126 HP / 252 Atk / 126 SpD  
+Careful Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Grassy Glide  
 - Fake Out  
@@ -2338,6 +3696,8 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Sirfetch’d @ Leek  
 Ability: Scrappy  
 Level: 50  
+EVs: 252 Atk / 252 Def  
+Adamant Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Brick Break  
 - Brave Bird  
@@ -2347,24 +3707,30 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Centiskorch @ Charti Berry  
 Ability: White Smoke  
 Level: 50  
+EVs: 252 HP / 252 Spe  
+Jolly Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Fire Lash  
 - Leech Life  
 - Will-O-Wisp  
 - Coil  
 
-Dracovish @ Adrenaline Orb  
-Ability: Strong Jaw  
+Arctovish @ Power Herb  
+Ability: Slush Rush  
 Level: 50  
-IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+EVs: 252 SpD / 252 Spe  
+Timid Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Fishious Rend  
-- Ice Fang  
-- Psychic Fangs  
-- Super Fang  
+- Freeze-Dry  
+- Meteor Beam  
+- Snowscape  
 
-Copperajah @ Lum Berry  
+Copperajah  
 Ability: Heavy Metal  
 Level: 50  
+EVs: 252 Atk / 252 SpD  
+Brave Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Heavy Slam  
 - Supercell Slam  
@@ -2374,11 +3740,13 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Landorus (M) @ Life Orb  
 Ability: Sheer Force  
 Level: 50
+EVs: 126 Def / 126 SpA / 252 Spe 
+Serious Nature 
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
 - Extrasensory  
 - Scorching Sands  
 - Sludge Bomb  
-- Fly  
+- Fly   
 
 === TRAINER_STUDENT ===
 Name: Paolo
@@ -2393,7 +3761,9 @@ Difficulty: Hard
 Avalugg  
 Ability: Own Tempo  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+EVs: 126 HP / 252 Atk / 126 SpD  
+Careful Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Avalanche  
 - Body Press  
 - Protect  
@@ -2402,7 +3772,9 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Butterfree @ Focus Sash  
 Ability: Compound Eyes  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+EVs: 126 HP / 126 SpA / 252 Spe  
+Timid Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Pollen Puff  
 - Electroweb  
 - Sleep Powder  
@@ -2411,7 +3783,9 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Shiftry  
 Ability: Wind Rider  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+EVs: 252 Atk / 252 Spe  
+Hasty Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Leaf Blade  
 - Fake Out  
 - Foul Play  
@@ -2420,7 +3794,9 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Aggron  
 Ability: Sturdy  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+EVs: 126 HP / 252 Atk / 126 Spe  
+Adamant Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Autotomize  
 - Aqua Tail  
 - Iron Head  
@@ -2429,7 +3805,9 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Shedinja @ Lum Berry  
 Ability: Wonder Guard  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+EVs: 252 Atk / 252 Spe  
+Jolly Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Will-O-Wisp  
 - Phantom Force  
 - X-Scissor  
@@ -2448,7 +3826,9 @@ Difficulty: Hard
 Machamp  
 Ability: Guts  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+EVs: 126 HP / 126 Atk / 126 SpD / 126 Spe  
+Adamant Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Cross Chop  
 - Darkest Lariat  
 - Thunder Punch  
@@ -2457,7 +3837,9 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Grimmsnarl (M) @ Choice Band  
 Ability: Prankster  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+EVs: 252 HP / 252 Atk  
+Impish Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Spirit Break  
 - False Surrender  
 - Parting Shot  
@@ -2466,20 +3848,35 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Nidoking (M) @ Expert Belt  
 Ability: Rivalry  
 Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
+EVs: 126 Def / 252 SpA / 126 Spe  
+Bold Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Earth Power  
 - Flamethrower  
 - Ice Beam  
 - Sludge Bomb  
 
-Aromatisse  
+Braviary-Hisui (M)  
+Ability: Tinted Lens  
+Level: 50  
+EVs: 126 HP / 126 SpA / 252 Spe  
+Timid Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Esper Wing  
+- Defog  
+- U-turn  
+- Air Slash  
+
+Aromatisse (F)
 Ability: Aroma Veil  
 Level: 55  
-IVs: 15 HP / 0 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+EVs: 252 HP / 126 SpA / 126 SpD  
+Sassy Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Moonblast  
 - Trick Room  
 - Energy Ball  
-- Ally Switch
+- Ally Switch  
 
 === TRAINER_MARIE_REMATCH ===
 Name: Marie
@@ -9439,16 +10836,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Power Gem  
 - Sludge Bomb  
 - Energy Ball  
-- Spiky Shield  
-
-Terapagos  
-Ability: Tera Shift 
-Level: 50
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Rapid Spin  
-- Flamethrower  
-- Tri Attack  
-- Body Press  
+- Spiky Shield   
 
 === TRAINER_KATELYN_2 ===
 Name: KATELYN

@@ -1088,7 +1088,7 @@ PastTown_EventScript_Hydrapple::
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
 	setflag FLAG_SYS_DISABLE_CATCHING
-	createmon 1, 0, SPECIES_HYDRAPPLE, 60, ITEM_YACHE_BERRY, 0, NATURE_SERIOUS, 0
+	createmon 1, 0, SPECIES_HYDRAPPLE, 59, ITEM_KEBIA_BERRY, 0, NATURE_SERIOUS, 0
 	createmon 1, 1, SPECIES_DIPPLIN, 58, ITEM_SITRUS_BERRY, 0, NATURE_SERIOUS, 1
 	closemessage
 	setwilddoubleflag
