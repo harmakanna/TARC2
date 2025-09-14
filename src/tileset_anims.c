@@ -79,6 +79,7 @@ static void QueueAnimTiles_EliteFour_WallLights(u16);
 static void QueueAnimTiles_CableClub_GroundLights(u16);
 static void QueueAnimTiles_CableClub_WallLights(u16);
 static void QueueAnimTiles_LugiaShrine_Flower(u16);
+static void QueueAnimTiles_LugiaShrine_Smoke(u16);
 static void QueueAnimTiles_LugiaShrine_Torch(u16);
 static void QueueAnimTiles_SmallTown_Flower(u16);
 
@@ -579,6 +580,18 @@ const u16 gTilesetAnims_LugiaShrine_Flower_Frame2[] = INCBIN_U16("data/tilesets/
 const u16 *const gTilesetAnims_LugiaShrine_Flower[] = {
     gTilesetAnims_LugiaShrine_Flower_Frame0,
     gTilesetAnims_LugiaShrine_Flower_Frame2
+};
+
+const u16 gTilesetAnims_LugiaShrine_Smoke_Frame0[] = INCBIN_U16("data/tilesets/secondary/lugia_shrine/anim/smoke/0.4bpp");
+const u16 gTilesetAnims_LugiaShrine_Smoke_Frame1[] = INCBIN_U16("data/tilesets/secondary/lugia_shrine/anim/smoke/1.4bpp");
+const u16 gTilesetAnims_LugiaShrine_Smoke_Frame2[] = INCBIN_U16("data/tilesets/secondary/lugia_shrine/anim/smoke/2.4bpp");
+const u16 gTilesetAnims_LugiaShrine_Smoke_Frame3[] = INCBIN_U16("data/tilesets/secondary/lugia_shrine/anim/smoke/3.4bpp");
+
+const u16 *const gTilesetAnims_LugiaShrine_Smoke[] = {
+    gTilesetAnims_LugiaShrine_Smoke_Frame0,
+    gTilesetAnims_LugiaShrine_Smoke_Frame1,
+    gTilesetAnims_LugiaShrine_Smoke_Frame2,
+    gTilesetAnims_LugiaShrine_Smoke_Frame3
 };
 
 const u16 gTilesetAnims_LugiaShrine_Torch_Frame0[] = INCBIN_U16("data/tilesets/secondary/lugia_shrine/anim/torch/0.4bpp");
@@ -1268,6 +1281,8 @@ static void TilesetAnim_LugiaShrine(u16 timer)
 {
     if (timer % 32 == 0)
         QueueAnimTiles_LugiaShrine_Flower(timer / 32);
+    if (timer % 32 == 0)
+        QueueAnimTiles_LugiaShrine_Smoke(timer / 32);
     if (timer % 8 == 0)
         QueueAnimTiles_LugiaShrine_Torch(timer / 8);
 }
@@ -1276,6 +1291,12 @@ static void QueueAnimTiles_LugiaShrine_Flower(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_LugiaShrine_Flower);
     AppendTilesetAnimToBuffer(gTilesetAnims_LugiaShrine_Flower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 106)), 4 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_LugiaShrine_Smoke(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_LugiaShrine_Smoke);
+    AppendTilesetAnimToBuffer(gTilesetAnims_LugiaShrine_Smoke[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 208)), 4 * TILE_SIZE_4BPP);
 }
 
 static void QueueAnimTiles_LugiaShrine_Torch(u16 timer)
