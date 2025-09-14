@@ -331,7 +331,7 @@ Difficulty: Easy
 Crobat  
 Ability: Infiltrator  
 Level: 50  
-IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Cross Poison  
 - Aerial Ace  
 - Super Fang  
@@ -339,7 +339,7 @@ IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Mightyena  
 Ability: Intimidate  
 Level: 50  
-IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Crunch  
 - Snarl  
 - Foul Play  
@@ -347,7 +347,7 @@ IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Wailord  
 Ability: Pressure  
 Level: 50  
-IVs: 15 HP / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Water Spout  
 - Protect  
 - Heavy Slam  
@@ -507,9 +507,29 @@ Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Easy
 
-Magikarp
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Typhlosion-Hisui  
+Ability: Frisk  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Infernal Parade  
+- Detect  
+- Flamethrower  
+
+Decidueye  
+Ability: Long Reach  
+Level: 50   
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Spirit Shackle  
+- Leaf Blade  
+- Dual Wingbeat  
+
+Jellicent  
+Ability: Damp  
+Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
+- Hex  
+- Scald  
+- Will-O-Wisp  
 
 === TRAINER_CONNIE ===
 Name: Connie
@@ -987,7 +1007,6 @@ Difficulty: Easy
 Gothitelle  
 Ability: Frisk  
 Level: 50  
-Tera Type: Psychic  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Fake Out  
 - Trick Room  
@@ -996,7 +1015,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Samurott-Hisui  
 Ability: Torrent  
 Level: 50  
-Tera Type: Water  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Razor Shell  
 - Sacred Sword  
@@ -1006,7 +1024,6 @@ Chandelure
 Ability: Infiltrator  
 Level: 50  
 Shiny: Yes  
-Tera Type: Ghost  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Hex  
 - Flame Burst  
@@ -1015,7 +1032,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Sawsbuck-Summer  
 Ability: Chlorophyll  
 Level: 50  
-Tera Type: Normal  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Body Slam  
 - Horn Leech  
@@ -1024,7 +1040,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Golurk @ Assault Vest  
 Ability: Iron Fist  
 Level: 50  
-Tera Type: Ground  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - High Horsepower  
 - Drain Punch  
@@ -1043,7 +1058,6 @@ Difficulty: Easy
 Gothitelle  
 Ability: Frisk  
 Level: 50  
-Tera Type: Psychic  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Fake Out  
 - Trick Room  
@@ -1052,7 +1066,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Samurott-Hisui  
 Ability: Torrent  
 Level: 50  
-Tera Type: Water  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Razor Shell  
 - Sacred Sword  
@@ -1062,7 +1075,6 @@ Chandelure
 Ability: Infiltrator  
 Level: 50  
 Shiny: Yes  
-Tera Type: Ghost  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Hex  
 - Flame Burst  
@@ -1071,7 +1083,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Sawsbuck-Summer  
 Ability: Chlorophyll  
 Level: 50  
-Tera Type: Normal  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Body Slam  
 - Horn Leech  
