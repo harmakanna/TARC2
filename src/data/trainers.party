@@ -111,6 +111,7 @@ Pic: Scientist
 Gender: Male
 Music: Suspicious
 Double Battle: Yes
+AI: Basic Trainer
 Difficulty: Easy
 
 Omastar  
@@ -701,7 +702,7 @@ Pic: Blue
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon 
 Difficulty: Easy
 
 Blastoise (M)  
@@ -751,7 +752,7 @@ Pic: Blue
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Easy
 
 Blastoise (M)  
@@ -801,7 +802,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Easy
 
 Linoone   
@@ -851,7 +852,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Easy
 
 Linoone  
@@ -901,7 +902,7 @@ Pic: Leaf
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Easy
 
 Clefable (F)  
@@ -951,7 +952,7 @@ Pic: Leaf
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Easy
 
 Clefable  
@@ -1001,7 +1002,7 @@ Pic: BW Ace Trainer F
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Easy
 
 Gothitelle  
@@ -1052,7 +1053,7 @@ Pic: BW Ace Trainer F
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Easy
 
 Gothitelle  
@@ -1102,7 +1103,7 @@ Pic: Youngster New
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Easy
 
 Rillaboom  
@@ -1152,7 +1153,7 @@ Pic: Youngster New
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Easy
 
 Rillaboom  
@@ -1244,7 +1245,7 @@ Pic: Running Triathlete M
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Easy
 
 Machamp  
@@ -1332,6 +1333,7 @@ Pic: Scientist
 Gender: Male
 Music: Suspicious
 Double Battle: Yes
+AI: Basic Trainer
 Difficulty: Normal
 
 Omastar @ Focus Sash  
@@ -2148,8 +2150,8 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Curse  
 - Rest  
 
-Pidgeot-Mega @ Pidgeotite  
-Ability: No Guard  
+Pidgeot @ Pidgeotite  
+Ability: Big Pecks  
 Level: 50  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Fly  
@@ -2173,7 +2175,7 @@ Pic: Blue
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Normal
 
 Blastoise  
@@ -2212,8 +2214,8 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Curse  
 - Rest  
 
-Pidgeot-Mega @ Pidgeotite  
-Ability: No Guard  
+Pidgeot @ Pidgeotite  
+Ability: Big Pecks  
 Level: 50  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Fly  
@@ -2237,7 +2239,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Normal
 
 Linoone @ Starf Berry  
@@ -2301,7 +2303,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Normal
 
 Linoone @ Starf Berry  
@@ -2365,7 +2367,7 @@ Pic: Leaf
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Normal
 
 Clefable  
@@ -2429,7 +2431,7 @@ Pic: Leaf
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Normal
 
 Clefable (F)  
@@ -2493,7 +2495,7 @@ Pic: BW Ace Trainer F
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Normal
 
 Gothitelle  
@@ -2558,7 +2560,7 @@ Pic: BW Ace Trainer F
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Normal
 
 Gothitelle  
@@ -2623,7 +2625,7 @@ Pic: Youngster New
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Normal
 
 Rillaboom  
@@ -2687,7 +2689,7 @@ Pic: Youngster New
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Normal
 
 Rillaboom  
@@ -2806,7 +2808,7 @@ Pic: Running Triathlete M
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Normal
 
 Machamp  
@@ -3816,7 +3818,7 @@ Pic: Blue
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Hard
 
 Blastoise  
@@ -3863,8 +3865,8 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Curse  
 - Rest  
 
-Pidgeot-Mega @ Pidgeotite  
-Ability: No Guard  
+Pidgeot @ Pidgeotite  
+Ability: Big Pecks  
 Level: 50  
 EVs: 252 HP / 126 Atk / 126 Spe  
 Adamant Nature  
@@ -3892,7 +3894,7 @@ Pic: Blue
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Hard
 
 Blastoise  
@@ -3939,8 +3941,8 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Curse  
 - Rest  
 
-Pidgeot-Mega @ Pidgeotite  
-Ability: No Guard  
+Pidgeot @ Pidgeotite  
+Ability: Big Pecks  
 Level: 50  
 EVs: 252 HP / 126 Atk / 126 Spe  
 Adamant Nature  
@@ -3968,7 +3970,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Hard
 
 Linoone @ Starf Berry  
@@ -4044,7 +4046,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Hard
 
 Linoone @ Starf Berry  
@@ -4120,7 +4122,7 @@ Pic: Leaf
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Hard
 
 Clefable  
@@ -4196,7 +4198,7 @@ Pic: Leaf
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Hard
 
 Clefable  
@@ -4272,7 +4274,7 @@ Pic: BW Ace Trainer F
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Hard
 
 Gothitelle  
@@ -4349,7 +4351,7 @@ Pic: BW Ace Trainer F
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Hard
 
 Gothitelle  
@@ -4426,7 +4428,7 @@ Pic: Youngster New
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Hard
 
 Rillaboom  
@@ -4502,7 +4504,7 @@ Pic: Youngster New
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
 Difficulty: Hard
 
 Rillaboom  
