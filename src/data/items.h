@@ -3243,7 +3243,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_CLAW_FOSSIL] =
     {
-        .name = ITEM_NAME("Eroded Tooth"),
+        .name = ITEM_NAME("Eroded Tusk"),
         .description = COMPOUND_STRING(
             "A crooked tusk chipped\n"
             "at for centuries by\n"

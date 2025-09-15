@@ -308,13 +308,14 @@ ShrineOfPeacePast_EventScript_SpawnWoChien::
 @Aromatisse will not recall SeedCatchMon due to multiple VAR_RESULT declarations
 ShrineOfPeacePast_EventScript_TrySpawnAromatisse::
 	returnqueststate QUEST_FOREVER_FAITHFUL
-	call_if_eq VAR_RESULT, 4, ShrineOfPeacePast_EventScript_SpawnAromatisse
+	call_if_ge VAR_RESULT, 3, ShrineOfPeacePast_EventScript_SpawnAromatisse
 	return
 
 ShrineOfPeacePast_EventScript_SpawnAromatisse::
 	setvar VAR_TRIGGER_CUTSCENE_FOREST, 1
 	setvar VAR_CUTSCENE_FOREST_STATE, 16
-
+	return
+	
 @Ensures there's a hard stop to the call logic in case of a case of nested calls crashing the game (unknown)
 ShrineOfPeacePast_EventScript_ReseedCatchMon::
 	addvar VAR_TRY_CATCHMON_CALL_LIMIT, 1

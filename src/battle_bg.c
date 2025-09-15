@@ -662,6 +662,13 @@ static u8 GetBattleEnvironmentOverride(void)
             return BATTLE_ENVIRONMENT_KYOGRE;
         case SPECIES_RAYQUAZA:
             return BATTLE_ENVIRONMENT_RAYQUAZA;
+        case SPECIES_TORNADUS:
+        case SPECIES_THUNDURUS:
+            return BATTLE_ENVIRONMENT_FRONTIER;
+        case SPECIES_ENAMORUS:
+            return BATTLE_ENVIRONMENT_LONG_GRASS;
+        case SPECIES_WO_CHIEN:
+            return BATTLE_ENVIRONMENT_GRASS;
         default:
             return gBattleEnvironment;
         }
@@ -1051,6 +1058,16 @@ void DrawBattleEntryBackground(void)
         case SPECIES_RAYQUAZA:
             LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_RAYQUAZA);
             break;
+        /*case SPECIES_TORNADUS:
+        case SPECIES_THUNDURUS:
+            LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_FRONTIER);
+            break;
+        case SPECIES_ENAMORUS:
+            LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_LONG_GRASS);
+            break;
+        case SPECIES_WO_CHIEN:
+            LoadBattleEnvironmentEntryGfx(BATTLE_ENVIRONMENT_GRASS);
+            break;*/
         default:
             DecompressDataWithHeaderVram(gBattleEnvironmentInfo[gBattleEnvironment].background.entryTileset, (void *)(BG_CHAR_ADDR(1)));
             DecompressDataWithHeaderVram(gBattleEnvironmentInfo[gBattleEnvironment].background.entryTilemap, (void *)(BG_SCREEN_ADDR(28)));

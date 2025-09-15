@@ -5840,6 +5840,8 @@ u16 GetBattleBGM(void)
             return MUS_VS_REGI;
         case SPECIES_THUNDURUS:
         case SPECIES_TORNADUS:
+        case SPECIES_WO_CHIEN:
+        case SPECIES_ENAMORUS:
             return MUS_BW_VS_LEGENDARY;
         default:
             return MUS_RG_VS_LEGEND;

@@ -488,6 +488,7 @@ static void ShowMoveSelectWindow(u8 slot);
 static void Task_HandleWhichMoveInput(u8 taskId);
 static void Task_HideFollowerNPCForTeleport(u8);
 static void FieldCallback_RockClimb(void);
+static bool8 IsItemVitamin(u16 item);
 
 // static const data
 #include "data/party_menu.h"
@@ -4816,6 +4817,18 @@ static bool8 NotUsingHPEVItemOnShedinja(struct Pokemon *mon, u16 item)
     return TRUE;
 }
 
+static bool8 IsItemVitamin(u16 item)
+{
+    if (GetItemEffectType(item) == ITEM_EFFECT_HP_EV
+        || GetItemEffectType(item) == ITEM_EFFECT_ATK_EV
+        || GetItemEffectType(item) == ITEM_EFFECT_DEF_EV
+        || GetItemEffectType(item) == ITEM_EFFECT_SPEED_EV
+        || GetItemEffectType(item) == ITEM_EFFECT_SPATK_EV
+        || GetItemEffectType(item) == ITEM_EFFECT_SPDEF_EV)
+        return TRUE;
+    return FALSE;
+}
+
 static bool32 IsItemFlute(u16 item)
 {
     if (item == ITEM_BLUE_FLUTE || item == ITEM_RED_FLUTE || item == ITEM_YELLOW_FLUTE)
@@ -4916,6 +4929,8 @@ void ItemUseCB_Medicine(u8 taskId, TaskFunc task)
         }
         else
         {
+            if (IsItemVitamin(item))
+                UpdateMonDisplayInfoAfterRareCandy(gPartyMenu.slotId, mon);
             GetMonNickname(mon, gStringVar1);
             GetMedicineItemEffectMessage(item, oldStatus);
             DisplayPartyMenuMessage(gStringVar4, TRUE);

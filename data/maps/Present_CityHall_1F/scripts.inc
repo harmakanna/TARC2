@@ -132,9 +132,9 @@ Present_CityHall_1F_EventScript_PostStormDiscussion::
 	clearflag FLAG_SYS_SPAWN_INVISIBLE
 	setvar VAR_CUTSCENE_STATE, 4
 	setflag FLAG_HIDE_MAP_NAME_POPUP
-	setfollowernpc LOCALID_CITYHALL_1F_ANABEL, FNPC_ALL_LAND, Present_CityHall_1F_EventScript_AnabelFollower
 	special RemoveCameraObject
 	startquest QUEST_SAVE_ESTELLA
+	setfollowernpc LOCALID_CITYHALL_1F_ANABEL, FNPC_ALL_LAND, Present_CityHall_1F_EventScript_AnabelFollower
 	releaseall
 	end
 

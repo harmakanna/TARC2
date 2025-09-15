@@ -515,8 +515,10 @@ Present_Cafe_EventScript_BaristaPostQuest::
 	special BufferMonNickname
 	special SwitchMonAbility
 	playfanfare MUS_LEVEL_UP
-	msgbox Present_Cafe_Text_LookerFeelingRefreshed, MSGBOX_DEFAULT
+	message Present_Cafe_Text_LookerFeelingRefreshed
+	waitmessage
 	waitfanfare
+	delay 60
 	speak LOCALID_CAFE_BARISTA, VAR_0x8005, Name_Barista, Present_Cafe_Text_BaristaHaveAGoodOne
 	closemessage
 	release

@@ -53,7 +53,7 @@ PastTown_Port_EventScript_SpawnDhelmise::
 
 PastTown_Port_EventScript_TrySpawnGrapploct::
 	call_if_set FLAG_CAUGHT_GRAPPLOCT, PastTown_Port_EventScript_ReseedPortMon
-	call_if_unset FLAG_CAUGHT_GRAPPLOCT, PastTown_Port_EventScript_TrySpawnGrapploct
+	call_if_unset FLAG_CAUGHT_GRAPPLOCT, PastTown_Port_EventScript_SpawnGrapploct
 	return
 
 PastTown_Port_EventScript_SpawnGrapploct::
@@ -493,7 +493,7 @@ PastTown_Port_EventScript_PokemaniacChoseTuskFossil::
 	end
 
 PastTown_Port_EventScript_Dhelmise::
-	lockall
+	lock
 	faceplayer
 	waitse
 	playmoncry SPECIES_DHELMISE, CRY_MODE_ENCOUNTER
@@ -516,11 +516,11 @@ PastTown_Port_EventScript_Dhelmise::
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 7
 	returnqueststate QUEST_CATCHMONS
 	call_if_ne VAR_RESULT, 4, CutsceneForest_EventScript_CheckCatchMonsCompleted
-	releaseall
+	release
 	end
 
 PastTown_Port_EventScript_Grapploct::
-	lockall
+	lock
 	faceplayer
 	waitse
 	playmoncry SPECIES_GRAPPLOCT, CRY_MODE_ENCOUNTER
@@ -543,11 +543,11 @@ PastTown_Port_EventScript_Grapploct::
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 8
 	returnqueststate QUEST_CATCHMONS
 	call_if_ne VAR_RESULT, 4, CutsceneForest_EventScript_CheckCatchMonsCompleted
-	releaseall
+	release
 	end
 
 PastTown_Port_EventScript_Crabominable::
-	lockall
+	lock
 	faceplayer
 	waitse
 	playmoncry SPECIES_CRABOMINABLE, CRY_MODE_ENCOUNTER
@@ -570,11 +570,11 @@ PastTown_Port_EventScript_Crabominable::
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 10
 	returnqueststate QUEST_CATCHMONS
 	call_if_ne VAR_RESULT, 4, CutsceneForest_EventScript_CheckCatchMonsCompleted
-	releaseall
+	release
 	end
 
 PastTown_Port_EventScript_Palossand::
-	lockall
+	lock
 	faceplayer
 	waitse
 	playmoncry SPECIES_PALOSSAND, CRY_MODE_ENCOUNTER
@@ -597,11 +597,11 @@ PastTown_Port_EventScript_Palossand::
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 9
 	returnqueststate QUEST_CATCHMONS
 	call_if_ne VAR_RESULT, 4, CutsceneForest_EventScript_CheckCatchMonsCompleted
-	releaseall
+	release
 	end
 
 PastTown_Port_EventScript_Phione::
-	lockall
+	lock
 	faceplayer
 	waitse
 	playmoncry SPECIES_PHIONE, CRY_MODE_ENCOUNTER
@@ -624,7 +624,7 @@ PastTown_Port_EventScript_Phione::
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 15
 	returnqueststate QUEST_CATCHMONS
 	call_if_ne VAR_RESULT, 4, CutsceneForest_EventScript_CheckCatchMonsCompleted
-	releaseall
+	release
 	end
 
 PastTown_Port_EventScript_MonRanAway::
@@ -634,7 +634,7 @@ PastTown_Port_EventScript_MonRanAway::
 	bufferspeciesname STR_VAR_1, VAR_TEMP_2
 	msgbox PastTown_Port_Text_MonRanAway, MSGBOX_DEFAULT
 	closemessage
-	releaseall
+	release
 	end
 
 PastTown_Port_EventScript_PalossandRanAway::
@@ -644,7 +644,7 @@ PastTown_Port_EventScript_PalossandRanAway::
 	bufferspeciesname STR_VAR_1, VAR_TEMP_2
 	msgbox PastTown_Port_Text_PalossandRanAway, MSGBOX_DEFAULT
 	closemessage
-	releaseall
+	release
 	end
 
 PastTown_Port_Text_LookerFossilRevive:
@@ -713,13 +713,13 @@ PastTown_Port_Text_ManiacChoseWingFossil:
 	.string "Truly, it was the better fossil!$"
 
 PastTown_Port_Text_TakeTuskFossil:
-	.string "Will you take the eroded tooth?$"
+	.string "Will you take the eroded tusk?$"
 
 PastTown_Port_Text_TakeWingFossil:
 	.string "Will you take the wing imprint?$"
 
 PastTown_Port_Text_LeftTuskFossilAlone:
-	.string "Looker left the eroded tooth alone.$"
+	.string "Looker left the eroded tusk alone.$"
 
 PastTown_Port_Text_LeftWingFossilAlone:
 	.string "Looker left the wing imprint alone.$"

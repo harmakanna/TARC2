@@ -119,6 +119,9 @@ PresentTown_Port_EventScript_Departure::
 	setvar VAR_CUTSCENE_STATE, 15
 	special RemoveCameraObject
 	delay 120
+	msgbox HackCredits, MSGBOX_DEFAULT
+	closemessage
+	delay 40
 	setrespawn HEAL_LOCATION_PRESENT
 	special SetChampionSaveWarp
 	special GameClear
@@ -1132,3 +1135,11 @@ PresentTown_Port_Text_AnabelMeetUpWithMe:
 Present_Gym_Text_YouReceivedMagikarp:
 	.string "You bought a golden Magikarp…!$"
 	
+HackCredits:
+	.string "KumatoraAM: Programming, World Design\n"
+	.string "Prince Fluff: Battle Design, Gameplay\p"
+	.string "Snafu, Stompbox: Playtesters\n"
+	.string "Full credits with documentation.\p"
+	.string "Special thanks to MA Project Plus for\n"
+	.string "keeping us sane through development!$"
+

@@ -15,12 +15,18 @@ CutsceneMyth_Event::
 	speakername NULL
 	message Myth_Text_LongAgo
 	waitmessage
+	delay 120
+	closemessage
+	delay 100
 	applymovement LOCALID_CAMERA, Myth_Movement_CameraPanDiagonalDownSetScene
 	playbgm MUS_DP_LAKE_CAVERNS, FALSE
 	fadescreen FADE_FROM_BLACK
-	delay 160
+	delay 40
+	message Myth_Text_LongAgo2
+	waitmessage
+	delay 190
 	closemessage
-	delay 110
+	delay 80
 	fadescreen FADE_TO_BLACK
 	delay 60
 	waitmovement LOCALID_CAMERA
@@ -143,10 +149,10 @@ CutsceneMyth_Event::
 	addobject LOCALID_MYTH_TORNADUS
 	addobject LOCALID_MYTH_THUNDURUS
 	addobject LOCALID_MYTH_CELEBI
-	setvar VAR_0x8004, 3  @ vertical pan
-	setvar VAR_0x8005, 3  @ horizontal pan
-	setvar VAR_0x8006, 8  @ num shakes
-	setvar VAR_0x8007, 3  @ shake delay
+	setvar VAR_0x8004, 7  @ vertical pan
+	setvar VAR_0x8005, 7  @ horizontal pan
+	setvar VAR_0x8006, 6  @ num shakes
+	setvar VAR_0x8007, 6  @ shake delay
 	message Myth_Text_AsIfFromTheHeavens
 	waitmessage
 	delay 100
@@ -729,8 +735,11 @@ Myth_Movement_PanCameraToCelebi:
 
 @Pan over an empty forest
 Myth_Text_LongAgo:
-	.string "Long ago, Porta Bella was but a\n"
-	.string "turbulent wasteland on a stormy bay.$"
+	.string "Long ago…$"
+	
+Myth_Text_LongAgo2:
+	.string "Porta Bella was but a turbulent\n"
+	.string "wasteland on a stormy bay.$"
 
 @Pan down to Tornadus
 Myth_Text_SpiritOfWind:

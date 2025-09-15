@@ -427,8 +427,7 @@ PresentTown_EventScript_StartStorm::
 	applymovement LOCALID_PRESENTTOWN_WILDMON1, PresentTown_Movement_WildMon12
 	applymovement LOCALID_PRESENTTOWN_WILDMON2, PresentTown_Movement_WildMon12
 	applymovement LOCALID_PRESENTTOWN_WILDMON3, PresentTown_Movement_WildMon3
-	applymovement LOCALID_CAMERA, Common_Movement_Delay32
-	waitmovement 0
+	waitmovement LOCALID_PRESENTTOWN_WILDMON3
 	speakername Name_Anabel
 	msgbox PresentTown_Text_AnabelLookOut, MSGBOX_DEFAULT
 	closemessage

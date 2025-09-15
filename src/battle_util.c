@@ -7499,9 +7499,7 @@ u8 GetAttackerObedienceForAction()
     else
         levelReferenced = gBattleMons[gBattlerAttacker].level;
 
-    if (levelReferenced <= obedienceLevel
-        && gBattleMons[gBattlerAttacker].species != SPECIES_TORNADUS
-        && gBattleMons[gBattlerAttacker].species != SPECIES_THUNDURUS)
+    if (levelReferenced <= obedienceLevel)
         return OBEYS;
 
     rnd = Random();
