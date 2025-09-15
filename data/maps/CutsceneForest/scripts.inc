@@ -351,6 +351,7 @@ CutsceneForest_EventScript_ChoseDedenne::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, CutsceneForest_EventScript_EndRodentRan
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, CutsceneForest_EventScript_EndRodentRan
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CutsceneForest_EventScript_EndRodentRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_MON_TELEPORTED, CutsceneForest_EventScript_EndRodentRan
 	setflag FLAG_CAUGHT_RODENT
 	addvar VAR_NUM_MONS_CAUGHT, 1
 	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, CutsceneForest_Text_LookerCaughtRodent
@@ -389,6 +390,7 @@ CutsceneForest_EventScript_ChoseTogedemaru::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, CutsceneForest_EventScript_EndRodentRan
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, CutsceneForest_EventScript_EndRodentRan
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CutsceneForest_EventScript_EndRodentRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_MON_TELEPORTED, CutsceneForest_EventScript_EndRodentRan
 	setflag FLAG_CAUGHT_RODENT
 	addvar VAR_NUM_MONS_CAUGHT, 1
 	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, CutsceneForest_Text_LookerCaughtRodent
@@ -587,6 +589,7 @@ CutsceneForest_EventScript_DedenneRematch::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, CutsceneForest_EventScript_EndRan
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, CutsceneForest_EventScript_EndRan
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CutsceneForest_EventScript_EndRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_MON_TELEPORTED, CutsceneForest_EventScript_EndRan
 	setflag FLAG_CAUGHT_RODENT
 	addvar VAR_NUM_MONS_CAUGHT, 1
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 0
@@ -614,6 +617,7 @@ CutsceneForest_EventScript_TogedemaruRematch::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, CutsceneForest_EventScript_EndRan
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, CutsceneForest_EventScript_EndRan
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CutsceneForest_EventScript_EndRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_MON_TELEPORTED, CutsceneForest_EventScript_EndRan
 	setflag FLAG_CAUGHT_RODENT
 	addvar VAR_NUM_MONS_CAUGHT, 1
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 0
@@ -641,6 +645,7 @@ CutsceneForest_EventScript_Lurantis::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, CutsceneForest_EventScript_EndRan
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, CutsceneForest_EventScript_EndRan
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CutsceneForest_EventScript_EndRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_MON_TELEPORTED, CutsceneForest_EventScript_EndRan
 	setflag FLAG_CAUGHT_LURANTIS
 	addvar VAR_NUM_MONS_CAUGHT, 1
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 1
@@ -669,6 +674,7 @@ CutsceneForest_EventScript_Luxray::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, CutsceneForest_EventScript_EndRan
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, CutsceneForest_EventScript_EndRan
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CutsceneForest_EventScript_EndRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_MON_TELEPORTED, CutsceneForest_EventScript_EndRan
 	returnqueststate QUEST_LUXRAY
 	call_if_eq VAR_RESULT, 2, CutsceneForest_EventScript_SetLuxrayReward
 	setflag FLAG_CAUGHT_LUXRAY
@@ -699,6 +705,7 @@ CutsceneForest_EventScript_LuxrayDark::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, CutsceneForest_EventScript_EndRan
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, CutsceneForest_EventScript_EndRan
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CutsceneForest_EventScript_EndRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_MON_TELEPORTED, CutsceneForest_EventScript_EndRan
 	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, CutsceneForest_Text_LookerLuxraySeemsDifferent
 	returnqueststate QUEST_LUXRAY
 	call_if_eq VAR_RESULT, 2, CutsceneForest_EventScript_SetLuxrayDarkReward
@@ -739,6 +746,7 @@ CutsceneForest_EventScript_Toedscruel::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, CutsceneForest_EventScript_EndRan
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, CutsceneForest_EventScript_EndRan
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CutsceneForest_EventScript_EndRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_MON_TELEPORTED, CutsceneForest_EventScript_EndRan
 	setflag FLAG_CAUGHT_TOEDSCRUEL
 	addvar VAR_NUM_MONS_CAUGHT, 1
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 3
@@ -766,6 +774,7 @@ CutsceneForest_EventScript_Frosmoth::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, CutsceneForest_EventScript_EndFlew
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, CutsceneForest_EventScript_EndFlew
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CutsceneForest_EventScript_EndFlew
+	goto_if_eq VAR_RESULT, B_OUTCOME_MON_TELEPORTED, CutsceneForest_EventScript_EndFlew
 	setflag FLAG_CAUGHT_FROSMOTH
 	addvar VAR_NUM_MONS_CAUGHT, 1
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 4
@@ -793,6 +802,7 @@ CutsceneForest_EventScript_Kleavor::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, CutsceneForest_EventScript_EndRan
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, CutsceneForest_EventScript_EndRan
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CutsceneForest_EventScript_EndRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_MON_TELEPORTED, CutsceneForest_EventScript_EndRan
 	setflag FLAG_CAUGHT_KLEAVOR
 	addvar VAR_NUM_MONS_CAUGHT, 1
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 5
@@ -820,6 +830,7 @@ CutsceneForest_EventScript_GoodraHisui::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, CutsceneForest_EventScript_EndSlithered
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, CutsceneForest_EventScript_EndSlithered
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CutsceneForest_EventScript_EndSlithered
+	goto_if_eq VAR_RESULT, B_OUTCOME_MON_TELEPORTED, CutsceneForest_EventScript_EndSlithered
 	setflag FLAG_CAUGHT_GOODRA_HISUI
 	addvar VAR_NUM_MONS_CAUGHT, 1
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 11
@@ -847,6 +858,7 @@ CutsceneForest_EventScript_Beheeyem::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, CutsceneForest_EventScript_EndRan
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, CutsceneForest_EventScript_EndRan
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CutsceneForest_EventScript_EndRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_MON_TELEPORTED, CutsceneForest_EventScript_EndRan
 	setflag FLAG_CAUGHT_BEHEEYEM
 	addvar VAR_NUM_MONS_CAUGHT, 1
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 6
@@ -874,6 +886,7 @@ CutsceneForest_EventScript_Aerodactyl::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, CutsceneForest_EventScript_EndFlew
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, CutsceneForest_EventScript_EndFlew
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CutsceneForest_EventScript_EndFlew
+	goto_if_eq VAR_RESULT, B_OUTCOME_MON_TELEPORTED, CutsceneForest_EventScript_EndFlew
 	setflag FLAG_CAUGHT_AERODACTYL
 	addvar VAR_NUM_MONS_CAUGHT, 1
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 12
@@ -901,6 +914,7 @@ CutsceneForest_EventScript_ScreamTail::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, CutsceneForest_EventScript_EndRan
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, CutsceneForest_EventScript_EndRan
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CutsceneForest_EventScript_EndRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_MON_TELEPORTED, CutsceneForest_EventScript_EndRan
 	setflag FLAG_CAUGHT_SCREAM_TAIL
 	addvar VAR_NUM_MONS_CAUGHT, 1
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 13
@@ -929,6 +943,7 @@ CutsceneForest_EventScript_WoChien::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, CutsceneForest_EventScript_EndSlithered
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, CutsceneForest_EventScript_EndSlithered
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CutsceneForest_EventScript_EndSlithered
+	goto_if_eq VAR_RESULT, B_OUTCOME_MON_TELEPORTED, CutsceneForest_EventScript_EndSlithered
 	setflag FLAG_CAUGHT_WO_CHIEN
 	addvar VAR_NUM_MONS_CAUGHT, 1
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 16
@@ -956,6 +971,7 @@ CutsceneForest_EventScript_Aromatisse::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, CutsceneForest_EventScript_EndRan
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, CutsceneForest_EventScript_EndRan
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, CutsceneForest_EventScript_EndRan
+	goto_if_eq VAR_RESULT, B_OUTCOME_MON_TELEPORTED, CutsceneForest_EventScript_EndRan
 	setflag FLAG_CAUGHT_AROMATISSE
 	addvar VAR_NUM_MONS_CAUGHT, 1
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 14

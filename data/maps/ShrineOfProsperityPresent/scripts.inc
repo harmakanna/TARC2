@@ -399,8 +399,9 @@ ShrineOfProsperityPresent_EventScript_StartGenieFight::
 	waitmoncry
 	waitmessage
 	closemessage
-	createmon 1, 0, SPECIES_TORNADUS, 60, ITEM_KINGS_ROCK, 1, NATURE_SERIOUS, 0, MON_MALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_BLEAKWIND_STORM, MOVE_FLY, MOVE_HAMMER_ARM, MOVE_KNOCK_OFF
-	createmon 1, 1, SPECIES_THUNDURUS, 60, ITEM_KINGS_ROCK, 1, NATURE_SERIOUS, 0, MON_MALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_WILDBOLT_STORM, MOVE_FLY, MOVE_SUPERPOWER, MOVE_THUNDER_WAVE
+	call_if_eq VAR_CHOOSE_DIFFICULTY, 0, ShrineOfProsperityPresent_EventScript_CreateGeniesEasy
+	call_if_eq VAR_CHOOSE_DIFFICULTY, 1, ShrineOfProsperityPresent_EventScript_CreateGeniesNormal
+	call_if_eq VAR_CHOOSE_DIFFICULTY, 2, ShrineOfProsperityPresent_EventScript_CreateGeniesHard
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattleDouble
 	waitstate
@@ -411,6 +412,21 @@ ShrineOfProsperityPresent_EventScript_StartGenieFight::
 	releaseall
 	end
 
+ShrineOfProsperityPresent_EventScript_CreateGeniesEasy::
+	createmon 1, 0, SPECIES_TORNADUS, 50, ITEM_KINGS_ROCK, 1, NATURE_SERIOUS, 0, MON_MALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_BLEAKWIND_STORM, MOVE_FLY, MOVE_HAMMER_ARM, MOVE_KNOCK_OFF
+	createmon 1, 1, SPECIES_THUNDURUS, 50, ITEM_KINGS_ROCK, 1, NATURE_SERIOUS, 0, MON_MALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_WILDBOLT_STORM, MOVE_FLY, MOVE_SUPERPOWER, MOVE_THUNDER_WAVE
+	return
+
+ShrineOfProsperityPresent_EventScript_CreateGeniesNormal::
+	createmon 1, 0, SPECIES_TORNADUS, 60, ITEM_KINGS_ROCK, 1, NATURE_SERIOUS, 0, MON_MALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_BLEAKWIND_STORM, MOVE_FLY, MOVE_HAMMER_ARM, MOVE_KNOCK_OFF
+	createmon 1, 1, SPECIES_THUNDURUS, 60, ITEM_KINGS_ROCK, 1, NATURE_SERIOUS, 0, MON_MALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_WILDBOLT_STORM, MOVE_FLY, MOVE_SUPERPOWER, MOVE_THUNDER_WAVE
+	return
+
+ShrineOfProsperityPresent_EventScript_CreateGeniesHard::
+	createmon 1, 0, SPECIES_TORNADUS, 70, ITEM_KINGS_ROCK, 1, NATURE_SERIOUS, 0, MON_MALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_BLEAKWIND_STORM, MOVE_FLY, MOVE_HAMMER_ARM, MOVE_KNOCK_OFF
+	createmon 1, 1, SPECIES_THUNDURUS, 70, ITEM_KINGS_ROCK, 1, NATURE_SERIOUS, 0, MON_MALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_WILDBOLT_STORM, MOVE_FLY, MOVE_SUPERPOWER, MOVE_THUNDER_WAVE
+	return
+	
 ShrineOfProsperityPresent_EventScript_ThundurusRushN::
 	applymovement LOCALID_SHRINE_THUNDURUS, ShrineOfProsperityPresent_Movement_ThundurusRushN
 	waitmovement 0

@@ -80,6 +80,7 @@ Present_AquaCorpHQ_EventScript_StartAquaGauntlet::
 	applymovement LOCALID_AQUACORP_GRUNTF_TABLE, Common_Movement_FaceUp
 	applymovement LOCALID_AQUACORP_GEOFF, Common_Movement_FaceRight
 	applymovement LOCALID_AQUACORP_SARAH, Common_Movement_FaceLeftQuestionMark
+	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceLeft
 	playbgm MUS_PL_LOOKER, FALSE
 	applymovement LOCALID_CAMERA, Common_Movement_WalkDown
 	call_if_unset FLAG_SYS_WEATHER_CTRL, Present_AquaCorpHQ_EventScript_LookerWasAStorm
@@ -146,6 +147,7 @@ Present_AquaCorpHQ_EventScript_StartAquaGauntletRematch::
 	applymovement LOCALID_AQUACORP_GRUNTM_TABLE, Common_Movement_FaceUp
 	applymovement LOCALID_AQUACORP_GEOFF, Common_Movement_FaceRight
 	applymovement LOCALID_AQUACORP_SARAH, Common_Movement_FaceLeft
+	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceLeft
 	speak LOCALID_AQUACORP_MATT, DIR_SOUTH, Name_Matt, Present_AquaCorpHQ_Text_MattYouWantMore
 	applymovement LOCALID_AQUACORP_SHELLY, Present_AquaCorpHQ_Movement_ShellyApproachGauntlet
 	waitmovement 0

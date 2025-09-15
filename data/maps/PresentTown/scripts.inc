@@ -1066,6 +1066,7 @@ PresentTown_EventScript_Tornadus::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, PresentTown_EventScript_RanFromTornadus
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, PresentTown_EventScript_RanFromTornadus
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, PresentTown_EventScript_RanFromTornadus
+	goto_if_eq VAR_RESULT, B_OUTCOME_MON_TELEPORTED, PresentTown_EventScript_RanFromTornadus
 	clearflag FLAG_SYS_WEATHER_CTRL
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	playbgm MUS_DP_SUNYSHORE_DAY, TRUE

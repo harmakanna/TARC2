@@ -129,7 +129,7 @@ Present_School_EventScript_KidsFaceLeft::
 	return
 
 Present_School_EventScript_Twin::
-	lockall
+	lock
 	goto_if_unset FLAG_SYS_MAIN_GAME_START, Present_School_EventScript_TwinPreGenies
 	speakername Name_Twin
 	returnqueststate QUEST_INVESTIGATE_PROSPERITY
@@ -141,7 +141,7 @@ Present_School_EventScript_Twin::
 	case 2, Present_School_EventScript_TwinQuest
 	case 3, Present_School_EventScript_TwinReward
 	case 4, Present_School_EventScript_TwinPostQuest
-	releaseall
+	release
 	end
 
 Present_School_EventScript_TwinPreGenies::
@@ -150,7 +150,7 @@ Present_School_EventScript_TwinPreGenies::
 	closemessage
 	applymovement LOCALID_SCHOOL_TWIN, Common_Movement_FaceOriginalDirection
 	waitmovement 0
-	releaseall
+	release
 	end
 
 Present_School_EventScript_TwinPreQuest::
@@ -179,7 +179,7 @@ Present_School_EventScript_TwinPreQuest::
 	call_if_set FLAG_CAUGHT_LUXRAY, Present_School_EventScript_SetTwinReward
 	call_if_set FLAG_CAUGHT_LUXRAY_DARK, Present_School_EventScript_SetTwinReward
 	clearflag FLAG_SYS_DISAPPEAR_QUESTS
-	releaseall
+	release
 	end
 
 Present_School_EventScript_SetTwinReward::
@@ -191,29 +191,33 @@ Present_School_EventScript_TwinQuest::
 	speak LOCALID_SCHOOL_TWIN, DIR_EAST, Name_Twin, Present_School_Text_TwinStupidBabyIdiot
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_Dots
 	closemessage
-	releaseall
+	release
 	end
 
 Present_School_EventScript_TwinReward::
 	setflag FLAG_SYS_DISAPPEAR_QUESTS
 	speak LOCALID_SCHOOL_TWIN, VAR_0x8005, Name_Twin, Present_School_Text_TwinDidYouBringIt
 	special ChoosePartyMon
+	waitstate
 	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, Present_School_EventScript_TwinNothingChosen
-	goto_if_eq VAR_0x8004, SPECIES_LUXRAY, Present_School_EventScript_TwinQuestCompletion
-	goto_if_eq VAR_0x8004, SPECIES_LUXRAY_DARK, Present_School_EventScript_TwinSecretQuestCompletion
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+	goto_if_eq VAR_RESULT, SPECIES_LUXRAY, Present_School_EventScript_TwinQuestCompletion
+	goto_if_eq VAR_RESULT, SPECIES_LUXRAY_DARK, Present_School_EventScript_TwinSecretQuestCompletion
 	speak LOCALID_SCHOOL_TWIN, VAR_0x8005, Name_Twin, Present_School_Text_TwinThatsNotLuxray
 	closemessage
 	applymovement LOCALID_SCHOOL_TWIN, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	clearflag FLAG_SYS_DISAPPEAR_QUESTS
-	releaseall
+	release
 	end
 
 Present_School_EventScript_TwinNothingChosen::
 	speak LOCALID_SCHOOL_TWIN, VAR_0x8005, Name_Twin, Present_School_Text_TwinNoMonSelected
 	closemessage
+	applymovement LOCALID_SCHOOL_TWIN, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	clearflag FLAG_SYS_DISAPPEAR_QUESTS
-	releaseall
+	release
 	end
 
 Present_School_EventScript_TwinQuestCompletion::
@@ -227,17 +231,33 @@ Present_School_EventScript_TwinQuestCompletion::
 	call_if_eq VAR_FACING, DIR_NORTH, Present_School_EventScript_TwinRunAwayAround
 	call_if_ne VAR_FACING, DIR_NORTH, Present_School_EventScript_TwinRunAway
 	removeobject LOCALID_SCHOOL_TWIN
+	delay 40
 	applymovement LOCALID_SCHOOL_KID, Common_Movement_WalkLeft
-	waitmovement 0
+	call_if_eq VAR_FACING, DIR_NORTH, Present_School_EventScript_TurnLookerNorth
+	call_if_eq VAR_FACING, DIR_SOUTH, Present_School_EventScript_TurnLookerSouth
+	call_if_eq VAR_FACING, DIR_EAST, Present_School_EventScript_TurnLookerEast
+	waitmovement LOCALID_SCHOOL_KID
 	setobjectxyperm LOCALID_SCHOOL_KID, 1, 4
 	speak LOCALID_SCHOOL_KID, VAR_0x8005, Name_Doubter, Present_School_Text_DoubterReward
 	speakername NULL
 	giveitem ITEM_TM_HELPING_HAND, 1 @replaced with Helping Hand 
 	completequest QUEST_LUXRAY
 	clearflag FLAG_SYS_DISAPPEAR_QUESTS
-	releaseall
+	release
 	end
 
+Present_School_EventScript_TurnLookerNorth::
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	return
+
+Present_School_EventScript_TurnLookerSouth::
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	return
+	
+Present_School_EventScript_TurnLookerEast::
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	return
+	
 Present_School_EventScript_TwinRunAway::
 	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
 	applymovement LOCALID_SCHOOL_KID, Common_Movement_FaceDown
@@ -294,10 +314,14 @@ Present_School_EventScript_TwinSecretQuestCompletion::
 	waitmovement LOCALID_SCHOOL_KID
 	removeobject LOCALID_SCHOOL_KID
 	delay 40
-	applymovement LOCALID_PLAYER, Common_Movement_FaceOriginalDirection
+	call_if_eq VAR_FACING, DIR_NORTH, Present_School_EventScript_TurnLookerNorth
+	call_if_eq VAR_FACING, DIR_SOUTH, Present_School_EventScript_TurnLookerSouth
+	call_if_eq VAR_FACING, DIR_EAST, Present_School_EventScript_TurnLookerEast
+	waitmovement 0
 	speak LOCALID_SCHOOL_TWIN, VAR_0x8005, Name_Twin, Present_School_Text_TwinReward
 	speakername NULL
 	giveitem ITEM_CHOICE_BAND
+	closemessage
 	playse SE_PIN
 	applymovement LOCALID_SCHOOL_TWIN, Common_Movement_FaceRightQuestionMark
 	waitmovement 0
@@ -310,7 +334,7 @@ Present_School_EventScript_TwinSecretQuestCompletion::
 	closemessage
 	setflag FLAG_SHOWN_DARK_LUXRAY
 	clearflag FLAG_SYS_DISAPPEAR_QUESTS
-	releaseall
+	release
 	end
 
 Present_School_EventScript_DelayLookerFaceDown::
@@ -333,11 +357,11 @@ Present_School_EventScript_TwinPostQuest::
 	speakername Name_Twin
 	msgbox Present_School_Text_TwinPostQuest
 	closemessage
-	releaseall
+	release
 	end
 
 Present_School_EventScript_Doubter::
-	lockall
+	lock
 	returnqueststate QUEST_LUXRAY
 	switch VAR_RESULT
 	case 2, Present_School_EventScript_TwinQuest
@@ -349,7 +373,7 @@ Present_School_EventScript_Doubter::
 	closemessage
 	applymovement LOCALID_SCHOOL_KID, Common_Movement_FaceOriginalDirection
 	waitmovement 0
-	releaseall
+	release
 	end
 	
 Present_School_EventScript_GiveDoubterName::
@@ -361,7 +385,7 @@ Present_School_EventScript_DoubterPostQuest::
 	speakername Name_Doubter
 	msgbox Present_School_Text_DoubterPostQuest
 	closemessage
-	releaseall
+	release
 	end
 
 Present_School_EventScript_Teacher::

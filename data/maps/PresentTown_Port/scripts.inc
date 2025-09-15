@@ -455,6 +455,7 @@ PresentTown_Port_EventScript_Thundurus::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, PresentTown_Port_EventScript_RanFromThundurus
 	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, PresentTown_Port_EventScript_RanFromThundurus
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, PresentTown_Port_EventScript_RanFromThundurus
+	goto_if_eq VAR_RESULT, B_OUTCOME_MON_TELEPORTED, PresentTown_Port_EventScript_RanFromThundurus
 	clearflag FLAG_SYS_WEATHER_CTRL
 	playbgm MUS_DP_SUNYSHORE_DAY, TRUE
 	setweather WEATHER_SUNNY
@@ -1137,8 +1138,8 @@ Present_Gym_Text_YouReceivedMagikarp:
 	
 HackCredits:
 	.string "KumatoraAM: Programming, World Design\n"
-	.string "Prince Fluff: Battle Design, Gameplay\p"
-	.string "Snafu, Stompbox: Playtesters\n"
+	.string "Prince Fluff: Battle Design, Balance\p"
+	.string "SocKuh, Stompbox: Playtesters\n"
 	.string "Full credits with documentation.\p"
 	.string "Special thanks to MA Project Plus for\n"
 	.string "keeping us sane through development!$"

@@ -206,45 +206,90 @@ Present_Gym_EventScript_GymGuyBeatPhoebe::
 
 @ Expert, TRAINER_LEAH
 Present_Gym_EventScript_GymTrainer1::
+	setflag FLAG_SYS_NO_WHITEOUT
 	trainerbattle_single TRAINER_LEAH, Present_Gym_Text_GymTrainer1Intro, Present_Gym_Text_GymTrainer1Defeat
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Present_Gym_EventScript_LostToGymTrainer
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_Gym_EventScript_LostToGymTrainer
+	clearflag FLAG_SYS_NO_WHITEOUT
 	msgbox Present_Gym_Text_GymTrainer1PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 @ Battle Girl, TRAINER_DAISY
 Present_Gym_EventScript_GymTrainer2::
+	setflag FLAG_SYS_NO_WHITEOUT
 	trainerbattle_double TRAINER_DAISY, Present_Gym_Text_GymTrainer2Intro, Present_Gym_Text_GymTrainer2Defeat, Common_Text_NotEnoughPokemon
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Present_Gym_EventScript_LostToGymTrainer
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_Gym_EventScript_LostToGymTrainer
+	clearflag FLAG_SYS_NO_WHITEOUT
 	msgbox Present_Gym_Text_GymTrainer2PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 @ Ranger M, TRAINER_SEBASTIAN
 Present_Gym_EventScript_GymTrainer3::
+	setflag FLAG_SYS_NO_WHITEOUT
 	trainerbattle_double TRAINER_SEBASTIAN, Present_Gym_Text_GymTrainer3Intro, Present_Gym_Text_GymTrainer3Defeat, Common_Text_NotEnoughPokemon
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Present_Gym_EventScript_LostToGymTrainer
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_Gym_EventScript_LostToGymTrainer
+	clearflag FLAG_SYS_NO_WHITEOUT
 	msgbox Present_Gym_Text_GymTrainer3PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 @ Ranger F, TRAINER_SAMANTHA
 Present_Gym_EventScript_GymTrainer4::
+	setflag FLAG_SYS_NO_WHITEOUT
 	trainerbattle_single TRAINER_SAMANTHA, Present_Gym_Text_GymTrainer4Intro, Present_Gym_Text_GymTrainer4Defeat
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Present_Gym_EventScript_LostToGymTrainer
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_Gym_EventScript_LostToGymTrainer
+	clearflag FLAG_SYS_NO_WHITEOUT
 	msgbox Present_Gym_Text_GymTrainer4PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 @ Beauty, TRAINER_CONNIE
 Present_Gym_EventScript_GymTrainer5::
+	setflag FLAG_SYS_NO_WHITEOUT
 	trainerbattle_double TRAINER_CONNIE, Present_Gym_Text_GymTrainer5Intro, Present_Gym_Text_GymTrainer5Defeat, Common_Text_NotEnoughPokemon
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Present_Gym_EventScript_LostToGymTrainer
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_Gym_EventScript_LostToGymTrainer
+	clearflag FLAG_SYS_NO_WHITEOUT
 	msgbox Present_Gym_Text_GymTrainer5PostBattle, MSGBOX_AUTOCLOSE
 	end
 
-
 @ Hex Maniac Bottom, TRAINER_TASHA
 Present_Gym_EventScript_GymTrainer6::
+	setflag FLAG_SYS_NO_WHITEOUT
 	trainerbattle_double TRAINER_TASHA, Present_Gym_Text_GymTrainer6Intro, Present_Gym_Text_GymTrainer6Defeat, Common_Text_NotEnoughPokemon
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Present_Gym_EventScript_LostToGymTrainer
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_Gym_EventScript_LostToGymTrainer
+	clearflag FLAG_SYS_NO_WHITEOUT
 	msgbox Present_Gym_Text_GymTrainer6PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Present_Gym_EventScript_LostToGymTrainer::
+	lock
+	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, Present_Gym_Text_LookerLostGymTrainer
+	closemessage
+	clearflag FLAG_SYS_NO_WHITEOUT
+	call Present_Gym_EventScript_ResetTrainers
+	warpsilent MAP_PRESENT_GYM, 9, 30
+	waitstate
+	release
 	end
 
 Present_Gym_EventScript_GymStatue::
 	msgbox Present_Gym_Text_GymStatue, MSGBOX_SIGN
 	end
 
+Present_Gym_Text_LookerLostGymTrainer:
+	.string "Hmm, that's no good.\p"
+	.string "I'll need to start the gym challenge\n"
+	.string "from the beginning.$"
+	
 Present_Gym_Text_PhoebeICouldGoForAnother:
 	.string "That.\p"
 	.string "Was.\p"
@@ -543,4 +588,4 @@ Present_Gym_Text_PhoebeNoWorries:
 	.string "No problem! Take all the time you need.$"
 
 Present_Gym_Text_GymGuyHi:
-	.string "Hi! May I help you>$"
+	.string "Hi! May I help you?$"
