@@ -567,7 +567,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Feather Dance  
 
 === TRAINER_DAISY ===
-Name: DAISY
+Name: Daisy
 Class: Battle Girl
 Pic: Battle Girl
 Gender: Female
@@ -1939,7 +1939,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Fake Out  
 
 === TRAINER_DAISY ===
-Name: DAISY
+Name: Daisy
 Class: Battle Girl
 Pic: Battle Girl
 Gender: Female
@@ -3618,7 +3618,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Fake Out  
 
 === TRAINER_DAISY ===
-Name: DAISY
+Name: Daisy
 Class: Battle Girl
 Pic: Battle Girl
 Gender: Female
