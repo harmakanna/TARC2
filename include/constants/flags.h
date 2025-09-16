@@ -739,7 +739,7 @@
 #define FLAG_SPOKE_TO_MOCHI_RESETTER 0x2B4 // Unused Flag
 #define FLAG_ANABEL_HAS_HINTS  0x2B5 // Unused Flag
 #define FLAG_SPOKE_TO_OFFICE_2F_ANABEL  0x2B6 // Unused Flag
-#define FLAG_UNUSED_0x2B7  0x2B7 // Unused Flag
+#define FLAG_CAUGHT_ALL_POKEMON  0x2B7 // Unused Flag
 #define FLAG_UNUSED_0x2B8  0x2B8 // Unused Flag
 #define FLAG_UNUSED_0x2B9  0x2B9 // Unused Flag
 #define FLAG_UNUSED_0x2BA  0x2BA // Unused Flag

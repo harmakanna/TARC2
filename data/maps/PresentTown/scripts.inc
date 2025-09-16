@@ -362,6 +362,7 @@ PresentTown_EventScript_RemoveTornadus::
 	call Common_EventScript_MoveInsideNPCsOutside
 	removeobject LOCALID_CITY_TORNADUS
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCH_GENIES, 0
+	special HealPlayerParty
 	addvar VAR_CATCH_GENIES_QUEST, 1
 	return
 
@@ -1072,6 +1073,7 @@ PresentTown_EventScript_Tornadus::
 	playbgm MUS_DP_SUNYSHORE_DAY, TRUE
 	setweather WEATHER_SUNNY
 	doweather
+	special HealPlayerParty
 	removeobject VAR_LAST_TALKED
 	release
 	end
@@ -1081,6 +1083,7 @@ PresentTown_EventScript_DefeatedTornadus::
 	playbgm MUS_DP_SUNYSHORE_DAY, TRUE
 	setweather WEATHER_SUNNY
 	doweather
+	special HealPlayerParty
 	call Common_EventScript_MoveInsideNPCsOutside
 	goto Common_EventScript_RemoveStaticPokemon
 	end
@@ -1091,6 +1094,7 @@ PresentTown_EventScript_RanFromTornadus::
 	setweather WEATHER_SUNNY
 	doweather
 	call Common_EventScript_MoveInsideNPCsOutside
+	special HealPlayerParty
 	setvar VAR_0x8004, SPECIES_TORNADUS
 	goto Common_EventScript_LegendaryFlewAway
 	end

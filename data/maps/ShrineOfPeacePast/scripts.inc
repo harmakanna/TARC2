@@ -307,8 +307,14 @@ ShrineOfPeacePast_EventScript_SpawnWoChien::
 
 @Aromatisse will not recall SeedCatchMon due to multiple VAR_RESULT declarations
 ShrineOfPeacePast_EventScript_TrySpawnAromatisse::
+	call_if_unset FLAG_CAUGHT_AROMATISSE, ShrineOfPeacePast_EventScript_TrySpawnAromatisse2
+	call_if_set FLAG_CAUGHT_AROMATISSE, ShrineOfPeacePast_EventScript_ReseedCatchMon
+	return
+
+ShrineOfPeacePast_EventScript_TrySpawnAromatisse2::
 	returnqueststate QUEST_FOREVER_FAITHFUL
 	call_if_ge VAR_RESULT, 3, ShrineOfPeacePast_EventScript_SpawnAromatisse
+	call_if_lt VAR_RESULT, 3, ShrineOfPeacePast_EventScript_ReseedCatchMon
 	return
 
 ShrineOfPeacePast_EventScript_SpawnAromatisse::

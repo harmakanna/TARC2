@@ -69,17 +69,27 @@ CutsceneForest_EventScript_ConfirmCaughtCrabominable::
 	return
 	
 CutsceneForest_EventScript_ConfirmCaughtPhione::
-	call_if_set FLAG_CAUGHT_WO_CHIEN, CutsceneForest_EventScript_ConfirmCaughtDhelmise
+	call_if_set FLAG_CAUGHT_WO_CHIEN, CutsceneForest_EventScript_ConfirmCaughtWoChien
 	return
 
 CutsceneForest_EventScript_ConfirmCaughtWoChien::
-	call CutsceneForest_EventScript_CompleteCatchMonsQuest
+	setflag FLAG_CAUGHT_ALL_POKEMON
 	return
 
 CutsceneForest_EventScript_CompleteCatchMonsQuest::
 	delay 10
 	speak LOCALID_PLAYER, DIR_SOUTH, Name_Looker, CutsceneForest_Text_LookerThatShouldBeIt
-	completequest QUEST_CATCHMONS
+	closemessage
+	delay 60
+	questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS
+	questmenu QUEST_MENU_BUFFER_QUEST_NAME, QUEST_CATCHMONS
+    bufferstring 1 gText_QuestComplete
+	message gText_QuestAnnounce
+	playfanfare MUS_OBTAIN_TMHM
+	waitfanfare
+	waitmessage
+	delay 10
+	closemessage
 	return
 
 CutsceneForest_OnResume:
@@ -1052,6 +1062,7 @@ CutsceneForest_EventScript_FinishRodentEncounter::
 	end
 
 CutsceneForest_EventScript_FinishEncounter::
+	call_if_set FLAG_CAUGHT_ALL_POKEMON, CutsceneForest_EventScript_CompleteCatchMonsQuest
 	delay 30
 	special SpawnCameraObject
 	applymovement LOCALID_PLAYER, CutsceneForest_Movement_WalkDown6
@@ -1647,7 +1658,7 @@ CutsceneForest_Text_LuxrayReward:
 
 CutsceneForest_Text_LookerThatShouldBeIt:
 	.string "Hmm! I believe that is all the unique\n"
-	.string "Pokémon of this forest!$"
+	.string "Pokémon in Porta Bella!$"
 
 CutsceneForest_Text_LookerCatchMons:
 	.string "Hmm…\p"

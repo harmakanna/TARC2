@@ -11,7 +11,7 @@ Present_Gym_OnTransition:
 Present_Gym_EventScript_ResetTrainers::
 	cleartrainerflag TRAINER_LEAH
 	cleartrainerflag TRAINER_TASHA
-	cleartrainerflag TRAINER_BLAKE
+	cleartrainerflag TRAINER_DAISY
 	cleartrainerflag TRAINER_SAMANTHA
 	cleartrainerflag TRAINER_CONNIE
 	cleartrainerflag TRAINER_SEBASTIAN
@@ -206,67 +206,67 @@ Present_Gym_EventScript_GymGuyBeatPhoebe::
 
 @ Expert, TRAINER_LEAH
 Present_Gym_EventScript_GymTrainer1::
-	setflag FLAG_SYS_NO_WHITEOUT
+	@setflag FLAG_SYS_NO_WHITEOUT
 	trainerbattle_single TRAINER_LEAH, Present_Gym_Text_GymTrainer1Intro, Present_Gym_Text_GymTrainer1Defeat
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Present_Gym_EventScript_LostToGymTrainer
-	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_Gym_EventScript_LostToGymTrainer
-	clearflag FLAG_SYS_NO_WHITEOUT
+	@specialvar VAR_RESULT, GetBattleOutcome
+	@goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Present_Gym_EventScript_LostToGymTrainer
+	@goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_Gym_EventScript_LostToGymTrainer
+	@clearflag FLAG_SYS_NO_WHITEOUT
 	msgbox Present_Gym_Text_GymTrainer1PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 @ Battle Girl, TRAINER_DAISY
 Present_Gym_EventScript_GymTrainer2::
-	setflag FLAG_SYS_NO_WHITEOUT
+	@setflag FLAG_SYS_NO_WHITEOUT
 	trainerbattle_double TRAINER_DAISY, Present_Gym_Text_GymTrainer2Intro, Present_Gym_Text_GymTrainer2Defeat, Common_Text_NotEnoughPokemon
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Present_Gym_EventScript_LostToGymTrainer
-	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_Gym_EventScript_LostToGymTrainer
-	clearflag FLAG_SYS_NO_WHITEOUT
+	@specialvar VAR_RESULT, GetBattleOutcome
+	@goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Present_Gym_EventScript_LostToGymTrainer
+	@goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_Gym_EventScript_LostToGymTrainer
+	@clearflag FLAG_SYS_NO_WHITEOUT
 	msgbox Present_Gym_Text_GymTrainer2PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 @ Ranger M, TRAINER_SEBASTIAN
 Present_Gym_EventScript_GymTrainer3::
-	setflag FLAG_SYS_NO_WHITEOUT
+	@setflag FLAG_SYS_NO_WHITEOUT
 	trainerbattle_double TRAINER_SEBASTIAN, Present_Gym_Text_GymTrainer3Intro, Present_Gym_Text_GymTrainer3Defeat, Common_Text_NotEnoughPokemon
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Present_Gym_EventScript_LostToGymTrainer
-	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_Gym_EventScript_LostToGymTrainer
-	clearflag FLAG_SYS_NO_WHITEOUT
+	@specialvar VAR_RESULT, GetBattleOutcome
+	@goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Present_Gym_EventScript_LostToGymTrainer
+	@goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_Gym_EventScript_LostToGymTrainer
+	@clearflag FLAG_SYS_NO_WHITEOUT
 	msgbox Present_Gym_Text_GymTrainer3PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 @ Ranger F, TRAINER_SAMANTHA
 Present_Gym_EventScript_GymTrainer4::
-	setflag FLAG_SYS_NO_WHITEOUT
+	@setflag FLAG_SYS_NO_WHITEOUT
 	trainerbattle_single TRAINER_SAMANTHA, Present_Gym_Text_GymTrainer4Intro, Present_Gym_Text_GymTrainer4Defeat
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Present_Gym_EventScript_LostToGymTrainer
-	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_Gym_EventScript_LostToGymTrainer
-	clearflag FLAG_SYS_NO_WHITEOUT
+	@specialvar VAR_RESULT, GetBattleOutcome
+	@goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Present_Gym_EventScript_LostToGymTrainer
+	@goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_Gym_EventScript_LostToGymTrainer
+	@clearflag FLAG_SYS_NO_WHITEOUT
 	msgbox Present_Gym_Text_GymTrainer4PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 @ Beauty, TRAINER_CONNIE
 Present_Gym_EventScript_GymTrainer5::
-	setflag FLAG_SYS_NO_WHITEOUT
+	@setflag FLAG_SYS_NO_WHITEOUT
 	trainerbattle_double TRAINER_CONNIE, Present_Gym_Text_GymTrainer5Intro, Present_Gym_Text_GymTrainer5Defeat, Common_Text_NotEnoughPokemon
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Present_Gym_EventScript_LostToGymTrainer
-	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_Gym_EventScript_LostToGymTrainer
-	clearflag FLAG_SYS_NO_WHITEOUT
+	@specialvar VAR_RESULT, GetBattleOutcome
+	@goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Present_Gym_EventScript_LostToGymTrainer
+	@goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_Gym_EventScript_LostToGymTrainer
+	@clearflag FLAG_SYS_NO_WHITEOUT
 	msgbox Present_Gym_Text_GymTrainer5PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 @ Hex Maniac Bottom, TRAINER_TASHA
 Present_Gym_EventScript_GymTrainer6::
-	setflag FLAG_SYS_NO_WHITEOUT
+	@setflag FLAG_SYS_NO_WHITEOUT
 	trainerbattle_double TRAINER_TASHA, Present_Gym_Text_GymTrainer6Intro, Present_Gym_Text_GymTrainer6Defeat, Common_Text_NotEnoughPokemon
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Present_Gym_EventScript_LostToGymTrainer
-	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_Gym_EventScript_LostToGymTrainer
-	clearflag FLAG_SYS_NO_WHITEOUT
+	@specialvar VAR_RESULT, GetBattleOutcome
+	@goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Present_Gym_EventScript_LostToGymTrainer
+	@goto_if_eq VAR_RESULT, B_OUTCOME_LOST, Present_Gym_EventScript_LostToGymTrainer
+	@clearflag FLAG_SYS_NO_WHITEOUT
 	msgbox Present_Gym_Text_GymTrainer6PostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -447,7 +447,7 @@ Present_Gym_Text_GymGuyNoCanDo:
 	.string "the whole gym challenge.\p"
 	.string "Being a leader, she rarely gets the\n"
 	.string "chance to battle adults.\p"
-	.string "Only kids really take the gyms seriously.$"
+	.string "Only kids take this stuff seriously.$"
 
 Present_Gym_Text_LookerSoSheWantsAChangeOfPace:
 	.string "So she wants me to provide a bit of a\n"

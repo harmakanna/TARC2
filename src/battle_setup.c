@@ -1318,6 +1318,10 @@ static void CB2_EndTrainerBattle(void)
         else
             SetMainCallback2(CB2_WhiteOut);
     }
+    else if (gBattleOutcome == B_OUTCOME_RAN && !FlagGet(B_FLAG_NO_WHITEOUT) && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_PRESENT_GYM) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_PRESENT_GYM))
+    {
+            SetMainCallback2(CB2_WhiteOut);
+    }
     else if (DidPlayerForfeitNormalTrainerBattle())
     {
             SetMainCallback2(CB2_WhiteOut);

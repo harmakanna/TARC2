@@ -143,6 +143,11 @@ ShrineOfProsperityPresent_EventScript_Resolution::
 	setflag FLAG_HIDE_PORT_BLUE
 	setflag FLAG_HIDE_CITY_THUNDURUS
 	setflag FLAG_HIDE_CITY_TORNADUS
+	setflag FLAG_HIDE_SHRINE_BLUE
+	setflag FLAG_HIDE_SHRINE_MAY
+	setflag FLAG_HIDE_SHRINE_LEAF
+	setflag FLAG_HIDE_SHRINE_ACE_TRAINER
+	setflag FLAG_HIDE_SHRINE_YOUNGSTER
 	special RemoveCameraObject
 	warpsilent MAP_PRESENT_TOWN_PORT, 14, 10
 	waitstate

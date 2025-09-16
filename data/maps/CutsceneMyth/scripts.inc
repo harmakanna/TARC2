@@ -149,10 +149,10 @@ CutsceneMyth_Event::
 	addobject LOCALID_MYTH_TORNADUS
 	addobject LOCALID_MYTH_THUNDURUS
 	addobject LOCALID_MYTH_CELEBI
-	setvar VAR_0x8004, 7  @ vertical pan
-	setvar VAR_0x8005, 7  @ horizontal pan
-	setvar VAR_0x8006, 6  @ num shakes
-	setvar VAR_0x8007, 6  @ shake delay
+	setvar VAR_0x8004, 6  @ vertical pan
+	setvar VAR_0x8005, 6  @ horizontal pan
+	setvar VAR_0x8006, 8  @ num shakes
+	setvar VAR_0x8007, 4  @ shake delay
 	message Myth_Text_AsIfFromTheHeavens
 	waitmessage
 	delay 100

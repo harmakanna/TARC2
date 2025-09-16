@@ -115,6 +115,7 @@ PastTown_Port_EventScript_DoHeartScaleSparkle::
 	end
 
 PastTown_Port_OnResume:
+	special HealPlayerParty
 	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, PastTown_Port_EventScript_TryRemovePortMon
 	end
 
@@ -122,6 +123,33 @@ PastTown_Port_EventScript_TryRemovePortMon::
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, Common_EventScript_NopReturn
 	removeobject VAR_LAST_TALKED
+	return
+
+PastTown_Port_EventScript_TurnToFacePlayer::
+	call_if_eq VAR_FACING, DIR_NORTH, PastTown_Port_EventScript_TurnSouth
+	call_if_eq VAR_FACING, DIR_EAST, PastTown_Port_EventScript_TurnWest
+	call_if_eq VAR_FACING, DIR_SOUTH, PastTown_Port_EventScript_TurnNorth
+	call_if_eq VAR_FACING, DIR_WEST, PastTown_Port_EventScript_TurnEast
+	return
+
+PastTown_Port_EventScript_TurnSouth::
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceDown
+	waitmovement 0
+	return
+	
+PastTown_Port_EventScript_TurnWest::
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceLeft
+	waitmovement 0
+	return
+	
+PastTown_Port_EventScript_TurnNorth::
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceUp
+	waitmovement 0
+	return
+
+PastTown_Port_EventScript_TurnEast::
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceRight
+	waitmovement 0
 	return
 
 PastTown_Port_EventScript_HiddenHeartScale::
@@ -493,9 +521,9 @@ PastTown_Port_EventScript_PokemaniacChoseTuskFossil::
 	end
 
 PastTown_Port_EventScript_Dhelmise::
-	lock
-	faceplayer
+	lockall
 	waitse
+	call PastTown_Port_EventScript_TurnToFacePlayer
 	playmoncry SPECIES_DHELMISE, CRY_MODE_ENCOUNTER
 	msgbox PastTown_Port_Text_Dhelmise, MSGBOX_DEFAULT
 	waitmoncry
@@ -517,13 +545,14 @@ PastTown_Port_EventScript_Dhelmise::
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 7
 	returnqueststate QUEST_CATCHMONS
 	call_if_ne VAR_RESULT, 4, CutsceneForest_EventScript_CheckCatchMonsCompleted
-	release
+	call_if_set FLAG_CAUGHT_ALL_POKEMON, CutsceneForest_EventScript_CompleteCatchMonsQuest
+	releaseall
 	end
 
 PastTown_Port_EventScript_Grapploct::
-	lock
-	faceplayer
+	lockall
 	waitse
+	call PastTown_Port_EventScript_TurnToFacePlayer
 	playmoncry SPECIES_GRAPPLOCT, CRY_MODE_ENCOUNTER
 	msgbox PastTown_Port_Text_Grapploct, MSGBOX_DEFAULT
 	waitmoncry
@@ -545,13 +574,14 @@ PastTown_Port_EventScript_Grapploct::
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 8
 	returnqueststate QUEST_CATCHMONS
 	call_if_ne VAR_RESULT, 4, CutsceneForest_EventScript_CheckCatchMonsCompleted
-	release
+	call_if_set FLAG_CAUGHT_ALL_POKEMON, CutsceneForest_EventScript_CompleteCatchMonsQuest
+	releaseall
 	end
 
 PastTown_Port_EventScript_Crabominable::
-	lock
-	faceplayer
+	lockall
 	waitse
+	call PastTown_Port_EventScript_TurnToFacePlayer
 	playmoncry SPECIES_CRABOMINABLE, CRY_MODE_ENCOUNTER
 	msgbox PastTown_Port_Text_Crabominable, MSGBOX_DEFAULT
 	waitmoncry
@@ -573,13 +603,14 @@ PastTown_Port_EventScript_Crabominable::
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 10
 	returnqueststate QUEST_CATCHMONS
 	call_if_ne VAR_RESULT, 4, CutsceneForest_EventScript_CheckCatchMonsCompleted
-	release
+	call_if_set FLAG_CAUGHT_ALL_POKEMON, CutsceneForest_EventScript_CompleteCatchMonsQuest
+	releaseall
 	end
 
 PastTown_Port_EventScript_Palossand::
-	lock
-	faceplayer
+	lockall
 	waitse
+	call PastTown_Port_EventScript_TurnToFacePlayer
 	playmoncry SPECIES_PALOSSAND, CRY_MODE_ENCOUNTER
 	msgbox PastTown_Port_Text_Palossand, MSGBOX_DEFAULT
 	waitmoncry
@@ -601,13 +632,14 @@ PastTown_Port_EventScript_Palossand::
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 9
 	returnqueststate QUEST_CATCHMONS
 	call_if_ne VAR_RESULT, 4, CutsceneForest_EventScript_CheckCatchMonsCompleted
-	release
+	call_if_set FLAG_CAUGHT_ALL_POKEMON, CutsceneForest_EventScript_CompleteCatchMonsQuest
+	releaseall
 	end
 
 PastTown_Port_EventScript_Phione::
-	lock
-	faceplayer
+	lockall
 	waitse
+	call PastTown_Port_EventScript_TurnToFacePlayer
 	playmoncry SPECIES_PHIONE, CRY_MODE_ENCOUNTER
 	msgbox PastTown_Port_Text_Phione, MSGBOX_DEFAULT
 	waitmoncry
@@ -629,7 +661,8 @@ PastTown_Port_EventScript_Phione::
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCHMONS, 15
 	returnqueststate QUEST_CATCHMONS
 	call_if_ne VAR_RESULT, 4, CutsceneForest_EventScript_CheckCatchMonsCompleted
-	release
+	call_if_set FLAG_CAUGHT_ALL_POKEMON, CutsceneForest_EventScript_CompleteCatchMonsQuest
+	releaseall
 	end
 
 PastTown_Port_EventScript_MonRanAway::
@@ -639,7 +672,7 @@ PastTown_Port_EventScript_MonRanAway::
 	bufferspeciesname STR_VAR_1, VAR_TEMP_2
 	msgbox PastTown_Port_Text_MonRanAway, MSGBOX_DEFAULT
 	closemessage
-	release
+	releaseall
 	end
 
 PastTown_Port_EventScript_PalossandRanAway::
@@ -649,7 +682,7 @@ PastTown_Port_EventScript_PalossandRanAway::
 	bufferspeciesname STR_VAR_1, VAR_TEMP_2
 	msgbox PastTown_Port_Text_PalossandRanAway, MSGBOX_DEFAULT
 	closemessage
-	release
+	releaseall
 	end
 
 PastTown_Port_Text_LookerFossilRevive:

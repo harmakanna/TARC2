@@ -23,6 +23,7 @@ PresentTown_Port_EventScript_RemoveThundurus::
 	removeobject LOCALID_CITY_THUNDURUS
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_CATCH_GENIES, 1
 	addvar VAR_CATCH_GENIES_QUEST, 1
+	special HealPlayerParty
 	return
 
 PresentTown_Port_OnTransition:
