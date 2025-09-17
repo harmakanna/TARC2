@@ -1688,3 +1688,4 @@ CutsceneForest_Text_LookerCaughtRodent:
 	.string "Yes! I caught it!\p"
 	.string "I wonder what other Pokemon live in\n"
 	.string "this strange forest…$"
+	

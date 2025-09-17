@@ -495,3 +495,4 @@ ShrineOfPeacePast_Text_LookerUrgh:
 ShrineOfPeacePast_Text_Dots:
 	.string "… … …\n"
 	.string "… … …$"
+	

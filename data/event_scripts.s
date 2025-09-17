@@ -899,7 +899,7 @@ gText_PokemonCenterSign::
 gText_MomOrDadMightLikeThisProgram::
 	.string "EVTV Weather is on.\p"
 	.string "In this episode, a cloud and a sun are\n"
-	.string "fighting pollution caused by a Yam Man.$"
+	.string "fighting pollution caused by an odd man.$"
 
 gText_WhichFloorWouldYouLike::
 	.string "Welcome to LILYCOVE DEPARTMENT STORE.\p"

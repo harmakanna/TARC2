@@ -611,3 +611,4 @@ Past_House2_Text_MamaWhy:
 Past_House2_Text_LookerReceivedMints:
 	.string "Looker recieved one Adamant, Modest,\n"
 	.string "Jolly, and Timid Mint each!$"
+	

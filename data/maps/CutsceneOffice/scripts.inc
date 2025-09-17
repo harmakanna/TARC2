@@ -44,6 +44,7 @@ CutsceneOffice_EventScript_SetEasy::
 	msgbox CutsceneOffice_Text_SetToEasy, MSGBOX_DEFAULT
 	msgbox CutsceneOffice_Text_BattleSpeed, MSGBOX_DEFAULT
 	closemessage
+	setvar VAR_CHOOSE_DIFFICULTY, 0
 	setdifficulty DIFFICULTY_EASY 
 	return
 
@@ -52,6 +53,7 @@ CutsceneOffice_EventScript_SetNormal::
 	msgbox CutsceneOffice_Text_SetToNormal, MSGBOX_DEFAULT
 	msgbox CutsceneOffice_Text_BattleSpeed, MSGBOX_DEFAULT
 	closemessage
+	setvar VAR_CHOOSE_DIFFICULTY, 1
 	setdifficulty DIFFICULTY_NORMAL
 	return
 
@@ -60,6 +62,7 @@ CutsceneOffice_EventScript_SetHard::
 	msgbox CutsceneOffice_Text_SetToHard, MSGBOX_DEFAULT
 	msgbox CutsceneOffice_Text_BattleSpeed, MSGBOX_DEFAULT
 	closemessage
+	setvar VAR_CHOOSE_DIFFICULTY, 2
 	setdifficulty DIFFICULTY_HARD
 	return
 
@@ -218,3 +221,4 @@ CutsceneOffice_Text_SetToHard:
 
 CutsceneOffice_Text_BattleSpeed:
 	.string "Battle speed has been set to 1x.$"
+	

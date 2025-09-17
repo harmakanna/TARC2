@@ -78,3 +78,4 @@ CutsceneForestPast_Text_SeemsRight:
 	.string "Yes, this seems like the right\n"
 	.string "direction…\p"
 	.string "I gotta head back to the city…$"
+	

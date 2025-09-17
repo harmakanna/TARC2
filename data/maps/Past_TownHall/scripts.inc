@@ -501,3 +501,4 @@ Past_TownHall_Text_Comfey:
 
 Past_TownHall_EventScript_CamillaOhLooker:
 	.string "Oh?$"
+	

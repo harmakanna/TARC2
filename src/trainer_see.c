@@ -988,14 +988,14 @@ u8 FldEff_HeartIcon(void)
 u8 FldEff_QuestIcon(void)
 {
     u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_Quest, 0, 0, 0x53);
-    struct Sprite *sprite;
     
-    if (spriteId == MAX_SPRITES)
-        return 0;
+    if (spriteId != MAX_SPRITES)
+    {
+        struct Sprite *sprite = &gSprites[spriteId];
 
-    sprite = &gSprites[spriteId];
-    SetIconSpriteData(sprite, FLDEFF_QUEST_ICON, 0);
-    UpdateSpritePaletteByTemplate(&sSpriteTemplate_Emote, sprite);
+        SetIconSpriteData(sprite, FLDEFF_QUEST_ICON, 0);
+        UpdateSpritePaletteByTemplate(&sSpriteTemplate_Quest, sprite);
+    }
     return 0;
 }
 

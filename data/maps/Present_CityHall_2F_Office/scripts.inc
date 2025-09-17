@@ -272,3 +272,4 @@ Present_CityHall_2F_Office_Text_AnabelYouMightHaveTalked:
 	.string "have already talked to them!\p"
 	.string "I'll narrow it down to five, at least -\n"
 	.string "Leaf, Katerina, May, Blue, and Trey.$"
+	

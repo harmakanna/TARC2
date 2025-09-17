@@ -1140,3 +1140,4 @@ InsideOutside_Text_YouReceivedGalvantula:
 
 InsideOutside_Text_YouReceivedProbopass:
 	.string "You received a Probopass!$"
+	

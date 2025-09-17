@@ -1611,3 +1611,4 @@ InsideOutside_Text_Sailor:
     .string "trendy coffee shop…\p"
     .string "Nothing good lasts forever…$"
     
+    

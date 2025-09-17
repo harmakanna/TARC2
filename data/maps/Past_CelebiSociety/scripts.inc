@@ -267,3 +267,4 @@ Past_CelebiSociety_Text_CouncilWomanSeeCamilla:
 	.string "the bitter root, the Revival Herb!\p"
 	.string "Camilla should have one for you.$"
 	
+	

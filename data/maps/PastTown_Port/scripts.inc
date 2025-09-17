@@ -782,3 +782,4 @@ PastTown_Port_Text_MonRanAway:
 
 PastTown_Port_Text_PalossandRanAway:
 	.string "{STR_VAR_1} sank into the ground!$"
+	

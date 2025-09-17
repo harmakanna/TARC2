@@ -662,9 +662,9 @@ static u8 GetBattleEnvironmentOverride(void)
             return BATTLE_ENVIRONMENT_KYOGRE;
         case SPECIES_RAYQUAZA:
             return BATTLE_ENVIRONMENT_RAYQUAZA;
-        case SPECIES_TORNADUS:
-        case SPECIES_THUNDURUS:
-            return BATTLE_ENVIRONMENT_FRONTIER;
+        // case SPECIES_TORNADUS:
+        // case SPECIES_THUNDURUS:
+            // return BATTLE_ENVIRONMENT_FRONTIER;
         case SPECIES_ENAMORUS:
             return BATTLE_ENVIRONMENT_LONG_GRASS;
         case SPECIES_WO_CHIEN:

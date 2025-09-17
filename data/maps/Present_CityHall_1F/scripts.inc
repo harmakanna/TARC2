@@ -405,3 +405,4 @@ Present_CityHall_1F_Text_DadThankYou:
 	.string "Oh, thank you!\p"
 	.string "We live near the western forest.\n"
 	.string "I'm sure she snuck away there!$"
+	

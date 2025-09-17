@@ -180,3 +180,4 @@ Past_House1_Text_SadGirlIsTaurosHappy:
 Past_House1_Text_SadGirlIsMiltankHappy:
 	.string "Make sure to give Moomoo lots of love!\n"
 	.string "She's a really special girl!$"
+	

@@ -738,3 +738,4 @@ Present_CelebiSociety_Text_GrandmaOfCourseDearie:
 
 Present_CelebiSociety_Text_Eldegoss:
 	.string "Fwooooooo!$"
+	
