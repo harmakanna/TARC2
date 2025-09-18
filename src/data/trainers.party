@@ -285,6 +285,7 @@ Gender: Female
 Music: Girl
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Purple
 Difficulty: Easy
 
 Altaria  
@@ -703,6 +704,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon 
+Mugshot: Yellow
 Difficulty: Easy
 
 Blastoise (M)  
@@ -753,6 +755,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Easy
 
 Blastoise (M)  
@@ -803,6 +806,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Easy
 
 Linoone   
@@ -853,6 +857,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Easy
 
 Linoone  
@@ -903,6 +908,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Easy
 
 Clefable (F)  
@@ -953,6 +959,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Easy
 
 Clefable  
@@ -1003,6 +1010,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Easy
 
 Gothitelle  
@@ -1054,6 +1062,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Easy
 
 Gothitelle  
@@ -1104,6 +1113,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Easy
 
 Rillaboom  
@@ -1154,6 +1164,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Easy
 
 Rillaboom  
@@ -1552,6 +1563,7 @@ Gender: Female
 Music: Girl
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Purple
 Difficulty: Normal
 
 Altaria @ Altarianite  
@@ -2111,7 +2123,8 @@ Pic: Blue
 Gender: Male
 Music: Male
 Double Battle: Yes
-AI: Basic Trainer
+AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Normal
 
 Blastoise  
@@ -2176,6 +2189,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Normal
 
 Blastoise  
@@ -2240,6 +2254,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Normal
 
 Linoone @ Starf Berry  
@@ -2304,6 +2319,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Normal
 
 Linoone @ Starf Berry  
@@ -2368,6 +2384,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Normal
 
 Clefable  
@@ -2432,6 +2449,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Normal
 
 Clefable (F)  
@@ -2496,6 +2514,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Normal
 
 Gothitelle  
@@ -2561,6 +2580,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Normal
 
 Gothitelle  
@@ -2626,6 +2646,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Normal
 
 Rillaboom  
@@ -2690,6 +2711,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Normal
 
 Rillaboom  
@@ -3161,6 +3183,7 @@ Gender: Female
 Music: Girl
 Double Battle: Yes
 AI: Basic Trainer
+Mugshot: Purple
 Difficulty: Hard
 
 Altaria @ Altarianite  
@@ -3819,6 +3842,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Hard
 
 Blastoise  
@@ -3895,6 +3919,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Hard
 
 Blastoise  
@@ -3971,6 +3996,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Hard
 
 Linoone @ Starf Berry  
@@ -4047,6 +4073,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Hard
 
 Linoone @ Starf Berry  
@@ -4123,6 +4150,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Hard
 
 Clefable  
@@ -4199,6 +4227,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Hard
 
 Clefable  
@@ -4275,6 +4304,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Hard
 
 Gothitelle  
@@ -4352,6 +4382,7 @@ Gender: Female
 Music: Female
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Hard
 
 Gothitelle  
@@ -4429,6 +4460,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Hard
 
 Rillaboom  
@@ -4505,6 +4537,7 @@ Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Basic Trainer / Ace Pokemon
+Mugshot: Yellow
 Difficulty: Hard
 
 Rillaboom  
