@@ -314,6 +314,7 @@ Present_Cafe_EventScript_MayQuest::
     clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	clearflag FLAG_SYS_NO_WHITEOUT
 	fadedefaultbgm
+    savebgm MUS_DUMMY
 	goto Present_Cafe_EventScript_MayPostQuest
 	release
 	end
@@ -352,6 +353,7 @@ Present_Cafe_EventScript_MayDefeat::
 	clearflag FLAG_SYS_NO_WHITEOUT
     clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	fadedefaultbgm
+    savebgm MUS_DUMMY
 	applymovement LOCALID_CAFE_MAY, Common_Movement_FaceOriginalDirection
 	waitmovement 0
 	release

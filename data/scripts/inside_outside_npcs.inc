@@ -222,6 +222,7 @@ InsideOutside_EventScript_LeafQuest::
     clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	clearflag FLAG_SYS_NO_WHITEOUT
     fadedefaultbgm
+    savebgm MUS_DUMMY
 	goto InsideOutside_EventScript_LeafPostQuest
     release
     end
@@ -257,6 +258,7 @@ InsideOutside_EventScript_LeafDefeat::
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerIllBeBack
     closemessage
     fadedefaultbgm
+    savebgm MUS_DUMMY
     applymovement VAR_TEMP_1, Common_Movement_FaceOriginalDirection
     waitmovement 0
     clearflag FLAG_SYS_DISAPPEAR_QUESTS
@@ -382,6 +384,7 @@ InsideOutside_EventScript_YoungsterQuest::
     clearflag FLAG_SYS_DISAPPEAR_QUESTS
     clearflag FLAG_SYS_NO_WHITEOUT
     fadedefaultbgm
+    savebgm MUS_DUMMY
     goto InsideOutside_EventScript_YoungsterPostQuest
     release
     end
@@ -416,6 +419,7 @@ InsideOutside_EventScript_YoungsterDefeat::
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerNotOffTheHook
     closemessage
     fadedefaultbgm
+    savebgm MUS_DUMMY
     clearflag FLAG_SYS_DISAPPEAR_QUESTS
     clearflag FLAG_SYS_NO_WHITEOUT
     release
@@ -503,6 +507,7 @@ InsideOutside_EventScript_AceTrainerQuest::
     clearflag FLAG_SYS_NO_WHITEOUT
     clearflag FLAG_SYS_DISAPPEAR_QUESTS
     fadedefaultbgm
+    savebgm MUS_DUMMY
     goto InsideOutside_EventScript_AceTrainerPostQuest
     release
     end
@@ -538,6 +543,7 @@ InsideOutside_EventScript_AceTrainerDefeat::
     speak LOCALID_PLAYER, VAR_FACING, Name_Looker, InsideOutside_Text_LookerUhhIllBeBack
     closemessage
     fadedefaultbgm
+    savebgm MUS_DUMMY
     clearflag FLAG_SYS_DISAPPEAR_QUESTS
     clearflag FLAG_SYS_NO_WHITEOUT
     release
@@ -1340,7 +1346,7 @@ InsideOutside_Text_AceTrainerOhBrother:
 
 InsideOutside_Text_AceTrainerLetsJustBattle:
     .string "Man…\p"
-    .string "Let's just setting this with a battle…\n"
+    .string "Let's just settle this with a battle…\n"
     .string "It'll save both of us time…$"
 
 InsideOutside_Text_LookerToAceTrainerPrequest:

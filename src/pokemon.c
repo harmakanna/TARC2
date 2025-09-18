@@ -5878,15 +5878,16 @@ u16 GetBattleBGM(void)
             return MUS_VS_CHAMPION;
         case TRAINER_CLASS_RIVAL:
         case TRAINER_CLASS_YOUNGSTER:
-        case TRAINER_CLASS_IDOL2:
         case TRAINER_CLASS_COOLTRAINER:
             if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
-                return MUS_VS_RIVAL;
+                return MUS_VS_FRONTIER_BRAIN;
             if (!StringCompare(GetTrainerNameFromId(TRAINER_BATTLE_PARAM.opponentA), gText_BattleWallyName))
                 return MUS_VS_TRAINER;
-            return MUS_VS_RIVAL;
+            return MUS_VS_FRONTIER_BRAIN;
         case TRAINER_CLASS_ELITE_FOUR:
             return MUS_VS_ELITE_FOUR;
+        case TRAINER_CLASS_IDOL2:
+            return MUS_VS_CHAMPION_NEMONA;
         case TRAINER_CLASS_SALON_MAIDEN:
         case TRAINER_CLASS_DOME_ACE:
         case TRAINER_CLASS_PALACE_MAVEN:
@@ -5895,12 +5896,45 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_PIKE_QUEEN:
         case TRAINER_CLASS_PYRAMID_KING:
             return MUS_VS_FRONTIER_BRAIN;
+        case TRAINER_CLASS_LASS:
+            return MUS_VS_TRAINER;
         default:
+            switch (VarGet(VAR_CHOOSE_DIFFICULTY)) {
+                case 0:
+                    return MUS_VS_TRAINER;
+                case 1:
+                    return MUS_VS_RIVAL;
+                case 2:
+                    return MUS_VS_GYM_LEADER;
+            }
             return MUS_VS_TRAINER;
         }
     }
     else
     {
+        switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
+        {
+            case SPECIES_TOGEDEMARU:
+            case SPECIES_DEDENNE:
+            case SPECIES_LURANTIS:
+            case SPECIES_LUXRAY:
+            case SPECIES_LUXRAY_DARK:
+            case SPECIES_TOEDSCRUEL:
+            case SPECIES_FROSMOTH:
+            case SPECIES_KLEAVOR:
+            case SPECIES_GOODRA_HISUI:
+            case SPECIES_BEHEEYEM:
+            case SPECIES_AERODACTYL:
+            case SPECIES_SCREAM_TAIL:
+            case SPECIES_AROMATISSE:
+            case SPECIES_DHELMISE:
+            case SPECIES_GRAPPLOCT:
+            case SPECIES_PALOSSAND:
+            case SPECIES_CRABOMINABLE:
+            case SPECIES_PHIONE:
+            case SPECIES_HYDRAPPLE:
+                return MUS_WATERFALL_COLOSSEUM;
+        }
         return MUS_VS_WILD;
     }
 }

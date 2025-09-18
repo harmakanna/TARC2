@@ -3613,6 +3613,10 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_DP_CANALAVE_DAY)          \
     X(MUS_PL_LOOKER)                \
     X(MUS_BW_VS_LEGENDARY)          \
+    X(MUS_VS_CHAMPION_NEMONA)       \
+    X(MUS_WATERFALL_COLOSSEUM)      \
+    X(MUS_VS_CIPHER_ADMIN)          \
+    X(MUS_VS_GYM_LEADER_REMIX)      \
 
 #define SOUND_LIST_SE               \
     X(SE_USE_ITEM)                  \

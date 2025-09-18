@@ -543,6 +543,7 @@ PresentTown_Port_EventScript_BlueQuest::
     clearflag FLAG_SYS_DISAPPEAR_QUESTS
 	clearflag FLAG_SYS_NO_WHITEOUT
 	fadedefaultbgm
+    savebgm MUS_DUMMY
 	goto PresentTown_Port_EventScript_BluePostQuest
 	release
 	end
@@ -592,6 +593,7 @@ PresentTown_Port_EventScript_BlueDefeat::
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_Hmm
 	closemessage
 	fadedefaultbgm
+    savebgm MUS_DUMMY
 	applymovement LOCALID_BLUE, Common_Movement_FaceOriginalDirection
 	waitmovement 0
     clearflag FLAG_SYS_DISAPPEAR_QUESTS

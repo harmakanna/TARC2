@@ -573,6 +573,10 @@ gSongTable::
 	song mus_dp_canalave_day, 0, 0
 	song mus_pl_looker, 0, 0
 	song mus_bw_vs_legendary, 0, 0
+	song mus_vs_champion_nemona, 0, 0
+	song mus_waterfall_colosseum, 0, 0
+	song mus_vs_cipher_admin, 0, 0
+	song mus_vs_gym_leader_remix, 0, 0
 	song ph_trap_blend, 2, 2
 	song ph_trap_held, 2, 2
 	song ph_trap_solo, 2, 2
