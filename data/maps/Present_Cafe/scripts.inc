@@ -293,6 +293,7 @@ Present_Cafe_EventScript_MayQuest::
     setflag FLAG_SYS_DISAPPEAR_QUESTS
     playbgm MUS_PL_LOOKER, TRUE
 	speak LOCALID_PLAYER, VAR_FACING, Name_Looker, Looker_Text_YouAreUnderSuspicion
+	closemessage
 	setvar VAR_TEMP_1, LOCALID_CAFE_MAY
     call_if_eq VAR_FACING, DIR_NORTH, InsideOutside_EventScript_TargetTurnFaceLookerNorth
     call_if_eq VAR_FACING, DIR_WEST, InsideOutside_EventScript_TargetTurnFaceLookerWest
