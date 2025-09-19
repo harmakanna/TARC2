@@ -9,7 +9,7 @@ Past_House3_Text_OldWoman:
 	.string "Oh, I remember the days when I\n"
 	.string "traveled across time with Celebi!\p"
 	.string "It is a rite of passage for many in\n"
-	.string ".?the village!\p"
+	.string "the village!\p"
 	.string "Be careful - wild POKéMON catch wind\n"
 	.string "of the disturbance in the forest when\l"
 	.string "you teleport!\p"

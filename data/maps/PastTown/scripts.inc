@@ -1035,8 +1035,8 @@ PastTown_EventScript_Toedscruel::
 	goto_if_eq VAR_RESULT, 1, PastTown_EventScript_NotEnoughPokemon
 	setflag FLAG_SYS_NO_WHITEOUT
 	setflag FLAG_SYS_DISABLE_CATCHING
-	createmon 1, 0, SPECIES_TOEDSCRUEL, 53, ITEM_LANSAT_BERRY, 0, NATURE_SERIOUS, 0
-	createmon 1, 1, SPECIES_TOEDSCOOL, 53, ITEM_STARF_BERRY, 0, NATURE_SERIOUS, 0
+	createmon 1, 0, SPECIES_TOEDSCOOL, 53, ITEM_STARF_BERRY, 0, NATURE_SERIOUS, 0
+	createmon 1, 1, SPECIES_TOEDSCRUEL, 53, ITEM_LANSAT_BERRY, 0, NATURE_SERIOUS, 0
 	closemessage
 	setwilddoubleflag
 	dowildbattle

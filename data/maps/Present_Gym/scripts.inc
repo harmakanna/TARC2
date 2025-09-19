@@ -355,8 +355,7 @@ Present_Gym_Text_LookerHmm:
 	.string "closer to cracking open this case!$"
 
 Present_Gym_Text_PhoebeAnyTime:
-	.string "Any time, Looker! Thanks for such an\n"
-	.string "exciting battle!\p"
+	.string "Any time, Looker!\p"
 	.string "While you're in town, feel free to\n"
 	.string "borrow a Pokémon! It might be a great\l"
 	.string "help to your investigation.\p"
@@ -375,9 +374,8 @@ Present_Gym_Text_PhoebeIHeardYouWanted:
 	.string "to help out, but would you PLEASE save\l"
 	.string "me from my job and entertain me with\l"
 	.string "a battle?\p"
-	.string "Sometimes this new job makes me feel\n"
-	.string "like I'm a glorified babysitter…\p"
-	.string "I'd appreciate a change of pace…$"
+	.string "I'd appreciate a change of pace from\n"
+	.string "being a glorified babysitter…$"
 
 Present_Gym_Text_LookerCorrect:
 	.string "I would love to humor this little gym\n"
@@ -412,8 +410,7 @@ Present_Gym_Text_LookerIAmBack:
 	.string "Hello, I am back. I hope there isn't\n"
 	.string "a gym challenger around this time?\p"
 	.string "I am here on business to discuss the\n"
-	.string "recent torrent with the leader.\p"
-	.string "Would she have time now?$"
+	.string "recent torrent with the leader.$"
 
 Present_Gym_Text_GymGuyYouWereHereEarlier:
 	.string "Ah, Looker! I remember you came by here\n"
@@ -433,30 +430,28 @@ Present_Gym_Text_LookerWonderfulCanSheComeUp:
 
 Present_Gym_Text_GymGuyNoCanDoInTown:
 	.string "No can do. She heard you were in the city\n"
-	.string "and said she wanted to see what you're\l"
-	.string "made of if you swung by, so you gotta\l"
-	.string "do the whole gym challenge.\p"
+	.string "and wanted to see what you're made of, so\l"
+	.string "you gotta do the whole gym challenge.\p"
 	.string "Being a leader, she rarely gets the\n"
 	.string "chance to battle adults.\p"
 	.string "Only kids take this stuff seriously.$"
 
 Present_Gym_Text_GymGuyNoCanDo:
 	.string "No can do. I told her you swung by\n"
-	.string "earlier and she said she wanted to see\l"
-	.string "what you're made of, so you gotta do\l"
-	.string "the whole gym challenge.\p"
+	.string "earlier and she wanted to see what you're\l"
+	.string "made of, so you gotta do the gym.\p"
 	.string "Being a leader, she rarely gets the\n"
 	.string "chance to battle adults.\p"
 	.string "Only kids take this stuff seriously.$"
 
 Present_Gym_Text_LookerSoSheWantsAChangeOfPace:
 	.string "So she wants me to provide a bit of a\n"
-	.string "distraction from her normal job?\p"
+	.string "distraction from her job?\p"
 	.string "I have some time to indulge.$"
 
 Present_Gym_Text_GymGuyGreatJustKnow:
 	.string "Great! Just so you know, if you beat any\n"
-	.string "gym trainers here but leave the gym,\l"
+	.string "gym trainers but then leave the gym,\l"
 	.string "you will have to re-fight them!\p"
 	.string "The gym leader wants to see how tough a\n"
 	.string "member of the police like yourself is.$"

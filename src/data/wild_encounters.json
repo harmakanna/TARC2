@@ -11496,7 +11496,7 @@
           "map": "MAP_PRESENT_TOWN",
           "base_label": "gPresentTown",
           "land_mons": {
-            "encounter_rate": 4,
+            "encounter_rate": 2,
             "mons": [
               {
                 "min_level": 46,

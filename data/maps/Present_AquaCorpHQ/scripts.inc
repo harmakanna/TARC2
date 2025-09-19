@@ -244,7 +244,7 @@ Present_AquaCorpHQ_EventScript_AquaGauntletMattDefeated::
 	speak LOCALID_AQUACORP_SHELLY, DIR_WEST, Name_Shelly, Present_AquaCorpHQ_Text_ShellyAndLookerYou
 	speak LOCALID_PLAYER, DIR_EAST, Name_Looker, Present_AquaCorpHQ_Text_LookerSorry
 	speak LOCALID_AQUACORP_SHELLY, DIR_WEST, Name_Shelly, Present_AquaCorpHQ_Text_ShellyLookerComeHere
-	speak LOCALID_PLAYER, DIR_EAST, Name_Looker, Present_AquaCorpHQ_Text_LookerOkay
+	@speak LOCALID_PLAYER, DIR_EAST, Name_Looker, Present_AquaCorpHQ_Text_LookerOkay
 	closemessage
 	applymovement LOCALID_AQUACORP_SHELLY, Present_AquaCorpHQ_Movement_ShellyWalkToWailmer
 	applymovement LOCALID_PLAYER, Present_AquaCorpHQ_Movement_LookerFollowToWailmer
@@ -790,11 +790,11 @@ Present_AquaCorpHQ_Text_MattWhyAreYouHere:
 	.string "around here?$"
 
 Present_AquaCorpHQ_Text_LookerYoureUnderArrest:
+	.string "Team Aqua is under suspicion for being\n"
+	.string "the cause of the frenzied weather.\p"
 	.string "I am taking you into custody for\n"
 	.string "questioning regarding the recent\l"
-	.string "downpour in Porta Bella City.\p"
-	.string "Team Aqua is under suspicion for being\n"
-	.string "the cause of the frenzied weather.$"
+	.string "downpour in Porta Bella City.$"
 
 Present_AquaCorpHQ_Text_MattWhat:
 	.string "… … …\n"
@@ -819,7 +819,7 @@ Present_AquaCorpHQ_Text_MattOhComeOn:
 	.string "Come.\p"
 	.string "ON!\p"
 	.string "For the last time, we are NOT doing\n"
-	.string "anything seedy!\p"
+	.string "anything wrong!\p"
 	.string "Will you PLEASE get off our backs!?$"
 
 Present_AquaCorpHQ_Text_LookerThereIsAStorm:
@@ -833,19 +833,19 @@ Present_AquaCorpHQ_Text_MattSoWhatIfTheresAStorm:
 	.string "We get hit with storms ALL THE TIME\n"
 	.string "in Porta Bella!\p"
 	.string "You can't just point at the weather\n"
-	.string "and put the blame us!$"
+	.string "and blame us!$"
 
 Present_AquaCorpHQ_Text_LookerWeHaveItOnGoodIntel:
 	.string "We have it on good intel that the\n"
-	.string "cause of this storm is most likely\l"
-	.string "the result of Tornadus and Thundurus\l"
-	.string "rampaging in the absense of Landorus!$"
+	.string "cause of this storm is the result of\l"
+	.string "Tornadus and Thundurus rampaging in\l"
+	.string "in the absense of Landorus!$"
 
 Present_AquaCorpHQ_Text_LookerWeHaveConfirmed:
-	.string "I'll let you know, in fact, we have\n"
-	.string "confirmed the storm was caused by\l"
-	.string "Tornadus and Thundurus rampaging in\l"
-	.string "the absense of Landorus!$"
+	.string "I'll let you know, we have confirmed\n"
+	.string "the storm was caused by Tornadus and\l"
+	.string "Thundurus rampaging in the absense\l"
+	.string "of Landorus!$"
 
 Present_AquaCorpHQ_Text_LookerWeHaveConfirmedAreBeing:
 	.string "I'll let you know, in fact, we have\n"
@@ -856,7 +856,7 @@ Present_AquaCorpHQ_Text_LookerWeHaveConfirmedAreBeing:
 Present_AquaCorpHQ_Text_LookerJustThreeMonthsAgo:
 	.string "Not even three months ago, your group\n"
 	.string "threw the whole Hoenn region into\l"
-	.string "chaos by awakening Kyogre to what…\p"
+	.string "chaos by awakening Kyogre to…\p"
 	.string "Give water Pokémon more water…?\p"
 	.string "I hope you understand Team Aqua is\n"
 	.string "public suspect number one right now!$"
@@ -871,8 +871,8 @@ Present_AquaCorpHQ_Text_ShellyWillYouJustStop:
 
 Present_AquaCorpHQ_Text_MattNoIWillNot:
 	.string "Shut up, Shelly!\p"
-	.string "This guy is throwing around baseless\n"
-	.string "accusations! Am I wrong to be mad!?$"
+	.string "This guy is throwing around stupid\n"
+	.string "accusations!$"
 
 Present_AquaCorpHQ_Text_MattEnoughOfThis:
 	.string "Enough of this! If you won't get off\n"
@@ -974,11 +974,9 @@ Present_AquaCorpHQ_Text_ShellyEnough:
 
 Present_AquaCorpHQ_Text_ShellyHaventYouNoticed:
 	.string "Matt, your temper tantrums aren't\n"
-	.string "getting you anywhere, they're only\l"
-	.string "making everything worse!\p"
-	.string "Like, have you even noticed how much\n"
-	.string "you've stressed out the Pokémon in\l"
-	.string "our care?$"
+	.string "getting you anywhere!\p"
+	.string "Have you even noticed how much you've\n"
+	.string "stressed out the Pokémon in our care?$"
 
 Present_AquaCorpHQ_Text_MattSorry:
 	.string "Sorry Shelly…$"
@@ -997,17 +995,12 @@ Present_AquaCorpHQ_Text_LookerSorry:
 
 Present_AquaCorpHQ_Text_ShellyLookerComeHere:
 	.string "Sigh…\p"
-	.string "Mr. Looker, come here. I can explain\n"
-	.string "everything.$"
+	.string "Come here. I can explain everything.$"
 	
 Present_AquaCorpHQ_Text_LookerOkay:
 	.string "Okay…$"
 
 Present_AquaCorpHQ_Text_ShellyWeAreResearchers:
-	.string "Our incident with Kyogre stemmed\n"
-	.string "from us wanting to do good for all\l"
-	.string "the water Pokémon in the region.\p"
-	.string "But we went too far.\p"
 	.string "After Team Aqua dissolved, Matt and\n"
 	.string "I turned to studying marine biology\l"
 	.string "with the remnants of Team Aqua.\p"
@@ -1019,7 +1012,7 @@ Present_AquaCorpHQ_Text_SarahShellyDots:
 	.string "Shelly…$"
 
 Present_AquaCorpHQ_Text_SarahCanWeClamperl:
-	.string "Could we get on with the test\n"
+	.string "Could we get on with the experiment\n"
 	.string "on Chowder?\p"
 	.string "Poor thing's been waiting ages for\n"
 	.string "his big moment…$"
@@ -1042,7 +1035,7 @@ Present_AquaCorpHQ_Text_ShellyThisClamperl:
 	.string "We have been learning about why this\n"
 	.string "Pokémon has trouble evolving in\l"
 	.string "captivity but can in the wild, and we\l"
-	.string "think Sarah cracked the case!$"
+	.string "think we cracked the case!$"
 
 Present_AquaCorpHQ_Text_SarahClamperlIsReady:
 	.string "He's feeling ready! Which one should\n"
@@ -1053,7 +1046,7 @@ Present_AquaCorpHQ_Text_ShellyLetLookerDecide:
 
 Present_AquaCorpHQ_Text_ShellyWhichItemWouldYouWantToUse:
 	.string "Which item do you want to use on\n"
-	.string "lil' Chowder here?$"
+	.string "Chowder here?$"
 
 Present_AquaCorpHQ_Text_ShellyGorebyssItIs:
 	.string "Sarah, give Chowder the Deep Sea\n"
@@ -1087,12 +1080,11 @@ Present_AquaCorpHQ_Text_LookerISupposeAquaIsCleared:
 	.string "I see…\p"
 	.string "I suppose Team Aqua is off the hook\n"
 	.string "then.\p"
-	.string "I'll turn a blind eye to the assaults.\p"
-	.string "Less paperwork that way…$"
+	.string "I'll turn a blind eye to the assaults…$"
 
 Present_AquaCorpHQ_Text_ShellyImGladToHear:
 	.string "I'm glad to hear.\p"
-	.string "I guess.$"
+	.string "I think.$"
 
 Present_AquaCorpHQ_Text_MattImSorry:
 	.string "…I'm sorry for before.\n"
