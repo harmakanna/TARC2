@@ -1840,15 +1840,6 @@ Level: 50
 - U-turn  
 - Feather Dance  
 
-Volcarona (M) @ Charti Berry  
-Ability: Flame Body  
-Level: 50  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Fiery Dance  
-- Bug Buzz  
-- Rage Powder  
-- Psychic  
-
 === TRAINER_TASHA ===
 Name: Tasha
 Class: Hex Maniac
@@ -3509,17 +3500,6 @@ Timid Nature
 - Hyper Voice  
 - U-turn  
 - Feather Dance  
-
-Volcarona (M) @ Charti Berry  
-Ability: Flame Body  
-Level: 50  
-EVs: 252 HP / 126 Def / 126 SpA  
-Bold Nature  
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Fiery Dance  
-- Bug Buzz  
-- Rage Powder  
-- Psychic  
 
 === TRAINER_TASHA ===
 Name: Tasha
