@@ -124,6 +124,7 @@ Present_CelebiSociety_EventScript_CheckForMochi::
 	call_if_unset FLAG_GAVE_BEHEEYEM_MOCHI, Present_CelebiSociety_EventScript_CheckMochiBeheeyem
 	call_if_unset FLAG_GAVE_TORNADUS_MOCHI, Present_CelebiSociety_EventScript_CheckMochiTornadus
 	call_if_unset FLAG_GAVE_THUNDURUS_MOCHI, Present_CelebiSociety_EventScript_CheckMochiThundurus
+	call_if_unset FLAG_GAVE_ENAMORUS_MOCHI, Present_CelebiSociety_EventScript_CheckMochiEnamorus
 	call_if_set FLAG_MOCHI_MAN_GAVE_MOCHI, Present_CelebiSociety_EventScript_LookerReceivedMochi
 	call_if_unset FLAG_MOCHI_MAN_GAVE_MOCHI, Present_CelebiSociety_EventScript_NoNewPokemon
 	closemessage
@@ -424,7 +425,7 @@ Present_CelebiSociety_EventScript_CheckMochiPhione::
 
 Present_CelebiSociety_EventScript_GiveMochiPhione::
 	bufferspeciesname STR_VAR_1, SPECIES_PHIONE
-	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManOhLegendary
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManOhPhione
 	additem ITEM_SPATK_MOCHI, 2
 	additem ITEM_SPE_MOCHI, 2
 	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
@@ -443,6 +444,21 @@ Present_CelebiSociety_EventScript_GiveMochiAromatisse::
 	additem ITEM_SPDEF_MOCHI, 1
 	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
 	setflag FLAG_GAVE_AROMATISSE_MOCHI
+	return
+
+Present_CelebiSociety_EventScript_CheckMochiEnamorus::
+	call_if_set FLAG_CAUGHT_ENAMORUS, Present_CelebiSociety_EventScript_GiveMochiEnamorus
+	return
+
+Present_CelebiSociety_EventScript_GiveMochiEnamorus::
+	bufferspeciesname STR_VAR_1, SPECIES_ENAMORUS
+	speak LOCALID_MOCHI_MAN, VAR_0x8005, Name_Mochi_Man, Present_CelebiSociety_Text_MochiManOhEnamorus
+	additem ITEM_HP_MOCHI, 1
+	additem ITEM_ATK_MOCHI, 1
+	additem ITEM_SPATK_MOCHI, 1
+	additem ITEM_SPE_MOCHI, 1
+	setflag FLAG_MOCHI_MAN_GAVE_MOCHI
+	setflag FLAG_GAVE_ENAMORUS_MOCHI
 	return
 
 Present_CelebiSociety_EventScript_MochiResetter::
@@ -677,6 +693,23 @@ Present_CelebiSociety_Text_MochiManOhLegendary:
 	.string "Wow! Incredible!\n"
 	.string "You caught {STR_VAR_1}?\p"
 	.string "What a talented young man you are!\p"
+	.string "Have some MOCHI!$"
+
+Present_CelebiSociety_Text_MochiManOhPhione:
+	.string "Wow! Incredible!\n"
+	.string "You caught {STR_VAR_1}?\p"
+	.string "I haven't seen one in the river since\n"
+	.string "I was but a WEE lad!\p"
+	.string "Have some MOCHI!$"
+
+Present_CelebiSociety_Text_MochiManOhEnamorus:
+	.string "OH MY LORD!\p"
+	.string "WHAT A BEAUTIFUL POKéMON!\p"
+	.string "It looks so much like the spirits of\n"
+	.string "wind and lighting, but I've never\l"
+	.string "heard of a PINK one!\p"
+	.string "Young man, you are truly a master of\n"
+	.string "exotic POKéMON!\p"
 	.string "Have some MOCHI!$"
 
 Present_CelebiSociety_Text_MochiManLetMeKnow:

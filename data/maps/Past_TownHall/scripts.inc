@@ -293,9 +293,9 @@ Past_TownHall_EventScript_SailorTop::
 	end
 
 Past_TownHall_Text_SailorTop:
-	.string "When I walk the beaches of the local\n"
-	.string "port, Pokémon will sometimes stroll\l"
-	.string "onto shore!\p"
+	.string "Sometimes, while I walk up and down\n"
+	.string "these beaches, Pokémon will leap out\l"
+	.string "of the water and jump on shore!\p"
 	.string "If ye've got a Poké Ball, you could even\n"
 	.string "catch 'em, probably!$"
 

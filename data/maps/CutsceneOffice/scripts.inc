@@ -109,6 +109,8 @@ CutsceneOffice_EventScript_Scene::
 	speak LOCALID_OFFICE_ANABEL, DIR_WEST, Name_Anabel, CutsceneOffice_Text_AnabelIllReachOut
 	closemessage
 	delay 40
+	givemonwithot OT_LOOKER_GROWLITHE
+	givemonwithot OT_LOOKER_TOXICROAK
 	return
 
 CutsceneOffice_Movement_AnabelEntersScene:

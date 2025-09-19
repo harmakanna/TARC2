@@ -584,7 +584,6 @@ InsideOutside_EventScript_StudentOutside::
 
 InsideOutside_EventScript_Student::
     lock
-    faceplayer
     call Script_GetNPCFacingDirection
     goto_if_unset FLAG_SYS_MAIN_GAME_START, InsideOutside_EventScript_StudentPregame
     returnqueststate QUEST_INVERSE
@@ -617,7 +616,7 @@ InsideOutside_EventScript_StudentPreQuest::
     end
 
 InsideOutside_EventScript_StudentStrugglingOutside::
-    speak VAR_TEMP_1, DIR_WEST, Name_Student, InsideOutside_Text_StudentStruggling
+    speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentStruggling
     return
 
 InsideOutside_EventScript_StudentStrugglingInside::
@@ -625,6 +624,7 @@ InsideOutside_EventScript_StudentStrugglingInside::
     return
 
 InsideOutside_EventScript_StudentQuest::
+    faceplayer
     setflag FLAG_SYS_DISAPPEAR_QUESTS
     speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentHiSir
     playse SE_SELECT
@@ -682,6 +682,7 @@ InsideOutside_EventScript_FinishStudentQuest::
     end
 
 InsideOutside_EventScript_StudentPostQuest::
+    faceplayer
     speak VAR_TEMP_1, VAR_0x8005, Name_Student, InsideOutside_Text_StudentBuckleDown
     closemessage
     applymovement VAR_TEMP_1, Common_Movement_FaceOriginalDirection
@@ -961,6 +962,7 @@ InsideOutside_EventScript_ObservantWoman::
     goto_if_unset FLAG_DEFEATED_SHRINE_GENIES, InsideOutside_EventScript_ObservantWomanPreGenies
     returnqueststate QUEST_FOREVER_FAITHFUL
     goto_if_ne VAR_RESULT, 4, InsideOutside_EventScript_ObservantWomanQuest
+    goto_if_set FLAG_SWEET_TOOTH_WENT_CRAZY, InsideOutside_EventScript_ObservantWomanSweetTooth
     msgbox InsideOutside_Text_ObservantWomanPostQuest, MSGBOX_NPC
     end
     
@@ -972,9 +974,24 @@ InsideOutside_EventScript_ObservantWomanPreGenies::
     msgbox InsideOutside_Text_ObservantWomanPeopleWatcher, MSGBOX_NPC
     end
 
+InsideOutside_EventScript_ObservantWomanSweetTooth::
+    msgbox InsideOutside_Text_ObservantWomanSweetTooth, MSGBOX_NPC
+    end
+
 InsideOutside_EventScript_RunningWoman::
     msgbox InsideOutside_Text_RunningWoman, MSGBOX_NPC
     end
+
+InsideOutside_Text_ObservantWomanSweetTooth:
+.string "DUUUDE! I just saw the craziest thing\n"
+    .string "in the world!\p"
+    .string "Here I was, minding my own business,\n"
+    .string "when out of nowhere, this kid in a pink\l"
+    .string "dress runs SCREAMING out of the woods\l"
+    .string "and crashes through the wall of the cafe!\p"
+    .string "I think I heard her screaming something\n"
+    .string "about sweets?\p"
+    .string "You HAD to be there!$"
 
 InsideOutside_Text_RunningWoman::
     .string "The barista at Taurin' Torin's Tauros\n"
@@ -1266,8 +1283,8 @@ InsideOutside_Text_AceTrainerDontYouHaveSomeoneElse:
 
 InsideOutside_Text_AceTrainerThere:
     .string "There, you got me…\p"
-    .string "Oh wait! No you didn't. I didn't\n"
-    .string "catch Landorus, Einstein!$"
+    .string "Oh wait! No you didn't. I didn't catch\n"
+    .string "Landorus, Einstein!$"
 
 InsideOutside_Text_LookerOh:
     .string "Oh. Well…\p"

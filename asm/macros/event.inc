@@ -2055,6 +2055,8 @@
 	.4byte \text
 	.endm
 
+	@ Gets the object event to apply walk_in_place to, sets the direction they want to walk,
+	@ gets their name for the nametag,and takes a textbox
 	.macro speak localId:req,direction:req,name:req,text:req,type=MSGBOX_DEFAULT
 	.byte SCR_OP_SPEAK
 	.2byte \localId
