@@ -16,16 +16,32 @@ PastTown_Port_EventScript_ResetPortMons::
 	setflag FLAG_HIDE_PORT_CRABOMINABLE
 	setflag FLAG_HIDE_PORT_PALOSSAND
 	setflag FLAG_HIDE_PORT_PHIONE
+	setflag FLAG_HIDE_PORT_ENAMORUS
 	setvar VAR_RESEED_PORT_MON, 0
 	return
 
 PastTown_Port_EventScript_CheckSpawnCatchMon::
 	call_if_lt VAR_PORT_MONS_CAUGHT, 5, PastTown_Port_EventScript_TrySpawnCatchMon
+	returnqueststate QUEST_CATCHMONS
+	call_if_eq VAR_RESULT, 4, PastTown_Port_EventScript_TrySpawnEnamorus
 	return
 
 PastTown_Port_EventScript_TrySpawnCatchMon::
 	randompercentage 10
 	call_if_eq VAR_RESULT, TRUE, PastTown_Port_EventScript_SpawnPortMon
+	return
+
+PastTown_Port_EventScript_TrySpawnEnamorus::
+	randompercentage 5
+	call_if_eq VAR_RESULT, TRUE, PastTown_Port_EventScript_TrySpawnEnamorus2
+	return
+
+PastTown_Port_EventScript_TrySpawnEnamorus2::
+	call_if_unset FLAG_CAUGHT_ENAMORUS, PastTown_Port_EventScript_SpawnEnamorus
+	return
+
+PastTown_Port_EventScript_SpawnEnamorus::
+	clearflag FLAG_HIDE_PORT_ENAMORUS
 	return
 
 PastTown_Port_EventScript_SpawnPortMon::
@@ -665,6 +681,40 @@ PastTown_Port_EventScript_Phione::
 	releaseall
 	end
 
+PastTown_Port_EventScript_Enamorus::
+	lockall
+	waitse
+	call PastTown_Port_EventScript_TurnToFacePlayer
+	playmoncry SPECIES_ENAMORUS, CRY_MODE_ENCOUNTER
+	msgbox PastTown_Port_Text_Enamorus, MSGBOX_DEFAULT
+	waitmoncry
+	createmon 1, 0, SPECIES_ENAMORUS, 50, ITEM_FAIRY_FEATHER, 1, NATURE_SASSY, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 15, 15, 15, 15, 15, 15, MOVE_SPRINGTIDE_STORM, MOVE_FLY, MOVE_SUPERPOWER, MOVE_TAILWIND
+	closemessage
+	setflag FLAG_SYS_NO_WHITEOUT
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_NO_WHITEOUT
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	setvar VAR_TEMP_2, SPECIES_ENAMORUS
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, PastTown_Port_EventScript_EnamorusRanAway
+	goto_if_eq VAR_RESULT, B_OUTCOME_LOST, PastTown_Port_EventScript_EnamorusRanAway
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, PastTown_Port_EventScript_EnamorusRanAway
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, PastTown_Port_EventScript_EnamorusRanAway
+	goto_if_eq VAR_RESULT, B_OUTCOME_MON_TELEPORTED, PastTown_Port_EventScript_EnamorusRanAway
+	setflag FLAG_CAUGHT_ENAMORUS
+	releaseall
+	end
+
+PastTown_Port_EventScript_EnamorusRanAway::
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	fadescreenswapbuffers FADE_FROM_BLACK
+	msgbox PastTown_Port_Text_EnamorusFlewAway, MSGBOX_DEFAULT
+	closemessage
+	releaseall
+	end
+
 PastTown_Port_EventScript_MonRanAway::
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject VAR_LAST_TALKED
@@ -762,6 +812,9 @@ PastTown_Port_Text_LeftTuskFossilAlone:
 PastTown_Port_Text_LeftWingFossilAlone:
 	.string "Looker left the wing imprint alone.$"
 
+PastTown_Port_Text_Enamorus:
+	.string "Ooooo!$"
+
 PastTown_Port_Text_Dhelmise:
 	.string "uuOOooUUoUOOOuuuOooUoo…$"
 
@@ -782,4 +835,8 @@ PastTown_Port_Text_MonRanAway:
 
 PastTown_Port_Text_PalossandRanAway:
 	.string "{STR_VAR_1} sank into the ground!$"
+
+PastTown_Port_Text_EnamorusFlewAway:
+	.string "Enamorus flew away!$"
+
 	

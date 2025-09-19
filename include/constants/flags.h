@@ -1282,9 +1282,9 @@
 #define FLAG_GAVE_CRABOMINABLE_MOCHI                                           0x4CC // Unused Flag
 #define FLAG_GAVE_PALOSSAND_MOCHI                                           0x4CD // Unused Flag
 #define FLAG_GAVE_PHIONE_MOCHI                                           0x4CE // Unused Flag
-#define FLAG_UNUSED_0x4CF                                           0x4CF // Unused Flag
-#define FLAG_UNUSED_0x4D0                                           0x4D0 // Unused Flag
-#define FLAG_UNUSED_0x4D1                                           0x4D1 // Unused Flag
+#define FLAG_CAUGHT_ENAMORUS                                           0x4CF // Unused Flag
+#define FLAG_HIDE_PORT_ENAMORUS                                           0x4D0 // Unused Flag
+#define FLAG_GAVE_ENAMORUS_MOCHI                                           0x4D1 // Unused Flag
 #define FLAG_UNUSED_0x4D2                                           0x4D2 // Unused Flag
 #define FLAG_UNUSED_0x4D3                                           0x4D3 // Unused Flag
 #define FLAG_UNUSED_0x4D4                                           0x4D4 // Unused Flag

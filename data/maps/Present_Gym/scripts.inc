@@ -429,16 +429,16 @@ Present_Gym_Text_LookerWonderfulCanSheComeUp:
 	.string "front, in that case?$"
 
 Present_Gym_Text_GymGuyNoCanDoInTown:
-	.string "No can do. She heard you were in the city\n"
-	.string "and wanted to see what you're made of, so\l"
-	.string "you gotta do the whole gym challenge.\p"
+	.string "No can do. She heard you were in town\n"
+	.string "and wants to see what you're made of,\l"
+	.string "so you gotta do the gym challenge.\p"
 	.string "Being a leader, she rarely gets the\n"
 	.string "chance to battle adults.\p"
 	.string "Only kids take this stuff seriously.$"
 
 Present_Gym_Text_GymGuyNoCanDo:
-	.string "No can do. I told her you swung by\n"
-	.string "earlier and she wanted to see what you're\l"
+	.string "No can do. After you swung by, she\n"
+	.string "she decided she wants to see what you're\l"
 	.string "made of, so you gotta do the gym.\p"
 	.string "Being a leader, she rarely gets the\n"
 	.string "chance to battle adults.\p"
@@ -530,7 +530,8 @@ Present_Gym_Text_GymTrainer4Intro:
 	.string "this country!$"
 
 Present_Gym_Text_GymTrainer4Defeat:
-	.string "Well, at least I did my part!$"
+	.string "You won't have such an easy time versus\n"
+	.string "the gym leader…$"
 
 Present_Gym_Text_GymTrainer4PostBattle:
 	.string "Have you figured out who the gym leader\n"

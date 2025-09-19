@@ -118,6 +118,11 @@ PresentTown_Port_EventScript_Departure::
 	clearflag FLAG_SYS_PREVENT_MAP_FADE
 	setflag FLAG_SYS_GAME_CLEAR
 	setvar VAR_CUTSCENE_STATE, 15
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, 0
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, 1
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, 2
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, 3
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_THE_CULPRIT, 4
 	special RemoveCameraObject
 	delay 120
 	msgbox HackCredits, MSGBOX_DEFAULT
@@ -205,8 +210,6 @@ PresentTown_Port_EventScript_Arrival::
 	additem ITEM_SPATK_MOCHI, 1
 	additem ITEM_SPDEF_MOCHI, 1
 	additem ITEM_SPE_MOCHI, 2
-	givemonwithot OT_LOOKER_GROWLITHE
-	givemonwithot OT_LOOKER_TOXICROAK
 	setrespawn HEAL_LOCATION_PRESENT
 	special EnableNationalPokedex
 	setvar VAR_CUTSCENE_STATE, 1

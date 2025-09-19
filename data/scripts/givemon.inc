@@ -262,6 +262,7 @@ Present_AquaCorpHQ_EventScript_ShellyGiveGorebyss::
 	speakername Name_Matt
 	msgbox Present_AquaCorpHQ_Text_MattImSorry, MSGBOX_DEFAULT
 	speak LOCALID_PLAYER, DIR_WEST, Name_Looker, Present_AquaCorpHQ_Text_LookerApologyAcceptedImSorry
+	closemessage
 	applymovement LOCALID_AQUACORP_SARAH, Common_Movement_FaceDownExclamationMark
 	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceRightExclamationMark
 	playse SE_PIN
@@ -373,6 +374,7 @@ Present_AquaCorpHQ_EventScript_ShellyGiveHuntail::
 	speakername Name_Matt
 	msgbox Present_AquaCorpHQ_Text_MattImSorry, MSGBOX_DEFAULT
 	speak LOCALID_PLAYER, DIR_WEST, Name_Looker, Present_AquaCorpHQ_Text_LookerApologyAcceptedImSorry
+	closemessage
 	applymovement LOCALID_AQUACORP_SARAH, Common_Movement_FaceDownExclamationMark
 	applymovement LOCALID_AQUACORP_SHELLY, Common_Movement_FaceRightExclamationMark
 	playse SE_PIN
@@ -744,6 +746,8 @@ PresentTown_Port_EventScript_ReceiveGolemParty::
 	call PresentTown_Port_EventScript_ReceivedGolemFanfare
 	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
 	closemessage
+	applymovement LOCALID_BLUE, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	release
 	end
 
@@ -752,6 +756,8 @@ PresentTown_Port_EventScript_ReceiveGolemPC::
 	call Common_EventScript_TransferredToPC
 	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
 	closemessage
+	applymovement LOCALID_BLUE, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	release
 	end
 	
@@ -780,6 +786,8 @@ PresentTown_Port_EventScript_ReceiveMachampParty::
 	call PresentTown_Port_EventScript_ReceivedMachampFanfare
 	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
 	closemessage
+	applymovement LOCALID_BLUE, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	release
 	end
 
@@ -788,6 +796,8 @@ PresentTown_Port_EventScript_ReceiveMachampPC::
 	call Common_EventScript_TransferredToPC
 	msgbox Looker_Text_AlsoMochi, MSGBOX_DEFAULT
 	closemessage
+	applymovement LOCALID_BLUE, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	release
 	end
 	
