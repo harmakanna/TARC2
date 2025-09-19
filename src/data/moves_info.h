@@ -1034,12 +1034,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Take Down"),
         .description = COMPOUND_STRING(
             "A reckless charge attack\n"
-            "that also hurts the user."),
+            "that also deals 1/4 recoil."),
         .effect = EFFECT_RECOIL,
         .power = 90,
         .type = TYPE_NORMAL,
         .accuracy = 85,
-        .pp = 20,
+        .pp = 6,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
@@ -1086,12 +1086,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Double-Edge"),
         .description = COMPOUND_STRING(
             "A life-risking tackle that\n"
-            "also hurts the user."),
+            "also deals 1/3 recoil."),
         .effect = EFFECT_RECOIL,
         .power = 120,
         .type = TYPE_NORMAL,
         .accuracy = 100,
-        .pp = 15,
+        .pp = 5,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
@@ -1794,7 +1794,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .power = 80,
         .type = TYPE_FLYING,
         .accuracy = 100,
-        .pp = 20,
+        .pp = 8,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
@@ -1812,7 +1812,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Submission"),
         .description = COMPOUND_STRING(
             "A reckless body slam that\n"
-            "also hurts the user."),
+            "also deals 1/4 recoil."),
         .effect = EFFECT_RECOIL,
         .power = 80,
         .type = TYPE_FIGHTING,
@@ -2897,7 +2897,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 100,
-        .pp = 20,
+        .pp = 3,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
@@ -3718,7 +3718,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .effect = EFFECT_NON_VOLATILE_STATUS,
         .power = 0,
         .type = TYPE_POISON,
-        .pp = 40,
+        .pp = 3,
         .target = B_UPDATED_MOVE_DATA >= GEN_5 ? MOVE_TARGET_BOTH : MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
@@ -4027,7 +4027,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .power = 0,
         .type = TYPE_POISON,
         .accuracy = 0,
-        .pp = B_UPDATED_MOVE_DATA >= GEN_6 ? 20 : 40,
+        .pp = 3,
         .target = MOVE_TARGET_USER,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
@@ -5101,12 +5101,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Zap Cannon"),
         .description = COMPOUND_STRING(
             "Powerful and sure to cause\n"
-            "paralysis, but inaccurate."),
+            "paralysis, but only once."),
         .effect = EFFECT_HIT,
         .power = B_UPDATED_MOVE_DATA >= GEN_4 ? 120 : 100,
         .type = TYPE_ELECTRIC,
-        .accuracy = 50,
-        .pp = 5,
+        .accuracy = 100,
+        .pp = 1,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
@@ -6711,8 +6711,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .power = B_UPDATED_MOVE_DATA >= GEN_5 ? 90 : 50,
         .type = TYPE_NORMAL,
         .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_RANDOM,
+        .pp = 2,
+        .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .ignoresSubstitute = B_UPDATED_MOVE_FLAGS >= GEN_6,
@@ -6741,7 +6741,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 0,
-        .pp = B_UPDATED_MOVE_DATA >= GEN_4 ? 20 : 10,
+        .pp = 10,
         .target = MOVE_TARGET_USER,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
@@ -8305,9 +8305,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .effect = EFFECT_HIT,
         .power = B_UPDATED_MOVE_DATA >= GEN_6 ? 60 : 55,
         .type = TYPE_FLYING,
-        .accuracy = 95,
+        .accuracy = 100,
         .criticalHitStage = 1,
-        .pp = 8, //25,
+        .pp = 8, 
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
@@ -8436,8 +8436,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .effect = EFFECT_SPECIAL_DEFENSE_DOWN_2,
         .power = 0,
         .type = TYPE_STEEL,
-        .accuracy = 85,
-        .pp = 40,
+        .accuracy = 100,
+        .pp = 3,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
@@ -9599,7 +9599,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .power = 60,
         .type = TYPE_FLYING,
         .accuracy = 100,
-        .pp = 20,
+        .pp = 8,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
@@ -10286,7 +10286,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Flare Blitz"),
         .description = COMPOUND_STRING(
             "A charge that may burn the\n"
-            "foe. Also hurts the user."),
+            "foe. 1/3 recoil."),
         .effect = EFFECT_RECOIL,
         .power = 120,
         .type = TYPE_FIRE,
@@ -10750,7 +10750,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Brave Bird"),
         .description = COMPOUND_STRING(
             "A low altitude charge that\n"
-            "also hurts the user."),
+            "also deals 1/3 recoil."),
         .effect = EFFECT_RECOIL,
         .power = 120,
         .type = TYPE_FLYING,
@@ -11727,7 +11727,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Wood Hammer"),
         .description = COMPOUND_STRING(
             "Slams the body into a foe.\n"
-            "The user gets hurt too."),
+            "The user takes 1/3 recoil."),
         .effect = EFFECT_RECOIL,
         .power = 120,
         .type = TYPE_GRASS,
@@ -11845,7 +11845,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Head Smash"),
         .description = COMPOUND_STRING(
             "A life-risking headbutt that\n"
-            "seriously hurts the user."),
+            "deals 1/2 recoil damage."),
         .effect = EFFECT_RECOIL,
         .power = 150,
         .type = TYPE_ROCK,
@@ -13540,7 +13540,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Wild Charge"),
         .description = COMPOUND_STRING(
             "An electrical tackle that\n"
-            "also hurts the user."),
+            "also deals 1/4 recoil."),
         .effect = EFFECT_RECOIL,
         .power = 90,
         .type = TYPE_ELECTRIC,
@@ -13899,7 +13899,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Head Charge"),
         .description = COMPOUND_STRING(
             "A charge using guard hair.\n"
-            "It hurts the user a little."),
+            "It deals just 1/4 recoil."),
         .effect = EFFECT_RECOIL,
         .power = 120,
         .type = TYPE_NORMAL,
@@ -15752,7 +15752,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Light Of Ruin"),
         .description = COMPOUND_STRING(
             "Fires a great beam of light\n"
-            "that also hurts the user."),
+            "that also deals 1/2 recoil."),
         .effect = EFFECT_RECOIL,
         .power = 140,
         .type = TYPE_FAIRY,
@@ -18159,7 +18159,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .power = 80,
         .type = TYPE_GRASS,
         .accuracy = 100,
-        .pp = 10,
+        .pp = 5,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
@@ -18211,7 +18211,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .power = 75,
         .type = TYPE_FAIRY,
         .accuracy = 100,
-        .pp = 15,
+        .pp = 6,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
@@ -18317,7 +18317,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .power = 80,
         .type = TYPE_DARK,
         .accuracy = 0,
-        .pp = 10,
+        .pp = 6,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
@@ -19286,7 +19286,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Wave Crash"),
         .description = COMPOUND_STRING(
             "A slam shrouded in water.\n"
-            "It also hurts the user."),
+            "It also deals 1/3 recoil."),
         .effect = EFFECT_RECOIL,
         .power = B_UPDATED_MOVE_DATA >= GEN_9 ? 120 : 75,
         .type = TYPE_WATER,
