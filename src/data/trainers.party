@@ -2233,9 +2233,9 @@ Ability: Sheer Force
 Level: 50  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Extrasensory  
-- Scorching Sands  
+- Sandsear Storm  
 - Sludge Bomb  
-- Fly  
+- Fly 
 
 === TRAINER_MAY ===
 Name: May
@@ -2493,9 +2493,9 @@ Ability: Sheer Force
 Level: 50  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Extrasensory  
-- Scorching Sands  
+- Sandsear Storm  
 - Sludge Bomb  
-- Fly  
+- Fly 
 
 === TRAINER_BW_ACE_TRAINER ===
 Name: Katerina
@@ -2755,9 +2755,9 @@ Ability: Sheer Force
 Level: 50  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Extrasensory  
-- Scorching Sands  
+- Sandsear Storm  
 - Sludge Bomb  
-- Fly  
+- Fly 
 
 === TRAINER_STUDENT ===
 Name: Paolo
@@ -3964,7 +3964,7 @@ EVs: 126 Def / 126 SpA / 252 Spe
 Serious Nature 
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
 - Extrasensory  
-- Scorching Sands  
+- Sandsear Storm  
 - Sludge Bomb  
 - Fly 
 
@@ -4118,7 +4118,7 @@ EVs: 126 Def / 126 SpA / 252 Spe
 Serious Nature 
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
 - Extrasensory  
-- Scorching Sands  
+- Sandsear Storm  
 - Sludge Bomb  
 - Fly
 
@@ -4272,7 +4272,7 @@ EVs: 126 Def / 126 SpA / 252 Spe
 Serious Nature 
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
 - Extrasensory  
-- Scorching Sands  
+- Sandsear Storm  
 - Sludge Bomb  
 - Fly 
 
@@ -4428,7 +4428,7 @@ EVs: 126 Def / 126 SpA / 252 Spe
 Serious Nature 
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
 - Extrasensory  
-- Scorching Sands  
+- Sandsear Storm  
 - Sludge Bomb  
 - Fly 
 
@@ -4582,7 +4582,7 @@ EVs: 126 Def / 126 SpA / 252 Spe
 Serious Nature 
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
 - Extrasensory  
-- Scorching Sands  
+- Sandsear Storm  
 - Sludge Bomb  
 - Fly   
 
