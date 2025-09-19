@@ -961,7 +961,7 @@ InsideOutside_EventScript_ObservantWoman::
     speakername Name_Observant_Woman
     goto_if_unset FLAG_DEFEATED_SHRINE_GENIES, InsideOutside_EventScript_ObservantWomanPreGenies
     returnqueststate QUEST_FOREVER_FAITHFUL
-    goto_if_ne VAR_RESULT, 4, InsideOutside_EventScript_ObservantWomanQuest
+    goto_if_lt VAR_RESULT, 3, InsideOutside_EventScript_ObservantWomanQuest
     goto_if_set FLAG_SWEET_TOOTH_WENT_CRAZY, InsideOutside_EventScript_ObservantWomanSweetTooth
     msgbox InsideOutside_Text_ObservantWomanPostQuest, MSGBOX_NPC
     end
@@ -988,7 +988,7 @@ InsideOutside_Text_ObservantWomanSweetTooth:
     .string "Here I was, minding my own business,\n"
     .string "when out of nowhere, this kid in a pink\l"
     .string "dress runs SCREAMING out of the woods\l"
-    .string "and crashes through the wall of the cafe!\p"
+    .string "and crashes through the café wall!\p"
     .string "I think I heard her screaming something\n"
     .string "about sweets?\p"
     .string "You HAD to be there!$"

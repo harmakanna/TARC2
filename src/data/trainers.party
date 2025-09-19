@@ -603,10 +603,10 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 === TRAINER_SAMANTHA ===
 Name: Samantha
-Class: Psychic
-Pic: Psychic F
+Class: Pkmn Ranger
+Pic: Pokemon Ranger F
 Gender: Female
-Music: Intense
+Music: Cool
 Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Easy
@@ -1988,10 +1988,10 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 === TRAINER_SAMANTHA ===
 Name: Samantha
-Class: Psychic
-Pic: Psychic F
+Class: Pkmn Ranger
+Pic: Pokemon Ranger F
 Gender: Female
-Music: Intense
+Music: Cool
 Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Normal
@@ -3675,10 +3675,10 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 === TRAINER_SAMANTHA ===
 Name: Samantha
-Class: Psychic
-Pic: Psychic F
+Class: Pkmn Ranger
+Pic: Pokemon Ranger F
 Gender: Female
-Music: Intense
+Music: Cool
 Double Battle: Yes
 AI: Basic Trainer
 Difficulty: Hard
