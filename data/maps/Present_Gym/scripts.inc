@@ -1,8 +1,33 @@
 Present_Gym_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, Present_Gym_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, Present_Gym_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Present_Gym_OnFrame
 	map_script MAP_SCRIPT_ON_RESUME, Present_Gym_OnResume
 	.byte 0
+
+Present_Gym_OnLoad:
+	call_if_set FLAG_DEFEATED_ELITE_4_PHOEBE, Present_Gym_EventScript_ClearPath
+	end
+
+Present_Gym_EventScript_ClearPath::
+	setmetatile 8, 13, METATILE_CableClub_Passable, FALSE
+	setmetatile 10, 13, METATILE_CableClub_Passable, FALSE
+	setmetatile 8, 14, METATILE_CableClub_Passable, FALSE
+	setmetatile 10, 14, METATILE_CableClub_Passable, FALSE
+	setmetatile 8, 16, METATILE_CableClub_Passable, FALSE
+	setmetatile 9, 16, METATILE_CableClub_Passable, FALSE
+	setmetatile 10, 16, METATILE_CableClub_Passable, FALSE
+	setmetatile 9, 18, METATILE_CableClub_Passable, FALSE
+	setmetatile 10, 18, METATILE_CableClub_Passable, FALSE
+	setmetatile 9, 19, METATILE_CableClub_Passable, FALSE
+	setmetatile 8, 20, METATILE_CableClub_Passable, FALSE
+	setmetatile 9, 20, METATILE_CableClub_Passable, FALSE
+	setmetatile 8, 22, METATILE_CableClub_Passable, FALSE
+	setmetatile 9, 22, METATILE_CableClub_Passable, FALSE
+	setmetatile 8, 24, METATILE_CableClub_Passable, FALSE
+	setmetatile 9, 24, METATILE_CableClub_Passable, FALSE
+	setmetatile 10, 24, METATILE_CableClub_Passable, FALSE
+	return
 
 Present_Gym_OnTransition:
 	call_if_unset FLAG_DEFEATED_ELITE_4_PHOEBE, Present_Gym_EventScript_ResetTrainers
@@ -171,6 +196,8 @@ Present_Gym_EventScript_PhoebeDefeatedSetFlags::
 	settrainerflag TRAINER_SAMANTHA
 	settrainerflag TRAINER_CONNIE
 	settrainerflag TRAINER_SEBASTIAN
+	call Present_Gym_EventScript_ClearPath
+	special DrawWholeMapView
 	completequest QUEST_DEFEAT_PHOEBE
 	setflag FLAG_SYS_NO_MUSIC_ON_TRANSITION
 	setflag FLAG_PLAY_LOOKER_GYM_ON_TRANSITION
@@ -438,7 +465,7 @@ Present_Gym_Text_GymGuyNoCanDoInTown:
 
 Present_Gym_Text_GymGuyNoCanDo:
 	.string "No can do. After you swung by, she\n"
-	.string "she decided she wants to see what you're\l"
+	.string "decided she wants to see what you're\l"
 	.string "made of, so you gotta do the gym.\p"
 	.string "Being a leader, she rarely gets the\n"
 	.string "chance to battle adults.\p"

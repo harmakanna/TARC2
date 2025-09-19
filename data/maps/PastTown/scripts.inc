@@ -9,8 +9,13 @@ PastTown_OnLoad:
 	call_if_eq VAR_CUTSCENE_STATE, 7, PastTown_EventScript_HideMapPopup
 	call_if_unset FLAG_SWEET_TOOTH_WENT_CRAZY, PastTown_EventScript_CloseSweetToothHole
 	call_if_unset FLAG_HIDE_PAST_SAD_GIRL_OUTSIDE, PastTown_EventScript_SetUpSadGirlFight
+	call_if_set FLAG_SYS_DISABLE_CATCHING, PastTown_EventScript_ReenableCatchOnWhiteout
 	end
 
+PastTown_EventScript_ReenableCatchOnWhiteout::
+	clearflag FLAG_SYS_DISABLE_CATCHING
+	return
+	
 PastTown_EventScript_HideMapPopup::
 	setflag FLAG_HIDE_MAP_NAME_POPUP
 	return

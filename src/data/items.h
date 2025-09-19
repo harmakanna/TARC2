@@ -1995,9 +1995,8 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("Rare Candy Box"),
         .price = (I_PRICE >= GEN_7) ? 10000 : 4800,
         .description = COMPOUND_STRING(
-            "Raises the level\n"
-            "of a Pokémon by\n"
-            "one."),
+            "A giant box full\n"
+            "of Rare Candies."),
         .pocket = POCKET_KEY_ITEMS,
         .importance = 1,
         .type = ITEM_USE_PARTY_MENU,
