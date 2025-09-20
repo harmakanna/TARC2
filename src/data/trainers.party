@@ -127,16 +127,16 @@ Ability: Storm Drain
 Level: 50  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
 - Giga Drain  
-- Leech Seed  
 - Ancient Power  
+- Leech Seed  
 
 Tyrantrum @ Rocky Helmet  
 Ability: Strong Jaw  
 Level: 50  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
-- Psychic Fangs  
-- Crunch  
 - Dragon Claw  
+- Crunch  
+- Psychic Fangs  
 
 === TRAINER_PRESENT_FISHERMAN ===
 Name: Trevor
@@ -151,8 +151,6 @@ Difficulty: Easy
 Dewgong  
 Ability: Hydration  
 Level: 50  
-EVs: 252 Atk / 126 SpD / 126 Spe  
-Impish Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
 - Flip Turn  
 - Helping Hand  
@@ -161,8 +159,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Palafin  
 Ability: Zero to Hero  
 Level: 50  
-EVs: 126 HP / 252 Atk / 126 SpD  
-Adamant Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
 - Flip Turn  
 - Ice Punch  
@@ -170,7 +166,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Basculin @ Choice Scarf  
 Ability: Adaptability  
 Level: 50  
-EVs: 126 HP / 126 Atk / 252 Spe  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
 - Flip Turn  
 - Crunch  
@@ -239,9 +234,9 @@ Togekiss (M)
 Ability: Serene Grace  
 Level: 50  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
-- Encore  
 - Dazzling Gleam  
 - Aura Sphere  
+- Encore  
 
 === TRAINER_SOPHIA ===
 Name: Sophia
@@ -1099,7 +1094,8 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Jump Kick  
 
 Landorus (M)  
-Ability: Sheer Force  
+Ability: Sheer Force   
+Level: 50  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe 
 - Extrasensory  
 - Scorching Sands  
@@ -1225,7 +1221,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - High Horsepower  
 - Protect  
 
-Butterfree @ Focus Sash  
+Butterfree  
 Ability: Compound Eyes  
 Level: 50  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
@@ -1267,7 +1263,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Coaching  
 - Thunder Punch  
 
-Grimmsnarl (M) @ Choice Band  
+Grimmsnarl (M)  
 Ability: Prankster  
 Level: 50  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe    
@@ -1350,8 +1346,6 @@ Difficulty: Normal
 Omastar @ Focus Sash  
 Ability: Weak Armor  
 Level: 50  
-EVs: 126 HP / 252 SpA / 126 SpD  
-Timid Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Surf  
 - Meteor Beam  
@@ -1361,8 +1355,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Cradily @ Leftovers  
 Ability: Storm Drain  
 Level: 50  
-EVs: 252 HP / 252 Def  
-Calm Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Giga Drain  
 - Leech Seed  
@@ -1371,9 +1363,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Archeops  
 Ability: Defeatist  
-Level: 50  
-EVs: 126 Atk / 126 SpA / 252 Spe  
-Hasty Nature  
+Level: 50   
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Heat Wave  
 - Dual Wingbeat  
@@ -1382,9 +1372,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Tyrantrum @ Rocky Helmet  
 Ability: Strong Jaw  
-Level: 50  
-EVs: 252 Atk / 126 Def / 126 Spe  
-Adamant Nature  
+Level: 50   
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Psychic Fangs  
 - Crunch  
@@ -1677,8 +1665,9 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Bug Bite  
 
 Beartic  
-Ability: Swift Swim  
+Ability: Swift Swim 
 Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe   
 - Icicle Crash  
 - Play Rough  
 - Liquidation  
@@ -1835,6 +1824,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Chatot (M)  
 Ability: Keen Eye  
 Level: 50  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Chatter  
 - Hyper Voice  
 - U-turn  
@@ -2938,6 +2928,7 @@ Difficulty: Hard
 Omastar @ Focus Sash  
 Ability: Weak Armor  
 Level: 50  
+EVs: 126 HP / 252 SpA / 126 SpD  
 Timid Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Surf  
@@ -2948,6 +2939,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Cradily @ Leftovers  
 Ability: Storm Drain  
 Level: 50  
+EVs: 252 HP / 252 Def  
 Calm Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Giga Drain  
@@ -2958,6 +2950,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Archeops  
 Ability: Defeatist  
 Level: 50  
+EVs: 126 Atk / 126 SpA / 252 Spe  
 Hasty Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Heat Wave  
@@ -2968,6 +2961,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Tyrantrum @ Rocky Helmet  
 Ability: Strong Jaw  
 Level: 50  
+EVs: 252 Atk / 126 Def / 126 Spe  
 Adamant Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Psychic Fangs  
@@ -3010,6 +3004,7 @@ Basculin @ Choice Scarf
 Ability: Adaptability  
 Level: 50  
 EVs: 126 HP / 126 Atk / 252 Spe  
+Serious Nature  
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Flip Turn  
 - Crunch  
@@ -3312,6 +3307,7 @@ Ability: Swift Swim
 Level: 50  
 EVs: 252 HP / 252 Atk  
 Jolly Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe  
 - Icicle Crash  
 - Play Rough  
 - Liquidation  
@@ -3496,6 +3492,7 @@ Ability: Keen Eye
 Level: 50  
 EVs: 252 HP / 252 Spe  
 Timid Nature  
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Chatter  
 - Hyper Voice  
 - U-turn  
